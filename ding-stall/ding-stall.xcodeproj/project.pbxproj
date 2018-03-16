@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25D71B14502B3C3A85CA02F2 /* Pods_ding_stall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */; };
+		F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF825205B839400B9812D /* AppDelegate.swift */; };
+		F2BBF828205B839400B9812D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF827205B839400B9812D /* ViewController.swift */; };
+		F2BBF82B205B839400B9812D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF829205B839400B9812D /* Main.storyboard */; };
+		F2BBF82D205B839400B9812D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF82C205B839400B9812D /* Assets.xcassets */; };
+		F2BBF830205B839400B9812D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */; };
+		F2BBF838205B842600B9812D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF837205B842600B9812D /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ding_stall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
+		F2BBF822205B839400B9812D /* ding-stall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ding-stall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2BBF825205B839400B9812D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2BBF827205B839400B9812D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2BBF82A205B839400B9812D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2BBF82C205B839400B9812D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2BBF82F205B839400B9812D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2BBF831205B839400B9812D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2BBF837205B842600B9812D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F74B02665C1623746C3819E3 /* Pods-ding-stall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2BBF81F205B839400B9812D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D71B14502B3C3A85CA02F2 /* Pods_ding_stall.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCFD028E2205939395984373 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */,
+				F74B02665C1623746C3819E3 /* Pods-ding-stall.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6EE1A77C1B25ABBE46812D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2BBF819205B839400B9812D = {
+			isa = PBXGroup;
+			children = (
+				F2BBF824205B839400B9812D /* ding-stall */,
+				F2BBF823205B839400B9812D /* Products */,
+				DCFD028E2205939395984373 /* Pods */,
+				E6EE1A77C1B25ABBE46812D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F2BBF823205B839400B9812D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF822205B839400B9812D /* ding-stall.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2BBF824205B839400B9812D /* ding-stall */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF825205B839400B9812D /* AppDelegate.swift */,
+				F2BBF827205B839400B9812D /* ViewController.swift */,
+				F2BBF829205B839400B9812D /* Main.storyboard */,
+				F2BBF82C205B839400B9812D /* Assets.xcassets */,
+				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
+				F2BBF837205B842600B9812D /* GoogleService-Info.plist */,
+				F2BBF831205B839400B9812D /* Info.plist */,
+			);
+			path = "ding-stall";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2BBF821205B839400B9812D /* ding-stall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2BBF834205B839400B9812D /* Build configuration list for PBXNativeTarget "ding-stall" */;
+			buildPhases = (
+				2239B38B0184549D31F956EB /* [CP] Check Pods Manifest.lock */,
+				F2BBF81E205B839400B9812D /* Sources */,
+				F2BBF81F205B839400B9812D /* Frameworks */,
+				F2BBF820205B839400B9812D /* Resources */,
+				C0B1C6E5F3494412A5A1828A /* [CP] Embed Pods Frameworks */,
+				7AFACD334B915D8A31F543BD /* [CP] Copy Pods Resources */,
+				F25F3A9B205B86D40042D8FA /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ding-stall";
+			productName = "ding-stall";
+			productReference = F2BBF822205B839400B9812D /* ding-stall.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2BBF81A205B839400B9812D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "CS3217 Ding";
+				TargetAttributes = {
+					F2BBF821205B839400B9812D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F2BBF81D205B839400B9812D /* Build configuration list for PBXProject "ding-stall" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2BBF819205B839400B9812D;
+			productRefGroup = F2BBF823205B839400B9812D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2BBF821205B839400B9812D /* ding-stall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2BBF820205B839400B9812D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2BBF830205B839400B9812D /* LaunchScreen.storyboard in Resources */,
+				F2BBF838205B842600B9812D /* GoogleService-Info.plist in Resources */,
+				F2BBF82D205B839400B9812D /* Assets.xcassets in Resources */,
+				F2BBF82B205B839400B9812D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2239B38B0184549D31F956EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ding-stall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AFACD334B915D8A31F543BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0B1C6E5F3494412A5A1828A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F25F3A9B205B86D40042D8FA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2BBF81E205B839400B9812D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2BBF828205B839400B9812D /* ViewController.swift in Sources */,
+				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F2BBF829205B839400B9812D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2BBF82A205B839400B9812D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2BBF82F205B839400B9812D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2BBF832205B839400B9812D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2BBF833205B839400B9812D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2BBF835205B839400B9812D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W76H98A34A;
+				INFOPLIST_FILE = "ding-stall/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nus.cs3217.ding-stall";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2BBF836205B839400B9812D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F74B02665C1623746C3819E3 /* Pods-ding-stall.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W76H98A34A;
+				INFOPLIST_FILE = "ding-stall/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nus.cs3217.ding-stall";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2BBF81D205B839400B9812D /* Build configuration list for PBXProject "ding-stall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2BBF832205B839400B9812D /* Debug */,
+				F2BBF833205B839400B9812D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2BBF834205B839400B9812D /* Build configuration list for PBXNativeTarget "ding-stall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2BBF835205B839400B9812D /* Debug */,
+				F2BBF836205B839400B9812D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2BBF81A205B839400B9812D /* Project object */;
+}
