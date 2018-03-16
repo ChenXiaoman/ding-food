@@ -80,12 +80,12 @@
 		F2C66065205B7FFF006C3C51 /* ding */ = {
 			isa = PBXGroup;
 			children = (
-				F25F3A98205B85670042D8FA /* GoogleService-Info.plist */,
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
 				F2C66068205B7FFF006C3C51 /* ViewController.swift */,
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				F2C6606D205B7FFF006C3C51 /* Assets.xcassets */,
 				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
+				F25F3A98205B85670042D8FA /* GoogleService-Info.plist */,
 				F2C66072205B7FFF006C3C51 /* Info.plist */,
 			);
 			path = ding;
@@ -104,6 +104,7 @@
 				F2C66061205B7FFF006C3C51 /* Resources */,
 				E5748DF7E576A9F32D2888EB /* [CP] Embed Pods Frameworks */,
 				0533C862CD83DB572D4AA2EF /* [CP] Copy Pods Resources */,
+				F25F3A9A205B86390042D8FA /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -215,6 +216,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ding/Pods-ding-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F25F3A9A205B86390042D8FA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

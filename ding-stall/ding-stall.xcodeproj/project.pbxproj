@@ -104,6 +104,7 @@
 				F2BBF820205B839400B9812D /* Resources */,
 				C0B1C6E5F3494412A5A1828A /* [CP] Embed Pods Frameworks */,
 				7AFACD334B915D8A31F543BD /* [CP] Copy Pods Resources */,
+				F25F3A9B205B86D40042D8FA /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -215,6 +216,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F25F3A9B205B86D40042D8FA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
