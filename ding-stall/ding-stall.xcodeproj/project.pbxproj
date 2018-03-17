@@ -61,6 +61,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F22A9527205D6E8900C6142E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF82C205B839400B9812D /* Assets.xcassets */,
+				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
+				F2BBF829205B839400B9812D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F22A9528205D6EA600C6142E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF827205B839400B9812D /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F22A952A205D6EF900C6142E /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF825205B839400B9812D /* AppDelegate.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		F2BBF819205B839400B9812D = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +109,9 @@
 		F2BBF824205B839400B9812D /* ding-stall */ = {
 			isa = PBXGroup;
 			children = (
-				F2BBF825205B839400B9812D /* AppDelegate.swift */,
-				F2BBF827205B839400B9812D /* ViewController.swift */,
-				F2BBF829205B839400B9812D /* Main.storyboard */,
-				F2BBF82C205B839400B9812D /* Assets.xcassets */,
-				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
+				F22A9528205D6EA600C6142E /* Controllers */,
+				F22A9527205D6E8900C6142E /* Views */,
+				F22A952A205D6EF900C6142E /* Others */,
 				F2BBF837205B842600B9812D /* GoogleService-Info.plist */,
 				F2BBF831205B839400B9812D /* Info.plist */,
 			);
@@ -208,12 +232,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
