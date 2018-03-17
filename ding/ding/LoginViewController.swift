@@ -12,6 +12,9 @@ import WebKit
 class LoginViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet private var loginWebView: WKWebView!
     
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var emailLabel: UILabel!
+    
     private let apiKey = "12DtcHnaCAae1ldMAwT5K"
     private let ivleLoginUrl = "https://ivle.nus.edu.sg/api/login/?apikey=12DtcHnaCAae1ldMAwT5K"
     private let loginSuccessUrl = "https://ivle.nus.edu.sg/api/login/login_result.ashx?apikey=12DtcHnaCAae1ldMAwT5K&r=0"
@@ -63,12 +66,14 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
             switch WebPageInfoType.infoTypeOf(webPageUrl: url) {
             case .token:
                 self.token = textInHtml
-                self.loadUserInfoFromToken(textInHtml)
-                self.loadEmailFromToken(textInHtml)
+                self.loadUserNameFromToken()
             case .name:
                 self.userName = self.getUserNameFromText(textInHtml)
+                self.nameLabel.text = "Hi, \(self.getUserNameFromText(textInHtml))!"
+                self.loadEmailFromToken()
             case .email:
                 self.email = self.getUserEmailFromText(textInHtml)
+                self.emailLabel.text = "Your email is \(self.getUserEmailFromText(textInHtml))"
             }
         })
         
@@ -87,11 +92,17 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         return text.getTextBetween(prefix: "0\">", suffix: "</a>")
     }
     
-    private func loadUserInfoFromToken(_ token: String) {
+    private func loadUserNameFromToken() {
+        guard let token = self.token else {
+            return
+        }
         loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserName_Get?APIKey=\(apiKey)&Token=\(token)")
     }
     
-    private func loadEmailFromToken(_ token: String) {
+    private func loadEmailFromToken() {
+        guard let token = self.token else {
+            return
+        }
         loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserEmail_Get?APIKey=\(apiKey)&Token=\(token)")
     }
     
