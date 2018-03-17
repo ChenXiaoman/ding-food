@@ -7,4 +7,5 @@ target 'ding-stall' do
 
   # Pods for ding-stall
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 end
