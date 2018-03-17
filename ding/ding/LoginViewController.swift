@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     private let loginSuccessUrl = "https://ivle.nus.edu.sg/api/login/login_result.ashx?apikey=12DtcHnaCAae1ldMAwT5K&r=0"
     private var token: String? // Token is used in IVLE API to retreive user data
     public var userName: String?
+    public var email: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +64,11 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
             case .token:
                 self.token = textInHtml
                 self.loadUserInfoFromToken(textInHtml)
+                self.loadEmailFromToken(textInHtml)
             case .name:
                 self.userName = self.getUserNameFromText(textInHtml)
-            case .id:
-                return
+            case .email:
+                self.email = self.getUserEmailFromText(textInHtml)
             }
         })
         
@@ -81,8 +83,16 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         return text.getTextBetween(prefix: ">\"", suffix: "\"<")
     }
     
+    private func getUserEmailFromText(_ text: String) -> String {
+        return text.getTextBetween(prefix: "0\">", suffix: "</a>")
+    }
+    
     private func loadUserInfoFromToken(_ token: String) {
         loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserName_Get?APIKey=\(apiKey)&Token=\(token)")
+    }
+    
+    private func loadEmailFromToken(_ token: String) {
+        loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserEmail_Get?APIKey=\(apiKey)&Token=\(token)")
     }
     
 }
@@ -90,13 +100,13 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
 enum WebPageInfoType {
     case token
     case name
-    case id
+    case email
     
     static func infoTypeOf(webPageUrl: String) -> WebPageInfoType {
         if webPageUrl.contains(subString: "UserName_Get") {
             return WebPageInfoType.name
-        } else if webPageUrl.contains(subString: "UserID_Get") {
-            return WebPageInfoType.id
+        } else if webPageUrl.contains(subString: "UserEmail_Get") {
+            return WebPageInfoType.email
         }
         return WebPageInfoType.token
     }
