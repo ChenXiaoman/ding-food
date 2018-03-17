@@ -33,6 +33,6 @@ git checkout <new_branch_name>
 ```
 3. Push this new branch to the remote repository.
 ```bash
-git push origin/<new_branch_name>
+git push origin <new_branch_name>
 git branch --set-upstream-to=origin/<new_branch_name> <new_branch_name>
 ```
