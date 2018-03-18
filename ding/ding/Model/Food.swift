@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+/// Represents an atomic unit of a menu and everything that can be consumed.
+/// This includes drinks.
 public struct Food: FirebaseObject {
     public var name: String
     public var price: Double
@@ -16,18 +18,5 @@ public struct Food: FirebaseObject {
 
     public mutating func soldOut() {
         isSoldOut = true
-    }
-
-    public var hashValue: Int {
-        return id.hashValue
-    }
-
-    public static func == (lhs: Food, rhs: Food) -> Bool {
-        return lhs.id == rhs.id &&
-            lhs.name == rhs.name &&
-            lhs.price == rhs.price &&
-            lhs.description == rhs.description &&
-            lhs.type == rhs.type &&
-            lhs.isSoldOut == rhs.isSoldOut
     }
 }

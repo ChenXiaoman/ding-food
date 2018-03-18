@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Represents an order posted by a user.
+/// An order may have 
 public struct Order: FirebaseObject {
     public var id: String
     public var status: OrderStatus = .preparing
@@ -51,14 +53,5 @@ public struct Order: FirebaseObject {
 
     public mutating func changeStatus(to newStatus: OrderStatus) {
         self.status = newStatus
-    }
-
-    public var hashValue: Int {
-        return id.hashValue
-    }
-
-    public static func == (lhs: Order, rhs: Order) -> Bool {
-        return lhs.id == rhs.id
-            && lhs.content == rhs.content
     }
 }

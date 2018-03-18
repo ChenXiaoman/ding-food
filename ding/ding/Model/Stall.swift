@@ -6,12 +6,15 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-struct Stall {
-    let name: String
-    let location: String
-    let openingHour: String
-    let description: String
-    let queue: [Order]
-    let menu: [Food]
-    let filters: [FilterIdentifier: String]
+/// Represents a food stall registered in the application.
+struct Stall: FirebaseObject {
+    public var id: String
+    public let name: String
+    public let location: String
+    public let openingHour: String
+    public let description: String
+    public let queue: [Order]
+    public let menu: [Food]
+    public let filters: Set<FilterIdentifier>
+
 }

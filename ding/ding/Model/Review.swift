@@ -6,18 +6,11 @@
 //  Copyright © 2018年 JCH. All rights reserved.
 //
 
+/// Represents a user's review for a stall.
+/// After each order is completed, user will be prompted to provide
+/// a review for the stall where he/she purchase the food from.
 public struct Review: FirebaseObject {
     public var id: String
     public var rating: Rating
     public var reviewText: String
-
-    public var hashValue: Int {
-        return id.hashValue
-    }
-
-    public static func == (lhs: Review, rhs: Review) -> Bool {
-        return lhs.id == rhs.id
-            && lhs.rating == rhs.rating
-            && lhs.reviewText == rhs.reviewText
-    }
 }
