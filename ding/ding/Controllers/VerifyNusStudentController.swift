@@ -38,7 +38,6 @@ class VerifyNusStudentController: UIViewController, WKNavigationDelegate {
     
     /// Get user's information when a page is loaded
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         // Only fetch user info
         guard let resultUrl = webView.url?.absoluteString,
                 resultUrl != Constant.ivleLoginUrl else {
