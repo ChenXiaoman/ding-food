@@ -6,9 +6,11 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
-/// Represents a user's review for a stall.
-/// After each order is completed, user will be prompted to provide
-/// a review for the stall where he/she purchase the food from.
+/**
+ Represents a user's review for a stall.
+ After each order is completed, user will be prompted to provide
+ a review for the stall where he/she purchase the food from.
+ */
 public struct Review: FirebaseObject {
     public var id: String
     public var rating: Rating

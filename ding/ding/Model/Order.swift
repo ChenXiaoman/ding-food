@@ -3,13 +3,15 @@
 //  DingPod
 //
 //  Created by Jiang Chunhui on 17/03/18.
-//  Copyright © 2018年 JCH. All rights reserved.
+//  Copyright © 2018 JCH. All rights reserved.
 //
 
 import Foundation
 
-/// Represents an order posted by a user.
-/// An order may have 
+/**
+ Represents an order posted by a user. An order may have various food with different
+ quantities from the same stall.
+ */
 public struct Order: FirebaseObject {
     public let id: String
     public var status: OrderStatus = .preparing

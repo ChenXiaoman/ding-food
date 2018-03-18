@@ -6,8 +6,10 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-/// Represents an atomic unit of a menu and everything that can be consumed.
-/// This includes drinks.
+/**
+ Represents an atomic unit of a menu and everything that can be consumed.
+ This includes drinks.
+ */
 public struct Food: FirebaseObject {
     public var name: String
     public var price: Double

@@ -6,7 +6,9 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
-/// Represents a registered user in the application.
+/**
+ Represents a registered user in the application.
+ */
 public struct User: FirebaseObject {
     public var name: String
     /// This id is the user's email
