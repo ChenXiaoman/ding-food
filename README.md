@@ -36,3 +36,11 @@ git checkout <new_branch_name>
 git push origin <new_branch_name>
 git branch --set-upstream-to=origin/<new_branch_name> <new_branch_name>
 ```
+
+## Setup Global `gitignore`
+
+To avoid committing OS-specific files into the remote repository, you should setup the global `gitignore` file on your computer:
+```bash
+echo .DS_Store >> ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+```
