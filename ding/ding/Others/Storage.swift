@@ -32,7 +32,8 @@ class Storage {
     /// Stores a certain `FirebaseObject` at a specified path. The node (and its child nodes)
     /// originally at that path will be cleared.
     /// - Parameters:
-    ///    - path: The path to the observed data.
+    ///    - path: The path to the observed data. The path should be a string with a "/" prefix
+    ///            but without a "/" suffix, such as "/posts".
     ///    - object: The `FirebaseObject` being stored.
     func setChildNode<T: FirebaseObject>(of path: String, to object: T) {
         let newPath = path + "/\(object.id)"

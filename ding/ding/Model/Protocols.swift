@@ -29,7 +29,8 @@ extension FirebaseObject {
     /// Notice: The id of the `FirebaseObject` will not be serialized because it ought
     /// to be used as the key rather than the value of the child node.
     public var serialized: [String: Any] {
-        guard let data = try? JSONEncoder().encode(self),
+        guard
+            let data = try? JSONEncoder().encode(self),
             let obj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
             var dict = obj as? [String: Any] else {
             return [:]
