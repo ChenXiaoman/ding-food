@@ -13,7 +13,7 @@ public struct Food: FirebaseObject {
     public var type: FoodType
     public var isSoldOut: Bool
     public let id: String
-    
+
     public mutating func soldOut() {
         isSoldOut = true
     }

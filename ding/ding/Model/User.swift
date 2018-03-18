@@ -16,7 +16,7 @@ public struct User: FirebaseObject {
     mutating func addOrder(_ order: Order) {
         historyOrder.insert(order)
     }
-    
+
     public var hashValue: Int {
         return id.hashValue
     }

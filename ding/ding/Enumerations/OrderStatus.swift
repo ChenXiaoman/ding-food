@@ -7,6 +7,7 @@
 //
 
 public enum OrderStatus: Int, Codable {
+    case rejected = 0
     case preparing = 1
     case ready = 2
     case collected = 3
