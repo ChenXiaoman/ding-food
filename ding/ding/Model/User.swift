@@ -6,6 +6,7 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
+/// Represents a registered user in the application.
 public struct User: FirebaseObject {
     public var name: String
     /// This id is the user's email
@@ -15,15 +16,5 @@ public struct User: FirebaseObject {
 
     mutating func addOrder(_ order: Order) {
         historyOrder.insert(order)
-    }
-
-    public var hashValue: Int {
-        return id.hashValue
-    }
-
-    public static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.id == rhs.id
-            && lhs.name == rhs.name
-            && lhs.password == rhs.password
     }
 }
