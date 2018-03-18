@@ -9,13 +9,13 @@
 import Foundation
 
 public struct Order: FirebaseObject {
-    public var id: String
+    public let id: String
     public var status: OrderStatus = .preparing
     public var remark: String?
     public var review: Review?
-    public var content = Set<FoodTuple>()
     public var time: Date?
     public var shouldNotify = false
+    public var content = Set<FoodTuple>()
 
     public init(id: String) {
         self.id = id
