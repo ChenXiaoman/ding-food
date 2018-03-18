@@ -13,6 +13,8 @@
 		327A03C3205DFC85004B78EB /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A03BD205DFC84004B78EB /* Tuple.swift */; };
 		327A03C4205DFC85004B78EB /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A03BE205DFC84004B78EB /* Review.swift */; };
 		327A03C5205DFC85004B78EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A03BF205DFC85004B78EB /* User.swift */; };
+		327A03C8205E161C004B78EB /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A03C7205E161C004B78EB /* OrderStatus.swift */; };
+		327A03CA205E1663004B78EB /* ReviewRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A03C9205E1663004B78EB /* ReviewRating.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		B2464E86205C4F160095A925 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E85205C4F160095A925 /* Stall.swift */; };
 		B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E88205C51000095A925 /* FilterIdentifier.swift */; };
@@ -33,6 +35,8 @@
 		327A03BD205DFC84004B78EB /* Tuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 		327A03BE205DFC84004B78EB /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		327A03BF205DFC85004B78EB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		327A03C7205E161C004B78EB /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		327A03C9205E1663004B78EB /* ReviewRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRating.swift; sourceTree = "<group>"; };
 		568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				B2464E8D205C52010095A925 /* FoodType.swift */,
+				327A03C7205E161C004B78EB /* OrderStatus.swift */,
+				327A03C9205E1663004B78EB /* ReviewRating.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -295,6 +301,8 @@
 				B2464E86205C4F160095A925 /* Stall.swift in Sources */,
 				327A03C5205DFC85004B78EB /* User.swift in Sources */,
 				327A03C3205DFC85004B78EB /* Tuple.swift in Sources */,
+				327A03C8205E161C004B78EB /* OrderStatus.swift in Sources */,
+				327A03CA205E1663004B78EB /* ReviewRating.swift in Sources */,
 				327A03C1205DFC85004B78EB /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

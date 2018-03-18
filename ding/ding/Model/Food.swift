@@ -17,11 +17,11 @@ public struct Food: FirebaseObject {
     public mutating func soldOut() {
         isSoldOut = true
     }
-    
+
     public var hashValue: Int {
         return id.hashValue
     }
-    
+
     public static func == (lhs: Food, rhs: Food) -> Bool {
         return lhs.id == rhs.id &&
             lhs.name == rhs.name &&
