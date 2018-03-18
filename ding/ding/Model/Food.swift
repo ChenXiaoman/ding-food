@@ -11,12 +11,12 @@
  This includes drinks.
  */
 public struct Food: FirebaseObject {
+    public let id: String
     public var name: String
     public var price: Double
     public var description: String
     public var type: FoodType
     public var isSoldOut: Bool
-    public let id: String
 
     public mutating func soldOut() {
         isSoldOut = true
