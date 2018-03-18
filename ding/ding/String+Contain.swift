@@ -12,8 +12,12 @@ extension String {
         return self.range(of: subString) != nil
     }
     
-    /// Get a string with specified prefix and suffix
+    /// Get a string between specified prefix and suffix
+    /// exclusive of prefix and suffix
     /// by chopping the redundant characters on the two sides.
+    /// If the substring doesn't exist, return an empty string
+    /// If there are more than one such string, only returns the first encountered
+    /// the first encountered string
     func getTextBetween(prefix: String, suffix: String) -> String {
         let stringChopLeft = self.components(separatedBy: prefix)
         if stringChopLeft.count <= 1 {
