@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuthUI
 
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: UIViewController, FUIAuthDelegate {
+    override func viewDidAppear(_ animated: Bool) {
+        if let authUI = FUIAuth.defaultAuthUI() {
+            authUI.delegate = self
+            present(authUI.authViewController(), animated: animated, completion: nil)
+        }
+    }
+
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        // 
     }
 }
