@@ -35,6 +35,7 @@ class Storage {
     ///    - path: The path to the observed data.
     ///    - object: The `FirebaseObject` being stored.
     func setChildNode<T: FirebaseObject>(of path: String, to object: T) {
-        Storage.ref.child(path).setValue(object.serialized)
+        let newPath = path + "/\(object.id)"
+        Storage.ref.child(newPath).setValue(object.serialized)
     }
 }

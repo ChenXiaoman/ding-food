@@ -23,13 +23,12 @@ class VerifyNusStudentController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginWebView.navigationDelegate = self
         loadPage(with: Constant.ivleLoginUrl)
     }
     
     /// Load a web page with given url
     private func loadPage(with url: String) {
-        loginWebView.navigationDelegate = self
         guard let url = URL(string: url) else {
             fatalError("URL is invalid")
         }

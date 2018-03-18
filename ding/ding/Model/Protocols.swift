@@ -22,14 +22,20 @@ extension FirebaseObject {
         return id.hashValue
     }
 
-    /// Converts a given `FirebaseObject` into a serialized format so that it can be
+    /// Converts a given `FirebaseObject` into a dictionary format so that it can be
     /// directly added to the database as a new child node. It will simply return an
     /// empty dictionary if the conversion fails.
-    public var serialized: Any? {
-        guard let data = try? JSONEncoder().encode(self) else {
-            return nil
+    ///
+    /// Notice: The id of the `FirebaseObject` will not be serialized because it ought
+    /// to be used as the key rather than the value of the child node.
+    public var serialized: [String: Any] {
+        guard let data = try? JSONEncoder().encode(self),
+            let obj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+            var dict = obj as? [String: Any] else {
+            return [:]
         }
-        return try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        dict["id"] = nil
+        return dict
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
