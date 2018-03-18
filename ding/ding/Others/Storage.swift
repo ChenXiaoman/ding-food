@@ -28,4 +28,8 @@ class Storage {
     func observeValue(of path: String, onChange handler: @escaping (DataSnapshot) -> Void) {
         Storage.ref.child(path).observe(.value, with: handler)
     }
+
+    func setChildNode<T: FirebaseObject>(of path: String, to object: T) {
+        Storage.ref.child(path).setValue(object.dictionary)
+    }
 }

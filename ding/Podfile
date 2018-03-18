@@ -8,4 +8,5 @@ target 'ding' do
   # Pods for ding
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 end

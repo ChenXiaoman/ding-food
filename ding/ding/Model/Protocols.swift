@@ -6,6 +6,8 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
+import Foundation
+
 public protocol StorageDelegate: class {
     func save()
 }
@@ -18,6 +20,18 @@ public protocol FirebaseObject: Codable, Hashable {
 extension FirebaseObject {
     public var hashValue: Int {
         return id.hashValue
+    }
+
+    /// Converts a given `FirebaseObject` into dictionary format so that it can be
+    /// directly added to the database as a new child node. It will simply return
+    /// an empty dictionary if the conversion fails.
+    public var dictionary: [String: Any] {
+        guard let data = try? JSONEncoder().encode(self),
+            let obj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+            let dict = obj as? [String: Any] else {
+            return [:]
+        }
+        return dict
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
