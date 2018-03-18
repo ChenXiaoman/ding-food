@@ -29,7 +29,7 @@ class UserViewController: UIViewController {
     func makeReview(text: String, rating: Rating, toOrder order: inout Order) {
         // TODO: replace this dummy id
         let newReview = Review(id: "0", rating: rating, reviewText: text)
-        order.addReview(newReview)
+        order.review = newReview
     }
 
     func notify(order: Order) {

@@ -19,41 +19,35 @@ public struct Order: FirebaseObject {
     public var review: Review?
     public var time: Date?
     public var shouldNotify = false
-    public var content = Set<FoodTuple>()
+    public var content = [Food: Int]()
 
     public init(id: String) {
         self.id = id
     }
 
     public mutating func add(food: Food, quantity: Int) {
-        let tuple = FoodTuple(food: food, quantity: quantity)
-        content.insert(tuple)
+        content[food] = quantity
     }
 
-    public mutating func delete(food: Food, quantity: Int) {
-        let tuple = FoodTuple(food: food, quantity: quantity)
-        content.remove(tuple)
+    public mutating func delete(food: Food) {
+        content.removeValue(forKey: food)
     }
 
-    public mutating func increaseQuantity(food: Food, quantity: Int) {
-        delete(food: food, quantity: quantity)
-        add(food: food, quantity: quantity + 1)
+    public mutating func increaseQuantity(food: Food) {
+        guard let currentQuantity = content[food] else {
+            return
+        }
+        content[food] = currentQuantity + 1
     }
 
     public mutating func decreaseQuantity(food: Food, quantity: Int) {
-        delete(food: food, quantity: quantity)
-        add(food: food, quantity: quantity - 1)
+        guard let currentQuantity = content[food] else {
+            return
+        }
+        content[food] = currentQuantity - 1
     }
 
     public mutating func confirm() {
         time = Date()
-    }
-
-    public mutating func addReview(_ review: Review) {
-        self.review = review
-    }
-
-    public mutating func changeStatus(to newStatus: OrderStatus) {
-        self.status = newStatus
     }
 }

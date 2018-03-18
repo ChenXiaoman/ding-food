@@ -16,7 +16,7 @@ public struct User: FirebaseObject {
     public var password: String
     private var historyOrder: Set<Order>
 
-    mutating func addOrder(_ order: Order) {
+    public mutating func addOrder(_ order: Order) {
         historyOrder.insert(order)
     }
 }
