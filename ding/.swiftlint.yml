@@ -6,7 +6,7 @@ disabled_rules:
   - valid_docs
   - trailing_comma
   - trailing_closure
-
+  - trailing_whitespace
 opt_in_rules:
   - array_init
   - attributes
