@@ -6,6 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+// A larger rawValue means a better rating
 public enum Rating: Int, Codable {
     case excellent = 5
     case good = 4
