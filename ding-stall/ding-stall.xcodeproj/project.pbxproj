@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		25D71B14502B3C3A85CA02F2 /* Pods_ding_stall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */; };
+		F26DD263205E11ED00A820B3 /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD262205E11ED00A820B3 /* Authorizer.swift */; };
+		F26DD265205E183800A820B3 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD264205E183800A820B3 /* Database.swift */; };
 		F285DB36205CC58300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB35205CC58300E8621B /* README.md */; };
 		F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF825205B839400B9812D /* AppDelegate.swift */; };
 		F2BBF828205B839400B9812D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF827205B839400B9812D /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ding_stall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
+		F26DD262205E11ED00A820B3 /* Authorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorizer.swift; sourceTree = "<group>"; };
+		F26DD264205E183800A820B3 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		F285DB35205CC58300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2BBF822205B839400B9812D /* ding-stall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ding-stall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BBF825205B839400B9812D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				F2BBF825205B839400B9812D /* AppDelegate.swift */,
+				F26DD262205E11ED00A820B3 /* Authorizer.swift */,
+				F26DD264205E183800A820B3 /* Database.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2BBF828205B839400B9812D /* ViewController.swift in Sources */,
+				F26DD263205E11ED00A820B3 /* Authorizer.swift in Sources */,
+				F26DD265205E183800A820B3 /* Database.swift in Sources */,
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
