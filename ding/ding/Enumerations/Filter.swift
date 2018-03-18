@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-enum Filter {
+enum Filter: String, Codable {
     case canteen
     case nationality
 }

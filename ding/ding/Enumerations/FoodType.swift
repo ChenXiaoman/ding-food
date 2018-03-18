@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-enum FoodType {
+enum FoodType: String, Codable {
     case main
     case soup
     case dessert

@@ -8,14 +8,28 @@
 
 import UIKit
 
-struct Food {
-    let name: String
-    let price: Double
-    let description: String
-    let type: FoodType
+public struct Food: Codable {
+    var name: String
+    var price: Double
+    var description: String
+    var type: FoodType
     var isSoldOut: Bool
     
-    mutating func soldOut() {
+    public mutating func soldOut() {
         isSoldOut = false
+    }
+}
+
+extension Food: Hashable {
+    public var hashValue: Int {
+        return "\(name)\(price)\(description)\(type)\(isSoldOut)".hashValue
+    }
+    
+    public static func == (lhs: Food, rhs: Food) -> Bool {
+        return lhs.name == rhs.name &&
+               lhs.price == rhs.price &&
+               lhs.description == rhs.description &&
+               lhs.type == rhs.type &&
+               lhs.isSoldOut == rhs.isSoldOut
     }
 }
