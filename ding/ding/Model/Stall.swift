@@ -13,5 +13,5 @@ struct Stall {
     let description: String
     let queue: [Order]
     let menu: [Food]
-    let filters: [Filter: String]
+    let filters: [FilterIdentifier: String]
 }

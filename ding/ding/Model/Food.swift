@@ -6,30 +6,28 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
-
-public struct Food: Codable {
-    var name: String
-    var price: Double
-    var description: String
-    var type: FoodType
-    var isSoldOut: Bool
+public struct Food: FirebaseObject {
+    public var name: String
+    public var price: Double
+    public var description: String
+    public var type: FoodType
+    public var isSoldOut: Bool
+    public let id: String
     
     public mutating func soldOut() {
-        isSoldOut = false
+        isSoldOut = true
     }
-}
-
-extension Food: Hashable {
+    
     public var hashValue: Int {
-        return "\(name)\(price)\(description)\(type)\(isSoldOut)".hashValue
+        return id.hashValue
     }
     
     public static func == (lhs: Food, rhs: Food) -> Bool {
-        return lhs.name == rhs.name &&
-               lhs.price == rhs.price &&
-               lhs.description == rhs.description &&
-               lhs.type == rhs.type &&
-               lhs.isSoldOut == rhs.isSoldOut
+        return lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.price == rhs.price &&
+            lhs.description == rhs.description &&
+            lhs.type == rhs.type &&
+            lhs.isSoldOut == rhs.isSoldOut
     }
 }

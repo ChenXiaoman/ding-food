@@ -15,7 +15,7 @@
 		327A03C5205DFC85004B78EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A03BF205DFC85004B78EB /* User.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		B2464E86205C4F160095A925 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E85205C4F160095A925 /* Stall.swift */; };
-		B2464E89205C51000095A925 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E88205C51000095A925 /* Filter.swift */; };
+		B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E88205C51000095A925 /* FilterIdentifier.swift */; };
 		B2464E8B205C51A30095A925 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E8A205C51A30095A925 /* Food.swift */; };
 		B2464E8E205C52010095A925 /* FoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E8D205C52010095A925 /* FoodType.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
@@ -37,7 +37,7 @@
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
 		B2464E85205C4F160095A925 /* Stall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stall.swift; sourceTree = "<group>"; };
-		B2464E88205C51000095A925 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		B2464E88205C51000095A925 /* FilterIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
 		B2464E8A205C51A30095A925 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B2464E8D205C52010095A925 /* FoodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodType.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -87,6 +87,8 @@
 				327A03BA205DFC84004B78EB /* Order.swift */,
 				327A03BF205DFC85004B78EB /* User.swift */,
 				B2464E8A205C51A30095A925 /* Food.swift */,
+				327A03BD205DFC84004B78EB /* Tuple.swift */,
+				B2464E88205C51000095A925 /* FilterIdentifier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,7 +96,6 @@
 		B2464E87205C50F10095A925 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
-				B2464E88205C51000095A925 /* Filter.swift */,
 				B2464E8D205C52010095A925 /* FoodType.swift */,
 			);
 			path = Enumerations;
@@ -126,7 +127,6 @@
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
 				F2C66068205B7FFF006C3C51 /* ViewController.swift */,
 				327A03BB205DFC84004B78EB /* Protocols.swift */,
-				327A03BD205DFC84004B78EB /* Tuple.swift */,
 				327A03BC205DFC84004B78EB /* UserViewController.swift */,
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				F2C6606D205B7FFF006C3C51 /* Assets.xcassets */,
@@ -289,7 +289,7 @@
 				327A03C4205DFC85004B78EB /* Review.swift in Sources */,
 				F2C66069205B7FFF006C3C51 /* ViewController.swift in Sources */,
 				B2464E8E205C52010095A925 /* FoodType.swift in Sources */,
-				B2464E89205C51000095A925 /* Filter.swift in Sources */,
+				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
 				B2464E8B205C51A30095A925 /* Food.swift in Sources */,
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
 				B2464E86205C4F160095A925 /* Stall.swift in Sources */,

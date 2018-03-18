@@ -6,6 +6,10 @@
 //  Copyright © 2018年 JCH. All rights reserved.
 //
 
-public protocol storageDelegate: class {
+public protocol StorageDelegate: class {
     func save()
+}
+
+public protocol FirebaseObject: Codable, Hashable {
+    var id: String { get }
 }
