@@ -39,3 +39,10 @@ line_length:
   # just because of style problems
   error: 300 
   ignores_urls: true
+
+variable_name:
+  max_length:
+    warning: 45
+    error: 60
+  min_length:
+    warning: 1
