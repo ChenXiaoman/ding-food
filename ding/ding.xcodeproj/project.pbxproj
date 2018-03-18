@@ -106,6 +106,25 @@
 			path = Enumerations;
 			sourceTree = "<group>";
 		};
+		F27DDC77205E3953005C3A07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2C66068205B7FFF006C3C51 /* ViewController.swift */,
+				327A03BC205DFC84004B78EB /* UserViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F27DDC78205E3978005C3A07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6606D205B7FFF006C3C51 /* Assets.xcassets */,
+				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
+				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F2C6605A205B7FFF006C3C51 = {
 			isa = PBXGroup;
 			children = (
@@ -128,15 +147,12 @@
 		F2C66065205B7FFF006C3C51 /* ding */ = {
 			isa = PBXGroup;
 			children = (
+				F27DDC77205E3953005C3A07 /* Controllers */,
 				B2464E87205C50F10095A925 /* Enumerations */,
 				B2464E83205C4E760095A925 /* Model */,
+				F27DDC78205E3978005C3A07 /* Views */,
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
-				F2C66068205B7FFF006C3C51 /* ViewController.swift */,
 				327A03BB205DFC84004B78EB /* Protocols.swift */,
-				327A03BC205DFC84004B78EB /* UserViewController.swift */,
-				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
-				F2C6606D205B7FFF006C3C51 /* Assets.xcassets */,
-				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
 				F25F3A98205B85670042D8FA /* GoogleService-Info.plist */,
 				F2C66072205B7FFF006C3C51 /* Info.plist */,
 			);
