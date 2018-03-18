@@ -29,7 +29,12 @@ class Storage {
         Storage.ref.child(path).observe(.value, with: handler)
     }
 
+    /// Stores a certain `FirebaseObject` at a specified path. The node (and its child nodes)
+    /// originally at that path will be cleared.
+    /// - Parameters:
+    ///    - path: The path to the observed data.
+    ///    - object: The `FirebaseObject` being stored.
     func setChildNode<T: FirebaseObject>(of path: String, to object: T) {
-        Storage.ref.child(path).setValue(object.dictionary)
+        Storage.ref.child(path).setValue(object.serialized)
     }
 }
