@@ -8,25 +8,26 @@
 
 import Foundation
 
-public struct Order: Hashable {
+public struct Order: FirebaseObject {
+    public var id: String
+    public var status: OrderStatus = .preparing
+    public var remark: String?
+    public var review: Review?
+    public var content = Set<FoodTuple>()
+    public var time: Date?
+    public var shouldNotify = false
 
-    var status: OrderStatus = .preparing
-    var remark: String?
-    var review: Review?
-    // TODO: perhaps use dictionary is better
-    var content = Set<OrderTuple>()
-    var time: Date?
-    var shouldNotify = false
-
-    public init() {}
+    public init(id: String) {
+        self.id = id
+    }
 
     public mutating func add(food: Food, quantity: Int) {
-        let tuple = OrderTuple(food: food, quantity: quantity)
+        let tuple = FoodTuple(food: food, quantity: quantity)
         content.insert(tuple)
     }
 
     public mutating func delete(food: Food, quantity: Int) {
-        let tuple = OrderTuple(food: food, quantity: quantity)
+        let tuple = FoodTuple(food: food, quantity: quantity)
         content.remove(tuple)
     }
 
@@ -53,17 +54,11 @@ public struct Order: Hashable {
     }
 
     public var hashValue: Int {
-        return content.hashValue
+        return id.hashValue
     }
 
-    public static func ==(lhs: Order, rhs: Order) -> Bool {
-        return lhs.content == rhs.content
+    public static func == (lhs: Order, rhs: Order) -> Bool {
+        return lhs.id == rhs.id
+            && lhs.content == rhs.content
     }
 }
-
-public enum OrderStatus {
-    case preparing
-    case ready
-    case collected
-}
-

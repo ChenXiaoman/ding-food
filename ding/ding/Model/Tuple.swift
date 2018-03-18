@@ -20,12 +20,12 @@ extension Tuple: Hashable {
         return attribute1.hashValue ^ attribute2.hashValue
     }
 
-    public static func ==(lhs: Tuple<T, H>, rhs: Tuple<T, H>) -> Bool {
+    public static func == (lhs: Tuple<T, H>, rhs: Tuple<T, H>) -> Bool {
         return lhs.attribute1 == rhs.attribute1 && lhs.attribute2 == rhs.attribute2
     }
 }
 
-public struct OrderTuple: Hashable {
+public struct FoodTuple: Hashable, Codable {
     var order: Tuple<Food, Int>
     var food: Food {
         return order.attribute1
@@ -41,7 +41,7 @@ public struct OrderTuple: Hashable {
     public var hashValue: Int {
         return order.hashValue
     }
-    public static func ==(lhs: OrderTuple, rhs: OrderTuple) -> Bool {
+    public static func == (lhs: FoodTuple, rhs: FoodTuple) -> Bool {
         return lhs.order == rhs.order
     }
 }

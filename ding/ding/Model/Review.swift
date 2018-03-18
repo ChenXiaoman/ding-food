@@ -6,16 +6,18 @@
 //  Copyright © 2018年 JCH. All rights reserved.
 //
 
-public struct Review {
-    var rating: Rating
-    var reviewText: String
-}
+public struct Review: FirebaseObject {
+    public var id: String
+    public var rating: Rating
+    public var reviewText: String
 
-public enum Rating: Int {
-    case excellent = 5
-    case good = 4
-    case average = 3
-    case fair = 2
-    case poor = 1
-    case unjudged = 0
+    public var hashValue: Int {
+        return id.hashValue
+    }
+
+    public static func == (lhs: Review, rhs: Review) -> Bool {
+        return lhs.id == rhs.id
+            && lhs.rating == rhs.rating
+            && lhs.reviewText == rhs.reviewText
+    }
 }

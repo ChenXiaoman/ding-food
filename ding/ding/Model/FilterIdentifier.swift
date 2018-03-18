@@ -9,11 +9,11 @@
 struct FilterIdentifier: FirebaseObject {
     public let id: String
     public var identifierName: String
-    
+
     public var hashValue: Int {
         return id.hashValue
     }
-    
+
     public static func == (lhs: FilterIdentifier, rhs: FilterIdentifier) -> Bool {
         return lhs.id == rhs.id &&
             lhs.identifierName == rhs.identifierName

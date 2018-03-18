@@ -11,7 +11,8 @@ import UIKit
 class UserViewController: UIViewController {
 
     var user: User?
-    var order = Order()
+    // TODO: replace this dummy id
+    var order = Order(id: "0")
     var timer: Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ class UserViewController: UIViewController {
     }
 
     func makeReview(text: String, rating: Rating, toOrder order: inout Order) {
-        let newReview = Review(rating: rating, reviewText: text)
+        // TODO: replace this dummy id
+        let newReview = Review(id: "0", rating: rating, reviewText: text)
         order.addReview(newReview)
     }
 
