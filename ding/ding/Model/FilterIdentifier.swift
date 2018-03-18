@@ -8,5 +8,6 @@
 
 /// Represents an identifier that a user can use to filter a stall by.
 struct FilterIdentifier: FirebaseObject {
+    // This id is the name of the filter
     public let id: String
 }
