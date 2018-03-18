@@ -9,15 +9,14 @@
 import UIKit
 import WebKit
 
-class LoginViewController: UIViewController, WKNavigationDelegate {
+/// Verify whether a user is a nus student
+/// If yes, then get the student's name and email
+class VerifyNusStudentController: UIViewController, WKNavigationDelegate {
     @IBOutlet private var loginWebView: WKWebView!
     
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
     
-    private let apiKey = "12DtcHnaCAae1ldMAwT5K"
-    private let ivleLoginUrl = "https://ivle.nus.edu.sg/api/login/?apikey=12DtcHnaCAae1ldMAwT5K"
-    private let loginSuccessUrl = "https://ivle.nus.edu.sg/api/login/login_result.ashx?apikey=12DtcHnaCAae1ldMAwT5K&r=0"
     private var token: String? // Token is used in IVLE API to retreive user data
     public var userName: String?
     public var email: String?
@@ -25,7 +24,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPage(with: ivleLoginUrl)
+        loadPage(with: Constant.ivleLoginUrl)
     }
     
     /// Load a web page with given url
@@ -40,12 +39,9 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     /// Get user's information when a page is loaded
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
-        guard let resultUrl = webView.url?.absoluteString else {
-            print("login failed")
-            return
-        }
-        
-        if resultUrl == ivleLoginUrl {
+        // Only fetch user info
+        guard let resultUrl = webView.url?.absoluteString,
+                resultUrl != Constant.ivleLoginUrl else {
             return
         }
         
@@ -96,19 +92,19 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         guard let token = self.token else {
             return
         }
-        loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserName_Get?APIKey=\(apiKey)&Token=\(token)")
+        loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserName_Get?APIKey=\(Constant.apiKey)&Token=\(token)")
     }
     
     private func loadEmailFromToken() {
         guard let token = self.token else {
             return
         }
-        loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserEmail_Get?APIKey=\(apiKey)&Token=\(token)")
+        loadPage(with: "https://ivle.nus.edu.sg/api/Lapi.svc/UserEmail_Get?APIKey=\(Constant.apiKey)&Token=\(token)")
     }
     
 }
 
-enum WebPageInfoType {
+private enum WebPageInfoType {
     case token
     case name
     case email
@@ -121,4 +117,10 @@ enum WebPageInfoType {
         }
         return WebPageInfoType.token
     }
+}
+
+private struct Constant {
+    static let apiKey = "12DtcHnaCAae1ldMAwT5K"
+    static let ivleLoginUrl = "https://ivle.nus.edu.sg/api/login/?apikey=12DtcHnaCAae1ldMAwT5K"
+    static let loginSuccessUrl = "https://ivle.nus.edu.sg/api/login/login_result.ashx?apikey=12DtcHnaCAae1ldMAwT5K&r=0"
 }

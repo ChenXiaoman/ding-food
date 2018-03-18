@@ -11,7 +11,7 @@
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C66066205B7FFF006C3C51 /* AppDelegate.swift */; };
-		F2C66069205B7FFF006C3C51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C66068205B7FFF006C3C51 /* LoginViewController.swift */; };
+		F2C66069205B7FFF006C3C51 /* VerifyNusStudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C66068205B7FFF006C3C51 /* VerifyNusStudentController.swift */; };
 		F2C6606C205B7FFF006C3C51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606A205B7FFF006C3C51 /* Main.storyboard */; };
 		F2C6606E205B7FFF006C3C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606D205B7FFF006C3C51 /* Assets.xcassets */; };
 		F2C66071205B7FFF006C3C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2C66063205B7FFF006C3C51 /* ding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C66066205B7FFF006C3C51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2C66068205B7FFF006C3C51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F2C66068205B7FFF006C3C51 /* VerifyNusStudentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNusStudentController.swift; sourceTree = "<group>"; };
 		F2C6606B205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2C6606D205B7FFF006C3C51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2C66070205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				5DF03D6A205D5842003D320C /* Supporting file */,
 				5DF03D69205D5807003D320C /* miscellaneous */,
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
-				F2C66068205B7FFF006C3C51 /* LoginViewController.swift */,
+				F2C66068205B7FFF006C3C51 /* VerifyNusStudentController.swift */,
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				F2C6606D205B7FFF006C3C51 /* Assets.xcassets */,
 				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C66069205B7FFF006C3C51 /* LoginViewController.swift in Sources */,
+				F2C66069205B7FFF006C3C51 /* VerifyNusStudentController.swift in Sources */,
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
 				5DF03D68205D57D5003D320C /* String+Contain.swift in Sources */,
 			);
