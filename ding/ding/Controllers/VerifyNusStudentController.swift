@@ -23,13 +23,12 @@ class VerifyNusStudentController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginWebView.navigationDelegate = self
         loadPage(with: Constant.ivleLoginUrl)
     }
     
     /// Load a web page with given url
     private func loadPage(with url: String) {
-        loginWebView.navigationDelegate = self
         guard let url = URL(string: url) else {
             fatalError("URL is invalid")
         }
@@ -38,7 +37,6 @@ class VerifyNusStudentController: UIViewController, WKNavigationDelegate {
     
     /// Get user's information when a page is loaded
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         // Only fetch user info
         guard let resultUrl = webView.url?.absoluteString,
                 resultUrl != Constant.ivleLoginUrl else {
@@ -53,7 +51,8 @@ class VerifyNusStudentController: UIViewController, WKNavigationDelegate {
     
     /// Get the information displayed in the webpage
     private func getInfoFrom(webView: WKWebView, url: String) {
-        webView.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html: Any?, error: Error?) in
+        webView.evaluateJavaScript("document.documentElement.outerHTML.toString()",
+                                   completionHandler: { (html: Any?, _: Error?) in
             guard let html = html as? String else {
                 print("fail to get html string")
                 return

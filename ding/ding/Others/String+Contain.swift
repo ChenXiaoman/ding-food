@@ -8,7 +8,7 @@
 
 extension String {
     /// Check if a string contains substring
-    func contains(subString: String) -> Bool{
+    func contains(subString: String) -> Bool {
         return self.range(of: subString) != nil
     }
     
@@ -34,4 +34,3 @@ extension String {
         
     }
 }
-

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GeorgiaItalic.ttf">
+            <string>Georgia-Italic</string>
+        </array>
+        <array key="GurmukhiMN.ttc">
+            <string>GurmukhiMN</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="2Kg-xt-Def">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ding!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-G9-a5f">
+                                <rect key="frame" x="112" y="563" width="150" height="84"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for stalls" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y5-SC-6Ye">
+                                <rect key="frame" x="270" y="624" width="78.5" height="23"/>
+                                <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9y5-SC-6Ye" firstAttribute="bottom" secondItem="hf2-G9-a5f" secondAttribute="bottom" id="34E-BF-1Zi"/>
+                            <constraint firstItem="2Kg-xt-Def" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7nb-tr-MSi"/>
+                            <constraint firstItem="2Kg-xt-Def" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8BP-q3-h4s"/>
+                            <constraint firstItem="2Kg-xt-Def" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8HI-VW-ZIn"/>
+                            <constraint firstItem="9y5-SC-6Ye" firstAttribute="leading" secondItem="hf2-G9-a5f" secondAttribute="trailing" constant="8" symbolic="YES" id="GLX-QO-b5s"/>
+                            <constraint firstItem="2Kg-xt-Def" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="PQZ-ct-k3J"/>
+                            <constraint firstItem="hf2-G9-a5f" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a9z-Zz-fhE"/>
+                            <constraint firstItem="9y5-SC-6Ye" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="trailing" constant="20" symbolic="YES" id="lzr-PL-YpC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hf2-G9-a5f" secondAttribute="bottom" constant="20" id="sYl-jX-gkC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch-background" width="512" height="512"/>
+    </resources>
+</document>
