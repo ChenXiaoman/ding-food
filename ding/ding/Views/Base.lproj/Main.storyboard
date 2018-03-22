@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="-367" y="160"/>
         </scene>
-        <!--ORDER-->
+        <!--Order Table View Controller-->
         <scene sceneID="TTT-6I-4u1">
             <objects>
                 <viewController id="VAa-hn-p6R" customClass="OrderTableViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VN3-FH-6WT">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTableViewCell" id="cBS-Lz-x8S" customClass="OrderTableViewCell" customModule="ding" customModuleProvider="target">
@@ -159,16 +159,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="clL-TG-MGO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ORDER" id="lPr-0E-usB" userLabel="ORDER"/>
+                    <navigationItem key="navigationItem" id="59c-1s-Zdi"/>
                     <connections>
                         <outlet property="orderTableView" destination="VN3-FH-6WT" id="vqy-PH-Pmp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOf-m8-D3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.8000000000002" y="6.746626686656672"/>
+            <point key="canvasLocation" x="2564" y="6.746626686656672"/>
         </scene>
-        <!--ME-->
+        <!--View Controller-->
         <scene sceneID="nRf-Qb-rtK">
             <objects>
                 <viewController id="Ebf-6f-zZp" sceneMemberID="viewController">
@@ -178,11 +178,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XqW-sv-zSg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ME" id="1B0-s1-E7D"/>
+                    <navigationItem key="navigationItem" id="q0H-Ji-Svy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RY9-cc-NfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="685"/>
+            <point key="canvasLocation" x="2564" y="684.10794602698661"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="w7t-0e-3Ox">
@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ch-Xq-bnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.8000000000002" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="2564" y="-645.42728635682158"/>
         </scene>
         <!--Stall detail-->
         <scene sceneID="ylR-8i-6hP">
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czO-kK-y7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3105" y="-645"/>
+            <point key="canvasLocation" x="3444" y="-645.42728635682158"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nWW-wM-74I">
@@ -333,8 +333,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="br5-Ee-dFY" kind="relationship" relationship="viewControllers" id="i9D-Ej-171"/>
-                        <segue destination="VAa-hn-p6R" kind="relationship" relationship="viewControllers" id="Kwc-XZ-mGA"/>
-                        <segue destination="Ebf-6f-zZp" kind="relationship" relationship="viewControllers" id="fLY-jm-0DJ"/>
+                        <segue destination="7hI-07-iLQ" kind="relationship" relationship="viewControllers" id="Kwc-XZ-mGA"/>
+                        <segue destination="iZK-el-ywr" kind="relationship" relationship="viewControllers" id="fLY-jm-0DJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoZ-KH-H8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,7 +358,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cb1-py-Xg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="-645"/>
+            <point key="canvasLocation" x="1852" y="-645"/>
+        </scene>
+        <!--ORDER-->
+        <scene sceneID="m6T-sg-MYP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7hI-07-iLQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ORDER" id="lPr-0E-usB" userLabel="ORDER"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6rQ-wI-7rx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VAa-hn-p6R" kind="relationship" relationship="rootViewController" id="fWu-6V-7HV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3s-F9-rhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="7"/>
+        </scene>
+        <!--ME-->
+        <scene sceneID="KEo-5J-Z5o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iZK-el-ywr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ME" id="1B0-s1-E7D"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zXi-NC-3z9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ebf-6f-zZp" kind="relationship" relationship="rootViewController" id="P3U-SR-6sa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mdv-6D-c7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="684"/>
         </scene>
     </scenes>
     <resources>
