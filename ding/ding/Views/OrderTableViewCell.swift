@@ -9,7 +9,11 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-
+    @IBOutlet var foodImage: UIImageView!
+    @IBOutlet var foodName: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var status: UILabel!
+    
     public static let tableViewIdentifier = "OrderTableViewCell"
 
 }

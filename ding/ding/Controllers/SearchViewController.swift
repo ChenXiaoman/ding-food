@@ -16,10 +16,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = searchTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.tableViewIdentifier) as? SearchTableViewCell else {
-            return UITableViewCell()
-        }
-        return cell
+        return searchTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.tableViewIdentifier) ?? UITableViewCell()
     }
     
 }

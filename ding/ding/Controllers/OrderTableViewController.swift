@@ -8,15 +8,14 @@
 
 import UIKit
 
-class OrderTableViewController: UIViewController, UITableViewDataSource {
+class OrderTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet private var orderTableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return orderTableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.tableViewIdentifier) ?? UITableViewCell()
     }
-    
-
-
 }
