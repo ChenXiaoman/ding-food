@@ -11,6 +11,16 @@ import UIKit
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet private var searchTableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        // Hide navigation bar
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // Show navigation bar
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
