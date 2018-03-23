@@ -15,6 +15,7 @@
 		F2BBF82D205B839400B9812D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF82C205B839400B9812D /* Assets.xcassets */; };
 		F2BBF830205B839400B9812D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */; };
 		F2BBF838205B842600B9812D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF837205B842600B9812D /* GoogleService-Info.plist */; };
+		F2D2C0432064CE75005230D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2C0422064CE75005230D6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F2BBF82F205B839400B9812D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2BBF831205B839400B9812D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BBF837205B842600B9812D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2D2C0422064CE75005230D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F74B02665C1623746C3819E3 /* Pods-ding-stall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F2BBF825205B839400B9812D /* AppDelegate.swift */,
+				F2D2C0422064CE75005230D6 /* Constants.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */,
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
+				F2D2C0432064CE75005230D6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
