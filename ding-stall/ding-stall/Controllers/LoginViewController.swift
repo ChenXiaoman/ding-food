@@ -57,5 +57,6 @@ extension LoginViewController: FUIAuthDelegate {
         if !user.isEmailVerified {
             user.sendEmailVerification(completion: nil)
         }
+        loadTabBarView(true)
     }
 }

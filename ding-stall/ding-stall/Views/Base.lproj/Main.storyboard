@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-772" y="-114.69265367316342"/>
         </scene>
-        <!--Item 2-->
+        <!--Menu-->
         <scene sceneID="2vp-yH-iqd">
             <objects>
                 <viewController id="ZWf-OR-zh1" sceneMemberID="viewController">
@@ -36,13 +36,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rVU-Te-CvR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="bz8-vh-vae"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menu" id="bz8-vh-vae"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDD-0r-qwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="219.94002998500753"/>
+            <point key="canvasLocation" x="764" y="-115"/>
         </scene>
-        <!--Item 1-->
+        <!--Me-->
+        <scene sceneID="3mI-EV-5Wa">
+            <objects>
+                <viewController id="5nP-8C-Fxr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="45v-gP-zWQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aBY-y9-9hs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="me" id="7MB-YU-CtY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yqe-zd-BhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="595"/>
+        </scene>
+        <!--Orders-->
         <scene sceneID="1Zi-OR-zjf">
             <objects>
                 <viewController id="1tp-NB-er2" sceneMemberID="viewController">
@@ -52,11 +68,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3oy-wv-Rsa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="4V1-Dv-XEF"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="order" id="4V1-Dv-XEF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqY-hL-Khi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="-445.72713643178412"/>
+            <point key="canvasLocation" x="764" y="-805"/>
         </scene>
         <!--MainTabBar-->
         <scene sceneID="JNT-gn-rTi">
@@ -70,6 +86,7 @@
                     <connections>
                         <segue destination="1tp-NB-er2" kind="relationship" relationship="viewControllers" id="On4-Tk-qsm"/>
                         <segue destination="ZWf-OR-zh1" kind="relationship" relationship="viewControllers" id="7RP-R1-yn8"/>
+                        <segue destination="5nP-8C-Fxr" kind="relationship" relationship="viewControllers" id="xT4-S9-zjw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-vd-sJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,4 +112,9 @@
             <point key="canvasLocation" x="-772" y="-825"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="me" width="20" height="20"/>
+        <image name="menu" width="20" height="20"/>
+        <image name="order" width="20" height="20"/>
+    </resources>
 </document>
