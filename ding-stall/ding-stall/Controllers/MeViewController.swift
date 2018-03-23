@@ -17,6 +17,8 @@ import UIKit
 class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
+    /// Used to handle all logics related to Firebase Auth.
+    private let authorizer = Authorizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,20 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.isDangerous = info.isDangerous
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let info = SettingMenuInfo(rawValue: indexPath.row) else {
+            return
+        }
+
+        switch info {
+        case .logout:
+            authorizer.signOut()
+            navigationController?.popViewController(animated: true)
+        default:
+            print(info)
+        }
     }
 }
 

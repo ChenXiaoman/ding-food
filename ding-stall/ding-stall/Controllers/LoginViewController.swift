@@ -17,8 +17,11 @@ import FirebaseAuthUI
  - Date: March 2018
  */
 class LoginViewController: UIViewController {
+    /// Used to handle all logics related to Firebase Auth.
+    fileprivate let authorizer = Authorizer()
+
     override func viewDidAppear(_ animated: Bool) {
-        guard Auth.auth().currentUser != nil else {
+        guard authorizer.didLogin else {
             loadLoginView(animated)
             return
         }
@@ -55,7 +58,7 @@ extension LoginViewController: FUIAuthDelegate {
         }
 
         if !user.isEmailVerified {
-            user.sendEmailVerification(completion: nil)
+            authorizer.verifyEmail()
         }
         loadTabBarView(true)
     }
