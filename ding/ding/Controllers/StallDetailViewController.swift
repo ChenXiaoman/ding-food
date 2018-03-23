@@ -9,14 +9,16 @@
 import UIKit
 
 class StallDetailViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet var foodTableaView: UITableView!
+    @IBOutlet private var foodTableaView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Fake data
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return foodTableaView.dequeueReusableCell(withIdentifier: FoodTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        return foodTableaView.dequeueReusableCell(withIdentifier:
+            FoodTableViewCell.tableViewIdentifier) ?? UITableViewCell()
     }
     
 }

@@ -22,11 +22,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Fake data
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return searchTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        return searchTableView.dequeueReusableCell(withIdentifier:
+            SearchTableViewCell.tableViewIdentifier) ?? UITableViewCell()
     }
     
 }

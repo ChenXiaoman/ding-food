@@ -11,25 +11,18 @@ import UIKit
 class OrderTableViewController: UIViewController, UITableViewDataSource {
     @IBOutlet private var orderTableView: UITableView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        // Show navigation bar
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Fake data
         return 2
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        // Fake data
         return 3
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // Fake data
         switch section {
         case 0:
             return "Biz canteen"
@@ -40,10 +33,11 @@ class OrderTableViewController: UIViewController, UITableViewDataSource {
         default:
             return "Unknown"
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return orderTableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        // Empty cell, need to add data inside later
+        return orderTableView.dequeueReusableCell(withIdentifier:
+            OrderTableViewCell.tableViewIdentifier) ?? UITableViewCell()
     }
 }
