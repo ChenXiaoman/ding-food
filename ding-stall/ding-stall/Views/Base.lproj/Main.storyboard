@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GillSans.ttc">
+            <string>GillSans</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -106,6 +111,55 @@
             </objects>
             <point key="canvasLocation" x="764" y="594.15292353823088"/>
         </scene>
+        <!--AbutViewController-->
+        <scene sceneID="jeh-wN-wvB">
+            <objects>
+                <viewController storyboardIdentifier="aboutViewController" id="f2w-p7-eeZ" userLabel="AbutViewController" customClass="AboutViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iNb-Xa-8cj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand-logo" translatesAutoresizingMaskIntoConstraints="NO" id="8IS-mF-ss8" userLabel="Logo">
+                                <rect key="frame" x="137" y="193.5" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Built with Enthusiasm in CS3217" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMg-Lp-Pig">
+                                <rect key="frame" x="76" y="298.5" width="223.5" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ding! © 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUn-64-Nls">
+                                <rect key="frame" x="141" y="328.5" width="93" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rUn-64-Nls" firstAttribute="centerX" secondItem="Lzm-dY-SFY" secondAttribute="centerX" id="7Ef-ye-gsK"/>
+                            <constraint firstItem="8IS-mF-ss8" firstAttribute="centerX" secondItem="Lzm-dY-SFY" secondAttribute="centerX" id="LHG-Du-iYa"/>
+                            <constraint firstItem="8IS-mF-ss8" firstAttribute="centerY" secondItem="Lzm-dY-SFY" secondAttribute="centerY" constant="-100" id="Ldf-0d-fdB"/>
+                            <constraint firstItem="AMg-Lp-Pig" firstAttribute="top" secondItem="8IS-mF-ss8" secondAttribute="bottom" constant="5" id="VZA-mM-vK4"/>
+                            <constraint firstItem="AMg-Lp-Pig" firstAttribute="centerX" secondItem="8IS-mF-ss8" secondAttribute="centerX" id="aWM-NV-usk"/>
+                            <constraint firstItem="rUn-64-Nls" firstAttribute="top" secondItem="AMg-Lp-Pig" secondAttribute="bottom" constant="10" id="jRu-Yp-jQj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lzm-dY-SFY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="GwE-QQ-Kyh" appends="YES" id="ySi-EC-Enj"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3h-Tm-JoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" id="GwE-QQ-Kyh">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="f2w-p7-eeZ" id="Dqi-qz-wVx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1488.8" y="593.25337331334333"/>
+        </scene>
         <!--Orders-->
         <scene sceneID="1Zi-OR-zjf">
             <objects>
@@ -162,6 +216,7 @@
     </scenes>
     <resources>
         <image name="avatar" width="90" height="90"/>
+        <image name="brand-logo" width="100" height="100"/>
         <image name="me" width="20" height="20"/>
         <image name="menu" width="20" height="20"/>
         <image name="order" width="20" height="20"/>

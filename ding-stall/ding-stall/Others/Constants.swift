@@ -17,6 +17,9 @@ import UIKit
 class Constants {
     /// The identifier for main tab bar controller.
     static let tabBarControllerId = "mainTabBar"
+    /// The identifier for about view controller.
+    static let aboutControllerId = "aboutViewController"
+
     /// The width of the current device's screen.
     static let screenWidth = UIScreen.main.bounds.width
     /// The height of the current device's screen.
