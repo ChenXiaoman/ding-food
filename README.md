@@ -7,7 +7,7 @@
 ```bash
 git clone git@github.com:cs3217/2018-final-project-group03.git
 ```
-2. Notice that there are two Xcode workspaces within this repository, located in the folder `ding` and `ding-stall` respectively.
+2. Notice that there are two Xcode workspaces within this repository, located in the folder `ding` and `ding-stall` respectively. In addition, there is a folder `ding-base`, which is used to act as the base library (i.e., a CocoaPod) for this project. 
 3. Make sure you have installed [CocoaPods](https://cocoapods.org) on your computer.
 4. Now close all Xcode windows which have been opened.
 5. Install dependencies for the `ding` workspace.
