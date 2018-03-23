@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,7 +46,7 @@
         <!--MeViewController-->
         <scene sceneID="3mI-EV-5Wa">
             <objects>
-                <viewController id="5nP-8C-Fxr" userLabel="MeViewController" sceneMemberID="viewController">
+                <viewController id="5nP-8C-Fxr" userLabel="MeViewController" customClass="MeViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="45v-gP-zWQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,74 +54,53 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="61C-Yy-04e" userLabel="Avatar">
                                 <rect key="frame" x="142.5" y="55" width="90" height="90"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U73-N1-rw8" userLabel="MeSettingsMenu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eXO-2k-Jaf" userLabel="MeSettingMenu">
                                 <rect key="frame" x="0.0" y="180" width="375" height="438"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92q-DK-yVW" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="Order History">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-NT-RNA" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="31" width="375" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="Settings">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-2X-oR0" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="62" width="375" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="About">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc7-sF-by7" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="93" width="375" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="Log Out">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDanger" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="kc7-sF-by7" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="2VZ-jp-10K"/>
-                                    <constraint firstItem="vG7-2X-oR0" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="39s-IG-0pg"/>
-                                    <constraint firstItem="ZTL-NT-RNA" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="7MQ-ch-cPy"/>
-                                    <constraint firstItem="92q-DK-yVW" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="A2J-7M-KP2"/>
-                                    <constraint firstItem="92q-DK-yVW" firstAttribute="top" secondItem="U73-N1-rw8" secondAttribute="top" id="HdF-Vb-OwE"/>
-                                    <constraint firstItem="ZTL-NT-RNA" firstAttribute="top" secondItem="92q-DK-yVW" secondAttribute="bottom" id="NtF-M5-8K3"/>
-                                    <constraint firstItem="92q-DK-yVW" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="X6w-fu-k0n"/>
-                                    <constraint firstItem="kc7-sF-by7" firstAttribute="top" secondItem="vG7-2X-oR0" secondAttribute="bottom" id="auT-Pz-u4M"/>
-                                    <constraint firstItem="ZTL-NT-RNA" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="io6-Op-ghv"/>
-                                    <constraint firstItem="vG7-2X-oR0" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="kYY-4H-5RX"/>
-                                    <constraint firstItem="kc7-sF-by7" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="krH-sh-lgO"/>
-                                    <constraint firstItem="vG7-2X-oR0" firstAttribute="top" secondItem="ZTL-NT-RNA" secondAttribute="bottom" id="v1h-x2-V0P"/>
-                                </constraints>
-                            </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meSettingMenuCell" rowHeight="61" id="1cS-iR-Ka1" userLabel="MeSettingMenuCell" customClass="MeSettingMenuCell" customModule="ding_stall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cS-iR-Ka1" id="Fdn-mG-lJF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbC-VI-L2n" userLabel="Name">
+                                                    <rect key="frame" x="15" y="11" width="345" height="39"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RbC-VI-L2n" firstAttribute="leading" secondItem="Fdn-mG-lJF" secondAttribute="leadingMargin" id="BBo-Ja-pof"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="RbC-VI-L2n" secondAttribute="trailing" id="Yjy-Oi-ncu"/>
+                                                <constraint firstItem="RbC-VI-L2n" firstAttribute="top" secondItem="Fdn-mG-lJF" secondAttribute="topMargin" id="kQI-aq-kVC"/>
+                                                <constraint firstItem="RbC-VI-L2n" firstAttribute="bottom" secondItem="Fdn-mG-lJF" secondAttribute="bottomMargin" id="rIx-1C-wxK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="RbC-VI-L2n" id="G76-nz-k27"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="U73-N1-rw8" firstAttribute="bottom" secondItem="aBY-y9-9hs" secondAttribute="bottom" id="4jk-nd-vqZ"/>
-                            <constraint firstItem="U73-N1-rw8" firstAttribute="trailing" secondItem="aBY-y9-9hs" secondAttribute="trailing" id="4yf-8H-Zoi"/>
-                            <constraint firstItem="U73-N1-rw8" firstAttribute="top" secondItem="61C-Yy-04e" secondAttribute="bottom" constant="35" id="cka-Oa-VcP"/>
+                            <constraint firstItem="eXO-2k-Jaf" firstAttribute="bottom" secondItem="aBY-y9-9hs" secondAttribute="bottom" id="2V1-c8-jHS"/>
+                            <constraint firstItem="eXO-2k-Jaf" firstAttribute="trailing" secondItem="aBY-y9-9hs" secondAttribute="trailing" id="5p8-Rw-Qez"/>
+                            <constraint firstItem="eXO-2k-Jaf" firstAttribute="leading" secondItem="aBY-y9-9hs" secondAttribute="leading" id="aVp-tR-deH"/>
                             <constraint firstItem="61C-Yy-04e" firstAttribute="top" secondItem="aBY-y9-9hs" secondAttribute="top" constant="35" id="eOR-pb-up6"/>
                             <constraint firstItem="61C-Yy-04e" firstAttribute="centerX" secondItem="aBY-y9-9hs" secondAttribute="centerX" id="ezv-UI-7UF"/>
-                            <constraint firstItem="U73-N1-rw8" firstAttribute="leading" secondItem="aBY-y9-9hs" secondAttribute="leading" id="htR-IM-NVT"/>
+                            <constraint firstItem="eXO-2k-Jaf" firstAttribute="top" secondItem="61C-Yy-04e" secondAttribute="bottom" constant="35" id="zBt-0y-GZU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aBY-y9-9hs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="me" id="7MB-YU-CtY"/>
+                    <connections>
+                        <outlet property="settingMenu" destination="eXO-2k-Jaf" id="P4C-wO-5Ve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqe-zd-BhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
