@@ -55,7 +55,58 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U73-N1-rw8" userLabel="MeSettingsMenu">
                                 <rect key="frame" x="0.0" y="180" width="375" height="438"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92q-DK-yVW" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" title="Order History">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-NT-RNA" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="31" width="375" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" title="Settings">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-2X-oR0" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="62" width="375" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc7-sF-by7" customClass="SettingMenuCell" customModule="ding_stall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="93" width="375" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDanger" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kc7-sF-by7" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="2VZ-jp-10K"/>
+                                    <constraint firstItem="vG7-2X-oR0" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="39s-IG-0pg"/>
+                                    <constraint firstItem="ZTL-NT-RNA" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="7MQ-ch-cPy"/>
+                                    <constraint firstItem="92q-DK-yVW" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="A2J-7M-KP2"/>
+                                    <constraint firstItem="92q-DK-yVW" firstAttribute="top" secondItem="U73-N1-rw8" secondAttribute="top" id="HdF-Vb-OwE"/>
+                                    <constraint firstItem="ZTL-NT-RNA" firstAttribute="top" secondItem="92q-DK-yVW" secondAttribute="bottom" id="NtF-M5-8K3"/>
+                                    <constraint firstItem="92q-DK-yVW" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="X6w-fu-k0n"/>
+                                    <constraint firstItem="kc7-sF-by7" firstAttribute="top" secondItem="vG7-2X-oR0" secondAttribute="bottom" id="auT-Pz-u4M"/>
+                                    <constraint firstItem="ZTL-NT-RNA" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="io6-Op-ghv"/>
+                                    <constraint firstItem="vG7-2X-oR0" firstAttribute="trailing" secondItem="U73-N1-rw8" secondAttribute="trailing" id="kYY-4H-5RX"/>
+                                    <constraint firstItem="kc7-sF-by7" firstAttribute="leading" secondItem="U73-N1-rw8" secondAttribute="leading" id="krH-sh-lgO"/>
+                                    <constraint firstItem="vG7-2X-oR0" firstAttribute="top" secondItem="ZTL-NT-RNA" secondAttribute="bottom" id="v1h-x2-V0P"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
