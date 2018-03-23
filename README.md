@@ -37,12 +37,12 @@ git push origin <new_branch_name>
 git branch --set-upstream-to=origin/<new_branch_name> <new_branch_name>
 ```
 4. Since we encourage you to always use a new branch each time, the branch should be deleted (using GitHub interface) after the PR is merged or declined. Don't woory, GitHub uses _soft delete_, we can restore the branch later.
+5. To avoid some merge conflicts and due to many other factors, we ignore the `Pods/` folder.
 
 ## Setup Global `gitignore`
 
-1. To avoid committing OS-specific files into the remote repository, you should setup the global `gitignore` file on your computer:
+To avoid committing OS-specific files into the remote repository, you should setup the global `gitignore` file on your computer:
 ```bash
 echo .DS_Store >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 ```
-2. To avoid some merge conflicts and due to many other factors, we ignore the `Pods/` folder.
