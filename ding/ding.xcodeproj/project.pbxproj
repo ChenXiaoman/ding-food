@@ -18,6 +18,7 @@
 		5DC2343F2063B8EB008B034A /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343E2063B8EB008B034A /* OrderTableViewController.swift */; };
 		5DC234412063B913008B034A /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234402063B913008B034A /* OrderTableViewCell.swift */; };
 		5DC234432064026D008B034A /* StallDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234422064026D008B034A /* StallDetailViewController.swift */; };
+		5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234462064CF08008B034A /* FoodTableViewCell.swift */; };
 		5DF03D68205D57D5003D320C /* String+Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF03D67205D57D5003D320C /* String+Contain.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		B2464E86205C4F160095A925 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E85205C4F160095A925 /* Stall.swift */; };
@@ -49,6 +50,7 @@
 		5DC2343E2063B8EB008B034A /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		5DC234402063B913008B034A /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		5DC234422064026D008B034A /* StallDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallDetailViewController.swift; sourceTree = "<group>"; };
+		5DC234462064CF08008B034A /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		5DF03D67205D57D5003D320C /* String+Contain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Contain.swift"; sourceTree = "<group>"; };
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				5DC2343C2063A02A008B034A /* SearchTableViewCell.swift */,
 				5DC234402063B913008B034A /* OrderTableViewCell.swift */,
+				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
 				5DC2343F2063B8EB008B034A /* OrderTableViewController.swift in Sources */,
 				B2464E8B205C51A30095A925 /* Food.swift in Sources */,
+				5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */,
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
 				5DC2343D2063A02A008B034A /* SearchTableViewCell.swift in Sources */,
 				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,

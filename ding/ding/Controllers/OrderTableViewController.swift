@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OrderTableViewController: UIViewController, UITableViewDataSource {
     @IBOutlet private var orderTableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,7 +22,25 @@ class OrderTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Biz canteen"
+        case 1:
+            return "Com canteen"
+        case 2:
+            return "Deck"
+        default:
+            return "Unknown"
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
