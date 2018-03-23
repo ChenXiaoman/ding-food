@@ -42,21 +42,38 @@
             </objects>
             <point key="canvasLocation" x="764" y="-115"/>
         </scene>
-        <!--Me-->
+        <!--MeViewController-->
         <scene sceneID="3mI-EV-5Wa">
             <objects>
-                <viewController id="5nP-8C-Fxr" sceneMemberID="viewController">
+                <viewController id="5nP-8C-Fxr" userLabel="MeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="45v-gP-zWQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="61C-Yy-04e" userLabel="Avatar">
+                                <rect key="frame" x="142.5" y="55" width="90" height="90"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U73-N1-rw8" userLabel="MeSettingsMenu">
+                                <rect key="frame" x="0.0" y="180" width="375" height="438"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U73-N1-rw8" firstAttribute="bottom" secondItem="aBY-y9-9hs" secondAttribute="bottom" id="4jk-nd-vqZ"/>
+                            <constraint firstItem="U73-N1-rw8" firstAttribute="trailing" secondItem="aBY-y9-9hs" secondAttribute="trailing" id="4yf-8H-Zoi"/>
+                            <constraint firstItem="U73-N1-rw8" firstAttribute="top" secondItem="61C-Yy-04e" secondAttribute="bottom" constant="35" id="cka-Oa-VcP"/>
+                            <constraint firstItem="61C-Yy-04e" firstAttribute="top" secondItem="aBY-y9-9hs" secondAttribute="top" constant="35" id="eOR-pb-up6"/>
+                            <constraint firstItem="61C-Yy-04e" firstAttribute="centerX" secondItem="aBY-y9-9hs" secondAttribute="centerX" id="ezv-UI-7UF"/>
+                            <constraint firstItem="U73-N1-rw8" firstAttribute="leading" secondItem="aBY-y9-9hs" secondAttribute="leading" id="htR-IM-NVT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aBY-y9-9hs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="me" id="7MB-YU-CtY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqe-zd-BhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="595"/>
+            <point key="canvasLocation" x="764" y="594.15292353823088"/>
         </scene>
         <!--Orders-->
         <scene sceneID="1Zi-OR-zjf">
@@ -113,6 +130,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar" width="90" height="90"/>
         <image name="me" width="20" height="20"/>
         <image name="menu" width="20" height="20"/>
         <image name="order" width="20" height="20"/>
