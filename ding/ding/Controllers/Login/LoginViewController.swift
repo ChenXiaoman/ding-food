@@ -17,5 +17,9 @@ import UIKit
  - Date: March 2018
  */
 class LoginViewController: UIViewController {
-    
+    /// Handles the logic after login button is pressed.
+    /// - Parameter sender: The button being pressed.
+    @IBAction func loginButtonPressed(_ sender: MenuButton) {
+        
+    }
 }
