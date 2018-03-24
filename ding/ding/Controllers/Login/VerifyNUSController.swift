@@ -17,96 +17,91 @@ import WebKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class VerifyNUSNetController: UIViewController {
+class VerifyNUSController: UIViewController {
     /// The web view to display webpage.
     @IBOutlet private var webView: WKWebView!
 
     /// A token used to retrieve data from IVLE API schema, which will be provided
     /// after the user has signed in successfully.
-    private var token: String?
-
+    var token: String?
+    /// The user's real name, retrieved from IVLE API.
     var name: String?
+    /// The user's NUS email address, retrieved from IVLE API.
     var email: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
-        loadPage(with: URLs.ivleLoginURL)
+        webView.load(with: URLs.ivleLoginURL)
+    }
+}
+
+/**
+ Extension for `VerifyNUSController` so as to work as the navigation delegate for the
+ web view object.
+ */
+extension VerifyNUSController: WKNavigationDelegate {
+    /// Get user's information when a page is loaded
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Only fetch user info
+        guard let resultUrl = webView.url?.absoluteString, resultUrl != URLs.ivleLoginURL else {
+            return
+        }
+
+        // When log in is complete, we can hide the web page to perform fetching user info
+        webView.isHidden = true
+        getInfoFrom(webView: webView, url: resultUrl)
     }
 
-    /// Loads a certain webpage according to a given URL in the webview object.
-    /// - Parameter url: The URL of the desired webpage.
-    private func loadPage(with url: String) {
-        guard let url = URL(string: url) else {
-            fatalError("An invalid URL is provided.")
-        }
-        webView.load(URLRequest(url: url))
-    }
-    
     /// Get the information displayed in the webpage
     private func getInfoFrom(webView: WKWebView, url: String) {
         webView.evaluateJavaScript("document.documentElement.outerHTML.toString()",
                                    completionHandler: { (html: Any?, _: Error?) in
-            guard let html = html as? String else {
-                print("fail to get html string")
-                return
-            }
-            let textInHtml = self.getTextFromHtml(html)
-            switch WebPageInfoType.infoTypeOf(webPageUrl: url) {
-            case .token:
-                self.token = textInHtml
-                self.loadUserNameFromToken()
-            case .name:
-                self.name = self.getUserNameFromText(textInHtml)
-                self.loadEmailFromToken()
-            case .email:
-                self.email = self.getUserEmailFromText(textInHtml)
-            }
+                                    guard let html = html as? String else {
+                                        print("fail to get html string")
+                                        return
+                                    }
+                                    let textInHtml = self.getTextFromHtml(html)
+
+                                    switch WebPageInfoType.infoTypeOf(webPageUrl: url) {
+                                    case .token:
+                                        self.token = textInHtml
+                                        self.loadUserNameFromToken()
+                                    case .name:
+                                        self.name = self.getUserNameFromText(textInHtml)
+                                        self.loadEmailFromToken()
+                                    case .email:
+                                        self.email = self.getUserEmailFromText(textInHtml)
+                                    }
         })
-        
+
     }
 
     /// Get the text between "<body>" and "</body>" in html file
     private func getTextFromHtml(_ html: String) -> String {
         return html.getTextBetween(prefix: "<body>", suffix: "</body>")
     }
-    
+
     private func getUserNameFromText(_ text: String) -> String {
         return text.getTextBetween(prefix: ">\"", suffix: "\"<")
     }
-    
+
     private func getUserEmailFromText(_ text: String) -> String {
         return text.getTextBetween(prefix: "0\">", suffix: "</a>")
     }
-    
+
     private func loadUserNameFromToken() {
         guard let token = self.token else {
             return
         }
-        loadPage(with: URLs.queryNameURL(token: token))
+        webView.load(with: URLs.queryNameURL(token: token))
     }
-    
+
     private func loadEmailFromToken() {
         guard let token = self.token else {
             return
         }
-        loadPage(with: URLs.queryEmailURL(token: token))
-    }
-    
-}
-
-extension VerifyNUSNetController: WKNavigationDelegate {
-    /// Get user's information when a page is loaded
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // Only fetch user info
-        guard let resultUrl = webView.url?.absoluteString, resultUrl != URLs.ivleLoginURL else {
-                return
-        }
-
-        // When log in is complete, we can hide the web page to perform fetching user info
-        webView.isHidden = true
-        getInfoFrom(webView: webView, url: resultUrl)
-
+        webView.load(with: URLs.queryEmailURL(token: token))
     }
 }
 
@@ -114,7 +109,7 @@ private enum WebPageInfoType {
     case token
     case name
     case email
-    
+
     static func infoTypeOf(webPageUrl: String) -> WebPageInfoType {
         if webPageUrl.contains(subString: "UserName_Get") {
             return .name

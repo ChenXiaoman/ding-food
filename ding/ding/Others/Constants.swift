@@ -15,6 +15,11 @@ import UIKit
  - Date: March 2018
  */
 struct Constants {
+    /// The identifier for `VerifyNUSController` scene.
+    static let verifyNUSControllerId = "verifyNUSController"
+    /// The identifier for the main tab bar.
+    static let mainTabBarId = "mainTabBarController"
+
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.15)
     /// The border width for menu buttons

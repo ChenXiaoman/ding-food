@@ -17,9 +17,19 @@ import UIKit
  - Date: March 2018
  */
 class LoginViewController: UIViewController {
-    /// Handles the logic after login button is pressed.
-    /// - Parameter sender: The button being pressed.
-    @IBAction func loginButtonPressed(_ sender: MenuButton) {
-        
+    /// Used to handle all logics related to Firebase Auth.
+    private let authorizer = Authorizer()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        /// Navigates to the main tab bar view directly if user has logged in.
+        if authorizer.didLogin {
+            let id = Constants.mainTabBarId
+            guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
+                return
+            }
+            navigationController?.pushViewController(controller, animated: animated)
+        }
     }
 }

@@ -29,7 +29,8 @@
 		B2464E8E205C52010095A925 /* FoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E8D205C52010095A925 /* FoodType.swift */; };
 		F200DDE1205E51F500F33748 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE0205E51F500F33748 /* UserViewController.swift */; };
 		F200DDE3205E520F00F33748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F200DDE2205E520F00F33748 /* Assets.xcassets */; };
-		F200DDE5205E537100F33748 /* VerifyNUSNetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSNetController.swift */; };
+		F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSController.swift */; };
+		F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
 		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
@@ -67,7 +68,8 @@
 		B2464E8D205C52010095A925 /* FoodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodType.swift; sourceTree = "<group>"; };
 		F200DDE0205E51F500F33748 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		F200DDE2205E520F00F33748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F200DDE4205E537100F33748 /* VerifyNUSNetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSNetController.swift; sourceTree = "<group>"; };
+		F200DDE4205E537100F33748 /* VerifyNUSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSController.swift; sourceTree = "<group>"; };
+		F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				F2C65C6A2065FAD100E40425 /* MenuButton.swift */,
 				5DC234402063B913008B034A /* OrderTableViewCell.swift */,
 				5DC2343C2063A02A008B034A /* SearchTableViewCell.swift */,
+				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C65C70206601CF00E40425 /* LoginViewController.swift */,
-				F200DDE4205E537100F33748 /* VerifyNUSNetController.swift */,
+				F200DDE4205E537100F33748 /* VerifyNUSController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -390,12 +393,13 @@
 				B2464E86205C4F160095A925 /* Stall.swift in Sources */,
 				327A03C5205DFC85004B78EB /* User.swift in Sources */,
 				5DC2344D20653686008B034A /* MeViewController.swift in Sources */,
-				F200DDE5205E537100F33748 /* VerifyNUSNetController.swift in Sources */,
+				F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */,
 				327A03C8205E161C004B78EB /* OrderStatus.swift in Sources */,
 				327A03CA205E1663004B78EB /* ReviewRating.swift in Sources */,
 				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
 				327A03C1205DFC85004B78EB /* Protocols.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* Storage.swift in Sources */,
+				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
