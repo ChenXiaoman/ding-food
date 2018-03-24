@@ -24,9 +24,6 @@
                                 <rect key="frame" x="170" y="466" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="login"/>
-                                <connections>
-                                    <segue destination="AQZ-tB-GjJ" kind="show" id="l4T-vz-2bo"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXB-oM-sTR">
                                 <rect key="frame" x="187" y="333" width="0.0" height="21"/>
@@ -77,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-367" y="160"/>
+            <point key="canvasLocation" x="-175" y="-527"/>
         </scene>
         <!--Order Table View Controller-->
         <scene sceneID="TTT-6I-4u1">
@@ -421,10 +418,10 @@
             </objects>
             <point key="canvasLocation" x="4231" y="-290"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="nWW-wM-74I">
             <objects>
-                <viewController id="G4f-K5-k7w" sceneMemberID="viewController">
+                <viewController id="G4f-K5-k7w" userLabel="LoginViewController" customClass="LoginViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jza-2g-c08">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -443,9 +440,6 @@
                                 <state key="normal" title="Login via NUSNET">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="wfa-qh-zFR"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gM-u8-bvD" userLabel="Browse" customClass="MenuButton" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="92" y="383.5" width="190" height="55"/>
@@ -458,6 +452,9 @@
                                 <state key="normal" title="Browse first">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AQZ-tB-GjJ" kind="show" id="deY-ls-n4f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -477,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zol-8a-Q5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346.4000000000001" y="159.67016491754123"/>
+            <point key="canvasLocation" x="-174" y="160"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y0Y-UC-mI3">

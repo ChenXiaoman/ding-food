@@ -14,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class Constants {
+struct Constants {
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.15)
     /// The border width for menu buttons

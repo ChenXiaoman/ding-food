@@ -14,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class Constants {
+struct Constants {
     /// The identifier for main tab bar controller.
     static let tabBarControllerId = "mainTabBar"
     /// The identifier for about view controller.
