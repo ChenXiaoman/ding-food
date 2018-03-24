@@ -20,6 +20,8 @@ import WebKit
 class VerifyNUSController: UIViewController {
     /// The web view to display webpage.
     @IBOutlet private var webView: WKWebView!
+    /// The delegate for `LoginViewController`.
+    weak var parentController: PasswordSignUpControllerDelegate?
 
     /// A token used to retrieve data from IVLE API schema, which will be provided
     /// after the user has signed in successfully.
@@ -28,6 +30,10 @@ class VerifyNUSController: UIViewController {
     var name: String?
     /// The user's NUS email address, retrieved from IVLE API.
     var email: String?
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,62 +47,47 @@ class VerifyNUSController: UIViewController {
  web view object.
  */
 extension VerifyNUSController: WKNavigationDelegate {
-    /// Get user's information when a page is loaded
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // Only fetch user info
+        // Nothing to do for the login page.
         guard let resultUrl = webView.url?.absoluteString, resultUrl != URLs.ivleLoginURL else {
             return
         }
 
-        // When log in is complete, we can hide the web page to perform fetching user info
+        // When log in is complete, we can hide the web page to perform fetching user info.
         webView.isHidden = true
-        getInfoFrom(webView: webView, url: resultUrl)
-    }
-
-    /// Get the information displayed in the webpage
-    private func getInfoFrom(webView: WKWebView, url: String) {
         webView.evaluateHTMLBody { body in
-            switch WebPageInfoType.infoTypeOf(webPageUrl: url) {
+            // Retrieves information based on the URL.
+            switch WebPageInfoType.infoTypeOf(webPageUrl: resultUrl) {
             case .token:
                 self.token = body
-                self.loadUserNameFromToken()
+                webView.load(with: URLs.queryNameURL(token: body))
             case .name:
-                self.name = self.getUserNameFromText(body)
-                self.loadEmailFromToken()
+                self.name = self.retrieveName(from: body)
+                if let token = self.token {
+                    webView.load(with: URLs.queryEmailURL(token: token))
+                }
             case .email:
-                self.email = self.getUserEmailFromText(body)
+                self.email = self.retrieveEmail(from: body)
+                if let name = self.name, let email = self.email {
+                    self.parentController?.receiveCredentialsFromNUS(name: name, email: email)
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }
 
-    /// Get the text between "<body>" and "</body>" in html file
-    private func getTextFromHtml(_ html: String) -> String {
-        return html.getTextBetween(prefix: "<body>", suffix: "</body>")
+    private func retrieveName(from body: String) -> String {
+        return body.getTextBetween(prefix: ">\"", suffix: "\"<")
     }
 
-    private func getUserNameFromText(_ text: String) -> String {
-        return text.getTextBetween(prefix: ">\"", suffix: "\"<")
-    }
-
-    private func getUserEmailFromText(_ text: String) -> String {
-        return text.getTextBetween(prefix: "0\">", suffix: "</a>")
-    }
-
-    private func loadUserNameFromToken() {
-        guard let token = self.token else {
-            return
-        }
-        webView.load(with: URLs.queryNameURL(token: token))
-    }
-
-    private func loadEmailFromToken() {
-        guard let token = self.token else {
-            return
-        }
-        webView.load(with: URLs.queryEmailURL(token: token))
+    private func retrieveEmail(from body: String) -> String {
+        return body.getTextBetween(prefix: "0\">", suffix: "</a>")
     }
 }
 
+/**
+ An enum defining the type of the webpage.
+ */
 private enum WebPageInfoType {
     case token
     case name

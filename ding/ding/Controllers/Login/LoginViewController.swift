@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
+import FirebaseAuthUI
 
 /**
  The primary controller for all functionalities related to user login. This
@@ -22,14 +22,40 @@ class LoginViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
 
-        /// Navigates to the main tab bar view directly if user has logged in.
+        // Navigates to the main tab bar view directly if user has logged in.
         if authorizer.didLogin {
-            let id = Constants.mainTabBarId
-            guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
-                return
-            }
-            navigationController?.pushViewController(controller, animated: animated)
+            loadMainTabBarView()
         }
+    }
+
+    /// Handles the action when the login button is pressed.
+    /// - Parameter sender: The button being pressed.
+    @IBAction func loginButtonPressed(_ sender: MenuButton) {
+        if let authUI = FUIAuth.defaultAuthUI() {
+            authUI.delegate = self
+            present(authUI.authViewController(), animated: true)
+        }
+    }
+
+    /// Loads the main tab bar view by pushing it into the stack of navigation controller.
+    private func loadMainTabBarView() {
+        let id = Constants.mainTabBarId
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
+            return
+        }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+/**
+ Extension for `LoginViewController` to act as the delegate for `FirebaseAuthUI`.
+ */
+extension LoginViewController: FUIAuthDelegate {
+    func passwordSignUpViewController(forAuthUI authUI: FUIAuth, email: String) -> FUIPasswordSignUpViewController {
+        let controller = PasswordSignUpController(authUI: authUI, email: email)
+        controller.mainStoryboard = storyboard
+        return controller
     }
 }
