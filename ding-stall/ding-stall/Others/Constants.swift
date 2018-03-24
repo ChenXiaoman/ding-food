@@ -19,6 +19,8 @@ class Constants {
     static let tabBarControllerId = "mainTabBar"
     /// The identifier for about view controller.
     static let aboutControllerId = "aboutViewController"
+    /// The identifier for profile view controller.
+    static let profileControllerId = "profileViewController"
 
     /// The width of the current device's screen.
     static let screenWidth = UIScreen.main.bounds.width
