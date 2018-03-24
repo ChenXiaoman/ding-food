@@ -7,7 +7,7 @@
 ```bash
 git clone git@github.com:cs3217/2018-final-project-group03.git
 ```
-2. Notice that there are two Xcode workspaces within this repository, located in the folder `ding` and `ding-stall` respectively.
+2. Notice that there are two Xcode workspaces within this repository, located in the folder `ding` and `ding-stall` respectively. In addition, there is a folder `ding-base`, which is used to act as the base library (i.e., a CocoaPod) for this project.
 3. Make sure you have installed [CocoaPods](https://cocoapods.org) on your computer.
 4. Now close all Xcode windows which have been opened.
 5. Install dependencies for the `ding` workspace.
@@ -36,6 +36,8 @@ git checkout <new_branch_name>
 git push origin <new_branch_name>
 git branch --set-upstream-to=origin/<new_branch_name> <new_branch_name>
 ```
+4. Since we encourage you to always use a new branch each time, the branch should be deleted (using GitHub interface) after the PR is merged or declined. Don't woory, GitHub uses _soft delete_, we can restore the branch later.
+5. To avoid some merge conflicts and due to many other factors, we ignore the `Pods/` folder.
 
 ## Setup Global `gitignore`
 
