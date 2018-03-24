@@ -462,7 +462,7 @@
                     <connections>
                         <segue destination="br5-Ee-dFY" kind="relationship" relationship="viewControllers" id="i9D-Ej-171"/>
                         <segue destination="7hI-07-iLQ" kind="relationship" relationship="viewControllers" id="Kwc-XZ-mGA"/>
-                        <segue destination="8zl-gA-0VB" kind="relationship" relationship="viewControllers" id="oBg-Gr-lUL"/>
+                        <segue destination="tap-tZ-ZYv" kind="relationship" relationship="viewControllers" id="eEu-2q-4AU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoZ-KH-H8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,47 +515,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itk-S3-F8k">
-                                <rect key="frame" x="136" y="285" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="My past orders"/>
-                                <connections>
-                                    <segue destination="VAa-hn-p6R" kind="show" id="kVK-3G-jir"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmC-t4-VRN">
-                                <rect key="frame" x="159" y="363" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign out"/>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="U6k-ji-F2R" userLabel="Avatar">
+                                <rect key="frame" x="142.5" y="99" width="90" height="90"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfh-YZ-Sj9" userLabel="MeSettingMenu">
+                                <rect key="frame" x="0.0" y="224" width="375" height="394"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meSettingMenuCell" id="JRh-lN-jMm" userLabel="MeSettingMenuCell" customClass="MeSettingMenuCell" customModule="ding" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JRh-lN-jMm" id="VpY-66-Tbt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-l6-29X">
+                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6d5-l6-29X" firstAttribute="trailing" secondItem="VpY-66-Tbt" secondAttribute="trailingMargin" id="1ce-ne-mOE"/>
+                                                <constraint firstItem="6d5-l6-29X" firstAttribute="leading" secondItem="VpY-66-Tbt" secondAttribute="leadingMargin" id="CvK-rm-rPM"/>
+                                                <constraint firstItem="6d5-l6-29X" firstAttribute="bottom" secondItem="VpY-66-Tbt" secondAttribute="bottomMargin" id="h2q-28-kJO"/>
+                                                <constraint firstItem="6d5-l6-29X" firstAttribute="top" secondItem="VpY-66-Tbt" secondAttribute="topMargin" id="rQE-ej-edi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="6d5-l6-29X" id="eDS-tp-p0S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rfh-YZ-Sj9" firstAttribute="bottom" secondItem="iET-KX-Lba" secondAttribute="bottom" id="2T6-Fc-TyZ"/>
+                            <constraint firstItem="U6k-ji-F2R" firstAttribute="centerX" secondItem="iET-KX-Lba" secondAttribute="centerX" id="BPi-xv-sdz"/>
+                            <constraint firstItem="rfh-YZ-Sj9" firstAttribute="top" secondItem="U6k-ji-F2R" secondAttribute="bottom" constant="35" id="Oig-ph-rb6"/>
+                            <constraint firstItem="rfh-YZ-Sj9" firstAttribute="leading" secondItem="iET-KX-Lba" secondAttribute="leading" id="eU8-j7-XZd"/>
+                            <constraint firstItem="U6k-ji-F2R" firstAttribute="top" secondItem="iET-KX-Lba" secondAttribute="top" constant="35" id="ppS-m7-P7v"/>
+                            <constraint firstItem="rfh-YZ-Sj9" firstAttribute="trailing" secondItem="iET-KX-Lba" secondAttribute="trailing" id="th4-Xm-93V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iET-KX-Lba"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="me" id="EZU-4Y-ifO"/>
                     <navigationItem key="navigationItem" id="hlV-kN-oZP"/>
+                    <connections>
+                        <outlet property="settingMenu" destination="rfh-YZ-Sj9" id="nlt-SQ-gCk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECE-mp-zuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="1136"/>
-        </scene>
-        <!--Me-->
-        <scene sceneID="puh-JJ-5uN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8zl-gA-0VB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" image="me" id="UPf-pF-hY5" userLabel="Me"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3me-gZ-RFI">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tap-tZ-ZYv" kind="relationship" relationship="rootViewController" id="FnO-Kd-8rB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ki4-0s-laI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1721.5999999999999" y="1136.1319340329835"/>
+            <point key="canvasLocation" x="1356" y="911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qb4-5P-SLK">
@@ -577,6 +591,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar" width="90" height="90"/>
         <image name="launch-background" width="512" height="512"/>
         <image name="me" width="20" height="20"/>
         <image name="order" width="20" height="20"/>
@@ -584,6 +599,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="B72-aZ-H5y"/>
-        <segue reference="fWu-6V-7HV"/>
     </inferredMetricsTieBreakers>
 </document>

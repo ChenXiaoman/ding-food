@@ -29,4 +29,9 @@ struct Constants {
     static let screenWidth = UIScreen.main.bounds.width
     /// The height of the current device's screen.
     static let screenHeight = UIScreen.main.bounds.height
+
+    /// The identifier for me setting menu cells.
+    static let meSettingCellId = "meSettingMenuCell"
+    /// The height for me setting menu cells.
+    static let meSettingCellHeight = CGFloat(60)
 }
