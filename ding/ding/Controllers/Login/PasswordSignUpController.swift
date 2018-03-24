@@ -57,6 +57,11 @@ class PasswordSignUpController: FUIPasswordSignUpViewController {
 extension PasswordSignUpController: PasswordSignUpControllerDelegate {
     func receiveCredentialsFromNUS(name: String, email: String) {
         hasVerified = true
+        if let emailField = value(forKey: "_emailField") as? UITextField,
+            let nameField = value(forKey: "_nameField") as? UITextField {
+            emailField.text = email
+            nameField.text = name
+        }
     }
 }
 
