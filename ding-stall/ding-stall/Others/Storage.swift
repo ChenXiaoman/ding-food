@@ -29,6 +29,10 @@ class Storage {
         Storage.ref.child(path).observe(.value, with: handler)
     }
 
+    func getAutoId(of path: String) -> String {
+        return Storage.ref.child(path).childByAutoId().key
+    }
+
     /// Stores a certain `FirebaseObject` at a specified path. The node (and its child nodes)
     /// originally at that path will be cleared.
     /// - Parameters:

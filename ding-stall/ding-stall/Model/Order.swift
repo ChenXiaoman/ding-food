@@ -13,6 +13,8 @@ import Foundation
  quantities from the same stall.
  */
 public struct Order: FirebaseObject {
+    public static var path = "/order"
+
     public let id: String
     public var status: OrderStatus = .preparing
     public var remark: String?

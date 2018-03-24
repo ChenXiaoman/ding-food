@@ -15,6 +15,8 @@ public protocol StorageDelegate: class {
 /// Represents an object stored in Firebase database
 public protocol FirebaseObject: Codable, Hashable {
     var id: String { get }
+
+    static var path: String { get }
 }
 
 extension FirebaseObject {
@@ -37,6 +39,11 @@ extension FirebaseObject {
         }
         dict["id"] = nil
         return dict
+    }
+
+    /// Generate an id for a fireBase object
+    public func getAutoId() -> String {
+        return ""
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {

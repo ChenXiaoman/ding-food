@@ -10,6 +10,8 @@
  Represents a registered user in the application.
  */
 public struct User: FirebaseObject {
+    public static var path = "/user"
+
     /// This id is the user's email
     public let id: String
     public var name: String
