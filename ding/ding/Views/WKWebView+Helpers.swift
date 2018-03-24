@@ -21,7 +21,24 @@ extension WKWebView {
         load(URLRequest(url: url))
     }
 
-    func getHTML() {
+    /// Retrieves the body of HTML which is currently displayed on the webview and performs
+    /// actions based on its content. It will simply do nothing if the retrieval is not
+    /// successful.
+    /// - Parameter onComplete: The handler to execute after the HTML has been retrieved.
+    func evaluateHTMLBody(_ onComplete: @escaping (String) -> Void) {
+        evaluateJavaScript("document.documentElement.outerHTML.toString()",
+                           completionHandler: { (html: Any?, _: Error?) in
+            guard let str = html as? String else {
+                return
+            }
+            onComplete(self.getHtmlBody(str))
+        })
+    }
 
+    /// Gets the body part of a complete HTML source code.
+    /// - Parameter html: The string representing the complete HTML code.
+    /// - Returns:
+    private func getHtmlBody(_ html: String) -> String {
+        return html.getTextBetween(prefix: "<body>", suffix: "</body>")
     }
 }

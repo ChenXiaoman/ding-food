@@ -55,26 +55,18 @@ extension VerifyNUSController: WKNavigationDelegate {
 
     /// Get the information displayed in the webpage
     private func getInfoFrom(webView: WKWebView, url: String) {
-        webView.evaluateJavaScript("document.documentElement.outerHTML.toString()",
-                                   completionHandler: { (html: Any?, _: Error?) in
-                                    guard let html = html as? String else {
-                                        print("fail to get html string")
-                                        return
-                                    }
-                                    let textInHtml = self.getTextFromHtml(html)
-
-                                    switch WebPageInfoType.infoTypeOf(webPageUrl: url) {
-                                    case .token:
-                                        self.token = textInHtml
-                                        self.loadUserNameFromToken()
-                                    case .name:
-                                        self.name = self.getUserNameFromText(textInHtml)
-                                        self.loadEmailFromToken()
-                                    case .email:
-                                        self.email = self.getUserEmailFromText(textInHtml)
-                                    }
-        })
-
+        webView.evaluateHTMLBody { body in
+            switch WebPageInfoType.infoTypeOf(webPageUrl: url) {
+            case .token:
+                self.token = body
+                self.loadUserNameFromToken()
+            case .name:
+                self.name = self.getUserNameFromText(body)
+                self.loadEmailFromToken()
+            case .email:
+                self.email = self.getUserEmailFromText(body)
+            }
+        }
     }
 
     /// Get the text between "<body>" and "</body>" in html file
