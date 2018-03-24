@@ -12,12 +12,12 @@ import UIKit
  A super class which handles all controllers do not have the navigation bar
  */
 class NoNavigationBarViewController: UIViewController {
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         // Hide navigation bar
         self.navigationController?.isNavigationBarHidden = true
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         // Show navigation bar
         self.navigationController?.isNavigationBarHidden = false
     }

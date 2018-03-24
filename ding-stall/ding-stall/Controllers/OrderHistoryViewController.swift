@@ -10,6 +10,7 @@ import UIKit
 
 /**
  The controller for the stall's order history view.
+ Order history only contains orders have been collected
  */
 class OrderHistoryViewController: UIViewController {
 

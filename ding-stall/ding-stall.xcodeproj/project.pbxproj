@@ -12,6 +12,8 @@
 		325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */; };
 		325EE7F7206644F4004EC560 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F6206644F3004EC560 /* OrderHistoryViewController.swift */; };
 		325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F820664532004EC560 /* SettingsViewController.swift */; };
+		325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FA20664709004EC560 /* OrderQueueViewController.swift */; };
+		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -32,6 +34,8 @@
 		325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNavigationBarViewController.swift; sourceTree = "<group>"; };
 		325EE7F6206644F3004EC560 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		325EE7F820664532004EC560 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		325EE7FA20664709004EC560 /* OrderQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueViewController.swift; sourceTree = "<group>"; };
+		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -94,11 +98,13 @@
 			isa = PBXGroup;
 			children = (
 				F26514CD20654D480098783C /* AboutViewController.swift */,
-				325EE7F220663C46004EC560 /* ProfileViewController.swift */,
 				F2209A652064BD9F0043C6F3 /* LoginViewController.swift */,
+				325EE7FC2066476B004EC560 /* MenuViewController.swift */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
 				325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */,
 				325EE7F6206644F3004EC560 /* OrderHistoryViewController.swift */,
+				325EE7FA20664709004EC560 /* OrderQueueViewController.swift */,
+				325EE7F220663C46004EC560 /* ProfileViewController.swift */,
 				325EE7F820664532004EC560 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
@@ -307,6 +313,8 @@
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
 				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
+				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
+				325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */,
 				F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */,
 				F26514CC206540230098783C /* Authorizer.swift in Sources */,
 				325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */,

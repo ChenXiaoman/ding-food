@@ -35,7 +35,7 @@
         <!--Menu-->
         <scene sceneID="2vp-yH-iqd">
             <objects>
-                <viewController id="ZWf-OR-zh1" sceneMemberID="viewController">
+                <viewController id="ZWf-OR-zh1" customClass="MenuViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N24-gB-QSy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,7 +235,7 @@
         <!--Orders-->
         <scene sceneID="1Zi-OR-zjf">
             <objects>
-                <viewController id="1tp-NB-er2" sceneMemberID="viewController">
+                <viewController id="1tp-NB-er2" customClass="OrderQueueViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UNf-Lg-Fop">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
