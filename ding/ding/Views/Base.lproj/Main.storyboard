@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -428,31 +429,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGf-sx-bkg">
-                                <rect key="frame" x="127" y="429" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="I am a NUS student"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="shr-Rm-8aG" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGf-sx-bkg" userLabel="Login" customClass="MenuButton" customModule="ding" customModuleProvider="target">
+                                <rect key="frame" x="92" y="238.5" width="190" height="55"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="9w0-Ba-LRE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="pSt-Eu-Qea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login via NUSNET">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="wfa-qh-zFR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1J-LZ-B3h">
-                                <rect key="frame" x="89" y="467" width="197" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="I just want to browse for now"/>
-                                <connections>
-                                    <segue destination="AQZ-tB-GjJ" kind="show" id="J9h-mm-fql"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gM-u8-bvD" userLabel="Browse" customClass="MenuButton" customModule="ding" customModuleProvider="target">
+                                <rect key="frame" x="92" y="383.5" width="190" height="55"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="I1h-Kc-tZC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="VtH-mA-r5b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Browse first">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="shr-Rm-8aG" firstAttribute="leading" secondItem="Cz1-Q5-oZ0" secondAttribute="leading" id="0HL-Pg-vSr"/>
+                            <constraint firstItem="shr-Rm-8aG" firstAttribute="bottom" secondItem="Cz1-Q5-oZ0" secondAttribute="bottom" id="Dzp-GQ-oHz"/>
+                            <constraint firstItem="WGf-sx-bkg" firstAttribute="bottom" secondItem="Cz1-Q5-oZ0" secondAttribute="centerY" constant="-50" id="KAM-Nt-dpt"/>
+                            <constraint firstItem="WGf-sx-bkg" firstAttribute="centerX" secondItem="Cz1-Q5-oZ0" secondAttribute="centerX" id="bWU-N8-Mwf"/>
+                            <constraint firstItem="shr-Rm-8aG" firstAttribute="trailing" secondItem="Cz1-Q5-oZ0" secondAttribute="trailing" id="cO4-jK-tGJ"/>
+                            <constraint firstItem="9gM-u8-bvD" firstAttribute="top" secondItem="Cz1-Q5-oZ0" secondAttribute="centerY" constant="40" id="gk0-Y8-4s0"/>
+                            <constraint firstItem="9gM-u8-bvD" firstAttribute="centerX" secondItem="Cz1-Q5-oZ0" secondAttribute="centerX" id="lVS-G0-2cq"/>
+                            <constraint firstItem="shr-Rm-8aG" firstAttribute="top" secondItem="jza-2g-c08" secondAttribute="top" id="y52-xg-0EW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Cz1-Q5-oZ0"/>
                     </view>
                     <navigationItem key="navigationItem" id="hXP-P2-Fjc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zol-8a-Q5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346" y="160"/>
+            <point key="canvasLocation" x="-1346.4000000000001" y="159.67016491754123"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y0Y-UC-mI3">
@@ -570,7 +595,6 @@
         <image name="search" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J9h-mm-fql"/>
         <segue reference="B72-aZ-H5y"/>
         <segue reference="fWu-6V-7HV"/>
     </inferredMetricsTieBreakers>
