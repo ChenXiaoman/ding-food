@@ -91,7 +91,8 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = ["", Constants.profileControllerId, "", Constants.aboutControllerId, ""]
+    static let controllerIds = [Constants.orderHistoryControllerId, Constants.profileControllerId,
+                                Constants.settingsControllerId, Constants.aboutControllerId, ""]
     /// Indicates whether it is dangerous.
     static let isDangerous = [false, false, false, false, true]
 

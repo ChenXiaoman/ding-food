@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  OrderHistoryViewController.swift
 //  ding-stall
 //
 //  Created by Jiang Chunhui on 24/03/18.
@@ -9,8 +9,8 @@
 import UIKit
 
 /**
- The controller for the stall's profile view.
+ The controller for the stall's order history view.
  */
-class ProfileViewController: UIViewController {
-    
+class OrderHistoryViewController: UIViewController {
+
 }
