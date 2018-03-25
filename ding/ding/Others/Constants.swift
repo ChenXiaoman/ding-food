@@ -1,8 +1,8 @@
 //
 //  Constants.swift
-//  ding-stall
+//  ding
 //
-//  Created by Yunpeng Niu on 23/03/18.
+//  Created by Yunpeng Niu on 24/03/18.
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
@@ -15,10 +15,15 @@ import UIKit
  - Date: March 2018
  */
 struct Constants {
-    /// The identifier for main tab bar controller.
-    static let tabBarControllerId = "mainTabBar"
-    /// The identifier for about view controller.
-    static let aboutControllerId = "aboutViewController"
+    /// The identifier for `VerifyNUSController` scene.
+    static let verifyNUSControllerId = "verifyNUSController"
+    /// The identifier for the main tab bar.
+    static let mainTabBarId = "mainTabBarController"
+
+    /// The constant coefficient for menu corner radius.
+    static let menuButtonCornerRadiusCoefficient = CGFloat(0.15)
+    /// The border width for menu buttons
+    static let menuButtonBorderWidth = CGFloat(1)
 
     /// The width of the current device's screen.
     static let screenWidth = UIScreen.main.bounds.width

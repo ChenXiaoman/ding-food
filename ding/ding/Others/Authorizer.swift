@@ -56,4 +56,9 @@ class Authorizer {
     var isEmailVerified: Bool {
         return Authorizer.auth.currentUser?.isEmailVerified ?? false
     }
+
+    /// Returns whether the user has signed in and the email has been verified.
+    var didLoginAndVerified: Bool {
+        return didLogin && isEmailVerified
+    }
 }

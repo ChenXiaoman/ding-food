@@ -29,9 +29,15 @@
 		B2464E8E205C52010095A925 /* FoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E8D205C52010095A925 /* FoodType.swift */; };
 		F200DDE1205E51F500F33748 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE0205E51F500F33748 /* UserViewController.swift */; };
 		F200DDE3205E520F00F33748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F200DDE2205E520F00F33748 /* Assets.xcassets */; };
-		F200DDE5205E537100F33748 /* VerifyNusStudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNusStudentController.swift */; };
+		F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSController.swift */; };
+		F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */; };
+		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
+		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
+		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
+		F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6E2065FB1800E40425 /* Constants.swift */; };
+		F2C65C71206601CF00E40425 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C70206601CF00E40425 /* LoginViewController.swift */; };
 		F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C66066205B7FFF006C3C51 /* AppDelegate.swift */; };
 		F2C6606C205B7FFF006C3C51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606A205B7FFF006C3C51 /* Main.storyboard */; };
 		F2C66071205B7FFF006C3C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */; };
@@ -64,9 +70,15 @@
 		B2464E8D205C52010095A925 /* FoodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodType.swift; sourceTree = "<group>"; };
 		F200DDE0205E51F500F33748 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		F200DDE2205E520F00F33748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F200DDE4205E537100F33748 /* VerifyNusStudentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNusStudentController.swift; sourceTree = "<group>"; };
+		F200DDE4205E537100F33748 /* VerifyNUSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSController.swift; sourceTree = "<group>"; };
+		F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
+		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
+		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		F2C65C6E2065FB1800E40425 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F2C65C70206601CF00E40425 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F2C66063205B7FFF006C3C51 /* ding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C66066205B7FFF006C3C51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2C6606B205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C8B3C2205E554100A1A193 /* Authorizer.swift */,
+				F2C65C6E2065FB1800E40425 /* Constants.swift */,
 				F2C8B3C1205E554000A1A193 /* Storage.swift */,
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
 				5DF03D67205D57D5003D320C /* String+Contain.swift */,
@@ -144,8 +157,8 @@
 		F27DDC77205E3953005C3A07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2C65C72206601F900E40425 /* Login */,
 				F200DDE0205E51F500F33748 /* UserViewController.swift */,
-				F200DDE4205E537100F33748 /* VerifyNusStudentController.swift */,
 				5DC2343A20639DF3008B034A /* SearchViewController.swift */,
 				5DC2343E2063B8EB008B034A /* OrderTableViewController.swift */,
 				5DC234422064026D008B034A /* StallDetailViewController.swift */,
@@ -161,11 +174,24 @@
 				F200DDE2205E520F00F33748 /* Assets.xcassets */,
 				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
-				5DC2343C2063A02A008B034A /* SearchTableViewCell.swift */,
-				5DC234402063B913008B034A /* OrderTableViewCell.swift */,
 				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
+				F23E6A362066A25E001EB882 /* SettingMenuCell.swift */,
+				F2C65C6A2065FAD100E40425 /* MenuButton.swift */,
+				5DC234402063B913008B034A /* OrderTableViewCell.swift */,
+				5DC2343C2063A02A008B034A /* SearchTableViewCell.swift */,
+				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2C65C72206601F900E40425 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F2C65C70206601CF00E40425 /* LoginViewController.swift */,
+				F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */,
+				F200DDE4205E537100F33748 /* VerifyNUSController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F2C6605A205B7FFF006C3C51 = {
@@ -280,9 +306,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ding/Pods-ding-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C65C71206601CF00E40425 /* LoginViewController.swift in Sources */,
 				F200DDE1205E51F500F33748 /* UserViewController.swift in Sources */,
 				5DF03D68205D57D5003D320C /* String+Contain.swift in Sources */,
 				327A03C0205DFC85004B78EB /* Order.swift in Sources */,
@@ -359,6 +389,7 @@
 				327A03C4205DFC85004B78EB /* Review.swift in Sources */,
 				5DC234432064026D008B034A /* StallDetailViewController.swift in Sources */,
 				B2464E8E205C52010095A925 /* FoodType.swift in Sources */,
+				F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */,
 				5DC234412063B913008B034A /* OrderTableViewCell.swift in Sources */,
 				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
 				5DC2343F2063B8EB008B034A /* OrderTableViewController.swift in Sources */,
@@ -371,11 +402,15 @@
 				B2464E86205C4F160095A925 /* Stall.swift in Sources */,
 				327A03C5205DFC85004B78EB /* User.swift in Sources */,
 				5DC2344D20653686008B034A /* MeViewController.swift in Sources */,
-				F200DDE5205E537100F33748 /* VerifyNusStudentController.swift in Sources */,
+				F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */,
+				F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */,
 				327A03C8205E161C004B78EB /* OrderStatus.swift in Sources */,
+				F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */,
 				327A03CA205E1663004B78EB /* ReviewRating.swift in Sources */,
+				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
 				327A03C1205DFC85004B78EB /* Protocols.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* Storage.swift in Sources */,
+				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

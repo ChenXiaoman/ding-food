@@ -30,7 +30,8 @@ class Storage {
     }
 
     /// Stores a certain `FirebaseObject` at a specified path. The node (and its child nodes)
-    /// originally at that path will be cleared.
+    /// originally at that path will be cleared. For instance, to store a certain blog post, you
+    /// may want to write `setChildNode(of: "/posts", to: myBlogObj)`.
     /// - Parameters:
     ///    - path: The path to the observed data. The path should be a string with a "/" prefix
     ///            but without a "/" suffix, such as "/posts".
