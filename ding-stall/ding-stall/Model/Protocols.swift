@@ -42,7 +42,8 @@ extension FirebaseObject {
     }
 
     /// Generate an id for a fireBase object
-    public func getAutoId() -> String {
+    public static func getAutoId() -> String {
+        let p = Self.path
         return ""
     }
 

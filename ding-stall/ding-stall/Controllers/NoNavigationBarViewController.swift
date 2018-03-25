@@ -14,11 +14,11 @@ import UIKit
 class NoNavigationBarViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         // Show navigation bar
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
