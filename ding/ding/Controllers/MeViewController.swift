@@ -100,8 +100,7 @@ enum SettingMenuCellInfo: Int {
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
     static let controllerIds = ["", "", "", "", ""]
-    /// Indicates whether it is dangerous.
-
+    
     /// The name of a certain setting menu cell.
     var name: String {
         return SettingMenuCellInfo.labels[rawValue]
