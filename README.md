@@ -23,6 +23,10 @@ pod install
 7. Now, you have all dependencies installed and are ready to go.
 8. Open your Xcode and click `Open Another Project...`, select `ding.xcworkspace` to open the first workspace, or select `ding-stall.xcworkspace` to open the second workspace.
 
+## Project Structure
+
+![UML Class Diagram](class-diagram.png)
+
 ## Repository Workflow
 
 1. We are using feature branch workflow rather than fork workflow.
