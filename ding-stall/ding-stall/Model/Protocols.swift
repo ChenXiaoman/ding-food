@@ -8,10 +8,6 @@
 
 import Foundation
 
-public protocol StorageDelegate: class {
-    func save()
-}
-
 /// Represents an object stored in Firebase database
 public protocol FirebaseObject: Codable, Hashable {
     var id: String { get }
