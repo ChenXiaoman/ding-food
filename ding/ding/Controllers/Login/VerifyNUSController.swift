@@ -21,7 +21,7 @@ class VerifyNUSController: UIViewController {
     /// The web view to display webpage.
     @IBOutlet private var webView: WKWebView!
     /// Indicate webpage is loading
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
     /// The delegate for `LoginViewController`.
     weak var parentController: PasswordSignUpControllerDelegate?
 
@@ -97,8 +97,7 @@ extension VerifyNUSController: WKNavigationDelegate {
     
     private func popUpWindow(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default)  { (_) in
-        })
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -153,5 +152,6 @@ private struct URLs {
  */
 private struct popUpWindowMessage {
     static let windowTitle = "NUSNET ID"
-    static let content = "This is to verify that you are a NUS student. \nDing! will retrieve your name as username and NUS email as the account email."
+    static let content = "This is to verify that you are a NUS student."
+        + "\nDing! will retrieve your name as username and NUS email as the account email."
 }
