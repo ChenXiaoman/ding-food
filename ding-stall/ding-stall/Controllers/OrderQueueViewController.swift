@@ -12,7 +12,7 @@ import UIKit
  The controller for the order queue view
  Order queue only contains orders have not been collected
  */
-class OrderQueueViewController: NoNavigationBarViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class OrderQueueViewController: NoNavigationBarViewController {
     
     @IBOutlet private var orderQueueTableView: UITableView!
     @IBOutlet private var orderStatusPicker: UIPickerView!
@@ -25,6 +25,11 @@ class OrderQueueViewController: NoNavigationBarViewController, UITableViewDataSo
         // Hide status picker
         orderStatusPicker.isHidden = true
     }
+    
+}
+
+extension OrderQueueViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Fake data
         return 3
@@ -40,11 +45,10 @@ class OrderQueueViewController: NoNavigationBarViewController, UITableViewDataSo
         // Show status picker
         orderStatusPicker.isHidden = false
     }
-    
 }
 
 /// Handle status picker
-extension OrderQueueViewController {
+extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // The number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
