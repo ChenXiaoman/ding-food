@@ -10,7 +10,7 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet var stallName: UILabel!
-    @IBOutlet var stallImage: UIImageView!
+    @IBOutlet private var stallName: UILabel!
+    @IBOutlet private var stallImage: UIImageView!
     public static let tableViewIdentifier = "SearchTableViewCell"
 }
