@@ -47,6 +47,11 @@ extension FirebaseObject {
         return ""
     }
 
+    public func save() {
+        let storage = Storage()
+        storage.setChildNode(of: Self.path, to: self)
+    }
+
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.id == rhs.id
     }
