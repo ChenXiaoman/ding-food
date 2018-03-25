@@ -19,6 +19,12 @@ struct Constants {
     static let tabBarControllerId = "mainTabBar"
     /// The identifier for about view controller.
     static let aboutControllerId = "aboutViewController"
+    /// The identifier for profile view controller.
+    static let profileControllerId = "profileViewController"
+    /// The identifier for order history view controller.
+    static let orderHistoryControllerId = "orderHistoryController"
+    /// The identifier for settings view controller.
+    static let settingsControllerId = "settingsController"
 
     /// The width of the current device's screen.
     static let screenWidth = UIScreen.main.bounds.width
