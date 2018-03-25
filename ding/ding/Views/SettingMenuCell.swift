@@ -14,16 +14,25 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class MeSettingMenuCell: UITableViewCell {
+class SettingMenuCell: UITableViewCell {
     /// The label to display the name of this setting.
     @IBOutlet private weak var name: UILabel!
 
     /// Indiactes whether the button will lead to any dangerous consequences. If so, the
     /// color of the title will be changed accordingly.
-    var isDangerous = false {
+    var state = SettingMenuCellState.normal {
         didSet {
-            name.textAlignment = isDangerous ? .center : .left
-            name.textColor = isDangerous ? .red : .black
+            switch state {
+            case .normal:
+                name.textAlignment = .left
+                name.textColor = .black
+            case .danger:
+                name.textAlignment = .center
+                name.textColor = .red
+            case .info:
+                name.textAlignment = .center
+                name.textColor = .blue
+            }
         }
     }
 
@@ -37,4 +46,13 @@ class MeSettingMenuCell: UITableViewCell {
     func setName(_ text: String) {
         name.text = text
     }
+}
+
+/**
+ Indicates the state of a `MeSettingMenuCell`.
+ */
+enum SettingMenuCellState {
+    case normal
+    case danger
+    case info
 }

@@ -32,7 +32,7 @@
 		F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSController.swift */; };
 		F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */; };
 		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
-		F23E6A372066A25E001EB882 /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* MeSettingMenuCell.swift */; };
+		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
 		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
@@ -73,7 +73,7 @@
 		F200DDE4205E537100F33748 /* VerifyNUSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSController.swift; sourceTree = "<group>"; };
 		F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
 		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
-		F23E6A362066A25E001EB882 /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
+		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
-				F23E6A362066A25E001EB882 /* MeSettingMenuCell.swift */,
+				F23E6A362066A25E001EB882 /* SettingMenuCell.swift */,
 				F2C65C6A2065FAD100E40425 /* MenuButton.swift */,
 				5DC234402063B913008B034A /* OrderTableViewCell.swift */,
 				5DC2343C2063A02A008B034A /* SearchTableViewCell.swift */,
@@ -402,7 +402,7 @@
 				B2464E86205C4F160095A925 /* Stall.swift in Sources */,
 				327A03C5205DFC85004B78EB /* User.swift in Sources */,
 				5DC2344D20653686008B034A /* MeViewController.swift in Sources */,
-				F23E6A372066A25E001EB882 /* MeSettingMenuCell.swift in Sources */,
+				F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */,
 				F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */,
 				327A03C8205E161C004B78EB /* OrderStatus.swift in Sources */,
 				F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */,

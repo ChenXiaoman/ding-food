@@ -34,7 +34,7 @@ class MeViewController: UIViewController {
  */
 extension MeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SettingMenuCellInfo.count
+        return authorizer.didLogin ? SettingMenuCellInfo.count : 1
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,17 +43,26 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.meSettingCellId,
-                                                       for: indexPath) as? MeSettingMenuCell,
+                                                       for: indexPath) as? SettingMenuCell,
             let info = SettingMenuCellInfo(rawValue: indexPath.row) else {
                 fatalError("Unable to get a new cell.")
         }
+        guard authorizer.didLogin else {
+            cell.setName("Log in")
+            cell.state = .info
+            return cell
+        }
         cell.setName(info.name)
-        cell.isDangerous = info.isDangerous
+        cell.state = info.state
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard authorizer.didLogin else {
+            navigationController?.popViewController(animated: true)
+            return
+        }
         guard let info = SettingMenuCellInfo(rawValue: indexPath.row) else {
             return
         }
@@ -92,7 +101,6 @@ enum SettingMenuCellInfo: Int {
     /// The identifier for all related controllers.
     static let controllerIds = ["", "", "", "", ""]
     /// Indicates whether it is dangerous.
-    static let isDangerous = [false, false, false, false, true]
 
     /// The name of a certain setting menu cell.
     var name: String {
@@ -100,8 +108,8 @@ enum SettingMenuCellInfo: Int {
     }
 
     /// Indicates whether a certain setting menu cell is dangerous.
-    var isDangerous: Bool {
-        return SettingMenuCellInfo.isDangerous[rawValue]
+    var state: SettingMenuCellState {
+        return rawValue == 4 ? .danger : .normal
     }
 
     /// The controller id to present next.
