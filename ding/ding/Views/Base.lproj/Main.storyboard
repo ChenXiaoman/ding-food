@@ -20,31 +20,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-no-kCe" userLabel="WebView">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zqh-TP-rJf">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-no-kCe" userLabel="WebView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="16c-zg-PCB"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Please enter you NUSNET ID (e.g. E0123456)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cf-V4-f00">
+                                        <rect key="frame" x="0.0" y="205" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    and password." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLl-dC-AQq" userLabel="and password.">
+                                        <rect key="frame" x="0.0" y="230.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92d-Qt-4lX">
+                                        <rect key="frame" x="0.0" y="256" width="375" height="391"/>
+                                        <state key="normal" title="    Why I need key in my NUSNET ID here?"/>
+                                        <connections>
+                                            <action selector="popUpInfoWindow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sqo-Pj-yAU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cph-aW-6rp">
+                                <rect key="frame" x="177" y="333" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mNE-no-kCe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IIS-0a-yQi"/>
-                            <constraint firstItem="mNE-no-kCe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UTo-9I-oxx"/>
-                            <constraint firstItem="mNE-no-kCe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fjF-ms-Fxd"/>
-                            <constraint firstItem="mNE-no-kCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oK7-kE-RUL"/>
+                            <constraint firstItem="cph-aW-6rp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="02i-jI-ahw"/>
+                            <constraint firstItem="zqh-TP-rJf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1PE-VX-Tte"/>
+                            <constraint firstItem="cph-aW-6rp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="L1o-Oo-SSK"/>
+                            <constraint firstItem="zqh-TP-rJf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ysl-jG-rkN"/>
+                            <constraint firstItem="zqh-TP-rJf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g8z-Bt-9NF"/>
+                            <constraint firstItem="zqh-TP-rJf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mOD-l2-4lJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="cph-aW-6rp" id="raK-vl-7wN"/>
                         <outlet property="webView" destination="mNE-no-kCe" id="WLP-BH-9nb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="-576"/>
+            <point key="canvasLocation" x="192.80000000000001" y="-576.1619190404798"/>
         </scene>
         <!--Order Table View Controller-->
         <scene sceneID="TTT-6I-4u1">

@@ -20,6 +20,8 @@ import WebKit
 class VerifyNUSController: UIViewController {
     /// The web view to display webpage.
     @IBOutlet private var webView: WKWebView!
+    /// Indicate webpage is loading
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     /// The delegate for `LoginViewController`.
     weak var parentController: PasswordSignUpControllerDelegate?
 
@@ -30,9 +32,15 @@ class VerifyNUSController: UIViewController {
     var name: String?
     /// The user's NUS email address, retrieved from IVLE API.
     var email: String?
-
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    /// Handle when user tap the button "Why I need to key in
+    /// NUSNET ID here?"
+    @IBAction func popUpInfoWindow(_ sender: UIButton) {
+        popUpWindow(with: popUpWindowMessage.windowTitle, and: popUpWindowMessage.content)
     }
     
     override func viewDidLoad() {
@@ -48,6 +56,9 @@ class VerifyNUSController: UIViewController {
  */
 extension VerifyNUSController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Stop loading indicator
+        loadingIndicator.stopAnimating()
+        
         // Nothing to do for the login page.
         guard let resultUrl = webView.url?.absoluteString, resultUrl != URLs.ivleLoginURL else {
             return
@@ -82,6 +93,13 @@ extension VerifyNUSController: WKNavigationDelegate {
 
     private func retrieveEmail(from body: String) -> String {
         return body.getTextBetween(prefix: "0\">", suffix: "</a>")
+    }
+    
+    private func popUpWindow(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default)  { (_) in
+        })
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -127,4 +145,13 @@ private struct URLs {
     static func queryEmailURL(token: String) -> String {
         return emailBaseURL + token
     }
+    
+}
+
+/**
+ String for message in pop up window
+ */
+private struct popUpWindowMessage {
+    static let windowTitle = "NUSNET ID"
+    static let content = "This is to verify that you are a NUS student. \nDing! will retrieve your name as username and NUS email as the account email."
 }
