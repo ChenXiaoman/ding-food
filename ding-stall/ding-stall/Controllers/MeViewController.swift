@@ -14,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class MeViewController: UIViewController {
+class MeViewController: NoNavigationBarViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
     /// Used to handle all logics related to Firebase Auth.
@@ -27,6 +27,7 @@ class MeViewController: UIViewController {
         settingMenu.dataSource = self
         settingMenu.tableFooterView = UIView()
     }
+
 }
 
 /**
@@ -90,7 +91,8 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = ["", "", "", Constants.aboutControllerId, ""]
+    static let controllerIds = [Constants.orderHistoryControllerId, Constants.profileControllerId,
+                                Constants.settingsControllerId, Constants.aboutControllerId, ""]
     /// Indicates whether it is dangerous.
     static let isDangerous = [false, false, false, false, true]
 
