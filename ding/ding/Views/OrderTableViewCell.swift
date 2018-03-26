@@ -9,10 +9,10 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-    @IBOutlet var foodImage: UIImageView!
-    @IBOutlet var foodName: UILabel!
-    @IBOutlet var date: UILabel!
-    @IBOutlet var status: UILabel!
+    @IBOutlet private var foodImage: UIImageView!
+    @IBOutlet private var foodName: UILabel!
+    @IBOutlet private var date: UILabel!
+    @IBOutlet private var status: UILabel!
     
     public static let tableViewIdentifier = "OrderTableViewCell"
 
