@@ -6,13 +6,16 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import FirebaseDatabaseUI
 import UIKit
 
 /**
  The controller of stall's menu view
  */
-class MenuViewController: NoNavigationBarViewController {
-
+class MenuViewController: UIViewController {
+    private var menuView = UICollectionView()
     private let storage = Storage()
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

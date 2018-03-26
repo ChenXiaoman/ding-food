@@ -29,7 +29,7 @@ class Storage {
         Storage.ref.child(path).observe(.value, with: handler)
     }
 
-    func getAutoId(of path: String) -> String {
+    public static func getAutoId(of path: String) -> String {
         return Storage.ref.child(path).childByAutoId().key
     }
 

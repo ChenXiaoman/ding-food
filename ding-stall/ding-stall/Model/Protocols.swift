@@ -39,8 +39,7 @@ extension FirebaseObject {
 
     /// Generate an id for a fireBase object
     public static func getAutoId() -> String {
-        let p = Self.path
-        return ""
+        return Storage.getAutoId(of: path)
     }
 
     public func save() {
