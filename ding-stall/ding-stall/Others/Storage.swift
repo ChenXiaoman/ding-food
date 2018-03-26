@@ -29,6 +29,9 @@ class Storage {
         Storage.ref.child(path).observe(.value, with: handler)
     }
 
+    /// Generate a unique string as ID for a `FirebaseObject`
+    /// - Parameters:
+    ///    - path: The path of that object.
     public static func getAutoId(of path: String) -> String {
         return Storage.ref.child(path).childByAutoId().key
     }
@@ -42,5 +45,10 @@ class Storage {
     func setChildNode<T: FirebaseObject>(of path: String, to object: T) {
         let newPath = path + "/\(object.id)"
         Storage.ref.child(newPath).setValue(object.serialized)
+    }
+
+    /// A read-only reference of Firebase
+    public static var reference: DatabaseReference {
+        return ref
     }
 }
