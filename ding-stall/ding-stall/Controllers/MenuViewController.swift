@@ -26,8 +26,8 @@ class MenuViewController: UIViewController {
     }
 
     @IBAction func didPressAddFoodButton(_ sender: UIButton) {
-        let popupView = createAddFoodView()
-        view.addSubview(popupView)
+        //let popupView = createAddFoodView()
+        //view.addSubview(popupView)
     }
 
     private func createAddFoodView() -> UIView {
