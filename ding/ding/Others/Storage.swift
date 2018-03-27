@@ -69,4 +69,11 @@ class Storage {
         paths.forEach { updated[$0] = data }
         ref.updateChildValues(updated)
     }
+
+    /// Creates a reference to the child node at the given path.
+    /// - Parameter path: The path to the child node.
+    /// - Returns: The reference to the child node.
+    static func getNodeRef(of path: String) -> DatabaseReference {
+        return ref.child(path)
+    }
 }
