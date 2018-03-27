@@ -25,6 +25,19 @@ class MenuViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case AddFoodViewController.identifier?:
+            guard let addFoodVC = segue.destination as? AddFoodViewController else {
+                return
+            }
+            addFoodVC.stall = self.stall
+        default:
+            break
+        }
+
+    }
+
     @IBAction func didPressAddFoodButton(_ sender: UIButton) {
         //let popupView = createAddFoodView()
         //view.addSubview(popupView)

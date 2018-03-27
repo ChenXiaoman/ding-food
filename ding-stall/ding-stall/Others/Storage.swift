@@ -57,6 +57,7 @@ class Storage {
             let obj = snapshot.value as? [String: Any],
             let data = try? JSONSerialization.data(withJSONObject: obj),
             let result = try? JSONDecoder().decode(type, from: data) else {
+                print("nil")
                 fatalError("Error when loading the data")
         }
         return result
