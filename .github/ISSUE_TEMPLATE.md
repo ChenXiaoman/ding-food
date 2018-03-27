@@ -11,6 +11,6 @@
 
 ## Explanation
 
-<!-- If this is a bug, explain how to re-produce and how you fix it.  -->
+<!-- If this is a bug, explain how to re-produce and how you plan to fix it.  -->
 
-<!-- If this is a new feature, explain the use case/user story and how you implement it -->
+<!-- If this is a new feature, explain the use case/user story and how you plan to implement it -->
