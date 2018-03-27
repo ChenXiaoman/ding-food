@@ -36,7 +36,7 @@
 		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
 		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
-		F2813545206A095400B81377 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2813544206A095400B81377 /* Stall.swift */; };
+		F2813545206A095400B81377 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2813544206A095400B81377 /* StallOverview.swift */; };
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
 		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
 		F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6E2065FB1800E40425 /* Constants.swift */; };
@@ -80,7 +80,7 @@
 		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F2813544206A095400B81377 /* Stall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stall.swift; sourceTree = "<group>"; };
+		F2813544206A095400B81377 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F2C65C6E2065FB1800E40425 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				B2464E87205C50F10095A925 /* Enumerations */,
-				F2813544206A095400B81377 /* Stall.swift */,
+				F2813544206A095400B81377 /* StallOverview.swift */,
 				B2464E85205C4F160095A925 /* StallDetails.swift */,
 				327A03BE205DFC84004B78EB /* Review.swift */,
 				327A03BA205DFC84004B78EB /* Order.swift */,
@@ -165,11 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				F2C65C72206601F900E40425 /* Login */,
+				F2813546206A0E2200B81377 /* Search */,
 				F200DDE0205E51F500F33748 /* UserViewController.swift */,
-				5DC2343A20639DF3008B034A /* SearchViewController.swift */,
 				5DC2343E2063B8EB008B034A /* OrderTableViewController.swift */,
-				5DC234422064026D008B034A /* StallDetailViewController.swift */,
-				5DC234482064D686008B034A /* FoodDetailViewController.swift */,
 				5DC2344C20653686008B034A /* MeViewController.swift */,
 				5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */,
 			);
@@ -191,6 +189,16 @@
 				5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2813546206A0E2200B81377 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5DC2343A20639DF3008B034A /* SearchViewController.swift */,
+				5DC234422064026D008B034A /* StallDetailViewController.swift */,
+				5DC234482064D686008B034A /* FoodDetailViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		F2C65C72206601F900E40425 /* Login */ = {
@@ -407,7 +415,7 @@
 				5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */,
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
 				5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */,
-				F2813545206A095400B81377 /* Stall.swift in Sources */,
+				F2813545206A095400B81377 /* StallOverview.swift in Sources */,
 				5DC234492064D686008B034A /* FoodDetailViewController.swift in Sources */,
 				5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */,
 				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,
