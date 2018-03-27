@@ -15,13 +15,17 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-struct StallOverview: Codable {
+struct StallOverview: FirebaseObject {
+    static let path = "/stalls"
+
     let id: String
     let name: String
     let queueCount: Int
     let averageRating: Double
     var photo: UIImage? = nil
 
+    /// Overrides the `CodingKeys` so that `photo` attribute is ignored when saving to
+    /// or loading from the database.
     private enum CodingKeys: CodingKey {
         case id
         case name

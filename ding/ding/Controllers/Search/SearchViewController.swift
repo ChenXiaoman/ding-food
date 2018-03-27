@@ -42,7 +42,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             as? StallListingCell else {
             fatalError("Unable to dequeue cell.")
         }
-
         let stall = StallOverview(id: "123", name: "Western Food", queueCount: 10, averageRating: 4.7, photo: #imageLiteral(resourceName: "pizza"))
         cell.load(stall)
         return cell
