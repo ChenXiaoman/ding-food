@@ -20,12 +20,39 @@ class LoginViewController: UIViewController {
     /// Used to handle all logics related to Firebase Auth.
     fileprivate let authorizer = Authorizer()
 
+    var stall: Stall!
+
     override func viewDidAppear(_ animated: Bool) {
         guard authorizer.didLogin else {
             loadLoginView(animated)
             return
         }
+
+        initialiseStall()
         loadTabBarView(animated)
+    }
+
+    private func initialiseStall() {
+        guard let stallId = authorizer.uid else {
+            fatalError("Fail to load stall id")
+        }
+
+        Storage.reference.child("\(Stall.path)/\(stallId)").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get stall values
+            if let value = snapshot.value as? NSDictionary {
+                let name = value["name"] as! String
+                let location = value["location"] as! String
+                let openingHour = value["openingHour"] as! String
+                let description = value["description"] as! String
+                let queue = value["queue"] as! [Order]
+                let menu = value["menu"] as! [Food]
+                let filters = value["filters"] as! Set<FilterIdentifier>
+
+                self.stall = Stall(id: stallId, name: name, location: location,
+                                   openingHour: openingHour, description: description,
+                                   queue: queue, menu: menu, filters: filters)
+            }
+        })
     }
 
     /// Loads the login view from Firebase Auth UI library.
@@ -60,6 +87,7 @@ extension LoginViewController: FUIAuthDelegate {
         if !user.isEmailVerified {
             authorizer.verifyEmail()
         }
+
         loadTabBarView(true)
     }
 }

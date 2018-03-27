@@ -10,6 +10,12 @@
  Represents a food stall registered in the application.
  */
 public struct Stall: FirebaseObject {
+    public static var currentStall: Stall {
+        get {
+            return self.currentStall
+        }
+    }
+
     public static var path = "/stall"
 
     public let id: String
@@ -33,5 +39,4 @@ public struct Stall: FirebaseObject {
     public func deleteFood(id: String) {
 
     }
-
 }

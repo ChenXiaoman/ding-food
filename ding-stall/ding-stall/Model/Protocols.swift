@@ -13,6 +13,7 @@ public protocol FirebaseObject: Codable, Hashable {
     var id: String { get }
 
     static var path: String { get }
+
 }
 
 extension FirebaseObject {
