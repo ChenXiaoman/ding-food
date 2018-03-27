@@ -9,5 +9,8 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var foodName: UILabel!
+    @IBOutlet var foodImage: UIImageView!
+    
     public static let identifier = "MenuCollectionViewCell"
 }

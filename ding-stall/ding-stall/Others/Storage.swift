@@ -51,4 +51,14 @@ class Storage {
     public static var reference: DatabaseReference {
         return ref
     }
+
+    public func decode<T>(_ type: T.Type, from snapshot: DataSnapshot) -> T where T: FirebaseObject {
+        guard
+            let obj = snapshot.value as? [String: Any],
+            let data = try? JSONSerialization.data(withJSONObject: obj),
+            let result = try? JSONDecoder().decode(type, from: data) else {
+                fatalError("Error when loading the data")
+        }
+        return result
+    }
 }

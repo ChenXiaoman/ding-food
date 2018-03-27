@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 /// Represents an object stored in Firebase database
 public protocol FirebaseObject: Codable, Hashable {

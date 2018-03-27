@@ -6,7 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import FirebaseDatabaseUI
 import UIKit
 
 /**
@@ -17,21 +16,12 @@ class MenuViewController: UIViewController {
     @IBOutlet private var menuView: UICollectionView!
 
     private var stall: Stall!
+    private let storage = Storage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //settleMenuView()
-    }
-
-    private func settleMenuView() {
-        menuView.delegate = self
-        menuView.dataSource = menuView.bind(to: Storage.reference) { collectionView, indexPath, snap in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
-                MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
-                    return UICollectionViewCell()
-            }
-            
-            return cell
+        storage.observeValue(of: Stall.path + "/" + Account.stallId) { snap in
+            self.stall = self.storage.decode(Stall.self, from: snap)
         }
     }
 
@@ -85,11 +75,16 @@ extension MenuViewController: UICollectionViewDelegate {
 
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return stall.menu.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
+            return MenuCollectionViewCell()
+        }
+        let food = stall.getFood(at: indexPath.item)
+        cell.foodName.text = food.name
+        return cell
     }
 
 }

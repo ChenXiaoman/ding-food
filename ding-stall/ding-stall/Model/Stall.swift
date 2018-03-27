@@ -34,4 +34,7 @@ public struct Stall: FirebaseObject {
 
     }
 
+    public func getFood(at index: Int) -> Food {
+        return menu[index]
+    }
 }
