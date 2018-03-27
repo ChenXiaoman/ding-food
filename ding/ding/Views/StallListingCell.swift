@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StallListingCell: UITableViewCell {
+class StallListingCell: UICollectionViewCell {
     @IBOutlet private weak var photo: UIImageView!
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var queueCount: UILabel!
@@ -16,8 +16,12 @@ class StallListingCell: UITableViewCell {
 
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "stallListingCell"
+    /// The aspect ratio of this cell.
+    private static let aspectRatio = CGFloat(1.0 / 3)
+    /// The width of this cell.
+    static let width = Constants.screenWidth
     /// The height of this cell.
-    static let height = CGFloat(150)
+    static let height = StallListingCell.width * StallListingCell.aspectRatio
 
     /// The text format to display queue count.
     private static let queueCountFormat = "%d people waiting"
