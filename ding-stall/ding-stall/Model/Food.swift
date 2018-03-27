@@ -16,7 +16,7 @@ public struct Food: FirebaseObject {
     public let id: String
     public var name: String
     public var price: Double
-    public var description: String
+    public var description: String?
     public var type: FoodType
     public var isSoldOut: Bool
 

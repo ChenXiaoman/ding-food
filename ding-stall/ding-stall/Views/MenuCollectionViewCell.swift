@@ -3,7 +3,7 @@
 //  ding-stall
 //
 //  Created by Jiang Chunhui on 26/03/18.
-//  Copyright © 2018年 CS3217 Ding. All rights reserved.
+//  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
 import UIKit

@@ -40,14 +40,54 @@
                     <view key="view" contentMode="scaleToFill" id="N24-gB-QSy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-Hy-LUv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-P4-bNZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xyg-8v-oZd">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCollectionViewCell" id="deF-CP-IhU" customClass="MenuCollectionViewCell" customModule="ding_stall" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-Ly-1cK">
+                                        <rect key="frame" x="0.0" y="577" width="375" height="41"/>
+                                        <state key="normal" title="Add new food"/>
+                                        <connections>
+                                            <action selector="didPressAddFoodButton:" destination="ZWf-OR-zh1" eventType="touchUpInside" id="63C-Kf-esI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zQZ-Hy-LUv" firstAttribute="leading" secondItem="rVU-Te-CvR" secondAttribute="leading" id="Rdj-iS-e48"/>
+                            <constraint firstItem="rVU-Te-CvR" firstAttribute="bottom" secondItem="zQZ-Hy-LUv" secondAttribute="bottom" id="Wqc-wX-LBi"/>
+                            <constraint firstItem="zQZ-Hy-LUv" firstAttribute="top" secondItem="N24-gB-QSy" secondAttribute="top" id="Zz3-N1-TmR"/>
+                            <constraint firstItem="zQZ-Hy-LUv" firstAttribute="trailing" secondItem="rVU-Te-CvR" secondAttribute="trailing" id="kX5-eF-Chc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rVU-Te-CvR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="menu" id="bz8-vh-vae"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDD-0r-qwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="-115"/>
+            <point key="canvasLocation" x="764" y="-115.59220389805098"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="JE3-8a-bP9">
