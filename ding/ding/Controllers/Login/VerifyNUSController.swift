@@ -80,7 +80,7 @@ extension VerifyNUSController: WKNavigationDelegate {
             case .email:
                 self.email = self.retrieveEmail(from: body)
                 if let name = self.name, let email = self.email {
-                    self.parentController?.receiveCredentialsFromNUS(name: name, email: email)
+                    self.parentController?.receiveCredentials(name: name, email: email)
                     self.navigationController?.popViewController(animated: true)
                 }
             }
