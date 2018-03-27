@@ -53,6 +53,10 @@ class LoginViewController: UIViewController {
  Extension for `LoginViewController` to act as the delegate for `FirebaseAuthUI`.
  */
 extension LoginViewController: FUIAuthDelegate {
+    func emailEntryViewController(forAuthUI authUI: FUIAuth) -> FUIEmailEntryViewController {
+        <#code#>
+    }
+
     func passwordSignUpViewController(forAuthUI authUI: FUIAuth, email: String) -> FUIPasswordSignUpViewController {
         let controller = PasswordSignUpController(authUI: authUI, email: email)
         controller.mainStoryboard = storyboard
