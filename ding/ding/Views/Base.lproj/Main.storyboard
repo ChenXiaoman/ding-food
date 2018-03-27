@@ -224,9 +224,14 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-i5-Yj1">
-                                <rect key="frame" x="0.0" y="183" width="375" height="30"/>
+                                <rect key="frame" x="10" y="183" width="355" height="30"/>
                                 <color key="backgroundColor" white="0.75" alpha="0.58369006849315064" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Confirm order"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -236,11 +241,11 @@
                             <constraint firstItem="MOT-m5-TuM" firstAttribute="trailing" secondItem="clL-TG-MGO" secondAttribute="trailing" id="85G-dr-Zg9"/>
                             <constraint firstItem="MOT-m5-TuM" firstAttribute="leading" secondItem="clL-TG-MGO" secondAttribute="leading" id="AgZ-Lg-zeR"/>
                             <constraint firstItem="VN3-FH-6WT" firstAttribute="bottom" secondItem="clL-TG-MGO" secondAttribute="bottom" id="Db0-CL-ulZ"/>
-                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="leading" secondItem="clL-TG-MGO" secondAttribute="leading" id="PLl-hy-4ca"/>
+                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="leading" secondItem="clL-TG-MGO" secondAttribute="leading" constant="10" id="PLl-hy-4ca"/>
                             <constraint firstItem="xCB-i5-Yj1" firstAttribute="top" secondItem="MOT-m5-TuM" secondAttribute="bottom" constant="5" id="RgS-5k-vZZ"/>
                             <constraint firstItem="VN3-FH-6WT" firstAttribute="top" secondItem="xCB-i5-Yj1" secondAttribute="bottom" constant="5" id="W8u-x1-xxC"/>
                             <constraint firstItem="MOT-m5-TuM" firstAttribute="top" secondItem="im0-BX-I2a" secondAttribute="top" id="ZdU-vt-Aso"/>
-                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="trailing" secondItem="clL-TG-MGO" secondAttribute="trailing" id="l2v-uc-4WL"/>
+                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="trailing" secondItem="clL-TG-MGO" secondAttribute="trailing" constant="-10" id="l2v-uc-4WL"/>
                             <constraint firstItem="clL-TG-MGO" firstAttribute="trailing" secondItem="VN3-FH-6WT" secondAttribute="trailing" id="mPE-3e-bfF"/>
                             <constraint firstItem="VN3-FH-6WT" firstAttribute="trailing" secondItem="clL-TG-MGO" secondAttribute="trailing" id="w58-H4-PET"/>
                             <constraint firstItem="VN3-FH-6WT" firstAttribute="leading" secondItem="clL-TG-MGO" secondAttribute="leading" id="wEJ-Pc-f1H"/>
