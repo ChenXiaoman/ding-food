@@ -21,7 +21,7 @@ extension SearchViewController: UICollectionViewDelegate {
         }
         // Passes in the `id` of `StallOverview` displayed at this cell.
         if let stallId = stallIds[indexPath.totalRow(in: collectionView)] {
-            controller.stallOverviewPath = StallOverview.path + "\(StallOverview.path)/\(stallId)"
+            controller.stallOverviewPath = "\(StallOverview.path)/\(stallId)"
         }
         navigationController?.pushViewController(controller, animated: true)
     }
