@@ -23,7 +23,7 @@ class FoodTableViewCell: UITableViewCell {
     /// Loads data into and populate a `FoodTableViewCell`.
     /// - Parameter stall: The `Food` object as the data source.
     func load(_ food: Food) {
-        photo.setWebImage(at: food.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
+        photo.setWebImage(at: food.photoPath, placeholder: #imageLiteral(resourceName: "food-icon"))
         name.text = food.name
         price.text = String(format: FoodTableViewCell.priceFormat, food.price)
     }
