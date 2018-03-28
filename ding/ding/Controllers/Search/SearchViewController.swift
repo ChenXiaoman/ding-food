@@ -19,11 +19,13 @@ class SearchViewController: UIViewController {
     @IBOutlet weak private var stallListing: UICollectionView!
     /// The loading indicator indicates that collection view is loading data
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
+    
     /// The Firebase data source for the listing of stalls.
     private var dataSource: FUICollectionViewDataSource?
-    /// The mapping of Firebase StallOverview objects'
-    /// index path in collection view and its key
-    var stallOverViewObjects: [IndexPath: String] = [:]
+    
+    /// An array of Firebase StallOverview objects' key
+    /// It is used for passing in ID when transfer to stall detail page
+    var allStallsId: [String] = []
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,22 +43,21 @@ class SearchViewController: UIViewController {
         DatabaseRef.observeValue(of: StallOverview.path, onChange: firebaseFinishLoading)
     }
     
-    func firebaseFinishLoading(snapshot: DataSnapshot) {
-        /// Stop the loading indicator
+    /// Handle when firebase data have finished loading
+    private func firebaseFinishLoading(snapshot: DataSnapshot) {
+        // Stop animating of the loading indicator
         loadingIndicator.stopAnimating()
         
-        createStallIdAndIndexPathMapping(with: snapshot)
+        getAllStallsId(with: snapshot)
     }
     
-    func createStallIdAndIndexPathMapping(with snapshot: DataSnapshot) {
-        guard let children = snapshot.value as? NSDictionary else {
+    private func getAllStallsId(with snapshot: DataSnapshot) {
+        guard let children = snapshot.value as? NSDictionary,
+            let allKeys = children.allKeys as? [String] else {
             return
         }
-        
-        for child in children {
-            child.key
-            print(child.key)
-        }
+        allStallsId = allKeys
+        print(allStallsId)
     }
 
     /// Populates a `StallListingCell` with the given data from database.
