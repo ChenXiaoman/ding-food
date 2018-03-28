@@ -50,4 +50,11 @@ class StorageRef {
     static func download(from path: String, maxSize: Int64, onComplete handler: @escaping (Data?, Error?) -> Void) {
         ref.child(path).getData(maxSize: maxSize, completion: handler)
     }
+
+    /// Creates a reference to the child node at the given path.
+    /// - Parameter path: The path to the child node.
+    /// - Returns: The reference to the child node.
+    static func getNodeRef(of path: String) -> StorageReference {
+        return ref.child(path)
+    }
 }

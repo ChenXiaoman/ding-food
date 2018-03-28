@@ -50,3 +50,12 @@ To avoid committing OS-specific files into the remote repository, you should set
 echo .DS_Store >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 ```
+
+## Troubleshooting
+
+#### Could not build Objective-C module 'XXX'
+
+This is because the building order of certain libraries is troublesome. To solve this problem,
+1. First ensure you have run `pod install` to install or update all dependencies to the latest version.
+2. Build (rather than direct _run_) all frameworks once (by pressing `Command+B`).
+3. Now, try to run the application. It should work.
