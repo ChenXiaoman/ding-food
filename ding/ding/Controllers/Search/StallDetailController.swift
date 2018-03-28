@@ -26,18 +26,24 @@ class StallDetailController: UIViewController, UITableViewDataSource {
     @IBOutlet weak private var numOfPeopleWaitingLabel: UILabel!
     
     /// Firebase reference of the current stall's overview
-    var stallOverviewId: String?
+    var stallOverviewPath: String?
     
     override func viewWillAppear(_ animated: Bool) {
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
         
         // Configure the labels for stall overview
-        guard let stallOverviewId = stallOverviewId else {
-            return
+        if let path = stallOverviewPath {
+            DatabaseRef.observeValue(of: path, onChange: populateStallOverview)
         }
-        let stallOverviewPath = StallOverview.path + "/" + stallOverviewId
-        DatabaseRef.observeValue(of: stallOverviewPath, onChange: populateStallOverview)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let path = stallOverviewPath {
+            // Stops sending updates to the view (to avoid app crash).
+            DatabaseRef.stopObservers(of: path)
+        }
     }
     
     /// Get stall overview info from snapshot

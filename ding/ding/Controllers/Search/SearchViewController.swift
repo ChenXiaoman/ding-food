@@ -17,15 +17,17 @@ import FirebaseDatabaseUI
 class SearchViewController: UIViewController {
     /// The collection view used to show the listing of stalls.
     @IBOutlet weak private var stallListing: UICollectionView!
-    /// The loading indicator indicates that collection view is loading data
+    /// The loading indicator indicates that collection view is loading data.
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     
     /// The Firebase data source for the listing of stalls.
-    private var dataSource: FUICollectionViewDataSource?
+    var dataSource: FUICollectionViewDataSource?
+    /// Indicates whether the collection view has finished loading data.
+    private var loaded = false
     
-    /// An array of Firebase StallOverview objects' key
-    /// It is used for passing in ID when transfer to stall detail page
-    var allStallsId: [String] = []
+    /// A dictionary of mapping from cell's index path to the id of the stall
+    /// overview represented.
+    var stallIds: [Int: String] = [:]
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,31 +35,21 @@ class SearchViewController: UIViewController {
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
+        // Indicates that loading starts.
+        loaded = false
+        loadingIndicator.startAnimating()
+
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
-        
-        /// Add finish loading observer
-        DatabaseRef.observeValue(of: StallOverview.path, onChange: firebaseFinishLoading)
     }
-    
-    /// Handle when firebase data have finished loading
-    private func firebaseFinishLoading(snapshot: DataSnapshot) {
-        // Stop animating of the loading indicator
-        loadingIndicator.stopAnimating()
-        
-        getAllStallsId(with: snapshot)
-    }
-    
-    /// Get all IDs of StallOverview objects from Firebase
-    private func getAllStallsId(with snapshot: DataSnapshot) {
-        guard let children = snapshot.value as? NSDictionary,
-            let allKeys = children.allKeys as? [String] else {
-            return
-        }
-        allStallsId = allKeys
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stops sending updates to the collection view (to avoid app crash).
+        dataSource?.unbind()
     }
 
     /// Populates a `StallListingCell` with the given data from database.
@@ -71,11 +63,18 @@ class SearchViewController: UIViewController {
                                           snapshot: DataSnapshot) -> StallListingCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StallListingCell.identifier,
                                                             for: indexPath) as? StallListingCell else {
-                                                                fatalError("Unable to dequeue cell.")
+            fatalError("Unable to dequeue cell.")
+        }
+
+        // Stops the loading indicator.
+        if !loaded {
+            loaded = true
+            loadingIndicator.stopAnimating()
         }
 
         if let stall = StallOverview.deserialize(snapshot) {
             cell.load(stall)
+            stallIds[indexPath.totalRow(in: collectionView)] = stall.id
         }
         return cell
     }
