@@ -460,6 +460,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="name" destination="HAR-QI-BZN" id="qXy-YO-vW6"/>
+                                            <outlet property="photo" destination="uje-yl-IE6" id="DTx-iy-5gr"/>
+                                            <outlet property="price" destination="tWU-vv-eln" id="wXF-95-5ev"/>
                                             <segue destination="4J9-jl-KNV" kind="show" id="QnY-4y-vYL"/>
                                         </connections>
                                     </tableViewCell>

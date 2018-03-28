@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabaseUI
 
-class StallDetailController: UIViewController, UITableViewDataSource {
+class StallDetailController: UIViewController {
     /// The text format to display queue count.
     private static let queueCountFormat = "Number of people waiting: %d"
     /// The text format to display average rating.
@@ -52,15 +52,4 @@ class StallDetailController: UIViewController, UITableViewDataSource {
         numOfPeopleWaitingLabel.text = String(format: StallDetailController.averageRatingFormat,
                                               stallOverview.averageRating)
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Fake data
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return foodTableaView.dequeueReusableCell(withIdentifier:
-            FoodTableViewCell.tableViewIdentifier) ?? UITableViewCell()
-    }
-    
 }
