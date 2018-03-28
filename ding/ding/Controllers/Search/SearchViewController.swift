@@ -35,6 +35,10 @@ class SearchViewController: UIViewController {
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
+        // Indicates that loading starts.
+        loaded = false
+        loadingIndicator.startAnimating()
+
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
