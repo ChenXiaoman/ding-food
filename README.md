@@ -42,6 +42,7 @@ git branch --set-upstream-to=origin/<new_branch_name> <new_branch_name>
 ```
 4. Since we encourage you to always use a new branch each time, the branch should be deleted (using GitHub interface) after the PR is merged or declined. Don't woory, GitHub uses _soft delete_, we can restore the branch later.
 5. To avoid some merge conflicts and due to many other factors, we ignore the `Pods/` folder.
+6. Whenever you open a PR, please assign it to yourself (or anyone else if appropriate). Then, ask someone else to do PR review by assigning him/her as the reviewer.
 
 ## Setup Global `gitignore`
 
@@ -50,3 +51,12 @@ To avoid committing OS-specific files into the remote repository, you should set
 echo .DS_Store >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 ```
+
+## Troubleshooting
+
+#### Could not build Objective-C module 'XXX'
+
+This is because the building order of certain libraries is troublesome. To solve this problem,
+1. First ensure you have run `pod install` to install or update all dependencies to the latest version.
+2. Build (rather than direct _run_) all frameworks once (by pressing `Command+B`).
+3. Now, try to run the application. It should work.
