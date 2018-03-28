@@ -33,6 +33,12 @@ class SearchViewController: UIViewController {
         stallListing.delegate = self
     }
 
+    /// Populates a `StallListingCell` with the given data from database.
+    /// - Parameters:
+    ///    - collectionView: The collection view as the listing of stalls.
+    ///    - indexPath: The index path of this cell.
+    ///    - snapshot: The snapshot of the corresponding model object from database.
+    /// - Returns: a `StallListingCell` to use.
     private func populateStallListingCell(collectionView: UICollectionView,
                                           indexPath: IndexPath,
                                           snapshot: DataSnapshot) -> StallListingCell {
