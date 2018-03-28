@@ -12,6 +12,11 @@ import FirebaseStorageUI
  Extension for `UIImageView` to provide some utility methods for web images.
  */
 extension UIImageView {
+    /// Sets the content of a certain image view to be from web.
+    /// - Parameters:
+    ///    - path: The path at which the web image is stored.
+    ///    - placeholder: The placeholder image to be shown before the image is loaded,
+    /// whose default value is `nil`.
     func setWebImage(at path: String, placeholder: UIImage? = nil) {
         sd_setImage(with: StorageRef.getNodeRef(of: path), placeholderImage: placeholder)
     }
