@@ -16,11 +16,14 @@ import FirebaseDatabaseUI
  */
 class SearchViewController: UIViewController {
     /// The collection view used to show the listing of stalls.
-    @IBOutlet weak var stallListing: UICollectionView!
+    @IBOutlet weak private var stallListing: UICollectionView!
+    /// The loading indicator indicates that collection view is loading data
+    @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     /// The Firebase data source for the listing of stalls.
     private var dataSource: FUICollectionViewDataSource?
-    /// The collection of Firebase StallOverview objects
-    var stallOverViewObjects: FUIArray?
+    /// The mapping of Firebase StallOverview objects'
+    /// index path in collection view and its key
+    var stallOverViewObjects: [IndexPath: String] = [:]
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,9 +37,26 @@ class SearchViewController: UIViewController {
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
         
-        /// Get collection of StallOverview objects
-        stallOverViewObjects = FUIArray(query: query)
+        /// Add finish loading observer
+        DatabaseRef.observeValue(of: StallOverview.path, onChange: firebaseFinishLoading)
+    }
+    
+    func firebaseFinishLoading(snapshot: DataSnapshot) {
+        /// Stop the loading indicator
+        loadingIndicator.stopAnimating()
         
+        createStallIdAndIndexPathMapping(with: snapshot)
+    }
+    
+    func createStallIdAndIndexPathMapping(with snapshot: DataSnapshot) {
+        guard let children = snapshot.value as? NSDictionary else {
+            return
+        }
+        
+        for child in children {
+            child.key
+            print(child.key)
+        }
     }
 
     /// Populates a `StallListingCell` with the given data from database.
