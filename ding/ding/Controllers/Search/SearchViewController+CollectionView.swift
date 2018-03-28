@@ -10,6 +10,9 @@ import UIKit
 
 /**
  Extension for `SearchViewController` so that it can manage the collection view.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 extension SearchViewController: UICollectionViewDelegate {
     /// Jumps to stall details view when a certain is selected.
@@ -21,7 +24,7 @@ extension SearchViewController: UICollectionViewDelegate {
         }
         // Passes in the `id` of `StallOverview` displayed at this cell.
         if let stallId = stallIds[indexPath.totalRow(in: collectionView)] {
-            controller.stallOverviewPath = StallOverview.path + "\(StallOverview.path)/\(stallId)"
+            controller.stallOverviewPath = "\(StallOverview.path)/\(stallId)"
         }
         navigationController?.pushViewController(controller, animated: true)
     }

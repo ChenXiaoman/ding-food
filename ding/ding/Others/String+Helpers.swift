@@ -33,4 +33,16 @@ extension String {
         return ""
         
     }
+
+    /// Returns a string which could be used to perform Firebase query such that those
+    /// values starting with this string will be returned.
+    ///
+    /// Reason: The f8ff character used in the query above is a very high code point
+    /// in the Unicode range. Because it is after most regular characters in Unicode,
+    /// the query matches all values starting with this string.
+    ///
+    /// _(Adapted from an older version of Firebase documentation)_
+    var queryStartedWith: String {
+        return self + "\u{f8ff}"
+    }
 }
