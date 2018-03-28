@@ -19,6 +19,8 @@ struct Constants {
     static let verifyNUSControllerId = "verifyNUSController"
     /// The identifier for the main tab bar.
     static let mainTabBarId = "mainTabBarController"
+    /// The identifier for the stall details view controller.
+    static let stallDetailControllerId = "stallDetailController"
 
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.15)

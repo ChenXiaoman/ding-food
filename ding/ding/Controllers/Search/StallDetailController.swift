@@ -8,8 +8,13 @@
 
 import UIKit
 
-class StallDetailViewController: UIViewController, UITableViewDataSource {
+class StallDetailController: UIViewController, UITableViewDataSource {
     @IBOutlet private var foodTableaView: UITableView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        // Hides the navigation bar
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Fake data

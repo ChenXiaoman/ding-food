@@ -8,5 +8,9 @@ target 'ding' do
   # Pods for Firebase-related operations.
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+
+  # Pods for Firebase-UI functionalities.
   pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Database'
 end

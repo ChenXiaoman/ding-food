@@ -12,6 +12,8 @@
  a review for the stall where he/she purchase the food from.
  */
 public struct Review: FirebaseObject {
+    public static let path = "/reviews"
+
     public let id: String
     public var rating: Rating
     public var reviewText: String
