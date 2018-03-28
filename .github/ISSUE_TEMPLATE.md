@@ -1,5 +1,7 @@
 ## Which component is this issue about?
 
+<!-- Check any one of them by changing [ ] to [x].  -->
+
 * [ ] Ding! App
 * [ ] Ding! Stall App
 * [ ] ding-base library
