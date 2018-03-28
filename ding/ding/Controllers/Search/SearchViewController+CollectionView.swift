@@ -18,6 +18,8 @@ extension SearchViewController: UICollectionViewDelegate {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
                 return
         }
+        stallOverViewObjects?.ref(for: UInt(indexPath.row))
+        
         navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -19,6 +19,8 @@ class SearchViewController: UIViewController {
     @IBOutlet private weak var stallListing: UICollectionView!
     /// The Firebase data source for the listing of stalls.
     private var dataSource: FUICollectionViewDataSource?
+    /// The collection of Firebase StallOverview objects
+    var stallOverViewObjects: FUIArray?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +33,9 @@ class SearchViewController: UIViewController {
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
+        
+        /// Get collection of StallOverview objects
+        stallOverViewObjects = FUIArray(query: query)
     }
 
     /// Populates a `StallListingCell` with the given data from database.

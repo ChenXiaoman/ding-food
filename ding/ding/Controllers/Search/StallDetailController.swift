@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FirebaseDatabaseUI
 
 class StallDetailController: UIViewController, UITableViewDataSource {
     @IBOutlet private var foodTableaView: UITableView!
-
+    private var stallRef: DatabaseReference?
+    
     override func viewWillAppear(_ animated: Bool) {
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
