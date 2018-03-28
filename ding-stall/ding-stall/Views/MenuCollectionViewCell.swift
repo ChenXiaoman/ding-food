@@ -13,4 +13,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet var foodImage: UIImageView!
     
     public static let identifier = "MenuCollectionViewCell"
+
+    public func load(_ food: Food) {
+        foodName.text = food.name
+    }
 }

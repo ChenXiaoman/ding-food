@@ -107,6 +107,9 @@
                         <viewLayoutGuide key="safeArea" id="rVU-Te-CvR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="menu" id="bz8-vh-vae"/>
+                    <connections>
+                        <outlet property="menuView" destination="VmP-P4-bNZ" id="qQ0-KL-hnm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDD-0r-qwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

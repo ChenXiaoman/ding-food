@@ -13,16 +13,18 @@ public struct Stall: FirebaseObject {
     public static var path = "/stall"
 
     public let id: String
-    public var name = ""
-    public var location = ""
-    public var openingHour = ""
-    public var description = ""
-    public var queue = [Order]()
+    public var name = "valid name"
+    public var location = "valid location"
+    public var openingHour = "0800-2100"
+    public var description = "valid desc"
     public var menu = [Food]()
-    public var filters = Set<FilterIdentifier>()
+    /*public var queue = [Order]()
+    public var filters = Set<FilterIdentifier>()*/
 
     public init(id: String) {
         self.id = id
+        let foodId = Food.getAutoId
+        menu.append(Food(id: foodId, name: "chicken", price: 12, description: "good", type: .main, isSoldOut: false))
         self.save()
     }
 
