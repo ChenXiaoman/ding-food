@@ -31,7 +31,7 @@ class StallListingCell: UICollectionViewCell {
     /// Loads data into and populate a `StallListingCell`.
     /// - Parameter stall: The `StallOverview` object as the data source.
     func load(_ stall: StallOverview) {
-        photo.image = stall.photo
+        photo.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)

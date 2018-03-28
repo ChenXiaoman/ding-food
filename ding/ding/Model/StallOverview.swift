@@ -27,14 +27,5 @@ struct StallOverview: FirebaseObject {
     let name: String
     let queueCount: Int
     let averageRating: Double
-    var photo: UIImage? = nil
-
-    /// Overrides the `CodingKeys` so that `photo` attribute is ignored when saving to
-    /// or loading from the database.
-    private enum CodingKeys: CodingKey {
-        case id
-        case name
-        case queueCount
-        case averageRating
-    }
+    let photoPath: String
 }

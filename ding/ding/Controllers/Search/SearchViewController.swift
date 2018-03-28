@@ -74,8 +74,7 @@ class SearchViewController: UIViewController {
                                                                 fatalError("Unable to dequeue cell.")
         }
 
-        if var stall = StallOverview.deserialize(snapshot) {
-            stall.photo = #imageLiteral(resourceName: "pizza")
+        if let stall = StallOverview.deserialize(snapshot) {
             cell.load(stall)
         }
         return cell
