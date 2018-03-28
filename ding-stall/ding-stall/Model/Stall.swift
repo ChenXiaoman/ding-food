@@ -13,13 +13,18 @@ public struct Stall: FirebaseObject {
     public static var path = "/stall"
 
     public let id: String
-    public var name: String
-    public var location: String
-    public var openingHour: String
-    public var description: String
-    public var queue: [Order]
-    public var menu: [Food]
-    public var filters: Set<FilterIdentifier>
+    public var name = ""
+    public var location = ""
+    public var openingHour = ""
+    public var description = ""
+    public var queue = [Order]()
+    public var menu = [Food]()
+    public var filters = Set<FilterIdentifier>()
+
+    public init(id: String) {
+        self.id = id
+        self.save()
+    }
 
     public mutating func addFood(name: String, price: Double, description: String?, type: FoodType) {
         let id = Food.getAutoId()
