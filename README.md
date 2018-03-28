@@ -42,6 +42,7 @@ git branch --set-upstream-to=origin/<new_branch_name> <new_branch_name>
 ```
 4. Since we encourage you to always use a new branch each time, the branch should be deleted (using GitHub interface) after the PR is merged or declined. Don't woory, GitHub uses _soft delete_, we can restore the branch later.
 5. To avoid some merge conflicts and due to many other factors, we ignore the `Pods/` folder.
+6. Whenever you open a PR, please assign it to yourself (or anyone else if appropriate). Then, ask someone else to do PR review by assigning him/her as the reviewer.
 
 ## Setup Global `gitignore`
 
