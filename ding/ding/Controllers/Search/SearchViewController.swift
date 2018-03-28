@@ -19,7 +19,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak private var stallListing: UICollectionView!
     /// The loading indicator indicates that collection view is loading data.
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
-    
+    /// The search bar used to search restaurants.
+    @IBOutlet weak var searchBar: UISearchBar!
+
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
     /// Indicates whether the collection view has finished loading data.
