@@ -16,7 +16,7 @@ import FirebaseDatabaseUI
  */
 class SearchViewController: UIViewController {
     /// The collection view used to show the listing of stalls.
-    @IBOutlet private weak var stallListing: UICollectionView!
+    @IBOutlet weak var stallListing: UICollectionView!
     /// The Firebase data source for the listing of stalls.
     private var dataSource: FUICollectionViewDataSource?
     /// The collection of Firebase StallOverview objects

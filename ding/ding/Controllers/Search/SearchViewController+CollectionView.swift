@@ -15,10 +15,14 @@ extension SearchViewController: UICollectionViewDelegate {
     /// Jumps to stall details view when a certain is selected.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let id = Constants.stallDetailControllerId
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
+            as? StallDetailController else {
                 return
         }
-        stallOverViewObjects?.ref(for: UInt(indexPath.row))
+        
+        // Pass in Firebase stall overview reference at selected index path
+        controller.stallOverviewRef = stallOverViewObjects?.ref(for:
+            indexPath.fireBaseCollectionIndex(in: stallListing))
         
         navigationController?.pushViewController(controller, animated: true)
     }

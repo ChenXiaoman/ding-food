@@ -11,7 +11,8 @@ import FirebaseDatabaseUI
 
 class StallDetailController: UIViewController, UITableViewDataSource {
     @IBOutlet private var foodTableaView: UITableView!
-    private var stallRef: DatabaseReference?
+    /// Firebase reference of the current stall's overview
+    var stallOverviewRef: DatabaseReference?
     
     override func viewWillAppear(_ animated: Bool) {
         // Hides the navigation bar
