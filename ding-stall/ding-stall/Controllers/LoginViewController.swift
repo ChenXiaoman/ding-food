@@ -22,7 +22,14 @@ class LoginViewController: UIViewController {
 
     var stall: Stall!
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+
+        loadProfileView()
+        /*
         guard authorizer.didLogin else {
             loadLoginView(animated)
             return
@@ -30,6 +37,14 @@ class LoginViewController: UIViewController {
 
         initialiseStall()
         loadTabBarView(animated)
+        */
+    }
+
+    private func loadProfileView() {
+        //let profileViewController = ProfileViewController()
+        //addChildViewController(profileViewController)
+        //profileViewController.view.frame = view.frame
+        view.addSubview(ProfileView(frame: view.frame))
     }
 
     private func initialiseStall() {

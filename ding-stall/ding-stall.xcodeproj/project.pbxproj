@@ -31,6 +31,8 @@
 		325EE82120694A7E004EC560 /* UIViewsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE82020694A7E004EC560 /* UIViewsLayout.swift */; };
 		325EE824206A0159004EC560 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE823206A0159004EC560 /* Account.swift */; };
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
+		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
+		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -71,6 +73,8 @@
 		325EE823206A0159004EC560 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
+		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B26135D3206B7E0800829009 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
@@ -159,7 +163,9 @@
 				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
 				F2BBF829205B839400B9812D /* Main.storyboard */,
 				F26514C9206525B90098783C /* MeSettingMenuCell.swift */,
+				B26135D1206B7CFD00829009 /* ProfileView.swift */,
 				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
+				B26135D3206B7E0800829009 /* CustomTextField.swift */,
 				325EE82220694D23004EC560 /* Utils */,
 				5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */,
 			);
@@ -401,9 +407,11 @@
 				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
 				325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */,
+				B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */,
 				325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */,
 				325EE81220665178004EC560 /* FoodType.swift in Sources */,
 				F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */,
+				B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */,
 				F26514CC206540230098783C /* Authorizer.swift in Sources */,
 				325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */,
 				F2D2C0432064CE75005230D6 /* Constants.swift in Sources */,
