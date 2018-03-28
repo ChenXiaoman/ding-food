@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 /**
  Extension for `IndexPath` to support total row calculation.
  */
