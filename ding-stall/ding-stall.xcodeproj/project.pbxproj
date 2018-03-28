@@ -14,7 +14,7 @@
 		325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F820664532004EC560 /* SettingsViewController.swift */; };
 		325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FA20664709004EC560 /* OrderQueueViewController.swift */; };
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
-		325EE7FF2066501A004EC560 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* Storage.swift */; };
+		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
 		325EE80B20665178004EC560 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* Stall.swift */; };
 		325EE80C20665178004EC560 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* Protocols.swift */; };
 		325EE80D20665178004EC560 /* ReviewRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80420665178004EC560 /* ReviewRating.swift */; };
@@ -54,7 +54,7 @@
 		325EE7F820664532004EC560 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		325EE7FA20664709004EC560 /* OrderQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueViewController.swift; sourceTree = "<group>"; };
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		325EE7FE20665019004EC560 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
 		325EE80220665177004EC560 /* Stall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stall.swift; sourceTree = "<group>"; };
 		325EE80320665177004EC560 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		325EE80420665178004EC560 /* ReviewRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRating.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				325EE81C20693800004EC560 /* ArithmeticExtensions.swift */,
 				F26514CB206540230098783C /* Authorizer.swift */,
 				F2D2C0422064CE75005230D6 /* Constants.swift */,
-				325EE7FE20665019004EC560 /* Storage.swift */,
+				325EE7FE20665019004EC560 /* DatabaseRef.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */,
-				325EE7FF2066501A004EC560 /* Storage.swift in Sources */,
+				325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */,
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
