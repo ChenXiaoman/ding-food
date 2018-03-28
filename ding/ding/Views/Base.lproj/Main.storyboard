@@ -9,6 +9,7 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -424,11 +425,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UnP-Vt-9DK">
                                                     <rect key="frame" x="15" y="20" width="350" height="3.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="uje-yl-IE6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="3.5"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="uje-yl-IE6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="3.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="gk8-l0-08g"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Food name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAR-QI-BZN">
-                                                            <rect key="frame" x="50" y="0.0" width="221" height="3.5"/>
+                                                            <rect key="frame" x="80" y="0.0" width="191" height="3.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Ugu-0a-g0E"/>
                                                             </constraints>
@@ -443,6 +447,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="uje-yl-IE6" firstAttribute="width" secondItem="UnP-Vt-9DK" secondAttribute="width" multiplier="1:5" id="LDS-8T-YsJ"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -490,6 +497,7 @@
                         <outlet property="foodTableaView" destination="DJQ-q2-aPM" id="Lzv-jX-6AD"/>
                         <outlet property="nameLabel" destination="RjR-Io-pep" id="FqS-iY-PqX"/>
                         <outlet property="numOfPeopleWaitingLabel" destination="miP-ZH-hx9" id="yCV-A9-4tQ"/>
+                        <outlet property="stallImage" destination="m4P-Ip-GDg" id="jnd-fJ-u9X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czO-kK-y7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -890,7 +898,6 @@
         <image name="launch-background" width="512" height="512"/>
         <image name="me" width="20" height="20"/>
         <image name="order" width="20" height="20"/>
-        <image name="pizza" width="40" height="26"/>
         <image name="search" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>

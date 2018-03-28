@@ -10,10 +10,16 @@ import UIKit
 import FirebaseDatabaseUI
 
 class StallDetailController: UIViewController, UITableViewDataSource {
+    /// The text format to display queue count.
+    private static let queueCountFormat = "Number of people waiting: %d"
+    /// The text format to display average rating.
+    private static let averageRatingFormat = "Average rating: %.1f"
+    
     /// Table view for displaying menu (list of food)
     @IBOutlet weak private var foodTableaView: UITableView!
     
     /// Labels for displaying stall overview
+    @IBOutlet weak private var stallImage: UIImageView!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!
     @IBOutlet weak private var averageRatingLabel: UILabel!
@@ -37,15 +43,14 @@ class StallDetailController: UIViewController, UITableViewDataSource {
     /// Get stall overview info from snapshot
     /// and populate to labels
     func populateStallOverview(snapshot: DataSnapshot) {
-        guard let values = snapshot.value as? NSDictionary,
-            let name = values[StallOverview.nameTitle] as? String,
-            let rating = values[StallOverview.averageRatingTitle] as? Double,
-            let numberOfPeople = values[StallOverview.queueCountTitle] as? Int else {
-                return
+        guard let stallOverview = StallOverview.deserialize(snapshot) else {
+            return
         }
-        nameLabel.text = name
-        averageRatingLabel.text = "Average rating: \(rating)"
-        numOfPeopleWaitingLabel.text = "Number of people waiting: \(numberOfPeople)"
+        nameLabel.text = stallOverview.name
+        stallImage.setWebImage(at: stallOverview.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
+        averageRatingLabel.text = String(format: StallDetailController.queueCountFormat, stallOverview.queueCount)
+        numOfPeopleWaitingLabel.text = String(format: StallDetailController.averageRatingFormat,
+                                              stallOverview.averageRating)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

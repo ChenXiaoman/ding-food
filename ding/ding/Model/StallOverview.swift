@@ -17,11 +17,6 @@ import UIKit
  */
 struct StallOverview: FirebaseObject {
     static let path = "/stall_overviews"
-    /// Firebase attribute title
-    static let averageRatingTitle = "averageRating"
-    static let nameTitle = "name"
-    static let photoPathTitle = "photoPath"
-    static let queueCountTitle = "queueCount"
     
     let id: String
     let name: String
