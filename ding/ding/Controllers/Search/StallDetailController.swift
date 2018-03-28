@@ -10,7 +10,10 @@ import UIKit
 import FirebaseDatabaseUI
 
 class StallDetailController: UIViewController, UITableViewDataSource {
+    /// Table view for displaying menu (list of food)
     @IBOutlet weak private var foodTableaView: UITableView!
+    
+    /// Labels for displaying stall overview
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!
     @IBOutlet weak private var averageRatingLabel: UILabel!
@@ -23,6 +26,7 @@ class StallDetailController: UIViewController, UITableViewDataSource {
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
         
+        // Configure the labels for stall overview
         guard let stallOverviewId = stallOverviewId else {
             return
         }
@@ -30,6 +34,8 @@ class StallDetailController: UIViewController, UITableViewDataSource {
         DatabaseRef.observeValue(of: stallOverviewPath, onChange: populateStallOverview)
     }
     
+    /// Get stall overview info from snapshot
+    /// and populate to labels
     func populateStallOverview(snapshot: DataSnapshot) {
         guard let values = snapshot.value as? NSDictionary,
             let name = values[StallOverview.nameTitle] as? String,
