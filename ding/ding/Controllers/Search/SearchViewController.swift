@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
     /// The loading indicator indicates that collection view is loading data.
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     /// The search bar used to search restaurants.
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak private var searchBar: UISearchBar!
 
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
@@ -46,6 +46,9 @@ class SearchViewController: UIViewController {
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
+
+        // Configures the search bar.
+        searchBar.delegate = self
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,5 +82,19 @@ class SearchViewController: UIViewController {
             stallIds[indexPath.totalRow(in: collectionView)] = stall.id
         }
         return cell
+    }
+}
+
+/**
+ Extension for `SearchViewController` so that it can manage the search bar.
+ */
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        dataSource?.unbind()
+        let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")
+            .queryStarting(atValue: searchText).queryEnding(atValue: searchText.queryStartedWith)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
+        dataSource?.bind(to: stallListing)
+        stallListing.reloadData()
     }
 }
