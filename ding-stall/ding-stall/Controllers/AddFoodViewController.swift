@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import XLForm
 
-class AddFoodViewController: UIViewController {
+class AddFoodViewController: XLFormViewController {
 
     static let identifier = "addFoodSegue"
 
