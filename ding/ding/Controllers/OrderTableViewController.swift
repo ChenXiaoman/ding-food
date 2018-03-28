@@ -9,9 +9,9 @@
 import UIKit
 
 class OrderTableViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet private var orderTableView: UITableView!
+    @IBOutlet weak private var orderTableView: UITableView!
     
-    @IBOutlet var shoppingCartTableView: UITableView!
+    @IBOutlet weak private var shoppingCartTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Hadle two table views in one controller with if else
