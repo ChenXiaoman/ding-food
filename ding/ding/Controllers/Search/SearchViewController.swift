@@ -16,9 +16,16 @@ import FirebaseDatabaseUI
  */
 class SearchViewController: UIViewController {
     /// The collection view used to show the listing of stalls.
-    @IBOutlet private weak var stallListing: UICollectionView!
+    @IBOutlet weak private var stallListing: UICollectionView!
+    /// The loading indicator indicates that collection view is loading data
+    @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
+    
     /// The Firebase data source for the listing of stalls.
     private var dataSource: FUICollectionViewDataSource?
+    
+    /// An array of Firebase StallOverview objects' key
+    /// It is used for passing in ID when transfer to stall detail page
+    var allStallsId: [String] = []
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +38,26 @@ class SearchViewController: UIViewController {
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
+        
+        /// Add finish loading observer
+        DatabaseRef.observeValue(of: StallOverview.path, onChange: firebaseFinishLoading)
+    }
+    
+    /// Handle when firebase data have finished loading
+    private func firebaseFinishLoading(snapshot: DataSnapshot) {
+        // Stop animating of the loading indicator
+        loadingIndicator.stopAnimating()
+        
+        getAllStallsId(with: snapshot)
+    }
+    
+    /// Get all IDs of StallOverview objects from Firebase
+    private func getAllStallsId(with snapshot: DataSnapshot) {
+        guard let children = snapshot.value as? NSDictionary,
+            let allKeys = children.allKeys as? [String] else {
+            return
+        }
+        allStallsId = allKeys
     }
 
     /// Populates a `StallListingCell` with the given data from database.

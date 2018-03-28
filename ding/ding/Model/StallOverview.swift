@@ -17,7 +17,7 @@ import UIKit
  */
 struct StallOverview: FirebaseObject {
     static let path = "/stall_overviews"
-
+    
     let id: String
     let name: String
     let queueCount: Int
