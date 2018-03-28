@@ -16,7 +16,7 @@ import UIKit
  - Date: March 2018
  */
 struct StallOverview: FirebaseObject {
-    static let path = "/stalls"
+    static let path = "/stall_overviews"
 
     let id: String
     let name: String

@@ -1,5 +1,5 @@
 //
-//  Storage.swift
+//  DatabaseRef.swift
 //  ding-stall
 //
 //  Created by Yunpeng Niu on 18/03/18.
@@ -16,7 +16,7 @@ import FirebaseDatabase
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class Storage {
+class DatabaseRef {
     /// A reference to the Firebase realtime database, as access point to the server.
     private static let ref = Database.database().reference()
 

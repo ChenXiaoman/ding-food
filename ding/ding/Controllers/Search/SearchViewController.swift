@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
         // Configures the collection view.
-        let query = Storage.getNodeRef(of: StallOverview.path)
+        let query = DatabaseRef.getNodeRef(of: StallOverview.path)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self

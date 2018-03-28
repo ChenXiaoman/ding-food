@@ -64,7 +64,7 @@ extension FirebaseObject {
     /// Gets a unique `id` for this `FirebaseObject`. This property could be useful
     /// when you create a new object locally.
     public static var getAutoId: String {
-        return Storage.getAutoId(of: Self.path)
+        return DatabaseRef.getAutoId(of: Self.path)
     }
 
     /// Converts a given `FirebaseObject` into a dictionary format so that it can be
@@ -110,6 +110,6 @@ extension FirebaseObject {
     /// to save all attributes to the database or want to customize the key name for
     /// certain attributes.
     public func save() {
-        Storage.setChildNode(of: Self.path, to: self)
+        DatabaseRef.setChildNode(of: Self.path, to: self)
     }
 }
