@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 
-        loadProfileView()
+        loadProfileView(animated)
         /*
         guard authorizer.didLogin else {
             loadLoginView(animated)
@@ -40,11 +40,12 @@ class LoginViewController: UIViewController {
         */
     }
 
-    private func loadProfileView() {
-        //let profileViewController = ProfileViewController()
-        //addChildViewController(profileViewController)
-        //profileViewController.view.frame = view.frame
-        view.addSubview(ProfileView(frame: view.frame))
+    private func loadProfileView(_ animated: Bool) {
+        let id = Constants.profileControllerId
+        guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
+            fatalError("Could not find the controller for Profile View")
+        }
+        navigationController?.pushViewController(tabBarController, animated: animated)
     }
 
     private func initialiseStall() {

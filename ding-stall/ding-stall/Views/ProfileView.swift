@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProfileViewDelegate: class {
+    func confirmStallProfile()
+}
+
 class ProfileView: UIView {
 
     private struct ClassConstants {
@@ -29,6 +33,8 @@ class ProfileView: UIView {
     var title: UILabel!
 
     var confirmButton: UIButton!
+
+    var delegate: ProfileViewDelegate!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,6 +85,13 @@ class ProfileView: UIView {
 
         confirmButton.frame = CGRect(x: 0, y: 0,
             width: Constants.screenWidth - Constants.screenPadding, height: ClassConstants.buttonHeight)
+
+        confirmButton.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func didTapConfirmButton() {
+        delegate.confirmStallProfile()
     }
 
     private func initStackView() {

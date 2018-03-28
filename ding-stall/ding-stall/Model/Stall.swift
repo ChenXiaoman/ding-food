@@ -23,15 +23,16 @@ public struct Stall: FirebaseObject {
     public var location: String
     public var openingHour: String
     public var description: String
-    public var queue: [Order]
-    public var menu: [Food]
-    public var filters: Set<FilterIdentifier>
+    public var queue: [Order]?
+    public var menu: [Food]?
+    public var filters: Set<FilterIdentifier>?
 
     public mutating func addFood(name: String, price: Double, description: String?, type: FoodType) {
         let id = Food.getAutoId()
         let newFood = Food(id: id, name: name, price: price, description: description,
                            type: type, isSoldOut: false)
-        menu.append(newFood)
+
+        menu?.append(newFood)
         newFood.save()
         self.save()
     }
