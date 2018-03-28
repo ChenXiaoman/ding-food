@@ -8,20 +8,19 @@
 
 import UIKit
 
+import UIKit
+
 /**
- An extension to get the index in firebase collection
- for a indexpath in collection view
+ Extension for `IndexPath` to support total row calculation.
  */
 extension IndexPath {
-    
-    /// Get the index in firebase collection
-    /// for a indexpath in the collection view
-    func fireBaseCollectionIndex(in collectionView: UICollectionView) -> Int {
-        var tatalItemsInPreviousSection: Int = 0
-        for sectionNumber in 0 ..< section {
-            let itemsInSection = collectionView.numberOfItems(inSection: sectionNumber)
-            tatalItemsInPreviousSection += itemsInSection
-        }
-        return tatalItemsInPreviousSection + row
+    /// Returns the total row number of the index path in a certain collection
+    /// view, which is an accumulation of the items in all previous sections.
+    /// - Parameter collectionView: The collection view this index path is in.
+    /// - Returns: The total row number.
+    func totalRow(in collectionView: UICollectionView) -> Int {
+        return row + Array(0..<section).reduce(0, { sum, section in
+            return sum + collectionView.numberOfItems(inSection: section)
+        })
     }
 }

@@ -17,12 +17,12 @@ extension SearchViewController: UICollectionViewDelegate {
         let id = Constants.stallDetailControllerId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
             as? StallDetailController else {
-                return
+            return
         }
-        
-        // Pass in Firebase stall overview ID at selected index path
-        controller.stallOverviewId = allStallsId[indexPath.row]
-        
+        // Passes in the `id` of `StallOverview` displayed at this cell.
+        if let stallId = stallIds[indexPath.totalRow(in: collectionView)] {
+            controller.stallOverviewPath = StallOverview.path + "\(StallOverview.path)/\(stallId)"
+        }
         navigationController?.pushViewController(controller, animated: true)
     }
 }
