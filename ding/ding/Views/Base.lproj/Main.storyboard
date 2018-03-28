@@ -485,7 +485,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="averageRatingLabel" destination="nlp-VK-18P" id="w0X-de-LUj"/>
+                        <outlet property="descriptionLabel" destination="xVX-du-MNY" id="ucm-h4-DKk"/>
                         <outlet property="foodTableaView" destination="DJQ-q2-aPM" id="Lzv-jX-6AD"/>
+                        <outlet property="nameLabel" destination="RjR-Io-pep" id="FqS-iY-PqX"/>
+                        <outlet property="numOfPeopleWaitingLabel" destination="miP-ZH-hx9" id="yCV-A9-4tQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czO-kK-y7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -593,7 +597,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IJ0-IS-Asb">
-                                <rect key="frame" x="10" y="108" width="355" height="500"/>
+                                <rect key="frame" x="10" y="20" width="355" height="637"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-Bd-slt">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="236"/>
@@ -631,13 +635,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add remarks" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1D-Pg-6yg">
-                                        <rect key="frame" x="0.0" y="368" width="355" height="32"/>
+                                        <rect key="frame" x="0.0" y="368" width="355" height="169"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-DO-FIk" userLabel="Order immediately">
-                                        <rect key="frame" x="0.0" y="410" width="355" height="40"/>
+                                        <rect key="frame" x="0.0" y="547" width="355" height="40"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.4041630993150685" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0f3-XK-oqG"/>
@@ -650,7 +654,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-Kt-6YX">
-                                        <rect key="frame" x="0.0" y="460" width="355" height="40"/>
+                                        <rect key="frame" x="0.0" y="597" width="355" height="40"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.40416309929999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pgI-Og-aYd"/>
@@ -890,6 +894,6 @@
         <image name="search" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B72-aZ-H5y"/>
+        <segue reference="QnY-4y-vYL"/>
     </inferredMetricsTieBreakers>
 </document>

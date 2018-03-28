@@ -51,13 +51,13 @@ class SearchViewController: UIViewController {
         getAllStallsId(with: snapshot)
     }
     
+    /// Get all IDs of StallOverview objects from Firebase
     private func getAllStallsId(with snapshot: DataSnapshot) {
         guard let children = snapshot.value as? NSDictionary,
             let allKeys = children.allKeys as? [String] else {
             return
         }
         allStallsId = allKeys
-        print(allStallsId)
     }
 
     /// Populates a `StallListingCell` with the given data from database.

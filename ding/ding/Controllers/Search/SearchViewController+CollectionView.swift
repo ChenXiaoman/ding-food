@@ -20,9 +20,8 @@ extension SearchViewController: UICollectionViewDelegate {
                 return
         }
         
-        // Pass in Firebase stall overview reference at selected index path
-//        controller.stallOverviewRef = stallOverViewObjects?.ref(for:
-//            indexPath.fireBaseCollectionIndex(in: stallListing))
+        // Pass in Firebase stall overview ID at selected index path
+        controller.stallOverviewId = allStallsId[indexPath.row]
         
         navigationController?.pushViewController(controller, animated: true)
     }

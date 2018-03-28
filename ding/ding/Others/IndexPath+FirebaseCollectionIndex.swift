@@ -16,12 +16,12 @@ extension IndexPath {
     
     /// Get the index in firebase collection
     /// for a indexpath in the collection view
-    func fireBaseCollectionIndex(in collectionView: UICollectionView) -> UInt {
+    func fireBaseCollectionIndex(in collectionView: UICollectionView) -> Int {
         var tatalItemsInPreviousSection: Int = 0
         for sectionNumber in 0...section {
             let itemsInSection = collectionView.numberOfItems(inSection: sectionNumber)
             tatalItemsInPreviousSection += itemsInSection
         }
-        return UInt(tatalItemsInPreviousSection + row)
+        return tatalItemsInPreviousSection + row
     }
 }
