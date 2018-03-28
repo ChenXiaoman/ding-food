@@ -7,8 +7,8 @@
 //
 
 public enum FoodType: String, Codable {
-    case main
-    case soup
-    case dessert
-    case drink
+    case main = "Main"
+    case soup = "Soup"
+    case dessert = "Dessert"
+    case drink = "Drink"
 }

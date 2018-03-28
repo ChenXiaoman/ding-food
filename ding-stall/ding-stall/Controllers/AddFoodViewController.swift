@@ -13,9 +13,38 @@ class AddFoodViewController: XLFormViewController {
 
     static let identifier = "addFoodSegue"
 
-    @IBOutlet var nameText: UITextField!
-    @IBOutlet var priceText: UITextField!
-    @IBOutlet var descriptionText: UITextField!
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.initializeForm()
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.initializeForm()
+    }
+
+    func initializeForm() {
+        let form = XLFormDescriptor(title: "Add Food")
+        let section = XLFormSectionDescriptor()
+        form.addFormSection(section)
+        let name = XLFormRowDescriptor(tag: "Name", rowType: XLFormRowDescriptorTypeText, title: "Food Name")
+        let price = XLFormRowDescriptor(tag: "Price", rowType: XLFormRowDescriptorTypeDecimal, title: "Food Price")
+        let description = XLFormRowDescriptor(tag: "Description", rowType: XLFormRowDescriptorTypeTextView,
+                                              title: "Food Description")
+        let type = XLFormRowDescriptor(tag: "Type", rowType: XLFormRowDescriptorTypeSelectorAlertView,
+                                       title: "Food Type")
+        section.addFormRow(name)
+        section.addFormRow(price)
+        section.addFormRow(description)
+
+        let selectorText = [FoodType.main.rawValue,
+                            FoodType.dessert.rawValue,
+                            FoodType.soup.rawValue,
+                            FoodType.drink.rawValue]
+        type.selectorOptions = selectorText
+        section.addFormRow(type)
+        self.form = form
+    }
 
     var stall: Stall!
 
@@ -23,7 +52,7 @@ class AddFoodViewController: XLFormViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func addFood(_ sender: UIButton) {
+    /*func addFood(_ sender: UIButton) {
         guard
             let name = nameText.text,
             let price = Double(priceText.text!),
@@ -31,5 +60,5 @@ class AddFoodViewController: XLFormViewController {
                 return
         }
         stall.addFood(name: name, price: price, description: description, type: .main)
-    }
+    }*/
 }
