@@ -16,12 +16,11 @@ class MenuViewController: UIViewController {
     @IBOutlet private var menuView: UICollectionView!
 
     private var stall: Stall!
-    private let storage = Storage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        storage.observeValue(of: Stall.path + "/" + Account.stallId) { snap in
-            self.stall = self.storage.decode(Stall.self, from: snap)
+        DatabaseRef.observeValue(of: Stall.path + "/" + Account.stallId) { snap in
+            self.stall = Stall.deserialize(snap)
         }
     }
 
@@ -93,7 +92,7 @@ extension MenuViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
-            return MenuCollectionViewCell()
+            fatalError("Unable to dequeue the cell")
         }
         let food = stall.getFood(at: indexPath.item)
         cell.foodName.text = food.name

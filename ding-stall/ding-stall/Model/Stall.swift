@@ -27,7 +27,7 @@ public struct Stall: FirebaseObject {
     }
 
     public mutating func addFood(name: String, price: Double, description: String?, type: FoodType) {
-        let id = Food.getAutoId()
+        let id = Food.getAutoId
         let newFood = Food(id: id, name: name, price: price, description: description,
                            type: type, isSoldOut: false)
         menu.append(newFood)

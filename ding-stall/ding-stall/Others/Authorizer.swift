@@ -62,4 +62,3 @@ class Authorizer {
         return didLogin && isEmailVerified
     }
 }
-
