@@ -36,6 +36,7 @@ class SearchViewController: UIViewController {
         
         /// Get collection of StallOverview objects
         stallOverViewObjects = FUIArray(query: query)
+        
     }
 
     /// Populates a `StallListingCell` with the given data from database.
