@@ -6,7 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
 import FirebaseDatabaseUI
 
 /**
@@ -18,14 +17,20 @@ import FirebaseDatabaseUI
 class SearchViewController: UIViewController {
     /// The collection view used to show the listing of stalls.
     @IBOutlet private weak var stallListing: UICollectionView!
+    /// The Firebase data source for the listing of stalls.
+    private var dataSource: FUICollectionViewDataSource?
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
+        // Configures the collection view.
+        let query = Storage.getNodeRef(of: StallOverview.path)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
+        dataSource?.bind(to: stallListing)
         stallListing.delegate = self
-        let query = Storage.getNodeRef(of: "/stalls")
-        stallListing.dataSource = stallListing.bind(to: query, populateCell: populateStallListingCell)
     }
 
     private func populateStallListingCell(collectionView: UICollectionView,
@@ -35,8 +40,11 @@ class SearchViewController: UIViewController {
                                                             for: indexPath) as? StallListingCell else {
                                                                 fatalError("Unable to dequeue cell.")
         }
-        let stall = StallOverview(id: "123", name: "Western Food", queueCount: 10, averageRating: 4.7, photo: #imageLiteral(resourceName: "pizza"))
-        cell.load(stall)
+
+        if var stall = StallOverview.deserialize(snapshot) {
+            stall.photo = #imageLiteral(resourceName: "pizza")
+            cell.load(stall)
+        }
         return cell
     }
 }

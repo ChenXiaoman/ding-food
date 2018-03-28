@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Foundation
+import FirebaseDatabase
 
 /**
  Each object that would be stored in Firebase database is a `FirebaseObject`. This protocol
@@ -76,6 +76,26 @@ extension FirebaseObject {
         }
         dict["id"] = nil
         return dict
+    }
+
+    /// Converts a given `DataSnapshot` back to its runtime object representation. It will
+    /// simply return `nil` if the conversion fails.
+    ///
+    /// Notice: The snapshot should be the one containing only this object. For example, to
+    /// convert a post in blog system, the snapshot should be at path "/posts/{post_id}". You
+    /// then can call `Post.deserialize(snapshot)`.
+    /// - Parameter snapshot: The snapshot containing the required object.
+    /// - Returns: The object converted if conversion is successful; nil otherwise.
+    public static func deserialize(_ snapshot: DataSnapshot) -> Self? {
+        guard var dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        dict["id"] = snapshot.key
+        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys),
+            let obj = try? JSONDecoder().decode(Self.self, from: data) else {
+            return nil
+        }
+        return obj
     }
 
     /// Saves this `FirebaseObject` to the Firebase database.
