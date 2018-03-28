@@ -113,4 +113,3 @@ extension FirebaseObject {
         DatabaseRef.setChildNode(of: Self.path, to: self)
     }
 }
-
