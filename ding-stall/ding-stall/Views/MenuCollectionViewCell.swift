@@ -14,7 +14,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     public static let identifier = "MenuCollectionViewCell"
 
-    public func load(_ food: Food) {
-        foodName.text = food.name
+    public func load(_ food: Food?) {
+        foodName.text = food?.name
     }
 }

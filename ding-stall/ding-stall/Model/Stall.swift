@@ -17,23 +17,25 @@ public struct Stall: FirebaseObject {
     public var location = "valid location"
     public var openingHour = "0800-2100"
     public var description = "valid desc"
-    public var menu = [Food]()
-    /*public var queue = [Order]()
-    public var filters = Set<FilterIdentifier>()*/
+    public var menu: [Food]?
+    public var queue: [Order]?
+    public var filters: Set<FilterIdentifier>?
 
     public init(id: String) {
         self.id = id
-        let foodId = Food.getAutoId
-        menu.append(Food(id: foodId, name: "chicken", price: 12, description: "good", type: .main, isSoldOut: false))
         self.save()
     }
 
+    /// Add the s
     public mutating func addFood(name: String, price: Double, description: String?, type: FoodType) {
         let id = Food.getAutoId
         let newFood = Food(id: id, name: name, price: price, description: description,
                            type: type, isSoldOut: false)
-        menu.append(newFood)
-        newFood.save()
+        if menu == nil {
+            menu = [Food]()
+        }
+        menu?.append(newFood)
+        //newFood.save()
         self.save()
     }
 
@@ -41,7 +43,12 @@ public struct Stall: FirebaseObject {
 
     }
 
-    public func getFood(at index: Int) -> Food {
-        return menu[index]
+    public func getFood(at index: Int) -> Food? {
+        guard
+            let maxIndex = menu?.count,
+            index < maxIndex else {
+            return nil
+        }
+        return menu?[index]
     }
 }

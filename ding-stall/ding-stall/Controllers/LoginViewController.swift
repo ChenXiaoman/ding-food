@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     /// Loads the main tab bar view from storyboard.
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
-        Account.setId(authorizer.userName)
+        Account.setId(authorizer.userId)
         //_ = Stall(id: Account.stallId)
         let id = Constants.tabBarControllerId
         guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {

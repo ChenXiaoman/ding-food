@@ -46,6 +46,12 @@ class Authorizer {
         return Authorizer.auth.currentUser?.displayName ?? ""
     }
 
+    /// Returns the user id of the current user if it has signed in, an empty
+    /// string otherwise.
+    var userId: String {
+        return Authorizer.auth.currentUser?.uid ?? ""
+    }
+
     /// Returns whether there is a user that has signed in currently.
     var didLogin: Bool {
         return Authorizer.auth.currentUser != nil

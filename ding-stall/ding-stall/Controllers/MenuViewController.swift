@@ -48,7 +48,7 @@ extension MenuViewController: UICollectionViewDelegate {
 
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stall.menu.count
+        return stall.menu?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +57,7 @@ extension MenuViewController: UICollectionViewDataSource {
                                                                 fatalError("Unable to dequeue a cell.")
         }
 
-        cell.load(stall.getFood(at: indexPath.item))
+        cell.load(stall?.getFood(at: indexPath.item))
         return cell
     }
 }
