@@ -61,6 +61,12 @@ extension FirebaseObject {
         return lhs.id == rhs.id
     }
 
+    /// Gets a unique `id` for this `FirebaseObject`. This property could be useful
+    /// when you create a new object locally.
+    public static var getAutoId: String {
+        return Storage.getAutoId(of: Self.path)
+    }
+
     /// Converts a given `FirebaseObject` into a dictionary format so that it can be
     /// directly added to the database as a new child node. It will simply return an
     /// empty dictionary if the conversion fails.

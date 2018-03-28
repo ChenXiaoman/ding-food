@@ -76,4 +76,11 @@ class Storage {
     static func getNodeRef(of path: String) -> DatabaseReference {
         return ref.child(path)
     }
+
+    /// Creates a unique key used to generate a child at a node specified by the given path.
+    /// - Parameter path: The path to the parent node.
+    /// - Returns: a string representing the unique key.
+    static func getAutoId(of path: String) -> String {
+        return ref.child(path).childByAutoId().key
+    }
 }
