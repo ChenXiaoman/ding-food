@@ -12,7 +12,7 @@ import UIKit
 /**
  The controller of stall's menu view
  */
-class MenuViewController: UIViewController {
+class MenuViewController: NoNavigationBarViewController {
 
     @IBOutlet private var menuView: UICollectionView!
 

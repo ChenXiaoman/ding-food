@@ -45,7 +45,6 @@ public struct Stall: FirebaseObject {
             menu = [Food]()
         }
         menu?.append(newFood)
-        //newFood.save()
         self.save()
     }
 
