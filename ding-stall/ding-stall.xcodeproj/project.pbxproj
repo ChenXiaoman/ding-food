@@ -36,6 +36,8 @@
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
 		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
+		B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72D206CAEB200A886F9 /* MainViewController.swift */; };
+		B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72F206CAF2A00A886F9 /* MainView.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -81,6 +83,8 @@
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B26135D3206B7E0800829009 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B2D8E72D206CAEB200A886F9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B2D8E72F206CAF2A00A886F9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				B26135D3206B7E0800829009 /* CustomTextField.swift */,
 				325EE82220694D23004EC560 /* Utils */,
 				5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */,
+				B2D8E72F206CAF2A00A886F9 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				325EE7FA20664709004EC560 /* OrderQueueViewController.swift */,
 				325EE7F220663C46004EC560 /* ProfileViewController.swift */,
 				325EE7F820664532004EC560 /* SettingsViewController.swift */,
+				B2D8E72D206CAEB200A886F9 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 				325EE82120694A7E004EC560 /* UIViewsLayout.swift in Sources */,
 				325EE7F7206644F4004EC560 /* OrderHistoryViewController.swift in Sources */,
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
+				B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */,
 				325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */,
 				325EE80B20665178004EC560 /* Stall.swift in Sources */,
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,
@@ -423,6 +430,7 @@
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
 				325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */,
 				B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */,
+				B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */,
 				325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */,
 				325EE81220665178004EC560 /* FoodType.swift in Sources */,
 				F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */,
