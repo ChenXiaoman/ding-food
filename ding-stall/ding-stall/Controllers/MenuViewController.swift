@@ -21,6 +21,9 @@ class MenuViewController: NoNavigationBarViewController {
     override func viewDidLoad() {
         DatabaseRef.observeValue(of: Stall.path + "/\(Account.stallId)") { snap in
             self.stall = Stall.deserialize(snap)
+            guard self.stall != nil else {
+                return
+            }
             self.menuView.delegate = self
             self.menuView.dataSource = self
             self.menuView.reloadData()
@@ -38,6 +41,13 @@ class MenuViewController: NoNavigationBarViewController {
             break
         }
 
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard identifier == AddFoodViewController.identifier else {
+            return true
+        }
+        return stall != nil
     }
 }
 
