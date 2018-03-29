@@ -30,7 +30,9 @@ class OngoingOrderController: UIViewController {
         guard segue.identifier == Constants.ongoingOrderToShoppingCartId else {
             return
         }
-        segue.destination.preferredContentSize = CGSize(width: 100, height: 100)
+        let width = Constants.screenWidth / 2
+        let height = Constants.screenHeight / 2
+        segue.destination.preferredContentSize = CGSize(width: width, height: height)
     }
 }
 
