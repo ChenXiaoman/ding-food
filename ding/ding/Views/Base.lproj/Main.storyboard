@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="192.80000000000001" y="-576.1619190404798"/>
         </scene>
-        <!--Order-->
+        <!--OngoingOrderController-->
         <scene sceneID="TTT-6I-4u1">
             <objects>
-                <viewController id="VAa-hn-p6R" customClass="OngoingOrderController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VAa-hn-p6R" userLabel="OngoingOrderController" customClass="OngoingOrderController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="im0-BX-I2a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,6 @@
                                             <outlet property="foodImage" destination="l8j-63-0EQ" id="wYE-jg-l7K"/>
                                             <outlet property="foodName" destination="mxv-ck-Bz1" id="3Fo-as-VTE"/>
                                             <outlet property="status" destination="xwZ-4S-gjV" id="sqP-9g-yxN"/>
-                                            <segue destination="4J9-jl-KNV" kind="show" id="B72-aZ-H5y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -253,8 +252,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="clL-TG-MGO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Order" image="order" id="Ko7-zC-Uiu"/>
-                    <navigationItem key="navigationItem" id="59c-1s-Zdi"/>
+                    <navigationItem key="navigationItem" title="On-going Orders" id="59c-1s-Zdi">
+                        <barButtonItem key="rightBarButtonItem" image="shopping-cart" landscapeImage="shopping-cart" largeContentSizeImage="shopping-cart" id="Mf2-zQ-szg" userLabel="ShoppingCart"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="orderTableView" destination="VN3-FH-6WT" id="vqy-PH-Pmp"/>
                         <outlet property="shoppingCartTableView" destination="MOT-m5-TuM" id="qDd-rq-FgO"/>
@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOf-m8-D3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2401" y="541"/>
+            <point key="canvasLocation" x="3190" y="527"/>
         </scene>
         <!--SearchViewController-->
         <scene sceneID="w7t-0e-3Ox">
@@ -492,7 +492,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tYj-AD-fky"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stall detail" id="6wZ-xd-U72" userLabel="Stall detail">
+                    <navigationItem key="navigationItem" title="Stall Details" id="6wZ-xd-U72" userLabel="Stall detail">
                         <barButtonItem key="rightBarButtonItem" title="Reviews" id="VEi-c3-AqP">
                             <connections>
                                 <segue destination="hRY-fL-rj3" kind="show" id="06r-XC-dK6"/>
@@ -511,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czO-kK-y7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3414" y="-158"/>
+            <point key="canvasLocation" x="3190" y="-169"/>
         </scene>
         <!--Review Table View Controller-->
         <scene sceneID="106-vU-wHq">
@@ -603,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsY-63-OgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4401" y="-373"/>
+            <point key="canvasLocation" x="4385" y="-501"/>
         </scene>
         <!--Food detail-->
         <scene sceneID="FqV-8p-tWU">
@@ -698,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ju1-EH-C75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4401" y="379"/>
+            <point key="canvasLocation" x="4385" y="189"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="nWW-wM-74I">
@@ -773,8 +773,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="22V-s1-HTC" kind="relationship" relationship="viewControllers" id="nZP-GM-Jqk"/>
-                        <segue destination="VAa-hn-p6R" kind="relationship" relationship="viewControllers" id="3G6-sa-naD"/>
-                        <segue destination="tap-tZ-ZYv" kind="relationship" relationship="viewControllers" id="e2W-83-yhs"/>
+                        <segue destination="42D-iK-brN" kind="relationship" relationship="viewControllers" id="SNi-0Z-OgZ"/>
+                        <segue destination="tap-tZ-ZYv" kind="relationship" relationship="viewControllers" id="KlO-CQ-al8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoZ-KH-H8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -863,6 +863,25 @@
             </objects>
             <point key="canvasLocation" x="-292" y="159"/>
         </scene>
+        <!--Order-->
+        <scene sceneID="YgX-a1-ZUb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="42D-iK-brN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Order" image="order" id="dXb-M9-Xhz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R61-wb-oUj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VAa-hn-p6R" kind="relationship" relationship="rootViewController" id="Nf5-Qg-tBD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-KE-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2400" y="527.13643178410803"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatar" width="90" height="90"/>
@@ -870,8 +889,6 @@
         <image name="me" width="20" height="20"/>
         <image name="order" width="20" height="20"/>
         <image name="search" width="20" height="20"/>
+        <image name="shopping-cart" width="20" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="QnY-4y-vYL"/>
-    </inferredMetricsTieBreakers>
 </document>

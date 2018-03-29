@@ -21,6 +21,8 @@ class OngoingOrderController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -49,7 +51,7 @@ extension OngoingOrderController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        // Hadle two table views in one controller with if else
+        // Handles the two table views in one controller with if else
         if tableView == orderTableView {
 
         } else if tableView == shoppingCartTableView {
