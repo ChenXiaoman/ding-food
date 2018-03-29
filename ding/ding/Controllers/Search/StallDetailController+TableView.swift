@@ -19,14 +19,13 @@ extension StallDetailController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = Constants.stallDetailControllerId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
-            as? StallDetailController else {
+            as? FoodDetailViewController else {
                 return
         }
         // Passes in the `id` of `Food` displayed at this cell.
-        if let stallId = foodIds[indexPath.totalRow(in: tableView)] {
-            controller.stallOverviewPath = "\(Food.path)/\(stallId)"
+        if let foodId = foodIds[indexPath.totalRow(in: tableView)] {
+            controller.foodPath = "\(Food.path)/\(foodId)"
         }
         navigationController?.pushViewController(controller, animated: true)
     }
 }
-

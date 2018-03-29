@@ -377,6 +377,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SaR-Di-9kh">
+                                <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m4P-Ip-GDg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="171"/>
                                 <constraints>
@@ -476,10 +479,12 @@
                             <constraint firstItem="tYj-AD-fky" firstAttribute="trailing" secondItem="CsZ-0q-12P" secondAttribute="trailing" id="4ho-Lk-DLf"/>
                             <constraint firstItem="CsZ-0q-12P" firstAttribute="leading" secondItem="2Xm-K2-5La" secondAttribute="leading" id="6lG-xo-pE8"/>
                             <constraint firstItem="DJQ-q2-aPM" firstAttribute="bottom" secondItem="tYj-AD-fky" secondAttribute="bottom" id="6uU-gD-ZaA"/>
+                            <constraint firstItem="SaR-Di-9kh" firstAttribute="centerX" secondItem="tYj-AD-fky" secondAttribute="centerX" id="Cud-Z5-ZG9"/>
                             <constraint firstItem="m4P-Ip-GDg" firstAttribute="leading" secondItem="tYj-AD-fky" secondAttribute="leading" id="Ebr-dD-vQZ"/>
                             <constraint firstItem="DJQ-q2-aPM" firstAttribute="leading" secondItem="tYj-AD-fky" secondAttribute="leading" id="G6y-yg-1IM"/>
                             <constraint firstItem="DJQ-q2-aPM" firstAttribute="top" secondItem="CsZ-0q-12P" secondAttribute="bottom" constant="10" id="HR6-9X-lQx"/>
                             <constraint firstItem="DJQ-q2-aPM" firstAttribute="trailing" secondItem="tYj-AD-fky" secondAttribute="trailing" constant="5" id="QAb-Db-Y1k"/>
+                            <constraint firstItem="SaR-Di-9kh" firstAttribute="centerY" secondItem="tYj-AD-fky" secondAttribute="centerY" id="UAh-FC-QUS"/>
                             <constraint firstItem="CsZ-0q-12P" firstAttribute="top" secondItem="m4P-Ip-GDg" secondAttribute="bottom" constant="10" id="pTz-B8-ize"/>
                             <constraint firstItem="m4P-Ip-GDg" firstAttribute="trailing" secondItem="tYj-AD-fky" secondAttribute="trailing" id="uBd-nr-tTT"/>
                         </constraints>
@@ -496,6 +501,7 @@
                         <outlet property="averageRatingLabel" destination="nlp-VK-18P" id="w0X-de-LUj"/>
                         <outlet property="descriptionLabel" destination="xVX-du-MNY" id="ucm-h4-DKk"/>
                         <outlet property="foodTableaView" destination="DJQ-q2-aPM" id="Lzv-jX-6AD"/>
+                        <outlet property="loadingIndicator" destination="SaR-Di-9kh" id="kK1-oH-L2d"/>
                         <outlet property="nameLabel" destination="RjR-Io-pep" id="FqS-iY-PqX"/>
                         <outlet property="numOfPeopleWaitingLabel" destination="miP-ZH-hx9" id="yCV-A9-4tQ"/>
                         <outlet property="stallImage" destination="m4P-Ip-GDg" id="jnd-fJ-u9X"/>
