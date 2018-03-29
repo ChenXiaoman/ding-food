@@ -11,7 +11,7 @@ import UIKit
 /**
  Defines some helper methods for popup dialog boxes and interactions with the player.
 
- - Author: Niu Yunpeng @ CS3217
+ - Author: Group 3 @ CS3217
  - Date: March 2018
  */
 class DialogHelpers {
