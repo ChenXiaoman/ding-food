@@ -9,8 +9,8 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var foodName: UILabel!
-    @IBOutlet var foodImage: UIImageView!
+    @IBOutlet private weak var foodName: UILabel!
+    @IBOutlet private weak var foodImage: UIImageView!
     
     public static let identifier = "MenuCollectionViewCell"
 

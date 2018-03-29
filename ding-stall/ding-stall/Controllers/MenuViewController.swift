@@ -16,7 +16,7 @@ class MenuViewController: NoNavigationBarViewController {
 
     @IBOutlet private var menuView: UICollectionView!
 
-    private var stall: Stall!
+    private var stall: Stall?
 
     override func viewDidLoad() {
         DatabaseRef.observeValue(of: Stall.path + "/\(Account.stallId)") { snap in
@@ -58,7 +58,7 @@ extension MenuViewController: UICollectionViewDelegate {
 
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stall.menu?.count ?? 0
+        return stall?.menu?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
