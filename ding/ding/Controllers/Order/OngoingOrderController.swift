@@ -25,20 +25,27 @@ class OngoingOrderController: UIViewController {
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Hadle two table views in one controller with if else
-        if tableView == orderTableView {
-            
-        } else if tableView == shoppingCartTableView {
-            
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == Constants.ongoingOrderToShoppingCartId else {
+            return
         }
-        // Fake data
-        return 2
+        segue.destination.preferredContentSize = CGSize(width: 100, height: 100)
     }
 }
 
 extension OngoingOrderController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Hadle two table views in one controller with if else
+        if tableView == orderTableView {
+
+        } else if tableView == shoppingCartTableView {
+
+        }
+        // Fake data
+        return 2
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         // Fake data
         // Hadle two table views in one controller with if else

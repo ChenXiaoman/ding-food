@@ -86,7 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-m5-TuM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-m5-TuM" userLabel="ShoppingCartTable">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -253,7 +253,13 @@
                         <viewLayoutGuide key="safeArea" id="clL-TG-MGO"/>
                     </view>
                     <navigationItem key="navigationItem" title="On-going Orders" id="59c-1s-Zdi">
-                        <barButtonItem key="rightBarButtonItem" image="shopping-cart" landscapeImage="shopping-cart" largeContentSizeImage="shopping-cart" id="Mf2-zQ-szg" userLabel="ShoppingCart"/>
+                        <barButtonItem key="rightBarButtonItem" image="shopping-cart" landscapeImage="shopping-cart" largeContentSizeImage="shopping-cart" id="Mf2-zQ-szg" userLabel="ShoppingCart">
+                            <connections>
+                                <segue destination="G2P-mz-iUn" kind="popoverPresentation" identifier="ongoingOrderToShoppingCart" popoverAnchorBarButtonItem="Mf2-zQ-szg" id="i3l-5S-0zu">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="orderTableView" destination="VN3-FH-6WT" id="vqy-PH-Pmp"/>
@@ -263,6 +269,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOf-m8-D3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3190" y="527"/>
+        </scene>
+        <!--Shopping Cart Controller-->
+        <scene sceneID="ruU-PA-RAX">
+            <objects>
+                <viewController id="G2P-mz-iUn" customClass="ShoppingCartController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dGf-gh-TOU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SVa-JZ-pWE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YjN-eh-k7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3948" y="866"/>
         </scene>
         <!--SearchViewController-->
         <scene sceneID="w7t-0e-3Ox">
