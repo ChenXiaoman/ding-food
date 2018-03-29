@@ -71,11 +71,10 @@ class AddFoodViewController: XLFormViewController {
             let foodPrice = form.formRow(withTag: priceTag)?.value as? Double,
             let rawFoodType = form.formRow(withTag: typeTag)?.value as? String,
             let foodType = FoodType(rawValue: rawFoodType) else {
-                print("failure")
                 return
         }
         let foodDescription = form.formRow(withTag: descriptionTag)?.value as? String
         stall.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
-        
+
     }
 }
