@@ -36,3 +36,15 @@ struct Constants {
     /// The height for me setting menu cells.
     static let meSettingCellHeight = CGFloat(60)
 }
+
+/**
+ Define constants for MenuCollectionView.
+ */
+struct MenuViewConstants {
+
+    /// Number of food cells in one row.
+    static let numCellsPerRow = 3
+
+    /// The ratio between cell size and inset.
+    static let cellRatio = 0.9
+}

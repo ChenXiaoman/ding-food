@@ -16,5 +16,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
 
     public func load(_ food: Food?) {
         foodName.text = food?.name
+        foodName.adjustsFontSizeToFitWidth = true
+        backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
     }
 }

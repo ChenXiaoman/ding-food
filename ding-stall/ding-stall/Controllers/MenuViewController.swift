@@ -51,8 +51,16 @@ class MenuViewController: NoNavigationBarViewController {
     }
 }
 
-extension MenuViewController: UICollectionViewDelegate {
+extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellAndInsetSize = collectionView.frame.width / MenuViewConstants.numCellsPerRow
+        let cellSideLength = cellAndInsetSize * CGFloat(MenuViewConstants.cellRatio)
+        return CGSize(width: cellSideLength, height: cellSideLength)
     }
 }
 
