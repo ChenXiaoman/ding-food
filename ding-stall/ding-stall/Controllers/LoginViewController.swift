@@ -20,12 +20,29 @@ class LoginViewController: UIViewController {
     /// Used to handle all logics related to Firebase Auth.
     fileprivate let authorizer = Authorizer()
 
+    var stall: Stall!
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+
+        // loadProfileView(animated)
         guard authorizer.didLogin else {
             loadLoginView(animated)
             return
         }
+
         loadTabBarView(animated)
+    }
+
+    private func loadProfileView(_ animated: Bool) {
+        let id = Constants.profileControllerId
+        guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
+            fatalError("Could not find the controller for Profile View")
+        }
+        navigationController?.pushViewController(tabBarController, animated: animated)
     }
 
     /// Loads the login view from Firebase Auth UI library.
@@ -40,6 +57,7 @@ class LoginViewController: UIViewController {
     /// Loads the main tab bar view from storyboard.
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
+        Account.setId(authorizer.userId)
         let id = Constants.tabBarControllerId
         guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
             fatalError("Could not find the controller for main tab bar")
@@ -60,6 +78,7 @@ extension LoginViewController: FUIAuthDelegate {
         if !user.isEmailVerified {
             authorizer.verifyEmail()
         }
+
         loadTabBarView(true)
     }
 }
