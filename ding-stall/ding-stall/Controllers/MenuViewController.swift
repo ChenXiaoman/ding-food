@@ -62,6 +62,14 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
         let cellSideLength = cellAndInsetSize * CGFloat(MenuViewConstants.cellRatio)
         return CGSize(width: cellSideLength, height: cellSideLength)
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        let cellAndInsetSize = collectionView.frame.width / MenuViewConstants.numCellsPerRow
+        // half the spacing because both left and right has this spacing
+        return cellAndInsetSize * CGFloat(1 - MenuViewConstants.cellRatio) * 0.5
+    }
 }
 
 extension MenuViewController: UICollectionViewDataSource {
