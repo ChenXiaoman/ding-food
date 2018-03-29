@@ -14,7 +14,7 @@ import UIKit
  */
 class MenuViewController: UIViewController {
 
-    @IBOutlet private var menuView: UICollectionView!
+    @IBOutlet private weak var menuView: UICollectionView!
 
     private var stall: Stall!
 

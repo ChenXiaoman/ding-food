@@ -16,7 +16,7 @@
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
 		325EE80B20665178004EC560 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* Stall.swift */; };
-		325EE80C20665178004EC560 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* Protocols.swift */; };
+		325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* FirebaseObject.swift */; };
 		325EE80D20665178004EC560 /* ReviewRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80420665178004EC560 /* ReviewRating.swift */; };
 		325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* FilterIdentifier.swift */; };
 		325EE80F20665178004EC560 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80620665178004EC560 /* User.swift */; };
@@ -60,7 +60,7 @@
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
 		325EE80220665177004EC560 /* Stall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stall.swift; sourceTree = "<group>"; };
-		325EE80320665177004EC560 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		325EE80320665177004EC560 /* FirebaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
 		325EE80420665178004EC560 /* ReviewRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRating.swift; sourceTree = "<group>"; };
 		325EE80520665178004EC560 /* FilterIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
 		325EE80620665178004EC560 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				325EE823206A0159004EC560 /* Account.swift */,
 				325EE80720665178004EC560 /* Order.swift */,
 				325EE81820673DD3004EC560 /* Food.swift */,
-				325EE80320665177004EC560 /* Protocols.swift */,
+				325EE80320665177004EC560 /* FirebaseObject.swift */,
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* Stall.swift */,
 				325EE80620665178004EC560 /* User.swift */,
@@ -430,7 +430,7 @@
 				F26514CC206540230098783C /* Authorizer.swift in Sources */,
 				325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */,
 				F2D2C0432064CE75005230D6 /* Constants.swift in Sources */,
-				325EE80C20665178004EC560 /* Protocols.swift in Sources */,
+				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
 				325EE81320665178004EC560 /* OrderStatus.swift in Sources */,
 				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
 				325EE81F206942F1004EC560 /* AddFoodViewTextField.swift in Sources */,
