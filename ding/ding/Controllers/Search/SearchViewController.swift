@@ -79,7 +79,7 @@ class SearchViewController: UIViewController {
 
         if let stall = StallOverview.deserialize(snapshot) {
             cell.load(stall)
-            stallIds[indexPath.totalRow(in: collectionView)] = stall.id
+            stallIds[indexPath.totalItem(in: collectionView)] = stall.id
         }
         return cell
     }
