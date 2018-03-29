@@ -28,8 +28,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 
-        loadProfileView(animated)
-        /*
+        // loadProfileView(animated)
         guard authorizer.didLogin else {
             loadLoginView(animated)
             return
@@ -37,7 +36,6 @@ class LoginViewController: UIViewController {
 
         initialiseStall()
         loadTabBarView(animated)
-        */
     }
 
     private func loadProfileView(_ animated: Bool) {
