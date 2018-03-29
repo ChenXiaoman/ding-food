@@ -34,7 +34,6 @@ class LoginViewController: UIViewController {
             return
         }
 
-        initialiseStall()
         loadTabBarView(animated)
     }
 
@@ -44,29 +43,6 @@ class LoginViewController: UIViewController {
             fatalError("Could not find the controller for Profile View")
         }
         navigationController?.pushViewController(tabBarController, animated: animated)
-    }
-
-    private func initialiseStall() {
-        guard let stallId = authorizer.uid else {
-            fatalError("Fail to load stall id")
-        }
-
-        Storage.reference.child("\(Stall.path)/\(stallId)").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get stall values
-            if let value = snapshot.value as? NSDictionary {
-                let name = value["name"] as! String
-                let location = value["location"] as! String
-                let openingHour = value["openingHour"] as! String
-                let description = value["description"] as! String
-                let queue = value["queue"] as! [Order]
-                let menu = value["menu"] as! [Food]
-                let filters = value["filters"] as! Set<FilterIdentifier>
-
-                self.stall = Stall(id: stallId, name: name, location: location,
-                                   openingHour: openingHour, description: description,
-                                   queue: queue, menu: menu, filters: filters)
-            }
-        })
     }
 
     /// Loads the login view from Firebase Auth UI library.
@@ -81,6 +57,8 @@ class LoginViewController: UIViewController {
     /// Loads the main tab bar view from storyboard.
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
+        Account.setId(authorizer.userId)
+        //_ = Stall(id: Account.stallId)
         let id = Constants.tabBarControllerId
         guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
             fatalError("Could not find the controller for main tab bar")

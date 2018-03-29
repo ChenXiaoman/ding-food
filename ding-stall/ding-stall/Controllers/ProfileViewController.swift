@@ -40,10 +40,9 @@ class ProfileViewController: UIViewController, ProfileViewDelegate {
         let filters = getValueFromTextField(profileView.filterTextField)
 
         // TODO: Filters should not be nil
-        let newStall = Stall(id: Stall.getAutoId(), name: name,
+        let newStall = Stall(id: Stall.getAutoId, name: name,
                              location: location, openingHour: openingHour,
-                             description: description, queue: nil,
-                             menu: nil, filters: nil)
+                             description: description, menu: nil, queue: nil, filters: nil)
 
         newStall.save()
     }
