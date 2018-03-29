@@ -26,9 +26,18 @@ public struct Stall: FirebaseObject {
         self.save()
     }
 
-    /// Add the s
+    /// Add the a new kind of food into menu
+    /// - Parameters:
+    ///    - name: Food Name
+    ///    - price: Food Price (must be a non-negative decimal number)
+    ///    - type: Food Type
+    ///    - description: Food Description
+    ///    - photoPath: The path that store the food picture
     public mutating func addFood(name: String, price: Double, type: FoodType, description: String?,
                                  photoPath: String?) {
+        guard price > 0 else {
+            return
+        }
         let id = Food.getAutoId
         let newFood = Food(id: id, name: name, price: price, description: description,
                            type: type, isSoldOut: false, photoPath: photoPath)
@@ -44,6 +53,10 @@ public struct Stall: FirebaseObject {
 
     }
 
+    /// Return the food object at a specified position in menu,
+    /// nil if the index is out of bound
+    /// - Parameter:
+    ///     - index: the position in the menu array
     public func getFood(at index: Int) -> Food? {
         guard
             let maxIndex = menu?.count,

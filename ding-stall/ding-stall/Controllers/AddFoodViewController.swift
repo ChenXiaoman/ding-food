@@ -64,6 +64,8 @@ class AddFoodViewController: XLFormViewController {
         super.viewDidLoad()
     }
 
+    /// Add the new food by informaion in the form, and store it
+    /// Food Name, Food Price and Food Type are required, and others are optional
     @objc
     private func addFood() {
         guard
@@ -75,6 +77,5 @@ class AddFoodViewController: XLFormViewController {
         }
         let foodDescription = form.formRow(withTag: descriptionTag)?.value as? String
         stall.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
-
     }
 }

@@ -51,7 +51,8 @@ extension MenuViewController: UICollectionViewDataSource {
         return stall.menu?.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier,
                                                             for: indexPath) as? MenuCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
