@@ -71,6 +71,8 @@ class AddFoodViewController: XLFormViewController {
         guard
             let foodName = form.formRow(withTag: nameTag)?.value as? String,
             let foodPrice = form.formRow(withTag: priceTag)?.value as? Double,
+            foodPrice != Double.nan,
+            foodPrice > 0,
             let rawFoodType = form.formRow(withTag: typeTag)?.value as? String,
             let foodType = FoodType(rawValue: rawFoodType) else {
                 return
