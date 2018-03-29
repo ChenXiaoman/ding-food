@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import FirebaseDatabaseUI
 
 class FoodDetailViewController: UIViewController {
+    /// Firebase reference of the current food
+    var foodPath: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
