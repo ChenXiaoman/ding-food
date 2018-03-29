@@ -9,7 +9,9 @@
 /**
  Represents a food stall registered in the application.
  */
-public struct Stall: FirebaseObject {
+public struct StallDetails: FirebaseObject {
+    public static let path = "stallDetails"
+
     public let id: String
     public var name: String
     public var location: String

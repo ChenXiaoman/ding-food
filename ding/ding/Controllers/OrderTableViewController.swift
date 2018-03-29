@@ -9,19 +9,39 @@
 import UIKit
 
 class OrderTableViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet private var orderTableView: UITableView!
+    @IBOutlet weak private var orderTableView: UITableView!
+    
+    @IBOutlet weak private var shoppingCartTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Hadle two table views in one controller with if else
+        if tableView == orderTableView {
+            
+        } else if tableView == shoppingCartTableView {
+            
+        }
         // Fake data
         return 2
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // Fake data
+        // Hadle two table views in one controller with if else
+        if tableView == orderTableView {
+            
+        } else if tableView == shoppingCartTableView {
+            
+        }
         return 3
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // Hadle two table views in one controller with if else
+        if tableView == orderTableView {
+            
+        } else if tableView == shoppingCartTableView {
+            
+        }
         // Fake data
         switch section {
         case 0:
@@ -36,8 +56,18 @@ class OrderTableViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Empty cell, need to add data inside later
-        return orderTableView.dequeueReusableCell(withIdentifier:
-            OrderTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        // Hadle two table views in one controller with if else
+        if tableView == orderTableView {
+            // Empty cell, need to add data inside later
+            return orderTableView.dequeueReusableCell(withIdentifier:
+                OrderTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        } else if tableView == shoppingCartTableView {
+            // Empty cell, need to add data inside later
+            return shoppingCartTableView.dequeueReusableCell(withIdentifier:
+                ShoppingCartTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        }
+        
+        // Should never happen
+        return UITableViewCell()
     }
 }
