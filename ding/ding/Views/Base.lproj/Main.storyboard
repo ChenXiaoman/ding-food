@@ -361,6 +361,7 @@
                     <navigationItem key="navigationItem" id="rl6-vv-rN3"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="cbd-cJ-13q" id="e2A-TC-FjU"/>
+                        <outlet property="searchBar" destination="jZM-xs-DQq" id="TsG-YL-iNl"/>
                         <outlet property="stallListing" destination="oZw-z1-hyh" id="TAK-6i-1We"/>
                     </connections>
                 </viewController>

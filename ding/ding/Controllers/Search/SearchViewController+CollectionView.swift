@@ -10,6 +10,9 @@ import UIKit
 
 /**
  Extension for `SearchViewController` so that it can manage the collection view.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 extension SearchViewController: UICollectionViewDelegate {
     /// Jumps to stall details view when a certain is selected.
