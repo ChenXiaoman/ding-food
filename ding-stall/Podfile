@@ -10,5 +10,6 @@ target 'ding-stall' do
   pod 'Firebase/Database'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Database'
+  pod 'FirebaseUI/Storage'
   pod 'XLForm'
 end
