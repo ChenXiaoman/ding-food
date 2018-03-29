@@ -14,10 +14,15 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class OrderTableViewController: UIViewController {
+class OngoingOrderController: UIViewController {
     @IBOutlet weak private var orderTableView: UITableView!
     
     @IBOutlet weak private var shoppingCartTableView: UITableView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Hadle two table views in one controller with if else
@@ -31,7 +36,7 @@ class OrderTableViewController: UIViewController {
     }
 }
 
-extension OrderTableViewController: UITableViewDataSource {
+extension OngoingOrderController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // Fake data
         // Hadle two table views in one controller with if else
