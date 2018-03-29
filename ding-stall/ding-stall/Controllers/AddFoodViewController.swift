@@ -77,5 +77,12 @@ class AddFoodViewController: XLFormViewController {
         }
         let foodDescription = form.formRow(withTag: descriptionTag)?.value as? String
         stall.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
+        addSuccessAlert()
+    }
+
+    private func addSuccessAlert() {
+        DialogHelpers.showAlertMessage(in: self, title: "Success", message: "Add food successfully") { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

@@ -33,6 +33,7 @@
 		325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE825206A7754004EC560 /* AddFoodViewController.swift */; };
 		32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */; };
 		32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */; };
+		32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */; };
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
 		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
@@ -79,6 +80,7 @@
 		325EE825206A7754004EC560 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRef.swift; sourceTree = "<group>"; };
 		32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
+		32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				F2BBF825205B839400B9812D /* AppDelegate.swift */,
 				325EE81C20693800004EC560 /* ArithmeticExtensions.swift */,
+				32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */,
 				F26514CB206540230098783C /* Authorizer.swift */,
 				32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */,
 				F2D2C0422064CE75005230D6 /* Constants.swift */,
@@ -417,6 +420,7 @@
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
 				325EE80D20665178004EC560 /* ReviewRating.swift in Sources */,
 				325EE81920673DD3004EC560 /* Food.swift in Sources */,
+				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
 				325EE82120694A7E004EC560 /* UIViewsLayout.swift in Sources */,
 				325EE7F7206644F4004EC560 /* OrderHistoryViewController.swift in Sources */,

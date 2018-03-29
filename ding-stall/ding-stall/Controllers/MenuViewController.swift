@@ -12,7 +12,7 @@ import UIKit
 /**
  The controller of stall's menu view
  */
-class MenuViewController: UIViewController {
+class MenuViewController: NoNavigationBarViewController {
 
     @IBOutlet private weak var menuView: UICollectionView!
 
@@ -21,6 +21,9 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         DatabaseRef.observeValue(of: Stall.path + "/\(Account.stallId)") { snap in
             self.stall = Stall.deserialize(snap)
+            guard self.stall != nil else {
+                return
+            }
             self.menuView.delegate = self
             self.menuView.dataSource = self
             self.menuView.reloadData()
@@ -38,6 +41,13 @@ class MenuViewController: UIViewController {
             break
         }
 
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard identifier == AddFoodViewController.identifier else {
+            return true
+        }
+        return stall != nil
     }
 }
 

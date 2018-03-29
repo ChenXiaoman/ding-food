@@ -25,11 +25,11 @@ class MainView: UIView {
         signInButton = UIButton(type: .custom)
         signInButton.setTitle("Sign In", for: .normal)
 
-        [signUpButton, signInButton].forEach {
-            $0?.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth - 2 * Constants.screenPadding, height: Constants.screenHeight * 0.3)
-            $0?.addTarget(self, action: #didPressButton, for: <#T##UIControlEvents#>)
-
-        }
+//        [signUpButton, signInButton].forEach {
+//            $0?.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth - 2 * Constants.screenPadding, height: Constants.screenHeight * 0.3)
+//            $0?.addTarget(self, action: #didPressButton, for: <#T##UIControlEvents#>)
+//
+//        }
     }
 
     required init?(coder aDecoder: NSCoder) {
