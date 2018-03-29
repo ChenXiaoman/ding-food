@@ -14,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-extension SearchViewController: UITableViewDelegate {
+extension StallDetailController: UITableViewDelegate {
     /// Jumps to stall details view when a certain is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = Constants.stallDetailControllerId
@@ -23,7 +23,7 @@ extension SearchViewController: UITableViewDelegate {
                 return
         }
         // Passes in the `id` of `Food` displayed at this cell.
-        if let stallId = stallIds[indexPath.totalRow(in: tableView)] {
+        if let stallId = foodIds[indexPath.totalRow(in: tableView)] {
             controller.stallOverviewPath = "\(Food.path)/\(stallId)"
         }
         navigationController?.pushViewController(controller, animated: true)
