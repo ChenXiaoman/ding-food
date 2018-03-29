@@ -19,6 +19,7 @@ public struct Food: FirebaseObject {
     public var description: String?
     public var type: FoodType
     public var isSoldOut: Bool
+    public var photoPath: String?
 
     public mutating func soldOut() {
         isSoldOut = true

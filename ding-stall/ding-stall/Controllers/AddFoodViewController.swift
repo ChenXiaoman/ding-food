@@ -13,6 +13,11 @@ class AddFoodViewController: XLFormViewController {
 
     static let identifier = "addFoodSegue"
 
+    let nameTag = "Name"
+    let priceTag = "Tag"
+    let descriptionTag = "Description"
+    let typeTag = "Type"
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initializeForm()
@@ -23,15 +28,16 @@ class AddFoodViewController: XLFormViewController {
         self.initializeForm()
     }
 
-    func initializeForm() {
+    /// Build a form for adding new food
+    private func initializeForm() {
         let form = XLFormDescriptor(title: "Add Food")
         let section = XLFormSectionDescriptor()
         form.addFormSection(section)
-        let name = XLFormRowDescriptor(tag: "Name", rowType: XLFormRowDescriptorTypeText, title: "Food Name")
-        let price = XLFormRowDescriptor(tag: "Price", rowType: XLFormRowDescriptorTypeDecimal, title: "Food Price")
-        let description = XLFormRowDescriptor(tag: "Description", rowType: XLFormRowDescriptorTypeTextView,
+        let name = XLFormRowDescriptor(tag: nameTag, rowType: XLFormRowDescriptorTypeText, title: "Food Name")
+        let price = XLFormRowDescriptor(tag: priceTag, rowType: XLFormRowDescriptorTypeDecimal, title: "Food Price")
+        let description = XLFormRowDescriptor(tag: descriptionTag, rowType: XLFormRowDescriptorTypeTextView,
                                               title: "Food Description")
-        let type = XLFormRowDescriptor(tag: "Type", rowType: XLFormRowDescriptorTypeSelectorAlertView,
+        let type = XLFormRowDescriptor(tag: typeTag, rowType: XLFormRowDescriptorTypeSelectorAlertView,
                                        title: "Food Type")
         section.addFormRow(name)
         section.addFormRow(price)
@@ -46,19 +52,30 @@ class AddFoodViewController: XLFormViewController {
         self.form = form
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done,
+                                                            target: self, action: #selector(addFood))
+    }
+
     var stall: Stall!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    /*func addFood(_ sender: UIButton) {
+    @objc
+    private func addFood() {
         guard
-            let name = nameText.text,
-            let price = Double(priceText.text!),
-            let description = descriptionText.text else {
+            let foodName = form.formRow(withTag: nameTag)?.value as? String,
+            let foodPrice = form.formRow(withTag: priceTag)?.value as? Double,
+            let rawFoodType = form.formRow(withTag: typeTag)?.value as? String,
+            let foodType = FoodType(rawValue: rawFoodType) else {
+                print("failure")
                 return
         }
-        stall.addFood(name: name, price: price, description: description, type: .main)
-    }*/
+        let foodDescription = form.formRow(withTag: descriptionTag)?.value as? String
+        stall.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
+        
+    }
 }

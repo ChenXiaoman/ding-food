@@ -27,10 +27,11 @@ public struct Stall: FirebaseObject {
     }
 
     /// Add the s
-    public mutating func addFood(name: String, price: Double, description: String?, type: FoodType) {
+    public mutating func addFood(name: String, price: Double, type: FoodType, description: String?,
+                                 photoPath: String?) {
         let id = Food.getAutoId
         let newFood = Food(id: id, name: name, price: price, description: description,
-                           type: type, isSoldOut: false)
+                           type: type, isSoldOut: false, photoPath: photoPath)
         if menu == nil {
             menu = [Food]()
         }
