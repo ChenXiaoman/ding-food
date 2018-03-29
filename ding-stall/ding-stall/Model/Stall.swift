@@ -10,21 +10,24 @@
  Represents a food stall registered in the application.
  */
 public struct Stall: FirebaseObject {
+    public static var currentStall: Stall {
+        get {
+            return self.currentStall
+        }
+    }
+
     public static var path = "/stall"
 
     public let id: String
-    public var name = "valid name"
-    public var location = "valid location"
-    public var openingHour = "0800-2100"
-    public var description = "valid desc"
+
+    public var name: String
+    public var location: String
+    public var openingHour: String
+    public var description: String
     public var menu: [Food]?
     public var queue: [Order]?
-    public var filters: Set<FilterIdentifier>?
 
-    public init(id: String) {
-        self.id = id
-        self.save()
-    }
+    public var filters: Set<FilterIdentifier>?
 
     /// Add the a new kind of food into menu
     /// - Parameters:
@@ -45,6 +48,7 @@ public struct Stall: FirebaseObject {
             menu = [Food]()
         }
         menu?.append(newFood)
+
         self.save()
     }
 

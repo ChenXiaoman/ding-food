@@ -42,6 +42,7 @@ public protocol FirebaseObject: Codable, Hashable {
     /// We suggest the value of `path` should be a descriptive English word, usually in its
     /// plural form.
     static var path: String { get }
+
 }
 
 /**

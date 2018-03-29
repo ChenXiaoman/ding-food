@@ -63,6 +63,15 @@ class Authorizer {
         return Authorizer.auth.currentUser?.isEmailVerified ?? false
     }
 
+    /// Returns current user id
+    /// Returns nil if the user is not logged in
+    var uid: String? {
+        guard didLogin else {
+            return nil
+        }
+        return Authorizer.auth.currentUser!.uid
+    }
+
     /// Returns whether the user has signed in and the email has been verified.
     var didLoginAndVerified: Bool {
         return didLogin && isEmailVerified
