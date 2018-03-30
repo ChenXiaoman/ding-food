@@ -11,4 +11,5 @@ target 'ding-stall' do
   pod 'FirebaseUI/Database'
   pod 'FirebaseUI/Storage'
   pod 'XLForm'
+  pod 'Eureka'
 end
