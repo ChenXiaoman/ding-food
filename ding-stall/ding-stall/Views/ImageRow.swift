@@ -62,6 +62,9 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType where C
 
     open var sourceTypes: ImageRowSourceTypes
     open internal(set) var imageURL: URL?
+    open var imageName: String? {
+        return imageURL?.lastPathComponent
+    }
     open var clearAction = ImageClearAction.yes(style: .destructive)
 
     private var _sourceType: UIImagePickerControllerSourceType = .camera

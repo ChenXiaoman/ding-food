@@ -74,8 +74,19 @@ class AddFoodViewController: FormViewController {
                 return
         }
 
+        var photoPath: String?
+        if
+            let image = valueDict[imageTag] as? UIImage,
+            let imageData = UIImagePNGRepresentation(image) {
+                let imageRow = form.rowBy(tag: imageTag) as? ImageRow
+                let path = "\(Account.stallId)" + "/Menu" + "/\(imageRow?.imageName ?? "")"
+                photoPath = path
+                StorageRef.upload(imageData, at: path)
+        }
+
         let foodDescription = valueDict[descriptionTag] as? String
-        stall?.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
+        stall?.addFood(name: foodName, price: foodPrice, type: foodType,
+                       description: foodDescription, photoPath: photoPath)
         addSuccessAlert()
     }
 
