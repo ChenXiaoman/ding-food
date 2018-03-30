@@ -17,6 +17,7 @@ class AddFoodViewController: FormViewController {
     let priceTag = "Tag"
     let descriptionTag = "Description"
     let typeTag = "Type"
+    let imageTag = "Image"
 
     var stall: Stall?
 
@@ -52,7 +53,10 @@ class AddFoodViewController: FormViewController {
                 row.tag = descriptionTag
                 row.placeholder = "Food Description"
             }
-
+            <<< ImageRow { row in
+                row.tag = imageTag
+                row.title = "Upload Food Photo"
+            }
     }
 
     /// Add the new food by informaion in the form, and store it
