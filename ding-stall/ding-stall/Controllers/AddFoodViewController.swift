@@ -24,12 +24,30 @@ class AddFoodViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeForm()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        setValidationStyle()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done,
                                                             target: self, action: #selector(addFood))
+    }
+
+    /// Set the style of cell to show whether it is valid
+    private func setValidationStyle() {
+        TextRow.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.titleLabel?.textColor = .red
+            }
+        }
+
+        DecimalRow.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.titleLabel?.textColor = .red
+            }
+        }
+
+        ActionSheetRow<FoodType>.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.textLabel?.textColor = .red
+            }
+        }
     }
 
     /// Build a form for adding new food
@@ -38,25 +56,35 @@ class AddFoodViewController: FormViewController {
             <<< TextRow { row in
                 row.tag = nameTag
                 row.title = "Food Name"
+                row.placeholder = "Food name should not be empty"
+                row.add(rule: RuleRequired())
+                row.validationOptions = .validatesAlways
             }
             <<< DecimalRow { row in
                 row.tag = priceTag
                 row.title = "Food Price"
+                row.placeholder = "Food price should be a positive number"
+                row.add(rule: RuleRequired())
+                row.add(rule: RuleGreaterThan(min: 0))
+                row.validationOptions = .validatesAlways
             }
             <<< ActionSheetRow<FoodType> { row in
                 row.tag = typeTag
                 row.title = "Food Type"
                 row.options = [FoodType.main, FoodType.soup,
                                FoodType.drink, FoodType.dessert]
+                row.add(rule: RuleRequired())
+                row.validationOptions = .validatesAlways
             }
-            <<< TextAreaRow { row in
+            <<< TextRow { row in
                 row.tag = descriptionTag
-                row.placeholder = "Food Description"
+                row.title = "Food Description"
             }
             <<< ImageRow { row in
                 row.tag = imageTag
                 row.title = "Upload Food Photo"
             }
+        form.validate()
     }
 
     /// Add the new food by informaion in the form, and store it
@@ -67,10 +95,8 @@ class AddFoodViewController: FormViewController {
         guard
             let foodName = valueDict[nameTag] as? String,
             let foodPrice = valueDict[priceTag] as? Double,
-            foodPrice != Double.nan,
-            foodPrice > 0,
+            foodPrice != Double.nan && foodPrice > 0,
             let foodType = valueDict[typeTag] as? FoodType else {
-                print("Catch error")
                 return
         }
 
