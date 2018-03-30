@@ -49,4 +49,7 @@ struct MenuViewConstants {
 
     /// The ratio between cell size and inset.
     static let cellRatio = 0.9
+
+    /// The ratio between the cell height and width
+    static let heightWidthRatio = 1.25
 }

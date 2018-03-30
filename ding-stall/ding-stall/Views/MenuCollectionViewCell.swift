@@ -14,12 +14,19 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     public static let identifier = "MenuCollectionViewCell"
 
+    /// Load the food view with a food model
     public func load(_ food: Food?) {
-
+        settleOutletFrame()
         foodName.adjustsFontSizeToFitWidth = true
         foodName.text = food?.name
         if let imagePath = food?.photoPath {
             foodImage.setWebImage(at: imagePath)
         }
+    }
+
+    private func settleOutletFrame() {
+        foodImage.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
+        foodName.frame = CGRect(x: 0, y: foodImage.frame.height,
+                                width: frame.width, height: frame.height - foodImage.frame.height)
     }
 }
