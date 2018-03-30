@@ -84,4 +84,3 @@ class DatabaseRef {
         return ref.child(path).childByAutoId().key
     }
 }
-
