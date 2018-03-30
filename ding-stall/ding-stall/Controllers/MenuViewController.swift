@@ -16,7 +16,7 @@ class MenuViewController: NoNavigationBarViewController {
 
     @IBOutlet private weak var menuView: UICollectionView!
 
-    private var stall: Stall!
+    private var stall: Stall?
 
     override func viewDidLoad() {
         DatabaseRef.observeValue(of: Stall.path + "/\(Account.stallId)") { snap in
@@ -51,14 +51,30 @@ class MenuViewController: NoNavigationBarViewController {
     }
 }
 
-extension MenuViewController: UICollectionViewDelegate {
+extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellAndInsetSize = collectionView.frame.width / MenuViewConstants.numCellsPerRow
+        let cellSideLength = cellAndInsetSize * CGFloat(MenuViewConstants.cellRatio)
+        return CGSize(width: cellSideLength, height: cellSideLength)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        let cellAndInsetSize = collectionView.frame.width / MenuViewConstants.numCellsPerRow
+        // half the spacing because both left and right has this spacing
+        return cellAndInsetSize * CGFloat(1 - MenuViewConstants.cellRatio) * 0.5
     }
 }
 
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stall.menu?.count ?? 0
+        return stall?.menu?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,

@@ -18,6 +18,8 @@ class AddFoodViewController: XLFormViewController {
     let descriptionTag = "Description"
     let typeTag = "Type"
 
+    var stall: Stall?
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initializeForm()
@@ -58,8 +60,6 @@ class AddFoodViewController: XLFormViewController {
                                                             target: self, action: #selector(addFood))
     }
 
-    var stall: Stall!
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -78,7 +78,7 @@ class AddFoodViewController: XLFormViewController {
                 return
         }
         let foodDescription = form.formRow(withTag: descriptionTag)?.value as? String
-        stall.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
+        stall?.addFood(name: foodName, price: foodPrice, type: foodType, description: foodDescription, photoPath: nil)
         addSuccessAlert()
     }
 
