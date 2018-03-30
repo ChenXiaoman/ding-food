@@ -6,9 +6,13 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+/**
+ Enumeration of food type.
+ The raw value is the text that is displayed on the picker.
+*/
 public enum FoodType: String, Codable {
-    case main
-    case soup
-    case dessert
-    case drink
+    case main = "Main"
+    case soup = "Soup"
+    case dessert = "Dessert"
+    case drink = "Drink"
 }
