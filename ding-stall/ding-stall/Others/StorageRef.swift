@@ -58,4 +58,3 @@ class StorageRef {
         return ref.child(path)
     }
 }
-
