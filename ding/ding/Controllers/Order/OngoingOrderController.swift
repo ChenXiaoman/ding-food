@@ -40,6 +40,12 @@ class OngoingOrderController: UIViewController {
         ongoingOrders.delegate = self
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stops sending updates to the collection view (to avoid app crash).
+        dataSource?.unbind()
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == Constants.ongoingOrderToShoppingCartId else {
             return
