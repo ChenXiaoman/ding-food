@@ -36,8 +36,9 @@ class StallDetailController: UIViewController {
     /// overview represented.
     var foodIds: [Int: String] = [:]
     
-    /// Firebase reference of the current stall's overview
-    var stallOverviewPath: String?
+    /// Firebase reference of the current stall's key
+    /// in both store overview and stall details
+    var stallKey: String?
     
     override func viewWillAppear(_ animated: Bool) {
         // Hides the navigation bar
@@ -48,13 +49,13 @@ class StallDetailController: UIViewController {
         loadingIndicator.startAnimating()
         
         // Configure the labels for stall overview
-        guard let path = stallOverviewPath else {
+        guard let path = stallKey else {
             return
         }
         DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
         
         // Configures the table view.
-        let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/menu")
+        let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/\(Food.path)")
         dataSource = FUITableViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: foodTableaView)
         foodTableaView.delegate = self
@@ -62,7 +63,7 @@ class StallDetailController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let path = stallOverviewPath {
+        if let path = stallKey {
             // Stops sending updates to the view (to avoid app crash).
             DatabaseRef.stopObservers(of: path)
         }
@@ -106,6 +107,7 @@ class StallDetailController: UIViewController {
         if let food = Food.deserialize(snapshot) {
             cell.load(food)
             foodIds[indexPath.totalRow(in: tableView)] = food.id
+            print(indexPath.totalRow(in: tableView), food.id)
         }
         return cell
     }

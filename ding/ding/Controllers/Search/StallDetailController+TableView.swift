@@ -17,14 +17,15 @@ import UIKit
 extension StallDetailController: UITableViewDelegate {
     /// Jumps to stall details view when a certain is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = Constants.stallDetailControllerId
+        let id = Constants.foodDetailViewControllerId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
             as? FoodDetailViewController else {
                 return
         }
         // Passes in the `id` of `Food` displayed at this cell.
-        if let foodId = foodIds[indexPath.totalRow(in: tableView)] {
-            controller.foodPath = "\(Food.path)/\(foodId)"
+        if let foodId = foodIds[indexPath.totalRow(in: tableView)],
+            let stallKey = stallKey {
+            controller.foodPath = "\(StallDetails.path)/\(stallKey)\(Food.path)/\(foodId)"
         }
         navigationController?.pushViewController(controller, animated: true)
     }

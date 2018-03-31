@@ -21,6 +21,8 @@ struct Constants {
     static let mainTabBarId = "mainTabBarController"
     /// The identifier for the stall details view controller.
     static let stallDetailControllerId = "stallDetailController"
+    /// The identifier for the food details view controller.
+    static let foodDetailViewControllerId = "foodDetailViewController"
 
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.15)

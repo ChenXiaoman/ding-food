@@ -11,7 +11,7 @@
  This includes drinks.
  */
 public struct Food: FirebaseObject {
-    public static let path = "/foods"
+    public static let path = "/menu"
     
     public let id: String
     public var name: String
