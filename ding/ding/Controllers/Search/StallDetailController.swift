@@ -67,7 +67,7 @@ class StallDetailController: UIViewController {
         super.viewWillDisappear(animated)
         if let path = stallKey {
             // Stops sending updates to the view (to avoid app crash).
-            DatabaseRef.stopObservers(of: path)
+            DatabaseRef.stopObservers(of: "\(StallOverview.path)/\(path)")
         }
         // Stops sending updates to the collection view (to avoid app crash).
         dataSource?.unbind()

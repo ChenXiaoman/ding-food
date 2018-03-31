@@ -29,7 +29,7 @@ struct Constants {
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
 
     /// The constant coefficient for menu corner radius.
-    static let menuButtonCornerRadiusCoefficient = CGFloat(0.15)
+    static let menuButtonCornerRadiusCoefficient = CGFloat(0.05)
     /// The border width for menu buttons
     static let menuButtonBorderWidth = CGFloat(1)
 
