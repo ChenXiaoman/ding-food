@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SP-j8-EVB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SP-j8-EVB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,6 +13,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-LightItalic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--VerifyNUSController-->
         <scene sceneID="tne-QT-ifu">
@@ -87,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6lI-KP-6kf" userLabel="OngoingOrders">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pvq-HG-oZA" userLabel="FlowLayout">
                                     <size key="itemSize" width="375" height="157"/>
@@ -170,7 +178,7 @@ x5 Lemon Juice</string>
                                 </cells>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-Gw-Cfd" userLabel="LoadingIndicator">
-                                <rect key="frame" x="177.5" y="331" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="353" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -598,46 +606,70 @@ x5 Lemon Juice</string>
                                 <rect key="frame" x="10" y="20" width="355" height="637"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-Bd-slt">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="236"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="236" id="FbW-EX-DId"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="255"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-G7-Cej">
-                                        <rect key="frame" x="0.0" y="246" width="355" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Food name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-G7-Cej">
+                                        <rect key="frame" x="0.0" y="265" width="355" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: 5$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSt-vf-4LE">
-                                        <rect key="frame" x="0.0" y="292" width="355" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Price: 5$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSt-vf-4LE">
+                                        <rect key="frame" x="0.0" y="311" width="355" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3x-kU-hpg">
-                                        <rect key="frame" x="0.0" y="322" width="355" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="344.5" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add remarks for your order" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1D-Pg-6yg">
-                                        <rect key="frame" x="0.0" y="352.5" width="355" height="184.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add remarks for your order" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1D-Pg-6yg">
+                                        <rect key="frame" x="0.0" y="375" width="355" height="122"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oaA-qA-Abu">
+                                        <rect key="frame" x="0.0" y="507" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Quantity: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO6-ti-GnR">
+                                                <rect key="frame" x="0.0" y="0.0" width="213.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-rm-SVD">
+                                                <rect key="frame" x="233.5" y="0.0" width="7.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mRs-pq-aXf">
+                                                <rect key="frame" x="261" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="stepperTouched:" destination="4J9-jl-KNV" eventType="valueChanged" id="y6m-dh-zfr"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="z1K-CO-wNu"/>
+                                        </constraints>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-DO-FIk" userLabel="Order immediately" customClass="MenuButton" customModule="ding" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="547" width="355" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0f3-XK-oqG"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <state key="normal" title="Order immediately"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -651,6 +683,7 @@ x5 Lemon Juice</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pgI-Og-aYd"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <state key="normal" title="Add to shopping cart"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -663,6 +696,7 @@ x5 Lemon Juice</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Zuc-Bd-slt" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="255:667" id="6Y8-hJ-mXf"/>
                             <constraint firstItem="dTk-rt-1FS" firstAttribute="bottom" secondItem="IJ0-IS-Asb" secondAttribute="bottom" constant="10" id="E3Y-1a-W26"/>
                             <constraint firstItem="IJ0-IS-Asb" firstAttribute="leading" secondItem="dTk-rt-1FS" secondAttribute="leading" constant="10" id="IU7-Ex-amv"/>
                             <constraint firstItem="IJ0-IS-Asb" firstAttribute="trailing" secondItem="dTk-rt-1FS" secondAttribute="trailing" constant="-10" id="KiR-f4-Gbn"/>
@@ -675,6 +709,7 @@ x5 Lemon Juice</string>
                         <outlet property="foodImageView" destination="Zuc-Bd-slt" id="sfl-EJ-6ET"/>
                         <outlet property="foodNameLabel" destination="l96-G7-Cej" id="odz-cT-hle"/>
                         <outlet property="priceLabel" destination="FSt-vf-4LE" id="N1v-kC-Q08"/>
+                        <outlet property="quantityLabel" destination="fjb-rm-SVD" id="tHu-XK-vuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ju1-EH-C75" userLabel="First Responder" sceneMemberID="firstResponder"/>

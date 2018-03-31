@@ -20,6 +20,7 @@ class FoodDetailViewController: UIViewController {
     @IBOutlet private weak var foodNameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var foodDescriptionLabel: UILabel!
+    @IBOutlet var quantityLabel: UILabel!
     
     /// The text format to display price.
     private static let priceFormat = "$%.1f"
@@ -42,6 +43,10 @@ class FoodDetailViewController: UIViewController {
         navigationItem.setRightBarButton(item, animated: animated)
     }
 
+    /// Handle user input quantity
+    @IBAction func stepperTouched(_ sender: UIStepper) {
+        quantityLabel.text = "\(Int(sender.value))"
+    }
     /// Opens the shopping cart when the button on the navigation bar is pressed.
     @objc
     func openShoppingCart() {
