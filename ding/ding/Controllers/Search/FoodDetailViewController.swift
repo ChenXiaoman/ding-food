@@ -10,11 +10,10 @@ import UIKit
 import FirebaseDatabaseUI
 
 class FoodDetailViewController: UIViewController {
-    /// Firebase reference of the current food
-    var foodPath: String?
+    /// The current food object
+    var food: Food?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        print(food?.name)
     }
 }

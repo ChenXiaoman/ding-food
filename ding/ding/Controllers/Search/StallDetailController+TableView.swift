@@ -22,10 +22,10 @@ extension StallDetailController: UITableViewDelegate {
             as? FoodDetailViewController else {
                 return
         }
-        // Passes in the `id` of `Food` displayed at this cell.
-        if let foodId = foodIds[indexPath.totalRow(in: tableView)],
+        // Passes `Food` object displayed at this cell.
+        if let food = foods[indexPath.totalRow(in: tableView)],
             let stallKey = stallKey {
-            controller.foodPath = "\(StallDetails.path)/\(stallKey)\(Food.path)/\(foodId)"
+            controller.food = food
         }
         navigationController?.pushViewController(controller, animated: true)
     }

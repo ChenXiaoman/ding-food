@@ -32,9 +32,9 @@ class StallDetailController: UIViewController {
     /// Indicates whether the collection view has finished loading data.
     private var loaded = false
     
-    /// A dictionary of mapping from cell's index path to the id of the stall
-    /// overview represented.
-    var foodIds: [Int: String] = [:]
+    /// A dictionary of mapping from cell's index path to the
+    /// correspoding food object
+    var foods: [Int: Food] = [:]
     
     /// Firebase reference of the current stall's key
     /// in both store overview and stall details
@@ -106,8 +106,7 @@ class StallDetailController: UIViewController {
         
         if let food = Food.deserialize(snapshot) {
             cell.load(food)
-            foodIds[indexPath.totalRow(in: tableView)] = food.id
-            print(indexPath.totalRow(in: tableView), food.id)
+            foods[indexPath.totalRow(in: tableView)] = food
         }
         return cell
     }
