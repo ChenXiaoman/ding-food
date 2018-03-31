@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 	s.license            = 'MIT'
 	s.author             = { "Group 3 @ CS3217 2018" => "cs3217team@gmail.com" }
 	s.source             = { :git => "git@github.com:cs3217/2018-final-project-group03.git", :branch => 'master' }
-	s.swift_version      = '4.0.3'
+	s.swift_version      = '4.1'
 	s.social_media_url = 'https://www.facebook.com/groups/cs3217/'
 	s.platform           = :ios, '11.2'
 	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift'

@@ -84,7 +84,7 @@ extension OngoingOrderController: UITableViewDataSource {
         if tableView == orderTableView {
             // Empty cell, need to add data inside later
             return orderTableView.dequeueReusableCell(withIdentifier:
-                OrderTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+                OngoingOrderCell.identifier) ?? UITableViewCell()
         } else if tableView == shoppingCartTableView {
             // Empty cell, need to add data inside later
             return shoppingCartTableView.dequeueReusableCell(withIdentifier:

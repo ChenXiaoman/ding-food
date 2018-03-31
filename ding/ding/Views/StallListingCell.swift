@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**
+ The cell for the collection view in ongoing orders.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
+ */
 class StallListingCell: UICollectionViewCell {
     @IBOutlet private weak var photo: UIImageView!
     @IBOutlet private weak var name: UILabel!
