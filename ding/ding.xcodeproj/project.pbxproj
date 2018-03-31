@@ -193,6 +193,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F26657F4206F8C5500BE83F5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
+				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		F27DDC77205E3953005C3A07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,15 +217,14 @@
 		F27DDC78205E3978005C3A07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F26657F3206F8BB300BE83F5 /* Helpers */,
 				F26657F2206F8B9400BE83F5 /* Order */,
+				F26657F4206F8C5500BE83F5 /* Search */,
+				F26657F3206F8BB300BE83F5 /* Helpers */,
 				F200DDE2205E520F00F33748 /* Assets.xcassets */,
 				F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */,
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
-				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
 				F23E6A362066A25E001EB882 /* SettingMenuCell.swift */,
 				F2C65C6A2065FAD100E40425 /* MenuButton.swift */,
-				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
 				5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */,
 			);
 			path = Views;

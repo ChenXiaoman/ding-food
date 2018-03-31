@@ -8,6 +8,9 @@
 
 import UIKit
 
-class ShoppingCartCell: UITableViewCell {
+class ShoppingCartCell: UICollectionViewCell {
+    @IBOutlet weak private var foodPhoto: UIImageView!
+    @IBOutlet weak private var foodName: UILabel!
+
     static let identifier = "shoppingCartCell"
 }
