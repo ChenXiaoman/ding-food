@@ -37,6 +37,9 @@ struct Constants {
     static let meSettingCellId = "meSettingMenuCell"
     /// The height for me setting menu cells.
     static let meSettingCellHeight = CGFloat(60)
+
+    /// The standard image size
+    static let standardImageSize = CGFloat(1024)
 }
 
 /**
@@ -49,4 +52,7 @@ struct MenuViewConstants {
 
     /// The ratio between cell size and inset.
     static let cellRatio = 0.9
+
+    /// The ratio between the cell height and width
+    static let heightWidthRatio = 1.25
 }
