@@ -27,12 +27,6 @@ public struct Stall: FirebaseObject {
     public var openingHour: String
     public var description: String
     public var menu: [String: Food]?
-    private var menuSequence: [Food]? {
-        guard let allFood = menu?.values else {
-            return nil
-        }
-        return Array(allFood)
-    }
     public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
@@ -48,20 +42,18 @@ public struct Stall: FirebaseObject {
         self.save()
     }
 
-    public func deleteFood(id: String) {
-
-    }
-
-    /// Return the food object at a specified position in menu,
-    /// nil if the index is out of bound
-    /// - Parameter:
-    ///     - index: the position in the menu array
-    public func getFood(at index: Int) -> Food? {
-        guard
-            let maxIndex = menu?.count,
-            index < maxIndex else {
-            return nil
+    /// Delete the certain food by its id. If the food has photo, it will also be removed from storage
+    /// do nothing if the food id does not exist in menu.
+    /// - Parameter: id: the food id
+    public mutating func deleteFood(by id: String) {
+        guard let foodToDelete = menu?[id] else {
+            return
         }
-        return menuSequence?[index]
+        // Remove the food photo from storage if applicable
+        if let photoPath = foodToDelete.photoPath {
+            StorageRef.delete(at: photoPath)
+        }
+        menu?[id] = nil
+        self.save()
     }
 }
