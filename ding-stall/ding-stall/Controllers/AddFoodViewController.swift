@@ -11,14 +11,13 @@ import Eureka
 
 class AddFoodViewController: FormViewController {
 
-    static let identifier = "addFoodSegue"
-
     let nameTag = "Name"
     let priceTag = "Tag"
     let descriptionTag = "Description"
     let typeTag = "Type"
     let imageTag = "Image"
 
+    /// The stall model to add the new food
     var stall: Stall?
 
     override func viewDidLoad() {
@@ -27,6 +26,19 @@ class AddFoodViewController: FormViewController {
         setValidationStyle()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done,
                                                             target: self, action: #selector(addFood))
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DatabaseRef.observeValueOnce(of: Stall.path + "/\(Account.stallId)") { snapshot in
+            self.stall = Stall.deserialize(snapshot)
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stop observe to avoid memory leak
+        DatabaseRef.stopObservers(of: Stall.path + "/\(Account.stallId)")
     }
 
     /// Set the style of cell to show whether it is valid
@@ -93,6 +105,7 @@ class AddFoodViewController: FormViewController {
     private func addFood() {
         let valueDict = form.values()
         guard
+            stall != nil,
             let foodName = valueDict[nameTag] as? String,
             let foodPrice = valueDict[priceTag] as? Double,
             foodPrice != Double.nan && foodPrice > 0,
@@ -129,6 +142,7 @@ class AddFoodViewController: FormViewController {
         return UIImageJPEGRepresentation(image, quality)
     }
 
+    /// Show an alert message that the food is successfully add into menu
     private func addSuccessAlert() {
         DialogHelpers.showAlertMessage(in: self, title: "Success", message: "Add food successfully") { _ in
             self.navigationController?.popViewController(animated: true)

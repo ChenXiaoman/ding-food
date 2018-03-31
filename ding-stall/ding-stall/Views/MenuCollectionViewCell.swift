@@ -21,6 +21,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
         foodName.text = food?.name
         if let imagePath = food?.photoPath {
             foodImage.setWebImage(at: imagePath)
+        } else {
+            // set to nil to avoid asyconize problem
+            foodImage.image = nil
         }
     }
 
