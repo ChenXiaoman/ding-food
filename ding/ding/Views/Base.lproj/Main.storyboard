@@ -657,6 +657,9 @@ x5 Lemon Juice</string>
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addToShoppingCart:" destination="4J9-jl-KNV" eventType="touchUpInside" id="GJe-0j-yGs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -36,6 +36,7 @@
 		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
 		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
+		F26657F7206FCA5D00BE83F5 /* StallOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26657F6206FCA5D00BE83F5 /* StallOverviewView.swift */; };
 		F2813545206A095400B81377 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2813544206A095400B81377 /* StallOverview.swift */; };
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
 		F290A039206A993600D0A0AF /* SearchViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */; };
@@ -87,6 +88,7 @@
 		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F26657F6206FCA5D00BE83F5 /* StallOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverviewView.swift; sourceTree = "<group>"; };
 		F2813544206A095400B81377 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CollectionView.swift"; sourceTree = "<group>"; };
@@ -196,8 +198,9 @@
 		F26657F4206F8C5500BE83F5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
 				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
+				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
+				F26657F6206FCA5D00BE83F5 /* StallOverviewView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */,
 				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
 				5DC2343F2063B8EB008B034A /* OngoingOrderController.swift in Sources */,
+				F26657F7206FCA5D00BE83F5 /* StallOverviewView.swift in Sources */,
 				B2464E8B205C51A30095A925 /* Food.swift in Sources */,
 				5D804DFD206B4444004BE32B /* IndexPath+TotalRow.swift in Sources */,
 				5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */,

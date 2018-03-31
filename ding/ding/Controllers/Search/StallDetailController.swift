@@ -41,6 +41,8 @@ class StallDetailController: UIViewController {
     /// Firebase reference of the current stall's key
     /// in both store overview and stall details
     var stallKey: String?
+    /// The `StallOverview` object used to display general information about the stall.
+    var stall: StallOverview?
     
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar

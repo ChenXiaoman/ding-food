@@ -13,7 +13,7 @@ class FoodDetailViewController: UIViewController {
     /// The current food object.
     var food: Food?
     /// The current stall key.
-    var stallKey: String?
+    var stall: StallOverview?
     
     /// View displaying current food's info.
     @IBOutlet private weak var foodImageView: UIImageView!
@@ -42,9 +42,19 @@ class FoodDetailViewController: UIViewController {
         navigationItem.setRightBarButton(item, animated: animated)
     }
 
+    /// Adds the food to the shopping cart when the button is pressed.
+    /// - Parameter sender: The button being pressed.
+    @IBAction func addToShoppingCart(_ sender: MenuButton) {
+        guard let currentStall = stall, let currentFood = food else {
+            return
+        }
+        ShoppingCart.cartFor(currentStall).add(currentFood, quantity: 1)
+        openShoppingCart()
+    }
+
     /// Opens the shopping cart when the button on the navigation bar is pressed.
     @objc
-    func openShoppingCart(barItem: UIBarButtonItem) {
+    func openShoppingCart() {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: "shoppingCartController")
             as? ShoppingCartController else {
             fatalError("Cannot find the controller.")

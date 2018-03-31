@@ -77,7 +77,7 @@ struct ShoppingCart {
     /// - Returns: The `Order` converted.
     func toOrder() -> Order {
         let id = Order.getAutoId
-        return Order(id: id, status: .preparing, review: nil, stall: stall, createdAt: Date(), food: food)
+        return Order(id: id, status: .preparing, review: nil, stallId: stall.id, createdAt: Date(), food: food)
     }
     
     /// - Returns: An array of `Order`s converted.
@@ -86,7 +86,7 @@ struct ShoppingCart {
         return shoppingCarts.map { cart in
             let id = Order.getAutoId
             return Order(id: id, status: .preparing, review: nil,
-                         stall: cart.stall, createdAt: date, food: cart.food)
+                         stallId: cart.stall.id, createdAt: date, food: cart.food)
         }
     }
 }

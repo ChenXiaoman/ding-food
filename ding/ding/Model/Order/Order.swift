@@ -21,7 +21,7 @@ public struct Order: FirebaseObject {
     public let id: String
     var status: OrderStatus
     var review: Review?
-    let stall: StallOverview
+    let stallId: String
     let createdAt: Date
     let food: [Food: Int]
 }
