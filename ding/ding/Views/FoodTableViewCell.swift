@@ -15,6 +15,7 @@ class FoodTableViewCell: UITableViewCell {
     @IBOutlet private weak var price: UILabel!
     @IBOutlet private weak var soldOutImage: UIImageView!
     
+    @IBOutlet private weak var soldOutBackground: UIImageView!
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let tableViewIdentifier = "FoodTableViewCell"
     
@@ -27,5 +28,8 @@ class FoodTableViewCell: UITableViewCell {
         photo.setWebImage(at: food.photoPath, placeholder: #imageLiteral(resourceName: "food-icon"))
         name.text = food.name
         price.text = String(format: FoodTableViewCell.priceFormat, food.price)
+        // Show the sold out image if the food is sold out
+        soldOutImage.isHidden = !food.isSoldOut
+        soldOutBackground.isHidden = !food.isSoldOut
     }
 }

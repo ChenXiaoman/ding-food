@@ -498,27 +498,36 @@ x5 Lemon Juice</string>
                                                         <constraint firstItem="uje-yl-IE6" firstAttribute="width" secondItem="UnP-Vt-9DK" secondAttribute="width" multiplier="1:5" id="LDS-8T-YsJ"/>
                                                     </constraints>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nXo-Xd-iap">
+                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="43.5"/>
+                                                    <color key="backgroundColor" white="0.86062282990000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
                                                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soldout" translatesAutoresizingMaskIntoConstraints="NO" id="DEq-eE-QQ5">
-                                                    <rect key="frame" x="130" y="-8" width="120" height="60"/>
+                                                    <rect key="frame" x="85" y="-13" width="210" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="7hd-wB-vcY"/>
-                                                        <constraint firstAttribute="width" secondItem="DEq-eE-QQ5" secondAttribute="height" multiplier="2:1" id="TIC-iV-JO1"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="7hd-wB-vcY"/>
+                                                        <constraint firstAttribute="width" secondItem="DEq-eE-QQ5" secondAttribute="height" multiplier="3:1" id="TIC-iV-JO1"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="DEq-eE-QQ5" firstAttribute="centerY" secondItem="o0L-ci-v8W" secondAttribute="centerY" id="AXQ-bZ-bkc"/>
+                                                <constraint firstAttribute="trailing" secondItem="nXo-Xd-iap" secondAttribute="trailing" id="R3D-CA-Z8s"/>
                                                 <constraint firstItem="DEq-eE-QQ5" firstAttribute="centerX" secondItem="o0L-ci-v8W" secondAttribute="centerX" id="R7b-bW-stL"/>
                                                 <constraint firstAttribute="bottom" secondItem="UnP-Vt-9DK" secondAttribute="bottom" constant="20" id="Vpw-5g-Qr6"/>
+                                                <constraint firstAttribute="bottom" secondItem="nXo-Xd-iap" secondAttribute="bottom" id="b9L-Ly-y27"/>
                                                 <constraint firstItem="UnP-Vt-9DK" firstAttribute="top" secondItem="o0L-ci-v8W" secondAttribute="top" constant="20" id="f3r-wd-KFD"/>
+                                                <constraint firstItem="nXo-Xd-iap" firstAttribute="leading" secondItem="o0L-ci-v8W" secondAttribute="leading" id="f6h-fK-naM"/>
                                                 <constraint firstAttribute="trailing" secondItem="UnP-Vt-9DK" secondAttribute="trailing" constant="15" id="hLy-sD-bgz"/>
                                                 <constraint firstItem="UnP-Vt-9DK" firstAttribute="leading" secondItem="o0L-ci-v8W" secondAttribute="leading" constant="15" id="kLe-iy-cYA"/>
+                                                <constraint firstItem="nXo-Xd-iap" firstAttribute="top" secondItem="o0L-ci-v8W" secondAttribute="top" id="lGT-Rv-ybM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="name" destination="HAR-QI-BZN" id="qXy-YO-vW6"/>
                                             <outlet property="photo" destination="uje-yl-IE6" id="DTx-iy-5gr"/>
                                             <outlet property="price" destination="tWU-vv-eln" id="wXF-95-5ev"/>
+                                            <outlet property="soldOutBackground" destination="nXo-Xd-iap" id="ta2-ET-cfA"/>
                                             <outlet property="soldOutImage" destination="DEq-eE-QQ5" id="wL2-9Q-eZ1"/>
                                         </connections>
                                     </tableViewCell>
