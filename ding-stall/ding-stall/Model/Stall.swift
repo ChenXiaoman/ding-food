@@ -32,23 +32,13 @@ public struct Stall: FirebaseObject {
     public var filters: Set<FilterIdentifier>?
 
     /// Add the a new kind of food into menu
-    /// - Parameters:
-    ///    - name: Food Name
-    ///    - price: Food Price (must be a non-negative decimal number)
-    ///    - type: Food Type
-    ///    - description: Food Description
-    ///    - photoPath: The path that store the food picture
-    public mutating func addFood(id: String, name: String, price: Double, type: FoodType, description: String?,
-                                 photoPath: String?) {
-        guard price > 0 else {
-            return
-        }
-        let newFood = Food(id: id, name: name, price: price, description: description,
-                           type: type, isSoldOut: false, photoPath: photoPath)
+    /// - Parameter:
+    ///    - addedFood: The food to be added in menu
+    public mutating func addFood(_ addedFood: Food) {
         if menu == nil {
             menu = [Food]()
         }
-        menu?.append(newFood)
+        menu?.append(addedFood)
         self.save()
     }
 

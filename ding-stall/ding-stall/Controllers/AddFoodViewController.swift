@@ -108,10 +108,11 @@ class AddFoodViewController: FormViewController {
                 photoPath = path
                 StorageRef.upload(imageData, at: path)
         }
-
         let foodDescription = valueDict[descriptionTag] as? String
-        stall?.addFood(id: foodId, name: foodName, price: foodPrice, type: foodType,
-                       description: foodDescription, photoPath: photoPath)
+
+        let newFood = Food(id: foodId, name: foodName, price: foodPrice, description: foodDescription,
+                           type: foodType, isSoldOut: false, photoPath: photoPath)
+        stall?.addFood(newFood)
         addSuccessAlert()
     }
 
