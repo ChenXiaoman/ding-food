@@ -19,7 +19,7 @@ class MenuViewController: NoNavigationBarViewController {
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
-    private let menuPath = Stall.path + "/\(Account.stallId)" + "/menu"
+    private let menuPath = Stall.path + "/\(Account.stallId)" + Food.path
     /// The path in database to retrieve this stall
     private let stallPath = Stall.path + "/\(Account.stallId)"
 
