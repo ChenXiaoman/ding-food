@@ -584,7 +584,7 @@ x5 Lemon Juice</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsY-63-OgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3777" y="-934"/>
+            <point key="canvasLocation" x="4081" y="-890"/>
         </scene>
         <!--Food detail-->
         <scene sceneID="FqV-8p-tWU">
@@ -679,7 +679,7 @@ x5 Lemon Juice</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ju1-EH-C75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3777" y="-170"/>
+            <point key="canvasLocation" x="4082" y="-170"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="nWW-wM-74I">

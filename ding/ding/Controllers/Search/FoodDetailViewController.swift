@@ -32,11 +32,19 @@ class FoodDetailViewController: UIViewController {
         priceLabel.text = String(format: FoodDetailViewController.priceFormat, food?.price ?? "")
         // Display description only when it is not empty
         if let description = food?.description {
-            
             foodDescriptionLabel.text = String(format: FoodDetailViewController.descriptionFormat, description)
         } else {
             foodDescriptionLabel.removeFromSuperview()
         }
+
+        // Configures the navigation bar.
+        let item = UIBarButtonItem(image: #imageLiteral(resourceName: "shopping-cart"), style: .plain, target: self, action: #selector(openShoppingCart))
+        navigationItem.setRightBarButton(item, animated: animated)
+    }
+
+    /// Opens the shopping cart when the button on the navigation bar is pressed.
+    @objc
+    func openShoppingCart() {
         
     }
 }
