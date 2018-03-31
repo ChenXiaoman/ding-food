@@ -14,14 +14,22 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     public static let identifier = "MenuCollectionViewCell"
 
+    /// Load the food view with a food model
     public func load(_ food: Food?) {
-
+        settleOutletFrame()
         foodName.adjustsFontSizeToFitWidth = true
         foodName.text = food?.name
+        if let imagePath = food?.photoPath {
+            foodImage.setWebImage(at: imagePath)
+        } else {
+            // set to nil to avoid asyconize problem
+            foodImage.image = nil
+        }
+    }
 
-        // Add the color to visualize the label and picture area
-        // TODO: remove this color after implementing the food photo
-        foodName.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+    private func settleOutletFrame() {
+        foodImage.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
+        foodName.frame = CGRect(x: 0, y: foodImage.frame.height,
+                                width: frame.width, height: frame.height - foodImage.frame.height)
     }
 }

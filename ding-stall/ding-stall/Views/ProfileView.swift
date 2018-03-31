@@ -45,7 +45,7 @@ class ProfileView: UIView {
     }
 
     private func initViewTitle() {
-        let titleContainer: UIView = UIView(frame:CGRect(x: Constants.screenPadding,
+        let titleContainer: UIView = UIView(frame: CGRect(x: Constants.screenPadding,
                                                          y: Constants.screenPadding,
                                                          width: Constants.screenWidth - 2 * Constants.screenPadding,
                                                          height: ClassConstants.titleRectHeight))
@@ -68,7 +68,7 @@ class ProfileView: UIView {
         let textFieldRect = CGRect(x: 0, y: 0, width: ClassConstants.textFieldWidth,
                                         height: ClassConstants.textFieldHeight)
 
-        nameTextField = CustomTextField(frame: textFieldRect, placeHolder: "Name");
+        nameTextField = CustomTextField(frame: textFieldRect, placeHolder: "Name")
         locationTextField = CustomTextField(frame: textFieldRect, placeHolder: "Locaion")
         openingHourTextField = CustomTextField(frame: textFieldRect, placeHolder: "Opening hour")
         descriptionTextField = CustomTextField(frame: textFieldRect, placeHolder: "Description")

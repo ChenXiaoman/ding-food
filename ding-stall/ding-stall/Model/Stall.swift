@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import Foundation
+
 /**
  Represents a food stall registered in the application.
  */
@@ -24,31 +26,25 @@ public struct Stall: FirebaseObject {
     public var location: String
     public var openingHour: String
     public var description: String
-    public var menu: [Food]?
+    public var menu: [String: Food]?
+    private var menuSequence: [Food]? {
+        guard let allFood = menu?.values else {
+            return nil
+        }
+        return Array(allFood)
+    }
     public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
 
     /// Add the a new kind of food into menu
-    /// - Parameters:
-    ///    - name: Food Name
-    ///    - price: Food Price (must be a non-negative decimal number)
-    ///    - type: Food Type
-    ///    - description: Food Description
-    ///    - photoPath: The path that store the food picture
-    public mutating func addFood(name: String, price: Double, type: FoodType, description: String?,
-                                 photoPath: String?) {
-        guard price > 0 else {
-            return
-        }
-        let id = Food.getAutoId
-        let newFood = Food(id: id, name: name, price: price, description: description,
-                           type: type, isSoldOut: false, photoPath: photoPath)
+    /// - Parameter:
+    ///    - addedFood: The food to be added in menu
+    public mutating func addFood(_ addedFood: Food) {
         if menu == nil {
-            menu = [Food]()
+            menu = [String: Food]()
         }
-        menu?.append(newFood)
-
+        menu?[addedFood.id] = addedFood
         self.save()
     }
 
@@ -66,6 +62,6 @@ public struct Stall: FirebaseObject {
             index < maxIndex else {
             return nil
         }
-        return menu?[index]
+        return menuSequence?[index]
     }
 }
