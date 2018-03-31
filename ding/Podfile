@@ -14,5 +14,5 @@ target 'ding' do
   pod 'FirebaseUI/Storage'
 
   # Pods for form input.
-  pod 'XLForm'
+  pod 'Eureka'
 end

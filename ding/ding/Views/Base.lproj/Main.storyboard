@@ -209,112 +209,9 @@ x5 Lemon Juice</string>
                     <view key="view" contentMode="scaleToFill" id="dGf-gh-TOU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-i5-Yj1" userLabel="ConfirmButton">
-                                <rect key="frame" x="10" y="627" width="355" height="30"/>
-                                <color key="backgroundColor" white="0.75" alpha="0.58369006849315064" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Confirm order"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LW3-aN-wXc" userLabel="ShoppingCart">
-                                <rect key="frame" x="0.0" y="20" width="375" height="599"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jdc-fW-87J" userLabel="FlowLayout">
-                                    <size key="itemSize" width="375" height="65"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shoppingCartCell" id="9po-W9-sbo" userLabel="ShoppingCartCell" customClass="ShoppingCartCell" customModule="ding" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food-icon" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-Sf-S2d" userLabel="FoodPhoto">
-                                                    <rect key="frame" x="3" y="3" width="59" height="59"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="pfj-Sf-S2d" secondAttribute="height" multiplier="1:1" id="bus-dr-fWH"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lemon Chicken Rice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJF-4V-paW" userLabel="FoodName">
-                                                    <rect key="frame" x="70" y="22" width="155.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8o-3a-fMY" userLabel="Amount">
-                                                    <rect key="frame" x="311" y="22" width="10" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUE-fz-PUq" userLabel="DeleteButton">
-                                                    <rect key="frame" x="344" y="12.5" width="30" height="39"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <state key="normal" title="✕">
-                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSb-Bs-hDC" userLabel="DecrementButton">
-                                                    <rect key="frame" x="322" y="13" width="30" height="39"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <state key="normal" title="-">
-                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIH-zt-ZBO" userLabel="IncrementButton">
-                                                    <rect key="frame" x="280" y="13" width="30" height="39"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <state key="normal" title="+">
-                                                        <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="RUE-fz-PUq" firstAttribute="centerY" secondItem="9po-W9-sbo" secondAttribute="centerY" id="1O9-bq-lOy"/>
-                                            <constraint firstItem="pfj-Sf-S2d" firstAttribute="top" secondItem="9po-W9-sbo" secondAttribute="top" constant="3" id="2AW-E1-y9e"/>
-                                            <constraint firstItem="NIH-zt-ZBO" firstAttribute="trailing" secondItem="F8o-3a-fMY" secondAttribute="leading" constant="-1" id="BHh-Y8-ebT"/>
-                                            <constraint firstItem="hJF-4V-paW" firstAttribute="centerY" secondItem="9po-W9-sbo" secondAttribute="centerY" id="Cch-uJ-85j"/>
-                                            <constraint firstItem="XSb-Bs-hDC" firstAttribute="centerY" secondItem="9po-W9-sbo" secondAttribute="centerY" id="OIh-vF-Wg4"/>
-                                            <constraint firstItem="RUE-fz-PUq" firstAttribute="trailing" secondItem="9po-W9-sbo" secondAttribute="trailing" constant="-1" id="PH0-xj-qHq"/>
-                                            <constraint firstItem="XSb-Bs-hDC" firstAttribute="trailing" secondItem="RUE-fz-PUq" secondAttribute="leading" constant="8" symbolic="YES" id="QIj-1x-wEQ"/>
-                                            <constraint firstItem="NIH-zt-ZBO" firstAttribute="centerY" secondItem="9po-W9-sbo" secondAttribute="centerY" id="RpC-Hg-v62"/>
-                                            <constraint firstItem="F8o-3a-fMY" firstAttribute="centerY" secondItem="9po-W9-sbo" secondAttribute="centerY" id="UsB-Id-zK4"/>
-                                            <constraint firstItem="hJF-4V-paW" firstAttribute="leading" secondItem="pfj-Sf-S2d" secondAttribute="trailing" constant="8" id="VM4-F1-Dab"/>
-                                            <constraint firstItem="F8o-3a-fMY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9po-W9-sbo" secondAttribute="leading" symbolic="YES" id="aOy-VF-Xfx"/>
-                                            <constraint firstItem="pfj-Sf-S2d" firstAttribute="bottom" secondItem="9po-W9-sbo" secondAttribute="bottom" constant="-3" id="fg1-Bc-7IX"/>
-                                            <constraint firstItem="pfj-Sf-S2d" firstAttribute="leading" secondItem="9po-W9-sbo" secondAttribute="leading" constant="3" id="v0f-Wm-2ev"/>
-                                            <constraint firstItem="hJF-4V-paW" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="9po-W9-sbo" secondAttribute="trailing" symbolic="YES" id="v4N-3d-CdP"/>
-                                            <constraint firstItem="F8o-3a-fMY" firstAttribute="trailing" secondItem="XSb-Bs-hDC" secondAttribute="leading" constant="-1" id="w0V-d5-cVz"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="foodName" destination="hJF-4V-paW" id="bHA-m6-BG8"/>
-                                            <outlet property="foodPhoto" destination="pfj-Sf-S2d" id="xmu-A3-cv5"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="bottom" secondItem="SVa-JZ-pWE" secondAttribute="bottom" constant="-10" id="dmt-ui-8KY"/>
-                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="leading" secondItem="SVa-JZ-pWE" secondAttribute="leading" constant="10" id="lK7-Og-A4y"/>
-                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="trailing" secondItem="SVa-JZ-pWE" secondAttribute="trailing" constant="-10" id="vGB-aT-0R3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SVa-JZ-pWE"/>
                     </view>
-                    <connections>
-                        <outlet property="shoppingCart" destination="LW3-aN-wXc" id="YXs-Zg-wqt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjN-eh-k7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -941,7 +838,6 @@ x5 Lemon Juice</string>
     </scenes>
     <resources>
         <image name="avatar" width="90" height="90"/>
-        <image name="food-icon" width="208" height="208"/>
         <image name="launch-background" width="512" height="512"/>
         <image name="me" width="20" height="20"/>
         <image name="order" width="20" height="20"/>
