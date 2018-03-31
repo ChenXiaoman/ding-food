@@ -26,7 +26,13 @@ public struct Stall: FirebaseObject {
     public var location: String
     public var openingHour: String
     public var description: String
-    public var menu: [Food]?
+    public var menu: [String: Food]?
+    private var menuSequence: [Food]? {
+        guard let allFood = menu?.values else {
+            return nil
+        }
+        return Array(allFood)
+    }
     public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
@@ -36,9 +42,9 @@ public struct Stall: FirebaseObject {
     ///    - addedFood: The food to be added in menu
     public mutating func addFood(_ addedFood: Food) {
         if menu == nil {
-            menu = [Food]()
+            menu = [String: Food]()
         }
-        menu?.append(addedFood)
+        menu?[addedFood.id] = addedFood
         self.save()
     }
 
@@ -56,6 +62,6 @@ public struct Stall: FirebaseObject {
             index < maxIndex else {
             return nil
         }
-        return menu?[index]
+        return menuSequence?[index]
     }
 }
