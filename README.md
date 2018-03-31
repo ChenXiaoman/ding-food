@@ -1,7 +1,9 @@
 # Ding!
 
+<p align="center">
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat" alt="Swift 4 compatible" /></a>
+</p>
 
 `Ding!` and `Ding! Stall` is your best choice to browse, order, collect and review food in NUS.
 
