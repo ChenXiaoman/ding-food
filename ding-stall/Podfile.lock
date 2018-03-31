@@ -1,4 +1,5 @@
 PODS:
+  - Eureka (4.1.1)
   - Firebase/Auth (4.11.0):
     - Firebase/Core
     - FirebaseAuth (= 4.5.0)
@@ -62,6 +63,7 @@ PODS:
   - XLForm (4.0.0)
 
 DEPENDENCIES:
+  - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
   - FirebaseUI/Database
@@ -69,6 +71,7 @@ DEPENDENCIES:
   - XLForm
 
 SPEC CHECKSUMS:
+  Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
   FirebaseAuth: 147bf340a0706b44ca1753d6b41ebafd9687cfe6
@@ -84,6 +87,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   XLForm: 04110197c12187dd28a6c7295d3d8b95f4fdb4de
 
-PODFILE CHECKSUM: cf142794fbe3412e4afb678f2d200a54809a5d20
+PODFILE CHECKSUM: c71e29013c3e19a8b065c097a94ae228803212e2
 
 COCOAPODS: 1.4.0
