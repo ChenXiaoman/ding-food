@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
+import Eureka
 
 /**
  The controller for the shopping cart.
@@ -14,6 +14,18 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class ShoppingCartController: UIViewController {
-    
+class ShoppingCartController: FormViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        for cart in ShoppingCart.shoppingCarts {
+            form +++ Section(cart.stall.name)
+            guard let section = form.last else {
+                continue
+            }
+            for food in cart.food {
+                section <<< StepperRow(tag: food.key.name)
+            }
+        }
+    }
 }

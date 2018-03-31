@@ -16,9 +16,12 @@ import FirebaseDatabaseUI
  */
 class OngoingOrderController: UIViewController {
     @IBOutlet weak private var ongoingOrders: UICollectionView!
-
+    @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
+    
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
+    /// Indicates whether the collection view has finished loading data.
+    private var loaded = false
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,11 +29,21 @@ class OngoingOrderController: UIViewController {
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
+        // Indicates that loading starts.
+        loaded = false
+        loadingIndicator.startAnimating()
+
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
         dataSource?.bind(to: ongoingOrders)
         ongoingOrders.delegate = self
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stops sending updates to the collection view (to avoid app crash).
+        dataSource?.unbind()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,6 +68,13 @@ class OngoingOrderController: UIViewController {
                                                             for: indexPath) as? OngoingOrderCell else {
             fatalError("Unable to dequeue cell.")
         }
+
+        // Stops the loading indicator.
+        if !loaded {
+            loaded = true
+            loadingIndicator.stopAnimating()
+        }
+
         return cell
     }
 }

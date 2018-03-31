@@ -15,11 +15,16 @@ import UIKit
  - Date: March 2018
  */
 class MenuButton: UIButton {
+    /// The constant coefficient for menu corner radius.
+    private static let cornerRadiusCoefficient = CGFloat(0.05)
+    /// The border width for menu buttons
+    private static let borderWidth = CGFloat(1)
+
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.lightText
-        layer.cornerRadius = frame.width * Constants.menuButtonCornerRadiusCoefficient
-        layer.borderWidth = Constants.menuButtonBorderWidth
+        layer.cornerRadius = frame.width * MenuButton.cornerRadiusCoefficient
+        layer.borderWidth = MenuButton.borderWidth
         layer.borderColor = UIColor.darkGray.cgColor
         setTitleColor(.black, for: .normal)
         contentHorizontalAlignment = .center

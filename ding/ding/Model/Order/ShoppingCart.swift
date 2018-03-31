@@ -20,14 +20,19 @@ import Foundation
  */
 struct ShoppingCart {
     /// A collection of food with different quantities.
-    private var food: [Food: Int] = [:]
+    var food: [Food: Int] = [:]
+    /// The stall that a shopping cart belongs to.
+    let stall: StallOverview
     /// Let the shopping cart work like a "global variable".
-    private static var shoppingCarts: [StallOverview: ShoppingCart] = [:]
+    static var shoppingCarts: [ShoppingCart] = []
 
+    /// Gets the cart for a certain stall.
+    /// - Parameter stall: The stall of that shopping cart.
+    /// - Returns: the cart for that stall; or create a new one if there is no such shopping cart.
     static func cartFor(_ stall: StallOverview) -> ShoppingCart {
-        guard let cart = shoppingCarts[stall] else {
-            let newCart = ShoppingCart(food: [:])
-            shoppingCarts[stall] = newCart
+        guard let cart = (shoppingCarts.first { $0.stall == stall }) else {
+            let newCart = ShoppingCart(food: [:], stall: stall)
+            shoppingCarts.append(newCart)
             return newCart
         }
         return cart
@@ -67,11 +72,21 @@ struct ShoppingCart {
         food[toChange] = currentQuantity - 1
     }
 
-    /// Converts a `ShoppingCart` to an `Order`, whose food should be the same. This method
+    /// Converts all `ShoppingCart`s to `Order`s, whose food should be the same. This method
     /// should be called when the customer submits the order.
     /// - Returns: The `Order` converted.
-//    func toOrder() -> Order {
-//        let id = Order.getAutoId
-//        return Order(id: id, status: .preparing, review: nil, stall: stall, createdAt: Date(), food: food)
-//    }
+    func toOrder() -> Order {
+        let id = Order.getAutoId
+        return Order(id: id, status: .preparing, review: nil, stall: stall, createdAt: Date(), food: food)
+    }
+    
+    /// - Returns: An array of `Order`s converted.
+    static func toOrders() -> [Order] {
+        let date = Date()
+        return shoppingCarts.map { cart in
+            let id = Order.getAutoId
+            return Order(id: id, status: .preparing, review: nil,
+                         stall: cart.stall, createdAt: date, food: cart.food)
+        }
+    }
 }
