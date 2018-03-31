@@ -24,7 +24,7 @@ class ShoppingCartController: FormViewController {
                 continue
             }
             for food in cart.food {
-                section <<< StepperRow() {
+                section <<< StepperRow {
                     $0.title = food.key.name
                     $0.value = Double(food.value)
                 }

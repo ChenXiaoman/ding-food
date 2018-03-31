@@ -93,8 +93,8 @@ class StallDetailController: UIViewController {
     ///    - snapshot: The snapshot of the corresponding model object from database.
     /// - Returns: a `FoodTableViewCell` to use.
     private func populateMenuCell(tableView: UITableView,
-                                          indexPath: IndexPath,
-                                          snapshot: DataSnapshot) -> FoodTableViewCell {
+                                  indexPath: IndexPath,
+                                  snapshot: DataSnapshot) -> FoodTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.tableViewIdentifier,
                                                             for: indexPath) as? FoodTableViewCell else {
                                                                 fatalError("Unable to dequeue cell.")
