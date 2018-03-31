@@ -8,8 +8,6 @@
 
 import UIKit
 
-class ShoppingCartTableViewCell: UITableViewCell {
-    
-    public static let tableViewIdentifier = "ShoppingCartTableViewCell"
-    
+class ShoppingCartCell: UITableViewCell {
+    static let identifier = "shoppingCartCell"
 }
