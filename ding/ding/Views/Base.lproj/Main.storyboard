@@ -211,12 +211,21 @@ x5 Lemon Juice</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-m5-TuM" userLabel="ShoppingCartTable">
-                                <rect key="frame" x="0.0" y="244" width="375" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-i5-Yj1" userLabel="ConfirmButton">
+                                <rect key="frame" x="10" y="627" width="355" height="30"/>
+                                <color key="backgroundColor" white="0.75" alpha="0.58369006849315064" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Confirm order"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-m5-TuM" userLabel="ShoppingCart">
+                                <rect key="frame" x="0.0" y="20" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCartTableViewCell" id="pf2-Qd-7TR" customClass="ShoppingCartTableViewCell" customModule="ding" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCartTableViewCell" id="pf2-Qd-7TR" userLabel="ShoppingCartCell" customClass="ShoppingCartTableViewCell" customModule="ding" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pf2-Qd-7TR" id="t91-ip-NLg">
@@ -283,19 +292,17 @@ x5 Lemon Juice</string>
                                     <outlet property="dataSource" destination="VAa-hn-p6R" id="Zzm-F5-Ipm"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-i5-Yj1">
-                                <rect key="frame" x="10" y="318" width="355" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.75" alpha="0.58369006849315064" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Confirm order"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="top" secondItem="MOT-m5-TuM" secondAttribute="bottom" constant="8" symbolic="YES" id="IE4-25-0vj"/>
+                            <constraint firstItem="MOT-m5-TuM" firstAttribute="trailing" secondItem="SVa-JZ-pWE" secondAttribute="trailing" id="ZLn-Mx-UX7"/>
+                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="bottom" secondItem="SVa-JZ-pWE" secondAttribute="bottom" constant="-10" id="dmt-ui-8KY"/>
+                            <constraint firstItem="MOT-m5-TuM" firstAttribute="leading" secondItem="SVa-JZ-pWE" secondAttribute="leading" id="eB0-ox-DKY"/>
+                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="leading" secondItem="SVa-JZ-pWE" secondAttribute="leading" constant="10" id="lK7-Og-A4y"/>
+                            <constraint firstItem="MOT-m5-TuM" firstAttribute="top" secondItem="SVa-JZ-pWE" secondAttribute="top" id="mPm-ed-pS9"/>
+                            <constraint firstItem="xCB-i5-Yj1" firstAttribute="trailing" secondItem="SVa-JZ-pWE" secondAttribute="trailing" constant="-10" id="vGB-aT-0R3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SVa-JZ-pWE"/>
                     </view>
                 </viewController>
