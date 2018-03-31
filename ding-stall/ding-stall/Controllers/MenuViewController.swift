@@ -10,7 +10,7 @@ import FirebaseDatabaseUI
 import UIKit
 
 /**
- The controller of stall's menu view
+ A controller to handle showing all food in this stall's menu
  */
 class MenuViewController: NoNavigationBarViewController {
 
@@ -18,7 +18,7 @@ class MenuViewController: NoNavigationBarViewController {
 
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
-    /// The path in database to get the menu
+    /// The path in database to retrieve the menu
     private let menuPath = Stall.path + "/\(Account.stallId)" + "/menu"
 
     override func viewWillAppear(_ animated: Bool) {

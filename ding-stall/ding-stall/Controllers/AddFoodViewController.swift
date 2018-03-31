@@ -9,6 +9,9 @@
 import UIKit
 import Eureka
 
+/**
+ A controller to handle adding new food to menu
+ */
 class AddFoodViewController: FormViewController {
 
     let nameTag = "Name"
@@ -18,7 +21,9 @@ class AddFoodViewController: FormViewController {
     let imageTag = "Image"
 
     /// The stall model to add the new food
-    var stall: Stall?
+    private var stall: Stall?
+    /// The path in database to retrieve stall model
+    private let stallPath = Stall.path + "/\(Account.stallId)"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,7 @@ class AddFoodViewController: FormViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DatabaseRef.observeValueOnce(of: Stall.path + "/\(Account.stallId)") { snapshot in
+        DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
             self.stall = Stall.deserialize(snapshot)
         }
     }
@@ -38,7 +43,7 @@ class AddFoodViewController: FormViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Stop observe to avoid memory leak
-        DatabaseRef.stopObservers(of: Stall.path + "/\(Account.stallId)")
+        DatabaseRef.stopObservers(of: stallPath)
     }
 
     /// Set the style of cell to show whether it is valid

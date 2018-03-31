@@ -6,8 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
 import FirebaseAuthUI
+import UIKit
 
 /**
  The controller for initial login view. However, this controller is only an adapter. The actual
