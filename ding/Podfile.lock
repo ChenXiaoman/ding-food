@@ -59,12 +59,14 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - XLForm (4.0.0)
 
 DEPENDENCIES:
   - Firebase/Core
   - FirebaseUI/Auth
   - FirebaseUI/Database
   - FirebaseUI/Storage
+  - XLForm
 
 SPEC CHECKSUMS:
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
@@ -80,7 +82,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  XLForm: 04110197c12187dd28a6c7295d3d8b95f4fdb4de
 
-PODFILE CHECKSUM: b31e76e3f1739c5bdba268557cd5135e0f7508d2
+PODFILE CHECKSUM: 771c580bdb39e6d7961dec482fe9895c93389ba1
 
 COCOAPODS: 1.4.0

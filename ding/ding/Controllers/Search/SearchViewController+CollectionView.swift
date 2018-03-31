@@ -31,7 +31,7 @@ extension SearchViewController: UICollectionViewDelegate {
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
-    /// Sets the size of each cell (to fit 11/12 cells per row).
+    /// Sets the size of each cell.
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

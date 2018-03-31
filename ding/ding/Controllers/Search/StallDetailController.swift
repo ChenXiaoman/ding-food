@@ -41,7 +41,7 @@ class StallDetailController: UIViewController {
     var stallKey: String?
     
     override func viewWillAppear(_ animated: Bool) {
-        // Hides the navigation bar
+        // Shows the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
         
         // Indicates that loading starts.

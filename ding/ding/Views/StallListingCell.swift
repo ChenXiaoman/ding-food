@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**
+ The cell for the collection view in ongoing orders.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
+ */
 class StallListingCell: UICollectionViewCell {
     @IBOutlet private weak var photo: UIImageView!
     @IBOutlet private weak var name: UILabel!
@@ -18,8 +24,10 @@ class StallListingCell: UICollectionViewCell {
     static let identifier = "stallListingCell"
     /// The aspect ratio of this cell.
     private static let aspectRatio = CGFloat(1.0 / 3)
+    /// The width ratio constant depending on the device.
+    static let widthRatio = (UIDevice.current.userInterfaceIdiom == .phone) ? CGFloat(1) : CGFloat(0.5)
     /// The width of this cell.
-    static let width = Constants.screenWidth
+    static let width = Constants.screenWidth * StallListingCell.widthRatio
     /// The height of this cell.
     static let height = StallListingCell.width * StallListingCell.aspectRatio
 
@@ -35,5 +43,9 @@ class StallListingCell: UICollectionViewCell {
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)
+    }
+
+    static var onPhone: Bool {
+        return UIDevice.current.userInterfaceIdiom == .phone
     }
 }
