@@ -20,7 +20,7 @@ class FoodTableViewCell: UITableViewCell {
     static let tableViewIdentifier = "FoodTableViewCell"
     
     /// The text format to display price.
-    private static let priceFormat = "$ %.1f"
+    private static let priceFormat = "$%.1f"
     
     /// Loads data into and populate a `FoodTableViewCell`.
     /// - Parameter stall: The `Food` object as the data source.

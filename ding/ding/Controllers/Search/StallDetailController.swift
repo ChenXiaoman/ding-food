@@ -14,6 +14,8 @@ class StallDetailController: UIViewController {
     private static let queueCountFormat = "Number of people waiting: %d"
     /// The text format to display average rating.
     private static let averageRatingFormat = "Average rating: %.1f"
+    /// The text format to display description.
+    private static let descriptionFormat = "\"%@\""
     
     /// Table view for displaying menu (list of food)
     @IBOutlet weak private var foodTableaView: UITableView!
