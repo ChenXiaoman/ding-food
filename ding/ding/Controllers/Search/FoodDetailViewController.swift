@@ -44,7 +44,13 @@ class FoodDetailViewController: UIViewController {
 
     /// Opens the shopping cart when the button on the navigation bar is pressed.
     @objc
-    func openShoppingCart() {
-        
+    func openShoppingCart(barItem: UIBarButtonItem) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "shoppingCartController")
+            as? ShoppingCartController else {
+            fatalError("Cannot find the controller.")
+        }
+        controller.modalPresentationStyle = .popover
+        controller.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(controller, animated: true, completion: nil)
     }
 }
