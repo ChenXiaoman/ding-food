@@ -25,3 +25,10 @@ public struct Food: FirebaseObject {
         isSoldOut = true
     }
 }
+
+public enum FoodType: String, Codable {
+    case main
+    case soup
+    case dessert
+    case drink
+}
