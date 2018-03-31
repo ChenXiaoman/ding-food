@@ -498,8 +498,17 @@ x5 Lemon Juice</string>
                                                         <constraint firstItem="uje-yl-IE6" firstAttribute="width" secondItem="UnP-Vt-9DK" secondAttribute="width" multiplier="1:5" id="LDS-8T-YsJ"/>
                                                     </constraints>
                                                 </stackView>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soldout" translatesAutoresizingMaskIntoConstraints="NO" id="DEq-eE-QQ5">
+                                                    <rect key="frame" x="130" y="-8" width="120" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="7hd-wB-vcY"/>
+                                                        <constraint firstAttribute="width" secondItem="DEq-eE-QQ5" secondAttribute="height" multiplier="2:1" id="TIC-iV-JO1"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="DEq-eE-QQ5" firstAttribute="centerY" secondItem="o0L-ci-v8W" secondAttribute="centerY" id="AXQ-bZ-bkc"/>
+                                                <constraint firstItem="DEq-eE-QQ5" firstAttribute="centerX" secondItem="o0L-ci-v8W" secondAttribute="centerX" id="R7b-bW-stL"/>
                                                 <constraint firstAttribute="bottom" secondItem="UnP-Vt-9DK" secondAttribute="bottom" constant="20" id="Vpw-5g-Qr6"/>
                                                 <constraint firstItem="UnP-Vt-9DK" firstAttribute="top" secondItem="o0L-ci-v8W" secondAttribute="top" constant="20" id="f3r-wd-KFD"/>
                                                 <constraint firstAttribute="trailing" secondItem="UnP-Vt-9DK" secondAttribute="trailing" constant="15" id="hLy-sD-bgz"/>
@@ -510,6 +519,7 @@ x5 Lemon Juice</string>
                                             <outlet property="name" destination="HAR-QI-BZN" id="qXy-YO-vW6"/>
                                             <outlet property="photo" destination="uje-yl-IE6" id="DTx-iy-5gr"/>
                                             <outlet property="price" destination="tWU-vv-eln" id="wXF-95-5ev"/>
+                                            <outlet property="soldOutImage" destination="DEq-eE-QQ5" id="wL2-9Q-eZ1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -930,5 +940,6 @@ x5 Lemon Juice</string>
         <image name="order" width="20" height="20"/>
         <image name="search" width="20" height="20"/>
         <image name="shopping-cart" width="20" height="20"/>
+        <image name="soldout" width="500" height="249"/>
     </resources>
 </document>

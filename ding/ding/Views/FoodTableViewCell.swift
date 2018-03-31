@@ -13,6 +13,7 @@ class FoodTableViewCell: UITableViewCell {
     @IBOutlet private weak var photo: UIImageView!
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var price: UILabel!
+    @IBOutlet private weak var soldOutImage: UIImageView!
     
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let tableViewIdentifier = "FoodTableViewCell"
