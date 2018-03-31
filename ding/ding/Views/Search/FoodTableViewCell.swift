@@ -26,6 +26,7 @@ class FoodTableViewCell: UITableViewCell {
     /// - Parameter stall: The `Food` object as the data source.
     func load(_ food: Food) {
         photo.setWebImage(at: food.photoPath, placeholder: #imageLiteral(resourceName: "food-icon"))
+        photo.clipsToBounds = true // Use for enable corner radius
         name.text = food.name
         price.text = String(format: FoodTableViewCell.priceFormat, food.price)
         // Show the sold out image if the food is sold out

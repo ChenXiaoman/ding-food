@@ -30,6 +30,13 @@ class FoodDetailViewController: UIViewController {
         foodImageView.setWebImage(at: food?.photoPath, placeholder: #imageLiteral(resourceName: "food-icon"))
         foodNameLabel.text = food?.name
         priceLabel.text = String(format: FoodDetailViewController.priceFormat, food?.price ?? "")
-        foodDescriptionLabel.text = String(format: FoodDetailViewController.descriptionFormat, food?.description ?? "")
+        // Display description only when it is not empty
+        if let description = food?.description {
+            
+            foodDescriptionLabel.text = String(format: FoodDetailViewController.descriptionFormat, description)
+        } else {
+            foodDescriptionLabel.removeFromSuperview()
+        }
+        
     }
 }
