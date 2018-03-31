@@ -75,7 +75,7 @@ class AddFoodViewController: FormViewController {
                 row.title = "Food Name"
                 row.placeholder = "Food name should not be empty"
                 row.add(rule: RuleRequired())
-                row.validationOptions = .validatesAlways
+                row.validationOptions = .validatesOnDemand
             }
             <<< DecimalRow { row in
                 row.tag = priceTag
@@ -83,7 +83,7 @@ class AddFoodViewController: FormViewController {
                 row.placeholder = "Food price should be a positive number"
                 row.add(rule: RuleRequired())
                 row.add(rule: RuleGreaterThan(min: 0))
-                row.validationOptions = .validatesAlways
+                row.validationOptions = .validatesOnDemand
             }
             <<< ActionSheetRow<FoodType> { row in
                 row.tag = typeTag
@@ -91,7 +91,7 @@ class AddFoodViewController: FormViewController {
                 row.options = [FoodType.main, FoodType.soup,
                                FoodType.drink, FoodType.dessert]
                 row.add(rule: RuleRequired())
-                row.validationOptions = .validatesAlways
+                row.validationOptions = .validatesOnDemand
             }
             <<< TextRow { row in
                 row.tag = descriptionTag
@@ -101,13 +101,13 @@ class AddFoodViewController: FormViewController {
                 row.tag = imageTag
                 row.title = "Upload Food Photo"
             }
-        form.validate()
     }
 
     /// Add the new food by informaion in the form, and store it
     /// Food Name, Food Price and Food Type are required, and others are optional
     @objc
     private func addFood() {
+        form.validate()
         let valueDict = form.values()
         guard
             stall != nil,
