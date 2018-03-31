@@ -99,21 +99,33 @@ class AddFoodViewController: FormViewController {
             let foodType = valueDict[typeTag] as? FoodType else {
                 return
         }
-
+        let foodId = Food.getAutoId
         var photoPath: String?
         if
             let image = valueDict[imageTag] as? UIImage,
-            let imageData = UIImagePNGRepresentation(image) {
-                let imageRow = form.rowBy(tag: imageTag) as? ImageRow
-                let path = "\(Account.stallId)" + "/Menu" + "/\(imageRow?.imageName ?? "")"
+            let imageData = standardedSizeImageData(image) {
+                let path = "/Menu" + "/\(Account.stallId)" + "/\(foodId)"
                 photoPath = path
                 StorageRef.upload(imageData, at: path)
         }
 
         let foodDescription = valueDict[descriptionTag] as? String
-        stall?.addFood(name: foodName, price: foodPrice, type: foodType,
+        stall?.addFood(id: foodId, name: foodName, price: foodPrice, type: foodType,
                        description: foodDescription, photoPath: photoPath)
         addSuccessAlert()
+    }
+
+    /// Compress an image to avoid large-size image
+    /// - Parameter:
+    ///     - image: the original image
+    /// - Return: the data of compressed image, nil if it cannot be compressed
+    private func standardedSizeImageData(_ image: UIImage) -> Data? {
+        let originalImageSize = image.size.width * image.size.height
+        var quality = Constants.standardImageSize / originalImageSize
+        if quality > 1 {
+            quality = 1
+        }
+        return UIImageJPEGRepresentation(image, quality)
     }
 
     private func addSuccessAlert() {

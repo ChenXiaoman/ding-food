@@ -37,6 +37,9 @@ struct Constants {
     static let meSettingCellId = "meSettingMenuCell"
     /// The height for me setting menu cells.
     static let meSettingCellHeight = CGFloat(60)
+
+    /// The standard image size
+    static let standardImageSize = CGFloat(1024)
 }
 
 /**
