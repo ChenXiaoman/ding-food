@@ -692,6 +692,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dTk-rt-1FS"/>
                     </view>
+                    <connections>
+                        <outlet property="foodImageView" destination="Zuc-Bd-slt" id="sfl-EJ-6ET"/>
+                        <outlet property="foodNameLabel" destination="l96-G7-Cej" id="odz-cT-hle"/>
+                        <outlet property="priceLabel" destination="FSt-vf-4LE" id="N1v-kC-Q08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ju1-EH-C75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

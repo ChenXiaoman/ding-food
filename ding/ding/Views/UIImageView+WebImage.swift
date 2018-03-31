@@ -17,7 +17,9 @@ extension UIImageView {
     ///    - path: The path at which the web image is stored.
     ///    - placeholder: The placeholder image to be shown before the image is loaded,
     /// whose default value is `nil`.
-    func setWebImage(at path: String, placeholder: UIImage? = nil) {
-        sd_setImage(with: StorageRef.getNodeRef(of: path), placeholderImage: placeholder)
+    func setWebImage(at path: String?, placeholder: UIImage? = nil) {
+        if let path = path {
+            sd_setImage(with: StorageRef.getNodeRef(of: path), placeholderImage: placeholder)
+        }
     }
 }

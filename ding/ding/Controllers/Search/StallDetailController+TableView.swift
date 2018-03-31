@@ -26,6 +26,7 @@ extension StallDetailController: UITableViewDelegate {
         if let food = foods[indexPath.totalRow(in: tableView)],
             let stallKey = stallKey {
             controller.food = food
+            controller.stallKey = stallKey
         }
         navigationController?.pushViewController(controller, animated: true)
     }
