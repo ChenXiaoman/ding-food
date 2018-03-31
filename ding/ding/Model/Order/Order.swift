@@ -21,8 +21,9 @@ public struct Order: FirebaseObject {
     public let id: String
     var status: OrderStatus
     var review: Review?
-    let createdAt: Date?
-    let food = [Food: Int]()
+    let stall: StallOverview
+    let createdAt: Date
+    let food: [Food: Int]
 }
 
 public enum OrderStatus: String, Codable {

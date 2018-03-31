@@ -22,4 +22,10 @@ class OngoingOrderCell: UICollectionViewCell {
     @IBOutlet weak private var orderStatus: OrderStatusLabel!
     
     static let identifier = "ongoingOrderCell"
+    /// The aspect ratio of this cell.
+    private static let aspectRatio = CGFloat(1.0 / 3)
+    /// The width of this cell.
+    static let width = Constants.screenWidth
+    /// The height of this cell.
+    static let height = StallListingCell.width * OngoingOrderCell.aspectRatio
 }

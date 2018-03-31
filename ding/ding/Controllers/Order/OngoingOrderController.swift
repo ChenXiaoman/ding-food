@@ -58,21 +58,3 @@ class OngoingOrderController: UIViewController {
         return cell
     }
 }
-
-/**
- Extension for `OngoingOrderController` so that it can manage the collection view.
- */
-extension OngoingOrderController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-    }
-}
-
-extension OngoingOrderController: UICollectionViewDelegateFlowLayout {
-    /// Sets the size of each cell.
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.screenWidth, height: StallListingCell.height)
-    }
-}
