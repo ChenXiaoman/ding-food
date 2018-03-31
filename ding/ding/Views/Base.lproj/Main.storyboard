@@ -339,26 +339,31 @@ x5 Lemon Juice</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="87C-wK-bfv" userLabel="Photo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="189" height="126"/>
+                                                    <rect key="frame" x="10" y="15" width="144" height="96"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="87C-wK-bfv" secondAttribute="height" multiplier="3:2" id="SdX-eL-Ck8"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjG-3Q-aKS">
-                                                    <rect key="frame" x="197" y="5" width="54" height="25.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YjG-3Q-aKS">
+                                                    <rect key="frame" x="164" y="15" width="201" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 people waiting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDs-zO-JcX" userLabel="Queue">
-                                                    <rect key="frame" x="197" y="38.5" width="112.5" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="162" y="53" width="111.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average rating: 4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTu-82-xwL" userLabel="Rating">
-                                                    <rect key="frame" x="197" y="64.5" width="129.5" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="162" y="79" width="127.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -366,15 +371,15 @@ x5 Lemon Juice</string>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="hDs-zO-JcX" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="8" symbolic="YES" id="01f-NZ-JXF"/>
+                                            <constraint firstAttribute="bottom" secondItem="87C-wK-bfv" secondAttribute="bottom" constant="15" id="1la-Gd-gY9"/>
+                                            <constraint firstItem="87C-wK-bfv" firstAttribute="leading" secondItem="iCb-M2-oCP" secondAttribute="leading" constant="10" id="3OX-Ty-RVr"/>
                                             <constraint firstItem="hDs-zO-JcX" firstAttribute="top" secondItem="YjG-3Q-aKS" secondAttribute="bottom" constant="8" symbolic="YES" id="4RG-SW-EOD"/>
                                             <constraint firstItem="mTu-82-xwL" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="8" symbolic="YES" id="5RT-gb-OOs"/>
-                                            <constraint firstItem="87C-wK-bfv" firstAttribute="leading" secondItem="iCb-M2-oCP" secondAttribute="leading" id="5pf-6a-ZZy"/>
-                                            <constraint firstItem="YjG-3Q-aKS" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iCb-M2-oCP" secondAttribute="trailing" symbolic="YES" id="94M-Vz-Pam"/>
+                                            <constraint firstItem="YjG-3Q-aKS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iCb-M2-oCP" secondAttribute="trailing" constant="-10" id="94M-Vz-Pam"/>
+                                            <constraint firstItem="87C-wK-bfv" firstAttribute="top" secondItem="iCb-M2-oCP" secondAttribute="top" constant="15" id="Koy-kc-oHZ"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mTu-82-xwL" secondAttribute="trailing" symbolic="YES" id="Mjj-kh-xWK"/>
-                                            <constraint firstItem="YjG-3Q-aKS" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="8" symbolic="YES" id="MyE-Yp-Ncu"/>
-                                            <constraint firstItem="87C-wK-bfv" firstAttribute="bottom" secondItem="iCb-M2-oCP" secondAttribute="bottom" id="Sbq-qg-QuE"/>
-                                            <constraint firstItem="87C-wK-bfv" firstAttribute="top" secondItem="iCb-M2-oCP" secondAttribute="top" id="TOJ-Dn-A4b"/>
-                                            <constraint firstItem="YjG-3Q-aKS" firstAttribute="top" secondItem="iCb-M2-oCP" secondAttribute="top" constant="5" id="Z6l-QB-QHp"/>
+                                            <constraint firstItem="YjG-3Q-aKS" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="10" id="YpO-bg-Ibh"/>
+                                            <constraint firstItem="YjG-3Q-aKS" firstAttribute="top" secondItem="iCb-M2-oCP" secondAttribute="top" constant="15" id="Z6l-QB-QHp"/>
                                             <constraint firstItem="mTu-82-xwL" firstAttribute="top" secondItem="hDs-zO-JcX" secondAttribute="bottom" constant="8" symbolic="YES" id="ZGV-zU-ajf"/>
                                             <constraint firstItem="hDs-zO-JcX" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iCb-M2-oCP" secondAttribute="trailing" symbolic="YES" id="uaG-Ca-wik"/>
                                         </constraints>
