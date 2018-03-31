@@ -160,7 +160,7 @@ x5 Lemon Juice</string>
                                             <constraint firstItem="7Qs-fV-7gp" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="meN-h2-ZSE" secondAttribute="trailing" symbolic="YES" id="zkO-Up-UjN"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="description" destination="7Qs-fV-7gp" id="34e-tN-TMk"/>
+                                            <outlet property="orderDescription" destination="7Qs-fV-7gp" id="34e-tN-TMk"/>
                                             <outlet property="orderStatus" destination="6Yr-Gt-pwt" id="ajb-6G-PbM"/>
                                             <outlet property="stallName" destination="XHe-cR-kbr" id="oGH-r0-dVe"/>
                                             <outlet property="stallPhoto" destination="jMw-BQ-G42" id="HyL-He-KoX"/>
@@ -189,6 +189,7 @@ x5 Lemon Juice</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ongoingOrders" destination="6lI-KP-6kf" id="8lE-Fl-kFP"/>
                         <outlet property="shoppingCartTableView" destination="MOT-m5-TuM" id="qDd-rq-FgO"/>
                     </connections>
                 </viewController>
@@ -412,7 +413,7 @@ x5 Lemon Juice</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SaR-Di-9kh">
-                                <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m4P-Ip-GDg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="171"/>
@@ -461,16 +462,16 @@ x5 Lemon Juice</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UnP-Vt-9DK">
-                                                    <rect key="frame" x="15" y="20" width="350" height="3.5"/>
+                                                    <rect key="frame" x="15" y="20" width="743" height="3.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="uje-yl-IE6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="3.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="148.5" height="3.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="gk8-l0-08g"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Food name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAR-QI-BZN">
-                                                            <rect key="frame" x="80" y="0.0" width="191" height="3.5"/>
+                                                            <rect key="frame" x="158.5" y="0.0" width="505.5" height="3.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Ugu-0a-g0E"/>
                                                             </constraints>
@@ -479,7 +480,7 @@ x5 Lemon Juice</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Price: 5$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWU-vv-eln">
-                                                            <rect key="frame" x="281" y="0.0" width="69" height="3.5"/>
+                                                            <rect key="frame" x="674" y="0.0" width="69" height="3.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

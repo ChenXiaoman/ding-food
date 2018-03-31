@@ -18,7 +18,7 @@ class OngoingOrderCell: UICollectionViewCell {
     @IBOutlet weak private var stallName: UILabel!
     @IBOutlet weak private var stallPhoto: UIImageView!
     @IBOutlet weak private var totalPrice: UILabel!
-    @IBOutlet weak private var description: UILabel!
+    @IBOutlet weak private var orderDescription: UILabel!
     @IBOutlet weak private var orderStatus: OrderStatusLabel!
     
     static let identifier = "ongoingOrderCell"

@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
+import FirebaseDatabaseUI
 
 /**
  The controller for current on-going order view.
@@ -15,15 +15,22 @@ import UIKit
  - Date: March 2018
  */
 class OngoingOrderController: UIViewController {
-    @IBOutlet weak private var orderTableView: UITableView!
-    
-    @IBOutlet weak private var shoppingCartTableView: UITableView!
+    @IBOutlet weak private var ongoingOrders: UICollectionView!
+
+    /// The Firebase data source for the listing of stalls.
+    var dataSource: FUICollectionViewDataSource?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
+
+        // Configures the collection view.
+        let query = DatabaseRef.getNodeRef(of: StallOverview.path)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
+        dataSource?.bind(to: ongoingOrders)
+        ongoingOrders.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,64 +41,38 @@ class OngoingOrderController: UIViewController {
         let height = Constants.screenHeight / 2
         segue.destination.preferredContentSize = CGSize(width: width, height: height)
     }
+
+    /// Populates a `OngoingOrderCell` with the given data from database.
+    /// - Parameters:
+    ///    - collectionView: The collection view as the listing of ongoing orders.
+    ///    - indexPath: The index path of this cell.
+    ///    - snapshot: The snapshot of the corresponding model object from database.
+    /// - Returns: a `StallListingCell` to use.
+    private func populateOngoingOrderCell(collectionView: UICollectionView,
+                                          indexPath: IndexPath,
+                                          snapshot: DataSnapshot) -> OngoingOrderCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OngoingOrderCell.identifier,
+                                                            for: indexPath) as? OngoingOrderCell else {
+            fatalError("Unable to dequeue cell.")
+        }
+        return cell
+    }
 }
 
-extension OngoingOrderController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Hadle two table views in one controller with if else
-        if tableView == orderTableView {
+/**
+ Extension for `OngoingOrderController` so that it can manage the collection view.
+ */
+extension OngoingOrderController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        } else if tableView == shoppingCartTableView {
-
-        }
-        // Fake data
-        return 2
     }
+}
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // Fake data
-        // Hadle two table views in one controller with if else
-        if tableView == orderTableView {
-
-        } else if tableView == shoppingCartTableView {
-
-        }
-        return 3
-    }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        // Handles the two table views in one controller with if else
-        if tableView == orderTableView {
-
-        } else if tableView == shoppingCartTableView {
-
-        }
-        // Fake data
-        switch section {
-        case 0:
-            return "Biz Chicken Rice"
-        case 1:
-            return "UTown Koufu Koreand"
-        case 2:
-            return "Deck"
-        default:
-            return "Unknown"
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Hadle two table views in one controller with if else
-        if tableView == orderTableView {
-            // Empty cell, need to add data inside later
-            return orderTableView.dequeueReusableCell(withIdentifier:
-                OngoingOrderCell.identifier) ?? UITableViewCell()
-        } else if tableView == shoppingCartTableView {
-            // Empty cell, need to add data inside later
-            return shoppingCartTableView.dequeueReusableCell(withIdentifier:
-                ShoppingCartTableViewCell.tableViewIdentifier) ?? UITableViewCell()
-        }
-
-        // Should never happen
-        return UITableViewCell()
+extension OngoingOrderController: UICollectionViewDelegateFlowLayout {
+    /// Sets the size of each cell.
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: Constants.screenWidth, height: StallListingCell.height)
     }
 }
