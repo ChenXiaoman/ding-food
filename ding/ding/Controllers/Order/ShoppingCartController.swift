@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**
+ The controller for the shopping cart.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
+ */
 class ShoppingCartController: UIViewController {
     
 }

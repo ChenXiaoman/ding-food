@@ -19,10 +19,19 @@ import Foundation
  - Date: March 2018
  */
 struct ShoppingCart {
-    /// The stall from which the food comes from.
-    let stall: StallOverview
     /// A collection of food with different quantities.
     private var food: [Food: Int] = [:]
+    /// Let the shopping cart work like a "global variable".
+    private static var shoppingCarts: [StallOverview: ShoppingCart] = [:]
+
+    static func cartFor(_ stall: StallOverview) -> ShoppingCart {
+        guard let cart = shoppingCarts[stall] else {
+            let newCart = ShoppingCart(food: [:])
+            shoppingCarts[stall] = newCart
+            return newCart
+        }
+        return cart
+    }
 
     /// Adds a certain amount of a kind of food to the shopping cart. If this kind of food
     /// is already in the shopping cart before, its amount will be overwritten.

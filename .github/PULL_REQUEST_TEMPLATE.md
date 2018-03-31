@@ -1,4 +1,4 @@
-## Which component is this issue about?
+## Which component is this pull request about?
 
 <!-- Check any one of them by changing [ ] to [x].  -->
 
@@ -6,7 +6,7 @@
 * [ ] Ding! Stall App
 * [ ] ding-base library
 
-## What kind of issue is this about?
+## What kind of pull request is this about?
 
 * [ ] New Feature
 * [ ] Bug
