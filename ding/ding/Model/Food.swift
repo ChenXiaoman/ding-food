@@ -11,15 +11,15 @@
  This includes drinks.
  */
 public struct Food: FirebaseObject {
-    public static let path = "/foods"
+    public static let path = "/menu"
     
     public let id: String
     public var name: String
     public var price: Double
-    public var description: String
+    public var description: String?
     public var type: FoodType
     public var isSoldOut: Bool
-    public var photoPath: String
+    public var photoPath: String?
 
     public mutating func soldOut() {
         isSoldOut = true
@@ -27,8 +27,8 @@ public struct Food: FirebaseObject {
 }
 
 public enum FoodType: String, Codable {
-    case main
-    case soup
-    case dessert
-    case drink
+    case main = "Main"
+    case soup = "Soup"
+    case dessert = "Dessert"
+    case drink = "Drink"
 }

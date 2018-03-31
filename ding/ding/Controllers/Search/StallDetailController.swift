@@ -14,6 +14,8 @@ class StallDetailController: UIViewController {
     private static let queueCountFormat = "Number of people waiting: %d"
     /// The text format to display average rating.
     private static let averageRatingFormat = "Average rating: %.1f"
+    /// The text format to display description.
+    private static let descriptionFormat = "\"%@\""
     
     /// Table view for displaying menu (list of food)
     @IBOutlet weak private var foodTableaView: UITableView!
@@ -32,12 +34,13 @@ class StallDetailController: UIViewController {
     /// Indicates whether the collection view has finished loading data.
     private var loaded = false
     
-    /// A dictionary of mapping from cell's index path to the id of the stall
-    /// overview represented.
-    var foodIds: [Int: String] = [:]
+    /// A dictionary of mapping from cell's index path to the
+    /// correspoding food object
+    var foods: [Int: Food] = [:]
     
-    /// Firebase reference of the current stall's overview
-    var stallOverviewPath: String?
+    /// Firebase reference of the current stall's key
+    /// in both store overview and stall details
+    var stallKey: String?
     
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar
@@ -48,22 +51,23 @@ class StallDetailController: UIViewController {
         loadingIndicator.startAnimating()
         
         // Configure the labels for stall overview
-        if let path = stallOverviewPath {
-            DatabaseRef.observeValue(of: path, onChange: populateStallOverview)
+        guard let path = stallKey else {
+            return
         }
+        DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
         
         // Configures the table view.
-        let query = DatabaseRef.getNodeRef(of: StallOverview.path)
-        dataSource = FUITableViewDataSource(query: query, populateCell: populateStallListingCell)
+        let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/\(Food.path)")
+        dataSource = FUITableViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: foodTableaView)
         foodTableaView.delegate = self
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let path = stallOverviewPath {
+        if let path = stallKey {
             // Stops sending updates to the view (to avoid app crash).
-            DatabaseRef.stopObservers(of: path)
+            DatabaseRef.stopObservers(of: "\(StallOverview.path)/\(path)")
         }
         // Stops sending updates to the collection view (to avoid app crash).
         dataSource?.unbind()
@@ -88,7 +92,7 @@ class StallDetailController: UIViewController {
     ///    - indexPath: The index path of this cell.
     ///    - snapshot: The snapshot of the corresponding model object from database.
     /// - Returns: a `FoodTableViewCell` to use.
-    private func populateStallListingCell(tableView: UITableView,
+    private func populateMenuCell(tableView: UITableView,
                                           indexPath: IndexPath,
                                           snapshot: DataSnapshot) -> FoodTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.tableViewIdentifier,
@@ -104,7 +108,7 @@ class StallDetailController: UIViewController {
         
         if let food = Food.deserialize(snapshot) {
             cell.load(food)
-            foodIds[indexPath.totalRow(in: tableView)] = food.id
+            foods[indexPath.totalRow(in: tableView)] = food
         }
         return cell
     }

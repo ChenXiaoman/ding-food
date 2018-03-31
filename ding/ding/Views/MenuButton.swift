@@ -16,7 +16,7 @@ import UIKit
  */
 class MenuButton: UIButton {
     /// The constant coefficient for menu corner radius.
-    private static let cornerRadiusCoefficient = CGFloat(0.15)
+    private static let cornerRadiusCoefficient = CGFloat(0.05)
     /// The border width for menu buttons
     private static let borderWidth = CGFloat(1)
 

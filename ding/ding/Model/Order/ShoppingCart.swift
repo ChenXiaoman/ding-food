@@ -74,6 +74,12 @@ struct ShoppingCart {
 
     /// Converts all `ShoppingCart`s to `Order`s, whose food should be the same. This method
     /// should be called when the customer submits the order.
+    /// - Returns: The `Order` converted.
+    func toOrder() -> Order {
+        let id = Order.getAutoId
+        return Order(id: id, status: .preparing, review: nil, stall: stall, createdAt: Date(), food: food)
+    }
+    
     /// - Returns: An array of `Order`s converted.
     static func toOrders() -> [Order] {
         let date = Date()

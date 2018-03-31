@@ -40,6 +40,8 @@ class StallListingCell: UICollectionViewCell {
     /// - Parameter stall: The `StallOverview` object as the data source.
     func load(_ stall: StallOverview) {
         photo.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
+        // Use for enable corner radius
+        photo.clipsToBounds = true
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)

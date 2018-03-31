@@ -99,6 +99,7 @@ extension FirebaseObject {
         dict["id"] = snapshot.key
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys),
             let obj = try? JSONDecoder().decode(Self.self, from: data) else {
+                print("failed to deserialize")
             return nil
         }
         return obj
