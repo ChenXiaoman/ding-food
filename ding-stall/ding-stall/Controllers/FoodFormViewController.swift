@@ -63,7 +63,7 @@ class FoodFormViewController: FormViewController {
 
     /// Build a form for adding new food
     private func initializeForm() {
-        form +++ Section("Food Information")
+        form +++ Section("Food Details")
             <<< TextRow { row in
                 row.tag = nameTag
                 row.title = "Food Name"

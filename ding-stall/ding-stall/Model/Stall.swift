@@ -18,11 +18,10 @@ public struct Stall: FirebaseObject {
         }
     }
 
-    public static var path = "/stall"
+    public static var path = "/JCHstall"
 
     public let id: String
 
-    public var name: String
     public var location: String
     public var openingHour: String
     public var description: String
