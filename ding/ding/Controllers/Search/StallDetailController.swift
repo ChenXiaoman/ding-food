@@ -48,13 +48,14 @@ class StallDetailController: UIViewController {
         loadingIndicator.startAnimating()
         
         // Configure the labels for stall overview
-        if let path = stallOverviewPath {
-            DatabaseRef.observeValue(of: path, onChange: populateStallOverview)
+        guard let path = stallOverviewPath else {
+            return
         }
+        DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
         
         // Configures the table view.
-        let query = DatabaseRef.getNodeRef(of: StallOverview.path)
-        dataSource = FUITableViewDataSource(query: query, populateCell: populateStallListingCell)
+        let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/menu")
+        dataSource = FUITableViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: foodTableaView)
         foodTableaView.delegate = self
     }
@@ -88,7 +89,7 @@ class StallDetailController: UIViewController {
     ///    - indexPath: The index path of this cell.
     ///    - snapshot: The snapshot of the corresponding model object from database.
     /// - Returns: a `FoodTableViewCell` to use.
-    private func populateStallListingCell(tableView: UITableView,
+    private func populateMenuCell(tableView: UITableView,
                                           indexPath: IndexPath,
                                           snapshot: DataSnapshot) -> FoodTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.tableViewIdentifier,
