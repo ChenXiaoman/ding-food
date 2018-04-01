@@ -387,31 +387,19 @@
                                     <outlet property="delegate" destination="1tp-NB-er2" id="4eW-ZO-7fE"/>
                                 </connections>
                             </tableView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3l-tq-5kQ">
-                                <rect key="frame" x="0.0" y="402" width="375" height="216"/>
-                                <color key="backgroundColor" white="0.8606228298944445" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1tp-NB-er2" id="7dC-DH-wDd"/>
-                                    <outlet property="delegate" destination="1tp-NB-er2" id="bm1-SR-f1E"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mKt-ve-mVF" firstAttribute="leading" secondItem="3oy-wv-Rsa" secondAttribute="leading" id="05U-pc-gFg"/>
-                            <constraint firstItem="3oy-wv-Rsa" firstAttribute="bottom" secondItem="L3l-tq-5kQ" secondAttribute="bottom" id="O11-d4-5eR"/>
                             <constraint firstItem="mKt-ve-mVF" firstAttribute="top" secondItem="UNf-Lg-Fop" secondAttribute="top" id="Obw-kc-Y5O"/>
                             <constraint firstItem="mKt-ve-mVF" firstAttribute="bottom" secondItem="3oy-wv-Rsa" secondAttribute="bottom" id="Zy5-IH-GZu"/>
-                            <constraint firstItem="L3l-tq-5kQ" firstAttribute="trailing" secondItem="3oy-wv-Rsa" secondAttribute="trailing" id="cvd-pN-ucp"/>
                             <constraint firstItem="mKt-ve-mVF" firstAttribute="trailing" secondItem="3oy-wv-Rsa" secondAttribute="trailing" id="kFA-cx-78Q"/>
-                            <constraint firstItem="L3l-tq-5kQ" firstAttribute="leading" secondItem="3oy-wv-Rsa" secondAttribute="leading" id="t3K-6E-oj7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3oy-wv-Rsa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Orders" image="order" id="4V1-Dv-XEF"/>
                     <connections>
                         <outlet property="orderQueueTableView" destination="mKt-ve-mVF" id="mz3-I5-5bv"/>
-                        <outlet property="orderStatusPicker" destination="L3l-tq-5kQ" id="2NF-53-1HT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqY-hL-Khi" userLabel="First Responder" sceneMemberID="firstResponder"/>
