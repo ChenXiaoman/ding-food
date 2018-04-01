@@ -29,6 +29,9 @@ public struct Stall: FirebaseObject {
     public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
+    private var menuPath: String {
+        return Stall.path + "/\(Account.stallId)" + Food.path
+    }
 
     /// Add the a new kind of food into menu
     /// - Parameter:
@@ -39,6 +42,7 @@ public struct Stall: FirebaseObject {
         }
         menu?[addedFood.id] = addedFood
         self.save()
+        //DatabaseRef.setChildNode(of: menuPath, to: addedFood)
     }
 
     /// Delete the certain food by its id. If the food has photo, it will also be removed from storage
@@ -54,5 +58,11 @@ public struct Stall: FirebaseObject {
         }
         menu?[id] = nil
         self.save()
+        //DatabaseRef.deleteChildNode(of: menuPath + "/\(id)")
+    }
+
+    public mutating func updateFood(to food: Food) {
+        menu?[food.id] = food
+        DatabaseRef.setChildNode(of: menuPath, to: food)
     }
 }

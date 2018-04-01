@@ -16,28 +16,10 @@ class FoodFormViewController: FormViewController {
     let typeTag = "Type"
     let imageTag = "Image"
 
-    /// The stall model to add the new food
-    var stall: Stall?
-    /// The path in database to retrieve stall model
-    let stallPath = Stall.path + "/\(Account.stallId)"
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setValidationStyle()
         initializeForm()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
-            self.stall = Stall.deserialize(snapshot)
-        }
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        // Stop observe to avoid memory leak
-        DatabaseRef.stopObservers(of: stallPath)
     }
 
     /// Set the style of cell to show whether it is valid

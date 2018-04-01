@@ -6,15 +6,30 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import Firebase
+
+/**
+ Store the user id and stall model for the current login user
+ */
 struct Account {
 
-    private static var id = ""
+    /// Current user id
+    private static var uid = ""
+    /// Stall model of current user.
+    public static var stall: Stall?
 
     public static var stallId: String {
-        return id
+        return uid
+    }
+    
+    public static func setId(_ newId: String) {
+        uid = newId
+        downloadStall()
     }
 
-    public static func setId(_ newId: String) {
-        id = newId
+    private static func downloadStall() {
+        DatabaseRef.observeValueOnce(of: Stall.path + "/\(uid)") { snapshot in
+            stall = Stall.deserialize(snapshot)
+        }
     }
 }

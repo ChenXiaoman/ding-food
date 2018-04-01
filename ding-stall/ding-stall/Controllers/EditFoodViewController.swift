@@ -15,32 +15,20 @@ class EditFoodViewController: FoodFormViewController {
 
     /// The id of the selected food
     private var foodId: String?
-    /// The selected food model
-    private var food: Food?
-    /// The path to retrieve the food model from database
-    private var foodPath: String {
-        return stallPath + Food.path + "/\(foodId ?? "")"
-    }
 
     func initialize(with foodId: String) {
         self.foodId = foodId
-        DatabaseRef.observeValueOnce(of: foodPath) { snapshot in
-            self.food = Food.deserialize(snapshot)
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateFormValue()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        DatabaseRef.stopObservers(of: foodPath)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done,
+                                                            target: self, action: nil)
     }
 
     private func populateFormValue() {
-        guard let foodModel = food else {
+        guard let foodModel = Account.stall?.menu?[foodId ?? ""] else {
             return
         }
         (form.rowBy(tag: nameTag) as? TextRow)?.value = foodModel.name

@@ -20,8 +20,6 @@ class MenuViewController: NoNavigationBarViewController {
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
     private let menuPath = Stall.path + "/\(Account.stallId)" + Food.path
-    /// The path in database to retrieve this stall
-    private let stallPath = Stall.path + "/\(Account.stallId)"
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +33,6 @@ class MenuViewController: NoNavigationBarViewController {
         super.viewWillDisappear(animated)
         // Stop binding to avoid program crash
         dataSource?.unbind()
-        DatabaseRef.stopObservers(of: stallPath)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,13 +64,9 @@ class MenuViewController: NoNavigationBarViewController {
             let foodId = menuCell.cellId else {
                 return
         }
-        
-        var stall: Stall?
-        DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
-            stall = Stall.deserialize(snapshot)
-        }
+
         DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?") {
-            stall?.deleteFood(by: foodId)
+            Account.stall?.deleteFood(by: foodId)
         }
     }
 
