@@ -48,7 +48,7 @@ class FoodDetailViewController: UIViewController {
         guard let currentStall = stall, let currentFood = food else {
             return
         }
-        ShoppingCart.cartFor(currentStall).add(currentFood, quantity: 1)
+        // ShoppingCart.cartFor(currentStall).add(currentFood, quantity: 1)
         openShoppingCart()
     }
 
