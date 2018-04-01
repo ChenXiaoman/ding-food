@@ -58,6 +58,11 @@ class EditFoodViewController: FoodFormViewController {
     ///    - data: the image data
     ///    - error: the error thrown during download
     private func populateImage(data: Data?, error: Error?) {
+        guard error == nil else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "Food Image is too large to display") { _ in }
+            return
+        }
         guard let imageData = data else {
             return
         }
