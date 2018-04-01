@@ -710,6 +710,7 @@ x5 Lemon Juice</string>
                         <viewLayoutGuide key="safeArea" id="dTk-rt-1FS"/>
                     </view>
                     <connections>
+                        <outlet property="addToShoppingCartButton" destination="nzv-Kt-6YX" id="H1B-YN-ARr"/>
                         <outlet property="foodOverviewView" destination="2bG-Wo-7XR" id="wpi-l0-oAr"/>
                     </connections>
                 </viewController>

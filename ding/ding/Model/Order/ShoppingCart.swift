@@ -57,6 +57,18 @@ struct ShoppingCart {
         shoppingCarts[stallId] = cart
     }
 
+    /// Checks whether a certain kind of food from a certain stall exists before.
+    /// - Parameters:
+    ///    - foodId: The id of the food to be checked.
+    ///    - stallId: The id of the stall from which the food is.
+    /// - Returns: true if it exists; false otherwise.
+    static func has(_ foodId: String, from stallId: String) -> Bool {
+        guard let cart = shoppingCarts[stallId] else {
+            return false
+        }
+        return cart.has(foodId)
+    }
+
     /// Adds a certain amount of a kind of food to the shopping cart. If this kind of
     /// food is already in the shopping cart before, its amount will be overwritten.
     /// - Parameters:
@@ -83,6 +95,13 @@ struct ShoppingCart {
     /// - Parameter food: The kind of food to be deleted.
     mutating func delete(toDelete: Food) {
         food[toDelete.id] = nil
+    }
+
+    /// Checks whether a certain kind of food exists in the shopping cart.
+    /// - Parameter foodId: The id of the food to be checked.
+    /// - Returns: true if it exists; false otherwise.
+    func has(_ foodId: String) -> Bool {
+        return food[foodId] != nil
     }
 
     func toOrder() -> Order {
