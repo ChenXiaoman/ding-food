@@ -26,16 +26,21 @@ struct ShoppingCart {
     /// Let the shopping cart work like a "global variable".
     static var shoppingCarts: [ShoppingCart] = []
 
-    /// Gets the cart for a certain stall.
-    /// - Parameter stall: The stall of that shopping cart.
-    /// - Returns: the cart for that stall; or create a new one if there is no such shopping cart.
-    static func cartFor(_ stall: StallOverview) -> ShoppingCart {
-        guard let cart = (shoppingCarts.first { $0.stall == stall }) else {
-            let newCart = ShoppingCart(food: [:], stall: stall)
+    /// Adds a certain amount of a kind of food from a certain stall to the shopping cart.
+    /// - Parameters:
+    ///    - toAdd: The kind of food to be added.
+    ///    - stall: The stall from which the food is.
+    ///    - quantity: The amount of this kind of food.
+    static func add(_ toAdd: Food, from stall: StallOverview, quantity: Int) {
+        guard let index = (shoppingCarts.index { $0.stall == stall }) else {
+            var newCart = ShoppingCart(food: [:], stall: stall)
+            newCart.add(toAdd, quantity: quantity)
             shoppingCarts.append(newCart)
-            return newCart
+            return
         }
-        return cart
+        var cart = shoppingCarts[index]
+        cart.add(toAdd, quantity: quantity)
+        shoppingCarts[index] = cart
     }
 
     /// Adds a certain amount of a kind of food to the shopping cart. If this kind of food
