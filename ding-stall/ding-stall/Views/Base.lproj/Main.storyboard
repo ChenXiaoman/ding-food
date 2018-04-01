@@ -47,6 +47,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-P4-bNZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="xyg-8v-oZd">
                                             <size key="itemSize" width="200" height="250"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -80,6 +81,9 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dXE-kI-sMx" appends="YES" id="f7R-ud-mjl"/>
+                                        </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-Ly-1cK">
                                         <rect key="frame" x="0.0" y="577" width="375" height="41"/>
@@ -90,6 +94,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <gestureRecognizers/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,6 +112,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDD-0r-qwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="dXE-kI-sMx">
+                    <connections>
+                        <action selector="longPressToDeleteFood:" destination="ZWf-OR-zh1" id="GWe-4D-vRc"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="764" y="-115.59220389805098"/>
         </scene>
