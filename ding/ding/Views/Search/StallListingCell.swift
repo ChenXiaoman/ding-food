@@ -25,7 +25,7 @@ class StallListingCell: UICollectionViewCell {
     /// The aspect ratio of this cell.
     private static let aspectRatio = CGFloat(1.0 / 3)
     /// The width ratio constant depending on the device.
-    static let widthRatio = (UIDevice.current.userInterfaceIdiom == .phone) ? CGFloat(1) : CGFloat(0.5)
+    static let widthRatio = (UIView.onPhone) ? CGFloat(1) : CGFloat(0.5)
     /// The width of this cell.
     static let width = Constants.screenWidth * StallListingCell.widthRatio
     /// The height of this cell.
@@ -44,9 +44,5 @@ class StallListingCell: UICollectionViewCell {
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)
-    }
-
-    static var onPhone: Bool {
-        return UIDevice.current.userInterfaceIdiom == .phone
     }
 }

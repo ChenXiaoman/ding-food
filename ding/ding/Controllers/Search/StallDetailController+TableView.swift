@@ -19,8 +19,8 @@ extension StallDetailController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = Constants.foodDetailViewControllerId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
-            as? FoodDetailViewController else {
-                return
+            as? FoodDetailController else {
+            return
         }
         // Passes `Food` object displayed at this cell.
         if let food = foods[indexPath.totalRow(in: tableView)], let stall = stall {

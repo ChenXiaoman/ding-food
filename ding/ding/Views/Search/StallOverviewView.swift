@@ -22,6 +22,8 @@ class StallOverviewView: UIView {
     private static let averageRatingFormat = "Average rating: %.1f"
     /// The text format to display description.
     private static let descriptionFormat = "\"%@\""
+    /// The corner radius for the stall photo.
+    private static let photoCornerRadius = CGFloat(20)
 
     @IBOutlet weak private var stallPhoto: UIImageView!
     @IBOutlet weak private var stallName: UILabel!
@@ -31,6 +33,7 @@ class StallOverviewView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         stallPhoto.image = nil
+        stallPhoto.layer.cornerRadius = StallOverviewView.photoCornerRadius
         stallName.text = nil
         queueCount.text = nil
         averageRating.text = nil

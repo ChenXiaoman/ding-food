@@ -9,6 +9,12 @@
 import UIKit
 import FirebaseDatabaseUI
 
+/**
+ The controller for stall details view.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
+ */
 class StallDetailController: UIViewController {
     /// Table view for displaying menu (list of food).
     @IBOutlet weak private var foodTableView: UITableView!
@@ -22,13 +28,13 @@ class StallDetailController: UIViewController {
     /// Indicates whether the collection view has finished loading data.
     private var loaded = false
     
-    /// A dictionary of mapping from cell's index path to the
-    /// correspoding food object
+    /// A dictionary of mapping from cell's index path to the correspoding food object.
     var foods: [Int: Food] = [:]
-    
-    /// Firebase reference of the current stall's key
-    /// in both store overview and stall details
+
+    /// The id of the current stall.
     var stallKey: String?
+    /// The `StallOverview` object to contain all general information about this stall.
+    var stall: StallOverview?
     
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar
@@ -67,6 +73,7 @@ class StallDetailController: UIViewController {
         guard let stall = StallOverview.deserialize(snapshot) else {
             return
         }
+        self.stall = stall
         stallOverviewView.load(stall: stall)
     }
     
