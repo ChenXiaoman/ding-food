@@ -601,7 +601,7 @@ x5 Lemon Juice</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add remarks for your order" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1D-Pg-6yg" userLabel="RemarkArea">
-                                <rect key="frame" x="5" y="422" width="365" height="150"/>
+                                <rect key="frame" x="5" y="325" width="365" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="Qkh-R9-HKy"/>
                                 </constraints>
@@ -610,7 +610,7 @@ x5 Lemon Juice</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-Kt-6YX" userLabel="AddShoppingCartButton" customClass="MenuButton" customModule="ding" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="622" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="532" width="200" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pgI-Og-aYd"/>
@@ -627,7 +627,7 @@ x5 Lemon Juice</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-DO-FIk" userLabel="OrderNowButton" customClass="MenuButton" customModule="ding" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="577" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="487" width="200" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0f3-XK-oqG"/>
@@ -641,7 +641,7 @@ x5 Lemon Juice</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-Wo-7XR" userLabel="FoodOverviewView" customClass="FoodOverviewView" customModule="ding" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="397"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-Bd-slt" userLabel="Photo">
                                         <rect key="frame" x="83" y="10" width="208" height="180"/>
@@ -679,7 +679,7 @@ x5 Lemon Juice</string>
                                     <constraint firstItem="Zuc-Bd-slt" firstAttribute="centerX" secondItem="2bG-Wo-7XR" secondAttribute="centerX" id="0jr-Fk-PGN"/>
                                     <constraint firstItem="FSt-vf-4LE" firstAttribute="top" secondItem="l96-G7-Cej" secondAttribute="bottom" constant="8" id="2XU-5W-fWW"/>
                                     <constraint firstItem="i3x-kU-hpg" firstAttribute="centerX" secondItem="2bG-Wo-7XR" secondAttribute="centerX" id="GTB-pg-qTf"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="QiC-dY-3TW"/>
+                                    <constraint firstAttribute="height" constant="300" id="QiC-dY-3TW"/>
                                     <constraint firstItem="FSt-vf-4LE" firstAttribute="centerX" secondItem="2bG-Wo-7XR" secondAttribute="centerX" id="UOz-1h-QA7"/>
                                     <constraint firstItem="Zuc-Bd-slt" firstAttribute="top" secondItem="2bG-Wo-7XR" secondAttribute="top" constant="10" id="ZSg-zX-dvL"/>
                                     <constraint firstItem="l96-G7-Cej" firstAttribute="top" secondItem="Zuc-Bd-slt" secondAttribute="bottom" constant="8" symbolic="YES" id="g5F-BF-FXz"/>
@@ -698,12 +698,11 @@ x5 Lemon Juice</string>
                         <constraints>
                             <constraint firstItem="aqt-DO-FIk" firstAttribute="centerX" secondItem="dTk-rt-1FS" secondAttribute="centerX" id="6Jb-KI-g3U"/>
                             <constraint firstItem="nzv-Kt-6YX" firstAttribute="centerX" secondItem="dTk-rt-1FS" secondAttribute="centerX" id="C9y-r7-MjM"/>
-                            <constraint firstItem="A1D-Pg-6yg" firstAttribute="bottom" secondItem="aqt-DO-FIk" secondAttribute="top" constant="-5" id="DI5-qF-Zbn"/>
                             <constraint firstItem="2bG-Wo-7XR" firstAttribute="top" secondItem="dTk-rt-1FS" secondAttribute="top" id="Dug-ny-56e"/>
-                            <constraint firstItem="aqt-DO-FIk" firstAttribute="bottom" secondItem="nzv-Kt-6YX" secondAttribute="top" constant="-5" id="FRh-Ig-x9g"/>
+                            <constraint firstItem="aqt-DO-FIk" firstAttribute="top" secondItem="A1D-Pg-6yg" secondAttribute="bottom" constant="12" id="FRh-Ig-x9g"/>
                             <constraint firstItem="A1D-Pg-6yg" firstAttribute="top" secondItem="2bG-Wo-7XR" secondAttribute="bottom" constant="5" id="L16-AL-rUy"/>
                             <constraint firstItem="A1D-Pg-6yg" firstAttribute="trailing" secondItem="dTk-rt-1FS" secondAttribute="trailing" constant="-5" id="Mk1-7U-V9o"/>
-                            <constraint firstItem="nzv-Kt-6YX" firstAttribute="bottom" secondItem="dTk-rt-1FS" secondAttribute="bottom" constant="-5" id="VTD-SA-fAn"/>
+                            <constraint firstItem="nzv-Kt-6YX" firstAttribute="top" secondItem="aqt-DO-FIk" secondAttribute="bottom" constant="5" id="VTD-SA-fAn"/>
                             <constraint firstItem="A1D-Pg-6yg" firstAttribute="leading" secondItem="dTk-rt-1FS" secondAttribute="leading" constant="5" id="e3d-vm-Wpd"/>
                             <constraint firstItem="2bG-Wo-7XR" firstAttribute="leading" secondItem="dTk-rt-1FS" secondAttribute="leading" id="pfP-e7-IiR"/>
                             <constraint firstItem="2bG-Wo-7XR" firstAttribute="trailing" secondItem="dTk-rt-1FS" secondAttribute="trailing" id="yif-v0-uDE"/>
