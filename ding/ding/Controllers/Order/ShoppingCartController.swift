@@ -22,13 +22,14 @@ class ShoppingCartController: FormViewController {
             let section = Section(cart.stall.name)
             section.tag = stallId
             form +++ section
-            for (food, quantity) in cart.food {
-                section <<< StepperRow(food.id) { row in
-                    row.title = food.name
-                    row.value = Double(quantity)
+            for (foodId, food) in cart.food {
+                section <<< StepperRow { row in
+                    row.title = food.food.name
+                    row.value = Double(food.quantity)
+                    row.tag = foodId
                 }.onChange { row in
-                    if let stallId = row.section?.tag, let foodId = row.tag {
-                        
+                    if let stallId = row.section?.tag, let foodId = row.tag, let value = row.value {
+                        ShoppingCart.change(foodId, from: stallId, quantity: Int(value))
                     }
                 }
             }

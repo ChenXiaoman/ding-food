@@ -20,51 +20,74 @@ import Foundation
  */
 struct ShoppingCart {
     /// A collection of food with different quantities.
-    var food: [Food: Int] = [:]
+    var food: [String: (food: Food, quantity: Int)] = [:]
     /// The stall of the shopping cart.
     let stall: StallOverview
-    /// Let the shopping cart work like a "global variable".
+    /// Let the shopping cart work like a "global variable", i.e., a mapping between
+    /// stall ids and shopping carts.
     static var shoppingCarts: [String: ShoppingCart] = [:]
 
-    /// Adds a certain amount of a kind of food from a certain stall to (or changes the
-    /// amount of a certain food from) the shopping cart.
+    /// Adds an amount of a kind of food from a certain stall to the shopping cart.
     /// - Parameters:
     ///    - toAdd: The kind of food to be added.
     ///    - stall: The stall from which the food is.
     ///    - quantity: The amount of this kind of food.
-    static func addOrChange(_ toAdd: Food, from stall: StallOverview, quantity: Int) {
+    static func add(_ toAdd: Food, from stall: StallOverview, quantity: Int) {
         guard var cart = shoppingCarts[stall.id] else {
             var newCart = ShoppingCart(food: [:], stall: stall)
-            newCart.addOrChange(toAdd, quantity: quantity)
+            newCart.add(toAdd, quantity: quantity)
             shoppingCarts[stall.id] = newCart
             return
         }
-        cart.addOrChange(toAdd, quantity: quantity)
+        cart.add(toAdd, quantity: quantity)
         shoppingCarts[stall.id] = cart
     }
 
+    /// Changes amount of a kind of food from a certain stall. It will simply do nothing
+    /// if either the stall's shopping cart or the food does not exist before.
+    /// - Parameters:
+    ///    - foodId: The id of food to be changed.
+    ///    - stallId: The id of the stall from which the food is.
+    ///    - quantity: The amount of this kind of food.
     static func change(_ foodId: String, from stallId: String, quantity: Int) {
-
+        guard var cart = shoppingCarts[stallId] else {
+            return
+        }
+        cart.change(foodId, quantity: quantity)
+        shoppingCarts[stallId] = cart
     }
 
-    /// Adds or changes to a certain amount of a kind of food to the shopping cart. If
-    /// this kind of food is already in the shopping cart before, its amount will be
-    /// overwritten.
+    /// Adds a certain amount of a kind of food to the shopping cart. If this kind of
+    /// food is already in the shopping cart before, its amount will be overwritten.
     /// - Parameters:
     ///    - toAdd: The kind of food to be added.
     ///    - quantity: The amount of this kind of food.
-    mutating func addOrChange(_ toAdd: Food, quantity: Int) {
-        food[toAdd] = quantity
+    mutating func add(_ toAdd: Food, quantity: Int) {
+        self.food[toAdd.id] = (toAdd, quantity)
+    }
+
+    /// Changes the amount of food in the shopping cart. It will simply do nothing if
+    /// the food does not exist before.
+    /// - Parameters:
+    ///    - foodId: The id of food to be changed.
+    ///    - quantity: The amount of this kind of food.
+    mutating func change(_ foodId: String, quantity: Int) {
+        guard let foodInfo = food[foodId] else {
+            return
+        }
+        food[foodId] = (foodInfo.food, quantity)
     }
 
     /// Deletes a certain kind of food from the shopping cart. If this kind of food
     /// does not exist, it will simply do nothing.
     /// - Parameter food: The kind of food to be deleted.
     mutating func delete(toDelete: Food) {
-        food[toDelete] = nil
+        food[toDelete.id] = nil
     }
 
     func toOrder() -> Order {
+        var food: [Food: Int] = [:]
+        self.food.values.forEach { food[$0.food] = $0.quantity }
         return Order(id: Order.getAutoId, status: .preparing, review: nil,
                      stallId: stall.id, createdAt: Date(), food: food)
     }
