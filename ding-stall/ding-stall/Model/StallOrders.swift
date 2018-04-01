@@ -1,5 +1,5 @@
 //
-//  StallOrder.swift
+//  StallOrders.swift
 //  ding
 //
 //  Created by Calvin Tantio on 1/4/18.
@@ -19,9 +19,10 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: April 2018
  */
-struct StallOrder: FirebaseObject {
+struct StallOrders: FirebaseObject {
     static let path = "/stall_order"
 
+    // TODO: Save StallOrder during the creation of Stall (after merging)
     let id: String
     let queue: [Order]?
 }
