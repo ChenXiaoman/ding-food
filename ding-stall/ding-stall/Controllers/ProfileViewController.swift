@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, ProfileViewDelegate {
         // TODO: Filters should not be nil
         let newStall = Stall(id: Stall.getAutoId, name: name,
                              location: location, openingHour: openingHour,
-                             description: description, menu: nil, queue: nil, filters: nil)
+                             description: description, menu: nil, filters: nil)
 
         newStall.save()
     }

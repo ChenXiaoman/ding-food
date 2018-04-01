@@ -39,6 +39,7 @@
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
 		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
+		B2CB9834207136A400A8A319 /* StallOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB9833207136A400A8A319 /* StallOrder.swift */; };
 		B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72D206CAEB200A886F9 /* MainViewController.swift */; };
 		B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72F206CAF2A00A886F9 /* MainView.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
@@ -89,6 +90,7 @@
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B26135D3206B7E0800829009 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B2CB9833207136A400A8A319 /* StallOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrder.swift; sourceTree = "<group>"; };
 		B2D8E72D206CAEB200A886F9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B2D8E72F206CAF2A00A886F9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* Stall.swift */,
 				325EE80620665178004EC560 /* User.swift */,
+				B2CB9833207136A400A8A319 /* StallOrder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
+				B2CB9834207136A400A8A319 /* StallOrder.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
 				325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */,
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,

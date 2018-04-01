@@ -27,7 +27,6 @@ public struct Stall: FirebaseObject {
     public var openingHour: String
     public var description: String
     public var menu: [String: Food]?
-    public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
 
