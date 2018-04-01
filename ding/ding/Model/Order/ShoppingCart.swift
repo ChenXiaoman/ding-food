@@ -21,34 +21,39 @@ import Foundation
 struct ShoppingCart {
     /// A collection of food with different quantities.
     var food: [Food: Int] = [:]
-    /// The stall that a shopping cart belongs to.
+    /// The stall of the shopping cart.
     let stall: StallOverview
     /// Let the shopping cart work like a "global variable".
-    static var shoppingCarts: [ShoppingCart] = []
+    static var shoppingCarts: [String: ShoppingCart] = [:]
 
-    /// Adds a certain amount of a kind of food from a certain stall to the shopping cart.
+    /// Adds a certain amount of a kind of food from a certain stall to (or changes the
+    /// amount of a certain food from) the shopping cart.
     /// - Parameters:
     ///    - toAdd: The kind of food to be added.
     ///    - stall: The stall from which the food is.
     ///    - quantity: The amount of this kind of food.
-    static func add(_ toAdd: Food, from stall: StallOverview, quantity: Int) {
-        guard let index = (shoppingCarts.index { $0.stall == stall }) else {
+    static func addOrChange(_ toAdd: Food, from stall: StallOverview, quantity: Int) {
+        guard var cart = shoppingCarts[stall.id] else {
             var newCart = ShoppingCart(food: [:], stall: stall)
-            newCart.add(toAdd, quantity: quantity)
-            shoppingCarts.append(newCart)
+            newCart.addOrChange(toAdd, quantity: quantity)
+            shoppingCarts[stall.id] = newCart
             return
         }
-        var cart = shoppingCarts[index]
-        cart.add(toAdd, quantity: quantity)
-        shoppingCarts[index] = cart
+        cart.addOrChange(toAdd, quantity: quantity)
+        shoppingCarts[stall.id] = cart
     }
 
-    /// Adds a certain amount of a kind of food to the shopping cart. If this kind of food
-    /// is already in the shopping cart before, its amount will be overwritten.
+    static func change(_ foodId: String, from stallId: String, quantity: Int) {
+
+    }
+
+    /// Adds or changes to a certain amount of a kind of food to the shopping cart. If
+    /// this kind of food is already in the shopping cart before, its amount will be
+    /// overwritten.
     /// - Parameters:
     ///    - toAdd: The kind of food to be added.
     ///    - quantity: The amount of this kind of food.
-    mutating func add(_ toAdd: Food, quantity: Int) {
+    mutating func addOrChange(_ toAdd: Food, quantity: Int) {
         food[toAdd] = quantity
     }
 
@@ -59,39 +64,13 @@ struct ShoppingCart {
         food[toDelete] = nil
     }
 
-    /// Increments the amount of a kind of food by 1.
-    /// - Parameter toChange: The kind of food to be changed.
-    mutating func incrementByOne(_ toChange: Food) {
-        guard let currentQuantity = food[toChange] else {
-            return
-        }
-        food[toChange] = currentQuantity + 1
-    }
-
-    /// Decrements the amount of a kind of food by 1.
-    /// - Parameter toChange: The kind of food to be changed.
-    mutating func decrementByOne(_ toChange: Food) {
-        guard let currentQuantity = food[toChange] else {
-            return
-        }
-        food[toChange] = currentQuantity - 1
-    }
-
-    /// Converts all `ShoppingCart`s to `Order`s, whose food should be the same. This method
-    /// should be called when the customer submits the order.
-    /// - Returns: The `Order` converted.
     func toOrder() -> Order {
-        let id = Order.getAutoId
-        return Order(id: id, status: .preparing, review: nil, stallId: stall.id, createdAt: Date(), food: food)
+        return Order(id: Order.getAutoId, status: .preparing, review: nil,
+                     stallId: stall.id, createdAt: Date(), food: food)
     }
     
     /// - Returns: An array of `Order`s converted.
     static func toOrders() -> [Order] {
-        let date = Date()
-        return shoppingCarts.map { cart in
-            let id = Order.getAutoId
-            return Order(id: id, status: .preparing, review: nil,
-                         stallId: cart.stall.id, createdAt: date, food: cart.food)
-        }
+        return shoppingCarts.map { $0.value.toOrder() }
     }
 }

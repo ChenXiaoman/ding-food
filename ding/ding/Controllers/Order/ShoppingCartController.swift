@@ -18,15 +18,18 @@ class ShoppingCartController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for cart in ShoppingCart.shoppingCarts {
-            form +++ Section(cart.stall.name)
-            guard let section = form.last else {
-                continue
-            }
-            for food in cart.food {
-                section <<< StepperRow {
-                    $0.title = food.key.name
-                    $0.value = Double(food.value)
+        for (stallId, cart) in ShoppingCart.shoppingCarts {
+            let section = Section(cart.stall.name)
+            section.tag = stallId
+            form +++ section
+            for (food, quantity) in cart.food {
+                section <<< StepperRow(food.id) { row in
+                    row.title = food.name
+                    row.value = Double(quantity)
+                }.onChange { row in
+                    if let stallId = row.section?.tag, let foodId = row.tag {
+                        
+                    }
                 }
             }
         }
