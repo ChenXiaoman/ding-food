@@ -37,6 +37,27 @@ class MenuViewController: NoNavigationBarViewController {
         dataSource?.unbind()
         DatabaseRef.stopObservers(of: stallPath)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedItem = sender as? UIView else {
+            fatalError("Select item must be an UIView")
+        }
+        switch segue.identifier {
+        case EditFoodViewController.segueIdentifier?:
+            guard
+                let indexPath = menuView.indexPathForItem(at: selectedItem.center),
+                let cell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
+                let foodId = cell.cellId else {
+                    return
+            }
+            guard let editFoodVC = segue.destination as? EditFoodViewController else {
+                return
+            }
+            editFoodVC.initialize(with: foodId)
+        default:
+            break
+        }
+    }
     
     @IBAction func longPressToDeleteFood(_ sender: UILongPressGestureRecognizer) {
         let location = sender.location(in: sender.view)

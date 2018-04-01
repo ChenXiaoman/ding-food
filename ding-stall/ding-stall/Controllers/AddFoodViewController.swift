@@ -57,7 +57,7 @@ class AddFoodViewController: FoodFormViewController {
     /// - Return: the data of compressed image, nil if it cannot be compressed
     private func standardedSizeImageData(_ image: UIImage) -> Data? {
         let originalImageSize = image.size.width * image.size.height
-        var quality = Constants.standardImageSize / originalImageSize
+        var quality = CGFloat(Constants.standardImageSize) / originalImageSize
         if quality > 1 {
             quality = 1
         }
