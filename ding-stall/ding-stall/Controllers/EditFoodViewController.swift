@@ -10,9 +10,11 @@ import Eureka
 
 class EditFoodViewController: FoodFormViewController {
 
-    /// The segue identifier from menu view to edit food view
+    /// The segue identifier from menu view to edit food view.
     static let segueIdentifier = "EditFoodSegue"
 
+    /// Take the foodId parameter from the previous controller by segue.
+    /// - Parameter: foodId: The id of food to be edited.
     func initialize(with foodId: String) {
         self.foodId = foodId
     }
@@ -24,11 +26,8 @@ class EditFoodViewController: FoodFormViewController {
                                                             target: self, action: #selector(updateFood))
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-
+    /// Update the information of the selected food
+    /// It will delete original food and add the new one
     @objc
     private func updateFood() {
         guard form.validate().isEmpty else {

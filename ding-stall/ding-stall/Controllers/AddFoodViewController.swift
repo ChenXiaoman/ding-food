@@ -21,6 +21,7 @@ class AddFoodViewController: FoodFormViewController {
                                                             target: self, action: #selector(addFood))
     }
 
+    /// Add food into menu
     @objc
     private func addFood() {
         guard form.validate().isEmpty else {

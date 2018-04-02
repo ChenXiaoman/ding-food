@@ -80,7 +80,7 @@ class FoodFormViewController: FormViewController {
                 row.title = "Upload Food Photo"
             }.onChange { _ in
                 let path = "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
-                UIImageView.addURLShouldBeRefreshed(path)
+                UIImageView.addPathShouldBeRefreshed(path)
             }
     }
 
