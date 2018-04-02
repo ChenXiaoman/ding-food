@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Foundation
+import Firebase
 
 /**
  Represents a food stall registered in the application.
@@ -41,8 +41,8 @@ public struct Stall: FirebaseObject {
             menu = [String: Food]()
         }
         menu?[addedFood.id] = addedFood
-        self.save()
-        //DatabaseRef.setChildNode(of: menuPath, to: addedFood)
+        //self.save()
+        DatabaseRef.setChildNode(of: menuPath, to: addedFood)
     }
 
     /// Delete the certain food by its id. If the food has photo, it will also be removed from storage
@@ -57,12 +57,25 @@ public struct Stall: FirebaseObject {
             StorageRef.delete(at: photoPath)
         }
         menu?[id] = nil
-        self.save()
-        //DatabaseRef.deleteChildNode(of: menuPath + "/\(id)")
+        DatabaseRef.deleteChildNode(of: menuPath + "/\(id)")
     }
 
     public mutating func updateFood(to food: Food) {
         menu?[food.id] = food
         DatabaseRef.setChildNode(of: menuPath, to: food)
+    }
+
+    /// Overrided function to handle nested structure.
+    /// See `FirebaseObject.deserialize(_ snapshot: DataSnapshot)`
+    public static func deserialize(_ snapshot: DataSnapshot) -> Stall? {
+        guard var dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        dict["id"] = snapshot.key
+        guard let menuDict = dict["menu"] as? [String: Any] else {
+            return nil
+        }
+        dict["menu"] = deserializeNestedStructure(menuDict)
+        return deserialize(dict)
     }
 }
