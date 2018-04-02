@@ -106,10 +106,13 @@ class StallDetailController: UIViewController {
             loadingIndicator.stopAnimating()
         }
         
-        if let food = Food.deserialize(snapshot) {
-            cell.load(food)
-            foods[indexPath.totalRow(in: tableView)] = food
+        guard let food = Food.deserialize(snapshot) else {
+            return food
         }
+        
+        cell.load(food)
+        foods[indexPath.totalRow(in: tableView)] = food
+        
         return cell
     }
 }

@@ -77,10 +77,13 @@ class SearchViewController: UIViewController {
             loadingIndicator.stopAnimating()
         }
 
-        if let stall = StallOverview.deserialize(snapshot) {
-            cell.load(stall)
-            stallIds[indexPath.totalItem(in: collectionView)] = stall.id
+        guard let stall = StallOverview.deserialize(snapshot) else {
+            return cell
         }
+        
+        cell.load(stall)
+        stallIds[indexPath.totalItem(in: collectionView)] = stall.id
+        
         return cell
     }
 }
