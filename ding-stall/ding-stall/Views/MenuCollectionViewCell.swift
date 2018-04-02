@@ -24,7 +24,14 @@ class MenuCollectionViewCell: UICollectionViewCell {
         foodName.adjustsFontSizeToFitWidth = true
         foodName.text = food?.name
         if let imagePath = food?.photoPath {
-            foodImage.setWebImage(at: imagePath)
+            let maxImageSize = Int64(Constants.standardImageSize * Constants.bytesPerKiloByte)
+            StorageRef.download(from: imagePath, maxSize: maxImageSize) { data, _ in
+                guard let imageData = data else {
+                    return
+                }
+                let image = UIImage(data: imageData)
+                self.foodImage.image = image
+            }
         } else {
             // set to nil to avoid asyconize problem
             foodImage.image = nil

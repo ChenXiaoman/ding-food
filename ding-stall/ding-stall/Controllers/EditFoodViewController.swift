@@ -20,13 +20,32 @@ class EditFoodViewController: FoodFormViewController {
         self.foodId = foodId
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         populateFormValue()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done,
-                                                            target: self, action: nil)
+                                                            target: self, action: #selector(updateFood))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+
+    @objc
+    private func updateFood() {
+        guard form.validate().isEmpty else {
+            return
+        }
+        guard let id = foodId else {
+            return
+        }
+        Account.stall?.deleteFood(by: id)
+        modifyMenu(withFoodId: id)
+        showSuccessAlert(message: "Update successfully")
+    }
+
+    /// Populate the initial value in the form by information of selected food
     private func populateFormValue() {
         guard let foodModel = Account.stall?.menu?[foodId ?? ""] else {
             return

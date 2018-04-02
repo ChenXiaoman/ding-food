@@ -34,6 +34,7 @@ public struct Stall: FirebaseObject {
     }
 
     /// Add the a new kind of food into menu
+    /// If the food with same id already exists in menu, it will be overwritten
     /// - Parameter:
     ///    - addedFood: The food to be added in menu
     public mutating func addFood(_ addedFood: Food) {
@@ -58,11 +59,6 @@ public struct Stall: FirebaseObject {
         }
         menu?[id] = nil
         DatabaseRef.deleteChildNode(of: menuPath + "/\(id)")
-    }
-
-    public mutating func updateFood(to food: Food) {
-        menu?[food.id] = food
-        DatabaseRef.setChildNode(of: menuPath, to: food)
     }
 
     /// Overrided function to handle nested structure.

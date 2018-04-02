@@ -78,4 +78,50 @@ class FoodFormViewController: FormViewController {
                 row.title = "Upload Food Photo"
             }
     }
+
+    /// Add the new food by informaion in the form, and store it
+    /// Food Name, Food Price and Food Type are required, and others are optional
+    func modifyMenu(withFoodId foodId: String) {
+        let valueDict = form.values()
+        guard
+            let foodName = valueDict[nameTag] as? String,
+            let foodPrice = valueDict[priceTag] as? Double,
+            foodPrice != Double.nan && foodPrice > 0,
+            let foodType = valueDict[typeTag] as? FoodType else {
+                return
+        }
+        var photoPath: String?
+        let path = "/Menu" + "/\(Account.stallId)" + "/\(foodId)"
+        if
+            let image = valueDict[imageTag] as? UIImage,
+            let imageData = standardizeImageData(image) {
+                photoPath = path
+                StorageRef.upload(imageData, at: path)
+        } 
+        let foodDescription = valueDict[descriptionTag] as? String
+
+        let newFood = Food(id: foodId, name: foodName, price: foodPrice, description: foodDescription,
+                           type: foodType, isSoldOut: false, photoPath: photoPath)
+        Account.stall?.addFood(newFood)
+    }
+
+    /// Compress an image to avoid large-size image
+    /// - Parameter:
+    ///     - image: the original image
+    /// - Return: the data of compressed image, nil if it cannot be compressed
+    private func standardizeImageData(_ image: UIImage) -> Data? {
+        let originalImageSize = image.size.width * image.size.height
+        var quality = CGFloat(Constants.standardImageSize) / originalImageSize
+        if quality > 1 {
+            quality = 1
+        }
+        return UIImageJPEGRepresentation(image, quality)
+    }
+
+    /// Show an alert message that the food is successfully add into menu
+    func showSuccessAlert(message: String) {
+        DialogHelpers.showAlertMessage(in: self, title: "Success", message: message) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
