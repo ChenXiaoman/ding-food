@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Foundation
+import FirebaseDatabase
 
 /**
  Represents a food stall registered in the application.
@@ -22,7 +22,6 @@ public struct Stall: FirebaseObject {
 
     public let id: String
 
-    public var name: String
     public var location: String
     public var openingHour: String
     public var description: String
@@ -30,8 +29,12 @@ public struct Stall: FirebaseObject {
     public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
+    private var menuPath: String {
+        return Stall.path + "/\(Account.stallId)" + Food.path
+    }
 
     /// Add the a new kind of food into menu
+    /// If the food with same id already exists in menu, it will be overwritten
     /// - Parameter:
     ///    - addedFood: The food to be added in menu
     public mutating func addFood(_ addedFood: Food) {
@@ -39,7 +42,8 @@ public struct Stall: FirebaseObject {
             menu = [String: Food]()
         }
         menu?[addedFood.id] = addedFood
-        self.save()
+        //self.save()
+        DatabaseRef.setChildNode(of: menuPath, to: addedFood)
     }
 
     /// Delete the certain food by its id. If the food has photo, it will also be removed from storage
@@ -54,6 +58,20 @@ public struct Stall: FirebaseObject {
             StorageRef.delete(at: photoPath)
         }
         menu?[id] = nil
-        self.save()
+        DatabaseRef.deleteChildNode(of: menuPath + "/\(id)")
+    }
+
+    /// Overrided function to handle nested structure.
+    /// See `FirebaseObject.deserialize(_ snapshot: DataSnapshot)`
+    public static func deserialize(_ snapshot: DataSnapshot) -> Stall? {
+        guard var dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        dict["id"] = snapshot.key
+        guard let menuDict = dict["menu"] as? [String: Any] else {
+            return nil
+        }
+        dict["menu"] = deserializeNestedStructure(menuDict)
+        return deserialize(dict)
     }
 }

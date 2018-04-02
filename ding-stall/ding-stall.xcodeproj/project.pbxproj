@@ -36,6 +36,8 @@
 		32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */; };
 		32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */; };
 		32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */; };
+		32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */; };
+		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
 		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
@@ -85,6 +87,8 @@
 		32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
 		32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFormViewController.swift; sourceTree = "<group>"; };
+		32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -197,7 +201,9 @@
 				F26514CD20654D480098783C /* AboutViewController.swift */,
 				F2209A652064BD9F0043C6F3 /* LoginViewController.swift */,
 				325EE7FC2066476B004EC560 /* MenuViewController.swift */,
+				32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */,
 				325EE825206A7754004EC560 /* AddFoodViewController.swift */,
+				32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
 				325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */,
 				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
@@ -417,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */,
 				F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */,
 				32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */,
 				325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */,
@@ -441,6 +448,7 @@
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
 				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
+				32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */,
 				325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */,
 				B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */,
 				B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */,
