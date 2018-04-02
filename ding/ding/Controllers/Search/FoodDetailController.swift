@@ -24,9 +24,6 @@ class FoodDetailController: UIViewController {
     var food: Food?
     /// The id of the current stall.
     var stall: StallOverview?
-
-    /// The text format to display view title.
-    private static let titleFormat = "%@ - %@"
     
     override func viewWillAppear(_ animated: Bool) {
         // Displays the food information.
@@ -37,8 +34,8 @@ class FoodDetailController: UIViewController {
         // Configures the navigation bar.
         let item = UIBarButtonItem(image: #imageLiteral(resourceName: "shopping-cart"), style: .plain, target: self, action: #selector(openShoppingCart))
         navigationItem.setRightBarButton(item, animated: animated)
-        if let stallName = stall?.name, let foodName = food?.name {
-            title = String(format: FoodDetailController.titleFormat, stallName, foodName)
+        if let stallName = stall?.name {
+            title = stallName
         }
 
         // Configures the add to shopping cart button.
