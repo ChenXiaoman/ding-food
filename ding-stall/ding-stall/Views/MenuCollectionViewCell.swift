@@ -14,9 +14,13 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     public static let identifier = "MenuCollectionViewCell"
 
+    /// The id of this cell to retrieve back the food model
+    var cellId: String?
+
     /// Load the food view with a food model
     public func load(_ food: Food?) {
         settleOutletFrame()
+        cellId = food?.id
         foodName.adjustsFontSizeToFitWidth = true
         foodName.text = food?.name
         if let imagePath = food?.photoPath {

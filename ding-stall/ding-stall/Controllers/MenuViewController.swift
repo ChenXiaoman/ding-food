@@ -19,7 +19,9 @@ class MenuViewController: NoNavigationBarViewController {
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
-    private let menuPath = Stall.path + "/\(Account.stallId)" + "/menu"
+    private let menuPath = Stall.path + "/\(Account.stallId)" + Food.path
+    /// The path in database to retrieve this stall
+    private let stallPath = Stall.path + "/\(Account.stallId)"
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,6 +35,25 @@ class MenuViewController: NoNavigationBarViewController {
         super.viewWillDisappear(animated)
         // Stop binding to avoid program crash
         dataSource?.unbind()
+        DatabaseRef.stopObservers(of: stallPath)
+    }
+    
+    @IBAction func longPressToDeleteFood(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: sender.view)
+        guard
+            let indexPath = menuView.indexPathForItem(at: location),
+            let menuCell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
+            let foodId = menuCell.cellId else {
+                return
+        }
+        
+        var stall: Stall?
+        DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
+            stall = Stall.deserialize(snapshot)
+        }
+        DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?") {
+            stall?.deleteFood(by: foodId)
+        }
     }
 
     /// Populates a `MenuCollectionViewCell` with the given data from database.

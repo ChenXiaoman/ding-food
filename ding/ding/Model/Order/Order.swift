@@ -17,13 +17,20 @@ import Foundation
  */
 public struct Order: FirebaseObject {
     public static let path = "/orders"
+    /// Used to handle all logics related to Firebase Auth.
+    private static let authorizer = Authorizer()
 
     public let id: String
     var status: OrderStatus
     var review: Review?
-    let stall: StallOverview
+    let customerId = Order.authorizer.userId
+    let stallId: String
     let createdAt: Date
-    let food: [Food: Int]
+    /// A mapping from food id to its quantity.
+    let foodQuantity: [String: Int]
+    /// A mapping from food id to its human-readable name (to apply fan-out & denormalization
+    /// pattern here).
+    let foodName: [String: String]
 }
 
 public enum OrderStatus: String, Codable {

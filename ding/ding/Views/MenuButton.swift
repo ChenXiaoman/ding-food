@@ -30,4 +30,16 @@ class MenuButton: UIButton {
         contentHorizontalAlignment = .center
         contentVerticalAlignment = .center
     }
+
+    /// Disables this button.
+    /// - Parameter text: The text to be shown on disabled state. If this parameter is not
+    /// filled, the disabled text would be the same as normal state.
+    func disable(text: String? = nil) {
+        if let newText = text {
+            setTitle(newText, for: .disabled)
+        }
+        isEnabled = false
+        backgroundColor = .lightGray
+        setTitleColor(.white, for: .disabled)
+    }
 }
