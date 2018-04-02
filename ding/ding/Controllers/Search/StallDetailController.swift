@@ -107,7 +107,7 @@ class StallDetailController: UIViewController {
         }
         
         guard let food = Food.deserialize(snapshot) else {
-            return food
+            return cell
         }
         
         cell.load(food)
