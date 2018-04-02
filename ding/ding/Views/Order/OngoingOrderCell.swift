@@ -28,4 +28,8 @@ class OngoingOrderCell: UICollectionViewCell {
     static let width = Constants.screenWidth
     /// The height of this cell.
     static let height = StallListingCell.width * OngoingOrderCell.aspectRatio
+
+    func load(_ order: Order) {
+        totalPrice.text = String(order.totalPrice)
+    }
 }
