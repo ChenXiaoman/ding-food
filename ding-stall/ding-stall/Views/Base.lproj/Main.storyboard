@@ -78,6 +78,7 @@
                                                 <connections>
                                                     <outlet property="foodImage" destination="MKL-i4-o7y" id="75e-Dg-Nsh"/>
                                                     <outlet property="foodName" destination="nf3-pi-ziz" id="V5L-u1-8Fs"/>
+                                                    <segue destination="Dqi-zH-hHf" kind="show" identifier="EditFoodSegue" id="7EF-Or-Kkc"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -417,6 +418,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqY-hL-Khi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="764" y="-805.54722638680664"/>
+        </scene>
+        <!--EditFoodViewController-->
+        <scene sceneID="1Kd-aC-bXq">
+            <objects>
+                <viewController id="Dqi-zH-hHf" userLabel="EditFoodViewController" customClass="EditFoodViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sti-tg-E4m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="so7-Ej-a4H"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txY-uh-3be" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1529" y="-806"/>
         </scene>
         <!--MainTabBar-->
         <scene sceneID="JNT-gn-rTi">

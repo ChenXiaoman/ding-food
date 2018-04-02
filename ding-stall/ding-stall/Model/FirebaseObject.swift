@@ -98,11 +98,34 @@ extension FirebaseObject {
             return nil
         }
         dict["id"] = snapshot.key
+        return deserialize(dict)
+    }
+
+    /// Overloaded method
+    /// Decode an dictionary to be a firebase object
+    /// Parameter: dict: the dictionary to decode
+    static func deserialize(_ dict: [String: Any]) -> Self? {
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys),
             let obj = try? JSONDecoder().decode(Self.self, from: data) else {
                 return nil
         }
         return obj
+    }
+
+    /// This method will convert the dictionary from (id, value) pair to
+    /// (id, value with id) for the subsequent deserialize
+    /// - Parameter: dict: the nested dictionary of (id, value) pair
+    /// - Return: a dictionary (id, value) whose value contains the id
+    static func deserializeNestedStructure(_ dict: [String: Any]) -> [String: [String: Any]]? {
+        var menuDict = [String: [String: Any]]()
+        dict.forEach { key, value in
+            guard let valueDict = value as? [String: Any] else {
+                return
+            }
+            menuDict[key] = valueDict
+            menuDict[key]?["id"] = key
+        }
+        return menuDict
     }
 
     /// Saves this `FirebaseObject` to the Firebase database.
