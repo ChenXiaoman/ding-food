@@ -26,7 +26,11 @@ public struct Order: FirebaseObject {
     let customerId = Order.authorizer.userId
     let stallId: String
     let createdAt: Date
-    let food: [Food: Int]
+    /// A mapping from food id to its quantity.
+    let foodQuantity: [String: Int]
+    /// A mapping from food id to its human-readable name (to apply fan-out & denormalization
+    /// pattern here).
+    let foodName: [String: String]
 }
 
 public enum OrderStatus: String, Codable {

@@ -107,10 +107,14 @@ struct ShoppingCart {
     /// Converts the `ShoppingCart` into an order.
     /// - Returns: The `Order` converted.
     func toOrder() -> Order {
-        var food: [Food: Int] = [:]
-        self.food.values.forEach { food[$0.food] = $0.quantity }
-        return Order(id: Order.getAutoId, status: .preparing, review: nil,
-                     stallId: stall.id, createdAt: Date(), food: food)
+        var foodQuantity: [String: Int] = [:]
+        var foodName: [String: String] = [:]
+        food.forEach { key, value in
+            foodQuantity[key] = value.quantity
+            foodName[key] = value.food.name
+        }
+        return Order(id: Order.getAutoId, status: .preparing, review: nil, stallId: stall.id,
+                     createdAt: Date(), foodQuantity: foodQuantity, foodName: foodName)
     }
 
     /// Converts all `ShoppingCart`s into an array of orders.
