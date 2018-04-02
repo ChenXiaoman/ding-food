@@ -17,10 +17,13 @@ import Foundation
  */
 public struct Order: FirebaseObject {
     public static let path = "/orders"
+    /// Used to handle all logics related to Firebase Auth.
+    private static let authorizer = Authorizer()
 
     public let id: String
     var status: OrderStatus
     var review: Review?
+    let customerId = Order.authorizer.userId
     let stallId: String
     let createdAt: Date
     let food: [Food: Int]
