@@ -20,7 +20,7 @@ class FoodDetailViewController: UIViewController {
     @IBOutlet private weak var foodNameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var foodDescriptionLabel: UILabel!
-    @IBOutlet var quantityLabel: UILabel!
+    @IBOutlet private weak var quantityLabel: UILabel!
     
     /// The text format to display price.
     private static let priceFormat = "$%.1f"
@@ -28,7 +28,7 @@ class FoodDetailViewController: UIViewController {
     private static let descriptionFormat = "\"%@\""
     
     override func viewWillAppear(_ animated: Bool) {
-        foodImageView.setWebImage(at: food?.photoPath, placeholder: #imageLiteral(resourceName: "food-icon"))
+        foodImageView.setWebImage(at: food?.photoPath ?? "", placeholder: #imageLiteral(resourceName: "food-icon"))
         foodNameLabel.text = food?.name
         priceLabel.text = String(format: FoodDetailViewController.priceFormat, food?.price ?? "")
         // Display description only when it is not empty
