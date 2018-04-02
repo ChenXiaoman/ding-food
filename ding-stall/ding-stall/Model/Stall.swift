@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Firebase
+import FirebaseDatabase
 
 /**
  Represents a food stall registered in the application.
@@ -18,7 +18,7 @@ public struct Stall: FirebaseObject {
         }
     }
 
-    public static var path = "/JCHstall"
+    public static var path = "/stall"
 
     public let id: String
 
