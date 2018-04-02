@@ -16,6 +16,8 @@ class FoodFormViewController: FormViewController {
     let typeTag = "Type"
     let imageTag = "Image"
 
+    var foodId: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setValidationStyle()
@@ -76,13 +78,19 @@ class FoodFormViewController: FormViewController {
             <<< ImageRow { row in
                 row.tag = imageTag
                 row.title = "Upload Food Photo"
+            }.onChange { _ in
+                let path = "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
+                UIImageView.addURLShouldBeRefreshed(path)
             }
     }
 
     /// Add the new food by informaion in the form, and store it
     /// Food Name, Food Price and Food Type are required, and others are optional
-    func modifyMenu(withFoodId foodId: String) {
+    func modifyMenu() {
         let valueDict = form.values()
+        guard let id = foodId else {
+            return
+        }
         guard
             let foodName = valueDict[nameTag] as? String,
             let foodPrice = valueDict[priceTag] as? Double,
@@ -91,7 +99,7 @@ class FoodFormViewController: FormViewController {
                 return
         }
         var photoPath: String?
-        let path = "/Menu" + "/\(Account.stallId)" + "/\(foodId)"
+        let path = "/Menu" + "/\(Account.stallId)" + "/\(id)"
         if
             let image = valueDict[imageTag] as? UIImage,
             let imageData = standardizeImageData(image) {
@@ -100,7 +108,7 @@ class FoodFormViewController: FormViewController {
         } 
         let foodDescription = valueDict[descriptionTag] as? String
 
-        let newFood = Food(id: foodId, name: foodName, price: foodPrice, description: foodDescription,
+        let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
                            type: foodType, isSoldOut: false, photoPath: photoPath)
         Account.stall?.addFood(newFood)
     }

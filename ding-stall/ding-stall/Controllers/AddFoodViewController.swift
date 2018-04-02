@@ -16,6 +16,7 @@ class AddFoodViewController: FoodFormViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        foodId = Food.getAutoId
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done,
                                                             target: self, action: #selector(addFood))
     }
@@ -25,8 +26,7 @@ class AddFoodViewController: FoodFormViewController {
         guard form.validate().isEmpty else {
             return
         }
-        let foodId = Food.getAutoId
-        modifyMenu(withFoodId: foodId)
+        modifyMenu()
         showSuccessAlert(message: "Add food successfully")
     }
 }

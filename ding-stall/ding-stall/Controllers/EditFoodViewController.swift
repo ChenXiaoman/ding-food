@@ -13,9 +13,6 @@ class EditFoodViewController: FoodFormViewController {
     /// The segue identifier from menu view to edit food view
     static let segueIdentifier = "EditFoodSegue"
 
-    /// The id of the selected food
-    private var foodId: String?
-
     func initialize(with foodId: String) {
         self.foodId = foodId
     }
@@ -41,7 +38,7 @@ class EditFoodViewController: FoodFormViewController {
             return
         }
         Account.stall?.deleteFood(by: id)
-        modifyMenu(withFoodId: id)
+        modifyMenu()
         showSuccessAlert(message: "Update successfully")
     }
 
