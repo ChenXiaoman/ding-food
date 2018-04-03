@@ -127,12 +127,12 @@
 		325EE81420665182004EC560 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				325EE823206A0159004EC560 /* Account.swift */,
 				325EE81520665197004EC560 /* Enumerations */,
 				325EE80520665178004EC560 /* FilterIdentifier.swift */,
-				325EE823206A0159004EC560 /* Account.swift */,
-				325EE80720665178004EC560 /* Order.swift */,
-				325EE81820673DD3004EC560 /* Food.swift */,
 				325EE80320665177004EC560 /* FirebaseObject.swift */,
+				325EE81820673DD3004EC560 /* Food.swift */,
+				325EE80720665178004EC560 /* Order.swift */,
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* Stall.swift */,
 				325EE80620665178004EC560 /* User.swift */,
@@ -153,8 +153,8 @@
 		32B75A6B2073BEEC000C4834 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				32B75A6720733E46000C4834 /* PasswordSignUpController.swift */,
 				F2209A652064BD9F0043C6F3 /* LoginViewController.swift */,
+				32B75A6720733E46000C4834 /* PasswordSignUpController.swift */,
 				32B75A69207340B0000C4834 /* StallFormViewController.swift */,
 			);
 			path = Login;
@@ -163,10 +163,10 @@
 		32B75A6C2073BF07000C4834 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */,
-				325EE7FC2066476B004EC560 /* MenuViewController.swift */,
 				325EE825206A7754004EC560 /* AddFoodViewController.swift */,
 				32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */,
+				32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */,
+				325EE7FC2066476B004EC560 /* MenuViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -192,16 +192,16 @@
 			isa = PBXGroup;
 			children = (
 				F2BBF82C205B839400B9812D /* Assets.xcassets */,
+				B26135D3206B7E0800829009 /* CustomTextField.swift */,
+				32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */,
 				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
 				F2BBF829205B839400B9812D /* Main.storyboard */,
-				F26514C9206525B90098783C /* MeSettingMenuCell.swift */,
-				B26135D1206B7CFD00829009 /* ProfileView.swift */,
-				32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */,
-				32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */,
-				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
-				B26135D3206B7E0800829009 /* CustomTextField.swift */,
-				5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */,
 				B2D8E72F206CAF2A00A886F9 /* MainView.swift */,
+				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
+				F26514C9206525B90098783C /* MeSettingMenuCell.swift */,
+				5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */,
+				B26135D1206B7CFD00829009 /* ProfileView.swift */,
+				32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,16 +210,16 @@
 			isa = PBXGroup;
 			children = (
 				F26514CD20654D480098783C /* AboutViewController.swift */,
+				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
 				32B75A6B2073BEEC000C4834 /* Login */,
+				B2D8E72D206CAEB200A886F9 /* MainViewController.swift */,
 				32B75A6C2073BF07000C4834 /* Menu */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
 				325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */,
-				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
 				325EE7F6206644F3004EC560 /* OrderHistoryViewController.swift */,
 				325EE7FA20664709004EC560 /* OrderQueueViewController.swift */,
 				325EE7F220663C46004EC560 /* ProfileViewController.swift */,
 				325EE7F820664532004EC560 /* SettingsViewController.swift */,
-				B2D8E72D206CAEB200A886F9 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,11 +229,11 @@
 			children = (
 				F2BBF825205B839400B9812D /* AppDelegate.swift */,
 				325EE81C20693800004EC560 /* ArithmeticExtensions.swift */,
-				32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */,
 				F26514CB206540230098783C /* Authorizer.swift */,
-				32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */,
 				F2D2C0422064CE75005230D6 /* Constants.swift */,
 				325EE7FE20665019004EC560 /* DatabaseRef.swift */,
+				32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */,
+				32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";

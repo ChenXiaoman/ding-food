@@ -13,13 +13,18 @@ import Eureka
  */
 class StallFormViewController: FormViewController {
 
+    /// The stall id (user id) of the current login user
     var stallId: String?
 
+    /*
+     Tags of this stall detail form
+    */
     private enum Tag {
         static let name = "Name"
         static let description = "Description"
         static let openingHour = "OpeningHour"
         static let location = "Location"
+        static let photo = "Photo"
     }
 
     override func viewDidLoad() {
@@ -29,12 +34,10 @@ class StallFormViewController: FormViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        // Hide navigation bar
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        // Show navigation bar
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
@@ -83,7 +86,11 @@ class StallFormViewController: FormViewController {
     }
 
     private func createStall(cell: ButtonCellOf<String>, row: ButtonRow) {
-        form.validate()
+        guard form.validate().isEmpty else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "Some fields are invalid") { _ in }
+            return
+        }
         let valueDict = form.values()
         guard
             let id = stallId,

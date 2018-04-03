@@ -13,6 +13,14 @@ import Eureka
  */
 class FoodFormViewController: FormViewController {
 
+
+    /// The id of the food shown in this form.
+    /// If it is to add new food, it will use `Food.getAutoId`
+    var foodId: String?
+    
+    /*
+     The tags of this food details form, need to be inherited
+     */
     internal enum Tag {
         static let name = "Name"
         static let price = "Price"
@@ -20,8 +28,6 @@ class FoodFormViewController: FormViewController {
         static let type = "Type"
         static let image = "Image"
     }
-
-    var foodId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
