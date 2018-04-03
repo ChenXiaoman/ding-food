@@ -27,8 +27,6 @@
 		325EE81920673DD3004EC560 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81820673DD3004EC560 /* Food.swift */; };
 		325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */; };
 		325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81C20693800004EC560 /* ArithmeticExtensions.swift */; };
-		325EE81F206942F1004EC560 /* AddFoodViewTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81E206942F1004EC560 /* AddFoodViewTextField.swift */; };
-		325EE82120694A7E004EC560 /* UIViewsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE82020694A7E004EC560 /* UIViewsLayout.swift */; };
 		325EE824206A0159004EC560 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE823206A0159004EC560 /* Account.swift */; };
 		325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE825206A7754004EC560 /* AddFoodViewController.swift */; };
 		32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6720733E46000C4834 /* PasswordSignUpController.swift */; };
@@ -80,8 +78,6 @@
 		325EE81820673DD3004EC560 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		325EE81C20693800004EC560 /* ArithmeticExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticExtensions.swift; sourceTree = "<group>"; };
-		325EE81E206942F1004EC560 /* AddFoodViewTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewTextField.swift; sourceTree = "<group>"; };
-		325EE82020694A7E004EC560 /* UIViewsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewsLayout.swift; sourceTree = "<group>"; };
 		325EE823206A0159004EC560 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		325EE825206A7754004EC560 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		32B75A6720733E46000C4834 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
@@ -154,15 +150,6 @@
 			path = Enumerations;
 			sourceTree = "<group>";
 		};
-		325EE82220694D23004EC560 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				325EE81E206942F1004EC560 /* AddFoodViewTextField.swift */,
-				325EE82020694A7E004EC560 /* UIViewsLayout.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		32B75A6B2073BEEC000C4834 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +199,6 @@
 				32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */,
 				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
 				B26135D3206B7E0800829009 /* CustomTextField.swift */,
-				325EE82220694D23004EC560 /* Utils */,
 				5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */,
 				B2D8E72F206CAF2A00A886F9 /* MainView.swift */,
 			);
@@ -460,7 +446,6 @@
 				325EE81920673DD3004EC560 /* Food.swift in Sources */,
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
-				325EE82120694A7E004EC560 /* UIViewsLayout.swift in Sources */,
 				325EE7F7206644F4004EC560 /* OrderHistoryViewController.swift in Sources */,
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
 				B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */,
@@ -487,7 +472,6 @@
 				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
 				325EE81320665178004EC560 /* OrderStatus.swift in Sources */,
 				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
-				325EE81F206942F1004EC560 /* AddFoodViewTextField.swift in Sources */,
 				325EE80F20665178004EC560 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

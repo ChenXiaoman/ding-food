@@ -94,7 +94,7 @@ extension LoginViewController: FUIAuthDelegate {
 
         if isNewUser {
             loadStallFormView(true)
-        } 
+        }
     }
 
     func passwordSignUpViewController(forAuthUI authUI: FUIAuth, email: String) -> FUIPasswordSignUpViewController {

@@ -4,7 +4,7 @@
 //
 //  Created by Calvin Tantio on 28/3/18.
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
-//
+/*
 
 import UIKit
 
@@ -26,8 +26,8 @@ class CustomTextField: UITextField {
         autocorrectionType = UITextAutocorrectionType.no
         keyboardType = UIKeyboardType.default
         returnKeyType = UIReturnKeyType.done
-        clearButtonMode = UITextFieldViewMode.whileEditing;
+        clearButtonMode = UITextFieldViewMode.whileEditing
         contentVerticalAlignment = UIControlContentVerticalAlignment.center
         contentHorizontalAlignment = UIControlContentHorizontalAlignment.leading
     }
-}
+}*/
