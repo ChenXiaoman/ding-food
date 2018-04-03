@@ -34,7 +34,7 @@ class ShoppingCartController: FormViewController {
                 }
             }
             section <<< ButtonRow { row in
-                row.value = "Submit"
+                row.title = "Submit"
             }.onCellSelection { _, row in
                 if let stallId = row.section?.tag,
                     let order = ShoppingCart.shoppingCarts[stallId]?.toOrder() {

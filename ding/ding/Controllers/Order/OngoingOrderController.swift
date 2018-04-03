@@ -15,6 +15,9 @@ import FirebaseDatabaseUI
  - Date: March 2018
  */
 class OngoingOrderController: UIViewController {
+    /// Used to handle all logics related to Firebase Auth.
+    private static let authorizer = Authorizer()
+
     @IBOutlet weak private var ongoingOrders: UICollectionView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     
@@ -34,7 +37,8 @@ class OngoingOrderController: UIViewController {
         loadingIndicator.startAnimating()
 
         // Configures the collection view.
-        let query = DatabaseRef.getNodeRef(of: StallOverview.path)
+        let query = DatabaseRef.getNodeRef(of: Order.path)
+            .queryOrdered(byChild: "customerId").queryEqual(toValue: OngoingOrderController.authorizer.userId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
         dataSource?.bind(to: ongoingOrders)
         ongoingOrders.delegate = self
@@ -75,6 +79,9 @@ class OngoingOrderController: UIViewController {
             loadingIndicator.stopAnimating()
         }
 
+        if let order = Order.deserialize(snapshot) {
+            cell.load(order)
+        }
         return cell
     }
 }

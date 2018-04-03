@@ -19,6 +19,8 @@ public struct Order: FirebaseObject {
     public static let path = "/orders"
     /// Used to handle all logics related to Firebase Auth.
     private static let authorizer = Authorizer()
+    /// The format to display a certain kind of food with its amount.
+    private static let foodDescriptionFormat = "x%d %@\n"
 
     public let id: String
     var status: OrderStatus
@@ -57,7 +59,10 @@ public struct Order: FirebaseObject {
 
     /// A full-text description of the order (including food name and amount).
     var description: String {
-        return ""
+        return foodQuantity.reduce("") { accum, current in
+            let name = foodName[current.key] ?? ""
+            return accum + String(format: Order.foodDescriptionFormat, current.value, name)
+        }
     }
 }
 
