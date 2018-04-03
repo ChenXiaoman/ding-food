@@ -163,6 +163,7 @@
 		32B75A6C2073BF07000C4834 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */,
 				325EE7FC2066476B004EC560 /* MenuViewController.swift */,
 				325EE825206A7754004EC560 /* AddFoodViewController.swift */,
 				32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */,
@@ -211,7 +212,6 @@
 				F26514CD20654D480098783C /* AboutViewController.swift */,
 				32B75A6B2073BEEC000C4834 /* Login */,
 				32B75A6C2073BF07000C4834 /* Menu */,
-				32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
 				325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */,
 				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
@@ -391,7 +391,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/XLForm/XLForm.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -401,7 +400,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLForm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

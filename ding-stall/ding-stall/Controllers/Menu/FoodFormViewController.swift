@@ -8,13 +8,18 @@
 
 import Eureka
 
+/*
+ A super class which creates a form of food information
+ */
 class FoodFormViewController: FormViewController {
-    
-    let nameTag = "Name"
-    let priceTag = "Price"
-    let descriptionTag = "Description"
-    let typeTag = "Type"
-    let imageTag = "Image"
+
+    internal enum Tag {
+        static let name = "Name"
+        static let price = "Price"
+        static let description = "Description"
+        static let type = "Type"
+        static let image = "Image"
+    }
 
     var foodId: String?
 
@@ -49,14 +54,14 @@ class FoodFormViewController: FormViewController {
     private func initializeForm() {
         form +++ Section("Food Details")
             <<< TextRow { row in
-                row.tag = nameTag
+                row.tag = Tag.name
                 row.title = "Food Name"
                 row.placeholder = "Food name should not be empty"
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }
             <<< DecimalRow { row in
-                row.tag = priceTag
+                row.tag = Tag.price
                 row.title = "Food Price"
                 row.placeholder = "Food price should be a positive number"
                 row.add(rule: RuleRequired())
@@ -64,7 +69,7 @@ class FoodFormViewController: FormViewController {
                 row.validationOptions = .validatesOnDemand
             }
             <<< ActionSheetRow<FoodType> { row in
-                row.tag = typeTag
+                row.tag = Tag.type
                 row.title = "Food Type"
                 row.options = [FoodType.main, FoodType.soup,
                                FoodType.drink, FoodType.dessert]
@@ -72,11 +77,11 @@ class FoodFormViewController: FormViewController {
                 row.validationOptions = .validatesOnDemand
             }
             <<< TextRow { row in
-                row.tag = descriptionTag
+                row.tag = Tag.description
                 row.title = "Food Description"
             }
             <<< ImageRow { row in
-                row.tag = imageTag
+                row.tag = Tag.image
                 row.title = "Upload Food Photo"
             }.onChange { _ in
                 let path = "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
@@ -92,21 +97,21 @@ class FoodFormViewController: FormViewController {
             return
         }
         guard
-            let foodName = valueDict[nameTag] as? String,
-            let foodPrice = valueDict[priceTag] as? Double,
+            let foodName = valueDict[Tag.name] as? String,
+            let foodPrice = valueDict[Tag.price] as? Double,
             foodPrice != Double.nan && foodPrice > 0,
-            let foodType = valueDict[typeTag] as? FoodType else {
+            let foodType = valueDict[Tag.type] as? FoodType else {
                 return
         }
         var photoPath: String?
         let path = "/Menu" + "/\(Account.stallId)" + "/\(id)"
         if
-            let image = valueDict[imageTag] as? UIImage,
+            let image = valueDict[Tag.image] as? UIImage,
             let imageData = standardizeImageData(image) {
                 photoPath = path
                 StorageRef.upload(imageData, at: path)
         } 
-        let foodDescription = valueDict[descriptionTag] as? String
+        let foodDescription = valueDict[Tag.description] as? String
 
         let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
                            type: foodType, isSoldOut: false, photoPath: photoPath)

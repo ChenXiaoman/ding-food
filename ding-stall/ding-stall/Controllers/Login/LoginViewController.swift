@@ -68,6 +68,8 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(tabBarController, animated: animated)
     }
 
+    /// Load a form view to let the user fill in stall information
+    /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadStallFormView(_ animated: Bool) {
         let id = Constants.stallFormControllerId
         guard let stallFormController = storyboard?.instantiateViewController(withIdentifier: id)
@@ -94,6 +96,8 @@ extension LoginViewController: FUIAuthDelegate {
 
         if isNewUser {
             loadStallFormView(true)
+        } else {
+            loadTabBarView(true)
         }
     }
 

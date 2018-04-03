@@ -7,13 +7,15 @@
 //
 
 import Eureka
-import UIKit
 
+/*
+ A controller that create a form for user to fill in stall details
+ */
 class StallFormViewController: FormViewController {
 
     var stallId: String?
 
-    private struct Tag {
+    private enum Tag {
         static let name = "Name"
         static let description = "Description"
         static let openingHour = "OpeningHour"
