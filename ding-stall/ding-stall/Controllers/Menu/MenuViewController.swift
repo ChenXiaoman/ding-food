@@ -19,7 +19,7 @@ class MenuViewController: NoNavigationBarViewController {
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
-    private let menuPath = Stall.path + "/\(Account.stallId)" + Food.path
+    private let menuPath = StallDetails.path + "/\(Account.stallId)" + Food.path
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

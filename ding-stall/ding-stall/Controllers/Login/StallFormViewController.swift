@@ -85,6 +85,10 @@ class StallFormViewController: FormViewController {
             }.onCellSelection(createStall(cell:row:))
     }
 
+    /// Create stall after tapping "Create Stall" button
+    /// - Parameters:
+    ///     - cell: the button cell being tapped
+    ///     - row: the button row in this form
     private func createStall(cell: ButtonCellOf<String>, row: ButtonRow) {
         guard form.validate().isEmpty else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
@@ -101,7 +105,7 @@ class StallFormViewController: FormViewController {
                 return
         }
 
-        let stall = Stall(id: id, location: location, openingHour: openingHour,
+        let stall = StallDetails(id: id, location: location, openingHour: openingHour,
                           description: description, menu: nil, queue: nil, filters: nil)
         stall.save()
         Account.stallId = id

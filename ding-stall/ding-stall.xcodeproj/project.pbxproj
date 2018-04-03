@@ -15,7 +15,7 @@
 		325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FA20664709004EC560 /* OrderQueueViewController.swift */; };
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
-		325EE80B20665178004EC560 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* Stall.swift */; };
+		325EE80B20665178004EC560 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* StallDetails.swift */; };
 		325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* FirebaseObject.swift */; };
 		325EE80D20665178004EC560 /* ReviewRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80420665178004EC560 /* ReviewRating.swift */; };
 		325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* FilterIdentifier.swift */; };
@@ -31,6 +31,7 @@
 		325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE825206A7754004EC560 /* AddFoodViewController.swift */; };
 		32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6720733E46000C4834 /* PasswordSignUpController.swift */; };
 		32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A69207340B0000C4834 /* StallFormViewController.swift */; };
+		32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6D2073D9D8000C4834 /* StallOverview.swift */; };
 		32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */; };
 		32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */; };
 		32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */; };
@@ -66,7 +67,7 @@
 		325EE7FA20664709004EC560 /* OrderQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueViewController.swift; sourceTree = "<group>"; };
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
-		325EE80220665177004EC560 /* Stall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stall.swift; sourceTree = "<group>"; };
+		325EE80220665177004EC560 /* StallDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StallDetails.swift; sourceTree = "<group>"; };
 		325EE80320665177004EC560 /* FirebaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
 		325EE80420665178004EC560 /* ReviewRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRating.swift; sourceTree = "<group>"; };
 		325EE80520665178004EC560 /* FilterIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		325EE825206A7754004EC560 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		32B75A6720733E46000C4834 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		32B75A69207340B0000C4834 /* StallFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallFormViewController.swift; sourceTree = "<group>"; };
+		32B75A6D2073D9D8000C4834 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRef.swift; sourceTree = "<group>"; };
 		32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
@@ -133,8 +135,9 @@
 				325EE80320665177004EC560 /* FirebaseObject.swift */,
 				325EE81820673DD3004EC560 /* Food.swift */,
 				325EE80720665178004EC560 /* Order.swift */,
+				32B75A6D2073D9D8000C4834 /* StallOverview.swift */,
 				325EE80820665178004EC560 /* Review.swift */,
-				325EE80220665177004EC560 /* Stall.swift */,
+				325EE80220665177004EC560 /* StallDetails.swift */,
 				325EE80620665178004EC560 /* User.swift */,
 			);
 			path = Model;
@@ -433,6 +436,7 @@
 				F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */,
 				32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */,
 				325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */,
+				32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */,
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
@@ -448,7 +452,7 @@
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
 				B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */,
 				325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */,
-				325EE80B20665178004EC560 /* Stall.swift in Sources */,
+				325EE80B20665178004EC560 /* StallDetails.swift in Sources */,
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,
 				32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */,
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
