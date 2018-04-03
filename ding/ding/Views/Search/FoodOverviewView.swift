@@ -34,7 +34,7 @@ class FoodOverviewView: UIView {
     /// Loads data into and populate a `FoodOverviewView`.
     /// - Parameter food: The `Food` object as the data source.
     func load(food: Food) {
-        photo.setWebImage(at: food.photoPath, placeholder: #imageLiteral(resourceName: "food-icon"))
+        photo.setWebImage(at: food.photoPath ?? "", placeholder: #imageLiteral(resourceName: "food-icon"))
         name.text = food.name
         price.text = String(format: FoodOverviewView.priceFormat, food.price)
         if let description = food.description {

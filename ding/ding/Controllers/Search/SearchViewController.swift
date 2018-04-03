@@ -49,6 +49,7 @@ class SearchViewController: UIViewController {
 
         // Configures the search bar.
         searchBar.delegate = self
+    
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,10 +78,13 @@ class SearchViewController: UIViewController {
             loadingIndicator.stopAnimating()
         }
 
-        if let stall = StallOverview.deserialize(snapshot) {
-            cell.load(stall)
-            stallIds[indexPath.totalItem(in: collectionView)] = stall.id
+        guard let stall = StallOverview.deserialize(snapshot) else {
+            return cell
         }
+        
+        cell.load(stall)
+        stallIds[indexPath.totalItem(in: collectionView)] = stall.id
+        
         return cell
     }
 }
