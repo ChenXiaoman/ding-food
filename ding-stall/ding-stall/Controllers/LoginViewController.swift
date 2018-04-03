@@ -17,10 +17,12 @@ import UIKit
  - Date: March 2018
  */
 class LoginViewController: UIViewController {
+
+    /// A flag to show whether the user is new
+    var isNewUser = false
+
     /// Used to handle all logics related to Firebase Auth.
     fileprivate let authorizer = Authorizer()
-
-    var stall: Stall!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -65,6 +67,14 @@ class LoginViewController: UIViewController {
         }
         navigationController?.pushViewController(tabBarController, animated: animated)
     }
+
+    private func loadStallFormView(_ animated: Bool) {
+        let id = Constants.stallFormControllerId
+        guard let stallFormController = storyboard?.instantiateViewController(withIdentifier: id) else {
+            fatalError("Could not find the controller for stall detail form")
+        }
+        navigationController?.pushViewController(stallFormController, animated: animated)
+    }
 }
 
 /**
@@ -80,6 +90,16 @@ extension LoginViewController: FUIAuthDelegate {
             authorizer.verifyEmail()
         }
 
-        loadTabBarView(true)
+        if isNewUser {
+            loadStallFormView(true)
+        } else {
+            loadTabBarView(true)
+        }
+    }
+
+    func passwordSignUpViewController(forAuthUI authUI: FUIAuth, email: String) -> FUIPasswordSignUpViewController {
+        let controller = PasswordSignUpController(authUI: authUI, email: email)
+        controller.parentController = self
+        return controller
     }
 }

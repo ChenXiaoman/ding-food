@@ -31,6 +31,8 @@
 		325EE82120694A7E004EC560 /* UIViewsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE82020694A7E004EC560 /* UIViewsLayout.swift */; };
 		325EE824206A0159004EC560 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE823206A0159004EC560 /* Account.swift */; };
 		325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE825206A7754004EC560 /* AddFoodViewController.swift */; };
+		32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6720733E46000C4834 /* PasswordSignUpController.swift */; };
+		32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A69207340B0000C4834 /* StallFormViewController.swift */; };
 		32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */; };
 		32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */; };
 		32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */; };
@@ -82,6 +84,8 @@
 		325EE82020694A7E004EC560 /* UIViewsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewsLayout.swift; sourceTree = "<group>"; };
 		325EE823206A0159004EC560 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		325EE825206A7754004EC560 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
+		32B75A6720733E46000C4834 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
+		32B75A69207340B0000C4834 /* StallFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallFormViewController.swift; sourceTree = "<group>"; };
 		32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRef.swift; sourceTree = "<group>"; };
 		32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 			children = (
 				F26514CD20654D480098783C /* AboutViewController.swift */,
 				F2209A652064BD9F0043C6F3 /* LoginViewController.swift */,
+				32B75A69207340B0000C4834 /* StallFormViewController.swift */,
+				32B75A6720733E46000C4834 /* PasswordSignUpController.swift */,
 				325EE7FC2066476B004EC560 /* MenuViewController.swift */,
 				32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */,
 				325EE825206A7754004EC560 /* AddFoodViewController.swift */,
@@ -434,6 +440,7 @@
 				325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */,
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
 				325EE80D20665178004EC560 /* ReviewRating.swift in Sources */,
+				32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */,
 				325EE81920673DD3004EC560 /* Food.swift in Sources */,
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
@@ -446,6 +453,7 @@
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,
 				32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */,
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
+				32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */,
 				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
 				32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */,

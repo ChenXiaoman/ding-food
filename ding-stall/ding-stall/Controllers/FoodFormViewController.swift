@@ -11,7 +11,7 @@ import Eureka
 class FoodFormViewController: FormViewController {
     
     let nameTag = "Name"
-    let priceTag = "Tag"
+    let priceTag = "Price"
     let descriptionTag = "Description"
     let typeTag = "Type"
     let imageTag = "Image"
