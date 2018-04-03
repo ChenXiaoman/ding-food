@@ -50,15 +50,6 @@ class OngoingOrderController: UIViewController {
         dataSource?.unbind()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == Constants.ongoingOrderToShoppingCartId else {
-            return
-        }
-        let width = Constants.screenWidth / 2
-        let height = Constants.screenHeight / 2
-        segue.destination.preferredContentSize = CGSize(width: width, height: height)
-    }
-
     /// Populates a `OngoingOrderCell` with the given data from database.
     /// - Parameters:
     ///    - collectionView: The collection view as the listing of ongoing orders.

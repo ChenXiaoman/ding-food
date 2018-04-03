@@ -18,6 +18,11 @@ class ShoppingCartController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Configures the indicator for empty shopping cart.
+        if ShoppingCart.shoppingCarts.isEmpty {
+            form +++ Section("") <<< TextRow { $0.value = "Nothing here yet..." }
+        }
+
         for (stallId, cart) in ShoppingCart.shoppingCarts {
             let section = Section(cart.stall.name)
             section.tag = stallId
