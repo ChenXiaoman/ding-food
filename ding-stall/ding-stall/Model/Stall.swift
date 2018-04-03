@@ -18,7 +18,7 @@ public struct Stall: FirebaseObject {
         }
     }
 
-    public static var path = "/stall"
+    public static var path = "/JCHstall"
 
     public let id: String
 
@@ -68,10 +68,9 @@ public struct Stall: FirebaseObject {
             return nil
         }
         dict["id"] = snapshot.key
-        guard let menuDict = dict["menu"] as? [String: Any] else {
-            return nil
+        if let menuDict = dict["menu"] as? [String: Any] {
+            dict["menu"] = deserializeNestedStructure(menuDict)
         }
-        dict["menu"] = deserializeNestedStructure(menuDict)
         return deserialize(dict)
     }
 }

@@ -70,9 +70,11 @@ class LoginViewController: UIViewController {
 
     private func loadStallFormView(_ animated: Bool) {
         let id = Constants.stallFormControllerId
-        guard let stallFormController = storyboard?.instantiateViewController(withIdentifier: id) else {
-            fatalError("Could not find the controller for stall detail form")
+        guard let stallFormController = storyboard?.instantiateViewController(withIdentifier: id)
+            as? StallFormViewController else {
+                fatalError("Could not find the controller for stall detail form")
         }
+        stallFormController.stallId = authorizer.userId
         navigationController?.pushViewController(stallFormController, animated: animated)
     }
 }
@@ -92,9 +94,7 @@ extension LoginViewController: FUIAuthDelegate {
 
         if isNewUser {
             loadStallFormView(true)
-        } else {
-            loadTabBarView(true)
-        }
+        } 
     }
 
     func passwordSignUpViewController(forAuthUI authUI: FUIAuth, email: String) -> FUIPasswordSignUpViewController {

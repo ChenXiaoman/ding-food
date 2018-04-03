@@ -11,6 +11,8 @@ import UIKit
 
 class StallFormViewController: FormViewController {
 
+    var stallId: String?
+
     private struct Tag {
         static let name = "Name"
         static let description = "Description"
@@ -22,6 +24,16 @@ class StallFormViewController: FormViewController {
         super.viewDidLoad()
         setValidationStyle()
         initializeForm()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        // Hide navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        // Show navigation bar
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     /// Set the style of cell to show whether it is valid
@@ -64,7 +76,7 @@ class StallFormViewController: FormViewController {
                 row.validationOptions = .validatesOnDemand
             }
             <<< ButtonRow { row in
-                row.value = "Create Stall!"
+                row.title = "Create Stall!"
             }.onCellSelection(createStall(cell:row:))
     }
 
@@ -72,6 +84,7 @@ class StallFormViewController: FormViewController {
         form.validate()
         let valueDict = form.values()
         guard
+            let id = stallId,
             let name = valueDict[Tag.name] as? String,
             let description = valueDict[Tag.description] as? String,
             let location = valueDict[Tag.location] as? String,
@@ -79,11 +92,10 @@ class StallFormViewController: FormViewController {
                 return
         }
 
-        let stallId = Stall.getAutoId
-        let stall = Stall(id: stallId, location: location, openingHour: openingHour,
+        let stall = Stall(id: id, location: location, openingHour: openingHour,
                           description: description, menu: nil, queue: nil, filters: nil)
         stall.save()
-        Account.stallId = stallId
+        Account.stallId = id
         loadTabBarView(true)
     }
 
