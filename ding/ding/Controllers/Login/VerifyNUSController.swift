@@ -34,6 +34,7 @@ class VerifyNUSController: UIViewController {
     var email: String?
     
     override func viewWillAppear(_ animated: Bool) {
+        // Hides the navigation bar.
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     

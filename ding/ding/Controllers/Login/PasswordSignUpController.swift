@@ -34,7 +34,10 @@ class PasswordSignUpController: FUIPasswordSignUpViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // Shows the navigation bar.
         navigationController?.setNavigationBarHidden(false, animated: animated)
+
         guard hasVerified else {
             loadVerifyNUS(animated)
             return

@@ -23,15 +23,15 @@ extension SearchViewController: UICollectionViewDelegate {
             return
         }
         // Passes in the `id` of `StallOverview` displayed at this cell.
-        if let stallId = stallIds[indexPath.totalRow(in: collectionView)] {
-            controller.stallOverviewPath = "\(StallOverview.path)/\(stallId)"
+        if let stallId = stallIds[indexPath.totalItem(in: collectionView)] {
+            controller.stallKey = stallId
         }
         navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
-    /// Sets the size of each cell (to fit 11/12 cells per row).
+    /// Sets the size of each cell.
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

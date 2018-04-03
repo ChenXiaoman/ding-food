@@ -22,6 +22,8 @@ class LoginViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // Hides the navigation bar.
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
         // Navigates to the main tab bar view directly if user has logged in.
