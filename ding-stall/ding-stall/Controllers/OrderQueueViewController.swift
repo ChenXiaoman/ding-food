@@ -6,6 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import FirebaseDatabaseUI
 import UIKit
 
 /**
@@ -18,12 +19,45 @@ class OrderQueueViewController: NoNavigationBarViewController {
     @IBOutlet private var orderStatusPicker: UIPickerView!
     
     private var currentSellectedCell: OrderQueueTableViewCell?
+
+    /// The Firebase data source for the listing of food.
+    var dataSource: FUITableViewDataSource?
     
     private let statusPickerData = ["rejected", "preparing", "ready for collect", "collected"]
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // Hide status picker
         orderStatusPicker.isHidden = true
+        let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
+            .queryEqual(toValue: Account.stallId)
+        dataSource = FUITableViewDataSource(query: query, populateCell: populateOrderCell)
+        dataSource?.bind(to: orderQueueTableView)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stop binding to avoid program crash
+        dataSource?.unbind()
+    }
+
+    /// Populates a `OrderQueueTableViewCell` with the given data from database.
+    /// - Parameters:
+    ///    - tableView: The table view as the listing of orders.
+    ///    - indexPath: The index path of this cell.
+    ///    - snapshot: The snapshot of the corresponding order object from database.
+    /// - Returns: a `OrderQueueTableViewCell` to use.
+    private func populateOrderCell(tableView: UITableView,
+                                  indexPath: IndexPath,
+                                  snapshot: DataSnapshot) -> OrderQueueTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderQueueTableViewCell.identifier,
+                                                       for: indexPath) as? OrderQueueTableViewCell else {
+                                                        fatalError("Unable to dequeue a cell.")
+        }
+        if let order = Order.deserialize(snapshot) {
+            cell.load(order)
+        }
+        return cell
     }
     
 }
@@ -36,7 +70,7 @@ extension OrderQueueViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return orderQueueTableView.dequeueReusableCell(withIdentifier: OrderQueueTableViewCell.tableViewIdentifier) ?? UITableViewCell()
+        return orderQueueTableView.dequeueReusableCell(withIdentifier: OrderQueueTableViewCell.identifier) ?? UITableViewCell()
     }
     
     // Handle when a table view cell is selected

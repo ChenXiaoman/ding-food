@@ -16,7 +16,7 @@ class MenuViewController: NoNavigationBarViewController {
 
     @IBOutlet private weak var menuView: UICollectionView!
 
-    /// The Firebase data source for the listing of stalls.
+    /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
     private let menuPath = StallDetails.path + "/\(Account.stallId)" + Food.path

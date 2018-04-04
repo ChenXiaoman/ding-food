@@ -118,7 +118,7 @@ class StallFormViewController: FormViewController {
                 return
         }
 
-        let photoPath = StallOverview.path + id
+        let photoPath = StallOverview.path + "/\(id)"
         StorageRef.upload(photoData, at: photoPath)
         let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath)
         stallOverview.save()

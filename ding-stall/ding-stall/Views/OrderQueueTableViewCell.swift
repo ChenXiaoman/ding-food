@@ -10,9 +10,13 @@ import UIKit
 
 class OrderQueueTableViewCell: UITableViewCell {
     @IBOutlet private var status: UILabel!
-    public static let tableViewIdentifier = "OrderQueueTableViewCell"
+
+    /// The identifier for this reusable cell
+    public static let identifier = "OrderQueueTableViewCell"
     
     func setStatus(to newStatus: String) {
         status.text = newStatus
     }
+
+    func load(_ order: Order) {}
 }
