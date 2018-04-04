@@ -41,6 +41,9 @@ class ShoppingCartController: FormViewController {
             // Adds a new section for each stall.
             let section = Section(cart.stall.name)
             section.tag = stallId
+            section.hidden = Condition.function([]) { _ in
+                ShoppingCart.shoppingCarts[stallId] == nil
+            }
             form +++ section
 
             // Adds a new `StepperRow` for each food.
@@ -71,7 +74,7 @@ class ShoppingCartController: FormViewController {
             row.value = Double(quantity)
             row.tag = rowTag
             // Hides this row when its value becomes 0.
-            row.hidden = Condition.function([rowTag]) { _ in
+            row.hidden = Condition.function([]) { _ in
                 return row.value == 0
             }
         }.onChange { row in
@@ -80,6 +83,12 @@ class ShoppingCartController: FormViewController {
             }
             // Updates the model whenever the row's value is changed.
             ShoppingCart.change(foodId, from: stallId, quantity: Int(value))
+
+            // Hides the row and/or section if the new value is 0.
+            if value == 0 {
+                row.evaluateHidden()
+                row.section?.evaluateHidden()
+            }
         }
     }
 
@@ -89,7 +98,7 @@ class ShoppingCartController: FormViewController {
     private func makeSubmitButton(stallId: String) -> ButtonRow {
         return ButtonRow { row in
             row.title = "Submit"
-        }.onCellSelection { _, row in
+        }.onCellSelection { _, _ in
             guard let order = ShoppingCart.shoppingCarts[stallId]?.toOrder() else {
                 return
             }
