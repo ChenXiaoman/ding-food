@@ -18,6 +18,8 @@ import FirebaseAuthUI
 class PasswordSignUpController: FUIPasswordSignUpViewController {
     /// The reference to the primary main storyboard.
     weak var mainStoryboard: UIStoryboard?
+    /// The reference to the `LoginViewController`.
+    weak var parentController: LoginViewController?
     /// Indicates whether the NUSNET account has been verified.
     private var hasVerified = false
 
@@ -54,6 +56,18 @@ class PasswordSignUpController: FUIPasswordSignUpViewController {
         }
         controller.parentController = self
         navigationController?.pushViewController(controller, animated: animated)
+    }
+
+    /// Handles the logic after the user has entered the value for all the 3 fields and ready
+    /// to send sign-up information to Firebase. In our case, the email and name fields are
+    /// retrieved from IVLE API and cannot be modified.
+    /// - Parameters:
+    ///    - email: The NUS email address.
+    ///    - password: The user's password (which could be different from NUSNET password).
+    ///    - username: The real name of the user.
+    override func signUp(withEmail email: String, andPassword password: String, andUsername username: String) {
+        super.signUp(withEmail: email, andPassword: password, andUsername: username)
+        parentController?.isNewUser = true
     }
 }
 

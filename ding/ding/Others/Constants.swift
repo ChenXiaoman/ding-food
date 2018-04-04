@@ -21,9 +21,10 @@ struct Constants {
     static let mainTabBarId = "mainTabBarController"
     /// The identifier for the stall details view controller.
     static let stallDetailControllerId = "stallDetailController"
-
     /// The identifier for the food details view controller.
     static let foodDetailViewControllerId = "foodDetailViewController"
+    /// The identifier for the about view controller.
+    static let aboutViewControllerId = "aboutViewController"
 
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"

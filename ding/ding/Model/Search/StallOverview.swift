@@ -6,8 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
-
 /**
  `StallOverview` represents an overview of a stall, which could be used in the stall
  listing table view.
