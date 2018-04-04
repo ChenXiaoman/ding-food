@@ -17,6 +17,8 @@ import Eureka
 class ShoppingCartController: FormViewController {
     /// The format for food row tag in the form.
     private static let foodRowTagFormat = "%@-%@"
+    /// The reference to the parent `FoodDetailController`.
+    weak var parentController: FoodDetailController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +90,10 @@ class ShoppingCartController: FormViewController {
             if value == 0 {
                 row.evaluateHidden()
                 row.section?.evaluateHidden()
+                // Lets the parent controller sync with the current state.
+                if let parentFoodId = self.parentController?.food?.id, parentFoodId == foodId {
+                    self.parentController?.toggleAddToShoppingCartButton()
+                }
             }
         }
     }
