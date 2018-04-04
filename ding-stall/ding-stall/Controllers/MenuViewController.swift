@@ -19,13 +19,9 @@ class MenuViewController: NoNavigationBarViewController {
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
-<<<<<<< HEAD
     private let menuPath = StallDetails.path + "/\(Account.stallId)" + Food.path
     /// The path in database to retrieve this stall
     private let stallPath = StallDetails.path + "/\(Account.stallId)"
-=======
-    private let menuPath = Stall.path + "/\(Account.stallId)" + Food.path
->>>>>>> master
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,7 +57,7 @@ class MenuViewController: NoNavigationBarViewController {
             break
         }
     }
-    
+
     @IBAction func longPressToDeleteFood(_ sender: UILongPressGestureRecognizer) {
         let location = sender.location(in: sender.view)
         guard
@@ -71,7 +67,7 @@ class MenuViewController: NoNavigationBarViewController {
                 return
         }
 <<<<<<< HEAD
-        
+
         var stall: StallDetails?
         DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
             stall = StallDetails.deserialize(snapshot)

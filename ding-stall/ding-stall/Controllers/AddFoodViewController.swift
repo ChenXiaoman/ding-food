@@ -12,7 +12,6 @@ import Eureka
 /**
  A controller to handle adding new food to menu
  */
-<<<<<<< HEAD
 class AddFoodViewController: FormViewController {
 
     let nameTag = "Name"
@@ -102,15 +101,6 @@ class AddFoodViewController: FormViewController {
                 row.tag = imageTag
                 row.title = "Upload Food Photo"
             }
-=======
-class AddFoodViewController: FoodFormViewController {
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        foodId = Food.getAutoId
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done,
-                                                            target: self, action: #selector(addFood))
->>>>>>> master
     }
 
     /// Add food into menu
