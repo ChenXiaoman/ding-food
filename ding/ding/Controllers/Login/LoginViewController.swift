@@ -25,9 +25,6 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        // By default, we will consider it as an old user.
-        isNewUser = false
-
         // Hides the navigation bar.
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
@@ -41,6 +38,9 @@ class LoginViewController: UIViewController {
     /// - Parameter sender: The button being pressed.
     @IBAction func loginButtonPressed(_ sender: MenuButton) {
         if let authUI = FUIAuth.defaultAuthUI() {
+            // By default, we will consider it as an old user.
+            isNewUser = false
+
             authUI.delegate = self
             present(authUI.authViewController(), animated: true)
         }
@@ -74,8 +74,7 @@ extension LoginViewController: FUIAuthDelegate {
     ///    - error: Indicates whether any error happens.
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if isNewUser {
-            print("Haha")
-            authDataResult?.user.sendEmailVerification(completion: nil)
+            authorizer.verifyEmail()
         }
     }
 }
