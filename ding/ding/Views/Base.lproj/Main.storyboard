@@ -664,7 +664,7 @@ x5 Lemon Juice</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pgI-Og-aYd"/>
                                 </constraints>
-                                <state key="normal" title="Add to shopping cart"/>
+                                <state key="normal" title="Add to Shopping Cart"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -680,7 +680,7 @@ x5 Lemon Juice</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0f3-XK-oqG"/>
                                 </constraints>
-                                <state key="normal" title="Order immediately"/>
+                                <state key="normal" title="Order Immediately"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>

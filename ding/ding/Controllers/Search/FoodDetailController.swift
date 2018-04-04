@@ -40,7 +40,7 @@ class FoodDetailController: UIViewController {
 
         // Configures the add to shopping cart button.
         if let foodId = food?.id, let stallId = stall?.id, ShoppingCart.has(foodId, from: stallId) {
-            addToShoppingCartButton.disable(text: "Already added")
+            toggleAddToShoppingCartButton()
         }
     }
 
@@ -52,7 +52,7 @@ class FoodDetailController: UIViewController {
         }
         ShoppingCart.add(currentFood, from: currentStall, quantity: 1)
         openShoppingCart()
-        sender.disable(text: "Already added")
+        toggleAddToShoppingCartButton()
     }
 
     /// Opens the shopping cart when the button on the navigation bar is pressed.
@@ -64,6 +64,16 @@ class FoodDetailController: UIViewController {
         }
         controller.modalPresentationStyle = .popover
         controller.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        controller.parentController = self
         present(controller, animated: true, completion: nil)
+    }
+
+    /// Toggles the button for "Add To Shopping Cart" between normal and disabled state.
+    func toggleAddToShoppingCartButton() {
+        if addToShoppingCartButton.isEnabled {
+            addToShoppingCartButton.disable(text: "Already added")
+        } else {
+            addToShoppingCartButton.enable(text: "Add to Shopping Cart")
+        }
     }
 }

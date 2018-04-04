@@ -42,7 +42,7 @@ class SearchViewController: UIViewController {
         loadingIndicator.startAnimating()
 
         // Configures the collection view.
-        let query = DatabaseRef.getNodeRef(of: StallOverview.path)
+        let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self

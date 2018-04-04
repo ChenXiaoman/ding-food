@@ -52,7 +52,12 @@ struct ShoppingCart {
             return
         }
         cart.change(foodId, quantity: quantity)
-        shoppingCarts[stallId] = cart
+        // Removes the shopping cart if it is already empty.
+        if cart.food.isEmpty {
+            shoppingCarts[stallId] = nil
+        } else {
+            shoppingCarts[stallId] = cart
+        }
     }
 
     /// Checks whether a certain kind of food from a certain stall exists before.
@@ -77,22 +82,35 @@ struct ShoppingCart {
     }
 
     /// Changes the amount of food in the shopping cart. It will simply do nothing if
-    /// the food does not exist before.
+    /// the food does not exist before. If the new amount of the food is 0, it will
+    /// delete the food.
     /// - Parameters:
     ///    - foodId: The id of food to be changed.
     ///    - quantity: The amount of this kind of food.
     mutating func change(_ foodId: String, quantity: Int) {
-        guard let foodInfo = food[foodId] else {
+        guard let foodInfo = food[foodId], quantity >= 0 else {
             return
         }
-        food[foodId] = (foodInfo.food, quantity)
+        // Deletes food if the new amount is 0.
+        if quantity == 0 {
+            delete(foodId)
+        } else {
+            food[foodId] = (foodInfo.food, quantity)
+        }
     }
 
     /// Deletes a certain kind of food from the shopping cart. If this kind of food
     /// does not exist, it will simply do nothing.
     /// - Parameter food: The kind of food to be deleted.
-    mutating func delete(toDelete: Food) {
+    mutating func delete(_ toDelete: Food) {
         food[toDelete.id] = nil
+    }
+
+    /// Deletes a certain kind of food from the shopping cart. If this kind of food
+    /// does not exist, it will simply do nothing.
+    /// - Parameter foodId: The id of food to be deleted.
+    mutating func delete(_ foodId: String) {
+        food[foodId] = nil
     }
 
     /// Checks whether a certain kind of food exists in the shopping cart.
