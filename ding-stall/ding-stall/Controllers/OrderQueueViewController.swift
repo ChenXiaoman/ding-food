@@ -106,7 +106,7 @@ extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource
         self.orderStatusPicker.isHidden = true
         
         // Set selected cell's status to new status
-        currentSellectedCell?.setStatus(to: statusPickerData[row])
+        //currentSellectedCell?.setStatus(to: statusPickerData[row])
     }
     
 }

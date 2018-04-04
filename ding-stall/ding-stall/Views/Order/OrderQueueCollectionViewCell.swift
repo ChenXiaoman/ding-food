@@ -23,7 +23,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// The width of this cell.
     static let width = Constants.screenWidth
     /// The height of this cell.
-    static let height = Constants.screenHeight * OngoingOrderCell.aspectRatio
+    static let height = Constants.screenHeight * OrderCollectionViewCell.aspectRatio
 
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
