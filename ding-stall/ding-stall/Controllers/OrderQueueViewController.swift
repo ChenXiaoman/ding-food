@@ -67,6 +67,20 @@ class OrderQueueViewController: NoNavigationBarViewController {
         }
         return cell
     }
+
+    /// Change the status of `currentSelectedOrder` to the new status
+    /// The status label in the view will also be changed
+    /// - Parameter: newStatus: The new status to be changed
+    private func changeOrderStatus(to newStatus: OrderStatus) {
+        // Change the model
+        currentSelectedOrder?.status = newStatus
+        currentSelectedOrder?.save()
+        // Change the view
+        currentSelectedCell?.setStatus(to: newStatus)
+        // Set to nil to avoid affecting subsequent status change
+        currentSelectedCell = nil
+        currentSelectedOrder = nil
+    }
     
 }
 
@@ -113,15 +127,6 @@ extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource
         self.orderStatusPicker.isHidden = true
         
         // Set selected cell's status to new status
-        let newStatus = statusPickerData[row]
-        // Change the model
-        currentSelectedOrder?.status = newStatus
-        currentSelectedOrder?.save()
-        // Change the view
-        currentSelectedCell?.setStatus(to: newStatus)
-        // Set to nil to avoid affecting subsequent status change
-        currentSelectedCell = nil
-        currentSelectedOrder = nil
+        changeOrderStatus(to: statusPickerData[row])
     }
-    
 }
