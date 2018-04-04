@@ -1,5 +1,5 @@
 //
-//  OrderQueueTableViewCell.swift
+//  OrderCollectionViewCell.swift
 //  ding-stall
 //
 //  Created by Chen Xiaoman on 24/3/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class OrderQueueTableViewCell: UITableViewCell {
+class OrderCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var status: UILabel!
 
     /// The identifier for this reusable cell
-    public static let identifier = "OrderQueueTableViewCell"
+    public static let identifier = "OrderQueueCollectionViewCell"
     
     func setStatus(to newStatus: String) {
         status.text = newStatus

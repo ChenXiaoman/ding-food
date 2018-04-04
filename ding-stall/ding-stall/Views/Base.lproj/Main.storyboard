@@ -343,7 +343,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZOC-iU-ICw">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OrderQueueCollectionViewCell" id="ZOC-iU-ICw">
                                         <rect key="frame" x="8.5" y="0.0" width="358" height="118"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -404,6 +404,7 @@ x5 Lemon Juice</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Orders" image="order" id="4V1-Dv-XEF"/>
                     <connections>
+                        <outlet property="orderQueueCollectionView" destination="b8i-0h-2Px" id="8H1-KO-iGI"/>
                         <outlet property="orderStatusPicker" destination="L3l-tq-5kQ" id="2NF-53-1HT"/>
                     </connections>
                 </viewController>
