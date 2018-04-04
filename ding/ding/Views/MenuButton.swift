@@ -42,4 +42,16 @@ class MenuButton: UIButton {
         backgroundColor = .lightGray
         setTitleColor(.white, for: .disabled)
     }
+
+    /// Enables this button.
+    /// - Parameter text: The text to be shown on normal state. If this parameter is not
+    /// filled, the text would not change.
+    func enable(text: String? = nil) {
+        if let newText = text {
+            setTitle(newText, for: .normal)
+        }
+        isEnabled = true
+        backgroundColor = UIColor.lightText
+        setTitleColor(.black, for: .normal)
+    }
 }
