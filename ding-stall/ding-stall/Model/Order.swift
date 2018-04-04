@@ -62,3 +62,10 @@ public struct Order: FirebaseObject {
         }
     }
 }
+
+public enum OrderStatus: String, Codable {
+    case rejected = "Rejected"
+    case preparing = "Preparing"
+    case ready = "Ready"
+    case collected = "Collected"
+}

@@ -38,4 +38,20 @@ class OrderStatusLabel: UILabel {
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
         return UIEdgeInsetsInsetRect(textRect, OrderStatusLabel.invertedInsets)
     }
+
+    /// Loads data into and populate a `OrderStatusLabel`.
+    /// - Parameter status: The `OrderStatus` enum as the data source.
+    func load(_ status: OrderStatus) {
+        text = status.rawValue
+        switch status {
+        case .preparing:
+            backgroundColor = UIColor.fromRGB(0x6bbdef)
+        case .ready:
+            backgroundColor = UIColor.fromRGB(0xefa647)
+        case .rejected:
+            backgroundColor = UIColor.fromRGB(0xc44258)
+        case .collected:
+            backgroundColor = UIColor.fromRGB(0x706a6a)
+        }
+    }
 }

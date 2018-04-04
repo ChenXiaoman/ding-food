@@ -66,6 +66,7 @@ class OrderQueueViewController: NoNavigationBarViewController {
 extension OrderQueueViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentSellectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
         orderStatusPicker.isHidden = false
     }
 }
