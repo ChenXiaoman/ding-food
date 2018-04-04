@@ -28,14 +28,21 @@ class OngoingOrderController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
-        // Indicates that loading starts.
-        loaded = false
-        loadingIndicator.startAnimating()
+        startLoading()
+        
+        /// Check if a user is successfully logged in
+        if OngoingOrderController.authorizer.didLoginAndVerified {
+            configureCollectionView()
+        } else {
+            handleUserNotLogin()
+        }
+    }
 
+    private func configureCollectionView() {
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: Order.path)
             .queryOrdered(byChild: "customerId").queryEqual(toValue: OngoingOrderController.authorizer.userId)
@@ -43,7 +50,13 @@ class OngoingOrderController: UIViewController {
         dataSource?.bind(to: ongoingOrders)
         ongoingOrders.delegate = self
     }
-
+    
+    private func handleUserNotLogin() {
+        stopLoading()
+        if OngoingOrderController.authorizer.
+        
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Stops sending updates to the collection view (to avoid app crash).
@@ -72,13 +85,24 @@ class OngoingOrderController: UIViewController {
 
         // Stops the loading indicator.
         if !loaded {
-            loaded = true
-            loadingIndicator.stopAnimating()
+            stopLoading()
         }
 
         if let order = Order.deserialize(snapshot) {
             cell.load(order)
         }
         return cell
+    }
+    
+    /// Stop the loading indicator and change loaded status
+    private func stopLoading() {
+        loaded = true
+        loadingIndicator.stopAnimating()
+    }
+    
+    /// Start the loading indicator and change loaded status
+    private func startLoading() {
+        loaded = false
+        loadingIndicator.startAnimating()
     }
 }
