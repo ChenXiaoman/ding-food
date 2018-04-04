@@ -17,13 +17,18 @@ class OrderQueueViewController: NoNavigationBarViewController {
     
     @IBOutlet private var orderQueueCollectionView: UICollectionView!
     @IBOutlet private var orderStatusPicker: UIPickerView!
-    
-    private var currentSellectedCell: OrderCollectionViewCell?
+
+    /// Indicate which order cell is selected, used for change the view
+    private var currentSelectedCell: OrderCollectionViewCell?
+    /// Indicate which order model is associated with the current selected cell
+    private var currentSelectedOrder: Order?
+    /// Store all order models in this stall
+    private var allOrders = [IndexPath: Order]()
 
     /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
     
-    private let statusPickerData = ["rejected", "preparing", "ready for collect", "collected"]
+    private let statusPickerData: [OrderStatus] = [.preparing, .rejected, .ready, .collected]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,6 +62,7 @@ class OrderQueueViewController: NoNavigationBarViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
+            allOrders[indexPath] = order
             cell.load(order)
         }
         return cell
@@ -67,7 +73,8 @@ class OrderQueueViewController: NoNavigationBarViewController {
 extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        currentSellectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
+        currentSelectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
+        currentSelectedOrder = allOrders[indexPath]
         orderStatusPicker.isHidden = false
     }
 
@@ -94,7 +101,7 @@ extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return statusPickerData[row]
+        return statusPickerData[row].rawValue
     }
     
     // Catpure the picker view selection
@@ -106,7 +113,15 @@ extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource
         self.orderStatusPicker.isHidden = true
         
         // Set selected cell's status to new status
-        //currentSellectedCell?.setStatus(to: statusPickerData[row])
+        let newStatus = statusPickerData[row]
+        // Change the model
+        currentSelectedOrder?.status = newStatus
+        currentSelectedOrder?.save()
+        // Change the view
+        currentSelectedCell?.setStatus(to: newStatus)
+        // Set to nil to avoid affecting subsequent status change
+        currentSelectedCell = nil
+        currentSelectedOrder = nil
     }
     
 }

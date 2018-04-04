@@ -33,4 +33,8 @@ class OrderCollectionViewCell: UICollectionViewCell {
         orderDescription.text = order.description
         orderStatus.load(order.status)
     }
+
+    func setStatus(to newStatus: OrderStatus) {
+        orderStatus.load(newStatus)
+    }
 }
