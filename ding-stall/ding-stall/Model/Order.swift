@@ -34,6 +34,7 @@ public struct Order: FirebaseObject {
     /// A pre-computed total price to improve efficiency. Another consideration is that the
     /// total price should not be affected by changes to prices after the order is created.
     let totalPrice: Double
+    let remark: String
 
     init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int]) {
         id = Order.getAutoId

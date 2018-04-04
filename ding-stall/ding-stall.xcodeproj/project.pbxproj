@@ -39,6 +39,7 @@
 		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
 		B217DD062074A82A004C8B49 /* SingleOrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217DD052074A82A004C8B49 /* SingleOrderTableCell.swift */; };
+		B217DD082074DF33004C8B49 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217DD072074DF33004C8B49 /* StallOverview.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
 		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
 		B2CB98372071664400A8A319 /* StallOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB98362071664400A8A319 /* StallOrderCell.swift */; };
@@ -92,6 +93,7 @@
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
 		B217DD052074A82A004C8B49 /* SingleOrderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOrderTableCell.swift; sourceTree = "<group>"; };
+		B217DD072074DF33004C8B49 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B26135D3206B7E0800829009 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B2CB98362071664400A8A319 /* StallOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrderCell.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* StallDetails.swift */,
 				325EE80620665178004EC560 /* User.swift */,
+				B217DD072074DF33004C8B49 /* StallOverview.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
 				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
+				B217DD082074DF33004C8B49 /* StallOverview.swift in Sources */,
 				32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */,
 				325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */,
 				B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */,
