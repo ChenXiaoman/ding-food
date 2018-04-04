@@ -50,6 +50,12 @@ class OngoingOrderController: UIViewController {
         dataSource?.unbind()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == Constants.ongoingOrderToShoppingCartId else {
+            return
+        }
+    }
+
     /// Populates a `OngoingOrderCell` with the given data from database.
     /// - Parameters:
     ///    - collectionView: The collection view as the listing of ongoing orders.

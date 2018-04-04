@@ -430,7 +430,7 @@ x5 Lemon Juice</string>
                                         <rect key="frame" x="10" y="188" width="365" height="79"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy2-Lh-MMv" userLabel="StallName">
-                                                <rect key="frame" x="177.5" y="0.0" width="9" height="48"/>
+                                                <rect key="frame" x="178" y="0.0" width="9" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -861,6 +861,21 @@ x5 Lemon Juice</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECE-mp-zuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356" y="911"/>
+        </scene>
+        <!--AboutViewController-->
+        <scene sceneID="Mct-Rs-2ck">
+            <objects>
+                <viewController storyboardIdentifier="aboutViewController" id="P1c-R8-aCL" userLabel="AboutViewController" customClass="AboutViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tte-qc-Uwx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Qd1-ck-c9g"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBu-xq-78q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="1617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qb4-5P-SLK">

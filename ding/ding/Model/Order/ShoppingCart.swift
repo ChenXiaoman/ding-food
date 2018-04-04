@@ -6,8 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Foundation
-
 /**
  `ShoppingCart` is a collection of food with different quantities. It represents the
  state when an `Order` has not been submitted by the customer.
