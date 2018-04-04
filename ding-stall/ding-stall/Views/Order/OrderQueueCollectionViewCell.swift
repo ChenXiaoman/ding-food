@@ -19,7 +19,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "OrderQueueCollectionViewCell"
     /// The aspect ratio of this cell.
-    private static let aspectRatio = CGFloat(1.0 / 3)
+    private static let aspectRatio = CGFloat(1.0 / 10)
     /// The width of this cell.
     static let width = Constants.screenWidth
     /// The height of this cell.
@@ -28,6 +28,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
     func load(_ order: Order) {
+        self.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
         orderStatus.load(order.status)
