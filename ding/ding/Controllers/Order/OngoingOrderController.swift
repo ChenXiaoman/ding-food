@@ -54,6 +54,9 @@ class OngoingOrderController: UIViewController {
         guard segue.identifier == Constants.ongoingOrderToShoppingCartId else {
             return
         }
+        if UIView.onPhone {
+            segue.destination.modalPresentationStyle = .none
+        }
     }
 
     /// Populates a `OngoingOrderCell` with the given data from database.
