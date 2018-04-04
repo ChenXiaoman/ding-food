@@ -48,6 +48,11 @@ class StallFormViewController: FormViewController {
                 cell.titleLabel?.textColor = .red
             }
         }
+        ImageRow.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.textLabel?.textColor = .red
+            }
+        }
     }
 
     /// Build a form for adding new food
@@ -80,6 +85,12 @@ class StallFormViewController: FormViewController {
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }
+            <<< ImageRow { row in
+                row.tag = Tag.photo
+                row.title = "Upload photo of your stall"
+                row.add(rule: RuleRequired())
+                row.validationOptions = .validatesOnDemand
+            }
             <<< ButtonRow { row in
                 row.title = "Create Stall!"
             }.onCellSelection(createStall(cell:row:))
@@ -101,10 +112,16 @@ class StallFormViewController: FormViewController {
             let name = valueDict[Tag.name] as? String,
             let description = valueDict[Tag.description] as? String,
             let location = valueDict[Tag.location] as? String,
-            let openingHour = valueDict[Tag.openingHour] as? String else {
+            let openingHour = valueDict[Tag.openingHour] as? String,
+            let photo = valueDict[Tag.photo] as? UIImage,
+            let photoData = photo.standardData else {
                 return
         }
 
+        let photoPath = StallOverview.path + id
+        StorageRef.upload(photoData, at: photoPath)
+        let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath)
+        stallOverview.save()
         let stall = StallDetails(id: id, location: location, openingHour: openingHour,
                           description: description, menu: nil, queue: nil, filters: nil)
         stall.save()

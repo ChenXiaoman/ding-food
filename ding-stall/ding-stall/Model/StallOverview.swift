@@ -18,9 +18,9 @@ struct StallOverview: FirebaseObject {
 
     let id: String
     let name: String
-    let queueCount: Int
-    let averageRating: Double
-    let photoPath: String
+    var queueCount: Int
+    var averageRating: Double
+    var photoPath: String
 
     public init(id: String, name: String, photoPath: String) {
         self.id = id

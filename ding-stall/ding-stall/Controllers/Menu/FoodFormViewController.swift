@@ -113,7 +113,7 @@ class FoodFormViewController: FormViewController {
         let path = "/Menu" + "/\(Account.stallId)" + "/\(id)"
         if
             let image = valueDict[Tag.image] as? UIImage,
-            let imageData = standardizeImageData(image) {
+            let imageData = image.standardData {
                 photoPath = path
                 StorageRef.upload(imageData, at: path)
         } 
@@ -122,19 +122,6 @@ class FoodFormViewController: FormViewController {
         let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
                            type: foodType, isSoldOut: false, photoPath: photoPath)
         Account.stall?.addFood(newFood)
-    }
-
-    /// Compress an image to avoid large-size image
-    /// - Parameter:
-    ///     - image: the original image
-    /// - Return: the data of compressed image, nil if it cannot be compressed
-    private func standardizeImageData(_ image: UIImage) -> Data? {
-        let originalImageSize = image.size.width * image.size.height
-        var quality = CGFloat(Constants.standardImageSize) / originalImageSize
-        if quality > 1 {
-            quality = 1
-        }
-        return UIImageJPEGRepresentation(image, quality)
     }
 
     /// Show an alert message that the food is successfully add into menu

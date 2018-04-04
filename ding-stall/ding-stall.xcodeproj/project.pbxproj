@@ -32,6 +32,7 @@
 		32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6720733E46000C4834 /* PasswordSignUpController.swift */; };
 		32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A69207340B0000C4834 /* StallFormViewController.swift */; };
 		32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6D2073D9D8000C4834 /* StallOverview.swift */; };
+		32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */; };
 		32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */; };
 		32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */; };
 		32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */; };
@@ -84,6 +85,7 @@
 		32B75A6720733E46000C4834 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		32B75A69207340B0000C4834 /* StallFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallFormViewController.swift; sourceTree = "<group>"; };
 		32B75A6D2073D9D8000C4834 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
+		32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StandardSize.swift"; sourceTree = "<group>"; };
 		32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRef.swift; sourceTree = "<group>"; };
 		32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */,
 				B26135D1206B7CFD00829009 /* ProfileView.swift */,
 				32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */,
+				32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */,
 				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
 				325EE81320665178004EC560 /* OrderStatus.swift in Sources */,
+				32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */,
 				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
 				325EE80F20665178004EC560 /* User.swift in Sources */,
 			);

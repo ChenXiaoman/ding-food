@@ -63,7 +63,7 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         switch info {
         case .logout:
             authorizer.signOut()
-            navigationController?.popViewController(animated: true)
+            navigationController?.popToRootViewController(animated: true)
         default:
             let id = info.toControllerId
             guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
