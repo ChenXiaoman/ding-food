@@ -33,6 +33,7 @@ class OrderQueueViewController: NoNavigationBarViewController {
             .queryEqual(toValue: Account.stallId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOrderCell)
         dataSource?.bind(to: orderQueueCollectionView)
+        orderQueueCollectionView.delegate = self
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,11 +64,18 @@ class OrderQueueViewController: NoNavigationBarViewController {
     
 }
 
-extension OrderQueueViewController: UICollectionViewDelegate {
+extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentSellectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
         orderStatusPicker.isHidden = false
+    }
+
+    /// Sets the size of each cell.
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: OrderCollectionViewCell.width, height: OrderCollectionViewCell.height)
     }
 }
 
