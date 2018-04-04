@@ -15,7 +15,7 @@ public struct StallDetails: FirebaseObject {
     public static var path = "/stall_details"
 
     public let id: String
-
+    public let name: String
     public var location: String
     public var openingHour: String
     public var description: String
@@ -24,7 +24,7 @@ public struct StallDetails: FirebaseObject {
 
     public var filters: Set<FilterIdentifier>?
     private var menuPath: String {
-        return Stall.path + "/\(Account.stallId)" + Food.path
+        return StallDetails.path + "/\(Account.stallId)" + Food.path
     }
 
     /// Add the a new kind of food into menu
@@ -57,7 +57,7 @@ public struct StallDetails: FirebaseObject {
 
     /// Overrided function to handle nested structure.
     /// See `FirebaseObject.deserialize(_ snapshot: DataSnapshot)`
-    public static func deserialize(_ snapshot: DataSnapshot) -> Stall? {
+    public static func deserialize(_ snapshot: DataSnapshot) -> StallDetails? {
         guard var dict = snapshot.value as? [String: Any] else {
             return nil
         }

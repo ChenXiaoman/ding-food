@@ -66,15 +66,12 @@ class MenuViewController: NoNavigationBarViewController {
             let foodId = menuCell.cellId else {
                 return
         }
-<<<<<<< HEAD
 
         var stall: StallDetails?
         DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
             stall = StallDetails.deserialize(snapshot)
         }
-=======
 
->>>>>>> master
         DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?") {
             Account.stall?.deleteFood(by: foodId)
         }

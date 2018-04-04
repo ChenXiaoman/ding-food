@@ -23,7 +23,6 @@
 		325EE81020665178004EC560 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80720665178004EC560 /* Order.swift */; };
 		325EE81120665178004EC560 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80820665178004EC560 /* Review.swift */; };
 		325EE81220665178004EC560 /* FoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80920665178004EC560 /* FoodType.swift */; };
-		325EE81320665178004EC560 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80A20665178004EC560 /* OrderStatus.swift */; };
 		325EE81920673DD3004EC560 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81820673DD3004EC560 /* Food.swift */; };
 		325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */; };
 		325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81C20693800004EC560 /* ArithmeticExtensions.swift */; };
@@ -76,7 +75,6 @@
 		325EE80720665178004EC560 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		325EE80820665178004EC560 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		325EE80920665178004EC560 /* FoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodType.swift; sourceTree = "<group>"; };
-		325EE80A20665178004EC560 /* OrderStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		325EE81820673DD3004EC560 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		325EE81C20693800004EC560 /* ArithmeticExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticExtensions.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				325EE80920665178004EC560 /* FoodType.swift */,
-				325EE80A20665178004EC560 /* OrderStatus.swift */,
 				325EE80420665178004EC560 /* ReviewRating.swift */,
 			);
 			path = Enumerations;
@@ -485,7 +482,6 @@
 				B217DD062074A82A004C8B49 /* SingleOrderTableCell.swift in Sources */,
 				32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */,
 				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
-				325EE81320665178004EC560 /* OrderStatus.swift in Sources */,
 				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
 				325EE81F206942F1004EC560 /* AddFoodViewTextField.swift in Sources */,
 				325EE80F20665178004EC560 /* User.swift in Sources */,
