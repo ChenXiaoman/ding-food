@@ -42,6 +42,7 @@ class OngoingOrderController: UIViewController {
         }
     }
 
+    /// Bind Firebase data source to collection view
     private func configureCollectionView() {
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: Order.path)
@@ -56,7 +57,6 @@ class OngoingOrderController: UIViewController {
     private func handleUserNotLogin() {
         stopLoading()
         if !OngoingOrderController.authorizer.didLogin {
-            print("not log in")
             Alert.popUpNeedToLogin(in: self)
         }
         if !OngoingOrderController.authorizer.isEmailVerified {
