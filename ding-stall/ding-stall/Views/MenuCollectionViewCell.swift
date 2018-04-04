@@ -26,7 +26,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         if let imagePath = food?.photoPath {
             foodImage.setWebImage(at: imagePath)
         } else {
-            // set to nil to avoid asyconize problem
+            // set to nil to avoid asynchronous problem
             foodImage.image = nil
         }
     }

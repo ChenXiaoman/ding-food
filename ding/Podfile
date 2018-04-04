@@ -12,4 +12,7 @@ target 'ding' do
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Database'
   pod 'FirebaseUI/Storage'
+
+  # Pods for form input.
+  pod 'Eureka'
 end

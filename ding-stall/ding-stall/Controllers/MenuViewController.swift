@@ -19,9 +19,13 @@ class MenuViewController: NoNavigationBarViewController {
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
+<<<<<<< HEAD
     private let menuPath = StallDetails.path + "/\(Account.stallId)" + Food.path
     /// The path in database to retrieve this stall
     private let stallPath = StallDetails.path + "/\(Account.stallId)"
+=======
+    private let menuPath = Stall.path + "/\(Account.stallId)" + Food.path
+>>>>>>> master
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +39,27 @@ class MenuViewController: NoNavigationBarViewController {
         super.viewWillDisappear(animated)
         // Stop binding to avoid program crash
         dataSource?.unbind()
-        DatabaseRef.stopObservers(of: stallPath)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedItem = sender as? UIView else {
+            fatalError("Select item must be an UIView")
+        }
+        switch segue.identifier {
+        case EditFoodViewController.segueIdentifier?:
+            guard
+                let indexPath = menuView.indexPathForItem(at: selectedItem.center),
+                let cell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
+                let foodId = cell.cellId else {
+                    return
+            }
+            guard let editFoodVC = segue.destination as? EditFoodViewController else {
+                return
+            }
+            editFoodVC.initialize(with: foodId)
+        default:
+            break
+        }
     }
     
     @IBAction func longPressToDeleteFood(_ sender: UILongPressGestureRecognizer) {
@@ -46,13 +70,17 @@ class MenuViewController: NoNavigationBarViewController {
             let foodId = menuCell.cellId else {
                 return
         }
+<<<<<<< HEAD
         
         var stall: StallDetails?
         DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
             stall = StallDetails.deserialize(snapshot)
         }
+=======
+
+>>>>>>> master
         DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?") {
-            stall?.deleteFood(by: foodId)
+            Account.stall?.deleteFood(by: foodId)
         }
     }
 

@@ -1,4 +1,5 @@
 PODS:
+  - Eureka (4.1.1)
   - Firebase/Auth (4.11.0):
     - Firebase/Core
     - FirebaseAuth (= 4.5.0)
@@ -61,12 +62,14 @@ PODS:
   - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
+  - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
   - FirebaseUI/Database
   - FirebaseUI/Storage
 
 SPEC CHECKSUMS:
+  Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
   FirebaseAuth: 147bf340a0706b44ca1753d6b41ebafd9687cfe6
@@ -81,6 +84,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: b31e76e3f1739c5bdba268557cd5135e0f7508d2
+PODFILE CHECKSUM: 6459855aafae694a7abf951e122dca2dc1054b54
 
 COCOAPODS: 1.4.0

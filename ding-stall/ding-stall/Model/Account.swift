@@ -6,15 +6,33 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+/**
+ Store the user id and stall model for the current login user
+ */
 struct Account {
 
-    private static var id = ""
+    /// Current user id
+    private static var uid = "" {
+        didSet {
+            downloadStall()
+        }
+    }
+    
+    /// Stall model of current user.
+    public static var stall: Stall?
 
     public static var stallId: String {
-        return id
+        get { return uid }
+        set { uid = newValue }
     }
 
-    public static func setId(_ newId: String) {
-        id = newId
+    /// Download the stall object from database
+    private static func downloadStall() {
+        guard uid != "" else {
+            return
+        }
+        DatabaseRef.observeValueOnce(of: Stall.path + "/\(uid)") { snapshot in
+            stall = Stall.deserialize(snapshot)
+        }
     }
 }
