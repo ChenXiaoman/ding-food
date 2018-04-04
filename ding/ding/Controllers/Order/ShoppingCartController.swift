@@ -20,7 +20,10 @@ class ShoppingCartController: FormViewController {
 
         // Configures the indicator for empty shopping cart.
         if ShoppingCart.shoppingCarts.isEmpty {
-            form +++ Section("") <<< TextRow { $0.value = "Nothing here yet..." }
+            form +++ Section("") <<< TextRow { row in
+                row.value = "Nothing here yet..."
+                row.disabled = true
+            }
         }
 
         for (stallId, cart) in ShoppingCart.shoppingCarts {
@@ -41,9 +44,12 @@ class ShoppingCartController: FormViewController {
             section <<< ButtonRow { row in
                 row.title = "Submit"
             }.onCellSelection { _, row in
+                // Submits the order, removes the order record and closes the shopping cart.
                 if let stallId = row.section?.tag,
                     let order = ShoppingCart.shoppingCarts[stallId]?.toOrder() {
                     order.save()
+                    ShoppingCart.shoppingCarts[stallId] = nil
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
