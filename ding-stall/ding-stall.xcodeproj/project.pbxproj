@@ -15,7 +15,7 @@
 		325EE7FB20664709004EC560 /* OrderQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FA20664709004EC560 /* OrderQueueViewController.swift */; };
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
-		325EE80B20665178004EC560 /* Stall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* Stall.swift */; };
+		325EE80B20665178004EC560 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* StallDetails.swift */; };
 		325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* FirebaseObject.swift */; };
 		325EE80D20665178004EC560 /* ReviewRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80420665178004EC560 /* ReviewRating.swift */; };
 		325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* FilterIdentifier.swift */; };
@@ -37,9 +37,9 @@
 		32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */; };
 		32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */; };
 		5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */; };
+		B217DD062074A82A004C8B49 /* SingleOrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217DD052074A82A004C8B49 /* SingleOrderTableCell.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
 		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
-		B2CB9834207136A400A8A319 /* StallOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB9833207136A400A8A319 /* StallOrders.swift */; };
 		B2CB98372071664400A8A319 /* StallOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB98362071664400A8A319 /* StallOrderCell.swift */; };
 		B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72D206CAEB200A886F9 /* MainViewController.swift */; };
 		B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72F206CAF2A00A886F9 /* MainView.swift */; };
@@ -66,7 +66,7 @@
 		325EE7FA20664709004EC560 /* OrderQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueViewController.swift; sourceTree = "<group>"; };
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
-		325EE80220665177004EC560 /* Stall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stall.swift; sourceTree = "<group>"; };
+		325EE80220665177004EC560 /* StallDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StallDetails.swift; sourceTree = "<group>"; };
 		325EE80320665177004EC560 /* FirebaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
 		325EE80420665178004EC560 /* ReviewRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRating.swift; sourceTree = "<group>"; };
 		325EE80520665178004EC560 /* FilterIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 		32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD15FAD20667DA800DDF8D6 /* OrderQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQueueTableViewCell.swift; sourceTree = "<group>"; };
+		B217DD052074A82A004C8B49 /* SingleOrderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOrderTableCell.swift; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B26135D3206B7E0800829009 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		B2CB9833207136A400A8A319 /* StallOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrders.swift; sourceTree = "<group>"; };
 		B2CB98362071664400A8A319 /* StallOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrderCell.swift; sourceTree = "<group>"; };
 		B2D8E72D206CAEB200A886F9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B2D8E72F206CAF2A00A886F9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -134,9 +134,8 @@
 				325EE81820673DD3004EC560 /* Food.swift */,
 				325EE80320665177004EC560 /* FirebaseObject.swift */,
 				325EE80820665178004EC560 /* Review.swift */,
-				325EE80220665177004EC560 /* Stall.swift */,
+				325EE80220665177004EC560 /* StallDetails.swift */,
 				325EE80620665178004EC560 /* User.swift */,
-				B2CB9833207136A400A8A319 /* StallOrders.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +170,7 @@
 		B2CB983820716C9500A8A319 /* OrderView */ = {
 			isa = PBXGroup;
 			children = (
+				B217DD052074A82A004C8B49 /* SingleOrderTableCell.swift */,
 				B2CB98362071664400A8A319 /* StallOrderCell.swift */,
 			);
 			path = OrderView;
@@ -445,7 +445,6 @@
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				5DD15FAE20667DA800DDF8D6 /* OrderQueueTableViewCell.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
-				B2CB9834207136A400A8A319 /* StallOrders.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
 				325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */,
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
@@ -458,7 +457,7 @@
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
 				B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */,
 				325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */,
-				325EE80B20665178004EC560 /* Stall.swift in Sources */,
+				325EE80B20665178004EC560 /* StallDetails.swift in Sources */,
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,
 				32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */,
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
@@ -475,6 +474,7 @@
 				F26514CC206540230098783C /* Authorizer.swift in Sources */,
 				325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */,
 				F2D2C0432064CE75005230D6 /* Constants.swift in Sources */,
+				B217DD062074A82A004C8B49 /* SingleOrderTableCell.swift in Sources */,
 				32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */,
 				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
 				325EE81320665178004EC560 /* OrderStatus.swift in Sources */,

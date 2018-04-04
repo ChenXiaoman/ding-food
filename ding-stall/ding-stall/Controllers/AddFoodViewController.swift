@@ -21,9 +21,9 @@ class AddFoodViewController: FormViewController {
     let imageTag = "Image"
 
     /// The stall model to add the new food
-    private var stall: Stall?
+    private var stall: StallDetails?
     /// The path in database to retrieve stall model
-    private let stallPath = Stall.path + "/\(Account.stallId)"
+    private let stallPath = StallDetails.path + "/\(Account.stallId)"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class AddFoodViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
-            self.stall = Stall.deserialize(snapshot)
+            self.stall = StallDetails.deserialize(snapshot)
         }
     }
 

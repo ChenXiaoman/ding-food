@@ -1,5 +1,5 @@
 //
-//  Stall.swift
+//  StallDetails.swift
 //  ding
 //
 //  Created by Calvin Tantio on 17/3/18.
@@ -11,14 +11,8 @@ import Foundation
 /**
  Represents a food stall registered in the application.
  */
-public struct Stall: FirebaseObject {
-    public static var currentStall: Stall {
-        get {
-            return self.currentStall
-        }
-    }
-
-    public static var path = "/stall"
+public struct StallDetails: FirebaseObject {
+    public static var path = "/stall_details"
 
     public let id: String
 
@@ -27,6 +21,7 @@ public struct Stall: FirebaseObject {
     public var openingHour: String
     public var description: String
     public var menu: [String: Food]?
+
 
     public var filters: Set<FilterIdentifier>?
 

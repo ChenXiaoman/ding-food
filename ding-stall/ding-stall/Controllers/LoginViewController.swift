@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     /// Used to handle all logics related to Firebase Auth.
     fileprivate let authorizer = Authorizer()
 
-    var stall: Stall!
+    var stall: StallDetails!
 
     override var prefersStatusBarHidden: Bool {
         return true

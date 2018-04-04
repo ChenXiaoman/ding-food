@@ -13,19 +13,16 @@ import Foundation
  quantities from the same stall.
  */
 public struct Order: FirebaseObject {
-    public static var path = "/order"
+    public static var path = "/orders"
 
     public let id: String
     public var status: OrderStatus = .preparing // Default value when an order is placed
     public var remark: String?  // TODO: Remark should be more complicated than this
     public var review: Review?
+    public var stallId: String
+    public var customerId: String
     public var time: Date?
-    public var shouldNotify = false
     public var content = [Food: Int]()
-
-    public init(id: String) {
-        self.id = id
-    }
 
     public mutating func add(food: Food, quantity: Int) {
         content[food] = quantity
