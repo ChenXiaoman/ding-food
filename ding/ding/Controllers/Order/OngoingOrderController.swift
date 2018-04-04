@@ -51,10 +51,17 @@ class OngoingOrderController: UIViewController {
         ongoingOrders.delegate = self
     }
     
+    /// Pop up warning when the user is not logged in or
+    /// the account is not verify
     private func handleUserNotLogin() {
         stopLoading()
-        if OngoingOrderController.authorizer.
-        
+        if !OngoingOrderController.authorizer.didLogin {
+            print("not log in")
+            Alert.popUpNeedToLogin(in: self)
+        }
+        if !OngoingOrderController.authorizer.isEmailVerified {
+            Alert.popUpNeedToVerityEmail(in: self)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
