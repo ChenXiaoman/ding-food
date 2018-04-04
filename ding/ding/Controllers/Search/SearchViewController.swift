@@ -49,7 +49,6 @@ class SearchViewController: UIViewController {
 
         // Configures the search bar.
         searchBar.delegate = self
-    
     }
 
     override func viewWillDisappear(_ animated: Bool) {

@@ -15,8 +15,6 @@ import Eureka
  - Date: March 2018
  */
 class ShoppingCartController: FormViewController {
-    /// The format for food row tag in the form.
-    private static let foodRowTagFormat = "%@-%@"
     /// The reference to the parent `FoodDetailController`.
     weak var parentController: FoodDetailController?
 
@@ -42,7 +40,6 @@ class ShoppingCartController: FormViewController {
         for (stallId, cart) in ShoppingCart.shoppingCarts {
             // Adds a new section for each stall.
             let section = Section(cart.stall.name)
-            section.tag = stallId
             section.hidden = Condition.function([]) { _ in
                 ShoppingCart.shoppingCarts[stallId] == nil
             }
@@ -68,13 +65,9 @@ class ShoppingCartController: FormViewController {
     ///    - quantity: The current amount of this food ordered.
     /// - Returns: A new `StepperRow` to display this food.
     private func makeFoodRow(stallId: String, foodId: String, foodName: String, quantity: Int) -> StepperRow {
-        // The tag of this food row.
-        let rowTag = String(format: ShoppingCartController.foodRowTagFormat, stallId, foodId)
-
         return StepperRow { row in
             row.title = foodName
             row.value = Double(quantity)
-            row.tag = rowTag
             // Hides this row when its value becomes 0.
             row.hidden = Condition.function([]) { _ in
                 return row.value == 0
