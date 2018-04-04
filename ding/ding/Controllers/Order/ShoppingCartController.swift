@@ -101,6 +101,13 @@ class ShoppingCartController: FormViewController {
             guard let order = ShoppingCart.shoppingCarts[stallId]?.toOrder() else {
                 return
             }
+
+            // Lets the parent controller sync with the current state.
+            if let parentStallId = self.parentController?.stall?.id, parentStallId == stallId,
+                let parentFoodId = self.parentController?.food?.id, order.foodQuantity[parentFoodId] != nil {
+                self.parentController?.toggleAddToShoppingCartButton()
+            }
+
             // Submits the order, removes the order record and closes the shopping cart.
             order.save()
             ShoppingCart.shoppingCarts[stallId] = nil
