@@ -31,10 +31,11 @@ class LoginViewController: UIViewController {
 
         // loadProfileView(animated)
         guard authorizer.didLogin else {
+
             loadLoginView(animated)
             return
         }
-
+        setUserAccount()
         loadTabBarView(animated)
     }
 
@@ -58,8 +59,6 @@ class LoginViewController: UIViewController {
     /// Loads the main tab bar view from storyboard.
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
-        // TODO: replace this assignment after login controller finished
-        Account.stallId = authorizer.userId
         let id = Constants.tabBarControllerId
         guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
             fatalError("Could not find the controller for main tab bar")
@@ -77,6 +76,11 @@ class LoginViewController: UIViewController {
         }
         stallFormController.stallId = authorizer.userId
         navigationController?.pushViewController(stallFormController, animated: animated)
+    }
+
+    /// Set the current user id.
+    private func setUserAccount() {
+        Account.stallId = authorizer.userId
     }
 }
 
@@ -96,6 +100,7 @@ extension LoginViewController: FUIAuthDelegate {
         if isNewUser {
             loadStallFormView(true)
         } else {
+            setUserAccount()
             loadTabBarView(true)
         }
     }
