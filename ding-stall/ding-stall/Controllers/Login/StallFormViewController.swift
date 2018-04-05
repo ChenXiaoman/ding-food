@@ -120,10 +120,11 @@ class StallFormViewController: FormViewController {
 
         let photoPath = StallOverview.path + "/\(id)"
         StorageRef.upload(photoData, at: photoPath)
-        let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath)
+        let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath,
+                                          location: location, openingHour: openingHour,
+                                          description: description)
         stallOverview.save()
-        let stall = StallDetails(id: id, location: location, openingHour: openingHour,
-                          description: description, menu: nil, queue: nil, filters: nil)
+        let stall = StallDetails(id: id, menu: nil, queue: nil, filters: nil)
         stall.save()
         Account.stallId = id
         loadTabBarView(true)

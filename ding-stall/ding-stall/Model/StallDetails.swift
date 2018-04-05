@@ -17,9 +17,6 @@ public struct StallDetails: FirebaseObject {
 
     public let id: String
 
-    public var location: String
-    public var openingHour: String
-    public var description: String
     public var menu: [String: Food]?
     public var queue: [Order]?
 

@@ -397,6 +397,7 @@ x5 Lemon Juice</string>
                                             <constraint firstItem="mRN-aA-Ku2" firstAttribute="top" secondItem="ZOC-iU-ICw" secondAttribute="top" id="xCZ-3Z-RbI"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="customerName" destination="h5y-gv-em0" id="CyN-FN-HPj"/>
                                             <outlet property="orderDescription" destination="mRN-aA-Ku2" id="suA-gB-q6z"/>
                                             <outlet property="orderStatus" destination="VMm-OD-cEH" id="ch2-Gh-5vc"/>
                                             <outlet property="totalPrice" destination="YcB-Q0-eJc" id="vBG-iZ-RPz"/>

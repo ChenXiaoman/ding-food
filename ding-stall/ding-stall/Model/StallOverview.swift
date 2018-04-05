@@ -13,19 +13,26 @@
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-struct StallOverview: FirebaseObject {
-    static let path = "/stall_overviews"
+public struct StallOverview: FirebaseObject {
+    public static let path = "/stall_overviews"
 
-    let id: String
-    let name: String
-    var queueCount: Int
-    var averageRating: Double
-    var photoPath: String
+    public let id: String
+    public let name: String
+    public var queueCount: Int
+    public var averageRating: Double
+    public var photoPath: String
+    public var location: String
+    public var openingHour: String
+    public var description: String
 
-    public init(id: String, name: String, photoPath: String) {
+    public init(id: String, name: String, photoPath: String,
+                location: String, openingHour: String, description: String) {
         self.id = id
         self.name = name
         self.photoPath = photoPath
+        self.location = location
+        self.openingHour = openingHour
+        self.description = description
         queueCount = 0
         averageRating = 0
     }

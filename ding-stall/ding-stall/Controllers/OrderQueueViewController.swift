@@ -62,8 +62,12 @@ class OrderQueueViewController: NoNavigationBarViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
-            allOrders[indexPath] = order
-            cell.load(order)
+            DatabaseRef.observeValueOnce(of: Customer.path + "/\(order.customerId)") { snapshot in
+                let customer = Customer.deserialize(snapshot)
+                DatabaseRef.stopObservers(of: Customer.path + "/\(order.customerId)")
+                self.allOrders[indexPath] = order
+                cell.load(order, customerName: customer?.name ?? "")
+            }
         }
         return cell
     }

@@ -15,6 +15,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var totalPrice: UILabel!
     @IBOutlet weak private var orderDescription: UILabel!
     @IBOutlet weak private var orderStatus: OrderStatusLabel!
+    @IBOutlet weak private var customerName: UILabel!
 
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "OrderQueueCollectionViewCell"
@@ -27,8 +28,9 @@ class OrderCollectionViewCell: UICollectionViewCell {
 
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
-    func load(_ order: Order) {
+    func load(_ order: Order, customerName name: String) {
         self.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        customerName.text = name
         totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
         orderStatus.load(order.status)
