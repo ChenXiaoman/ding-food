@@ -42,4 +42,3 @@ class StallDetailsView: UIView {
         locationLabel.text = String(format: StallDetailsView.locationFormat, stallDetails.location)
     }
 }
-

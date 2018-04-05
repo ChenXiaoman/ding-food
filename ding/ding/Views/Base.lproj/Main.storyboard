@@ -869,11 +869,45 @@ x5 Lemon Juice</string>
                     <view key="view" contentMode="scaleToFill" id="tte-qc-Uwx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand-logo" translatesAutoresizingMaskIntoConstraints="NO" id="c5J-Zh-ZfB" userLabel="Logo">
+                                <rect key="frame" x="137.5" y="193.5" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Built with Enthusiasm in CS3217" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-UD-Ab1">
+                                <rect key="frame" x="76" y="301" width="223.5" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ding! © 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8N-JO-O29">
+                                <rect key="frame" x="141" y="329" width="93" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="s8N-JO-O29" firstAttribute="centerX" secondItem="Qd1-ck-c9g" secondAttribute="centerX" id="CyS-86-loh"/>
+                            <constraint firstItem="c5J-Zh-ZfB" firstAttribute="centerY" secondItem="Qd1-ck-c9g" secondAttribute="centerY" constant="-100" id="Rp0-ES-mKz"/>
+                            <constraint firstItem="dPp-UD-Ab1" firstAttribute="top" secondItem="c5J-Zh-ZfB" secondAttribute="bottom" constant="8" symbolic="YES" id="YGR-lS-Af6"/>
+                            <constraint firstItem="c5J-Zh-ZfB" firstAttribute="centerX" secondItem="Qd1-ck-c9g" secondAttribute="centerX" id="dko-Wg-Tfx"/>
+                            <constraint firstItem="s8N-JO-O29" firstAttribute="top" secondItem="dPp-UD-Ab1" secondAttribute="bottom" constant="8" symbolic="YES" id="uEq-LD-pVt"/>
+                            <constraint firstItem="dPp-UD-Ab1" firstAttribute="centerX" secondItem="Qd1-ck-c9g" secondAttribute="centerX" id="xdu-kD-VEE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qd1-ck-c9g"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3gM-qs-ctx" appends="YES" id="qdN-qa-oc1"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBu-xq-78q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" id="3gM-qs-ctx">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="P1c-R8-aCL" id="Giv-KO-dN8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1964" y="1617"/>
         </scene>
@@ -917,6 +951,7 @@ x5 Lemon Juice</string>
     </scenes>
     <resources>
         <image name="avatar" width="90" height="90"/>
+        <image name="brand-logo" width="100" height="100"/>
         <image name="food-icon" width="208" height="208"/>
         <image name="launch-background" width="512" height="512"/>
         <image name="me" width="20" height="20"/>

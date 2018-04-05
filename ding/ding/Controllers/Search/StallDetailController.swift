@@ -6,7 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
 import FirebaseDatabaseUI
 
 /**
@@ -83,11 +82,11 @@ class StallDetailController: UIViewController {
     /// Populates the `StallDetails` whenever receiving data update from database.
     /// - Parameter snapshot: The database snapshot representing a `StallDetails` object.
     func populateStallDetails(snapshot: DataSnapshot) {
-        guard let stall = StallDetails.deserialize(snapshot) else {
-            return
-        }
-        self.stallDetails = stallDetails
-        stallOverviewView.load(stallDetails: stallDetails)
+//        guard let stall = StallDetails.deserialize(snapshot) else {
+//            return
+//        }
+//        stallDetails = stall
+//        stallOverviewView.load(stall: stall)
     }
     
     /// Populates a `FoodTableViewCell` with the given data from database.

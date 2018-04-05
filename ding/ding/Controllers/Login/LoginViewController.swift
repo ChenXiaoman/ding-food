@@ -17,8 +17,6 @@ import FirebaseAuthUI
  - Date: March 2018
  */
 class LoginViewController: UIViewController {
-    /// Used to handle all logics related to Firebase Auth.
-    private let authorizer = Authorizer()
     /// A flag to indicate whether this user is a new user (who has just signed up).
     var isNewUser = false
 

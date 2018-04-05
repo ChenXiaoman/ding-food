@@ -10,6 +10,9 @@ import UIKit
 
 /**
  Extension for `UIView`, which provides some utility methods ready-for-use.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 extension UIView {
     /// Returns whether the device is currently on a iPhone.
