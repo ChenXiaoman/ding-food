@@ -7,7 +7,6 @@
 //
 
 import FirebaseAuthUI
-import UIKit
 
 /**
  The controller for initial login view. However, this controller is only an adapter. The actual

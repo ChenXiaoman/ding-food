@@ -7,7 +7,6 @@
 //
 
 import FirebaseDatabaseUI
-import UIKit
 
 /**
  The controller for the order queue view

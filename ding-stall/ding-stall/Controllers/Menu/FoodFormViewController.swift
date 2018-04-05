@@ -13,7 +13,6 @@ import Eureka
  */
 class FoodFormViewController: FormViewController {
 
-
     /// The id of the food shown in this form.
     /// If it is to add new food, it will use `Food.getAutoId`
     var foodId: String?

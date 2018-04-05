@@ -7,7 +7,6 @@
 //
 
 import FirebaseDatabaseUI
-import UIKit
 
 /**
  A controller to handle showing all food in this stall's menu
