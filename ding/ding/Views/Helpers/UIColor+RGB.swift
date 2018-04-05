@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Extension for `UIColor`, which supports RGB values.
+ */
 extension UIColor {
     /// Creates a `UIColor` from a 6-bit hexadecimal representation of RGB value.
     /// - Parameter rgbValue: The RGB value in 6-bit hexadecimal.
