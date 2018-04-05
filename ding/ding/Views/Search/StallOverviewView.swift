@@ -20,8 +20,6 @@ class StallOverviewView: UIView {
     private static let queueCountFormat = "Number of people waiting: %d"
     /// The text format to display average rating.
     private static let averageRatingFormat = "Average rating: %.1f"
-    /// The text format to display description.
-    private static let descriptionFormat = "\"%@\""
     /// The corner radius for the stall photo.
     private static let photoCornerRadius = CGFloat(20)
 

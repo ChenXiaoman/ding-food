@@ -23,6 +23,8 @@
 		5DC2344D20653686008B034A /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2344C20653686008B034A /* MeViewController.swift */; };
 		5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */; };
 		5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */; };
+		5DEC47C1207495DE00544A54 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C0207495DE00544A54 /* Alert.swift */; };
+		5DEC47C32075E18500544A54 /* StallDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C22075E18500544A54 /* StallDetailsView.swift */; };
 		5DF03D68205D57D5003D320C /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF03D67205D57D5003D320C /* String+Helpers.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		B2464E86205C4F160095A925 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E85205C4F160095A925 /* StallDetails.swift */; };
@@ -78,6 +80,8 @@
 		5DC2344C20653686008B034A /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		5DEC47C0207495DE00544A54 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		5DEC47C22075E18500544A54 /* StallDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallDetailsView.swift; sourceTree = "<group>"; };
 		5DF03D67205D57D5003D320C /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				F2C9543D206B399300DE426B /* StorageRef.swift */,
 				5DF03D67205D57D5003D320C /* String+Helpers.swift */,
 				5D804DFC206B4444004BE32B /* IndexPath+TotalRow.swift */,
+				5DEC47C0207495DE00544A54 /* Alert.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				F265B959207095410035A47B /* FoodOverviewView.swift */,
 				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
 				F26657F6206FCA5D00BE83F5 /* StallOverviewView.swift */,
+				5DEC47C22075E18500544A54 /* StallDetailsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
 				5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */,
 				F2813545206A095400B81377 /* StallOverview.swift in Sources */,
+				5DEC47C1207495DE00544A54 /* Alert.swift in Sources */,
 				5DC234492064D686008B034A /* FoodDetailController.swift in Sources */,
 				5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */,
 				F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */,
@@ -525,6 +532,7 @@
 				F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */,
 				F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */,
 				5D804DFB206A10B5004BE32B /* ShoppingCartCell.swift in Sources */,
+				5DEC47C32075E18500544A54 /* StallDetailsView.swift in Sources */,
 				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */,
 				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
