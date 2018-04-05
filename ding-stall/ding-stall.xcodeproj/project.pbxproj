@@ -19,7 +19,7 @@
 		325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* FirebaseObject.swift */; };
 		325EE80D20665178004EC560 /* ReviewRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80420665178004EC560 /* ReviewRating.swift */; };
 		325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* FilterIdentifier.swift */; };
-		325EE80F20665178004EC560 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80620665178004EC560 /* User.swift */; };
+		325EE80F20665178004EC560 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80620665178004EC560 /* Customer.swift */; };
 		325EE81020665178004EC560 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80720665178004EC560 /* Order.swift */; };
 		325EE81120665178004EC560 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80820665178004EC560 /* Review.swift */; };
 		325EE81220665178004EC560 /* FoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80920665178004EC560 /* FoodType.swift */; };
@@ -73,7 +73,7 @@
 		325EE80320665177004EC560 /* FirebaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
 		325EE80420665178004EC560 /* ReviewRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRating.swift; sourceTree = "<group>"; };
 		325EE80520665178004EC560 /* FilterIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
-		325EE80620665178004EC560 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		325EE80620665178004EC560 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		325EE80720665178004EC560 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		325EE80820665178004EC560 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		325EE80920665178004EC560 /* FoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodType.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* StallDetails.swift */,
 				32B75A6D2073D9D8000C4834 /* StallOverview.swift */,
-				325EE80620665178004EC560 /* User.swift */,
+				325EE80620665178004EC560 /* Customer.swift */,
 				325EE81520665197004EC560 /* Enumerations */,
 			);
 			path = Model;
@@ -498,7 +498,7 @@
 				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
 				32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */,
 				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
-				325EE80F20665178004EC560 /* User.swift in Sources */,
+				325EE80F20665178004EC560 /* Customer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
