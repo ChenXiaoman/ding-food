@@ -60,11 +60,11 @@ class StallOrderCell: UITableViewCell {
     }
 
     private func setOrderLabel() {
-        orderLabel.text = "Order:\n"
+        orderLabel.text = "Order:\n\n"
         for key in order.foodName.keys {
             let foodName = order.foodName[key]!
             let quantity = order.foodQuantity[key]!
-            orderLabel.text = orderLabel.text! + "\(foodName)(\(quantity))\n"
+            orderLabel.text = orderLabel.text! + "\(foodName) (\(quantity))\n"
         }
     }
 

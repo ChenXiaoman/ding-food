@@ -22,6 +22,7 @@ class OrderQueueViewController: NoNavigationBarViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        // TODO: still need to order by createdAt?
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId").queryEqual(toValue: Account.stallId)
 
         self.tableViewDataSource = FUITableViewDataSource(query: query, populateCell: populateOrderCell)
