@@ -21,11 +21,18 @@ class StallOrderCell: UITableViewCell {
     public static let identifier = "StallOrderCell"
 
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var singleOrderTableView: UITableView!
     @IBOutlet weak var remarkLabel: UILabel!
-    @IBOutlet weak var stateButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var orderLabel: UILabel!
 
-    fileprivate var order: Order!
+    @IBOutlet weak var statusButton: UIButton!
+
+    fileprivate var order: Order! {
+        didSet {
+            setButton()
+            setBackgroundColor()
+        }
+    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,13 +49,41 @@ class StallOrderCell: UITableViewCell {
     func load(_ order: Order) {
         self.order = order
         setLabels()
-        setBackgroundColor()
+        statusButton.addTarget(self, action: #selector(stateButtonPressed), for: .touchUpInside)
     }
 
     private func setLabels() {
         userNameLabel.text = order.customerId
         remarkLabel.text = order.remark
-        stateButton.setTitle(String(describing: order.status).capitalized, for: .normal)
+        priceLabel.text = "Total: $\(order.totalPrice)"
+        setOrderLabel()
+    }
+
+    private func setOrderLabel() {
+        orderLabel.text = "Order:\n"
+        for key in order.foodName.keys {
+            let foodName = order.foodName[key]!
+            let quantity = order.foodQuantity[key]!
+            orderLabel.text = orderLabel.text! + "\(foodName)(\(quantity))\n"
+        }
+    }
+
+    private func setButton() {
+        statusButton.setTitle(String(describing: order.status).capitalized, for: .normal)
+    }
+
+    @objc
+    private func stateButtonPressed() {
+        switch order.status {
+        case .preparing:
+            order.status = .ready
+        case .ready:
+            order.status = .collected
+        default:   // TODO: .rejected and .collected
+            break
+        }
+
+        order.save()
     }
 
     private func setBackgroundColor() {
@@ -64,14 +99,4 @@ class StallOrderCell: UITableViewCell {
         }
     }
 }
-
-//extension StallOrderCell: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return order.content.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return
-//    }
-//}
 

@@ -36,7 +36,7 @@ public struct Order: FirebaseObject {
     let totalPrice: Double
     let remark: String
 
-    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int]) {
+    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int], remark: String) {
         id = Order.getAutoId
         self.status = status
         self.review = review
@@ -54,6 +54,7 @@ public struct Order: FirebaseObject {
         totalPrice = food.reduce(0.0) { sum, now in
             sum + now.key.price * Double(now.value)
         }
+        self.remark = remark
     }
 
     /// A full-text description of the order (including food name and amount).

@@ -44,26 +44,11 @@ class OrderQueueViewController: NoNavigationBarViewController {
                                                   for: indexPath) as? StallOrderCell else {
             fatalError("Cell must be able to be downcasted to StallOrderCell")
         }
-/*
-        guard let dict = snapshot.value as? [String: Any] else {
-            fatalError("cannot change to dict")
-        }
 
-        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) else {
-            fatalError("cannot")
-        }
-
-        guard let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else {
-            fatalError("shit")
-        }
-
-        print(string)
-*/
         if let order = Order.deserialize(snapshot) {
             cell.load(order)
         }
-        cell.backgroundColor = .green
-        cell.remarkLabel.text = "Somewhere over the rainbow, blue birds fly, birds fly over the rainbow, oh why can't oh can't i. coz i am a human damn it"
+
         return cell
     }
 }

@@ -109,7 +109,7 @@ class AddFoodViewController: FormViewController {
         guard form.validate().isEmpty else {
             return
         }
-        modifyMenu()
-        showSuccessAlert(message: "Add food successfully")
+        //modifyMenu()
+        //showSuccessAlert(message: "Add food successfully")
     }
 }
