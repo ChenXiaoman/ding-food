@@ -67,14 +67,19 @@ extension LoginViewController: FUIAuthDelegate {
         return controller
     }
 
-    /// Sends a verification email when a new user has just successfully signed up.
+    /// Sends a verification email and saves data when a new user has just successfully signed up.
     /// - Parameters:
     ///    - authUI: The authorization UI assets.
     ///    - authDataResult: The result indicating the authorization.
     ///    - error: Indicates whether any error happens.
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if isNewUser {
+            // Sends the verification email.
             authorizer.verifyEmail()
+
+            // Saves the data to the profile table.
+            let customer = Customer(id: authorizer.userId, name: authorizer.userName)
+            customer.save()
         }
     }
 }
