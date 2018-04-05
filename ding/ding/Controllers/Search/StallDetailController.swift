@@ -50,6 +50,9 @@ class StallDetailController: UIViewController {
         }
         DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
         
+        // Configure the `StallDetails`.
+        DatabaseRef.observeValue(of: "\(StallDetails.path)/\(path)", onChange: populateStallOverview)
+        
         // Configures the table view.
         let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/\(Food.path)")
         dataSource = FUITableViewDataSource(query: query, populateCell: populateMenuCell)
@@ -75,6 +78,16 @@ class StallDetailController: UIViewController {
         }
         self.stall = stall
         stallOverviewView.load(stall: stall)
+    }
+    
+    /// Populates the `StallDetails` whenever receiving data update from database.
+    /// - Parameter snapshot: The database snapshot representing a `StallDetails` object.
+    func populateStallDetails(snapshot: DataSnapshot) {
+        guard let stall = StallDetails.deserialize(snapshot) else {
+            return
+        }
+        self.stallDetails = stallDetails
+        stallOverviewView.load(stallDetails: stallDetails)
     }
     
     /// Populates a `FoodTableViewCell` with the given data from database.
