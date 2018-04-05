@@ -20,6 +20,7 @@ struct Account {
     
     /// Stall model of current user.
     public static var stall: StallDetails?
+    public static var stallOverview: StallOverview?
 
     public static var stallId: String {
         get { return uid }
@@ -35,6 +36,11 @@ struct Account {
             stall = StallDetails.deserialize(snapshot)
             // Stop observing to avoid memory leak
             DatabaseRef.stopObservers(of: StallDetails.path + "/\(uid)")
+        }
+        DatabaseRef.observeValueOnce(of: StallOverview.path + "/\(uid)") { snapshot in
+            stallOverview = StallOverview.deserialize(snapshot)
+            // Stop observing to avoid memory leak
+            DatabaseRef.stopObservers(of: StallOverview.path + "/\(uid)")
         }
     }
 }

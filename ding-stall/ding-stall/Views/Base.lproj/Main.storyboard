@@ -270,6 +270,7 @@
                     <tabBarItem key="tabBarItem" title="Me" image="me" id="7MB-YU-CtY"/>
                     <connections>
                         <outlet property="settingMenu" destination="eXO-2k-Jaf" id="P4C-wO-5Ve"/>
+                        <outlet property="stallPhoto" destination="61C-Yy-04e" id="raL-bI-fE9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqe-zd-BhB" userLabel="First Responder" sceneMemberID="firstResponder"/>

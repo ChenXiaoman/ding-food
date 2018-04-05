@@ -17,6 +17,8 @@ import UIKit
 class MeViewController: NoNavigationBarViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
+    /// The photo of this stall
+    @IBOutlet private weak var stallPhoto: UIImageView!
     /// Used to handle all logics related to Firebase Auth.
     private let authorizer = Authorizer()
 
@@ -26,6 +28,18 @@ class MeViewController: NoNavigationBarViewController {
         settingMenu.delegate = self
         settingMenu.dataSource = self
         settingMenu.tableFooterView = UIView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let imageFrame = stallPhoto.frame
+        guard let photoPath = Account.stallOverview?.photoPath else {
+            stallPhoto.image = #imageLiteral(resourceName: "avatar")
+            return
+        }
+        UIImageView.addPathShouldBeRefreshed(photoPath)
+        stallPhoto.setWebImage(at: photoPath, placeholder: #imageLiteral(resourceName: "avatar"))
+        stallPhoto.frame = imageFrame
     }
 
 }
