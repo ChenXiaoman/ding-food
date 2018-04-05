@@ -112,15 +112,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biz Chicken Rice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-cR-kbr" userLabel="StallName">
-                                                    <rect key="frame" x="5" y="5" width="156" height="20"/>
+                                                    <rect key="frame" x="5" y="5" width="156" height="82"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="QFV-zn-8p6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="jMw-BQ-G42" userLabel="StallPhoto">
-                                                    <rect key="frame" x="0.0" y="28" width="176" height="132"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stall-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jMw-BQ-G42" userLabel="StallPhoto">
+                                                    <rect key="frame" x="0.0" y="90" width="93.5" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jMw-BQ-G42" secondAttribute="height" multiplier="4:3" id="MNc-iL-vMF"/>
                                                     </constraints>
@@ -132,7 +132,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qs-fV-7gp" userLabel="Description">
-                                                    <rect key="frame" x="181" y="31" width="180" height="76"/>
+                                                    <rect key="frame" x="98.5" y="31" width="180" height="76"/>
                                                     <string key="text">x1 Lemon Chicken Rice
 x2 Dumpling Soup
 x1 Fried Beef
@@ -258,7 +258,7 @@ x5 Lemon Juice</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="87C-wK-bfv" userLabel="Photo">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stall-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="87C-wK-bfv" userLabel="Photo">
                                                     <rect key="frame" x="10" y="15" width="144" height="96"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="87C-wK-bfv" secondAttribute="height" multiplier="3:2" id="SdX-eL-Ck8"/>
@@ -431,7 +431,7 @@ x5 Lemon Juice</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKe-iX-wO6" userLabel="StallOverviewView" customClass="StallOverviewView" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="296.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="bqs-pB-ilF" userLabel="StallPhoto">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stall-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bqs-pB-ilF" userLabel="StallPhoto">
                                         <rect key="frame" x="19.5" y="0.0" width="337.5" height="197.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wKA-Eu-4YA">
@@ -953,5 +953,6 @@ x5 Lemon Juice</string>
         <image name="search" width="20" height="20"/>
         <image name="shopping-cart" width="20" height="20"/>
         <image name="soldout" width="500" height="249"/>
+        <image name="stall-placeholder" width="70" height="70"/>
     </resources>
 </document>
