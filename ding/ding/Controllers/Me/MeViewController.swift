@@ -17,11 +17,12 @@ import UIKit
 class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
-    /// Used to handle all logics related to Firebase Auth.
-    private let authorizer = Authorizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Hides the navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: true)
 
         settingMenu.delegate = self
         settingMenu.dataSource = self
@@ -99,7 +100,7 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = [Constants.aboutViewControllerId, "", "", "", ""]
+    static let controllerIds = ["", "", "", Constants.aboutViewControllerId, ""]
 
     /// The name of a certain setting menu cell.
     var name: String {

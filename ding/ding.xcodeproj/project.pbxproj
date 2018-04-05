@@ -23,7 +23,6 @@
 		5DC2344D20653686008B034A /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2344C20653686008B034A /* MeViewController.swift */; };
 		5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */; };
 		5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */; };
-		5DEC47C1207495DE00544A54 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C0207495DE00544A54 /* Alert.swift */; };
 		5DF03D68205D57D5003D320C /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF03D67205D57D5003D320C /* String+Helpers.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		B2464E86205C4F160095A925 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E85205C4F160095A925 /* StallDetails.swift */; };
@@ -45,6 +44,7 @@
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
 		F290A039206A993600D0A0AF /* SearchViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */; };
 		F297DEA1206F72F900991DC7 /* OngoingOrderController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */; };
+		F29C0A3D2075F3F200D2FD92 /* UIViewController+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */; };
 		F2AEA0CF207266B5001D5704 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */; };
 		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
 		F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6E2065FB1800E40425 /* Constants.swift */; };
@@ -79,7 +79,6 @@
 		5DC2344C20653686008B034A /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		5DEC47C0207495DE00544A54 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5DF03D67205D57D5003D320C /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OngoingOrderController+CollectionView.swift"; sourceTree = "<group>"; };
+		F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Permission.swift"; sourceTree = "<group>"; };
 		F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F2C65C6E2065FB1800E40425 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 				F2C9543D206B399300DE426B /* StorageRef.swift */,
 				5DF03D67205D57D5003D320C /* String+Helpers.swift */,
 				5D804DFC206B4444004BE32B /* IndexPath+TotalRow.swift */,
-				5DEC47C0207495DE00544A54 /* Alert.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -213,6 +212,7 @@
 				F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */,
 				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 				F265B95B207099080035A47B /* UIView+Utility.swift */,
+				F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -512,10 +512,10 @@
 				B2464E8B205C51A30095A925 /* Food.swift in Sources */,
 				5D804DFD206B4444004BE32B /* IndexPath+TotalRow.swift in Sources */,
 				5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */,
+				F29C0A3D2075F3F200D2FD92 /* UIViewController+Permission.swift in Sources */,
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
 				5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */,
 				F2813545206A095400B81377 /* StallOverview.swift in Sources */,
-				5DEC47C1207495DE00544A54 /* Alert.swift in Sources */,
 				5DC234492064D686008B034A /* FoodDetailController.swift in Sources */,
 				5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */,
 				F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */,

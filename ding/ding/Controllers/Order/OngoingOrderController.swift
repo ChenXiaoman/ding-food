@@ -15,9 +15,6 @@ import FirebaseDatabaseUI
  - Date: March 2018
  */
 class OngoingOrderController: UIViewController {
-    /// Used to handle all logics related to Firebase Auth.
-    private static let authorizer = Authorizer()
-
     @IBOutlet weak private var ongoingOrders: UICollectionView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     
@@ -35,7 +32,7 @@ class OngoingOrderController: UIViewController {
         startLoading()
         
         /// Check if a user is successfully logged in
-        if OngoingOrderController.authorizer.didLoginAndVerified {
+        if authorizer.didLoginAndVerified {
             configureCollectionView()
         } else {
             handleUserNotLogin()
@@ -46,7 +43,7 @@ class OngoingOrderController: UIViewController {
     private func configureCollectionView() {
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: Order.path)
-            .queryOrdered(byChild: "customerId").queryEqual(toValue: OngoingOrderController.authorizer.userId)
+            .queryOrdered(byChild: "customerId").queryEqual(toValue: authorizer.userId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
         dataSource?.bind(to: ongoingOrders)
         ongoingOrders.delegate = self
@@ -56,11 +53,11 @@ class OngoingOrderController: UIViewController {
     /// the account is not verify
     private func handleUserNotLogin() {
         stopLoading()
-        if !OngoingOrderController.authorizer.didLogin {
-            Alert.popUpNeedToLogin(in: self)
+        if !authorizer.didLogin {
+            popUpNeedToLogin()
         }
-        if !OngoingOrderController.authorizer.isEmailVerified {
-            Alert.popUpNeedToVerityEmail(in: self)
+        if !authorizer.isEmailVerified {
+            popUpNeedToVerityEmail()
         }
     }
     

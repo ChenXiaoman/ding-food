@@ -10,6 +10,9 @@ import FirebaseStorageUI
 
 /**
  Extension for `UIImageView` to provide some utility methods for web images.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 extension UIImageView {
     /// Sets the content of a certain image view to be from web.
