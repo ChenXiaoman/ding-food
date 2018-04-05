@@ -22,7 +22,6 @@ class StallDetailController: UIViewController {
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     /// The view for displaying general information about the stall.
     @IBOutlet weak private var stallOverviewView: StallOverviewView!
-    
     /// The Firebase data source for the menu.
     var dataSource: FUITableViewDataSource?
     /// Indicates whether the collection view has finished loading data.
@@ -35,6 +34,8 @@ class StallDetailController: UIViewController {
     var stallKey: String?
     /// The `StallOverview` object to contain all general information about this stall.
     var stall: StallOverview?
+    /// The `StallDetails` object to contain all details information about this stall.
+    var stallDetails: StallDetails?
     
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar
@@ -49,9 +50,6 @@ class StallDetailController: UIViewController {
             return
         }
         DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
-        
-        // Configure the `StallDetails`.
-        DatabaseRef.observeValue(of: "\(StallDetails.path)/\(path)", onChange: populateStallOverview)
         
         // Configures the table view.
         let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/\(Food.path)")
@@ -78,16 +76,6 @@ class StallDetailController: UIViewController {
         }
         self.stall = stall
         stallOverviewView.load(stall: stall)
-    }
-    
-    /// Populates the `StallDetails` whenever receiving data update from database.
-    /// - Parameter snapshot: The database snapshot representing a `StallDetails` object.
-    func populateStallDetails(snapshot: DataSnapshot) {
-        guard let stall = StallDetails.deserialize(snapshot) else {
-            return
-        }
-        self.stallDetails = stallDetails
-        stallOverviewView.load(stallDetails: stallDetails)
     }
     
     /// Populates a `FoodTableViewCell` with the given data from database.
