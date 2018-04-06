@@ -200,7 +200,7 @@ x5 Lemon Juice</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOf-m8-D3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3190" y="558"/>
+            <point key="canvasLocation" x="3190" y="569"/>
         </scene>
         <!--ShoppingCartController-->
         <scene sceneID="ruU-PA-RAX">
@@ -932,6 +932,7 @@ x5 Lemon Juice</string>
         <!--Order-->
         <scene sceneID="YgX-a1-ZUb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-KE-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="42D-iK-brN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Order" image="order" id="dXb-M9-Xhz"/>
                     <toolbarItems/>
@@ -944,7 +945,6 @@ x5 Lemon Juice</string>
                         <segue destination="VAa-hn-p6R" kind="relationship" relationship="rootViewController" id="Nf5-Qg-tBD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-KE-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2401" y="569"/>
         </scene>
