@@ -50,9 +50,16 @@ extension UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: task)
     }
 
-    /// Shows an alert box to the user indicating that timeout is detected.
+    /// Shows an alert box to the user indicating that timeout is detected. After the
+    /// user clicks "OK", he/she will be prompted to the settings to check Internet
+    /// connection.
     func alertTimeout() {
         DialogHelpers.showAlertMessage(in: self, title: UIViewController.alertTitle,
-                                       message: UIViewController.alertMessage)
+                                       message: UIViewController.alertMessage) {
+            guard let settings = URL(string: UIApplicationOpenSettingsURLString) else {
+                return
+            }
+            UIApplication.shared.open(settings, options: [:], completionHandler: nil)
+        }
     }
 }
