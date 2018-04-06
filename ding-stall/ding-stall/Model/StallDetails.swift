@@ -1,5 +1,5 @@
 //
-//  Stall.swift
+//  StallDetails.swift
 //  ding
 //
 //  Created by Calvin Tantio on 17/3/18.
@@ -11,26 +11,20 @@ import FirebaseDatabase
 /**
  Represents a food stall registered in the application.
  */
-public struct Stall: FirebaseObject {
-    public static var currentStall: Stall {
-        get {
-            return self.currentStall
-        }
-    }
-
-    public static var path = "/stall"
+public struct StallDetails: FirebaseObject {
+    public static var path = "/stall_details"
 
     public let id: String
-
+    public let name: String
     public var location: String
     public var openingHour: String
     public var description: String
     public var menu: [String: Food]?
-    public var queue: [Order]?
+
 
     public var filters: Set<FilterIdentifier>?
     private var menuPath: String {
-        return Stall.path + "/\(Account.stallId)" + Food.path
+        return StallDetails.path + "/\(Account.stallId)" + Food.path
     }
 
     /// Add the a new kind of food into menu
@@ -63,7 +57,7 @@ public struct Stall: FirebaseObject {
 
     /// Overrided function to handle nested structure.
     /// See `FirebaseObject.deserialize(_ snapshot: DataSnapshot)`
-    public static func deserialize(_ snapshot: DataSnapshot) -> Stall? {
+    public static func deserialize(_ snapshot: DataSnapshot) -> StallDetails? {
         guard var dict = snapshot.value as? [String: Any] else {
             return nil
         }

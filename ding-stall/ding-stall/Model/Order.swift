@@ -9,47 +9,76 @@
 import Foundation
 
 /**
- Represents an order posted by a user. An order may have various food with different
- quantities from the same stall.
+ `Order` represents a collection of food with certain quantities. An `Order` is
+ submitted by the customer and confirmed by the stall owner.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 public struct Order: FirebaseObject {
-    public static var path = "/order"
+    public static let path = "/orders"
+    /// Used to handle all logics related to Firebase Auth.
+    private static let authorizer = Authorizer()
 
     public let id: String
-    public var status: OrderStatus = .preparing
-    public var remark: String?
-    public var review: Review?
-    public var time: Date?
-    public var shouldNotify = false
-    public var content = [Food: Int]()
+    var status: OrderStatus
+    var review: Review?
+    let customerId: String
+    let stallId: String
+    let createdAt: Date
+    /// A mapping from food id to its quantity.
+    let foodQuantity: [String: Int]
+    /// A mapping from food id to its human-readable name (to apply fan-out & denormalization
+    /// pattern here).
+    let foodName: [String: String]
+    /// A pre-computed total price to improve efficiency. Another consideration is that the
+    /// total price should not be affected by changes to prices after the order is created.
+    let totalPrice: Double
+    let remark: String
 
-    public init(id: String) {
-        self.id = id
+    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int], remark: String) {
+        id = Order.getAutoId
+        self.status = status
+        self.review = review
+        customerId = Order.authorizer.userId
+        stallId = stall.id
+        createdAt = Date()
+        var foodQuantity: [String: Int] = [:]
+        var foodName: [String: String] = [:]
+        food.forEach { key, value in
+            foodQuantity[key.id] = value
+            foodName[key.id] = key.name
+        }
+        self.foodQuantity = foodQuantity
+        self.foodName = foodName
+        totalPrice = food.reduce(0.0) { sum, now in
+            sum + now.key.price * Double(now.value)
+        }
+        self.remark = remark
     }
 
-    public mutating func add(food: Food, quantity: Int) {
-        content[food] = quantity
+    /// A full-text description of the order (including food name and amount).
+    var description: String {
+        return ""
     }
 
-    public mutating func delete(food: Food) {
-        content.removeValue(forKey: food)
-    }
-
-    public mutating func increaseQuantity(food: Food) {
-        guard let currentQuantity = content[food] else {
+    /// Proceed to the next order status
+    mutating func nextStatus() {
+        switch status {
+        case .preparing:
+            status = .ready
+        case .ready:
+            status = .collected
+        default:
             return
         }
-        content[food] = currentQuantity + 1
-    }
-
-    public mutating func decreaseQuantity(food: Food, quantity: Int) {
-        guard let currentQuantity = content[food] else {
-            return
-        }
-        content[food] = currentQuantity - 1
-    }
-
-    public mutating func confirm() {
-        time = Date()
     }
 }
+
+public enum OrderStatus: String, Codable {
+    case rejected = "Rejected"
+    case preparing = "Preparing"
+    case ready = "Ready"
+    case collected = "Collected"
+}
+
