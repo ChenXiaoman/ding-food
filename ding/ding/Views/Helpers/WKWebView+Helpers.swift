@@ -10,6 +10,9 @@ import WebKit
 
 /**
  Extension for `WKWebView`, which provides some handful helper methods ready-for-use.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 extension WKWebView {
     /// Loads a certain webpage according to a given URL in the webview object.

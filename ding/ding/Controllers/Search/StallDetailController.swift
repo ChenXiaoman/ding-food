@@ -6,7 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
 import FirebaseDatabaseUI
 
 /**
@@ -22,7 +21,6 @@ class StallDetailController: UIViewController {
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     /// The view for displaying general information about the stall.
     @IBOutlet weak private var stallOverviewView: StallOverviewView!
-    
     /// The Firebase data source for the menu.
     var dataSource: FUITableViewDataSource?
     /// Indicates whether the collection view has finished loading data.
@@ -35,6 +33,8 @@ class StallDetailController: UIViewController {
     var stallKey: String?
     /// The `StallOverview` object to contain all general information about this stall.
     var stall: StallOverview?
+    /// The `StallDetails` object to contain all details information about this stall.
+    var stallDetails: StallDetails?
     
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar

@@ -21,4 +21,7 @@ struct StallOverview: FirebaseObject {
     let queueCount: Int
     let averageRating: Double
     let photoPath: String
+    let location: String
+    let openingHour: String
+    let description: String
 }
