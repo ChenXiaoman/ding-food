@@ -397,6 +397,9 @@ x5 Lemon Juice</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QFM-9b-dLC"/>
                     </view>
+                    <connections>
+                        <outlet property="foodTableView" destination="QNM-Gk-BfT" id="agy-T6-vGC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-kx-lHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

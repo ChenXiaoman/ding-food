@@ -23,9 +23,9 @@ class OngoingOrderController: UIViewController {
     /// Indicates whether the collection view has finished loading data.
     private var loaded = false
 
-    /// A dictionary of mapping from cell's index path to the id of the stall
-    /// overview represented.
-    var orderIds: [Int: String] = [:]
+    /// A dictionary of mapping from cell's index path to the
+    /// 'Order' object represented.
+    var orders: [Int: Order] = [:]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -95,7 +95,7 @@ class OngoingOrderController: UIViewController {
             let path = "\(StallOverview.path)/\(order.stallId)"
             DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
             
-            orderIds[indexPath.totalItem(in: collectionView)] = order.id
+            orders[indexPath.totalItem(in: collectionView)] = order
         }
         
         return cell

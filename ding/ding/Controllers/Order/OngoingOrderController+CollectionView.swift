@@ -22,8 +22,8 @@ extension OngoingOrderController: UICollectionViewDelegate {
                 return
         }
         // Passes in the `id` of `Order` displayed at this cell.
-        if let orderId = orderIds[indexPath.totalItem(in: collectionView)] {
-            controller.orderId = orderId
+        if let order = orders[indexPath.totalItem(in: collectionView)] {
+            controller.order = order
         }
         
         navigationController?.pushViewController(controller, animated: true)
