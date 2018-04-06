@@ -23,7 +23,7 @@
 		5DC2344D20653686008B034A /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2344C20653686008B034A /* MeViewController.swift */; };
 		5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */; };
 		5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */; };
-		5DEC47C32075E18500544A54 /* StallDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C22075E18500544A54 /* StallDetailsView.swift */; };
+		5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C42077828100544A54 /* OrderDetailViewController.swift */; };
 		5DF03D68205D57D5003D320C /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF03D67205D57D5003D320C /* String+Helpers.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
 		B2464E86205C4F160095A925 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E85205C4F160095A925 /* StallDetails.swift */; };
@@ -81,7 +81,7 @@
 		5DC2344C20653686008B034A /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		5DEC47C22075E18500544A54 /* StallDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallDetailsView.swift; sourceTree = "<group>"; };
+		5DEC47C42077828100544A54 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		5DF03D67205D57D5003D320C /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +195,7 @@
 				5DC2343E2063B8EB008B034A /* OngoingOrderController.swift */,
 				F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */,
 				F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */,
+				5DEC47C42077828100544A54 /* OrderDetailViewController.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -229,7 +230,6 @@
 				F265B959207095410035A47B /* FoodOverviewView.swift */,
 				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
 				F26657F6206FCA5D00BE83F5 /* StallOverviewView.swift */,
-				5DEC47C22075E18500544A54 /* StallDetailsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -504,6 +504,7 @@
 				F2C9543E206B399300DE426B /* StorageRef.swift in Sources */,
 				F265B95A207095410035A47B /* FoodOverviewView.swift in Sources */,
 				F220FC10206CC7E90093CF04 /* ShoppingCartController.swift in Sources */,
+				5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */,
 				327A03C4205DFC85004B78EB /* Review.swift in Sources */,
 				F2D397D4206F35B90086C27E /* OrderStatusLabel.swift in Sources */,
 				5DC234432064026D008B034A /* StallDetailController.swift in Sources */,
@@ -536,7 +537,6 @@
 				F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */,
 				F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */,
 				5D804DFB206A10B5004BE32B /* ShoppingCartCell.swift in Sources */,
-				5DEC47C32075E18500544A54 /* StallDetailsView.swift in Sources */,
 				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */,
 				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,

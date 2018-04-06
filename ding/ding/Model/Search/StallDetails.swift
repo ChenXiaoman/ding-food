@@ -10,13 +10,10 @@
  Represents a food stall registered in the application.
  */
 public struct StallDetails: FirebaseObject {
-    public static let path = "/JCHstall"
+    public static let path = "/stalls"
 
     public let id: String
     public var name: String
-    public var location: String
-    public var openingHour: String
-    public var description: String
 //    public var queue: [Order]
     public var menu: [Food]
 //    public var filters: Set<FilterIdentifier>
