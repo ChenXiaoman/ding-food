@@ -57,8 +57,12 @@ extension OrderQueueViewController: UITableViewDelegate {
 
     // Handle when a table view cell is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: think of what to do here.
-        // Change status? If not just remove delegate method
+        return
+    }
+
+    // the selection of a table view cell is disabled
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
 
