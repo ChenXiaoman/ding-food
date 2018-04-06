@@ -61,6 +61,17 @@ public struct Order: FirebaseObject {
     var description: String {
         return ""
     }
+
+    mutating func nextStatus() {
+        switch status {
+        case .preparing:
+            status = .ready
+        case .ready:
+            status = .collected
+        default:
+            return
+        }
+    }
 }
 
 public enum OrderStatus: String, Codable {

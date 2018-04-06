@@ -15,9 +15,10 @@ import FirebaseDatabaseUI
  */
 class OrderQueueViewController: NoNavigationBarViewController {
 
-    @IBOutlet private var orderQueueTableView: UITableView!
+    @IBOutlet fileprivate var orderQueueTableView: UITableView!
 
     fileprivate var tableViewDataSource: FUITableViewDataSource?
+    fileprivate var orderDict = [IndexPath: Order]()
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -36,10 +37,6 @@ class OrderQueueViewController: NoNavigationBarViewController {
         tableViewDataSource?.unbind()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     private func populateOrderCell(view: UITableView, indexPath: IndexPath, snapshot: DataSnapshot) -> UITableViewCell {
         guard let cell = view.dequeueReusableCell(withIdentifier: StallOrderCell.identifier,
                                                   for: indexPath) as? StallOrderCell else {
@@ -48,6 +45,8 @@ class OrderQueueViewController: NoNavigationBarViewController {
 
         if let order = Order.deserialize(snapshot) {
             cell.load(order)
+            orderDict[indexPath] = order
+            cell.delegate = self
         }
 
         return cell
@@ -60,6 +59,17 @@ extension OrderQueueViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: think of what to do here.
         // Change status? If not just remove delegate method
+    }
+}
+
+extension OrderQueueViewController: StallOrderCellDelegate {
+    func changeOrderStatus(for cell: UITableViewCell) {
+        guard var order = orderDict[orderQueueTableView.indexPath(for: cell)!] else {
+            return
+        }
+
+        order.nextStatus()
+        order.save()
     }
 }
 

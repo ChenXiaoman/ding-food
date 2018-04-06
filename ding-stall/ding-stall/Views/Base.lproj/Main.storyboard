@@ -401,7 +401,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Orders" image="order" id="4V1-Dv-XEF"/>
                     <connections>
-                        <outlet property="orderQueueTableView" destination="mKt-ve-mVF" id="mz3-I5-5bv"/>
+                        <outlet property="orderQueueTableView" destination="mKt-ve-mVF" id="18K-w0-dOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqY-hL-Khi" userLabel="First Responder" sceneMemberID="firstResponder"/>

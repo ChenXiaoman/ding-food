@@ -7,6 +7,11 @@
 //
 
 import UIKit
+
+protocol StallOrderCellDelegate: class {
+    func changeOrderStatus(for cell: UITableViewCell)
+}
+
 /*
  Table view cell for an order placed for a stall.
  */
@@ -20,19 +25,14 @@ class StallOrderCell: UITableViewCell {
 
     public static let identifier = "StallOrderCell"
 
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var remarkLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var orderLabel: UILabel!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var remarkLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var orderLabel: UILabel!
 
-    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet private weak var statusButton: UIButton!
 
-    fileprivate var order: Order! {
-        didSet {
-            setButton()
-            setBackgroundColor()
-        }
-    }
+    weak var delegate: StallOrderCellDelegate!
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,25 +41,22 @@ class StallOrderCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     func load(_ order: Order) {
-        self.order = order
-        setLabels()
-        statusButton.addTarget(self, action: #selector(stateButtonPressed), for: .touchUpInside)
+        setLabels(order: order)
+        setButton(order: order)
+        setBackgroundColor(order: order)
+        statusButton.addTarget(self, action: #selector(statusButtonPressed), for: .touchUpInside)
     }
 
-    private func setLabels() {
+    private func setLabels(order: Order) {
         userNameLabel.text = order.customerId
         remarkLabel.text = order.remark
         priceLabel.text = "Total: $\(order.totalPrice)"
-        setOrderLabel()
+        setOrderLabel(order: order)
     }
 
-    private func setOrderLabel() {
+    private func setOrderLabel(order: Order) {
         orderLabel.text = "Order:\n\n"
         for key in order.foodName.keys {
             let foodName = order.foodName[key]!
@@ -68,25 +65,16 @@ class StallOrderCell: UITableViewCell {
         }
     }
 
-    private func setButton() {
+    private func setButton(order: Order) {
         statusButton.setTitle(String(describing: order.status).capitalized, for: .normal)
     }
 
     @objc
-    private func stateButtonPressed() {
-        switch order.status {
-        case .preparing:
-            order.status = .ready
-        case .ready:
-            order.status = .collected
-        default:   // TODO: .rejected and .collected
-            break
-        }
-
-        order.save()
+    private func statusButtonPressed() {
+        delegate.changeOrderStatus(for: self)
     }
 
-    private func setBackgroundColor() {
+    private func setBackgroundColor(order: Order) {
         switch order.status {
         case .rejected:
             backgroundColor = BackgroundColor.red
