@@ -224,8 +224,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="61C-Yy-04e" userLabel="Avatar">
                                 <rect key="frame" x="142.5" y="55" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="11" constant="90" id="PeB-BG-XeX"/>
-                                    <constraint firstAttribute="height" priority="10" constant="90" id="bvX-iL-Fcc"/>
+                                    <constraint firstAttribute="width" constant="90" id="PeB-BG-XeX"/>
+                                    <constraint firstAttribute="height" constant="90" id="bvX-iL-Fcc"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eXO-2k-Jaf" userLabel="MeSettingMenu">
@@ -265,9 +265,9 @@
                             <constraint firstItem="eXO-2k-Jaf" firstAttribute="bottom" secondItem="aBY-y9-9hs" secondAttribute="bottom" id="2V1-c8-jHS"/>
                             <constraint firstItem="eXO-2k-Jaf" firstAttribute="trailing" secondItem="aBY-y9-9hs" secondAttribute="trailing" id="5p8-Rw-Qez"/>
                             <constraint firstItem="eXO-2k-Jaf" firstAttribute="leading" secondItem="aBY-y9-9hs" secondAttribute="leading" id="aVp-tR-deH"/>
-                            <constraint firstItem="61C-Yy-04e" firstAttribute="top" secondItem="aBY-y9-9hs" secondAttribute="top" constant="35" id="eOR-pb-up6"/>
+                            <constraint firstItem="61C-Yy-04e" firstAttribute="top" secondItem="aBY-y9-9hs" secondAttribute="top" priority="750" constant="35" id="eOR-pb-up6"/>
                             <constraint firstItem="61C-Yy-04e" firstAttribute="centerX" secondItem="aBY-y9-9hs" secondAttribute="centerX" id="ezv-UI-7UF"/>
-                            <constraint firstItem="eXO-2k-Jaf" firstAttribute="top" secondItem="61C-Yy-04e" secondAttribute="bottom" constant="35" id="zBt-0y-GZU"/>
+                            <constraint firstItem="eXO-2k-Jaf" firstAttribute="top" secondItem="61C-Yy-04e" secondAttribute="bottom" priority="750" constant="35" id="zBt-0y-GZU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aBY-y9-9hs"/>
                     </view>

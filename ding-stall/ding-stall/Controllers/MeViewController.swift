@@ -37,7 +37,6 @@ class MeViewController: NoNavigationBarViewController {
             stallPhoto.image = #imageLiteral(resourceName: "avatar")
             return
         }
-        UIImageView.addPathShouldBeRefreshed(photoPath)
         stallPhoto.setWebImage(at: photoPath, placeholder: #imageLiteral(resourceName: "avatar"))
         stallPhoto.frame = imageFrame
     }
