@@ -32,6 +32,7 @@
 		F200DDE3205E520F00F33748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F200DDE2205E520F00F33748 /* Assets.xcassets */; };
 		F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSController.swift */; };
 		F203E9A5207482A100115558 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203E9A4207482A100115558 /* AboutViewController.swift */; };
+		F204341320778D2E00FF3083 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */; };
 		F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21A46A9206A7D280066BFA0 /* FirebaseObject.swift */; };
 		F220FC10206CC7E90093CF04 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */; };
 		F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */; };
@@ -90,6 +91,7 @@
 		F200DDE2205E520F00F33748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F200DDE4205E537100F33748 /* VerifyNUSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSController.swift; sourceTree = "<group>"; };
 		F203E9A4207482A100115558 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		F21A46A9206A7D280066BFA0 /* FirebaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
 		F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 				F265B95B207099080035A47B /* UIView+Utility.swift */,
 				F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */,
+				F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */,
 				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
 				5DC2343F2063B8EB008B034A /* OngoingOrderController.swift in Sources */,
+				F204341320778D2E00FF3083 /* UIViewController+Keyboard.swift in Sources */,
 				F26657F7206FCA5D00BE83F5 /* StallOverviewView.swift in Sources */,
 				B2464E8B205C51A30095A925 /* Food.swift in Sources */,
 				5D804DFD206B4444004BE32B /* IndexPath+TotalRow.swift in Sources */,
