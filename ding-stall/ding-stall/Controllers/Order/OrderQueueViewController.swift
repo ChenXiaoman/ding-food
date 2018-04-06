@@ -85,7 +85,13 @@ class OrderQueueViewController: UIViewController {
         currentSelectedCell = nil
         currentSelectedOrder = nil
     }
-    
+
+    @IBAction func pressStatusButton(_ sender: UIButton) {
+        /*guard let newStatus = OrderStatus(rawValue: (sender.titleLabel?.text)!) else {
+            return
+        }
+        changeOrderStatus(to: newStatus)*/
+    }
 }
 
 extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
