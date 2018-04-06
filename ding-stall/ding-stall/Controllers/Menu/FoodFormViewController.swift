@@ -34,6 +34,11 @@ class FoodFormViewController: FormViewController {
         initializeForm()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
     /// Set the style of cell to show whether it is valid
     private func setValidationStyle() {
         TextRow.defaultCellUpdate = { cell, row in

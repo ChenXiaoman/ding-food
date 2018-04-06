@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		25D71B14502B3C3A85CA02F2 /* Pods_ding_stall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */; };
 		325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F220663C46004EC560 /* ProfileViewController.swift */; };
-		325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */; };
 		325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F820664532004EC560 /* SettingsViewController.swift */; };
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
@@ -62,7 +61,6 @@
 /* Begin PBXFileReference section */
 		310470C4EE38936B02AD10DC /* Pods_ding_stall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ding_stall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		325EE7F220663C46004EC560 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNavigationBarViewController.swift; sourceTree = "<group>"; };
 		325EE7F820664532004EC560 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 				F26514CD20654D480098783C /* AboutViewController.swift */,
 				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
-				325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */,
 				325EE7F220663C46004EC560 /* ProfileViewController.swift */,
 				325EE7F820664532004EC560 /* SettingsViewController.swift */,
 				32B75A6B2073BEEC000C4834 /* Login */,
@@ -500,7 +497,6 @@
 				32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */,
 				F26514CE20654D480098783C /* AboutViewController.swift in Sources */,
 				32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */,
-				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
 				32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */,
 				3280F90820779A110095E224 /* OrderHistory.swift in Sources */,

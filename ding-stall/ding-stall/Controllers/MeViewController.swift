@@ -14,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class MeViewController: NoNavigationBarViewController {
+class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
     /// The photo of this stall
@@ -32,6 +32,7 @@ class MeViewController: NoNavigationBarViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         let imageFrame = stallPhoto.frame
         guard let photoPath = Account.stallOverview?.photoPath else {
             stallPhoto.image = #imageLiteral(resourceName: "avatar")

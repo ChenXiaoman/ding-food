@@ -14,7 +14,13 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class AboutViewController: NoNavigationBarViewController {
+class AboutViewController: UIViewController {
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     /// Goes back to the previous view after enough times of tap gesture.
     @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
         navigationController?.popViewController(animated: true)

@@ -12,7 +12,7 @@ import FirebaseDatabaseUI
  The controller for the order queue view
  Order queue only contains orders have not been collected
  */
-class OrderQueueViewController: NoNavigationBarViewController {
+class OrderQueueViewController: UIViewController {
     
     @IBOutlet private var orderQueueCollectionView: UICollectionView!
     @IBOutlet private var orderStatusPicker: UIPickerView!
@@ -33,6 +33,7 @@ class OrderQueueViewController: NoNavigationBarViewController {
         super.viewWillAppear(animated)
         // Hide status picker
         orderStatusPicker.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOrderCell)

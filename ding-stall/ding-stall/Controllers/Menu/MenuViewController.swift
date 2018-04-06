@@ -11,7 +11,7 @@ import FirebaseDatabaseUI
 /**
  A controller to handle showing all food in this stall's menu
  */
-class MenuViewController: NoNavigationBarViewController {
+class MenuViewController: UIViewController {
 
     @IBOutlet private weak var menuView: UICollectionView!
 
@@ -22,6 +22,7 @@ class MenuViewController: NoNavigationBarViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         let query = DatabaseRef.getNodeRef(of: menuPath)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: menuView)
