@@ -29,36 +29,14 @@ class OngoingOrderController: UIViewController {
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
-        startLoading()
-        
-        /// Check if a user is successfully logged in
-        if authorizer.didLoginAndVerified {
-            configureCollectionView()
-        } else {
-            handleUserNotLogin()
+        /// Performs permission checking.
+        guard checkPermission() else {
+            return
         }
-    }
 
-    /// Bind Firebase data source to collection view
-    private func configureCollectionView() {
-        // Configures the collection view.
-        let query = DatabaseRef.getNodeRef(of: Order.path)
-            .queryOrdered(byChild: "customerId").queryEqual(toValue: authorizer.userId)
-        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
-        dataSource?.bind(to: ongoingOrders)
-        ongoingOrders.delegate = self
-    }
-    
-    /// Pop up warning when the user is not logged in or
-    /// the account is not verify
-    private func handleUserNotLogin() {
-        stopLoading()
-        if !authorizer.didLogin {
-            popUpNeedToLogin()
-        }
-        if !authorizer.isEmailVerified {
-            popUpNeedToVerityEmail()
-        }
+        /// Starts to load data of ongoing orders.
+        startLoading()
+        configureCollectionView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,6 +52,16 @@ class OngoingOrderController: UIViewController {
         if UIView.onPhone {
             segue.destination.modalPresentationStyle = .none
         }
+    }
+
+    /// Bind Firebase data source to collection view
+    private func configureCollectionView() {
+        // Configures the collection view.
+        let query = DatabaseRef.getNodeRef(of: Order.path)
+            .queryOrdered(byChild: "customerId").queryEqual(toValue: authorizer.userId)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
+        dataSource?.bind(to: ongoingOrders)
+        ongoingOrders.delegate = self
     }
 
     /// Populates a `OngoingOrderCell` with the given data from database.
@@ -97,17 +85,20 @@ class OngoingOrderController: UIViewController {
 
         if let order = Order.deserialize(snapshot) {
             cell.load(order)
+            // Loads the related stall overview.
+            let path = "\(StallOverview.path)/\(order.stallId)"
+            DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
         }
         return cell
     }
     
-    /// Stop the loading indicator and change loaded status
+    /// Stops the loading indicator and changes the `loaded` status.
     private func stopLoading() {
         loaded = true
         loadingIndicator.stopAnimating()
     }
     
-    /// Start the loading indicator and change loaded status
+    /// Starts the loading indicator and changes the `loaded` status.
     private func startLoading() {
         loaded = false
         loadingIndicator.startAnimating()

@@ -27,6 +27,22 @@ class DialogHelpers {
         viewController.present(newAlert, animated: true, completion: nil)
     }
 
+    /// Shows a message in an alert dialog box to the user. The user can click "OK"
+    /// to dismiss this alert dialog box.
+    /// - Parameters:
+    ///    - viewController: The view controller used to present this alert dialog.
+    ///    - title: The text shown as the title of the alert dialog.
+    ///    - message: The text shown as the main body of the alert dialog.
+    ///    - confirmHandler: The handler to be called when the user clicks "OK".
+    static func showAlertMessage(in viewController: UIViewController, title: String, message: String,
+                                 onConfirm confirmHandler: @escaping () -> Void) {
+        let newAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        newAlert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            confirmHandler()
+        })
+        viewController.present(newAlert, animated: true, completion: nil)
+    }
+
     /// Prompts the user to enter an textual input. The user can click "Confirm" to
     /// submit the input or click "Cancel" to dismiss the box.
     ///
