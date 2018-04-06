@@ -26,10 +26,19 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// The height of this cell.
     static let height = Constants.screenHeight * OrderCollectionViewCell.aspectRatio
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //self.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        //self.layer.borderWidth = 5
+        self.layer.shadowColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        self.layer.shadowOffset = CGSize(width: 5, height: 5)
+        self.layer.shadowOpacity = 1
+    }
+
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
     func load(_ order: Order, customerName name: String) {
-        self.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        //self.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         customerName.text = name
         totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
