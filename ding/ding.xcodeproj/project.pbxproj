@@ -33,6 +33,9 @@
 		F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSController.swift */; };
 		F203E9A5207482A100115558 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203E9A4207482A100115558 /* AboutViewController.swift */; };
 		F204341320778D2E00FF3083 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */; };
+		F2043416207791C600FF3083 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2043415207791C600FF3083 /* FilterView.swift */; };
+		F20434182077941700FF3083 /* FilterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20434172077941700FF3083 /* FilterLabel.swift */; };
+		F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20434192077958100FF3083 /* UIViewController+Dispatch.swift */; };
 		F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21A46A9206A7D280066BFA0 /* FirebaseObject.swift */; };
 		F220FC10206CC7E90093CF04 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */; };
 		F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */; };
@@ -92,6 +95,9 @@
 		F200DDE4205E537100F33748 /* VerifyNUSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSController.swift; sourceTree = "<group>"; };
 		F203E9A4207482A100115558 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		F2043415207791C600FF3083 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		F20434172077941700FF3083 /* FilterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLabel.swift; sourceTree = "<group>"; };
+		F20434192077958100FF3083 /* UIViewController+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dispatch.swift"; sourceTree = "<group>"; };
 		F21A46A9206A7D280066BFA0 /* FirebaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
 		F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
@@ -217,8 +223,9 @@
 				F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */,
 				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 				F265B95B207099080035A47B /* UIView+Utility.swift */,
-				F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */,
+				F20434192077958100FF3083 /* UIViewController+Dispatch.swift */,
 				F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */,
+				F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -226,6 +233,8 @@
 		F26657F4206F8C5500BE83F5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F20434172077941700FF3083 /* FilterLabel.swift */,
+				F2043415207791C600FF3083 /* FilterView.swift */,
 				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
 				F265B959207095410035A47B /* FoodOverviewView.swift */,
 				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
@@ -511,6 +520,7 @@
 				F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */,
 				F2D397D6206F649B0086C27E /* ShoppingCart.swift in Sources */,
 				5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */,
+				F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */,
 				5DC234412063B913008B034A /* OngoingOrderCell.swift in Sources */,
 				F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */,
 				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
@@ -530,6 +540,7 @@
 				F297DEA1206F72F900991DC7 /* OngoingOrderController+CollectionView.swift in Sources */,
 				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,
 				B2464E86205C4F160095A925 /* StallDetails.swift in Sources */,
+				F2043416207791C600FF3083 /* FilterView.swift in Sources */,
 				F2DEC658206CAD6A0021D3A0 /* DialogHelpers.swift in Sources */,
 				327A03C5205DFC85004B78EB /* Customer.swift in Sources */,
 				5DC2344D20653686008B034A /* MeViewController.swift in Sources */,
@@ -538,6 +549,7 @@
 				F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */,
 				5D804DFB206A10B5004BE32B /* ShoppingCartCell.swift in Sources */,
 				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
+				F20434182077941700FF3083 /* FilterLabel.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */,
 				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
 				F265B95C207099080035A47B /* UIView+Utility.swift in Sources */,

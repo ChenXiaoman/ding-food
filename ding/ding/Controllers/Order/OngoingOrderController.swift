@@ -34,6 +34,12 @@ class OngoingOrderController: UIViewController {
             return
         }
 
+        /// Performs timeout checking.
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+            self.alertTimeout()
+        }
+
         /// Starts to load data of ongoing orders.
         startLoading()
         configureCollectionView()
