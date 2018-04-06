@@ -44,9 +44,10 @@ class OrderQueueViewController: NoNavigationBarViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
-            cell.load(order)
-            orderDict[indexPath] = order
             cell.delegate = self
+            cell.load(order)
+
+            orderDict[indexPath] = order
         }
 
         return cell
@@ -54,11 +55,6 @@ class OrderQueueViewController: NoNavigationBarViewController {
 }
 
 extension OrderQueueViewController: UITableViewDelegate {
-
-    // Handle when a table view cell is selected
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
-    }
 
     // the selection of a table view cell is disabled
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

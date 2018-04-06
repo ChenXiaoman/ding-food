@@ -34,10 +34,6 @@ class StallOrderCell: UITableViewCell {
 
     weak var delegate: StallOrderCellDelegate!
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -46,7 +42,6 @@ class StallOrderCell: UITableViewCell {
         setLabels(order: order)
         setButton(order: order)
         setBackgroundColor(order: order)
-        statusButton.addTarget(self, action: #selector(statusButtonPressed), for: .touchUpInside)
     }
 
     private func setLabels(order: Order) {
@@ -66,14 +61,17 @@ class StallOrderCell: UITableViewCell {
     }
 
     private func setButton(order: Order) {
-        statusButton.setTitle(String(describing: order.status).capitalized, for: .normal)
+        statusButton.setTitle(order.status.rawValue.capitalized, for: .normal)
+        statusButton.addTarget(self, action: #selector(statusButtonPressed), for: .touchUpInside)
     }
 
+    // pressing button advances the order status
     @objc
     private func statusButtonPressed() {
         delegate.changeOrderStatus(for: self)
     }
 
+    // background color of cell depends on order status
     private func setBackgroundColor(order: Order) {
         switch order.status {
         case .rejected:

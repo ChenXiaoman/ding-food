@@ -62,6 +62,7 @@ public struct Order: FirebaseObject {
         return ""
     }
 
+    /// Proceed to the next order status
     mutating func nextStatus() {
         switch status {
         case .preparing:
