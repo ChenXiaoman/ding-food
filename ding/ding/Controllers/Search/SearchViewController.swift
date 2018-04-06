@@ -47,6 +47,12 @@ class SearchViewController: UIViewController {
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
 
+        /// Performs timeout checking.
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+            self.alertTimeout()
+        }
+
         // Configures the search bar.
         searchBar.delegate = self
     }

@@ -15,9 +15,6 @@ import FirebaseDatabaseUI
  - Date: March 2018
  */
 class OngoingOrderController: UIViewController {
-    /// Used to handle all logics related to Firebase Auth.
-    private static let authorizer = Authorizer()
-
     @IBOutlet weak private var ongoingOrders: UICollectionView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     
@@ -28,22 +25,26 @@ class OngoingOrderController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
-        // Indicates that loading starts.
-        loaded = false
-        loadingIndicator.startAnimating()
+        /// Performs permission checking.
+        guard checkPermission() else {
+            return
+        }
 
-        // Configures the collection view.
-        let query = DatabaseRef.getNodeRef(of: Order.path)
-            .queryOrdered(byChild: "customerId").queryEqual(toValue: OngoingOrderController.authorizer.userId)
-        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
-        dataSource?.bind(to: ongoingOrders)
-        ongoingOrders.delegate = self
+        /// Performs timeout checking.
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+            self.alertTimeout()
+        }
+
+        /// Starts to load data of ongoing orders.
+        startLoading()
+        configureCollectionView()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Stops sending updates to the collection view (to avoid app crash).
@@ -57,6 +58,16 @@ class OngoingOrderController: UIViewController {
         if UIView.onPhone {
             segue.destination.modalPresentationStyle = .none
         }
+    }
+
+    /// Bind Firebase data source to collection view
+    private func configureCollectionView() {
+        // Configures the collection view.
+        let query = DatabaseRef.getNodeRef(of: Order.path)
+            .queryOrdered(byChild: "customerId").queryEqual(toValue: authorizer.userId)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
+        dataSource?.bind(to: ongoingOrders)
+        ongoingOrders.delegate = self
     }
 
     /// Populates a `OngoingOrderCell` with the given data from database.
@@ -75,13 +86,27 @@ class OngoingOrderController: UIViewController {
 
         // Stops the loading indicator.
         if !loaded {
-            loaded = true
-            loadingIndicator.stopAnimating()
+            stopLoading()
         }
 
         if let order = Order.deserialize(snapshot) {
             cell.load(order)
+            // Loads the related stall overview.
+            let path = "\(StallOverview.path)/\(order.stallId)"
+            DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
         }
         return cell
+    }
+    
+    /// Stops the loading indicator and changes the `loaded` status.
+    private func stopLoading() {
+        loaded = true
+        loadingIndicator.stopAnimating()
+    }
+    
+    /// Starts the loading indicator and changes the `loaded` status.
+    private func startLoading() {
+        loaded = false
+        loadingIndicator.startAnimating()
     }
 }

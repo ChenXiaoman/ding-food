@@ -47,6 +47,10 @@ class FoodDetailController: UIViewController {
     /// Adds the food to the shopping cart when the button is pressed.
     /// - Parameter sender: The button being pressed.
     @IBAction func addToShoppingCart(_ sender: MenuButton) {
+        /// Performs permission checking.
+        guard checkPermission() else {
+            return
+        }
         guard let currentStall = stall, let currentFood = food else {
             return
         }
@@ -58,6 +62,10 @@ class FoodDetailController: UIViewController {
     /// Opens the shopping cart when the button on the navigation bar is pressed.
     @objc
     func openShoppingCart() {
+        /// Performs permission checking.
+        guard checkPermission() else {
+            return
+        }
         guard let controller = storyboard?.instantiateViewController(withIdentifier: "shoppingCartController")
             as? ShoppingCartController else {
             fatalError("Cannot find the controller.")

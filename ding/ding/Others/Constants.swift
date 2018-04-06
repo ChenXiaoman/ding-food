@@ -25,6 +25,8 @@ struct Constants {
     static let foodDetailViewControllerId = "foodDetailViewController"
     /// The identifier for the about view controller.
     static let aboutViewControllerId = "aboutViewController"
+    /// The identifier for the order detail view controller.
+    static let orderDetailControllerId = "orderDetailViewController"
 
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
@@ -43,4 +45,7 @@ struct Constants {
     static let meSettingCellId = "meSettingMenuCell"
     /// The height for me setting menu cells.
     static let meSettingCellHeight = CGFloat(60)
+
+    /// The time interval to define timeout.
+    static let timeoutInterval = 10.0
 }

@@ -26,7 +26,8 @@ class ShoppingCartController: FormViewController {
             form +++ Section("") <<< TextRow { row in
                 row.value = "Nothing here yet..."
                 row.disabled = true
-                row.cell.textField.textAlignment = .center
+            }.cellUpdate { cell, _ in
+                cell.textField.textAlignment = .center
             }
             return
         }
@@ -101,6 +102,13 @@ class ShoppingCartController: FormViewController {
             guard let order = ShoppingCart.shoppingCarts[stallId]?.toOrder() else {
                 return
             }
+
+            // Lets the parent controller sync with the current state.
+            if let parentStallId = self.parentController?.stall?.id, parentStallId == stallId,
+                let parentFoodId = self.parentController?.food?.id, order.foodQuantity[parentFoodId] != nil {
+                self.parentController?.toggleAddToShoppingCartButton()
+            }
+
             // Submits the order, removes the order record and closes the shopping cart.
             order.save()
             ShoppingCart.shoppingCarts[stallId] = nil
