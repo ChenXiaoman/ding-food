@@ -23,7 +23,6 @@
 		325EE81220665178004EC560 /* FoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80920665178004EC560 /* FoodType.swift */; };
 		325EE81920673DD3004EC560 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81820673DD3004EC560 /* Food.swift */; };
 		325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */; };
-		325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81C20693800004EC560 /* ArithmeticExtensions.swift */; };
 		325EE824206A0159004EC560 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE823206A0159004EC560 /* Account.swift */; };
 		325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE825206A7754004EC560 /* AddFoodViewController.swift */; };
 		3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F90120750A340095E224 /* UIColor+RGB.swift */; };
@@ -77,7 +76,6 @@
 		325EE80920665178004EC560 /* FoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodType.swift; sourceTree = "<group>"; };
 		325EE81820673DD3004EC560 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		325EE81C20693800004EC560 /* ArithmeticExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticExtensions.swift; sourceTree = "<group>"; };
 		325EE823206A0159004EC560 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		325EE825206A7754004EC560 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		3280F90120750A340095E224 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				F2BBF825205B839400B9812D /* AppDelegate.swift */,
-				325EE81C20693800004EC560 /* ArithmeticExtensions.swift */,
 				F26514CB206540230098783C /* Authorizer.swift */,
 				F2D2C0422064CE75005230D6 /* Constants.swift */,
 				325EE7FE20665019004EC560 /* DatabaseRef.swift */,
@@ -497,7 +494,6 @@
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
-				325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */,
 				3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */,
 				325EE80B20665178004EC560 /* StallDetails.swift in Sources */,
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,
