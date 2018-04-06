@@ -45,10 +45,7 @@
 		32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */; };
 		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
-		B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D3206B7E0800829009 /* CustomTextField.swift */; };
 		B2CB98372071664400A8A319 /* StallOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB98362071664400A8A319 /* StallOrderCell.swift */; };
-		B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72D206CAEB200A886F9 /* MainViewController.swift */; };
-		B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8E72F206CAF2A00A886F9 /* MainView.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -103,10 +100,7 @@
 		32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		B26135D3206B7E0800829009 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B2CB98362071664400A8A319 /* StallOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrderCell.swift; sourceTree = "<group>"; };
-		B2D8E72D206CAEB200A886F9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		B2D8E72F206CAF2A00A886F9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
@@ -140,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				325EE823206A0159004EC560 /* Account.swift */,
+				325EE80620665178004EC560 /* Customer.swift */,
 				325EE80520665178004EC560 /* FilterIdentifier.swift */,
 				325EE80320665177004EC560 /* FirebaseObject.swift */,
 				325EE81820673DD3004EC560 /* Food.swift */,
@@ -149,7 +144,6 @@
 				325EE80220665177004EC560 /* StallDetails.swift */,
 				32B75A6D2073D9D8000C4834 /* StallOverview.swift */,
 				325EE81520665197004EC560 /* Enumerations */,
-				325EE80620665178004EC560 /* Customer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +184,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		3280F9112077C0000095E224 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
+				F2BBF829205B839400B9812D /* Main.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		32B75A6B2073BEEC000C4834 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,16 +219,9 @@
 			children = (
 				3280F90B2077B9620095E224 /* OrderQueueCollectionViewCell.swift */,
 				32B75A722074B199000C4834 /* OrderStatusLabel.swift */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
-		B2CB983820716C9500A8A319 /* OrderView */ = {
-			isa = PBXGroup;
-			children = (
 				B2CB98362071664400A8A319 /* StallOrderCell.swift */,
 			);
-			path = OrderView;
+			path = Order;
 			sourceTree = "<group>";
 		};
 		DCFD028E2205939395984373 /* Pods */ = {
@@ -248,17 +244,13 @@
 		F22A9527205D6E8900C6142E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B26135D3206B7E0800829009 /* CustomTextField.swift */,
 				32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */,
-				B2D8E72F206CAF2A00A886F9 /* MainView.swift */,
 				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
 				F26514C9206525B90098783C /* MeSettingMenuCell.swift */,
 				B26135D1206B7CFD00829009 /* ProfileView.swift */,
-				B2CB983820716C9500A8A319 /* OrderView */,
 				F2BBF82C205B839400B9812D /* Assets.xcassets */,
+				3280F9112077C0000095E224 /* Base */,
 				3280F90320750B5D0095E224 /* Helpers */,
-				F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */,
-				F2BBF829205B839400B9812D /* Main.storyboard */,
 				32B75A742074B1DF000C4834 /* Order */,
 			);
 			path = Views;
@@ -269,14 +261,13 @@
 			children = (
 				F26514CD20654D480098783C /* AboutViewController.swift */,
 				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
-				B2D8E72D206CAEB200A886F9 /* MainViewController.swift */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
 				325EE7F420663F73004EC560 /* NoNavigationBarViewController.swift */,
-				3280F906207796430095E224 /* Order */,
 				325EE7F220663C46004EC560 /* ProfileViewController.swift */,
 				325EE7F820664532004EC560 /* SettingsViewController.swift */,
 				32B75A6B2073BEEC000C4834 /* Login */,
 				32B75A6C2073BF07000C4834 /* Menu */,
+				3280F906207796430095E224 /* Order */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -506,7 +497,6 @@
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
-				B2D8E72E206CAEB200A886F9 /* MainViewController.swift in Sources */,
 				325EE81D20693800004EC560 /* ArithmeticExtensions.swift in Sources */,
 				3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */,
 				325EE80B20665178004EC560 /* StallDetails.swift in Sources */,
@@ -517,8 +507,6 @@
 				325EE7F520663F73004EC560 /* NoNavigationBarViewController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
 				32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */,
-				B26135D4206B7E0800829009 /* CustomTextField.swift in Sources */,
-				B2D8E730206CAF2A00A886F9 /* MainView.swift in Sources */,
 				3280F90820779A110095E224 /* OrderHistory.swift in Sources */,
 				325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */,
 				325EE81220665178004EC560 /* FoodType.swift in Sources */,

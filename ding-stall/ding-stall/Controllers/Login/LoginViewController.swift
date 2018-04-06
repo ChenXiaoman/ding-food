@@ -29,9 +29,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 
-        // loadProfileView(animated)
         guard authorizer.didLogin else {
-
             loadLoginView(animated)
             return
         }

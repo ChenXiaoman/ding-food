@@ -18,7 +18,6 @@ public struct StallDetails: FirebaseObject {
     public let id: String
 
     public var menu: [String: Food]?
-    public var queue: [Order]?
 
     public var filters: Set<FilterIdentifier>?
     private var menuPath: String {
