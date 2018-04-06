@@ -85,6 +85,9 @@ class OngoingOrderController: UIViewController {
 
         if let order = Order.deserialize(snapshot) {
             cell.load(order)
+            // Loads the related stall overview.
+            let path = "\(StallOverview.path)/\(order.stallId)"
+            DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
         }
         return cell
     }

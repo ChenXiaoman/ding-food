@@ -37,22 +37,21 @@ class OngoingOrderCell: UICollectionViewCell {
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
     func load(_ order: Order) {
-        // Load stall overview
-        DatabaseRef.observeValueOnce(of: "\(StallOverview.path)/\(order.stallId)", onChange: loadStoreOverview)
-        
         // Load order details
         totalPrice.text = String(format: OngoingOrderCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
         orderStatus.load(order.status)
     }
-    
-    private func loadStoreOverview(from snapshot: DataSnapshot) {
+
+    /// Loads data (about stal) into a `OngoingOrderCell`.
+    /// - Parameter snapshot: The database snapshot containing a `StallOverview` object.
+    func loadStoreOverview(from snapshot: DataSnapshot) {
         guard let stall = StallOverview.deserialize(snapshot) else {
             return
         }
         stallPhoto.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
         stallName.text = stall.name
-        
+
         // Stop observer after getting stall details
         DatabaseRef.stopObservers(of: "\(StallOverview.path)/\(stall.id)")
     }
