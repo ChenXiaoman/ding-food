@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Stall Form View Controller-->
+        <!--StallFormViewController-->
         <scene sceneID="G51-Hl-6Xs">
             <objects>
-                <viewController storyboardIdentifier="stallForm" id="fNr-gM-z1t" customClass="StallFormViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stallForm" id="fNr-gM-z1t" userLabel="StallFormViewController" customClass="StallFormViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAK-XI-t5i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,11 +135,11 @@
             </objects>
             <point key="canvasLocation" x="764" y="-115.59220389805098"/>
         </scene>
-        <!--Add Food View Controller-->
+        <!--AddFoodViewController-->
         <scene sceneID="VBh-VA-sTb">
             <objects>
-                <viewController id="TsG-mn-Et1" customClass="AddFoodViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sZz-8L-ndH" customClass="A">
+                <viewController id="TsG-mn-Et1" userLabel="AddFoodViewController" customClass="AddFoodViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sZz-8L-ndH" userLabel="View" customClass="A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -281,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="764" y="594.15292353823088"/>
         </scene>
-        <!--AbutViewController-->
+        <!--AboutViewController-->
         <scene sceneID="jeh-wN-wvB">
             <objects>
-                <viewController storyboardIdentifier="aboutViewController" id="f2w-p7-eeZ" userLabel="AbutViewController" customClass="AboutViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutViewController" id="f2w-p7-eeZ" userLabel="AboutViewController" customClass="AboutViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNb-Xa-8cj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
