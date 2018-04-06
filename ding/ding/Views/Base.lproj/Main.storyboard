@@ -17,6 +17,9 @@
         <array key="Arial.ttf">
             <string>ArialMT</string>
         </array>
+        <array key="GillSans.ttc">
+            <string>GillSans</string>
+        </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-LightItalic</string>
         </array>
@@ -210,6 +213,21 @@ x5 Lemon Juice</string>
             </objects>
             <point key="canvasLocation" x="3190" y="569"/>
         </scene>
+        <!--Order Detail View Controller-->
+        <scene sceneID="QcK-Qt-TNL">
+            <objects>
+                <viewController storyboardIdentifier="orderDetailViewController" id="LWN-Rz-jIE" customClass="OrderDetailViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2jC-Na-kzj" customClass="OrderStatusLabel" customModule="ding" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QFM-9b-dLC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-kx-lHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4077" y="557"/>
+        </scene>
         <!--ShoppingCartController-->
         <scene sceneID="ruU-PA-RAX">
             <objects>
@@ -223,7 +241,7 @@ x5 Lemon Juice</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjN-eh-k7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3968.8000000000002" y="859.52023988005999"/>
+            <point key="canvasLocation" x="4039" y="1253"/>
         </scene>
         <!--SearchViewController-->
         <scene sceneID="w7t-0e-3Ox">
@@ -961,7 +979,6 @@ x5 Lemon Juice</string>
         <!--Order-->
         <scene sceneID="YgX-a1-ZUb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-KE-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="42D-iK-brN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Order" image="order" id="dXb-M9-Xhz"/>
                     <toolbarItems/>
@@ -974,6 +991,7 @@ x5 Lemon Juice</string>
                         <segue destination="VAa-hn-p6R" kind="relationship" relationship="rootViewController" id="Nf5-Qg-tBD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-KE-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2401" y="569"/>
         </scene>
