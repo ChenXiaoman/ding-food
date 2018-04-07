@@ -34,12 +34,19 @@ class OrderCollectionViewCell: UICollectionViewCell {
     }
 
     /// Loads data into and populate a `OngoingOrderCell`.
-    /// - Parameter order: The `Order` object as the data source.
-    func load(_ order: Order, customerName name: String) {
-        customerName.text = name
+    /// - Parameter: order: The `Order` object as the data source.
+    func load(_ order: Order) {
         totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
         orderStatus.load(order.status)
+    }
+
+    /// Populate the customer name into cell, since this requires to
+    /// download customer object separately, it should be separated
+    /// from populating food information
+    /// - Parameter: name: The customer name to be put into
+    func populateName(_ name: String) {
+        customerName.text = name
     }
 
     func setStatus(to newStatus: OrderStatus) {

@@ -13,7 +13,7 @@ import FirebaseDatabase
  */
 public struct StallDetails: FirebaseObject {
 
-    public static var path = "/JCHstall"
+    public static var path = "/stalls"
 
     public let id: String
 

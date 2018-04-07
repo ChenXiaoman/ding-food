@@ -22,7 +22,9 @@ class OrderQueueViewController: UIViewController {
     /// Indicate which order model is associated with the current selected cell
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
-    private var allOrders = [IndexPath: Order]()
+    private var orderDict = [IndexPath: Order]()
+    /// The customer names of all orders
+    private var nameDict = [String: String]()
 
     /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
@@ -62,11 +64,19 @@ class OrderQueueViewController: UIViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
-            DatabaseRef.observeValueOnce(of: Customer.path + "/\(order.customerId)") { snapshot in
-                let customer = Customer.deserialize(snapshot)
-                DatabaseRef.stopObservers(of: Customer.path + "/\(order.customerId)")
-                self.allOrders[indexPath] = order
-                cell.load(order, customerName: customer?.name ?? "")
+            cell.load(order)
+            orderDict[indexPath] = order
+
+            if let customerName = nameDict[order.customerId] {
+                cell.populateName(customerName)
+            } else {
+                // Avoid repeating download customer object
+                DatabaseRef.observeValueOnce(of: Customer.path + "/\(order.customerId)") { snapshot in
+                    let customer = Customer.deserialize(snapshot)
+                    DatabaseRef.stopObservers(of: Customer.path + "/\(order.customerId)")
+                    cell.populateName(customer?.name ?? "")
+                    self.nameDict[order.customerId] = customer?.name
+                }
             }
         }
         return cell
@@ -87,19 +97,28 @@ class OrderQueueViewController: UIViewController {
     }
 
     @IBAction func pressStatusButton(_ sender: UIButton) {
-        /*guard let newStatus = OrderStatus(rawValue: (sender.titleLabel?.text)!) else {
+        guard let center = sender.superview?
+            .convert(sender.center, to: sender.superview?.superview?.superview) else {
+                return
+        }
+        guard let indexPath = orderQueueCollectionView.indexPathForItem(at: center) else {
             return
         }
-        changeOrderStatus(to: newStatus)*/
+        currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
+        currentSelectedOrder = orderDict[indexPath]
+        guard let newStatus = OrderStatus(rawValue: (sender.titleLabel?.text)!) else {
+            return
+        }
+        changeOrderStatus(to: newStatus)
     }
 }
 
 extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        currentSelectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
-        currentSelectedOrder = allOrders[indexPath]
-        orderStatusPicker.isHidden = false
+        //currentSelectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
+        //currentSelectedOrder = orderDict[indexPath]
+        //orderStatusPicker.isHidden = false
     }
 
     /// Sets the size of each cell.
