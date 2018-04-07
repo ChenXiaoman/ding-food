@@ -17,5 +17,9 @@ import UIKit
  - Date: March 2018
  */
 class FilterView: UIView {
-    
+    /// Loads a list of `Filter`s to be displayed in this `FilterView`.
+    /// - Parameter filters: A list of `Filter`s to be displayed.
+    func load(filters: [Filter]) {
+
+    }
 }

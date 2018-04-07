@@ -26,7 +26,7 @@
 		5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C42077828100544A54 /* OrderDetailViewController.swift */; };
 		5DF03D68205D57D5003D320C /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF03D67205D57D5003D320C /* String+Helpers.swift */; };
 		998B8FFF1D16B7D52702E182 /* Pods_ding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEE2ECE7221DFC42F6A89 /* Pods_ding.framework */; };
-		B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E88205C51000095A925 /* FilterIdentifier.swift */; };
+		B2464E89205C51000095A925 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E88205C51000095A925 /* Filter.swift */; };
 		B2464E8B205C51A30095A925 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2464E8A205C51A30095A925 /* Food.swift */; };
 		F200DDE3205E520F00F33748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F200DDE2205E520F00F33748 /* Assets.xcassets */; };
 		F200DDE5205E537100F33748 /* VerifyNUSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200DDE4205E537100F33748 /* VerifyNUSController.swift */; };
@@ -87,7 +87,7 @@
 		5DF03D67205D57D5003D320C /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		67740653032DB336409F3E0A /* Pods-ding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.release.xcconfig"; sourceTree = "<group>"; };
 		86164BBD46082DC0F0E70936 /* Pods-ding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding/Pods-ding.debug.xcconfig"; sourceTree = "<group>"; };
-		B2464E88205C51000095A925 /* FilterIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
+		B2464E88205C51000095A925 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		B2464E8A205C51A30095A925 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		F200DDE2205E520F00F33748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F200DDE4205E537100F33748 /* VerifyNUSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNUSController.swift; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 		F2D397D8206F64B70086C27E /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				B2464E88205C51000095A925 /* FilterIdentifier.swift */,
+				B2464E88205C51000095A925 /* Filter.swift */,
 				F2813544206A095400B81377 /* StallOverview.swift */,
 			);
 			path = Search;
@@ -520,7 +520,7 @@
 				F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */,
 				5DC234412063B913008B034A /* OngoingOrderCell.swift in Sources */,
 				F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */,
-				B2464E89205C51000095A925 /* FilterIdentifier.swift in Sources */,
+				B2464E89205C51000095A925 /* Filter.swift in Sources */,
 				5DC2343F2063B8EB008B034A /* OngoingOrderController.swift in Sources */,
 				F204341320778D2E00FF3083 /* UIViewController+Keyboard.swift in Sources */,
 				F26657F7206FCA5D00BE83F5 /* StallOverviewView.swift in Sources */,
