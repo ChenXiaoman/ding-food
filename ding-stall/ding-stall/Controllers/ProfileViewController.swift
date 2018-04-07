@@ -11,7 +11,7 @@ import UIKit
 /**
  The controller for the profile view. The profile view is used to initialise
  or edit stall profile
- */
+
 class ProfileViewController: UIViewController, ProfileViewDelegate {
 
     var profileView: ProfileView!
@@ -52,7 +52,6 @@ class ProfileViewController: UIViewController, ProfileViewDelegate {
     }
 
     private func textFieldInputConstraint(text: String) -> Bool {
-        // TODO: Define Constraints
         return text != ""
     }
-}
+}*/
