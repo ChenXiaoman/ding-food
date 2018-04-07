@@ -19,8 +19,9 @@ class FoodFormViewController: FormViewController {
     
     /*
      The tags of this food details form, need to be inherited
+     by `EditFooViewController` to populate information row
      */
-    internal enum Tag {
+    enum Tag {
         static let name = "Name"
         static let price = "Price"
         static let description = "Description"
