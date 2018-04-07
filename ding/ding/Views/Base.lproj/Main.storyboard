@@ -360,7 +360,6 @@ x5 Lemon Juice</string>
                                                 <constraint firstAttribute="bottom" secondItem="TUs-TX-FFS" secondAttribute="bottom" id="2bh-NM-rtd"/>
                                                 <constraint firstItem="Z99-V2-mwl" firstAttribute="top" secondItem="TUs-TX-FFS" secondAttribute="top" id="EUH-3e-gsK"/>
                                                 <constraint firstItem="Z99-V2-mwl" firstAttribute="bottom" secondItem="TUs-TX-FFS" secondAttribute="bottom" id="Rw1-1k-6Wa"/>
-                                                <constraint firstItem="RCM-u7-HVg" firstAttribute="width" secondItem="RCM-u7-HVg" secondAttribute="height" multiplier="3:1" id="Z6G-5G-UkL"/>
                                                 <constraint firstItem="TUs-TX-FFS" firstAttribute="top" secondItem="3oo-ca-Dhl" secondAttribute="top" id="ask-JV-Raz"/>
                                                 <constraint firstItem="RCM-u7-HVg" firstAttribute="centerX" secondItem="TUs-TX-FFS" secondAttribute="centerX" id="fe0-67-RUM"/>
                                                 <constraint firstItem="RCM-u7-HVg" firstAttribute="centerY" secondItem="3oo-ca-Dhl" secondAttribute="centerY" id="foy-eE-81p"/>
@@ -378,6 +377,10 @@ x5 Lemon Juice</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LWN-Rz-jIE" id="WCl-QN-YrR"/>
+                                    <outlet property="delegate" destination="LWN-Rz-jIE" id="aLP-Wq-cwl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
