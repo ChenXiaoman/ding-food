@@ -43,6 +43,11 @@ class StallDetailController: UIViewController {
         // Indicates that loading starts.
         loaded = false
         loadingIndicator.startAnimating()
+
+        /// Performs timeout checking.
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+        }
         
         // Configure the `StallOverViewView`.
         guard let path = stallKey else {
@@ -100,7 +105,6 @@ class StallDetailController: UIViewController {
         guard let food = Food.deserialize(snapshot) else {
             return cell
         }
-        
         cell.load(food)
         foods[indexPath.totalRow(in: tableView)] = food
         

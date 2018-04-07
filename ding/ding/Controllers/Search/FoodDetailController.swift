@@ -26,11 +26,6 @@ class FoodDetailController: UIViewController {
     var stall: StallOverview?
     
     override func viewWillAppear(_ animated: Bool) {
-        // Displays the food information.
-        if let food = food {
-            foodOverviewView.load(food: food)
-        }
-
         // Configures the navigation bar.
         let item = UIBarButtonItem(image: #imageLiteral(resourceName: "shopping-cart"), style: .plain, target: self, action: #selector(openShoppingCart))
         navigationItem.setRightBarButton(item, animated: animated)
@@ -38,8 +33,16 @@ class FoodDetailController: UIViewController {
             title = stallName
         }
 
+        // Displays the food information.
+        guard let food = food else {
+            return
+        }
+        foodOverviewView.load(food: food)
+
         // Configures the add to shopping cart button.
-        if let foodId = food?.id, let stallId = stall?.id, ShoppingCart.has(foodId, from: stallId) {
+        if food.isSoldOut {
+            addToShoppingCartButton.disable(text: "Sold out")
+        } else if let stallId = stall?.id, ShoppingCart.has(food.id, from: stallId) {
             toggleAddToShoppingCartButton()
         }
     }
