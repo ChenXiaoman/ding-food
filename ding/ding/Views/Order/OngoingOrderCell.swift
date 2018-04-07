@@ -57,14 +57,4 @@ class OngoingOrderCell: UICollectionViewCell {
         // Stop observer after getting stall details
         DatabaseRef.stopObservers(of: "\(StallOverview.path)/\(stall.id)")
     }
-    
-    /// Get the stall photo for current cell
-    func getStallPhoto() -> UIImage? {
-        return stallPhoto.image
-    }
-    
-    /// Get the stall name for current cell
-    func getStallName() -> String? {
-        return stallName.text
-    }
 }
