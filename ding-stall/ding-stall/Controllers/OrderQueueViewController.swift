@@ -72,4 +72,3 @@ extension OrderQueueViewController: StallOrderCellDelegate {
         order.save()
     }
 }
-

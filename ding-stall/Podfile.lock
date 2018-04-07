@@ -60,7 +60,6 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - XLForm (4.0.0)
 
 DEPENDENCIES:
   - Eureka
@@ -68,7 +67,6 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Database
   - FirebaseUI/Storage
-  - XLForm
 
 SPEC CHECKSUMS:
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
@@ -85,8 +83,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  XLForm: 04110197c12187dd28a6c7295d3d8b95f4fdb4de
 
-PODFILE CHECKSUM: c71e29013c3e19a8b065c097a94ae228803212e2
+PODFILE CHECKSUM: 5eede3ff315ad8323ac559dfee7e2fd50165dbfa
 
 COCOAPODS: 1.4.0

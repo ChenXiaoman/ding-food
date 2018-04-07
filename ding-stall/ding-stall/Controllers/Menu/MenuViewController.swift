@@ -7,24 +7,22 @@
 //
 
 import FirebaseDatabaseUI
-import UIKit
 
 /**
  A controller to handle showing all food in this stall's menu
  */
-class MenuViewController: NoNavigationBarViewController {
+class MenuViewController: UIViewController {
 
     @IBOutlet private weak var menuView: UICollectionView!
 
-    /// The Firebase data source for the listing of stalls.
+    /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
     private let menuPath = StallDetails.path + "/\(Account.stallId)" + Food.path
-    /// The path in database to retrieve this stall
-    private let stallPath = StallDetails.path + "/\(Account.stallId)"
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         let query = DatabaseRef.getNodeRef(of: menuPath)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: menuView)
@@ -57,7 +55,7 @@ class MenuViewController: NoNavigationBarViewController {
             break
         }
     }
-
+    
     @IBAction func longPressToDeleteFood(_ sender: UILongPressGestureRecognizer) {
         let location = sender.location(in: sender.view)
         guard
@@ -65,11 +63,6 @@ class MenuViewController: NoNavigationBarViewController {
             let menuCell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
             let foodId = menuCell.cellId else {
                 return
-        }
-
-        var stall: StallDetails?
-        DatabaseRef.observeValueOnce(of: stallPath) { snapshot in
-            stall = StallDetails.deserialize(snapshot)
         }
 
         DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?") {
@@ -104,7 +97,7 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellAndInsetSize = collectionView.frame.width / MenuViewConstants.numCellsPerRow
+        let cellAndInsetSize = collectionView.frame.width / CGFloat(MenuViewConstants.numCellsPerRow)
         let cellWidth = cellAndInsetSize * CGFloat(MenuViewConstants.cellRatio)
         let cellHeight = cellWidth * CGFloat(MenuViewConstants.heightWidthRatio)
         return CGSize(width: cellWidth, height: cellHeight)
@@ -113,7 +106,7 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        let cellAndInsetSize = collectionView.frame.width / MenuViewConstants.numCellsPerRow
+        let cellAndInsetSize = collectionView.frame.width / CGFloat(MenuViewConstants.numCellsPerRow)
         // half the spacing because both left and right has this spacing
         return cellAndInsetSize * CGFloat(1 - MenuViewConstants.cellRatio) * 0.5
     }

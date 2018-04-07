@@ -46,10 +46,10 @@ class EditFoodViewController: FoodFormViewController {
         guard let foodModel = Account.stall?.menu?[foodId ?? ""] else {
             return
         }
-        (form.rowBy(tag: nameTag) as? TextRow)?.value = foodModel.name
-        (form.rowBy(tag: priceTag) as? DecimalRow)?.value = foodModel.price
-        (form.rowBy(tag: typeTag) as? ActionSheetRow<FoodType>)?.value = foodModel.type
-        (form.rowBy(tag: descriptionTag) as? TextRow)?.value = foodModel.description
+        (form.rowBy(tag: Tag.name) as? TextRow)?.value = foodModel.name
+        (form.rowBy(tag: Tag.price) as? DecimalRow)?.value = foodModel.price
+        (form.rowBy(tag: Tag.type) as? ActionSheetRow<FoodType>)?.value = foodModel.type
+        (form.rowBy(tag: Tag.description) as? TextRow)?.value = foodModel.description
         if let photoPath = foodModel.photoPath {
             let maxImageSize = Int64(Constants.standardImageSize * Constants.bytesPerKiloByte)
             StorageRef.download(from: photoPath, maxSize: maxImageSize, onComplete: populateImage)
@@ -70,7 +70,7 @@ class EditFoodViewController: FoodFormViewController {
             return
         }
         let image = UIImage(data: imageData)
-        let imageRow = form.rowBy(tag: imageTag) as? ImageRow
+        let imageRow = form.rowBy(tag: Tag.image) as? ImageRow
         imageRow?.value = image
         imageRow?.updateCell()
     }

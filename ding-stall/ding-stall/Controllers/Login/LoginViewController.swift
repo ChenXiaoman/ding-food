@@ -7,7 +7,6 @@
 //
 
 import FirebaseAuthUI
-import UIKit
 
 /**
  The controller for initial login view. However, this controller is only an adapter. The actual
@@ -17,10 +16,12 @@ import UIKit
  - Date: March 2018
  */
 class LoginViewController: UIViewController {
+
+    /// A flag to show whether the user is new
+    var isNewUser = false
+
     /// Used to handle all logics related to Firebase Auth.
     fileprivate let authorizer = Authorizer()
-
-    var stall: StallDetails!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -28,12 +29,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 
-        // loadProfileView(animated)
         guard authorizer.didLogin else {
             loadLoginView(animated)
             return
         }
-
+        setUserAccount()
         loadTabBarView(animated)
     }
 
@@ -57,13 +57,28 @@ class LoginViewController: UIViewController {
     /// Loads the main tab bar view from storyboard.
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
-        // TODO: replace this assignment after login controller finished
-        Account.stallId = authorizer.userId
         let id = Constants.tabBarControllerId
         guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
             fatalError("Could not find the controller for main tab bar")
         }
         navigationController?.pushViewController(tabBarController, animated: animated)
+    }
+
+    /// Load a form view to let the user fill in stall information
+    /// - Parameter animated: If true, the view was added to the window using an animation.
+    private func loadStallFormView(_ animated: Bool) {
+        let id = Constants.stallFormControllerId
+        guard let stallFormController = storyboard?.instantiateViewController(withIdentifier: id)
+            as? StallFormViewController else {
+                fatalError("Could not find the controller for stall detail form")
+        }
+        stallFormController.stallId = authorizer.userId
+        navigationController?.pushViewController(stallFormController, animated: animated)
+    }
+
+    /// Set the current user id.
+    private func setUserAccount() {
+        Account.stallId = authorizer.userId
     }
 }
 
@@ -80,6 +95,17 @@ extension LoginViewController: FUIAuthDelegate {
             authorizer.verifyEmail()
         }
 
-        loadTabBarView(true)
+        if isNewUser {
+            loadStallFormView(true)
+        } else {
+            setUserAccount()
+            loadTabBarView(true)
+        }
+    }
+
+    func passwordSignUpViewController(forAuthUI authUI: FUIAuth, email: String) -> FUIPasswordSignUpViewController {
+        let controller = PasswordSignUpController(authUI: authUI, email: email)
+        controller.parentController = self
+        return controller
     }
 }
