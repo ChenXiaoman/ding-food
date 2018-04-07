@@ -432,39 +432,30 @@ x5 Lemon Juice</string>
                                             <constraint firstItem="Gqb-ts-eV9" firstAttribute="leading" secondItem="M9D-bL-5Cc" secondAttribute="leading" id="xD5-ab-18J"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="collectButton" destination="M9D-bL-5Cc" id="hTD-JG-duq"/>
                                             <outlet property="customerName" destination="h5y-gv-em0" id="CyN-FN-HPj"/>
                                             <outlet property="orderDescription" destination="mRN-aA-Ku2" id="suA-gB-q6z"/>
                                             <outlet property="orderStatus" destination="VMm-OD-cEH" id="ch2-Gh-5vc"/>
+                                            <outlet property="readyButton" destination="Gqb-ts-eV9" id="g6W-bN-M5e"/>
+                                            <outlet property="rejectButton" destination="Iwf-h2-1om" id="3KO-pM-dIf"/>
                                             <outlet property="totalPrice" destination="YcB-Q0-eJc" id="vBG-iZ-RPz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3l-tq-5kQ">
-                                <rect key="frame" x="0.0" y="402" width="375" height="216"/>
-                                <color key="backgroundColor" white="0.8606228298944445" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1tp-NB-er2" id="7dC-DH-wDd"/>
-                                    <outlet property="delegate" destination="1tp-NB-er2" id="bm1-SR-f1E"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b8i-0h-2Px" firstAttribute="top" secondItem="3oy-wv-Rsa" secondAttribute="top" id="8B2-Op-dbv"/>
                             <constraint firstItem="3oy-wv-Rsa" firstAttribute="trailing" secondItem="b8i-0h-2Px" secondAttribute="trailing" id="Cit-R2-NMS"/>
-                            <constraint firstItem="3oy-wv-Rsa" firstAttribute="bottom" secondItem="L3l-tq-5kQ" secondAttribute="bottom" id="O11-d4-5eR"/>
                             <constraint firstItem="b8i-0h-2Px" firstAttribute="leading" secondItem="3oy-wv-Rsa" secondAttribute="leading" id="PYo-ZO-fus"/>
                             <constraint firstItem="3oy-wv-Rsa" firstAttribute="bottom" secondItem="b8i-0h-2Px" secondAttribute="bottom" id="YxR-5u-u9C"/>
-                            <constraint firstItem="L3l-tq-5kQ" firstAttribute="trailing" secondItem="3oy-wv-Rsa" secondAttribute="trailing" id="cvd-pN-ucp"/>
-                            <constraint firstItem="L3l-tq-5kQ" firstAttribute="leading" secondItem="3oy-wv-Rsa" secondAttribute="leading" id="t3K-6E-oj7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3oy-wv-Rsa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Orders" image="order" id="4V1-Dv-XEF"/>
                     <connections>
                         <outlet property="orderQueueCollectionView" destination="b8i-0h-2Px" id="8H1-KO-iGI"/>
-                        <outlet property="orderStatusPicker" destination="L3l-tq-5kQ" id="2NF-53-1HT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqY-hL-Khi" userLabel="First Responder" sceneMemberID="firstResponder"/>

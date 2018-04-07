@@ -15,7 +15,6 @@ import FirebaseDatabaseUI
 class OrderQueueViewController: UIViewController {
     
     @IBOutlet private var orderQueueCollectionView: UICollectionView!
-    @IBOutlet private var orderStatusPicker: UIPickerView!
 
     /// Indicate which order cell is selected, used for change the view
     private var currentSelectedCell: OrderCollectionViewCell?
@@ -34,7 +33,6 @@ class OrderQueueViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide status picker
-        orderStatusPicker.isHidden = true
         navigationController?.setNavigationBarHidden(true, animated: false)
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
@@ -106,10 +104,15 @@ class OrderQueueViewController: UIViewController {
         }
         currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
         currentSelectedOrder = orderDict[indexPath]
-        guard let newStatus = OrderStatus(rawValue: (sender.titleLabel?.text)!) else {
-            return
+        guard
+            let statusRawValue = sender.titleLabel?.text,
+            let newStatus = OrderStatus(rawValue: statusRawValue) else {
+                return
         }
-        changeOrderStatus(to: newStatus)
+        DialogHelpers.promptConfirm(in: self, title: "Confirm \(statusRawValue) ?",
+                                    message: "Are you sure to change order status to be " + statusRawValue) {
+                                        self.changeOrderStatus(to: newStatus)
+        }
     }
 }
 
@@ -126,36 +129,5 @@ extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: OrderCollectionViewCell.width, height: OrderCollectionViewCell.height)
-    }
-}
-
-/// Handle status picker
-extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    // The number of columns of data
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return statusPickerData.count
-    }
-    
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return statusPickerData[row].rawValue
-    }
-    
-    // Catpure the picker view selection
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        
-        // Hide status picker when a status is picked
-        self.orderStatusPicker.isHidden = true
-        
-        // Set selected cell's status to new status
-        changeOrderStatus(to: statusPickerData[row])
     }
 }

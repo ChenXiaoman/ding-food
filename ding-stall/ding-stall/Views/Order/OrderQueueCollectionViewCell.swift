@@ -16,6 +16,9 @@ class OrderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var orderDescription: UILabel!
     @IBOutlet weak private var orderStatus: OrderStatusLabel!
     @IBOutlet weak private var customerName: UILabel!
+    @IBOutlet weak private var rejectButton: UIButton!
+    @IBOutlet weak private var collectButton: UIButton!
+    @IBOutlet weak private var readyButton: UIButton!
 
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "OrderQueueCollectionViewCell"
@@ -38,7 +41,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     func load(_ order: Order) {
         totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
-        orderStatus.load(order.status)
+        setStatus(to: order.status)
     }
 
     /// Populate the customer name into cell, since this requires to
@@ -49,7 +52,16 @@ class OrderCollectionViewCell: UICollectionViewCell {
         customerName.text = name
     }
 
+    /// Change the status label to a newStatus
+    /// Parameter: newStatus: The new status to change
     func setStatus(to newStatus: OrderStatus) {
         orderStatus.load(newStatus)
+        toggleButton(byStatus: newStatus)
+    }
+
+    private func toggleButton(byStatus status: OrderStatus) {
+        readyButton.isEnabled = status == .preparing
+        rejectButton.isEnabled = status == .preparing
+        collectButton.isEnabled = status == .ready
     }
 }
