@@ -33,8 +33,6 @@ class StallDetailController: UIViewController {
     var stallKey: String?
     /// The `StallOverview` object to contain all general information about this stall.
     var stall: StallOverview?
-    /// The `StallDetails` object to contain all details information about this stall.
-    var stallDetails: StallDetails?
     
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar
@@ -56,7 +54,7 @@ class StallDetailController: UIViewController {
         DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
         
         // Configures the table view.
-        let query = DatabaseRef.getNodeRef(of: StallDetails.path + "/\(path)/\(Food.path)")
+        let query = DatabaseRef.getNodeRef(of: String(format: Food.foodPath, path))
         dataSource = FUITableViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: foodTableView)
         foodTableView.delegate = self
