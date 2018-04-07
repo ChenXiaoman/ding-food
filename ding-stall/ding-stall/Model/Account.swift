@@ -19,7 +19,8 @@ struct Account {
     }
     
     /// Stall model of current user.
-    public static var stall: Stall?
+    public static var stall: StallDetails?
+    public static var stallOverview: StallOverview?
 
     public static var stallId: String {
         get { return uid }
@@ -31,8 +32,15 @@ struct Account {
         guard uid != "" else {
             return
         }
-        DatabaseRef.observeValueOnce(of: Stall.path + "/\(uid)") { snapshot in
-            stall = Stall.deserialize(snapshot)
+        DatabaseRef.observeValueOnce(of: StallDetails.path + "/\(uid)") { snapshot in
+            stall = StallDetails.deserialize(snapshot)
+            // Stop observing to avoid memory leak
+            DatabaseRef.stopObservers(of: StallDetails.path + "/\(uid)")
+        }
+        DatabaseRef.observeValueOnce(of: StallOverview.path + "/\(uid)") { snapshot in
+            stallOverview = StallOverview.deserialize(snapshot)
+            // Stop observing to avoid memory leak
+            DatabaseRef.stopObservers(of: StallOverview.path + "/\(uid)")
         }
     }
 }

@@ -45,4 +45,7 @@ struct Constants {
     static let meSettingCellId = "meSettingMenuCell"
     /// The height for me setting menu cells.
     static let meSettingCellHeight = CGFloat(60)
+
+    /// The time interval to define timeout.
+    static let timeoutInterval = 10.0
 }

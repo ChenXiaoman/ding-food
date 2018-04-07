@@ -26,7 +26,8 @@ class ShoppingCartController: FormViewController {
             form +++ Section("") <<< TextRow { row in
                 row.value = "Nothing here yet..."
                 row.disabled = true
-                row.cell.textField.textAlignment = .center
+            }.cellUpdate { cell, _ in
+                cell.textField.textAlignment = .center
             }
             return
         }

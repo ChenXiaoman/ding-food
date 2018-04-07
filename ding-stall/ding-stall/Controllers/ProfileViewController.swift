@@ -11,7 +11,7 @@ import UIKit
 /**
  The controller for the profile view. The profile view is used to initialise
  or edit stall profile
- */
+
 class ProfileViewController: UIViewController, ProfileViewDelegate {
 
     var profileView: ProfileView!
@@ -40,9 +40,9 @@ class ProfileViewController: UIViewController, ProfileViewDelegate {
         let filters = getValueFromTextField(profileView.filterTextField)
 
         // TODO: Filters should not be nil
-        let newStall = Stall(id: Stall.getAutoId,
+        let newStall = StallDetails(id: StallDetails.getAutoId, name: name,
                              location: location, openingHour: openingHour,
-                             description: description, menu: nil, queue: nil, filters: nil)
+                             description: description, menu: nil, filters: nil)
 
         newStall.save()
     }
@@ -52,7 +52,6 @@ class ProfileViewController: UIViewController, ProfileViewDelegate {
     }
 
     private func textFieldInputConstraint(text: String) -> Bool {
-        // TODO: Define Constraints
         return text != ""
     }
-}
+}*/

@@ -6,7 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-// This file is taken from Eureka ( https://github.com/xmartlabs/Eureka )
+// This file is taken from Eureka Example
+// see ( https://github.com/xmartlabs/Eureka )
 
 import Eureka
 

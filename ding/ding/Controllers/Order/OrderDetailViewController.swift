@@ -13,12 +13,9 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak private var foodTableView: UITableView!
     /// The 'Order' object which the view controller is displaying.
     var order: Order?
-    /// The Firebase data source for the list of food ordered.
     
-    var dataSource: FUITableViewDataSource?
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
+    }    
 }

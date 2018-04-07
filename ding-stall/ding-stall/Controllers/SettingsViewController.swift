@@ -12,5 +12,9 @@ import UIKit
  The controller for the application's setting view.
  */
 class SettingsViewController: UIViewController {
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 }

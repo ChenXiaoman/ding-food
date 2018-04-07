@@ -7,74 +7,68 @@
 //
 
 import UIKit
+import FirebaseDatabaseUI
 
 /**
  The controller for the order queue view
  Order queue only contains orders have not been collected
  */
 class OrderQueueViewController: NoNavigationBarViewController {
-    
-    @IBOutlet private var orderQueueTableView: UITableView!
-    @IBOutlet private var orderStatusPicker: UIPickerView!
-    
-    private var currentSellectedCell: OrderQueueTableViewCell?
-    
-    private let statusPickerData = ["rejected", "preparing", "ready for collect", "collected"]
-    
-    override func viewDidLoad() {
-        // Hide status picker
-        orderStatusPicker.isHidden = true
+
+    @IBOutlet fileprivate var orderQueueTableView: UITableView!
+
+    fileprivate var tableViewDataSource: FUITableViewDataSource?
+    fileprivate var orderDict = [IndexPath: Order]()
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // TODO: still need to order by createdAt?
+        let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId").queryEqual(toValue: Account.stallId)
+
+        self.tableViewDataSource = FUITableViewDataSource(query: query, populateCell: populateOrderCell)
+
+        tableViewDataSource?.bind(to: orderQueueTableView)
+        orderQueueTableView.delegate = self
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableViewDataSource?.unbind()
+    }
+
+    private func populateOrderCell(view: UITableView, indexPath: IndexPath, snapshot: DataSnapshot) -> UITableViewCell {
+        guard let cell = view.dequeueReusableCell(withIdentifier: StallOrderCell.identifier,
+                                                  for: indexPath) as? StallOrderCell else {
+            fatalError("Cell must be able to be downcasted to StallOrderCell")
+        }
+
+        if let order = Order.deserialize(snapshot) {
+            cell.delegate = self
+            cell.load(order)
+
+            orderDict[indexPath] = order
+        }
+
+        return cell
+    }
 }
 
-extension OrderQueueViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Fake data
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return orderQueueTableView.dequeueReusableCell(withIdentifier: OrderQueueTableViewCell.tableViewIdentifier) ?? UITableViewCell()
-    }
-    
-    // Handle when a table view cell is selected
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentSellectedCell = tableView.cellForRow(at: indexPath) as? OrderQueueTableViewCell
-        // Show status picker
-        orderStatusPicker.isHidden = false
+extension OrderQueueViewController: UITableViewDelegate {
+
+    // the selection of a table view cell is disabled
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
 
-/// Handle status picker
-extension OrderQueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    // The number of columns of data
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+extension OrderQueueViewController: StallOrderCellDelegate {
+    func changeOrderStatus(for cell: UITableViewCell) {
+        guard var order = orderDict[orderQueueTableView.indexPath(for: cell)!] else {
+            return
+        }
+
+        order.nextStatus()
+        order.save()
     }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return statusPickerData.count
-    }
-    
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return statusPickerData[row]
-    }
-    
-    // Catpure the picker view selection
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        
-        // Hide status picker when a status is picked
-        self.orderStatusPicker.isHidden = true
-        
-        // Set selected cell's status to new status
-        currentSellectedCell?.setStatus(to: statusPickerData[row])
-    }
-    
 }
