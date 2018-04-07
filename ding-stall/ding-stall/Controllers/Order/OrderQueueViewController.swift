@@ -94,7 +94,11 @@ class OrderQueueViewController: UIViewController {
         currentSelectedOrder = nil
     }
 
+    /// Handle pressing an order status button
+    /// `currentSelectedCell` and `currentSelectedOrder` will be assigned by corresponding
+    /// order cell and order model values
     @IBAction func pressStatusButton(_ sender: UIButton) {
+        // Convert the button center from local cell frame to the whole collection view frame
         guard let center = sender.superview?
             .convert(sender.center, to: sender.superview?.superview?.superview) else {
                 return
@@ -117,12 +121,6 @@ class OrderQueueViewController: UIViewController {
 }
 
 extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //currentSelectedCell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
-        //currentSelectedOrder = orderDict[indexPath]
-        //orderStatusPicker.isHidden = false
-    }
 
     /// Sets the size of each cell.
     func collectionView(_ collectionView: UICollectionView,
