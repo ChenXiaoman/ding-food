@@ -265,20 +265,20 @@ x5 Lemon Juice</string>
                                     <constraint firstAttribute="bottom" secondItem="lIf-0X-06W" secondAttribute="bottom" id="i80-Ix-Irm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View" customClass="ReivewUIView" customModule="ding" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View" customClass="ReivewUIView" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="64" y="306" width="640" height="205"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-zR-ZkL">
-                                        <rect key="frame" x="0.0" y="0.0" width="640" height="205"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-zR-ZkL">
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="245"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: ⭐️ ⭐️ ⭐️ ⭐️ ⭐️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5D-On-nzm">
-                                                <rect key="frame" x="0.0" y="0.0" width="640" height="11"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="640" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="The food is very delicous! The service is also very nice! Will purchase again! " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p5W-gd-cPs">
-                                                <rect key="frame" x="0.0" y="21" width="640" height="144"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="The food is very delicous! The service is also very nice! Will purchase again! " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p5W-gd-cPs">
+                                                <rect key="frame" x="0.0" y="30.5" width="640" height="174.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="r8t-2h-jfI"/>
@@ -291,8 +291,8 @@ x5 Lemon Juice</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTj-q9-1DF" customClass="MenuButton" customModule="ding" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="175" width="640" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTj-q9-1DF" customClass="MenuButton" customModule="ding" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="215" width="640" height="30"/>
                                                 <state key="normal" title="Submit"/>
                                             </button>
                                         </subviews>
@@ -307,7 +307,7 @@ x5 Lemon Juice</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNM-Gk-BfT">
-                                <rect key="frame" x="0.0" y="541" width="768" height="483"/>
+                                <rect key="frame" x="0.0" y="286" width="768" height="738"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodTableViewCell" rowHeight="269" id="hw7-VR-hM5" customClass="FoodTableViewCell" customModule="ding" customModuleProvider="target">
@@ -383,6 +383,7 @@ x5 Lemon Juice</string>
                             <constraint firstItem="4On-5U-RxZ" firstAttribute="height" secondItem="2jC-Na-kzj" secondAttribute="height" multiplier="1:4" id="Sox-Px-d4n"/>
                             <constraint firstItem="QNM-Gk-BfT" firstAttribute="trailing" secondItem="QFM-9b-dLC" secondAttribute="trailing" id="Twb-MC-LLX"/>
                             <constraint firstItem="QNM-Gk-BfT" firstAttribute="leading" secondItem="QFM-9b-dLC" secondAttribute="leading" id="ZEy-5k-mP8"/>
+                            <constraint firstItem="QNM-Gk-BfT" firstAttribute="top" secondItem="4On-5U-RxZ" secondAttribute="bottom" constant="10" id="bCa-oM-nxy"/>
                             <constraint firstItem="avK-Al-UtA" firstAttribute="width" secondItem="2jC-Na-kzj" secondAttribute="width" multiplier="5:6" id="bna-ge-1Eh"/>
                             <constraint firstItem="avK-Al-UtA" firstAttribute="top" secondItem="4On-5U-RxZ" secondAttribute="bottom" constant="30" id="dpR-8j-sYy"/>
                             <constraint firstItem="4On-5U-RxZ" firstAttribute="trailing" secondItem="QFM-9b-dLC" secondAttribute="trailing" id="fiW-1Y-TpT"/>
@@ -396,6 +397,8 @@ x5 Lemon Juice</string>
                         <outlet property="foodTableView" destination="QNM-Gk-BfT" id="agy-T6-vGC"/>
                         <outlet property="orderView" destination="4On-5U-RxZ" id="W8E-A1-VD3"/>
                         <outlet property="reviewView" destination="avK-Al-UtA" id="elU-Nc-mTx"/>
+                        <outlet property="reviewViewHiddenConstraint" destination="bCa-oM-nxy" id="WRy-mv-bel"/>
+                        <outlet property="reviewViewNormalConstraint" destination="SYn-a9-LJc" id="4rx-UM-WUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-kx-lHV" userLabel="First Responder" sceneMemberID="firstResponder"/>

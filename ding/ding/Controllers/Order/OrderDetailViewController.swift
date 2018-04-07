@@ -18,6 +18,13 @@ class OrderDetailViewController: UIViewController {
     /// The 'Order' object which the view controller is displaying.
     var order: Order?
     
+    /// These two conflicting constraints will be
+    /// resolved during runtime with method hideOrShowReview().
+    /// Activates this contraint when reviewView is displaying.
+    @IBOutlet weak private var reviewViewNormalConstraint: NSLayoutConstraint!
+    /// Activates this contraint when reviewView is hidden.
+    @IBOutlet weak private var reviewViewHiddenConstraint: NSLayoutConstraint!
+    
     override func viewWillAppear(_ animated: Bool) {
         // Shows the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -34,9 +41,11 @@ class OrderDetailViewController: UIViewController {
             return
         }
         if order.status == OrderStatus.collected {
-            reviewView.isHidden = false
+            NSLayoutConstraint.activate([reviewViewNormalConstraint])
+            NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
         } else {
-            reviewView.isHidden = true
+            NSLayoutConstraint.activate([reviewViewHiddenConstraint])
+            NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
         }
     }
 }
