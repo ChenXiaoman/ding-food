@@ -6,8 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Firebase
-import UIKit
+import FirebaseDatabaseUI
 
 /**
  The cell for the collection view in ongoing orders.

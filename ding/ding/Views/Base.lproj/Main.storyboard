@@ -226,26 +226,26 @@ x5 Lemon Juice</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4On-5U-RxZ" customClass="OrderView" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="768" height="256"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-0X-06W">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-0X-06W">
                                         <rect key="frame" x="0.0" y="-0.5" width="768" height="256.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="stall-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Z77-dv-oEX">
-                                                <rect key="frame" x="0.0" y="0.0" width="768" height="176"/>
+                                                <rect key="frame" x="349" y="0.0" width="70" height="154"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stall Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp9-K6-3xm">
-                                                <rect key="frame" x="318.5" y="176" width="131" height="36"/>
+                                                <rect key="frame" x="318.5" y="159" width="131" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order at time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-v0-uoY">
-                                                <rect key="frame" x="327.5" y="212" width="113" height="24"/>
+                                                <rect key="frame" x="327.5" y="200" width="113" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-lG-wyX" customClass="OrderStatusLabel" customModule="ding" customModuleProvider="target">
-                                                <rect key="frame" x="347.5" y="236" width="73" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Collected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-lG-wyX" customClass="OrderStatusLabel" customModule="ding" customModuleProvider="target">
+                                                <rect key="frame" x="347.5" y="229" width="73" height="27.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,7 +253,7 @@ x5 Lemon Juice</string>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Z77-dv-oEX" firstAttribute="width" secondItem="lIf-0X-06W" secondAttribute="width" multiplier="1:1" id="2oh-Dv-3Dn"/>
+                                            <constraint firstItem="Z77-dv-oEX" firstAttribute="height" secondItem="lIf-0X-06W" secondAttribute="height" multiplier="0.6" id="zS1-Pt-cTx"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -264,6 +264,12 @@ x5 Lemon Juice</string>
                                     <constraint firstItem="lIf-0X-06W" firstAttribute="leading" secondItem="4On-5U-RxZ" secondAttribute="leading" id="bVL-Qw-qlI"/>
                                     <constraint firstAttribute="bottom" secondItem="lIf-0X-06W" secondAttribute="bottom" id="i80-Ix-Irm"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="orderStatus" destination="Fub-lG-wyX" id="J3l-VO-Hac"/>
+                                    <outlet property="orderTime" destination="GRh-v0-uoY" id="vWA-LC-66w"/>
+                                    <outlet property="stallName" destination="Gp9-K6-3xm" id="86y-o0-zge"/>
+                                    <outlet property="stallPhoto" destination="Z77-dv-oEX" id="2fh-Yv-Hmh"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View" customClass="ReivewUIView" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="64" y="306" width="640" height="205"/>

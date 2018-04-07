@@ -29,6 +29,12 @@ class OrderDetailViewController: UIViewController {
         // Shows the navigation bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
         
+        // Loads the info about order
+        guard let order = order else {
+            return
+        }
+        orderView.load(order)
+        
         hideOrShowReview()
     }
     
