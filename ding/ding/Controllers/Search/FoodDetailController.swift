@@ -69,7 +69,8 @@ class FoodDetailController: UIViewController {
         guard checkPermission() else {
             return
         }
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "shoppingCartController")
+        let id = Constants.shoppingCartControllerId
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
             as? ShoppingCartController else {
             fatalError("Cannot find the controller.")
         }
