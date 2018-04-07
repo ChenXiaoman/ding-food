@@ -27,7 +27,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
             guard let food = Food.deserialize(snapshot) else {
                 return
             }
-            cell.load(food)
+            cell.load(food, with: order.foodQuantity[foodKey] ?? 0)
             DatabaseRef.stopObservers(of: foodPath)
         })
         

@@ -20,6 +20,8 @@ class FoodTableViewCell: UITableViewCell {
     
     /// The text format to display price.
     private static let priceFormat = "$%.1f"
+    /// The text format to display quantity.
+    private static let quantityFormat = " X %d"
     
     /// Loads data into and populate a `FoodTableViewCell`.
     /// - Parameter stall: The `Food` object as the data source.
@@ -31,5 +33,13 @@ class FoodTableViewCell: UITableViewCell {
         // Show the sold out image if the food is sold out
         soldOutImage?.isHidden = !food.isSoldOut
         soldOutBackground?.isHidden = !food.isSoldOut
+    }
+    
+    /// Loads data into and populate a `FoodTableViewCell`.
+    /// And also indicate its quantity
+    /// - Parameter stall: The `Food` object as the data source.
+    func load(_ food: Food, with quantity: Int) {
+        load(food)
+        price.text?.append(String(format: FoodTableViewCell.quantityFormat, quantity))
     }
 }
