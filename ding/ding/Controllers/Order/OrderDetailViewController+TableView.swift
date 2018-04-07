@@ -22,9 +22,11 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
             fatalError("Nil order")
         }
         
-        /// Gets the corresponding food object by its ID.
+        // Gets the corresponding food object by its ID.
         let foodKey = Array(order.foodName.keys)[indexPath.totalRow(in: tableView)]
-        let foodPath = StallDetails.path + "/\(order.stallId)\(Food.path)/" + foodKey
+        let foodPath = String(format: Food.menuPath, order.stallId) + "/\(foodKey)"
+        
+        // Observes and load the food information
         DatabaseRef.observeValueOnce(of: foodPath, onChange: { (snapshot: DataSnapshot) in
             guard let food = Food.deserialize(snapshot) else {
                 return

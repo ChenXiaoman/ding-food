@@ -54,7 +54,7 @@ class StallDetailController: UIViewController {
         DatabaseRef.observeValue(of: "\(StallOverview.path)/\(path)", onChange: populateStallOverview)
         
         // Configures the table view.
-        let query = DatabaseRef.getNodeRef(of: String(format: Food.foodPath, path))
+        let query = DatabaseRef.getNodeRef(of: String(format: Food.menuPath, path))
         dataSource = FUITableViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: foodTableView)
         foodTableView.delegate = self
