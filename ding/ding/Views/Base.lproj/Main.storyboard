@@ -223,7 +223,7 @@ x5 Lemon Juice</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4On-5U-RxZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4On-5U-RxZ" customClass="OrderView" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="768" height="256"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-0X-06W">
@@ -265,7 +265,7 @@ x5 Lemon Juice</string>
                                     <constraint firstAttribute="bottom" secondItem="lIf-0X-06W" secondAttribute="bottom" id="i80-Ix-Irm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View" customClass="ReivewUIView" customModule="ding" customModuleProvider="target">
                                 <rect key="frame" x="64" y="306" width="640" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-zR-ZkL">
@@ -394,6 +394,8 @@ x5 Lemon Juice</string>
                     </view>
                     <connections>
                         <outlet property="foodTableView" destination="QNM-Gk-BfT" id="agy-T6-vGC"/>
+                        <outlet property="orderView" destination="4On-5U-RxZ" id="W8E-A1-VD3"/>
+                        <outlet property="reviewView" destination="avK-Al-UtA" id="elU-Nc-mTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-kx-lHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
