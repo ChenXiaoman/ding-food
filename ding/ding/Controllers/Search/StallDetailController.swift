@@ -93,7 +93,6 @@ class StallDetailController: UIViewController {
                                                        for: indexPath) as? FoodTableViewCell else {
             fatalError("Unable to dequeue cell.")
         }
-        
         // Stops the loading indicator.
         if !loaded {
             loaded = true
