@@ -1,8 +1,8 @@
 //
-//  FilterIdentifier.swift
+//  Filter.swift
 //  ding
 //
-//  Created by Calvin Tantio on 17/3/18.
+//  Created by Yunpeng Niu on 07/04/18.
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 

@@ -17,6 +17,8 @@ import UIKit
 struct Constants {
     /// The identifier for main tab bar controller.
     static let tabBarControllerId = "mainTabBar"
+    /// The identifier for the stall form view controller
+    static let stallFormControllerId = "stallForm"
     /// The identifier for about view controller.
     static let aboutControllerId = "aboutViewController"
     /// The identifier for profile view controller.

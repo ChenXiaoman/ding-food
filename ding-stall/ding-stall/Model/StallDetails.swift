@@ -12,15 +12,12 @@ import FirebaseDatabase
  Represents a food stall registered in the application.
  */
 public struct StallDetails: FirebaseObject {
-    public static var path = "/stall_details"
+
+    public static var path = "/stalls"
 
     public let id: String
-    public let name: String
-    public var location: String
-    public var openingHour: String
-    public var description: String
-    public var menu: [String: Food]?
 
+    public var menu: [String: Food]?
 
     public var filters: Set<FilterIdentifier>?
     private var menuPath: String {
@@ -62,10 +59,9 @@ public struct StallDetails: FirebaseObject {
             return nil
         }
         dict["id"] = snapshot.key
-        guard let menuDict = dict["menu"] as? [String: Any] else {
-            return nil
+        if let menuDict = dict["menu"] as? [String: Any] {
+            dict["menu"] = deserializeNestedStructure(menuDict)
         }
-        dict["menu"] = deserializeNestedStructure(menuDict)
         return deserialize(dict)
     }
 }

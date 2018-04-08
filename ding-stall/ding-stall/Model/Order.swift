@@ -9,16 +9,15 @@
 import Foundation
 
 /**
- `Order` represents a collection of food with certain quantities. An `Order` is
- submitted by the customer and confirmed by the stall owner.
-
- - Author: Group 3 @ CS3217
- - Date: March 2018
+ Represents an order posted by a user. An order may have various food with different
+ quantities from the same stall.
  */
 public struct Order: FirebaseObject {
     public static let path = "/orders"
     /// Used to handle all logics related to Firebase Auth.
     private static let authorizer = Authorizer()
+    /// The format to display a certain kind of food with its amount.
+    private static let foodDescriptionFormat = "x%d %@\n"
 
     public let id: String
     var status: OrderStatus
@@ -34,9 +33,8 @@ public struct Order: FirebaseObject {
     /// A pre-computed total price to improve efficiency. Another consideration is that the
     /// total price should not be affected by changes to prices after the order is created.
     let totalPrice: Double
-    let remark: String
 
-    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int], remark: String) {
+    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int]) {
         id = Order.getAutoId
         self.status = status
         self.review = review
@@ -54,23 +52,13 @@ public struct Order: FirebaseObject {
         totalPrice = food.reduce(0.0) { sum, now in
             sum + now.key.price * Double(now.value)
         }
-        self.remark = remark
     }
 
     /// A full-text description of the order (including food name and amount).
     var description: String {
-        return ""
-    }
-
-    /// Proceed to the next order status
-    mutating func nextStatus() {
-        switch status {
-        case .preparing:
-            status = .ready
-        case .ready:
-            status = .collected
-        default:
-            return
+        return foodQuantity.reduce("") { accum, current in
+            let name = foodName[current.key] ?? ""
+            return accum + String(format: Order.foodDescriptionFormat, current.value, name)
         }
     }
 }
@@ -81,4 +69,3 @@ public enum OrderStatus: String, Codable {
     case ready = "Ready"
     case collected = "Collected"
 }
-

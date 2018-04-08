@@ -5,11 +5,14 @@ target 'ding-stall' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Firebase-related operations.
+ # Pods for Firebase-related operations.
   pod 'Firebase/Core'
+
+  # Pods for Firebase-UI functionalities.
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Database'
   pod 'FirebaseUI/Storage'
-  pod 'XLForm'
+
+  # Pods for form input.
   pod 'Eureka'
 end

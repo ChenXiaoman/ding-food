@@ -4,7 +4,7 @@
 //
 //  Created by Calvin Tantio on 2/4/18.
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
-//
+/*
 
 import UIKit
 
@@ -85,4 +85,4 @@ class StallOrderCell: UITableViewCell {
         }
     }
 }
-
+*/

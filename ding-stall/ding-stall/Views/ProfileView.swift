@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 protocol ProfileViewDelegate: class {
     func confirmStallProfile()
@@ -26,9 +26,9 @@ class ProfileView: UIView {
 
     var nameTextField: UITextField!
     var locationTextField: UITextField!
-    var openingHourTextField: UITextField! // TODO: Change this. Should be more complex than this. May not be textField
+    var openingHourTextField: UITextField!
     var descriptionTextField: UITextField!
-    var filterTextField: UITextField! // TODO: Change this. Should be more complex than this. May not be textField
+    var filterTextField: UITextField!
 
     var title: UILabel!
 
@@ -104,7 +104,8 @@ class ProfileView: UIView {
         textFieldsStackView.frame = CGRect(x: Constants.screenPadding,
                                            y: Constants.screenPadding + ClassConstants.titleRectHeight,
                                            width: Constants.screenWidth - 2 * Constants.screenPadding,
-                                           height: Constants.screenHeight - 2 * Constants.screenPadding - ClassConstants.titleRectHeight)
+                                           height: Constants.screenHeight - 2 * Constants.screenPadding
+                                                 - ClassConstants.titleRectHeight)
 
         addSubview(textFieldsStackView)
     }
@@ -112,4 +113,4 @@ class ProfileView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-}
+}*/
