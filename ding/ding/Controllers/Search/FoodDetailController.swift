@@ -68,13 +68,17 @@ class FoodDetailController: UIViewController {
         guard checkPermission() else {
             return
         }
+        /// Make a order of this food
         guard let currentStall = stall, let currentFood = food else {
             return
         }
         let foodAmount = [currentFood: Constants.orderDefaultAmount]
         let order = Order(stall: currentStall, food: foodAmount)
         order.save()
+        
+        alertOrderSuccessful()
     }
+    
     /// Opens the shopping cart when the button on the navigation bar is pressed.
     @objc
     func openShoppingCart() {
