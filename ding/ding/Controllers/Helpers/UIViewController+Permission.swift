@@ -24,9 +24,6 @@ extension UIViewController {
     private static let loginMessage = "Please log in first to proceed."
     /// The message to require email verification.
     private static let verifyEmailMessage = "Please verify your email address and then log in back."
-    
-    /// The tab bar index for me view.
-    private static let meViewTabBarIndex = 2
 
     /// An adapter to access authorizer object.
     var authorizer: Authorizer {
@@ -65,6 +62,6 @@ extension UIViewController {
 
     /// Brings the user to the me view (i.e, the last index in the tab bar).
     private func toMeTabBarView() {
-        tabBarController?.selectedIndex = UIViewController.meViewTabBarIndex
+        tabBarController?.selectedIndex = Constants.meViewTabBarIndex
     }
 }
