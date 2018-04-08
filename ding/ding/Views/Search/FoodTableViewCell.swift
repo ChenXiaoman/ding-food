@@ -28,8 +28,6 @@ class FoodTableViewCell: UITableViewCell {
         photo.image = nil
         name.text = nil
         price.text = nil
-        soldOutImage?.image = nil
-        soldOutBackground?.image = nil
         photo.clipsToBounds = true // Use for enable corner radius
         foodTypeLabel.awakeFromNib()
     }
