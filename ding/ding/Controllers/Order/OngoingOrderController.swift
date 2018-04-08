@@ -53,6 +53,8 @@ class OngoingOrderController: UIViewController {
         super.viewWillDisappear(animated)
         // Stops sending updates to the collection view (to avoid app crash).
         dataSource?.unbind()
+        // Stops the loading indicator (such that the timeout thread will not be triggered later).
+        loadingIndicator.stopAnimating()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
