@@ -8,7 +8,7 @@
 
 import FirebaseDatabaseUI
 
-extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension OrderDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return order?.foodName.count ?? 0
     }
@@ -27,7 +27,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let foodPath = String(format: Food.menuPath, order.stallId) + "/\(foodKey)"
         
         // Observes and load the food information
-        DatabaseRef.observeValueOnce(of: foodPath, onChange: { (snapshot: DataSnapshot) in
+        DatabaseRef.observeValueOnce(of: foodPath, onChange: { snapshot in
             guard let food = Food.deserialize(snapshot) else {
                 return
             }
