@@ -33,6 +33,9 @@ class FoodDetailController: UIViewController {
             title = stallName
         }
 
+        // Hides the keyboard when the user stops editing.
+        hideKeyboardWhenTappedAround()
+
         // Displays the food information.
         guard let food = food else {
             return
