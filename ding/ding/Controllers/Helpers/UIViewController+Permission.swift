@@ -24,6 +24,7 @@ extension UIViewController {
     private static let loginMessage = "Please log in first to proceed."
     /// The message to require email verification.
     private static let verifyEmailMessage = "Please verify your email address and then log in back."
+    
     /// The tab bar index for me view.
     private static let meViewTabBarIndex = 2
 

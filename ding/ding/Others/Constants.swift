@@ -27,9 +27,10 @@ struct Constants {
     static let aboutViewControllerId = "aboutViewController"
     /// The identifier for the order detail view controller.
     static let orderDetailControllerId = "orderDetailViewController"
+    /// The identifier for the ongoing order view controller.
+    static let ongoingOrderControllerId = "ongoingOrderController"
     /// The identifier for the shopping cart view controller.
     static let shoppingCartControllerId = "shoppingCartController"
-
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
 
@@ -50,4 +51,7 @@ struct Constants {
 
     /// The time interval to define timeout.
     static let timeoutInterval = 10.0
+    
+    /// The default amount of 'OrderImmediately' method
+    static let orderDefaultAmount = 1
 }

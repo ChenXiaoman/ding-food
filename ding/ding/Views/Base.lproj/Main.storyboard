@@ -81,7 +81,7 @@
         <!--OngoingOrderController-->
         <scene sceneID="TTT-6I-4u1">
             <objects>
-                <viewController id="VAa-hn-p6R" userLabel="OngoingOrderController" customClass="OngoingOrderController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ongoingOrderController" id="VAa-hn-p6R" userLabel="OngoingOrderController" customClass="OngoingOrderController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="im0-BX-I2a">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -915,6 +915,9 @@ x5 Lemon Juice</string>
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="orderImmediately:" destination="4J9-jl-KNV" eventType="touchUpInside" id="ESQ-t9-dty"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

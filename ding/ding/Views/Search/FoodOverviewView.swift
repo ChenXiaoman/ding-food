@@ -40,7 +40,7 @@ class FoodOverviewView: UIView {
         if let description = food.description {
             foodDescription.text = String(format: FoodOverviewView.descriptionFormat, description)
         } else {
-            foodDescription.removeFromSuperview()
+            foodDescription?.removeFromSuperview()
         }
     }
 }

@@ -80,17 +80,18 @@ class DialogHelpers {
     ///    - viewController: The view controller used to present this confirm dialog.
     ///    - title: The text shown as the title of the confirm dialog.
     ///    - message: The text shown as the main body of the confirm dialog.
+    ///    - cancelButtonText: The text shown in the cancel button.
     ///    - confirmHandler: The event to happen when confirmed.
     static func promptConfirm(in viewController: UIViewController,
-                              title: String, message: String,
+                              title: String, message: String, cancelButtonText: String,
                               onConfirm confirmHandler: @escaping () -> Void) {
         let prompt = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        prompt.addAction(UIAlertAction(title: "Confirm",
-                                       style: .destructive,
+        prompt.addAction(UIAlertAction(title: "OK",
+                                       style: .cancel,
                                        handler: { _ in
                                         confirmHandler()
         }))
-        prompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        prompt.addAction(UIAlertAction(title: cancelButtonText, style: .default, handler: nil))
         viewController.present(prompt, animated: true, completion: nil)
     }
 }
