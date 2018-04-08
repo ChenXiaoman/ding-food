@@ -34,6 +34,13 @@ struct Constants {
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
 
+    /// The tab bar index for search view.
+    static let searchViewTabBarIndex = 0
+    /// The tab bar index for ongoing order view.
+    static let ongoingOrderTabBarIndex = 1
+    /// The tab bar index for me view.
+    static let meViewTabBarIndex = 2
+
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.05)
     /// The border width for menu buttons
