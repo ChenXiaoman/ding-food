@@ -62,6 +62,19 @@ class FoodDetailController: UIViewController {
         toggleAddToShoppingCartButton()
     }
 
+    /// Order a food immediatly with order default amount 1
+    @IBAction func orderImmediately(_ sender: Any) {
+        /// Performs permission checking.
+        guard checkPermission() else {
+            return
+        }
+        guard let currentStall = stall, let currentFood = food else {
+            return
+        }
+        let foodAmount = [currentFood: Constants.orderDefaultAmount]
+        let order = Order(stall: currentStall, food: foodAmount)
+        order.save()
+    }
     /// Opens the shopping cart when the button on the navigation bar is pressed.
     @objc
     func openShoppingCart() {

@@ -83,14 +83,15 @@ class DialogHelpers {
     ///    - confirmHandler: The event to happen when confirmed.
     static func promptConfirm(in viewController: UIViewController,
                               title: String, message: String,
+                              confirmButtonText: String, cancelButtonText: String,
                               onConfirm confirmHandler: @escaping () -> Void) {
         let prompt = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        prompt.addAction(UIAlertAction(title: "Confirm",
+        prompt.addAction(UIAlertAction(title: confirmButtonText,
                                        style: .destructive,
                                        handler: { _ in
                                         confirmHandler()
         }))
-        prompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        prompt.addAction(UIAlertAction(title: cancelButtonText, style: .cancel, handler: nil))
         viewController.present(prompt, animated: true, completion: nil)
     }
 }

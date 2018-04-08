@@ -50,4 +50,7 @@ struct Constants {
 
     /// The time interval to define timeout.
     static let timeoutInterval = 10.0
+    
+    /// The default amount of 'OrderImmediately' method
+    static let orderDefaultAmount = 1
 }

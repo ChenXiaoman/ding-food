@@ -923,6 +923,9 @@ x5 Lemon Juice</string>
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="orderImmediately:" destination="4J9-jl-KNV" eventType="touchUpInside" id="zrX-ja-2Oc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
