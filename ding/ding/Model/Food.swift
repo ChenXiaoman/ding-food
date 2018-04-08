@@ -12,6 +12,7 @@
  */
 public struct Food: FirebaseObject {
     public static let path = "/menu"
+    static let menuPath = "/stalls/%@\(Food.path)"
     
     public let id: String
     public var name: String

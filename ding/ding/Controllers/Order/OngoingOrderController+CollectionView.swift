@@ -16,7 +16,17 @@ import UIKit
  */
 extension OngoingOrderController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let id = Constants.orderDetailControllerId
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
+            as? OrderDetailViewController else {
+                return
+        }
+        // Passes in the `Order` object displayed at this cell.
+        if let order = orders[indexPath.totalItem(in: collectionView)] {
+            controller.order = order
+        }
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
