@@ -23,11 +23,19 @@ class FoodTableViewCell: UITableViewCell {
     /// The text format to display quantity.
     private static let quantityFormat = " X %d"
     
+    override func awakeFromNib() {
+        photo.image = nil
+        name.text = nil
+        price.text = nil
+        soldOutImage?.image = nil
+        soldOutBackground?.image = nil
+        photo.clipsToBounds = true // Use for enable corner radius
+    }
+    
     /// Loads data into and populate a `FoodTableViewCell`.
     /// - Parameter stall: The `Food` object as the data source.
     func load(_ food: Food) {
         photo.setWebImage(at: food.photoPath ?? "", placeholder: #imageLiteral(resourceName: "food-icon"))
-        photo.clipsToBounds = true // Use for enable corner radius
         name.text = food.name
         price.text = String(format: FoodTableViewCell.priceFormat, food.price)
         // Show the sold out image if the food is sold out

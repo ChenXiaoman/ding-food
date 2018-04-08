@@ -35,6 +35,15 @@ class OngoingOrderCell: UICollectionViewCell {
     /// The height of this cell.
     static let height = StallListingCell.width * OngoingOrderCell.aspectRatioOfHeight
 
+    override func awakeFromNib() {
+        stallName.text = nil
+        stallPhoto.image = nil
+        totalPrice.text = nil
+        orderDescription.text = nil
+        orderStatus.awakeFromNib()
+        stallPhoto.clipsToBounds = true // Use for enable corner radius
+    }
+    
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
     func load(_ order: Order) {
@@ -51,7 +60,6 @@ class OngoingOrderCell: UICollectionViewCell {
             return
         }
         stallPhoto.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
-        stallPhoto.clipsToBounds = true // Use for enable corner radius
         stallName.text = stall.name
 
         // Stop observer after getting stall details

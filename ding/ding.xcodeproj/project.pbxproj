@@ -14,6 +14,7 @@
 		5D8848082078DC2F00FCDC3B /* ReivewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8848072078DC2F00FCDC3B /* ReivewUIView.swift */; };
 		5D88480A2078E05800FCDC3B /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8848092078E05800FCDC3B /* OrderView.swift */; };
 		5D88480C207A183000FCDC3B /* UIViewController + orderSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88480B207A183000FCDC3B /* UIViewController + orderSuccess.swift */; };
+		5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */; };
 		5DBC55B5206CA946000CCBED /* StallDetailController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC55B4206CA946000CCBED /* StallDetailController+TableView.swift */; };
 		5DC2343B20639DF3008B034A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343A20639DF3008B034A /* SearchViewController.swift */; };
 		5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343C2063A02A008B034A /* StallListingCell.swift */; };
@@ -77,6 +78,7 @@
 		5D8848072078DC2F00FCDC3B /* ReivewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReivewUIView.swift; sourceTree = "<group>"; };
 		5D8848092078E05800FCDC3B /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		5D88480B207A183000FCDC3B /* UIViewController + orderSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + orderSuccess.swift"; sourceTree = "<group>"; };
+		5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTypeLabel.swift; sourceTree = "<group>"; };
 		5DBC55B4206CA946000CCBED /* StallDetailController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StallDetailController+TableView.swift"; sourceTree = "<group>"; };
 		5DC2343A20639DF3008B034A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5DC2343C2063A02A008B034A /* StallListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallListingCell.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				F265B959207095410035A47B /* FoodOverviewView.swift */,
 				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
 				F26657F6206FCA5D00BE83F5 /* StallOverviewView.swift */,
+				5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				F297DEA1206F72F900991DC7 /* OngoingOrderController+CollectionView.swift in Sources */,
 				5DEC47C920785F8B00544A54 /* OrderDetailViewController+TableView.swift in Sources */,
 				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,
+				5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */,
 				F2043416207791C600FF3083 /* FilterView.swift in Sources */,
 				F2DEC658206CAD6A0021D3A0 /* DialogHelpers.swift in Sources */,
 				5D88480C207A183000FCDC3B /* UIViewController + orderSuccess.swift in Sources */,

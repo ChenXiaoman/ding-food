@@ -36,11 +36,18 @@ class StallListingCell: UICollectionViewCell {
     /// The text format to display average rating.
     private static let averageRatingFormat = "Average rating: %.1f"
 
+    override func awakeFromNib() {
+        photo.image = nil
+        name.text = nil
+        queueCount.text = nil
+        averageRating.text = nil
+        photo.clipsToBounds = true // Use for enable corner radius
+    }
+    
     /// Loads data into and populate a `StallListingCell`.
     /// - Parameter stall: The `StallOverview` object as the data source.
     func load(_ stall: StallOverview) {
         photo.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
-        photo.clipsToBounds = true // Use for enable corner radius
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)
