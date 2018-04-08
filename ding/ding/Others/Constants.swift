@@ -54,4 +54,7 @@ struct Constants {
     
     /// The default amount of 'OrderImmediately' method
     static let orderDefaultAmount = 1
+    
+    /// The text on the sold out button
+    static let soldOutButtonText = "Sold out"
 }

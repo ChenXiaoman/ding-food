@@ -19,7 +19,8 @@ class FoodDetailController: UIViewController {
     @IBOutlet weak private var foodOverviewView: FoodOverviewView!
     /// The button to add to shopping cart.
     @IBOutlet weak private var addToShoppingCartButton: MenuButton!
-    
+    /// The button to order the food immediately.
+    @IBOutlet weak private var orderImmediatelyButton: MenuButton!
     /// The current food object.
     var food: Food?
     /// The id of the current stall.
@@ -44,7 +45,8 @@ class FoodDetailController: UIViewController {
 
         // Configures the add to shopping cart button.
         if food.isSoldOut {
-            addToShoppingCartButton.disable(text: "Sold out")
+            orderImmediatelyButton.disable(text: Constants.soldOutButtonText)
+            addToShoppingCartButton.isHidden = true
         } else if let stallId = stall?.id, ShoppingCart.has(food.id, from: stallId) {
             toggleAddToShoppingCartButton()
         }
