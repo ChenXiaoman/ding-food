@@ -377,7 +377,6 @@ x5 Lemon Juice</string>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="LWN-Rz-jIE" id="WCl-QN-YrR"/>
-                                    <outlet property="delegate" destination="LWN-Rz-jIE" id="aLP-Wq-cwl"/>
                                 </connections>
                             </tableView>
                         </subviews>
