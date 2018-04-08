@@ -6,8 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import Firebase
-import UIKit
+import FirebaseDatabaseUI
 
 /**
  The cell for the collection view in ongoing orders.
@@ -27,12 +26,14 @@ class OngoingOrderCell: UICollectionViewCell {
 
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "ongoingOrderCell"
-    /// The aspect ratio of this cell.
-    private static let aspectRatio = CGFloat(1.0 / 3)
+    /// The aspect ratio of height of this cell.
+    private static let aspectRatioOfHeight = CGFloat(1.0 / 3)
+    /// The aspect ratio of of width this cell.
+    private static let aspectRatioOfWidth = CGFloat(19.0 / 20)
     /// The width of this cell.
-    static let width = Constants.screenWidth
+    static let width = Constants.screenWidth * aspectRatioOfWidth
     /// The height of this cell.
-    static let height = StallListingCell.width * OngoingOrderCell.aspectRatio
+    static let height = StallListingCell.width * OngoingOrderCell.aspectRatioOfHeight
 
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter order: The `Order` object as the data source.
@@ -50,6 +51,7 @@ class OngoingOrderCell: UICollectionViewCell {
             return
         }
         stallPhoto.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
+        stallPhoto.clipsToBounds = true // Use for enable corner radius
         stallName.text = stall.name
 
         // Stop observer after getting stall details
