@@ -32,6 +32,7 @@ class FoodFormViewController: FormViewController {
         static let description = "Description"
         static let type = "Type"
         static let image = "Image"
+        static let modifierName = "ModifierName"
     }
 
     override func viewDidLoad() {
@@ -133,15 +134,40 @@ class FoodFormViewController: FormViewController {
         let foodDescription = valueDict[Tag.description] as? String
 
         let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
-                           type: foodType, isSoldOut: false, photoPath: photoPath, modifier: nil)
+                           type: foodType, isSoldOut: false, photoPath: photoPath, modifier: getFoodModifier())
         Account.stall?.addFood(newFood)
     }
 
+    private func getFoodModifier() -> [String: [String]]? {
+        guard form.allSections.count > 1 else {
+            return nil
+        }
+        var modifierDict = [String: [String]]()
+        form.allSections.dropFirst().forEach { section in
+            let nameRow: TextRow = section.rowBy(tag: Tag.modifierName) ?? TextRow()
+            guard let modifierName = nameRow.value else {
+                return
+            }
+            let modifierRows = section.dropFirst(2)
+            var modifierContent = [String]()
+            modifierRows.forEach { row in
+                guard let value = (row as? TextRow)?.value else {
+                    return
+                }
+                modifierContent.append(value)
+            }
+            modifierDict[modifierName] = modifierContent
+        }
+        return modifierDict
+    }
+
+    /// Add a new section for food modifier
     private func addModifierSection(cell: ButtonCellOf<String>, row: ButtonRow) {
         form +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete], header: "", footer: "",
                                     multivalueSectionInitializer(_:))
     }
 
+    /// Initialize a section of food modifier
     private func multivalueSectionInitializer(_ section: MultivaluedSection) {
         tableView.setEditing(true, animated: false)
         section.addButtonProvider = { section in
@@ -173,6 +199,7 @@ class FoodFormViewController: FormViewController {
 
         section <<< TextRow { row in
             row.title = "Modifier Name"
+            row.tag = Tag.modifierName
             row.add(rule: RuleRequired())
         }
     }
