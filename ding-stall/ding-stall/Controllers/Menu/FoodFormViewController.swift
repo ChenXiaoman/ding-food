@@ -16,6 +16,11 @@ class FoodFormViewController: FormViewController {
     /// The id of the food shown in this form.
     /// If it is to add new food, it will use `Food.getAutoId`
     var foodId: String?
+
+    /// The path to store the food image
+    private var foodImagePath: String {
+        return "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
+    }
     
     /*
      The tags of this food details form, need to be inherited
@@ -98,6 +103,9 @@ class FoodFormViewController: FormViewController {
                 let path = "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
                 UIImageView.addPathShouldBeRefreshed(path)
             }
+            <<< ButtonRow { row in
+                row.title = "Add Food Modifier"
+            }.onCellSelection(addModifierSection(cell:row:))
     }
 
     /// Add the new food by informaion in the form, and store it
@@ -125,8 +133,48 @@ class FoodFormViewController: FormViewController {
         let foodDescription = valueDict[Tag.description] as? String
 
         let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
-                           type: foodType, isSoldOut: false, photoPath: photoPath)
+                           type: foodType, isSoldOut: false, photoPath: photoPath, modifier: nil)
         Account.stall?.addFood(newFood)
+    }
+
+    private func addModifierSection(cell: ButtonCellOf<String>, row: ButtonRow) {
+        form +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete], header: "", footer: "",
+                                    multivalueSectionInitializer(_:))
+    }
+
+    private func multivalueSectionInitializer(_ section: MultivaluedSection) {
+        tableView.setEditing(true, animated: false)
+        section.addButtonProvider = { section in
+            return ButtonRow { row in
+                row.title = "Add New Modifier Content"
+            }.cellUpdate { cell, _ in
+                cell.textLabel?.textAlignment = .left
+            }
+        }
+        section.multivaluedRowToInsertAt = { index in
+            return TextRow { row in
+                row.title = "Content \(index - 1):"
+                row.placeholder = "Modifier Content"
+                row.add(rule: RuleRequired())
+            }
+        }
+
+        section <<< ButtonRow { row in
+            row.title = "Delete this modifier"
+        }.onCellSelection { _, _ in
+            DialogHelpers.promptConfirm(in: self, title: "Warning",
+                                        message: "Do you want to delete this modifier") {
+                guard let sectionIndex = section.index else {
+                    return
+                }
+                self.form.remove(at: sectionIndex)
+            }
+        }
+
+        section <<< TextRow { row in
+            row.title = "Modifier Name"
+            row.add(rule: RuleRequired())
+        }
     }
 
     /// Show an alert message that the food is successfully add into menu
@@ -134,5 +182,9 @@ class FoodFormViewController: FormViewController {
         DialogHelpers.showAlertMessage(in: self, title: "Success", message: message) { _ in
             self.navigationController?.popViewController(animated: true)
         }
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.item > 1
     }
 }
