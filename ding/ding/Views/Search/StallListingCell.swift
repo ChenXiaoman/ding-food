@@ -52,5 +52,6 @@ class StallListingCell: UICollectionViewCell {
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)
+        filters.load(filters: stall.filters)
     }
 }

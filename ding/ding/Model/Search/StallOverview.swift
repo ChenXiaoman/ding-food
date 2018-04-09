@@ -24,4 +24,5 @@ struct StallOverview: FirebaseObject {
     let location: String
     let openingHour: String
     let description: String
+    let filters: [Filter] = []
 }

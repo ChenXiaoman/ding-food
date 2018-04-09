@@ -12,6 +12,11 @@
 public struct Filter: FirebaseObject {
     public static let path = "/filters"
 
-    // This id is the name of the filter
+    // This id is the name of the filter.
     public let id: String
+
+    /// Saves this `Filter` to the Firebase database.
+    public func save() {
+        DatabaseRef.getNodeRef(of: Filter.path).child(id).setValue(true)
+    }
 }
