@@ -19,7 +19,7 @@ class FoodFormViewController: FormViewController {
 
     /// The path to store the food image
     private var foodImagePath: String {
-        return "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
+        return "/Menu" + "/\(Account.stallId)" + "/\(foodId ?? "")"
     }
     
     /*
@@ -100,8 +100,7 @@ class FoodFormViewController: FormViewController {
                 row.tag = Tag.image
                 row.title = "Upload Food Photo"
             }.onChange { _ in
-                let path = "/Menu" + "/\(Account.stallId)" + "/\(self.foodId ?? "")"
-                UIImageView.addPathShouldBeRefreshed(path)
+                UIImageView.addPathShouldBeRefreshed(self.foodImagePath)
             }
             <<< ButtonRow { row in
                 row.title = "Add Food Option"
@@ -125,12 +124,11 @@ class FoodFormViewController: FormViewController {
                 return
         }
         var photoPath: String?
-        let path = "/Menu" + "/\(Account.stallId)" + "/\(id)"
         if
             let image = valueDict[Tag.image] as? UIImage,
             let imageData = image.standardData {
-                photoPath = path
-                StorageRef.upload(imageData, at: path)
+                photoPath = foodImagePath
+                StorageRef.upload(imageData, at: foodImagePath)
         } 
         let foodDescription = valueDict[Tag.description] as? String
 
@@ -170,12 +168,12 @@ class FoodFormViewController: FormViewController {
                                            message: "Some required fields are empty") { _ in }
             return false
         }
-        // TODO: Check whether the food name has duplicates
-//        guard !hasDuplicateFoodName() else {
-//            DialogHelpers.showAlertMessage(in: self, title: "Error",
-//                                           message: "This food name has already existed in menu") { _ in }
-//            return false
-//        }
+        
+        guard !hasDuplicateFoodName() else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "This food name has already existed in menu") { _ in }
+            return false
+        }
 
         guard !hasDuplicateOptionName() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
@@ -187,13 +185,18 @@ class FoodFormViewController: FormViewController {
 
     /// The whether this food name has already appears in the menu
     private func hasDuplicateFoodName() -> Bool {
-        let foodNames = Account.stall?.menu?.values.map { food in
+        let allFoodNames = Account.stall?.menu?.values.map { food in
             return food.name
         }
-        guard let foodName = form.values()[Tag.name] as? String else {
-            return true
+        guard let currentFoodName = Account.stall?.menu?[foodId ?? ""]?.name else {
+            return false
         }
-        return foodNames?.contains(foodName) ?? true
+        var otherFoodNames = Set(allFoodNames ?? [String]())
+        otherFoodNames.remove(currentFoodName)
+        guard let foodName = form.values()[Tag.name] as? String else {
+            return false
+        }
+        return otherFoodNames.contains(foodName)
     }
 
     ///  Check whether the option field has duplicated option names

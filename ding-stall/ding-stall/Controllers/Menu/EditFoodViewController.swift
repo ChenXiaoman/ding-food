@@ -81,13 +81,11 @@ class EditFoodViewController: FoodFormViewController {
     /// Populate the food option 
     private func populateFoodOption(_ foodOptions: [String: [String]]) {
         for option in foodOptions.keys {
-            print("has option")
             let newSection = getNewOptionSection(header: option)
             form +++ newSection
             foodOptions[option]?.forEach { optionValue in
                 guard let optionRow = newSection.multivaluedRowToInsertAt?(newSection.count - 1)
                     as? TextRow else {
-                        print("error create row")
                         return
                 }
                 optionRow.value = optionValue
@@ -95,4 +93,5 @@ class EditFoodViewController: FoodFormViewController {
             }
         }
     }
+    
 }
