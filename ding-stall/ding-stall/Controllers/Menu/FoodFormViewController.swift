@@ -32,7 +32,6 @@ class FoodFormViewController: FormViewController {
         static let description = "Description"
         static let type = "Type"
         static let image = "Image"
-        static let modifierName = "ModifierName"
     }
 
     override func viewDidLoad() {
@@ -105,8 +104,8 @@ class FoodFormViewController: FormViewController {
                 UIImageView.addPathShouldBeRefreshed(path)
             }
             <<< ButtonRow { row in
-                row.title = "Add Food Modifier"
-            }.onCellSelection(addModifierSection(cell:row:))
+                row.title = "Add Food Option"
+            }.onCellSelection(addOptionSection(cell:row:))
     }
 
     /// Add the new food by informaion in the form, and store it
@@ -134,45 +133,87 @@ class FoodFormViewController: FormViewController {
         let foodDescription = valueDict[Tag.description] as? String
 
         let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
-                           type: foodType, isSoldOut: false, photoPath: photoPath, modifier: getFoodModifier())
+                           type: foodType, isSoldOut: false, photoPath: photoPath, options: getFoodOption())
         Account.stall?.addFood(newFood)
     }
 
-    private func getFoodModifier() -> [String: [String]]? {
+    /// Retrieve the food option value from each section
+    /// Return: A dictionary that pairs the option name and its values
+    private func getFoodOption() -> [String: [String]]? {
         guard form.allSections.count > 1 else {
             return nil
         }
-        var modifierDict = [String: [String]]()
+        var optionDict = [String: [String]]()
         form.allSections.dropFirst().forEach { section in
-            let nameRow: TextRow = section.rowBy(tag: Tag.modifierName) ?? TextRow()
-            guard let modifierName = nameRow.value else {
+            guard let optionName = section.header?.title else {
                 return
             }
-            let modifierRows = section.dropFirst(2)
-            var modifierContent = [String]()
-            modifierRows.forEach { row in
+            let optionRows = section.dropFirst(2)
+            var optionContent = [String]()
+            optionRows.forEach { row in
                 guard let value = (row as? TextRow)?.value else {
                     return
                 }
-                modifierContent.append(value)
+                optionContent.append(value)
             }
-            modifierDict[modifierName] = modifierContent
+            optionDict[optionName] = optionContent
         }
-        return modifierDict
+        return optionDict
     }
 
-    /// Add a new section for food modifier
-    private func addModifierSection(cell: ButtonCellOf<String>, row: ButtonRow) {
-        form +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete], header: "", footer: "",
+    /// Check whether all fields of this form has valid input
+    func hasValidInput() -> Bool {
+        guard form.validate().isEmpty else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "Some required fields are empty") { _ in }
+            return false
+        }
+
+        guard !hasDuplicateFoodName() else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "This food name has already existed in menu") { _ in }
+            return false
+        }
+
+        guard !hasDuplicateOptionName() else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "Some food options have same name") { _ in }
+            return false
+        }
+        return true
+    }
+
+    /// The whether this food name has already appears in the menu
+    private func hasDuplicateFoodName() -> Bool {
+        let foodNames = Account.stall?.menu?.values.map { food in
+            return food.name
+        }
+        guard let foodName = form.values()[Tag.name] as? String else {
+            return true
+        }
+        return foodNames?.contains(foodName) ?? true
+    }
+
+    ///  Check whether the option field has duplicated option names
+    private func hasDuplicateOptionName() -> Bool {
+        let optionNames = form.allSections.dropFirst().map { section in
+            return section.header?.title ?? ""
+        }
+        return Set(optionNames).count < optionNames.count
+    }
+
+    /// Add a new section for food option
+    private func addOptionSection(cell: ButtonCellOf<String>, row: ButtonRow) {
+        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: "", footer: "",
                                     multivalueSectionInitializer(_:))
     }
 
-    /// Initialize a section of food modifier
+    /// Initialize a section of food option
     private func multivalueSectionInitializer(_ section: MultivaluedSection) {
         tableView.setEditing(true, animated: false)
         section.addButtonProvider = { section in
             return ButtonRow { row in
-                row.title = "Add New Modifier Content"
+                row.title = "Add New Option Content"
             }.cellUpdate { cell, _ in
                 cell.textLabel?.textAlignment = .left
             }
@@ -180,16 +221,16 @@ class FoodFormViewController: FormViewController {
         section.multivaluedRowToInsertAt = { index in
             return TextRow { row in
                 row.title = "Content \(index - 1):"
-                row.placeholder = "Modifier Content"
+                row.placeholder = "Option Content"
                 row.add(rule: RuleRequired())
             }
         }
 
         section <<< ButtonRow { row in
-            row.title = "Delete this modifier"
+            row.title = "Delete this option"
         }.onCellSelection { _, _ in
             DialogHelpers.promptConfirm(in: self, title: "Warning",
-                                        message: "Do you want to delete this modifier") {
+                                        message: "Do you want to delete this option") {
                 guard let sectionIndex = section.index else {
                     return
                 }
@@ -198,9 +239,10 @@ class FoodFormViewController: FormViewController {
         }
 
         section <<< TextRow { row in
-            row.title = "Modifier Name"
-            row.tag = Tag.modifierName
+            row.title = "Option Name"
             row.add(rule: RuleRequired())
+        }.onChange { row in
+            section.header?.title = row.value
         }
     }
 

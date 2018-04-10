@@ -23,7 +23,7 @@ class AddFoodViewController: FoodFormViewController {
     /// Add food into menu
     @objc
     private func addFood() {
-        guard form.validate().isEmpty else {
+        guard hasValidInput() else {
             return
         }
         modifyMenu()

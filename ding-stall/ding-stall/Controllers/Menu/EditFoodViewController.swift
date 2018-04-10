@@ -30,7 +30,7 @@ class EditFoodViewController: FoodFormViewController {
     /// It will delete original food and add the new one
     @objc
     private func updateFood() {
-        guard form.validate().isEmpty else {
+        guard hasValidInput() else {
             return
         }
         guard let id = foodId else {
