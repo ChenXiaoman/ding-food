@@ -20,7 +20,7 @@ class ProfileViewController: StallFormViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setToolbarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     /// Populate the row value by information in stall overview
