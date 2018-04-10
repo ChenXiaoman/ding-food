@@ -853,10 +853,10 @@ x5 Lemon Juice</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-Wo-7XR" userLabel="FoodOverviewView" customClass="FoodOverviewView" customModule="ding" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="768" height="575.5"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="414.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-Bd-slt" userLabel="Photo">
-                                        <rect key="frame" x="279.5" y="0.0" width="208" height="341.5"/>
+                                        <rect key="frame" x="279.5" y="0.0" width="208" height="256"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -864,22 +864,22 @@ x5 Lemon Juice</string>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEZ-nE-2aT">
-                                        <rect key="frame" x="10" y="351.5" width="748" height="214"/>
+                                        <rect key="frame" x="10" y="266" width="748" height="138.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Food Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-G7-Cej" userLabel="Name">
-                                                <rect key="frame" x="302.5" y="0.0" width="143" height="173.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                                <rect key="frame" x="291" y="0.0" width="166.5" height="98"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Price: $5.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSt-vf-4LE" userLabel="Price">
-                                                <rect key="frame" x="334.5" y="173.5" width="79.5" height="20"/>
+                                                <rect key="frame" x="334.5" y="98" width="79.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3x-kU-hpg" userLabel="Description">
-                                                <rect key="frame" x="307" y="193.5" width="134.5" height="20.5"/>
+                                                <rect key="frame" x="307" y="118" width="134.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -903,14 +903,8 @@ x5 Lemon Juice</string>
                                     <outlet property="price" destination="FSt-vf-4LE" id="xiH-Q5-3hR"/>
                                 </connections>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add remarks for your order" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1D-Pg-6yg" userLabel="RemarkArea">
-                                <rect key="frame" x="64" y="600.5" width="640" height="102.5"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-Kt-6YX" userLabel="AddShoppingCartButton" customClass="MenuButton" customModule="ding" customModuleProvider="target">
-                                <rect key="frame" x="64" y="778" width="640" height="40"/>
+                                <rect key="frame" x="64" y="775.5" width="640" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pgI-Og-aYd"/>
@@ -926,7 +920,7 @@ x5 Lemon Juice</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-DO-FIk" userLabel="OrderNowButton" customClass="MenuButton" customModule="ding" customModuleProvider="target">
-                                <rect key="frame" x="64" y="733" width="640" height="40"/>
+                                <rect key="frame" x="64" y="730.5" width="640" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0f3-XK-oqG"/>
@@ -941,23 +935,27 @@ x5 Lemon Juice</string>
                                     <action selector="orderImmediately:" destination="4J9-jl-KNV" eventType="touchUpInside" id="ESQ-t9-dty"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-rJ-o9Z">
+                                <rect key="frame" x="64" y="454.5" width="640" height="256"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="A1D-Pg-6yg" firstAttribute="centerX" secondItem="dTk-rt-1FS" secondAttribute="centerX" id="5X0-29-a11"/>
                             <constraint firstItem="aqt-DO-FIk" firstAttribute="centerX" secondItem="dTk-rt-1FS" secondAttribute="centerX" id="6Jb-KI-g3U"/>
-                            <constraint firstItem="Zuc-Bd-slt" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="1:3" id="6Y8-hJ-mXf"/>
+                            <constraint firstItem="Zuc-Bd-slt" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="1:4" id="6Y8-hJ-mXf"/>
                             <constraint firstItem="nzv-Kt-6YX" firstAttribute="width" secondItem="a80-3T-q3k" secondAttribute="width" multiplier="5:6" id="6zd-Fs-qAo"/>
                             <constraint firstItem="aqt-DO-FIk" firstAttribute="width" secondItem="a80-3T-q3k" secondAttribute="width" multiplier="5:6" id="9Mk-ZR-qkV"/>
                             <constraint firstItem="nzv-Kt-6YX" firstAttribute="centerX" secondItem="dTk-rt-1FS" secondAttribute="centerX" id="C9y-r7-MjM"/>
                             <constraint firstItem="2bG-Wo-7XR" firstAttribute="top" secondItem="dTk-rt-1FS" secondAttribute="top" id="Dug-ny-56e"/>
-                            <constraint firstItem="aqt-DO-FIk" firstAttribute="top" secondItem="A1D-Pg-6yg" secondAttribute="bottom" constant="30" id="FRh-Ig-x9g"/>
-                            <constraint firstItem="A1D-Pg-6yg" firstAttribute="top" secondItem="2bG-Wo-7XR" secondAttribute="bottom" constant="5" id="L16-AL-rUy"/>
+                            <constraint firstItem="fwA-rJ-o9Z" firstAttribute="centerX" secondItem="dTk-rt-1FS" secondAttribute="centerX" id="OKd-q5-nOc"/>
+                            <constraint firstItem="fwA-rJ-o9Z" firstAttribute="width" secondItem="nzv-Kt-6YX" secondAttribute="width" id="OYV-fh-aGl"/>
+                            <constraint firstItem="fwA-rJ-o9Z" firstAttribute="top" secondItem="2bG-Wo-7XR" secondAttribute="bottom" constant="20" id="Q4r-cE-Xlb"/>
                             <constraint firstItem="nzv-Kt-6YX" firstAttribute="top" secondItem="aqt-DO-FIk" secondAttribute="bottom" constant="5" id="VTD-SA-fAn"/>
-                            <constraint firstItem="A1D-Pg-6yg" firstAttribute="width" secondItem="a80-3T-q3k" secondAttribute="width" multiplier="5:6" id="YW6-cu-BJD"/>
-                            <constraint firstItem="A1D-Pg-6yg" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="1:10" id="jMo-4x-WaB"/>
+                            <constraint firstItem="fwA-rJ-o9Z" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="0.25" id="kE8-aj-ckT"/>
                             <constraint firstItem="2bG-Wo-7XR" firstAttribute="leading" secondItem="dTk-rt-1FS" secondAttribute="leading" id="pfP-e7-IiR"/>
-                            <constraint firstItem="2bG-Wo-7XR" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="375:667" id="vMf-FO-ocY"/>
+                            <constraint firstItem="aqt-DO-FIk" firstAttribute="top" secondItem="fwA-rJ-o9Z" secondAttribute="bottom" constant="20" id="rbW-oy-WmU"/>
+                            <constraint firstItem="2bG-Wo-7XR" firstAttribute="height" secondItem="a80-3T-q3k" secondAttribute="height" multiplier="270:667" id="vMf-FO-ocY"/>
                             <constraint firstItem="2bG-Wo-7XR" firstAttribute="trailing" secondItem="dTk-rt-1FS" secondAttribute="trailing" id="yif-v0-uDE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dTk-rt-1FS"/>
@@ -966,11 +964,12 @@ x5 Lemon Juice</string>
                         <outlet property="addToShoppingCartButton" destination="nzv-Kt-6YX" id="H1B-YN-ARr"/>
                         <outlet property="foodOverviewView" destination="2bG-Wo-7XR" id="wpi-l0-oAr"/>
                         <outlet property="orderImmediatelyButton" destination="aqt-DO-FIk" id="w2N-5T-WRh"/>
+                        <outlet property="tableView" destination="fwA-rJ-o9Z" id="iaE-QY-zqp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ju1-EH-C75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4082" y="-170"/>
+            <point key="canvasLocation" x="4081.25" y="-170.5078125"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="nWW-wM-74I">

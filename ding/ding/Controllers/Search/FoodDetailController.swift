@@ -7,14 +7,14 @@
 //
 
 import FirebaseDatabaseUI
-
+import Eureka
 /**
  The controller for food details view.
 
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class FoodDetailController: UIViewController {
+class FoodDetailController: FormViewController {
     /// The view to display information about the food.
     @IBOutlet weak private var foodOverviewView: FoodOverviewView!
     /// The button to add to shopping cart.
@@ -50,6 +50,8 @@ class FoodDetailController: UIViewController {
         } else if let stallId = stall?.id, ShoppingCart.has(food.id, from: stallId) {
             toggleAddToShoppingCartButton()
         }
+        
+        tableView.backgroundColor = UIColor.white
     }
 
     /// Adds the food to the shopping cart when the button is pressed.
