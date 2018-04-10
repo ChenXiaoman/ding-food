@@ -107,13 +107,16 @@ class FoodDetailController: FormViewController {
     /// Adds the food to the shopping cart when the button is pressed.
     /// - Parameter sender: The button being pressed.
     @IBAction func addToShoppingCart(_ sender: MenuButton) {
-        /// Performs permission checking.
+        // Performs permission checking.
         guard checkPermission() else {
             return
         }
-        guard let currentStall = stall, let currentFood = food else {
+        guard let currentStall = stall, var currentFood = food else {
             return
         }
+        // Changes the option for the food to the options that are currently selected.
+        currentFood.options = getCurrentOptions()
+        
         ShoppingCart.add(currentFood, from: currentStall, quantity: 1)
         openShoppingCart()
         toggleAddToShoppingCartButton()
@@ -121,19 +124,42 @@ class FoodDetailController: FormViewController {
 
     /// Order a food immediatly with order default amount 1
     @IBAction func orderImmediately(_ sender: Any) {
-        /// Performs permission checking.
+        // Performs permission checking.
         guard checkPermission() else {
             return
         }
-        /// Make a order of this food
-        guard let currentStall = stall, let currentFood = food else {
+        // Make a order of this food
+        guard let currentStall = stall, var currentFood = food else {
             return
         }
+        // Changes the option for the food to the options that are currently selected.
+        currentFood.options = getCurrentOptions()
+        
         let foodAmount = [currentFood: Constants.orderDefaultAmount]
         let order = Order(stall: currentStall, food: foodAmount)
         order.save()
         
         alertOrderSuccessful()
+    }
+    
+    /// Gets the options that currently selected for the food.
+    private func getCurrentOptions() -> [String: [String]] {
+        var options: [String: [String]] = [:]
+        
+        // The food either has a single section for options or it does not.
+        guard let rows = form.allSections.first else {
+            return options
+        }
+        
+        // Gets the current choice for each option from every row.
+        for row in rows {
+            guard let optionTitle = row.title,
+                let choice = row.baseValue as? String else {
+                    continue
+            }
+            options[optionTitle] = [choice]
+        }
+        return options
     }
     
     /// Opens the shopping cart when the button on the navigation bar is pressed.
