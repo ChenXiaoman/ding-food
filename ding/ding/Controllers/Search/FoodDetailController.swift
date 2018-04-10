@@ -111,11 +111,9 @@ class FoodDetailController: FormViewController {
         guard checkPermission() else {
             return
         }
-        guard let currentStall = stall, var currentFood = food else {
+        guard let currentStall = stall, let currentFood = food else {
             return
         }
-        // Changes the option for the food to the options that are currently selected.
-        currentFood.options = getCurrentOptions()
         
         ShoppingCart.add(currentFood, from: currentStall, quantity: 1)
         openShoppingCart()
@@ -129,22 +127,22 @@ class FoodDetailController: FormViewController {
             return
         }
         // Make a order of this food
-        guard let currentStall = stall, var currentFood = food else {
+        guard let currentStall = stall, let currentFood = food else {
             return
         }
-        // Changes the option for the food to the options that are currently selected.
-        currentFood.options = getCurrentOptions()
         
         let foodAmount = [currentFood: Constants.orderDefaultAmount]
-        let order = Order(stall: currentStall, food: foodAmount)
+        let foodOptions = [currentFood: getCurrentOptions()]
+        let order = Order(stall: currentStall, food: foodAmount, options: foodOptions)
         order.save()
         
         alertOrderSuccessful()
     }
     
     /// Gets the options that currently selected for the food.
-    private func getCurrentOptions() -> [String: [String]] {
-        var options: [String: [String]] = [:]
+    /// Returns a mapping between option title and user's choice
+    private func getCurrentOptions() -> [String: String] {
+        var options: [String: String] = [:]
         
         // The food either has a single section for options or it does not.
         guard let rows = form.allSections.first else {
@@ -157,7 +155,7 @@ class FoodDetailController: FormViewController {
                 let choice = row.baseValue as? String else {
                     continue
             }
-            options[optionTitle] = [choice]
+            options[optionTitle] = choice
         }
         return options
     }

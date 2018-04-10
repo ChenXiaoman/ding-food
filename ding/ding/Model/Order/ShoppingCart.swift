@@ -125,7 +125,7 @@ struct ShoppingCart {
     func toOrder() -> Order {
         var foodAmount: [Food: Int] = [:]
         food.values.forEach { foodAmount[$0.food] = $0.quantity }
-        return Order(stall: stall, food: foodAmount)
+        return Order(stall: stall, food: foodAmount, options: [:])
     }
 
     /// Converts all `ShoppingCart`s into an array of orders.
