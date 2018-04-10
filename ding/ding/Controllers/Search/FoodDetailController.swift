@@ -51,9 +51,53 @@ class FoodDetailController: FormViewController {
             toggleAddToShoppingCartButton()
         }
         
-        tableView.backgroundColor = UIColor.white
+        setUpOptions()
     }
-
+    
+    /// Set up the form for users to
+    /// have various options for ordering the food
+    private func setUpOptions() {
+        // Makes the background color the same as the app's background color.
+        tableView.backgroundColor = UIColor.white
+        let section = Section()
+        
+        guard let options = food?.options else {
+            return
+        }
+        // Adds a new `PopoverSelectorRow` for each option.
+        for (optionTitle, optionNames) in options {
+            section <<< makeOptionRow(optionTitle: optionTitle, optionNames: optionNames)
+        }
+        form +++ section
+    }
+    
+    /// The factory method for a new `PopoverSelectorRow` to display options.
+    /// - Parameters:
+    ///    - optionTitle: The title of the option.
+    ///    - optionNames: The various options.
+    /// - Returns: A new `PopoverSelectorRow` to display this option.
+    private func makeOptionRow(optionTitle: String, optionNames: [String]) -> PopoverSelectorRow<String> {
+        
+        // The default value is always the first option.
+        let defaultValue = optionNames.first
+        
+        return PopoverSelectorRow<String> {
+            
+            $0.title = optionTitle
+            $0.options = optionNames
+            $0.selectorTitle = optionTitle
+            $0.value = defaultValue
+        
+        }.onChange { row in
+            if row.value == nil {
+                // Sets to default value when the row value is nil.
+                // Prevents any option value to be empty.
+                row.value = defaultValue
+                row.reload()
+            }
+        }
+    }
+    
     /// Adds the food to the shopping cart when the button is pressed.
     /// - Parameter sender: The button being pressed.
     @IBAction func addToShoppingCart(_ sender: MenuButton) {
