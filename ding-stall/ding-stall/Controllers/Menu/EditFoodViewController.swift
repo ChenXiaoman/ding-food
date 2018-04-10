@@ -124,7 +124,6 @@ class EditFoodViewController: FoodFormViewController {
                 }
                 optionRow.value = optionValue
                 newSection.insert(optionRow, at: newSection.count - 1)
-                newSection <<< optionRow
             }
         }
     }
