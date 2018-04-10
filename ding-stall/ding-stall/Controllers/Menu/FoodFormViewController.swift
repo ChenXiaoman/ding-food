@@ -14,13 +14,7 @@ import Eureka
 class FoodFormViewController: FormViewController {
 
     /// The id of the food shown in this form.
-    /// If it is to add new food, it will use `Food.getAutoId`
     var foodId: String?
-
-    /// The path to store the food image
-    private var foodImagePath: String {
-        return "/Menu" + "/\(Account.stallId)" + "/\(foodId ?? "")"
-    }
     
     /*
      The tags of this food details form, need to be inherited
@@ -31,6 +25,7 @@ class FoodFormViewController: FormViewController {
         static let price = "Price"
         static let description = "Description"
         static let type = "Type"
+        static let soldOut = "isSoldOut"
         static let image = "Image"
     }
 
@@ -96,11 +91,14 @@ class FoodFormViewController: FormViewController {
                 row.tag = Tag.description
                 row.title = "Food Description"
             }
+            <<< SwitchRow { row in
+                row.tag = Tag.soldOut
+                row.title = "Is Sold Out?"
+                row.value = false
+            }
             <<< ImageRow { row in
                 row.tag = Tag.image
                 row.title = "Upload Food Photo"
-            }.onChange { _ in
-                UIImageView.addPathShouldBeRefreshed(self.foodImagePath)
             }
             <<< ButtonRow { row in
                 row.title = "Add Food Option"
@@ -112,34 +110,35 @@ class FoodFormViewController: FormViewController {
     /// Add the new food by informaion in the form, and store it
     /// Food Name, Food Price and Food Type are required, and others are optional
     func modifyMenu() {
-        let valueDict = form.values()
-        guard let id = foodId else {
-            return
-        }
-        guard
-            let foodName = valueDict[Tag.name] as? String,
-            let foodPrice = valueDict[Tag.price] as? Double,
-            foodPrice != Double.nan && foodPrice > 0,
-            let foodType = valueDict[Tag.type] as? FoodType else {
-                return
-        }
-        var photoPath: String?
-        if
-            let image = valueDict[Tag.image] as? UIImage,
-            let imageData = image.standardData {
-                photoPath = foodImagePath
-                StorageRef.upload(imageData, at: foodImagePath)
-        } 
-        let foodDescription = valueDict[Tag.description] as? String
-
-        let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
-                           type: foodType, isSoldOut: false, photoPath: photoPath, options: getFoodOption())
-        Account.stall?.addFood(newFood)
+//        let valueDict = form.values()
+//        guard let id = foodId else {
+//            return
+//        }
+//        guard
+//            let foodName = valueDict[Tag.name] as? String,
+//            let foodPrice = valueDict[Tag.price] as? Double,
+//            foodPrice != Double.nan && foodPrice > 0,
+//            let foodType = valueDict[Tag.type] as? FoodType,
+//            let isSoldOut = valueDict[Tag.soldOut] as? Bool else {
+//                return
+//        }
+//        var photoPath: String?
+//        if
+//            let image = valueDict[Tag.image] as? UIImage,
+//            let imageData = image.standardData {
+//                photoPath = foodImagePath
+//                StorageRef.upload(imageData, at: foodImagePath)
+//        }
+//        let foodDescription = valueDict[Tag.description] as? String
+//
+//        let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
+//                           type: foodType, isSoldOut: isSoldOut, photoPath: photoPath, options: getFoodOption())
+//        Account.stall?.addFood(newFood)
     }
 
     /// Retrieve the food option value from each section
     /// Return: A dictionary that pairs the option name and its values
-    private func getFoodOption() -> [String: [String]]? {
+    func getFoodOption() -> [String: [String]]? {
         guard form.allSections.count > 1 else {
             return nil
         }

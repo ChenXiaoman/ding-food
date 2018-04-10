@@ -41,6 +41,7 @@ class EditFoodViewController: FoodFormViewController {
             return
         }
 
+        currentFood?.options = getFoodOption()
         guard let currentPhoto = (form.rowBy(tag: Tag.image) as? ImageRow)?.value else {
             return
         }
@@ -70,7 +71,8 @@ class EditFoodViewController: FoodFormViewController {
             let nameRow = form.rowBy(tag: Tag.name) as? TextRow,
             let priceRow = form.rowBy(tag: Tag.price) as? DecimalRow,
             let descRow = form.rowBy(tag: Tag.description) as? TextRow,
-            let typeRow = form.rowBy(tag: Tag.type) as? ActionSheetRow<FoodType> else {
+            let typeRow = form.rowBy(tag: Tag.type) as? ActionSheetRow<FoodType>,
+            let soldOutRow = form.rowBy(tag: Tag.soldOut) as? SwitchRow else {
                 return
         }
         nameRow.onChange { row in
@@ -88,6 +90,10 @@ class EditFoodViewController: FoodFormViewController {
         typeRow.onChange { row in
             self.currentFood?.type = row.value ?? .main
         }
+
+        soldOutRow.onChange { row in
+            self.currentFood?.isSoldOut = row.value ?? false
+        }
     }
 
     /// Populate the initial value in the form by information of selected food
@@ -99,6 +105,7 @@ class EditFoodViewController: FoodFormViewController {
         (form.rowBy(tag: Tag.price) as? DecimalRow)?.value = foodModel.price
         (form.rowBy(tag: Tag.type) as? ActionSheetRow<FoodType>)?.value = foodModel.type
         (form.rowBy(tag: Tag.description) as? TextRow)?.value = foodModel.description
+        (form.rowBy(tag: Tag.soldOut) as? SwitchRow)?.value = foodModel.isSoldOut
         (form.rowBy(tag: Tag.image) as? ImageRow)?.value = foodPhoto
         if let optionDict = foodModel.options {
             populateFoodOption(optionDict)
