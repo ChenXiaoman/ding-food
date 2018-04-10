@@ -24,6 +24,10 @@ class FilterLabel: UILabel {
     private static let insets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     /// The inverted insets around the text of this label.
     private static let invertedInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: -5)
+    /// The displayed width of this `FilterLabel`.
+    static let width = CGFloat(30)
+    /// The size of this `FilterLabel`.
+    static let size = CGSize(width: FilterLabel.width, height: 10)
 
     override func awakeFromNib() {
         super.awakeFromNib()

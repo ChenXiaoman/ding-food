@@ -20,6 +20,11 @@ class FilterView: UIView {
     /// Loads a list of `Filter`s to be displayed in this `FilterView`.
     /// - Parameter filters: A list of `Filter`s to be displayed.
     func load(filters: [Filter]) {
-
+        for (index, filter) in filters.enumerated() {
+            let origin = CGPoint(x: FilterLabel.width * CGFloat(index), y: 0)
+            let label = FilterLabel(frame: CGRect(origin: origin, size: FilterLabel.size))
+            label.text = filter.name
+            addSubview(label)
+        }
     }
 }

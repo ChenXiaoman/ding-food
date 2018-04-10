@@ -7,16 +7,13 @@
 //
 
 /**
- Represents an identifier that a user can use to filter a stall by.
+ Represents a `Filter` that a stall can belong to. Notice that while many
+ stalls can belong to the same `Filter`, a stall can belong to many `Filter`s
+ as well.
  */
 public struct Filter: FirebaseObject {
     public static let path = "/filters"
 
-    // This id is the name of the filter.
     public let id: String
-
-    /// Saves this `Filter` to the Firebase database.
-    public func save() {
-        DatabaseRef.getNodeRef(of: Filter.path).child(id).setValue(true)
-    }
+    public let name: String
 }
