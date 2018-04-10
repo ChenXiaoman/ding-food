@@ -59,16 +59,22 @@ class FoodDetailController: FormViewController {
     private func setUpOptions() {
         // Makes the background color the same as the app's background color.
         tableView.backgroundColor = UIColor.white
-        let section = Section()
         
         guard let options = food?.options else {
             return
         }
-        // Adds a new `PopoverSelectorRow` for each option.
-        for (optionTitle, optionNames) in options {
-            section <<< makeOptionRow(optionTitle: optionTitle, optionNames: optionNames)
+        
+        // Set up options form only if the options are non-empty
+        if !options.isEmpty {
+            
+            let section = Section(Constants.foodOptionSectionText)
+            
+            // Adds a new `PopoverSelectorRow` for each option.
+            for (optionTitle, optionNames) in options {
+                section <<< makeOptionRow(optionTitle: optionTitle, optionNames: optionNames)
+            }
+            form +++ section
         }
-        form +++ section
     }
     
     /// The factory method for a new `PopoverSelectorRow` to display options.
