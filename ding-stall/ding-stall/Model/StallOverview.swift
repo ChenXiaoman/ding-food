@@ -17,7 +17,7 @@ public struct StallOverview: FirebaseObject {
     public static let path = "/stall_overviews"
 
     public let id: String
-    public let name: String
+    public var name: String
     public var queueCount: Int
     public var averageRating: Double
     public var photoPath: String
