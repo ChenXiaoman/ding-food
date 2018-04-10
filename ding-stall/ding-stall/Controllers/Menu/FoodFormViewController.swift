@@ -105,7 +105,9 @@ class FoodFormViewController: FormViewController {
             }
             <<< ButtonRow { row in
                 row.title = "Add Food Option"
-            }.onCellSelection(addOptionSection(cell:row:))
+            }.onCellSelection { _, _ in
+                self.form +++ self.getNewOptionSection(header: "")
+            }
     }
 
     /// Add the new food by informaion in the form, and store it
@@ -168,12 +170,12 @@ class FoodFormViewController: FormViewController {
                                            message: "Some required fields are empty") { _ in }
             return false
         }
-
-        guard !hasDuplicateFoodName() else {
-            DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "This food name has already existed in menu") { _ in }
-            return false
-        }
+        // TODO: Check whether the food name has duplicates
+//        guard !hasDuplicateFoodName() else {
+//            DialogHelpers.showAlertMessage(in: self, title: "Error",
+//                                           message: "This food name has already existed in menu") { _ in }
+//            return false
+//        }
 
         guard !hasDuplicateOptionName() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
@@ -202,10 +204,11 @@ class FoodFormViewController: FormViewController {
         return Set(optionNames).count < optionNames.count
     }
 
-    /// Add a new section for food option
-    private func addOptionSection(cell: ButtonCellOf<String>, row: ButtonRow) {
-        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: "", footer: "",
-                                    multivalueSectionInitializer(_:))
+    /// Create and return a new section for food option
+    /// Parameter: header: the header title of this sction
+    func getNewOptionSection(header: String) -> MultivaluedSection {
+        return MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: header, footer: "",
+                                  multivalueSectionInitializer(_:))
     }
 
     /// Initialize a section of food option
@@ -240,6 +243,7 @@ class FoodFormViewController: FormViewController {
 
         section <<< TextRow { row in
             row.title = "Option Name"
+            row.value = section.header?.title
             row.add(rule: RuleRequired())
         }.onChange { row in
             section.header?.title = row.value

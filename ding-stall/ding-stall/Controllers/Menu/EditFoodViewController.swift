@@ -50,6 +50,9 @@ class EditFoodViewController: FoodFormViewController {
         (form.rowBy(tag: Tag.price) as? DecimalRow)?.value = foodModel.price
         (form.rowBy(tag: Tag.type) as? ActionSheetRow<FoodType>)?.value = foodModel.type
         (form.rowBy(tag: Tag.description) as? TextRow)?.value = foodModel.description
+        if let optionDict = foodModel.options {
+            populateFoodOption(optionDict)
+        }
         if let photoPath = foodModel.photoPath {
             let maxImageSize = Int64(Constants.standardImageSize * Constants.bytesPerKiloByte)
             StorageRef.download(from: photoPath, maxSize: maxImageSize, onComplete: populateImage)
@@ -73,5 +76,23 @@ class EditFoodViewController: FoodFormViewController {
         let imageRow = form.rowBy(tag: Tag.image) as? ImageRow
         imageRow?.value = image
         imageRow?.updateCell()
+    }
+
+    /// Populate the food option 
+    private func populateFoodOption(_ foodOptions: [String: [String]]) {
+        for option in foodOptions.keys {
+            print("has option")
+            let newSection = getNewOptionSection(header: option)
+            form +++ newSection
+            foodOptions[option]?.forEach { optionValue in
+                guard let optionRow = newSection.multivaluedRowToInsertAt?(newSection.count - 1)
+                    as? TextRow else {
+                        print("error create row")
+                        return
+                }
+                optionRow.value = optionValue
+                newSection <<< optionRow
+            }
+        }
     }
 }
