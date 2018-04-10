@@ -36,4 +36,8 @@ public struct StallOverview: FirebaseObject {
         queueCount = 0
         averageRating = 0
     }
+
+    public static var newPhotoPath: String {
+        return StallOverview.path + "/\(StallOverview.getAutoId)"
+    }
 }

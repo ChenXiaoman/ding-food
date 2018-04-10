@@ -78,18 +78,18 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         case .logout:
             authorizer.signOut()
             navigationController?.popToRootViewController(animated: true)
-//        case .profile:
-//            let id = info.toControllerId
-//            guard let profileController = storyboard?.instantiateViewController(withIdentifier: id)
-//                as? ProfileViewController else {
-//                    print("error")
-//                    return
-//            }
-//            guard let stallImage = stallPhoto.image, !stallImage.isEqual(#imageLiteral(resourceName: "avatar")) else {
-//                return
-//            }
-//            profileController.initialize(photo: stallImage)
-//            navigationController?.pushViewController(profileController, animated: true)
+        case .profile:
+            let id = info.toControllerId
+            guard let profileController = storyboard?.instantiateViewController(withIdentifier: id)
+                as? ProfileViewController else {
+                    print("error")
+                    return
+            }
+            guard let stallImage = stallPhoto.image, !stallImage.isEqual(#imageLiteral(resourceName: "avatar")) else {
+                return
+            }
+            profileController.initialize(photo: stallImage)
+            navigationController?.pushViewController(profileController, animated: true)
         default:
             let id = info.toControllerId
             guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
