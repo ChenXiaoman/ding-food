@@ -37,6 +37,7 @@ public struct StallOverview: FirebaseObject {
         averageRating = 0
     }
 
+    /// Provide a new path for the stall photo if it has changed
     public static var newPhotoPath: String {
         return StallOverview.path + "/\(StallOverview.getAutoId)"
     }
