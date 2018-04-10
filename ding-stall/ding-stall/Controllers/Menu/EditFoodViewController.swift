@@ -115,7 +115,7 @@ class EditFoodViewController: FoodFormViewController {
     /// Populate the food option 
     private func populateFoodOption(_ foodOptions: [String: [String]]) {
         for option in foodOptions.keys {
-            let newSection = getNewOptionSection(header: option)
+            var newSection = getNewOptionSection(header: option)
             form +++ newSection
             foodOptions[option]?.forEach { optionValue in
                 guard let optionRow = newSection.multivaluedRowToInsertAt?(newSection.count - 1)
@@ -123,6 +123,7 @@ class EditFoodViewController: FoodFormViewController {
                         return
                 }
                 optionRow.value = optionValue
+                newSection.insert(optionRow, at: newSection.count - 1)
                 newSection <<< optionRow
             }
         }
