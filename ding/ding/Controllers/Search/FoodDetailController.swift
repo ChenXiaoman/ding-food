@@ -115,7 +115,8 @@ class FoodDetailController: FormViewController {
             return
         }
         
-        ShoppingCart.add(currentFood, from: currentStall, quantity: 1)
+        ShoppingCart.add(currentFood, from: currentStall, quantity: 1,
+                         options: getCurrentOptions())
         openShoppingCart()
         toggleAddToShoppingCartButton()
     }
