@@ -25,4 +25,9 @@ public struct Food: FirebaseObject {
     public mutating func soldOut() {
         isSoldOut = true
     }
+
+    /// Provide a new path for the stall photo if it has changed
+    public static var newPhotoPath: String {
+        return Food.path + "/\(Account.stallId)" + "/\(Food.getAutoId)"
+    }
 }
