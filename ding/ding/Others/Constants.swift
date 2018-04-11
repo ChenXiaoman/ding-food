@@ -27,11 +27,19 @@ struct Constants {
     static let aboutViewControllerId = "aboutViewController"
     /// The identifier for the order detail view controller.
     static let orderDetailControllerId = "orderDetailViewController"
+    /// The identifier for the ongoing order view controller.
+    static let ongoingOrderControllerId = "ongoingOrderController"
     /// The identifier for the shopping cart view controller.
     static let shoppingCartControllerId = "shoppingCartController"
-
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
+
+    /// The tab bar index for search view.
+    static let searchViewTabBarIndex = 0
+    /// The tab bar index for ongoing order view.
+    static let ongoingOrderTabBarIndex = 1
+    /// The tab bar index for me view.
+    static let meViewTabBarIndex = 2
 
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.05)
@@ -50,4 +58,13 @@ struct Constants {
 
     /// The time interval to define timeout.
     static let timeoutInterval = 10.0
+    
+    /// The default amount of 'OrderImmediately' method
+    static let orderDefaultAmount = 1
+    
+    /// The text on the sold out button
+    static let soldOutButtonText = "Sold out"
+    
+    /// The text on the section of food option
+    static let foodOptionSectionText = "Choose your favourite option(s)"
 }

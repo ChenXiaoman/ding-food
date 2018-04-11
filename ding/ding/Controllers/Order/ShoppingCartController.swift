@@ -17,20 +17,25 @@ import Eureka
 class ShoppingCartController: FormViewController {
     /// The reference to the parent `FoodDetailController`.
     weak var parentController: FoodDetailController?
+    /// The row to indicate that the shopping cart is empty.
+    private var emptyIndicatorSection: Section?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Configures the indicator for empty shopping cart.
-        if ShoppingCart.shoppingCarts.isEmpty {
-            form +++ Section("") <<< TextRow { row in
-                row.value = "Nothing here yet..."
-                row.disabled = true
-            }.cellUpdate { cell, _ in
-                cell.textField.textAlignment = .center
-            }
-            return
+        let section = Section("")
+        section.hidden = Condition.function([]) { _ in
+            return !ShoppingCart.shoppingCarts.isEmpty
         }
+        section <<< TextRow { row in
+            row.value = "Nothing here yet..."
+            row.disabled = true
+        }.cellUpdate { cell, _ in
+            cell.textField.textAlignment = .center
+        }
+        form +++ section
+        emptyIndicatorSection = section
 
         // Configures the form to show all orders up to now.
         addForm()
@@ -84,6 +89,7 @@ class ShoppingCartController: FormViewController {
             if value == 0 {
                 row.evaluateHidden()
                 row.section?.evaluateHidden()
+                self.emptyIndicatorSection?.evaluateHidden()
                 // Lets the parent controller sync with the current state.
                 if let parentFoodId = self.parentController?.food?.id, parentFoodId == foodId {
                     self.parentController?.toggleAddToShoppingCartButton()
@@ -98,7 +104,7 @@ class ShoppingCartController: FormViewController {
     private func makeSubmitButton(stallId: String) -> ButtonRow {
         return ButtonRow { row in
             row.title = "Submit"
-        }.onCellSelection { _, _ in
+        }.onCellSelection { _, row in
             guard let order = ShoppingCart.shoppingCarts[stallId]?.toOrder() else {
                 return
             }
@@ -109,10 +115,11 @@ class ShoppingCartController: FormViewController {
                 self.parentController?.toggleAddToShoppingCartButton()
             }
 
-            // Submits the order, removes the order record and closes the shopping cart.
+            // Submits the order, removes the order record and refreshes the shopping cart.
             order.save()
             ShoppingCart.shoppingCarts[stallId] = nil
-            self.dismiss(animated: true, completion: nil)
+            row.section?.evaluateHidden()
+            self.emptyIndicatorSection?.evaluateHidden()
         }
     }
 }
