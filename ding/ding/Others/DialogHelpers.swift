@@ -86,11 +86,7 @@ class DialogHelpers {
                               title: String, message: String, cancelButtonText: String,
                               onConfirm confirmHandler: @escaping () -> Void) {
         let prompt = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        prompt.addAction(UIAlertAction(title: "OK",
-                                       style: .cancel,
-                                       handler: { _ in
-                                        confirmHandler()
-        }))
+        prompt.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in confirmHandler() })
         prompt.addAction(UIAlertAction(title: cancelButtonText, style: .default, handler: nil))
         viewController.present(prompt, animated: true, completion: nil)
     }
