@@ -60,13 +60,13 @@ class SettingsViewController: FormViewController {
             <<< SwitchRow() { row in
                 row.title = "Disabled"
                 row.value = settings.isAutomaticAcceptOrder
-                }.onChange { row in
+            }.onChange { row in
                     let isAutomaticAcceptOrder = row.value ?? false
                     row.title = isAutomaticAcceptOrder ? "Enabled" : "Disabled"
                     row.updateCell()
 
                     // update stall settings locally
                     self.settings.setIsAutomaticAcceptOrder(to: isAutomaticAcceptOrder)
-                }
+            }
     }
 }
