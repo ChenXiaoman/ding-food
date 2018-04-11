@@ -27,6 +27,8 @@ class OrderStatusLabel: UILabel {
         layer.cornerRadius = OrderStatusLabel.cornerRadius
         clipsToBounds = true
         invalidateIntrinsicContentSize()
+        text = nil
+        backgroundColor = nil
     }
 
     override func drawText(in rect: CGRect) {
