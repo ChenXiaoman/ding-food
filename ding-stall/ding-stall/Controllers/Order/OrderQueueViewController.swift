@@ -42,7 +42,8 @@ class OrderQueueViewController: OrderViewController {
     private func generateOrderCell(collectionView: UICollectionView,
                                    indexPath: IndexPath,
                                    snapshot: DataSnapshot) -> OrderQueueCollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderQueueCollectionViewCell.identifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
+                                                                OrderQueueCollectionViewCell.identifier,
                                                             for: indexPath) as? OrderQueueCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
