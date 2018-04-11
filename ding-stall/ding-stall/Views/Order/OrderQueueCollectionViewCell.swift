@@ -10,6 +10,9 @@ import UIKit
 
 class OrderQueueCollectionViewCell: OrderCollectionViewCell {
 
+    /// The identifer for this cell (in order to dequeue reusable cells).
+    static let identifier = "OrderQueueCollectionViewCell"
+
     @IBOutlet weak private var rejectButton: UIButton!
     @IBOutlet weak private var collectButton: UIButton!
     @IBOutlet weak private var readyButton: UIButton!

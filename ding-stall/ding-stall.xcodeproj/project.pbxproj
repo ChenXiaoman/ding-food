@@ -45,6 +45,7 @@
 		32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */; };
 		32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */; };
 		32FD6950207DDFAD00C898D0 /* OrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */; };
+		32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -98,6 +99,7 @@
 		32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageRow+PopulateImage.swift"; sourceTree = "<group>"; };
 		32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallCreationViewController.swift; sourceTree = "<group>"; };
 		32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewCell.swift; sourceTree = "<group>"; };
+		32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				3280F90B2077B9620095E224 /* OrderQueueCollectionViewCell.swift */,
+				32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */,
 				32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */,
 				32B75A722074B199000C4834 /* OrderStatusLabel.swift */,
 			);
@@ -504,6 +507,7 @@
 				32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
+				32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */,
 				32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */,
 				3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */,
 				325EE80B20665178004EC560 /* StallDetails.swift in Sources */,

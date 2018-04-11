@@ -12,7 +12,7 @@ import FirebaseDatabaseUI
  The controller for the order queue view
  Order queue only contains orders have not been collected
  */
-class OrderQueueViewController: UIViewController {
+class OrderQueueViewController: OrderViewController {
     
     @IBOutlet private var orderQueueCollectionView: UICollectionView!
 
@@ -22,11 +22,6 @@ class OrderQueueViewController: UIViewController {
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
     private var orderDict = [IndexPath: Order]()
-    /// The customer names of all orders
-    private var nameDict = [String: String]()
-
-    /// The Firebase data source for the listing of food.
-    var dataSource: FUICollectionViewDataSource?
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,24 +29,18 @@ class OrderQueueViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
-        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOrderCell)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
         dataSource?.bind(to: orderQueueCollectionView)
         orderQueueCollectionView.delegate = self
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        // Stop binding to avoid program crash
-        dataSource?.unbind()
-    }
-
-    /// Populates a `OrderQueueCollectionViewCell` with the given data from database.
+    /// Generate a `OrderQueueCollectionViewCell` with the given data from database.
     /// - Parameters:
     ///    - CollectionView: The Collection view as the listing of orders.
     ///    - indexPath: The index path of this cell.
     ///    - snapshot: The snapshot of the corresponding order object from database.
     /// - Returns: a `OrderQueueCollectionViewCell` to use.
-    private func populateOrderCell(collectionView: UICollectionView,
+    private func generateOrderCell(collectionView: UICollectionView,
                                    indexPath: IndexPath,
                                    snapshot: DataSnapshot) -> OrderQueueCollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderQueueCollectionViewCell.identifier,
@@ -60,20 +49,8 @@ class OrderQueueViewController: UIViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
-            cell.load(order)
             orderDict[indexPath] = order
-
-            if let customerName = nameDict[order.customerId] {
-                cell.populateName(customerName)
-            } else {
-                // Avoid repeating download customer object
-                DatabaseRef.observeValueOnce(of: Customer.path + "/\(order.customerId)") { snapshot in
-                    let customer = Customer.deserialize(snapshot)
-                    DatabaseRef.stopObservers(of: Customer.path + "/\(order.customerId)")
-                    cell.populateName(customer?.name ?? "")
-                    self.nameDict[order.customerId] = customer?.name
-                }
-            }
+            populateOrderCell(cell: cell, model: order)
         }
         return cell
     }
@@ -122,15 +99,5 @@ class OrderQueueViewController: UIViewController {
                                     message: "Are you sure to change order status to be " + statusRawValue) {
                                         self.changeOrderStatus(to: newStatus)
         }
-    }
-}
-
-extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
-
-    /// Sets the size of each cell.
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: OrderQueueCollectionViewCell.width, height: OrderQueueCollectionViewCell.height)
     }
 }

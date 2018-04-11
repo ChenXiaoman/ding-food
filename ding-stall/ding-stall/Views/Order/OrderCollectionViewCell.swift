@@ -11,8 +11,6 @@ import UIKit
 class OrderCollectionViewCell: UICollectionViewCell {
     /// The format to display total price.
     private static let totalPriceFormat = "$%.2f"
-    /// The identifer for this cell (in order to dequeue reusable cells).
-    static let identifier = "OrderQueueCollectionViewCell"
     /// The aspect ratio of this cell.
     private static let aspectRatio = CGFloat(1.0 / 7)
     /// The width of this cell.
