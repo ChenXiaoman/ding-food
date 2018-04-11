@@ -25,7 +25,6 @@ class OrderQueueViewController: OrderViewController {
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Hide status picker
         navigationController?.setNavigationBarHidden(true, animated: false)
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)

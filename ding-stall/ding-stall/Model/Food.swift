@@ -27,3 +27,14 @@ public struct Food: FirebaseObject {
         return Food.path + "/\(Account.stallId)" + "/\(Food.getAutoId)"
     }
 }
+
+/**
+ Enumeration of food type.
+ The raw value is the text that is displayed on the picker.
+ */
+public enum FoodType: String, Codable {
+    case main = "Main"
+    case soup = "Soup"
+    case dessert = "Dessert"
+    case drink = "Drink"
+}
