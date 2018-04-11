@@ -17,7 +17,7 @@ class OrderQueueViewController: UIViewController {
     @IBOutlet private var orderQueueCollectionView: UICollectionView!
 
     /// Indicate which order cell is selected, used for change the view
-    private var currentSelectedCell: OrderCollectionViewCell?
+    private var currentSelectedCell: OrderQueueCollectionViewCell?
     /// Indicate which order model is associated with the current selected cell
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
@@ -45,17 +45,17 @@ class OrderQueueViewController: UIViewController {
         dataSource?.unbind()
     }
 
-    /// Populates a `OrderCollectionViewCell` with the given data from database.
+    /// Populates a `OrderQueueCollectionViewCell` with the given data from database.
     /// - Parameters:
     ///    - CollectionView: The Collection view as the listing of orders.
     ///    - indexPath: The index path of this cell.
     ///    - snapshot: The snapshot of the corresponding order object from database.
-    /// - Returns: a `OrderCollectionViewCell` to use.
+    /// - Returns: a `OrderQueueCollectionViewCell` to use.
     private func populateOrderCell(collectionView: UICollectionView,
                                    indexPath: IndexPath,
-                                   snapshot: DataSnapshot) -> OrderCollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier,
-                                                            for: indexPath) as? OrderCollectionViewCell else {
+                                   snapshot: DataSnapshot) -> OrderQueueCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderQueueCollectionViewCell.identifier,
+                                                            for: indexPath) as? OrderQueueCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
 
@@ -111,7 +111,7 @@ class OrderQueueViewController: UIViewController {
         guard let indexPath = orderQueueCollectionView.indexPathForItem(at: center) else {
             return
         }
-        currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
+        currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderQueueCollectionViewCell
         currentSelectedOrder = orderDict[indexPath]
         guard
             let statusRawValue = sender.titleLabel?.text,
@@ -131,6 +131,6 @@ extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: OrderCollectionViewCell.width, height: OrderCollectionViewCell.height)
+        return CGSize(width: OrderQueueCollectionViewCell.width, height: OrderQueueCollectionViewCell.height)
     }
 }

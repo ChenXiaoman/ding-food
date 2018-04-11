@@ -44,6 +44,7 @@
 		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
 		32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */; };
 		32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */; };
+		32FD6950207DDFAD00C898D0 /* OrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -96,6 +97,7 @@
 		32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewController.swift; sourceTree = "<group>"; };
 		32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageRow+PopulateImage.swift"; sourceTree = "<group>"; };
 		32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallCreationViewController.swift; sourceTree = "<group>"; };
+		32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewCell.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				3280F90B2077B9620095E224 /* OrderQueueCollectionViewCell.swift */,
+				32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */,
 				32B75A722074B199000C4834 /* OrderStatusLabel.swift */,
 			);
 			path = Order;
@@ -495,6 +498,7 @@
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
 				325EE80D20665178004EC560 /* ReviewRating.swift in Sources */,
 				32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */,
+				32FD6950207DDFAD00C898D0 /* OrderCollectionViewCell.swift in Sources */,
 				325EE81920673DD3004EC560 /* Food.swift in Sources */,
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */,
