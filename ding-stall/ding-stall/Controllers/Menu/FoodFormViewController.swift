@@ -40,7 +40,7 @@ class FoodFormViewController: FormViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
-    /// Set the style of cell to show whether it is valid
+    /// Set the style of rows to show whether it is valid
     private func setValidationStyle() {
         TextRow.defaultCellUpdate = { cell, row in
             if !row.isValid {
@@ -61,7 +61,7 @@ class FoodFormViewController: FormViewController {
         }
     }
 
-    /// Build a form for adding new food
+    /// Build a form for food information
     private func initializeForm() {
         form +++ Section("Food Details")
             <<< TextRow { row in
@@ -107,35 +107,6 @@ class FoodFormViewController: FormViewController {
             }
     }
 
-    /// Add the new food by informaion in the form, and store it
-    /// Food Name, Food Price and Food Type are required, and others are optional
-    func modifyMenu() {
-//        let valueDict = form.values()
-//        guard let id = foodId else {
-//            return
-//        }
-//        guard
-//            let foodName = valueDict[Tag.name] as? String,
-//            let foodPrice = valueDict[Tag.price] as? Double,
-//            foodPrice != Double.nan && foodPrice > 0,
-//            let foodType = valueDict[Tag.type] as? FoodType,
-//            let isSoldOut = valueDict[Tag.soldOut] as? Bool else {
-//                return
-//        }
-//        var photoPath: String?
-//        if
-//            let image = valueDict[Tag.image] as? UIImage,
-//            let imageData = image.standardData {
-//                photoPath = foodImagePath
-//                StorageRef.upload(imageData, at: foodImagePath)
-//        }
-//        let foodDescription = valueDict[Tag.description] as? String
-//
-//        let newFood = Food(id: id, name: foodName, price: foodPrice, description: foodDescription,
-//                           type: foodType, isSoldOut: isSoldOut, photoPath: photoPath, options: getFoodOption())
-//        Account.stall?.addFood(newFood)
-    }
-
     /// Retrieve the food option value from each section
     /// Return: A dictionary that pairs the option name and its values
     func getFoodOption() -> [String: [String]]? {
@@ -148,14 +119,14 @@ class FoodFormViewController: FormViewController {
                 return
             }
             let optionRows = section.dropFirst(2)
-            var optionContent = [String]()
+            var optionChoices = [String]()
             optionRows.forEach { row in
                 guard let value = (row as? TextRow)?.value else {
                     return
                 }
-                optionContent.append(value)
+                optionChoices.append(value)
             }
-            optionDict[optionName] = optionContent
+            optionDict[optionName] = optionChoices
         }
         return optionDict
     }
@@ -177,6 +148,12 @@ class FoodFormViewController: FormViewController {
         guard !hasDuplicateOptionName() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
                                            message: "Some food options have same name") { _ in }
+            return false
+        }
+
+        guard hasEnoughChoiceForOption() else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "Each option must have at least 2 choices") { _ in }
             return false
         }
         return true
@@ -206,6 +183,16 @@ class FoodFormViewController: FormViewController {
         return Set(optionNames).count < optionNames.count
     }
 
+    /// Check whether each option has at least 2 choices
+    private func hasEnoughChoiceForOption() -> Bool {
+        let allOptions = form.allSections.dropFirst()
+        for option in allOptions
+            where option.count < Constants.minimumLinesInFoodOptionSection {
+                return false
+        }
+        return true
+    }
+
     /// Create and return a new section for food option
     /// Parameter: header: the header title of this sction
     func getNewOptionSection(header: String) -> MultivaluedSection {
@@ -218,15 +205,15 @@ class FoodFormViewController: FormViewController {
         tableView.setEditing(true, animated: false)
         section.addButtonProvider = { section in
             return ButtonRow { row in
-                row.title = "Add New Option Content"
+                row.title = "Add New Option Choice"
             }.cellUpdate { cell, _ in
                 cell.textLabel?.textAlignment = .left
             }
         }
         section.multivaluedRowToInsertAt = { index in
             return TextRow { row in
-                row.title = "Content \(index - 1):"
-                row.placeholder = "Option Content"
+                row.title = "Choice \(index - 1):"
+                row.placeholder = "Option Choice"
                 row.add(rule: RuleRequired())
             }
         }

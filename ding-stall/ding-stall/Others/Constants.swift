@@ -43,6 +43,10 @@ struct Constants {
     /// The standard image size in KB
     static let standardImageSize = 1_024
     static let bytesPerKiloByte = 1_024
+
+    /// The minimum number of rows in food option section
+    /// in adding/ updating food infomation form
+    static let minimumLinesInFoodOptionSection = 5
 }
 
 /**
