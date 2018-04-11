@@ -37,14 +37,15 @@ public struct Order: FirebaseObject {
     let foodName: [String: String]
     /// A mapping from food id to the
     /// mapping of option to user's choice for the option
-    let options: [String: [String: String]]
+    let options: [String: [String: String]]?
     /// A pre-computed total price to improve efficiency. Another consideration is that the
     /// total price should not be affected by changes to prices after the order is created.
     let totalPrice: Double
 
-    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int], options: [Food: [String: String]]) {
+    init(review: Review? = nil, stall: StallOverview, food: [Food: Int], options: [Food: [String: String]]) {
         id = Order.getAutoId
-        self.status = status
+        // Default status is pending
+        self.status = .pending
         self.review = review
         customerId = Order.authorizer.userId
         stallId = stall.id
@@ -76,10 +77,10 @@ public struct Order: FirebaseObject {
     var description: String {
         return foodQuantity.reduce("") { accum, current in
             let name = foodName[current.key] ?? ""
-            let option = options[current.key] ?? [:]
-            let foodOption = option.reduce("", { acc, cur in
+            let option = options?[current.key] ?? [:]
+            let foodOption = option.reduce("") { acc, cur in
                 String(format: Order.foodOptionFormat, acc, cur.key, cur.value)
-            })
+            }
             return accum + String(format: Order.foodDescriptionFormat, current.value, name, foodOption)
         }
     }
@@ -87,6 +88,7 @@ public struct Order: FirebaseObject {
 
 public enum OrderStatus: String, Codable {
     case rejected = "Rejected"
+    case pending = "Pending"
     case preparing = "Preparing"
     case ready = "Ready"
     case collected = "Collected"
