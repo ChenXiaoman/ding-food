@@ -26,7 +26,7 @@ class SettingsViewController: FormViewController {
     }
 
     private func loadForm() {
-        form +++ Section("Open / Close Stall")
+        form +++ Section("Still receiving order")
             <<< SwitchRow() { row in
                 row.title = "Close (not receiving order)"
             }.onChange { row in
@@ -43,9 +43,10 @@ class SettingsViewController: FormViewController {
                 stallOverview.save()
             }
 
-            +++ Section("Ringing")
+            +++ Section("Rings for every new order")
             <<< SwitchRow() { row in
                 row.title = "Disabled"
+                row.value = settings.isRinging
             }.onChange { row in
                 let isRinging = row.value ?? false
                 row.title = isRinging ? "Enabled" : "Disabled"
@@ -53,7 +54,19 @@ class SettingsViewController: FormViewController {
 
                 // update stall settings locally
                 self.settings.setIsRinging(to: isRinging)
-                print(self.settings.getIsRinging())
             }
+
+            +++ Section("Accepts new order automatically")
+            <<< SwitchRow() { row in
+                row.title = "Disabled"
+                row.value = settings.isAutomaticAcceptOrder
+                }.onChange { row in
+                    let isAutomaticAcceptOrder = row.value ?? false
+                    row.title = isAutomaticAcceptOrder ? "Enabled" : "Disabled"
+                    row.updateCell()
+
+                    // update stall settings locally
+                    self.settings.setIsAutomaticAcceptOrder(to: isAutomaticAcceptOrder)
+                }
     }
 }
