@@ -31,6 +31,8 @@ struct Constants {
     static let ongoingOrderControllerId = "ongoingOrderController"
     /// The identifier for the shopping cart view controller.
     static let shoppingCartControllerId = "shoppingCartController"
+    /// The identifier for the OrderFoodTableViewController.
+    static let orderFoodTableViewControllerId = "OrderFoodTableViewController"
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
 

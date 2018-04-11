@@ -36,6 +36,21 @@ class OrderDetailViewController: UIViewController {
         orderView.load(order)
         
         hideOrShowReview()
+        
+        setUpFoodTableViewDataSource()
+    }
+    
+    /// Manully sets the datasource of foodTableView to OrderFoodTableViewController
+    /// because as a FormViewController, OrderDetailViewController
+    /// cannot handle two TableView at the same time.
+    private func setUpFoodTableViewDataSource() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: Constants.orderFoodTableViewControllerId)
+            as? OrderFoodTableViewController else {
+                return
+        }
+        controller.order = order
+        foodTableView.dataSource = controller
+        addChildViewController(controller)
     }
     
     /// Checks whether an order is ready for review. An order is ready
