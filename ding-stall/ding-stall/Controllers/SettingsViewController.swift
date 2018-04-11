@@ -12,7 +12,9 @@ import Eureka
  The controller for the application's setting view.
  */
 class SettingsViewController: FormViewController {
-    
+
+    private var settings = Settings()
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -49,13 +51,9 @@ class SettingsViewController: FormViewController {
                 row.title = isRinging ? "Enabled" : "Disabled"
                 row.updateCell()
 
-                // update stall details in the database
-                guard var stall = Account.stall else {
-                    fatalError("Stall details should be present after logging in")
-                }
-
-                stall.isRinging = isRinging
-                stall.save()
+                // update stall settings locally
+                self.settings.setIsRinging(to: isRinging)
+                print(self.settings.getIsRinging())
             }
     }
 }

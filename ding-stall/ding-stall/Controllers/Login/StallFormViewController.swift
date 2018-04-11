@@ -121,7 +121,7 @@ class StallFormViewController: FormViewController {
                                           location: location, openingHour: openingHour,
                                           description: description)
         stallOverview.save()
-        let stall = StallDetails(id: id, menu: nil, filters: nil, isRinging: false)
+        let stall = StallDetails(id: id, menu: nil, filters: nil)
         stall.save()
         Account.stallId = id
         loadTabBarView(true)

@@ -43,6 +43,7 @@
 		32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */; };
 		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
 		B26135D2206B7CFD00829009 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26135D1206B7CFD00829009 /* ProfileView.swift */; };
+		B2681939207DA87500968827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2681938207DA87500968827 /* Settings.swift */; };
 		B2CB98372071664400A8A319 /* StallOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB98362071664400A8A319 /* StallOrderCell.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
@@ -96,6 +97,7 @@
 		32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		B26135D1206B7CFD00829009 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B2681938207DA87500968827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B2CB98362071664400A8A319 /* StallOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrderCell.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* StallDetails.swift */,
 				32B75A6D2073D9D8000C4834 /* StallOverview.swift */,
+				B2681938207DA87500968827 /* Settings.swift */,
 				325EE81520665197004EC560 /* Enumerations */,
 			);
 			path = Model;
@@ -478,6 +481,7 @@
 				325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */,
 				32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */,
 				3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */,
+				B2681939207DA87500968827 /* Settings.swift in Sources */,
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
