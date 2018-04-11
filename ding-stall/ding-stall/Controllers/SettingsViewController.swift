@@ -6,7 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
 import Eureka
 /**
  The controller for the application's setting view.
