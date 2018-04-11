@@ -13,8 +13,9 @@
 		5D804DFD206B4444004BE32B /* IndexPath+TotalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D804DFC206B4444004BE32B /* IndexPath+TotalRow.swift */; };
 		5D8848082078DC2F00FCDC3B /* ReivewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8848072078DC2F00FCDC3B /* ReivewUIView.swift */; };
 		5D88480A2078E05800FCDC3B /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8848092078E05800FCDC3B /* OrderView.swift */; };
-		5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */; };
 		5D88480C207A183000FCDC3B /* UIViewController+OrderSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88480B207A183000FCDC3B /* UIViewController+OrderSuccess.swift */; };
+		5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */; };
+		5D884811207B616000FCDC3B /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D884810207B616000FCDC3B /* OrderHistory.swift */; };
 		5DBC55B5206CA946000CCBED /* StallDetailController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC55B4206CA946000CCBED /* StallDetailController+TableView.swift */; };
 		5DC2343B20639DF3008B034A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343A20639DF3008B034A /* SearchViewController.swift */; };
 		5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343C2063A02A008B034A /* StallListingCell.swift */; };
@@ -77,8 +78,9 @@
 		5D804DFC206B4444004BE32B /* IndexPath+TotalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+TotalRow.swift"; sourceTree = "<group>"; };
 		5D8848072078DC2F00FCDC3B /* ReivewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReivewUIView.swift; sourceTree = "<group>"; };
 		5D8848092078E05800FCDC3B /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
-		5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTypeLabel.swift; sourceTree = "<group>"; };
 		5D88480B207A183000FCDC3B /* UIViewController+OrderSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+OrderSuccess.swift"; sourceTree = "<group>"; };
+		5D88480E207A3F8300FCDC3B /* FoodTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTypeLabel.swift; sourceTree = "<group>"; };
+		5D884810207B616000FCDC3B /* OrderHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
 		5DBC55B4206CA946000CCBED /* StallDetailController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StallDetailController+TableView.swift"; sourceTree = "<group>"; };
 		5DC2343A20639DF3008B034A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5DC2343C2063A02A008B034A /* StallListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallListingCell.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		F2D397D7206F64A30086C27E /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				5D884810207B616000FCDC3B /* OrderHistory.swift */,
 				327A03BA205DFC84004B78EB /* Order.swift */,
 				327A03BE205DFC84004B78EB /* Review.swift */,
 				F2D397D5206F649B0086C27E /* ShoppingCart.swift */,
@@ -571,6 +574,7 @@
 				F2F1E208207893BE00B94250 /* Filter.swift in Sources */,
 				F20434182077941700FF3083 /* FilterLabel.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */,
+				5D884811207B616000FCDC3B /* OrderHistory.swift in Sources */,
 				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
 				F265B95C207099080035A47B /* UIView+Utility.swift in Sources */,
 				F290A039206A993600D0A0AF /* SearchViewController+CollectionView.swift in Sources */,

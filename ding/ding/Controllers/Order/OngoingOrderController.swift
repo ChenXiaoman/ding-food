@@ -104,6 +104,8 @@ class OngoingOrderController: UIViewController {
             DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
             
             orders[indexPath.totalItem(in: collectionView)] = order
+        } else {
+            print("fail to deseralize")
         }
         
         return cell

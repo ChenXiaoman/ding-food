@@ -27,9 +27,7 @@ class OrderQueueViewController: UIViewController {
 
     /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
-    
-    private let statusPickerData: [OrderStatus] = [.preparing, .rejected, .ready, .collected]
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide status picker

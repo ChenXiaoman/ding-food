@@ -64,4 +64,7 @@ struct Constants {
     
     /// The text on the sold out button
     static let soldOutButtonText = "Sold out"
+    
+    /// The text on the section of food option
+    static let foodOptionSectionText = "Choose your favourite option(s)"
 }
