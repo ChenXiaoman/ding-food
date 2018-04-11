@@ -44,6 +44,8 @@
 		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
 		32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */; };
 		32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */; };
+		B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B227B0EE207E8A26008278E3 /* bell.mp3 */; };
+		B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0F0207E8B1B008278E3 /* Audio.swift */; };
 		B2681939207DA87500968827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2681938207DA87500968827 /* Settings.swift */; };
 		B2CB98372071664400A8A319 /* StallOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB98362071664400A8A319 /* StallOrderCell.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
@@ -99,6 +101,8 @@
 		32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageRow+PopulateImage.swift"; sourceTree = "<group>"; };
 		32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallCreationViewController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
+		B227B0EE207E8A26008278E3 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		B227B0F0207E8B1B008278E3 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		B2681938207DA87500968827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B2CB98362071664400A8A319 /* StallOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOrderCell.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +238,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		B227B0ED207E899C008278E3 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B227B0EE207E8A26008278E3 /* bell.mp3 */,
+				B227B0F0207E8B1B008278E3 /* Audio.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		DCFD028E2205939395984373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +330,7 @@
 		F2BBF824205B839400B9812D /* ding-stall */ = {
 			isa = PBXGroup;
 			children = (
+				B227B0ED207E899C008278E3 /* Audio */,
 				325EE81420665182004EC560 /* Model */,
 				F22A9528205D6EA600C6142E /* Controllers */,
 				F22A9527205D6E8900C6142E /* Views */,
@@ -392,6 +406,7 @@
 			files = (
 				F2BBF830205B839400B9812D /* LaunchScreen.storyboard in Resources */,
 				F2BBF838205B842600B9812D /* GoogleService-Info.plist in Resources */,
+				B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */,
 				F285DB36205CC58300E8621B /* README.md in Resources */,
 				F2BBF82D205B839400B9812D /* Assets.xcassets in Resources */,
 				F2BBF82B205B839400B9812D /* Main.storyboard in Resources */,
@@ -506,6 +521,7 @@
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
+				B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */,
 				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
 				32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */,
 				3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */,

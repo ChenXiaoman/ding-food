@@ -7,6 +7,7 @@
 //
 
 import FirebaseDatabaseUI
+import AVFoundation
 
 /**
  The controller for the order queue view
@@ -27,7 +28,17 @@ class OrderQueueViewController: UIViewController {
 
     /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
-        
+
+    /// Plays ringing sound every new order if successfully initialised
+    private var audioPlayer: AVAudioPlayer?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if Settings().isRinging {
+            audioPlayer = Audio.setupPlayer(fileName: "bell", loop: 2)
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide status picker
@@ -75,6 +86,11 @@ class OrderQueueViewController: UIViewController {
                 }
             }
         }
+
+        if let ringingAudio = audioPlayer {
+            ringingAudio.play()
+        }
+
         return cell
     }
 
