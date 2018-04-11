@@ -44,14 +44,16 @@ class OrderStatusLabel: UILabel {
     func load(_ status: OrderStatus) {
         text = status.rawValue
         switch status {
-        case .preparing:
+        case .pending:
             backgroundColor = UIColor.fromRGB(0x6bbdef)
-        case .ready:
+        case .preparing:
             backgroundColor = UIColor.fromRGB(0xefa647)
+        case .ready:
+            backgroundColor = UIColor.fromRGB(0x93e83a)
         case .rejected:
-            backgroundColor = UIColor.fromRGB(0xc44258)
-        case .collected:
             backgroundColor = UIColor.fromRGB(0x706a6a)
+        case .collected:
+            backgroundColor = UIColor.fromRGB(0xf47141)
         }
     }
 }

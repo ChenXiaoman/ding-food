@@ -16,6 +16,7 @@ class OrderQueueCollectionViewCell: OrderCollectionViewCell {
     @IBOutlet weak private var rejectButton: UIButton!
     @IBOutlet weak private var collectButton: UIButton!
     @IBOutlet weak private var readyButton: UIButton!
+    @IBOutlet weak private var acceptButton: UIButton!
 
     /// Change the status label to a newStatus
     /// Parameter: newStatus: The new status to change
@@ -26,8 +27,9 @@ class OrderQueueCollectionViewCell: OrderCollectionViewCell {
 
     /// Toggle the button (enable or disable) after the order status has changed
     private func toggleButton(byStatus status: OrderStatus) {
+        rejectButton.isEnabled = status == .pending
+        acceptButton.isEnabled = status == .pending
         readyButton.isEnabled = status == .preparing
-        rejectButton.isEnabled = status == .preparing
         collectButton.isEnabled = status == .ready
     }
 }
