@@ -19,8 +19,10 @@ public struct Order: FirebaseObject {
     public static let path = "/orders"
     /// Used to handle all logics related to Firebase Auth.
     private static let authorizer = Authorizer()
-    /// The format to display a certain kind of food with its amount.
-    private static let foodDescriptionFormat = "x%d %@\n"
+    /// The format to display a certain kind of food with its amount and options.
+    private static let foodDescriptionFormat = "x%d %@ (%@)\n"
+    /// The format to display food's options.
+    private static let foodOptionFormat = "%@ %@: %@"
 
     public let id: String
     var status: OrderStatus {
@@ -49,7 +51,8 @@ public struct Order: FirebaseObject {
     /// total price should not be affected by changes to prices after the order is created.
     let totalPrice: Double
 
-    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int], options: [Food: [String: String]]) {
+    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int],
+         options: [Food: [String: String]]) {
         id = Order.getAutoId
         self.status = status
         self.review = review
@@ -65,7 +68,7 @@ public struct Order: FirebaseObject {
             foodName[key.id] = key.name
         }
 
-        // Transform food object  in dictionary to food id
+        // Transform food object in dictionary to food id
         var foodOptions: [String: [String: String]] = [:]
         options.forEach { key, value in
             foodOptions[key.id] = value
@@ -79,11 +82,15 @@ public struct Order: FirebaseObject {
         }
     }
 
-    /// A full-text description of the order (including food name and amount).
+    /// A full-text description of the order (including food name, amount and options).
     var description: String {
         return foodQuantity.reduce("") { accum, current in
             let name = foodName[current.key] ?? ""
-            return accum + String(format: Order.foodDescriptionFormat, current.value, name)
+            let option = options[current.key] ?? [:]
+            let foodOption = option.reduce("") { acc, cur in
+                String(format: Order.foodOptionFormat, acc, cur.key, cur.value)
+            }
+            return accum + String(format: Order.foodDescriptionFormat, current.value, name, foodOption)
         }
     }
 }
@@ -100,4 +107,3 @@ public enum OrderStatus: String, Codable {
         return self == .preparing || self == .ready
     }
 }
-

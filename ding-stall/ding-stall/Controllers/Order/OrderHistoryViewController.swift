@@ -13,5 +13,9 @@ import UIKit
  Order history only contains orders have been collected
  */
 class OrderHistoryViewController: OrderViewController {
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 }
