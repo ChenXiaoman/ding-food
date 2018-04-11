@@ -29,20 +29,19 @@ class OrderQueueViewController: UIViewController {
     /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
 
+    // To check isRinging property
+    private var settings = Settings()
     /// Plays ringing sound every new order if successfully initialised
     private var audioPlayer: AVAudioPlayer?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if Settings().isRinging {
-            audioPlayer = Audio.setupPlayer(fileName: "bell", loop: 2)
-        }
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide status picker
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        // Configure audioPlayer based on updated settings
+        setAudioPlayer()
+
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOrderCell)
@@ -54,6 +53,14 @@ class OrderQueueViewController: UIViewController {
         super.viewWillDisappear(animated)
         // Stop binding to avoid program crash
         dataSource?.unbind()
+    }
+
+    private func setAudioPlayer() {
+        if settings.isRinging {
+            audioPlayer = Audio.setupPlayer(fileName: "bell", loop: 0)
+        } else {
+            audioPlayer = nil
+        }
     }
 
     /// Populates a `OrderCollectionViewCell` with the given data from database.

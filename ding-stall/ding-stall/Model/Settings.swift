@@ -25,32 +25,32 @@ struct Settings {
 
     // Setting isRinging to true will cause the device to
     // ring for every new order received.
-    // Default value is false.
-    private(set) var isRinging: Bool
+    // Default value when the user is created is false.
+    var isRinging: Bool {
+        return defaults.bool(forKey: Key.isRinging)
+    }
 
     // Setting isAutomaticAcceptOrder to true will cause
     // every new order to be accepted automaticlly.
     // Otherwise, user can choose whether to accept or reject
     // every time an order comes.
-    // Default value is false.
-    private(set) var isAutomaticAcceptOrder: Bool
+    // Default value when the user is created is false.
+    var isAutomaticAcceptOrder: Bool {
+        return defaults.bool(forKey: Key.isAutomaticAcceptOrder)
+    }
 
     // Automatically load attributes values if set previously.
     // Otherwise, set attributes values to default values.
     init() {
         self.defaults = UserDefaults.standard
-        isRinging = defaults.bool(forKey: Key.isRinging)
-        isAutomaticAcceptOrder = defaults.bool(forKey: Key.isAutomaticAcceptOrder)
     }
 
-    mutating func setIsRinging(to newRingingStatus: Bool) {
-        isRinging = newRingingStatus
-        defaults.set(isRinging, forKey: Key.isRinging)
+    func setIsRinging(to newRingingStatus: Bool) {
+        defaults.set(newRingingStatus, forKey: Key.isRinging)
     }
 
     mutating func setIsAutomaticAcceptOrder(to newAcceptOrderStatus: Bool) {
-        isAutomaticAcceptOrder = newAcceptOrderStatus
-        defaults.set(isAutomaticAcceptOrder, forKey: Key.isAutomaticAcceptOrder)
+        defaults.set(newAcceptOrderStatus, forKey: Key.isAutomaticAcceptOrder)
     }
 
 }

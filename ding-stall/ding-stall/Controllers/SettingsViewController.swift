@@ -44,8 +44,8 @@ class SettingsViewController: FormViewController {
 
             +++ Section("Rings for every new order")
             <<< SwitchRow() { row in
-                row.title = "Disabled"
                 row.value = settings.isRinging
+                row.title = settings.isRinging ? "Enabled" : "Disabled"
             }.onChange { row in
                 let isRinging = row.value ?? false
                 row.title = isRinging ? "Enabled" : "Disabled"
@@ -57,8 +57,8 @@ class SettingsViewController: FormViewController {
 
             +++ Section("Accepts new order automatically")
             <<< SwitchRow() { row in
-                row.title = "Disabled"
                 row.value = settings.isAutomaticAcceptOrder
+                row.title = settings.isAutomaticAcceptOrder ? "Enabled" : "Disabled"
             }.onChange { row in
                     let isAutomaticAcceptOrder = row.value ?? false
                     row.title = isAutomaticAcceptOrder ? "Enabled" : "Disabled"
