@@ -151,7 +151,13 @@ class FoodFormViewController: FormViewController {
             return false
         }
 
-        guard hasEnoughChoiceForOption() else {
+        guard !hasDuplicateChoicesInOption() else {
+            DialogHelpers.showAlertMessage(in: self, title: "Error",
+                                           message: "Some food options have duplicated choices") { _ in }
+            return false
+        }
+
+        guard hasEnoughChoicesForOption() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
                                            message: "Each option must have at least 2 choices") { _ in }
             return false
@@ -160,31 +166,48 @@ class FoodFormViewController: FormViewController {
     }
 
     /// The whether this food name has already appears in the menu
+    /// Case insensitive
     private func hasDuplicateFoodName() -> Bool {
         let allFoodNames = Account.stall?.menu?.values.map { food in
-            return food.name
+            return food.name.lowercased()
         }
-        guard let currentFoodName = Account.stall?.menu?[foodId ?? ""]?.name else {
+        guard let currentFoodName = (Account.stall?.menu?[foodId ?? ""]?.name)?.lowercased() else {
             return false
         }
         var otherFoodNames = Set(allFoodNames ?? [String]())
         otherFoodNames.remove(currentFoodName)
-        guard let foodName = form.values()[Tag.name] as? String else {
+        guard let foodName = (form.values()[Tag.name] as? String)?.lowercased() else {
             return false
         }
         return otherFoodNames.contains(foodName)
     }
 
-    ///  Check whether the option field has duplicated option names
+    /// Check whether the option field has duplicated option names
+    /// Case insensitive
     private func hasDuplicateOptionName() -> Bool {
         let optionNames = form.allSections.dropFirst().map { section in
-            return section.header?.title ?? ""
+            return section.header?.title?.lowercased() ?? ""
         }
         return Set(optionNames).count < optionNames.count
     }
 
+    /// Check whether a food option has duplicate choices
+    /// Case insensitive
+    private func hasDuplicateChoicesInOption() -> Bool {
+        for options in form.allSections.dropFirst() {
+            let choiceRows = options.dropFirst(2)
+            let choicesText = choiceRows.map { row in
+                return (row as? TextRow)?.value?.lowercased() ?? ""
+            }
+            guard Set(choicesText).count == choicesText.count else {
+                return true
+            }
+        }
+        return false
+    }
+
     /// Check whether each option has at least 2 choices
-    private func hasEnoughChoiceForOption() -> Bool {
+    private func hasEnoughChoicesForOption() -> Bool {
         let allOptions = form.allSections.dropFirst()
         for option in allOptions
             where option.count < Constants.minimumLinesInFoodOptionSection {
