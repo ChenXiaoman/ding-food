@@ -14,7 +14,7 @@ import FirebaseDatabaseUI
  */
 class OrderQueueViewController: OrderViewController {
     
-    @IBOutlet private var orderQueueCollectionView: UICollectionView!
+    @IBOutlet private weak var orderQueueCollectionView: UICollectionView!
 
     /// Indicate which order cell is selected, used for change the view
     private var currentSelectedCell: OrderQueueCollectionViewCell?

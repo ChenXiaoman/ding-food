@@ -21,6 +21,10 @@ class OrderViewController: UIViewController {
         dataSource?.unbind()
     }
 
+    /// Populate an order cell with corresponding order model
+    /// - Parameters:
+    ///     - cell: The cell to be populated
+    ///     - order: The data source of the order model
     func populateOrderCell(cell: OrderCollectionViewCell, model order: Order) {
         cell.load(order)
         if let customerName = nameDict[order.customerId] {
