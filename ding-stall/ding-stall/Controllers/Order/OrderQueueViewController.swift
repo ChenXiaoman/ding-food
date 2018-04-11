@@ -84,6 +84,13 @@ class OrderQueueViewController: UIViewController {
     private func changeOrderStatus(to newStatus: OrderStatus) {
         // Change the model
         currentSelectedOrder?.status = newStatus
+        // If the order is collected or rejected, it will be removed
+        // from this list
+        guard newStatus.isOngoingOrderStatus else {
+            currentSelectedCell = nil
+            currentSelectedOrder = nil
+            return
+        }
         currentSelectedOrder?.save()
         // Change the view
         currentSelectedCell?.setStatus(to: newStatus)

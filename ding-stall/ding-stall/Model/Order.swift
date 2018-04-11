@@ -20,7 +20,16 @@ public struct Order: FirebaseObject {
     private static let foodDescriptionFormat = "x%d %@\n"
 
     public let id: String
-    var status: OrderStatus
+    var status: OrderStatus {
+        didSet {
+            guard status.isOngoingOrderStatus else {
+                delete()
+                let orderHistory = OrderHistory(order: self)
+                orderHistory.save()
+                return
+            }
+        }
+    }
     var review: Review?
     let customerId: String
     let stallId: String
@@ -61,6 +70,7 @@ public struct Order: FirebaseObject {
             return accum + String(format: Order.foodDescriptionFormat, current.value, name)
         }
     }
+
 }
 
 public enum OrderStatus: String, Codable {
@@ -68,4 +78,10 @@ public enum OrderStatus: String, Codable {
     case preparing = "Preparing"
     case ready = "Ready"
     case collected = "Collected"
+
+    /// Indicate whether this order is not paid
+    /// i.e. should be displayed on the order list
+    public var isOngoingOrderStatus: Bool {
+        return self == .preparing || self == .ready
+    }
 }
