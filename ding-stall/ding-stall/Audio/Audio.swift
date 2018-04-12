@@ -16,18 +16,18 @@ struct Audio {
         let audioPath = Bundle.main.path(forResource: fileName, ofType: "mp3")
 
         do {
-            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+            guard let path = audioPath else {
+                return nil
+            }
+
+            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: path) as URL)
             player?.prepareToPlay()
         } catch {
             return nil
         }
 
-        guard let audioPlayer = player else {
-            return nil
-        }
+        player?.numberOfLoops = loop
 
-        audioPlayer.numberOfLoops = loop
-
-        return audioPlayer
+        return player
     }
 }

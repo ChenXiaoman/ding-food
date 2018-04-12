@@ -80,9 +80,7 @@ class OrderQueueViewController: OrderViewController {
             populateOrderCell(cell: cell, model: order)
         }
 
-        if let ringingAudio = audioPlayer {
-            ringingAudio.play()
-        }
+        audioPlayer?.play()
 
         return cell
     }

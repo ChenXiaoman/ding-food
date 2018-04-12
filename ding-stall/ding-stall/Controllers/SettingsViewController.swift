@@ -22,23 +22,15 @@ class SettingsViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStallOverview()
+        stallOverview = Account.stallOverview
         loadForm()
-    }
-
-    private func getStallOverview() {
-        guard let stallOverview = Account.stallOverview else {
-            fatalError("Stall overview should be present after logging in")
-        }
-
-        self.stallOverview = stallOverview
     }
 
     private func loadForm() {
         form +++ Section("Still receiving order")
             <<< SwitchRow() { row in
                 row.value = stallOverview?.isOpen
-                row.title = row.value! ? "Open (can receive order)" : "Close (not receiving order)"
+                row.title = (row.value ?? false) ? "Open (can receive order)" : "Close (not receiving order)"
             }.onChange { row in
                 let isOpen = row.value ?? false
                 row.title = isOpen ? "Open (can receive order)" : "Close (cannot receiving order)"
@@ -52,7 +44,7 @@ class SettingsViewController: FormViewController {
             +++ Section("Rings for every new order")
             <<< SwitchRow() { row in
                 row.value = settings.isRinging
-                row.title = row.value! ? "Enabled" : "Disabled"
+                row.title = (row.value ?? false) ? "Enabled" : "Disabled"
             }.onChange { row in
                 let isRinging = row.value ?? false
                 row.title = isRinging ? "Enabled" : "Disabled"
@@ -65,7 +57,7 @@ class SettingsViewController: FormViewController {
             +++ Section("Accepts new order automatically")
             <<< SwitchRow() { row in
                 row.value = settings.isAutomaticAcceptOrder
-                row.title = row.value! ? "Enabled" : "Disabled"
+                row.title = (row.value ?? false) ? "Enabled" : "Disabled"
             }.onChange { row in
                     let isAutomaticAcceptOrder = row.value ?? false
                     row.title = isAutomaticAcceptOrder ? "Enabled" : "Disabled"
