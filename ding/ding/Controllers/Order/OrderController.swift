@@ -52,6 +52,8 @@ class OrderController: UIViewController {
         /// Starts to load data of ongoing orders.
         startLoading()
         configureCollectionView()
+
+        /// Changes 
     }
     
     override func viewWillDisappear(_ animated: Bool) {
