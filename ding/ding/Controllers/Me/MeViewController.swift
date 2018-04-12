@@ -18,8 +18,8 @@ class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: true)
