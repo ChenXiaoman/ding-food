@@ -21,13 +21,19 @@ struct Settings {
         static let isAutomaticAcceptOrder = "Accept"
     }
 
-    let defaults: UserDefaults
+    let defaults = UserDefaults.standard
 
     // Setting isRinging to true will cause the device to
     // ring for every new order received.
     // Default value when the user is created is false.
     var isRinging: Bool {
-        return defaults.bool(forKey: Key.isRinging)
+        get {
+            return defaults.bool(forKey: Key.isRinging)
+        }
+
+        set(newRingingStatus) {
+            defaults.set(newRingingStatus, forKey: Key.isRinging)
+        }
     }
 
     // Setting isAutomaticAcceptOrder to true will cause
@@ -36,19 +42,12 @@ struct Settings {
     // every time an order comes.
     // Default value when the user is created is false.
     var isAutomaticAcceptOrder: Bool {
-        return defaults.bool(forKey: Key.isAutomaticAcceptOrder)
-    }
+        get {
+            return defaults.bool(forKey: Key.isAutomaticAcceptOrder)
+        }
 
-    init() {
-        self.defaults = UserDefaults.standard
+        set(newAcceptOrderStatus) {
+            defaults.set(newAcceptOrderStatus, forKey: Key.isAutomaticAcceptOrder)
+        }
     }
-
-    func setIsRinging(to newRingingStatus: Bool) {
-        defaults.set(newRingingStatus, forKey: Key.isRinging)
-    }
-
-    mutating func setIsAutomaticAcceptOrder(to newAcceptOrderStatus: Bool) {
-        defaults.set(newAcceptOrderStatus, forKey: Key.isAutomaticAcceptOrder)
-    }
-
 }

@@ -51,7 +51,8 @@ class SettingsViewController: FormViewController {
                 row.updateCell()
 
                 // update stall settings locally
-                self.settings.setIsRinging(to: isRinging)
+                
+                self.settings.isRinging = isRinging
             }
 
             +++ Section("Accepts new order automatically")
@@ -64,7 +65,7 @@ class SettingsViewController: FormViewController {
                     row.updateCell()
 
                     // update stall settings locally
-                    self.settings.setIsAutomaticAcceptOrder(to: isAutomaticAcceptOrder)
+                    self.settings.isAutomaticAcceptOrder = isAutomaticAcceptOrder
             }
     }
 }

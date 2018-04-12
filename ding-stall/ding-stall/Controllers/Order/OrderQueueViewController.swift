@@ -53,11 +53,12 @@ class OrderQueueViewController: OrderViewController {
     }
 
     private func setAudioPlayer() {
-        if settings.isRinging {
-            audioPlayer = Audio.setupPlayer(fileName: "bell", loop: 0)
-        } else {
+        guard settings.isRinging else {
             audioPlayer = nil
+            return
         }
+
+        audioPlayer = Audio.setupPlayer(fileName: "bell", loop: 0)
     }
 
     /// Generate a `OrderQueueCollectionViewCell` with the given data from database.
