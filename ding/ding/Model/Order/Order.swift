@@ -89,7 +89,7 @@ public struct Order: FirebaseObject {
 public enum OrderStatus: String, Codable {
     case rejected = "Rejected"
     case pending = "Pending"
-    case preparing = "Preparing"
+    case accepted = "Accepted"
     case ready = "Ready"
     case collected = "Collected"
 }

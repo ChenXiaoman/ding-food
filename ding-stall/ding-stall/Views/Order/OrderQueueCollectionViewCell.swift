@@ -1,5 +1,5 @@
 //
-//  OrderCollectionViewCell.swift
+//  OrderQueueCollectionViewCell.swift
 //  ding-stall
 //
 //  Created by Chen Xiaoman on 24/3/18.
@@ -8,60 +8,28 @@
 
 import UIKit
 
-class OrderCollectionViewCell: UICollectionViewCell {
-    /// The format to display total price.
-    private static let totalPriceFormat = "$%.2f"
-
-    @IBOutlet weak private var totalPrice: UILabel!
-    @IBOutlet weak private var orderDescription: UILabel!
-    @IBOutlet weak private var orderStatus: OrderStatusLabel!
-    @IBOutlet weak private var customerName: UILabel!
-    @IBOutlet weak private var rejectButton: UIButton!
-    @IBOutlet weak private var collectButton: UIButton!
-    @IBOutlet weak private var readyButton: UIButton!
+class OrderQueueCollectionViewCell: OrderCollectionViewCell {
 
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "OrderQueueCollectionViewCell"
-    /// The aspect ratio of this cell.
-    private static let aspectRatio = CGFloat(1.0 / 7)
-    /// The width of this cell.
-    static let width = Constants.screenWidth
-    /// The height of this cell.
-    static let height = Constants.screenHeight * OrderCollectionViewCell.aspectRatio
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        self.layer.shadowColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-//        self.layer.shadowOffset = CGSize(width: 5, height: 5)
-//        self.layer.shadowOpacity = 1
-    }
-
-    /// Loads data into and populate a `OngoingOrderCell`.
-    /// - Parameter: order: The `Order` object as the data source.
-    func load(_ order: Order) {
-        totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
-        orderDescription.text = order.description
-        setStatus(to: order.status)
-    }
-
-    /// Populate the customer name into cell, since this requires to
-    /// download customer object separately, it should be separated
-    /// from populating food information
-    /// - Parameter: name: The customer name to be put into
-    func populateName(_ name: String) {
-        customerName.text = name
-    }
+    @IBOutlet weak private var rejectButton: UIButton!
+    @IBOutlet weak private var collectButton: UIButton!
+    @IBOutlet weak private var readyButton: UIButton!
+    @IBOutlet weak private var acceptButton: UIButton!
 
     /// Change the status label to a newStatus
     /// Parameter: newStatus: The new status to change
-    func setStatus(to newStatus: OrderStatus) {
-        orderStatus.load(newStatus)
+    override func setStatus(to newStatus: OrderStatus) {
+        super.setStatus(to: newStatus)
         toggleButton(byStatus: newStatus)
     }
 
+    /// Toggle the button (enable or disable) after the order status has changed
     private func toggleButton(byStatus status: OrderStatus) {
-        readyButton.isEnabled = status == .preparing
-        rejectButton.isEnabled = status == .preparing
+        rejectButton.isEnabled = status == .pending
+        acceptButton.isEnabled = status == .pending
+        readyButton.isEnabled = status == .accepted
         collectButton.isEnabled = status == .ready
     }
 }

@@ -96,7 +96,7 @@ class OngoingOrderController: UIViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
-            // Loads the order info
+            // Loads the order infomation.
             cell.load(order)
             
             // Loads the related stall overview.
@@ -104,10 +104,7 @@ class OngoingOrderController: UIViewController {
             DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
             
             orders[indexPath.totalItem(in: collectionView)] = order
-        } else {
-            print("fail to deseralize")
         }
-        
         return cell
     }
     
