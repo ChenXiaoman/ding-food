@@ -75,13 +75,15 @@ class OrderController: UIViewController {
     private func configureCollectionView() {
         // Chooses between showing Order or OrderHistory.
         var orderPath = Order.path
+        var childPath = Order.custemerIdPath
         if isShowingHistory {
             orderPath = OrderHistory.path
+            childPath = OrderHistory.orderPath + Order.custemerIdPath
         }
         
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: orderPath)
-            .queryOrdered(byChild: "customerId").queryEqual(toValue: authorizer.userId)
+            .queryOrdered(byChild: childPath).queryEqual(toValue: authorizer.userId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
         dataSource?.bind(to: ongoingOrders)
         ongoingOrders.delegate = self

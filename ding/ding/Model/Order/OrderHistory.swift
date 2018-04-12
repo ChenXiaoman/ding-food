@@ -7,8 +7,8 @@
 //
 
 public struct OrderHistory: FirebaseObject {
-    public static var path = "order_history"
-
+    public static let path = "order_history"
+    public static let orderPath = "order"
     public var id: String
     /// The composed order with the order history
     public var order: Order

@@ -51,7 +51,7 @@
 		F2813545206A095400B81377 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2813544206A095400B81377 /* StallOverview.swift */; };
 		F285DB38205CC5A300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB37205CC5A300E8621B /* README.md */; };
 		F290A039206A993600D0A0AF /* SearchViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */; };
-		F297DEA1206F72F900991DC7 /* OngoingOrderController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */; };
+		F297DEA1206F72F900991DC7 /* OrderController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297DEA0206F72F900991DC7 /* OrderController+CollectionView.swift */; };
 		F29C0A3D2075F3F200D2FD92 /* UIViewController+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */; };
 		F2AEA0CF207266B5001D5704 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */; };
 		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
@@ -117,7 +117,7 @@
 		F2813544206A095400B81377 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		F285DB37205CC5A300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CollectionView.swift"; sourceTree = "<group>"; };
-		F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OngoingOrderController+CollectionView.swift"; sourceTree = "<group>"; };
+		F297DEA0206F72F900991DC7 /* OrderController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderController+CollectionView.swift"; sourceTree = "<group>"; };
 		F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Permission.swift"; sourceTree = "<group>"; };
 		F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC2343E2063B8EB008B034A /* OrderController.swift */,
-				F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */,
+				F297DEA0206F72F900991DC7 /* OrderController+CollectionView.swift */,
 				F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */,
 				5DEC47C42077828100544A54 /* OrderDetailViewController.swift */,
 				5DEC47C820785F8B00544A54 /* OrderFoodTableViewController.swift */,
@@ -557,7 +557,7 @@
 				5DC234492064D686008B034A /* FoodDetailController.swift in Sources */,
 				5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */,
 				F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */,
-				F297DEA1206F72F900991DC7 /* OngoingOrderController+CollectionView.swift in Sources */,
+				F297DEA1206F72F900991DC7 /* OrderController+CollectionView.swift in Sources */,
 				5DEC47C920785F8B00544A54 /* OrderFoodTableViewController.swift in Sources */,
 				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,
 				5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */,
