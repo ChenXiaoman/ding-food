@@ -27,9 +27,6 @@ class OrderQueueViewController: OrderViewController {
     /// The customer names of all orders
     private var nameDict = [String: String]()
 
-    /// The Firebase data source for the listing of food.
-    var dataSource: FUICollectionViewDataSource?
-
     // To check isRinging property
     private var settings = Settings()
     /// Plays ringing sound every new order if successfully initialised
