@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import FirebaseDatabase
+
 /**
  `StallOverview` represents an overview of a stall, which could be used in the stall
  listing table view.
@@ -41,5 +43,19 @@ public struct StallOverview: FirebaseObject {
     /// Provide a new path for the stall photo if it has changed
     public static var newPhotoPath: String {
         return StallOverview.path + "/\(StallOverview.getAutoId)"
+    }
+
+    /// A custom deserialization method to handle the nested `FirebaseObject` structure.
+    /// - Parameter snapshot: The `DataSnapshot` containing information about the stall.
+    /// - Returns: A `StallOverview` object; or nil if the conversion fails.
+    static func deserialize(_ snapshot: DataSnapshot) -> StallOverview? {
+        guard var dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        dict["id"] = snapshot.key
+        if let filterDict = dict["filters"] as? [String: Any] {
+            dict["filters"] = prepareNestedDeserialize(filterDict)
+        }
+        return deserialize(dict)
     }
 }

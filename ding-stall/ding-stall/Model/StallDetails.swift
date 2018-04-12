@@ -17,6 +17,7 @@ public struct StallDetails: FirebaseObject {
 
     public let id: String
 
+    /// A dictionary of (food id, food) pair
     public var menu: [String: Food]?
 
     private var menuPath: String {
@@ -59,7 +60,7 @@ public struct StallDetails: FirebaseObject {
         }
         dict["id"] = snapshot.key
         if let menuDict = dict["menu"] as? [String: Any] {
-            dict["menu"] = deserializeNestedStructure(menuDict)
+            dict["menu"] = prepareNestedDeserialize(menuDict)
         }
         return deserialize(dict)
     }

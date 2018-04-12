@@ -117,7 +117,7 @@ extension FirebaseObject {
     /// dictionaries in (id, value + id) format to prepare for subsequent deserialization.
     /// - Parameter dict: the nested dictionary of (id, value) pair.
     /// - Returns: a dictionary (id, value) whose value contains the id.
-    static func deserializeNestedStructure(_ dict: [String: Any]) -> [String: [String: Any]]? {
+    static func prepareNestedDeserialize(_ dict: [String: Any]) -> [String: [String: Any]]? {
         var menuDict = [String: [String: Any]]()
         dict.forEach { key, value in
             guard let valueDict = value as? [String: Any] else {
