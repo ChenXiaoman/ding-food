@@ -12,7 +12,7 @@ import Eureka
  The controller for profile view.
 
  - Author: Group 3 @ CS3217
- - Date: March 2018
+ - Date: April 2018
  */
 class ProfileViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {

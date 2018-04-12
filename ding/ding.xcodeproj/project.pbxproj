@@ -72,6 +72,7 @@
 		F2F2CE44207FA49C00694D32 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE43207FA49C00694D32 /* ImageRow.swift */; };
 		F2F2CE46207FA52000694D32 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE45207FA52000694D32 /* ImagePickerController.swift */; };
 		F2F2CE48207FA65E00694D32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE47207FA65E00694D32 /* ProfileViewController.swift */; };
+		F2F2CE4A207FAA4300694D32 /* SoundEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		F2F2CE43207FA49C00694D32 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		F2F2CE45207FA52000694D32 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		F2F2CE47207FA65E00694D32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		5D88480D207A18D800FCDC3B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */,
 				F20434192077958100FF3083 /* UIViewController+Dispatch.swift */,
 				F204341220778D2E00FF3083 /* UIViewController+Keyboard.swift */,
 				F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */,
@@ -186,7 +189,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		B2464E83205C4E760095A925 /* Model */ = {
+		B2464E83205C4E760095A925 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F2D397D7206F64A30086C27E /* Order */,
@@ -195,7 +198,7 @@
 				327A03BF205DFC85004B78EB /* Customer.swift */,
 				B2464E8A205C51A30095A925 /* Food.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F200DDE6205E53F300F33748 /* Others */ = {
@@ -348,7 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				F27DDC77205E3953005C3A07 /* Controllers */,
-				B2464E83205C4E760095A925 /* Model */,
+				B2464E83205C4E760095A925 /* Models */,
+				F2F2CE4B207FABB600694D32 /* Resources */,
 				F27DDC78205E3978005C3A07 /* Views */,
 				F200DDE6205E53F300F33748 /* Others */,
 				F25F3A98205B85670042D8FA /* GoogleService-Info.plist */,
@@ -375,6 +379,13 @@
 				F2F1E207207893BE00B94250 /* Filter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		F2F2CE4B207FABB600694D32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +563,7 @@
 				F2F2CE48207FA65E00694D32 /* ProfileViewController.swift in Sources */,
 				5DC234432064026D008B034A /* StallDetailController.swift in Sources */,
 				F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */,
+				F2F2CE4A207FAA4300694D32 /* SoundEffectController.swift in Sources */,
 				F2D397D6206F649B0086C27E /* ShoppingCart.swift in Sources */,
 				5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */,
 				F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */,

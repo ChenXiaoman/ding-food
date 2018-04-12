@@ -12,7 +12,7 @@ import Eureka
  The controller for setting view.
 
  - Author: Group 3 @ CS3217
- - Date: March 2018
+ - Date: April 2018
  */
 class SettingViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
