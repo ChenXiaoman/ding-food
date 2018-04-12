@@ -13,16 +13,17 @@ import AVFoundation
  The controller for the order queue view
  Order queue only contains orders have not been collected
  */
-class OrderQueueViewController: UIViewController {
+class OrderQueueViewController: OrderViewController {
     
-    @IBOutlet private var orderQueueCollectionView: UICollectionView!
+    @IBOutlet private weak var orderQueueCollectionView: UICollectionView!
 
     /// Indicate which order cell is selected, used for change the view
-    private var currentSelectedCell: OrderCollectionViewCell?
+    private var currentSelectedCell: OrderQueueCollectionViewCell?
     /// Indicate which order model is associated with the current selected cell
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
     private var orderDict = [IndexPath: Order]()
+  
     /// The customer names of all orders
     private var nameDict = [String: String]()
 
@@ -36,7 +37,6 @@ class OrderQueueViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Hide status picker
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         // Configure audioPlayer based on updated settings
@@ -44,7 +44,7 @@ class OrderQueueViewController: UIViewController {
 
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
-        dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOrderCell)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
         dataSource?.bind(to: orderQueueCollectionView)
         orderQueueCollectionView.delegate = self
     }
@@ -63,35 +63,24 @@ class OrderQueueViewController: UIViewController {
         }
     }
 
-    /// Populates a `OrderCollectionViewCell` with the given data from database.
+    /// Generate a `OrderQueueCollectionViewCell` with the given data from database.
     /// - Parameters:
     ///    - CollectionView: The Collection view as the listing of orders.
     ///    - indexPath: The index path of this cell.
     ///    - snapshot: The snapshot of the corresponding order object from database.
-    /// - Returns: a `OrderCollectionViewCell` to use.
-    private func populateOrderCell(collectionView: UICollectionView,
+    /// - Returns: a `OrderQueueCollectionViewCell` to use.
+    private func generateOrderCell(collectionView: UICollectionView,
                                    indexPath: IndexPath,
-                                   snapshot: DataSnapshot) -> OrderCollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier,
-                                                            for: indexPath) as? OrderCollectionViewCell else {
+                                   snapshot: DataSnapshot) -> OrderQueueCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
+                                                                OrderQueueCollectionViewCell.identifier,
+                                                            for: indexPath) as? OrderQueueCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
 
         if let order = Order.deserialize(snapshot) {
-            cell.load(order)
             orderDict[indexPath] = order
-
-            if let customerName = nameDict[order.customerId] {
-                cell.populateName(customerName)
-            } else {
-                // Avoid repeating download customer object
-                DatabaseRef.observeValueOnce(of: Customer.path + "/\(order.customerId)") { snapshot in
-                    let customer = Customer.deserialize(snapshot)
-                    DatabaseRef.stopObservers(of: Customer.path + "/\(order.customerId)")
-                    cell.populateName(customer?.name ?? "")
-                    self.nameDict[order.customerId] = customer?.name
-                }
-            }
+            populateOrderCell(cell: cell, model: order)
         }
 
         if let ringingAudio = audioPlayer {
@@ -107,6 +96,13 @@ class OrderQueueViewController: UIViewController {
     private func changeOrderStatus(to newStatus: OrderStatus) {
         // Change the model
         currentSelectedOrder?.status = newStatus
+        // If the order is collected or rejected, it will be removed
+        // from this list
+        guard newStatus.isOngoingOrderStatus else {
+            currentSelectedCell = nil
+            currentSelectedOrder = nil
+            return
+        }
         currentSelectedOrder?.save()
         // Change the view
         currentSelectedCell?.setStatus(to: newStatus)
@@ -127,7 +123,7 @@ class OrderQueueViewController: UIViewController {
         guard let indexPath = orderQueueCollectionView.indexPathForItem(at: center) else {
             return
         }
-        currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell
+        currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderQueueCollectionViewCell
         currentSelectedOrder = orderDict[indexPath]
         guard
             let statusRawValue = sender.titleLabel?.text,
@@ -141,12 +137,22 @@ class OrderQueueViewController: UIViewController {
     }
 }
 
-extension OrderQueueViewController: UICollectionViewDelegateFlowLayout {
+// MARK: UICollectionViewDelegateFlowLayout
+extension OrderQueueViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let order = orderDict[indexPath] else {
+            return
+        }
+        loadOrderDetailViewController(order: order, animated: true)
+    }
 
-    /// Sets the size of each cell.
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: OrderCollectionViewCell.width, height: OrderCollectionViewCell.height)
+    private func loadOrderDetailViewController(order: Order, animated: Bool) {
+        let id = Constants.orderDetailControllerId
+        guard let orderDetailVC = storyboard?.instantiateViewController(withIdentifier: id)
+            as? OrderDetailViewController else {
+                fatalError("Could not find the controller for order detail")
+        }
+        orderDetailVC.initialize(order: order)
+        navigationController?.pushViewController(orderDetailVC, animated: animated)
     }
 }

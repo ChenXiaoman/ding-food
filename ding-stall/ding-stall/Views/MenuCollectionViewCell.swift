@@ -38,6 +38,10 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    public var foodPhoto: UIImage? {
+        return foodImage.image
+    }
+
     private func settleOutletFrame() {
         foodImage.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
         foodName.frame = CGRect(x: 0, y: foodImage.frame.height,

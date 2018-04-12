@@ -17,8 +17,8 @@
  - Date: March 2018
  */
 struct ShoppingCart {
-    /// A collection of food with different quantities.
-    var food: [String: (food: Food, quantity: Int)] = [:]
+    /// A collection of food with different quantities and options.
+    var food: [String: (food: Food, quantity: Int, options: [String: String])] = [:]
     /// The stall of the shopping cart.
     let stall: StallOverview
     /// Let the shopping cart work like a "global variable", i.e., a mapping between
@@ -30,14 +30,15 @@ struct ShoppingCart {
     ///    - toAdd: The kind of food to be added.
     ///    - stall: The stall from which the food is.
     ///    - quantity: The amount of this kind of food.
-    static func add(_ toAdd: Food, from stall: StallOverview, quantity: Int) {
+    ///    - options: The options which user have chosen.
+    static func add(_ toAdd: Food, from stall: StallOverview, quantity: Int, options: [String: String]) {
         guard var cart = shoppingCarts[stall.id] else {
             var newCart = ShoppingCart(food: [:], stall: stall)
-            newCart.add(toAdd, quantity: quantity)
+            newCart.add(toAdd, quantity: quantity, options: options)
             shoppingCarts[stall.id] = newCart
             return
         }
-        cart.add(toAdd, quantity: quantity)
+        cart.add(toAdd, quantity: quantity, options: options)
         shoppingCarts[stall.id] = cart
     }
 
@@ -77,8 +78,9 @@ struct ShoppingCart {
     /// - Parameters:
     ///    - toAdd: The kind of food to be added.
     ///    - quantity: The amount of this kind of food.
-    mutating func add(_ toAdd: Food, quantity: Int) {
-        self.food[toAdd.id] = (toAdd, quantity)
+    ///    - options: The options which user have chosen.
+    mutating func add(_ toAdd: Food, quantity: Int, options: [String: String]) {
+        self.food[toAdd.id] = (toAdd, quantity, options)
     }
 
     /// Changes the amount of food in the shopping cart. It will simply do nothing if
@@ -95,7 +97,8 @@ struct ShoppingCart {
         if quantity == 0 {
             delete(foodId)
         } else {
-            food[foodId] = (foodInfo.food, quantity)
+            // The options remains unchaged.
+            food[foodId] = (foodInfo.food, quantity, foodInfo.options)
         }
     }
 
@@ -124,8 +127,12 @@ struct ShoppingCart {
     /// - Returns: The `Order` converted.
     func toOrder() -> Order {
         var foodAmount: [Food: Int] = [:]
-        food.values.forEach { foodAmount[$0.food] = $0.quantity }
-        return Order(stall: stall, food: foodAmount)
+        var foodOptions: [Food: [String: String]] = [:]
+        food.values.forEach {
+            foodAmount[$0.food] = $0.quantity
+            foodOptions[$0.food] = $0.options
+        }
+        return Order(stall: stall, food: foodAmount, options: foodOptions)
     }
 
     /// Converts all `ShoppingCart`s into an array of orders.

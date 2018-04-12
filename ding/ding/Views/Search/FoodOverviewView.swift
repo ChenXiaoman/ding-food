@@ -28,6 +28,10 @@ class FoodOverviewView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        photo.image = nil
+        name.text = nil
+        price.text = nil
+        foodDescription.text = nil
         frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: Constants.screenHeight / 2)
     }
 
@@ -40,7 +44,7 @@ class FoodOverviewView: UIView {
         if let description = food.description {
             foodDescription.text = String(format: FoodOverviewView.descriptionFormat, description)
         } else {
-            foodDescription.removeFromSuperview()
+            foodDescription?.removeFromSuperview()
         }
     }
 }
