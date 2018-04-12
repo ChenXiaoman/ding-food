@@ -91,4 +91,3 @@ class DialogHelpers {
         viewController.present(prompt, animated: true, completion: nil)
     }
 }
-
