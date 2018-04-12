@@ -1,5 +1,5 @@
 //
-//  SettingViewController.swift
+//  ProfileViewController.swift
 //  ding
 //
 //  Created by Yunpeng Niu on 12/04/18.
@@ -9,12 +9,12 @@
 import Eureka
 
 /**
- The controller for setting view.
+ The controller for profile view.
 
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class SettingViewController: FormViewController {
+class ProfileViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)

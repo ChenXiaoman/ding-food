@@ -100,7 +100,8 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = ["", "", Constants.settingViewControllerId, Constants.aboutViewControllerId, ""]
+    static let controllerIds = ["", Constants.profileViewControllerId, Constants.settingViewControllerId,
+                                Constants.aboutViewControllerId, ""]
 
     /// The name of a certain setting menu cell.
     var name: String {

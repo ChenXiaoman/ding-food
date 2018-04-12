@@ -25,6 +25,8 @@ struct Constants {
     static let foodDetailViewControllerId = "foodDetailViewController"
     /// The identifier for the about view controller.
     static let aboutViewControllerId = "aboutViewController"
+    /// The identifier for the profile view controller.
+    static let profileViewControllerId = "profileViewController"
     /// The identifier for the setting view controller.
     static let settingViewControllerId = "settingViewController"
     /// The identifier for the order detail view controller.

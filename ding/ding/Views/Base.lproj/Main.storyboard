@@ -1109,6 +1109,21 @@ x5 Lemon Juice</string>
             </objects>
             <point key="canvasLocation" x="1356" y="911"/>
         </scene>
+        <!--ProfileViewController-->
+        <scene sceneID="tpd-0d-16o">
+            <objects>
+                <viewController storyboardIdentifier="profileViewController" id="mNY-ti-j2b" userLabel="ProfileViewController" customClass="ProfileViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1tZ-DK-cdu">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Ls-zM-BZR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rw4-SK-34g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="1617"/>
+        </scene>
         <!--SettingViewController-->
         <scene sceneID="CtG-y4-G3a">
             <objects>
