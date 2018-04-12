@@ -9,12 +9,12 @@
 import FirebaseDatabaseUI
 
 /**
- The controller for current on-going order view.
+ The controller for order view.
 
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class OngoingOrderController: UIViewController {
+class OrderController: UIViewController {
     @IBOutlet weak private var ongoingOrders: UICollectionView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     
@@ -26,6 +26,11 @@ class OngoingOrderController: UIViewController {
     /// A dictionary of mapping from cell's index path to the
     /// 'Order' object represented.
     var orders: [Int: Order] = [:]
+    
+    /// A boolean value indicates whether the order showing is
+    /// 'OrderHistory' or not. Default is showing 'Order'
+    /// which is all on-going orders
+    var isShowingHistory = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,10 +71,16 @@ class OngoingOrderController: UIViewController {
         }
     }
 
-    /// Bind Firebase data source to collection view
+    /// Binds Firebase data source to collection view.
     private func configureCollectionView() {
+        // Chooses between showing Order or OrderHistory.
+        var orderPath = Order.path
+        if isShowingHistory {
+            orderPath = OrderHistory.path
+        }
+        
         // Configures the collection view.
-        let query = DatabaseRef.getNodeRef(of: Order.path)
+        let query = DatabaseRef.getNodeRef(of: orderPath)
             .queryOrdered(byChild: "customerId").queryEqual(toValue: authorizer.userId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
         dataSource?.bind(to: ongoingOrders)
@@ -94,17 +105,31 @@ class OngoingOrderController: UIViewController {
         if !loaded {
             stopLoading()
         }
-
-        if let order = Order.deserialize(snapshot) {
-            // Loads the order infomation.
-            cell.load(order)
-            
-            // Loads the related stall overview.
-            let path = "\(StallOverview.path)/\(order.stallId)"
-            DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
-            
-            orders[indexPath.totalItem(in: collectionView)] = order
+        
+        var currentOrder: Order
+        // Deserialize from the correct class
+        // Whether Order or OrderHistory
+        if isShowingHistory {
+            guard let orderHistory = OrderHistory.deserialize(snapshot) else {
+                return cell
+            }
+            currentOrder = orderHistory.order
+        } else {
+            guard let order = Order.deserialize(snapshot) else {
+                return cell
+            }
+            currentOrder = order
         }
+        
+        // Loads the order infomation.
+        cell.load(currentOrder)
+        
+        // Loads the related stall overview.
+        let path = "\(StallOverview.path)/\(currentOrder.stallId)"
+        DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
+        
+        orders[indexPath.totalItem(in: collectionView)] = currentOrder
+        
         return cell
     }
     

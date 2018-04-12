@@ -19,7 +19,7 @@
 		5DBC55B5206CA946000CCBED /* StallDetailController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC55B4206CA946000CCBED /* StallDetailController+TableView.swift */; };
 		5DC2343B20639DF3008B034A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343A20639DF3008B034A /* SearchViewController.swift */; };
 		5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343C2063A02A008B034A /* StallListingCell.swift */; };
-		5DC2343F2063B8EB008B034A /* OngoingOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343E2063B8EB008B034A /* OngoingOrderController.swift */; };
+		5DC2343F2063B8EB008B034A /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2343E2063B8EB008B034A /* OrderController.swift */; };
 		5DC234412063B913008B034A /* OngoingOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234402063B913008B034A /* OngoingOrderCell.swift */; };
 		5DC234432064026D008B034A /* StallDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234422064026D008B034A /* StallDetailController.swift */; };
 		5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234462064CF08008B034A /* FoodTableViewCell.swift */; };
@@ -84,7 +84,7 @@
 		5DBC55B4206CA946000CCBED /* StallDetailController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StallDetailController+TableView.swift"; sourceTree = "<group>"; };
 		5DC2343A20639DF3008B034A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5DC2343C2063A02A008B034A /* StallListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallListingCell.swift; sourceTree = "<group>"; };
-		5DC2343E2063B8EB008B034A /* OngoingOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOrderController.swift; sourceTree = "<group>"; };
+		5DC2343E2063B8EB008B034A /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		5DC234402063B913008B034A /* OngoingOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOrderCell.swift; sourceTree = "<group>"; };
 		5DC234422064026D008B034A /* StallDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallDetailController.swift; sourceTree = "<group>"; };
 		5DC234462064CF08008B034A /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		F220FC11206CC7ED0093CF04 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				5DC2343E2063B8EB008B034A /* OngoingOrderController.swift */,
+				5DC2343E2063B8EB008B034A /* OrderController.swift */,
 				F297DEA0206F72F900991DC7 /* OngoingOrderController+CollectionView.swift */,
 				F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */,
 				5DEC47C42077828100544A54 /* OrderDetailViewController.swift */,
@@ -544,7 +544,7 @@
 				F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */,
 				5DC234412063B913008B034A /* OngoingOrderCell.swift in Sources */,
 				F21A46AA206A7D280066BFA0 /* FirebaseObject.swift in Sources */,
-				5DC2343F2063B8EB008B034A /* OngoingOrderController.swift in Sources */,
+				5DC2343F2063B8EB008B034A /* OrderController.swift in Sources */,
 				F204341320778D2E00FF3083 /* UIViewController+Keyboard.swift in Sources */,
 				F26657F7206FCA5D00BE83F5 /* StallOverviewView.swift in Sources */,
 				B2464E8B205C51A30095A925 /* Food.swift in Sources */,
