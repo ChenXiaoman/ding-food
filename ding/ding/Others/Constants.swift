@@ -70,6 +70,8 @@ struct Constants {
     /// The text on the section of food option
     static let foodOptionSectionText = "Choose your favourite option(s)"
     
-    /// The text on the section of review
+    /// The text on the header of review section
     static let reviewSectionHeaderText = "How's the service?"
+    /// The text on review text field row
+    static let reviewSectionRowText = "Write a review! (optional)"
 }

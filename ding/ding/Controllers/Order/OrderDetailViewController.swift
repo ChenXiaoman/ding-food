@@ -73,17 +73,21 @@ class OrderDetailViewController: FormViewController {
         }
     }
     
+    /// Sets up the review section by adding rows in
+    /// Eureka form.
     private func setUpReviewSection() {
-        let section = Section(Constants.reviewSectionHeaderText)
-            section <<< SegmentedRow<String> {
+        // Makes the background color the same as the app's background color.
+        tableView.backgroundColor = UIColor.white
+        
+        form +++
+            Section(Constants.reviewSectionHeaderText)
+            <<< SegmentedRow<String> {
                     $0.options = ["Bad", "Not good", "OK", "Good", "Excellent"]
                     $0.value = "OK"
                     $0.cell.tintColor = UIColor.darkGray
             }
-            section <<< TextAreaRow {
-                $0.placeholder = "Write a review!"
-                $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
+            <<< TextAreaRow {
+                $0.placeholder = Constants.reviewSectionRowText
             }
-       form +++ section
     }
 }

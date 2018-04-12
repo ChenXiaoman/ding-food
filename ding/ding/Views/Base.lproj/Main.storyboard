@@ -277,9 +277,9 @@ x5 Lemon Juice</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-zR-ZkL">
                                         <rect key="frame" x="0.0" y="0.0" width="691" height="168"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-ET-3Nr">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-ET-3Nr">
                                                 <rect key="frame" x="0.0" y="0.0" width="691" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTj-q9-1DF" customClass="MenuButton" customModule="ding" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="138" width="691" height="30"/>
@@ -296,8 +296,8 @@ x5 Lemon Juice</string>
                                     <constraint firstItem="LN2-zR-ZkL" firstAttribute="leading" secondItem="avK-Al-UtA" secondAttribute="leading" id="uIJ-qg-mqE"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNM-Gk-BfT">
-                                <rect key="frame" x="0.0" y="286" width="768" height="738"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNM-Gk-BfT">
+                                <rect key="frame" x="0.0" y="276" width="768" height="748"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodTableViewCell" rowHeight="269" id="hw7-VR-hM5" customClass="FoodTableViewCell" customModule="ding" customModuleProvider="target">
@@ -376,9 +376,9 @@ x5 Lemon Juice</string>
                             <constraint firstItem="4On-5U-RxZ" firstAttribute="height" secondItem="2jC-Na-kzj" secondAttribute="height" multiplier="1:4" id="Sox-Px-d4n"/>
                             <constraint firstItem="QNM-Gk-BfT" firstAttribute="trailing" secondItem="QFM-9b-dLC" secondAttribute="trailing" id="Twb-MC-LLX"/>
                             <constraint firstItem="QNM-Gk-BfT" firstAttribute="leading" secondItem="QFM-9b-dLC" secondAttribute="leading" id="ZEy-5k-mP8"/>
-                            <constraint firstItem="QNM-Gk-BfT" firstAttribute="top" secondItem="4On-5U-RxZ" secondAttribute="bottom" constant="10" id="bCa-oM-nxy"/>
+                            <constraint firstItem="QNM-Gk-BfT" firstAttribute="top" secondItem="4On-5U-RxZ" secondAttribute="bottom" id="bCa-oM-nxy"/>
                             <constraint firstItem="avK-Al-UtA" firstAttribute="width" secondItem="2jC-Na-kzj" secondAttribute="width" multiplier="9:10" id="bna-ge-1Eh"/>
-                            <constraint firstItem="avK-Al-UtA" firstAttribute="top" secondItem="4On-5U-RxZ" secondAttribute="bottom" constant="30" id="dpR-8j-sYy"/>
+                            <constraint firstItem="avK-Al-UtA" firstAttribute="top" secondItem="4On-5U-RxZ" secondAttribute="bottom" id="dpR-8j-sYy"/>
                             <constraint firstItem="4On-5U-RxZ" firstAttribute="trailing" secondItem="QFM-9b-dLC" secondAttribute="trailing" id="fiW-1Y-TpT"/>
                             <constraint firstItem="4On-5U-RxZ" firstAttribute="leading" secondItem="QFM-9b-dLC" secondAttribute="leading" id="kd8-Mp-ggE"/>
                             <constraint firstItem="4On-5U-RxZ" firstAttribute="top" secondItem="QFM-9b-dLC" secondAttribute="top" id="uaR-gh-OBj"/>
