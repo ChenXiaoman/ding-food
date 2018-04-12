@@ -137,4 +137,9 @@ extension FirebaseObject {
     public func save() {
         DatabaseRef.setChildNode(of: Self.path, to: self)
     }
+
+    /// Delete this `FirebaseObject` from the database
+    public func delete() {
+        DatabaseRef.deleteChildNode(of: Self.path + "/\(id)")
+    }
 }

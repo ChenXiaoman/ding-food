@@ -27,6 +27,8 @@ struct Constants {
     static let orderHistoryControllerId = "orderHistoryController"
     /// The identifier for settings view controller.
     static let settingsControllerId = "settingsController"
+    /// The identifier for order detail view controller.
+    static let orderDetailControllerId = "orderDetailsController"
 
     /// The width of the current device's screen.
     static let screenWidth = UIScreen.main.bounds.width
@@ -43,6 +45,10 @@ struct Constants {
     /// The standard image size in KB
     static let standardImageSize = 1_024
     static let bytesPerKiloByte = 1_024
+
+    /// The minimum number of rows in food option section
+    /// in adding/ updating food infomation form
+    static let minimumLinesInFoodOptionSection = 5
 }
 
 /**
