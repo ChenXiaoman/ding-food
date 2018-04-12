@@ -16,11 +16,4 @@ public struct Filter: FirebaseObject {
 
     public let id: String
     public let name: String
-
-    /// Creates a new `Filter` with a certain name.
-    /// - Parameter name: The name of this `Filter`.
-    init(name: String) {
-        id = Filter.getAutoId
-        self.name = name
-    }
 }
