@@ -129,9 +129,16 @@ class OrderController: UIViewController {
         // Loads the related stall overview.
         let path = "\(StallOverview.path)/\(currentOrder.stallId)"
         DatabaseRef.observeValueOnce(of: path, onChange: cell.loadStoreOverview)
-        
+            
+        // Stores this order for further retrieval.
         orders[indexPath.totalItem(in: collectionView)] = currentOrder
         
+        // Plays the sound if the order is ready.
+        if currentOrder.status == .ready {
+            let sound = SoundEffectController()
+            sound.play(.ring)
+        }
+            
         return cell
     }
     

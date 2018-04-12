@@ -24,10 +24,7 @@ class MeViewController: UIViewController {
         settingMenu.delegate = self
         settingMenu.dataSource = self
         settingMenu.tableFooterView = UIView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
