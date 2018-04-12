@@ -60,7 +60,6 @@ class StallFormViewController: FormViewController {
             <<< TextRow { row in
                 row.tag = Tag.description
                 row.title = "Stall Description"
-                row.value = "No description"
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }
