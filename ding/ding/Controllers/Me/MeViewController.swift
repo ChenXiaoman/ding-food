@@ -18,16 +18,13 @@ class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         settingMenu.delegate = self
         settingMenu.dataSource = self
         settingMenu.tableFooterView = UIView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -111,7 +108,8 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = ["", "", "", Constants.aboutViewControllerId, ""]
+    static let controllerIds = ["", Constants.profileViewControllerId, Constants.settingViewControllerId,
+                                Constants.aboutViewControllerId, ""]
 
     /// The name of a certain setting menu cell.
     var name: String {

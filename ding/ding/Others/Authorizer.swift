@@ -52,6 +52,12 @@ class Authorizer {
         return Authorizer.auth.currentUser?.uid ?? ""
     }
 
+    /// Returns the email address of the current user if it has signed in, an empty
+    /// string otherwise.
+    var email: String {
+        return Authorizer.auth.currentUser?.email ?? ""
+    }
+
     /// Returns whether there is a user that has signed in currently.
     var didLogin: Bool {
         return Authorizer.auth.currentUser != nil
