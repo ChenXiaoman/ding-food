@@ -19,13 +19,11 @@ class FoodTypeLabel: UILabel {
     func load(foodType: FoodType) {
         switch foodType {
         case .main:
-            self.text = "🍚"
-        case .soup:
-            self.text = "🥘"
+            self.text = "🍱"
+        case .side:
+            self.text = "🍪"
         case .drink:
             self.text = "🍺"
-        case .dessert:
-            self.text = "🍰"
         }
     }
 }
