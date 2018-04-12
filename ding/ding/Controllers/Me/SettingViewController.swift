@@ -18,25 +18,20 @@ class SettingViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.title = "Settings"
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Populates the form used to get settings input.
-        form +++ Section("My Profile")
-            <<< TextRow { row in
-                row.title = "Email Address"
-                row.value = authorizer.email
-                row.disabled = true
+        form +++ Section("Settings")
+            <<< SwitchRow { row in
+                row.title = "Volume"
+            }.onChange { row in
+                if let option = row.value {
+                    UserDefaults.standard.set(option, forKey: "volume")
+                }
             }
-            <<< TextRow { row in
-                row.title = "Name"
-                row.value = authorizer.userName
-                row.disabled = true
-            }
-            <<< ImageRow { row in
-                row.title = "Upload avatar"
-        }
     }
 }

@@ -18,6 +18,7 @@ class ProfileViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.title = "Edit My Profile"
     }
 
     override func viewDidLoad() {
@@ -37,6 +38,6 @@ class ProfileViewController: FormViewController {
             }
             <<< ImageRow { row in
                 row.title = "Upload avatar"
-        }
+            }
     }
 }
