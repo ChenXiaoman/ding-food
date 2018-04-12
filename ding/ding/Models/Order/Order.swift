@@ -17,6 +17,7 @@ import Foundation
  */
 public struct Order: FirebaseObject {
     public static let path = "/orders"
+    public static let custemerIdPath = "/customerId"
     /// Used to handle all logics related to Firebase Auth.
     private static let authorizer = Authorizer()
     /// The format to display a certain kind of food with its amount and options.

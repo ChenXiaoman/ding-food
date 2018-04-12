@@ -7,8 +7,9 @@
 //
 
 import FirebaseDatabaseUI
+import Eureka
 
-class OrderDetailViewController: UIViewController {
+class OrderDetailViewController: FormViewController {
     /// The UIView for displaying order information
     @IBOutlet weak private var orderView: OrderView!
     /// The UIView for review section.
@@ -36,6 +37,22 @@ class OrderDetailViewController: UIViewController {
         orderView.load(order)
         
         hideOrShowReview()
+        
+        setUpFoodTableViewDataSource()
+    }
+    
+    /// Manully sets the datasource of foodTableView to OrderFoodTableViewController
+    /// because as a FormViewController, OrderDetailViewController
+    /// cannot handle two TableView at the same time.
+    private func setUpFoodTableViewDataSource() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier:
+            Constants.orderFoodTableViewControllerId)
+            as? OrderFoodTableViewController else {
+                return
+        }
+        controller.order = order
+        foodTableView.dataSource = controller
+        addChildViewController(controller)
     }
     
     /// Checks whether an order is ready for review. An order is ready
@@ -49,9 +66,28 @@ class OrderDetailViewController: UIViewController {
         if order.status == OrderStatus.collected {
             NSLayoutConstraint.activate([reviewViewNormalConstraint])
             NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
+            setUpReviewSection()
         } else {
             NSLayoutConstraint.activate([reviewViewHiddenConstraint])
             NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
         }
+    }
+    
+    /// Sets up the review section by adding rows in
+    /// Eureka form.
+    private func setUpReviewSection() {
+        // Makes the background color the same as the app's background color.
+        tableView.backgroundColor = UIColor.white
+        
+        form +++
+            Section(Constants.reviewSectionHeaderText)
+            <<< SegmentedRow<String> {
+                    $0.options = ["Bad", "Not good", "OK", "Good", "Excellent"]
+                    $0.value = "OK"
+                    $0.cell.tintColor = UIColor.darkGray
+            }
+            <<< TextAreaRow {
+                $0.placeholder = Constants.reviewSectionRowText
+            }
     }
 }

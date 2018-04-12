@@ -31,11 +31,11 @@ extension UIViewController {
                                     onConfirm: toOngoingOrderView)
     }
     
-    /// Directs the user to `OngoingOrderController` view.
+    /// Directs the user to `OrderController` view.
     private func toOngoingOrderView() {
         let id = Constants.ongoingOrderControllerId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
-            as? OngoingOrderController else {
+            as? OrderController else {
                 return
         }
         

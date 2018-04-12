@@ -35,6 +35,8 @@ struct Constants {
     static let ongoingOrderControllerId = "ongoingOrderController"
     /// The identifier for the shopping cart view controller.
     static let shoppingCartControllerId = "shoppingCartController"
+    /// The identifier for the OrderFoodTableViewController.
+    static let orderFoodTableViewControllerId = "OrderFoodTableViewController"
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
 
@@ -71,4 +73,9 @@ struct Constants {
     
     /// The text on the section of food option
     static let foodOptionSectionText = "Choose your favourite option(s)"
+    
+    /// The text on the header of review section
+    static let reviewSectionHeaderText = "How's the service?"
+    /// The text on review text field row
+    static let reviewSectionRowText = "Write a review! (optional)"
 }

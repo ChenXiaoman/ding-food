@@ -1,5 +1,5 @@
 //
-//  OngoingOrderController+CollectionView.swift
+//  OrderController+CollectionView.swift
 //  ding
 //
 //  Created by Yunpeng Niu on 31/03/18.
@@ -9,12 +9,12 @@
 import UIKit
 
 /**
- Extension for `OngoingOrderController` so that it can manage the collection view.
+ Extension for `OrderController` so that it can manage the collection view.
 
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-extension OngoingOrderController: UICollectionViewDelegate {
+extension OrderController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let id = Constants.orderDetailControllerId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
@@ -30,7 +30,7 @@ extension OngoingOrderController: UICollectionViewDelegate {
     }
 }
 
-extension OngoingOrderController: UICollectionViewDelegateFlowLayout {
+extension OrderController: UICollectionViewDelegateFlowLayout {
     /// Sets the size of each cell.
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
