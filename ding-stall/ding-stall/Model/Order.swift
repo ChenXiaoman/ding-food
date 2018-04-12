@@ -51,7 +51,7 @@ public struct Order: FirebaseObject {
     /// total price should not be affected by changes to prices after the order is created.
     let totalPrice: Double
 
-    init(status: OrderStatus = .preparing, review: Review? = nil, stall: StallOverview, food: [Food: Int],
+    init(status: OrderStatus = .pending, review: Review? = nil, stall: StallOverview, food: [Food: Int],
          options: [Food: [String: String]]) {
         id = Order.getAutoId
         self.status = status
@@ -98,13 +98,13 @@ public struct Order: FirebaseObject {
 public enum OrderStatus: String, Codable {
     case pending = "Pending"
     case rejected = "Rejected"
-    case preparing = "Preparing"
+    case accepted = "Accepted"
     case ready = "Ready"
     case collected = "Collected"
 
     /// Indicate whether this order is not paid
     /// i.e. should be displayed on the order list
     public var isOngoingOrderStatus: Bool {
-        return self == .preparing || self == .ready
+        return self == .pending || self == .accepted || self == .ready
     }
 }

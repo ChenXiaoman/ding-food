@@ -46,7 +46,7 @@ class OrderStatusLabel: UILabel {
         switch status {
         case .pending:
             backgroundColor = UIColor.fromRGB(0x6bbdef)
-        case .preparing:
+        case .accepted:
             backgroundColor = UIColor.fromRGB(0xefa647)
         case .ready:
             backgroundColor = UIColor.fromRGB(0x93e83a)

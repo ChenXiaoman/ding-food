@@ -29,7 +29,7 @@ class OrderQueueCollectionViewCell: OrderCollectionViewCell {
     private func toggleButton(byStatus status: OrderStatus) {
         rejectButton.isEnabled = status == .pending
         acceptButton.isEnabled = status == .pending
-        readyButton.isEnabled = status == .preparing
+        readyButton.isEnabled = status == .accepted
         collectButton.isEnabled = status == .ready
     }
 }
