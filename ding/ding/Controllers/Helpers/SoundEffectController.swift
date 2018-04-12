@@ -35,5 +35,5 @@ class SoundEffectController {
  An enum for all possible sound effects.
  */
 enum SoundEffect: String {
-    case ring = "ring.mp3"
+    case ring = "front_desk_bell.mp3"
 }
