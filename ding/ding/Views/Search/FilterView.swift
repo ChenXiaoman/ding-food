@@ -20,6 +20,21 @@ class FilterView: UIView {
     /// Loads a list of `Filter`s to be displayed in this `FilterView`.
     /// - Parameter filters: A list of `Filter`s to be displayed.
     func load(filters: [Filter]) {
+        var latestX = CGFloat(0)
+        for filter in filters {
+            // Only displays within the visible range.
+            if latestX > frame.maxX {
+                break
+            }
+            let label = FilterLabel(frame: CGRect(origin: CGPoint(x: latestX, y: 0), size: FilterLabel.size))
+            label.load(filter)
+            latestX = (label.frame.maxX + FilterLabel.gap)
+            addSubview(label)
+        }
+    }
 
+    /// Clears a `FilterView` by removing all subviews.
+    func clear() {
+        subviews.forEach { $0.removeFromSuperview() }
     }
 }

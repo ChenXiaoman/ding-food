@@ -15,11 +15,12 @@ import UIKit
  - Date: March 2018
  */
 class StallListingCell: UICollectionViewCell {
-    @IBOutlet private weak var photo: UIImageView!
-    @IBOutlet private weak var name: UILabel!
-    @IBOutlet private weak var queueCount: UILabel!
-    @IBOutlet private weak var averageRating: UILabel!
-
+    @IBOutlet weak private var photo: UIImageView!
+    @IBOutlet weak private var name: UILabel!
+    @IBOutlet weak private var queueCount: UILabel!
+    @IBOutlet weak private var averageRating: UILabel!
+    @IBOutlet weak private var filters: FilterView!
+    
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "stallListingCell"
     /// The aspect ratio of this cell.
@@ -51,5 +52,9 @@ class StallListingCell: UICollectionViewCell {
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)
+        filters.clear()
+        if let stallFilters = stall.filters {
+            filters.load(filters: Array(stallFilters.values))
+        }
     }
 }

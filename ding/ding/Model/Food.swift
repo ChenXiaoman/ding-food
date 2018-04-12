@@ -30,7 +30,6 @@ public struct Food: FirebaseObject {
 
 public enum FoodType: String, Codable {
     case main = "Main"
-    case soup = "Soup"
-    case dessert = "Dessert"
+    case side = "Side"
     case drink = "Drink"
 }

@@ -101,9 +101,10 @@ extension FirebaseObject {
         return deserialize(dict)
     }
 
-    /// Overloaded method
-    /// Decode an dictionary to be a firebase object
-    /// Parameter: dict: the dictionary to decode
+    /// Converts a given dictionary into a `Codable` object. It will simply return `nil` if the
+    /// conversion fails.
+    /// - Parameter dict: the dictionary to decode.
+    /// - Returns: The object converted if conversion is successful; nil otherwise.
     static func deserialize(_ dict: [String: Any]) -> Self? {
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys),
             let obj = try? JSONDecoder().decode(Self.self, from: data) else {
@@ -112,10 +113,10 @@ extension FirebaseObject {
         return obj
     }
 
-    /// This method will convert the dictionary from (id, value) pair to
-    /// (id, value with id) for the subsequent deserialize
-    /// - Parameter: dict: the nested dictionary of (id, value) pair
-    /// - Return: a dictionary (id, value) whose value contains the id
+    /// This method will convert the a dictionary in (id, value) format to a dictionary of
+    /// dictionaries in (id, value + id) format to prepare for subsequent deserialization.
+    /// - Parameter dict: the nested dictionary of (id, value) pair.
+    /// - Returns: a dictionary (id, value) whose value contains the id.
     static func deserializeNestedStructure(_ dict: [String: Any]) -> [String: [String: Any]]? {
         var menuDict = [String: [String: Any]]()
         dict.forEach { key, value in
