@@ -87,7 +87,7 @@ class ProfileViewController: StallFormViewController {
     private func updateStallInformation() {
         guard form.validate().isEmpty else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some fields are empty") { _ in }
+                                           message: "Some fields are empty")
             return
         }
 
@@ -102,7 +102,7 @@ class ProfileViewController: StallFormViewController {
             currentStallOverview?.photoPath = newPhotoPath
             guard let photoData = currentPhoto.standardData else {
                 DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                               message: "Unable to upload the new photo") { _ in }
+                                               message: "Unable to upload the new photo")
                 return
             }
             StorageRef.upload(photoData, at: newPhotoPath)

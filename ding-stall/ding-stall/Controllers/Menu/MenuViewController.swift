@@ -65,7 +65,7 @@ class MenuViewController: UIViewController {
                 return
         }
 
-        DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?") {
+        DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?", cancelButtonText: "Cancel") {
             Account.stall?.deleteFood(by: foodId)
         }
     }

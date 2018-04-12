@@ -34,7 +34,7 @@ class StallCreationViewController: StallFormViewController {
     private func createStall(cell: ButtonCellOf<String>, row: ButtonRow) {
         guard form.validate().isEmpty else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some fields are invalid") { _ in }
+                                           message: "Some fields are invalid")
             return
         }
         let valueDict = form.values()

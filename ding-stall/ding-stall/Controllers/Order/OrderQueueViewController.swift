@@ -96,7 +96,8 @@ class OrderQueueViewController: OrderViewController {
                 return
         }
         DialogHelpers.promptConfirm(in: self, title: "Confirm \(statusRawValue) ?",
-                                    message: "Are you sure to change order status to be " + statusRawValue) {
+                                    message: "Are you sure to change order status to be " + statusRawValue,
+                                    cancelButtonText: "Cancel") {
                                         self.changeOrderStatus(to: newStatus)
         }
     }

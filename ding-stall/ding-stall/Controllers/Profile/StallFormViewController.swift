@@ -86,7 +86,7 @@ class StallFormViewController: FormViewController {
 
     /// Show an alert message that the food is successfully add into menu
     func showSuccessAlert(message: String) {
-        DialogHelpers.showAlertMessage(in: self, title: "Success", message: message) { _ in
+        DialogHelpers.showAlertMessage(in: self, title: "Success", message: message) {
             self.navigationController?.popViewController(animated: true)
         }
     }
