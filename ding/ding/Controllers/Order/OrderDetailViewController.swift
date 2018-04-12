@@ -7,8 +7,9 @@
 //
 
 import FirebaseDatabaseUI
+import Eureka
 
-class OrderDetailViewController: UIViewController {
+class OrderDetailViewController: FormViewController {
     /// The UIView for displaying order information
     @IBOutlet weak private var orderView: OrderView!
     /// The UIView for review section.
@@ -44,7 +45,8 @@ class OrderDetailViewController: UIViewController {
     /// because as a FormViewController, OrderDetailViewController
     /// cannot handle two TableView at the same time.
     private func setUpFoodTableViewDataSource() {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: Constants.orderFoodTableViewControllerId)
+        guard let controller = storyboard?.instantiateViewController(withIdentifier:
+            Constants.orderFoodTableViewControllerId)
             as? OrderFoodTableViewController else {
                 return
         }
@@ -64,9 +66,24 @@ class OrderDetailViewController: UIViewController {
         if order.status == OrderStatus.collected {
             NSLayoutConstraint.activate([reviewViewNormalConstraint])
             NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
+            setUpReviewSection()
         } else {
             NSLayoutConstraint.activate([reviewViewHiddenConstraint])
             NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
         }
+    }
+    
+    private func setUpReviewSection() {
+        let section = Section(Constants.reviewSectionHeaderText)
+            section <<< SegmentedRow<String> {
+                    $0.options = ["Bad", "Not good", "OK", "Good", "Excellent"]
+                    $0.value = "OK"
+                    $0.cell.tintColor = UIColor.darkGray
+            }
+            section <<< TextAreaRow {
+                $0.placeholder = "Write a review!"
+                $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
+            }
+       form +++ section
     }
 }
