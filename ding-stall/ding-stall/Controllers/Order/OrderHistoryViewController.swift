@@ -16,6 +16,8 @@ class OrderHistoryViewController: OrderViewController {
     
     @IBOutlet private weak var orderHistoryCollectionView: UICollectionView!
 
+    private var orderHistoryDict = [IndexPath: OrderHistory]()
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -43,8 +45,29 @@ class OrderHistoryViewController: OrderViewController {
         }
 
         if let orderHistory = OrderHistory.deserialize(snapshot) {
+            orderHistoryDict[indexPath] = orderHistory
             populateOrderCell(cell: cell, model: orderHistory.order)
         }
         return cell
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension OrderHistoryViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let orderHistory = orderHistoryDict[indexPath] else {
+            return
+        }
+        loadOrderHistoryDetailViewController(orderHistory: orderHistory, animated: true)
+    }
+
+    private func loadOrderHistoryDetailViewController(orderHistory: OrderHistory, animated: Bool) {
+        let id = Constants.orderDetailControllerId
+        guard let orderDetailVC = storyboard?.instantiateViewController(withIdentifier: id)
+            as? OrderHistoryDetailViewController else {
+                fatalError("Could not find the controller for order detail")
+        }
+        orderDetailVC.initialize(order: orderHistory.order, review: orderHistory.review)
+        navigationController?.pushViewController(orderDetailVC, animated: animated)
     }
 }

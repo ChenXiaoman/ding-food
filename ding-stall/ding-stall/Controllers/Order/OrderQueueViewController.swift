@@ -102,6 +102,7 @@ class OrderQueueViewController: OrderViewController {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
 extension OrderQueueViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let order = orderDict[indexPath] else {
@@ -111,7 +112,7 @@ extension OrderQueueViewController {
     }
 
     private func loadOrderDetailViewController(order: Order, animated: Bool) {
-        let id = "OrderDetail"
+        let id = Constants.orderDetailControllerId
         guard let orderDetailVC = storyboard?.instantiateViewController(withIdentifier: id)
             as? OrderDetailViewController else {
                 fatalError("Could not find the controller for order detail")

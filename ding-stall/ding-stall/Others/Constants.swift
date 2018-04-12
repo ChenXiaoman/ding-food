@@ -27,6 +27,8 @@ struct Constants {
     static let orderHistoryControllerId = "orderHistoryController"
     /// The identifier for settings view controller.
     static let settingsControllerId = "settingsController"
+    /// The identifier for order detail view controller.
+    static let orderDetailControllerId = "orderDetailsController"
 
     /// The width of the current device's screen.
     static let screenWidth = UIScreen.main.bounds.width

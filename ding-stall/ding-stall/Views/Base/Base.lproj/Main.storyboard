@@ -407,7 +407,7 @@ x5 Lemon Juice</string>
         <!--OrderDetailViewController-->
         <scene sceneID="pmE-Z5-sl1">
             <objects>
-                <viewController storyboardIdentifier="OrderDetail" id="YMe-kw-83v" userLabel="OrderDetailViewController" customClass="OrderDetailViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderDetailsController" id="YMe-kw-83v" userLabel="OrderDetailViewController" customClass="OrderHistoryDetailViewController" customModule="ding_stall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QLV-hj-xNH">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
