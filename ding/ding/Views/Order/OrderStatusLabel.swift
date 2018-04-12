@@ -47,15 +47,15 @@ class OrderStatusLabel: UILabel {
         text = status.rawValue
         switch status {
         case .pending:
-            backgroundColor = UIColor.fromRGB(0x6bbdef)
+            backgroundColor = .fromRGB(0x6bbdef)
         case .preparing:
-            backgroundColor = UIColor.fromRGB(0xefa647)
+            backgroundColor = .fromRGB(0xefa647)
         case .ready:
-            backgroundColor = UIColor.fromRGB(0x93e83a)
+            backgroundColor = .fromRGB(0x93e83a)
         case .rejected:
-            backgroundColor = UIColor.fromRGB(0x706a6a)
+            backgroundColor = .fromRGB(0x706a6a)
         case .collected:
-            backgroundColor = UIColor.fromRGB(0xf47141)
+            backgroundColor = .fromRGB(0xf47141)
         }
     }
 }
