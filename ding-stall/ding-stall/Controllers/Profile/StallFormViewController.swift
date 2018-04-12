@@ -27,11 +27,6 @@ class StallFormViewController: FormViewController {
         static let photo = "Photo"
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setValidationStyle()
@@ -65,7 +60,6 @@ class StallFormViewController: FormViewController {
             <<< TextRow { row in
                 row.tag = Tag.description
                 row.title = "Stall Description"
-                row.value = "No description"
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }

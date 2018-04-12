@@ -53,6 +53,8 @@ class OngoingOrderController: UIViewController {
         super.viewWillDisappear(animated)
         // Stops sending updates to the collection view (to avoid app crash).
         dataSource?.unbind()
+        // Stops the loading indicator (such that the timeout thread will not be triggered later).
+        loadingIndicator.stopAnimating()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,7 +96,7 @@ class OngoingOrderController: UIViewController {
         }
 
         if let order = Order.deserialize(snapshot) {
-            // Loads the order info
+            // Loads the order infomation.
             cell.load(order)
             
             // Loads the related stall overview.
@@ -103,7 +105,6 @@ class OngoingOrderController: UIViewController {
             
             orders[indexPath.totalItem(in: collectionView)] = order
         }
-        
         return cell
     }
     

@@ -50,7 +50,7 @@ class MenuViewController: UIViewController {
             guard let editFoodVC = segue.destination as? EditFoodViewController else {
                 return
             }
-            editFoodVC.initialize(with: foodId)
+            editFoodVC.initialize(foodId: foodId, foodPhoto: cell.foodPhoto)
         default:
             break
         }
@@ -110,4 +110,5 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
         // half the spacing because both left and right has this spacing
         return cellAndInsetSize * CGFloat(1 - MenuViewConstants.cellRatio) * 0.5
     }
+
 }

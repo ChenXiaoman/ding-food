@@ -21,7 +21,8 @@ public struct Food: FirebaseObject {
     public var type: FoodType
     public var isSoldOut: Bool
     public var photoPath: String?
-
+    public var options: [String: [String]]?
+    
     public mutating func soldOut() {
         isSoldOut = true
     }
@@ -29,7 +30,6 @@ public struct Food: FirebaseObject {
 
 public enum FoodType: String, Codable {
     case main = "Main"
-    case soup = "Soup"
-    case dessert = "Dessert"
+    case side = "Side"
     case drink = "Drink"
 }

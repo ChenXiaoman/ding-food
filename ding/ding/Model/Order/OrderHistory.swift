@@ -12,9 +12,9 @@ public struct OrderHistory: FirebaseObject {
     public var id: String
     /// The composed order with the order history
     public var order: Order
-    public var review: Review?
+    public var review: Review
 
-    public init(order: Order, review: Review? = nil) {
+    public init(order: Order, review: Review) {
         id = order.id
         self.order = order
         self.review = review

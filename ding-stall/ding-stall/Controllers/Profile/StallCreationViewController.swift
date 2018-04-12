@@ -15,6 +15,11 @@ class StallCreationViewController: StallFormViewController {
         addCreateButton()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     private func addCreateButton() {
         let buttonRow = ButtonRow()
         buttonRow.title = "Create Stall!"
@@ -44,14 +49,12 @@ class StallCreationViewController: StallFormViewController {
                 return
         }
 
-        let photoPath = StallOverview.path + "/\(id)"
+        let photoPath = StallOverview.newPhotoPath
         StorageRef.upload(photoData, at: photoPath)
         let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath,
                                           location: location, openingHour: openingHour,
                                           description: description)
         stallOverview.save()
-        let stall = StallDetails(id: id, menu: nil, filters: nil)
-        stall.save()
         Account.stallId = id
         loadTabBarView(true)
     }

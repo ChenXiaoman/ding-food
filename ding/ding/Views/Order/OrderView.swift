@@ -17,6 +17,14 @@ class OrderView: UIView {
     /// The format to display order time.
     private static let timeFormat = "Ordered at: %@"
     
+    override func awakeFromNib() {
+        stallName.text = nil
+        stallPhoto.image = nil
+        orderStatus.awakeFromNib()
+        orderTime.text = nil
+        stallPhoto.clipsToBounds = true // Use for enable corner radius
+    }
+    
     /// Loads data into and populate a `OrderView`.
     /// - Parameter order: The `Order` object as the data source.
     func load(_ order: Order) {
@@ -35,7 +43,6 @@ class OrderView: UIView {
             return
         }
         stallPhoto.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
-        stallPhoto.clipsToBounds = true // Use for enable corner radius
         stallName.text = stall.name
         
         // Stop observer after getting stall details

@@ -15,11 +15,12 @@ import UIKit
  - Date: March 2018
  */
 class StallListingCell: UICollectionViewCell {
-    @IBOutlet private weak var photo: UIImageView!
-    @IBOutlet private weak var name: UILabel!
-    @IBOutlet private weak var queueCount: UILabel!
-    @IBOutlet private weak var averageRating: UILabel!
-
+    @IBOutlet weak private var photo: UIImageView!
+    @IBOutlet weak private var name: UILabel!
+    @IBOutlet weak private var queueCount: UILabel!
+    @IBOutlet weak private var averageRating: UILabel!
+    @IBOutlet weak private var filters: FilterView!
+    
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "stallListingCell"
     /// The aspect ratio of this cell.
@@ -36,13 +37,24 @@ class StallListingCell: UICollectionViewCell {
     /// The text format to display average rating.
     private static let averageRatingFormat = "Average rating: %.1f"
 
+    override func awakeFromNib() {
+        photo.image = nil
+        name.text = nil
+        queueCount.text = nil
+        averageRating.text = nil
+        photo.clipsToBounds = true // Use for enable corner radius
+    }
+    
     /// Loads data into and populate a `StallListingCell`.
     /// - Parameter stall: The `StallOverview` object as the data source.
     func load(_ stall: StallOverview) {
         photo.setWebImage(at: stall.photoPath, placeholder: #imageLiteral(resourceName: "stall-placeholder"))
-        photo.clipsToBounds = true // Use for enable corner radius
         name.text = stall.name
         queueCount.text = String(format: StallListingCell.queueCountFormat, stall.queueCount)
         averageRating.text = String(format: StallListingCell.averageRatingFormat, stall.averageRating)
+        filters.clear()
+        if let stallFilters = stall.filters {
+            filters.load(filters: Array(stallFilters.values))
+        }
     }
 }
