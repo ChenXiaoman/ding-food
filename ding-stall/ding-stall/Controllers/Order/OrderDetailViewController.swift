@@ -23,6 +23,7 @@ class OrderDetailViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        buildFormAndPopulateValue()
     }
 
     private func buildFormAndPopulateValue() {

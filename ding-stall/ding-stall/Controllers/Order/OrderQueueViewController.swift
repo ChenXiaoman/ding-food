@@ -101,3 +101,22 @@ class OrderQueueViewController: OrderViewController {
         }
     }
 }
+
+extension OrderQueueViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let order = orderDict[indexPath] else {
+            return
+        }
+        loadOrderDetailViewController(order: order, animated: true)
+    }
+
+    private func loadOrderDetailViewController(order: Order, animated: Bool) {
+        let id = "OrderDetail"
+        guard let orderDetailVC = storyboard?.instantiateViewController(withIdentifier: id)
+            as? OrderDetailViewController else {
+                fatalError("Could not find the controller for order detail")
+        }
+        orderDetailVC.initialize(order: order)
+        navigationController?.pushViewController(orderDetailVC, animated: animated)
+    }
+}
