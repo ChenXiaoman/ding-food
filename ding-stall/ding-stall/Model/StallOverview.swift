@@ -24,6 +24,7 @@ public struct StallOverview: FirebaseObject {
     public var location: String
     public var openingHour: String
     public var description: String
+    public var filters: [String: Filter]?
 
     public init(id: String, name: String, photoPath: String,
                 location: String, openingHour: String, description: String) {

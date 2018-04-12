@@ -35,7 +35,7 @@ struct Account {
         DatabaseRef.observeValueOnce(of: StallDetails.path + "/\(uid)") { snapshot in
             stall = StallDetails.deserialize(snapshot)
             if stall == nil {
-                stall = StallDetails(id: uid, menu: nil, filters: nil)
+                stall = StallDetails(id: uid, menu: nil)
             }
             // Stop observing to avoid memory leak
             DatabaseRef.stopObservers(of: StallDetails.path + "/\(uid)")

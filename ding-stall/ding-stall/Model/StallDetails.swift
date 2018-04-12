@@ -19,7 +19,6 @@ public struct StallDetails: FirebaseObject {
 
     public var menu: [String: Food]?
 
-    public var filters: Set<FilterIdentifier>?
     private var menuPath: String {
         return StallDetails.path + "/\(Account.stallId)" + Food.path
     }
