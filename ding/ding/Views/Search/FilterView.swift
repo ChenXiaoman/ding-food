@@ -32,4 +32,9 @@ class FilterView: UIView {
             addSubview(label)
         }
     }
+
+    /// Clears a `FilterView` by removing all subviews.
+    func clear() {
+        subviews.forEach { $0.removeFromSuperview() }
+    }
 }
