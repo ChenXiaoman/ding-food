@@ -73,6 +73,7 @@
 		F2F2CE46207FA52000694D32 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE45207FA52000694D32 /* ImagePickerController.swift */; };
 		F2F2CE48207FA65E00694D32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE47207FA65E00694D32 /* ProfileViewController.swift */; };
 		F2F2CE4A207FAA4300694D32 /* SoundEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */; };
+		F2F2CE51207FB52400694D32 /* front_desk_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2F2CE50207FB52400694D32 /* front_desk_bell.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		F2F2CE45207FA52000694D32 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		F2F2CE47207FA65E00694D32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectController.swift; sourceTree = "<group>"; };
+		F2F2CE50207FB52400694D32 /* front_desk_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = front_desk_bell.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 		F2F2CE4B207FABB600694D32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2F2CE50207FB52400694D32 /* front_desk_bell.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */,
 				F285DB38205CC5A300E8621B /* README.md in Resources */,
 				F200DDE3205E520F00F33748 /* Assets.xcassets in Resources */,
+				F2F2CE51207FB52400694D32 /* front_desk_bell.mp3 in Resources */,
 				F2C6606C205B7FFF006C3C51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
