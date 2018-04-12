@@ -13,7 +13,7 @@ import Eureka
 class SettingsViewController: FormViewController {
 
     private var settings = Settings()
-    private var stallOverview: StallOverview!
+    private var stallOverview: StallOverview?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,7 +37,7 @@ class SettingsViewController: FormViewController {
     private func loadForm() {
         form +++ Section("Still receiving order")
             <<< SwitchRow() { row in
-                row.value = stallOverview.isOpen
+                row.value = stallOverview?.isOpen
                 row.title = row.value! ? "Open (can receive order)" : "Close (not receiving order)"
             }.onChange { row in
                 let isOpen = row.value ?? false
@@ -45,8 +45,8 @@ class SettingsViewController: FormViewController {
                 row.updateCell()
 
                 // update stall oeverview in the database
-                self.stallOverview.isOpen = isOpen
-                self.stallOverview.save()
+                self.stallOverview?.isOpen = isOpen
+                self.stallOverview?.save()
             }
 
             +++ Section("Rings for every new order")
