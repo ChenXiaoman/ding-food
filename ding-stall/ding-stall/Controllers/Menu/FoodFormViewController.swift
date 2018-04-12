@@ -82,8 +82,7 @@ class FoodFormViewController: FormViewController {
             <<< ActionSheetRow<FoodType> { row in
                 row.tag = Tag.type
                 row.title = "Food Type"
-                row.options = [FoodType.main, FoodType.soup,
-                               FoodType.drink, FoodType.dessert]
+                row.options = [FoodType.main, FoodType.side, FoodType.drink]
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }

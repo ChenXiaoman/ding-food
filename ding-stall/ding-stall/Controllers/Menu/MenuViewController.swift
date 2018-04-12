@@ -110,4 +110,5 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
         // half the spacing because both left and right has this spacing
         return cellAndInsetSize * CGFloat(1 - MenuViewConstants.cellRatio) * 0.5
     }
+
 }
