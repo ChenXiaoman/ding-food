@@ -39,8 +39,6 @@ struct Settings {
         return defaults.bool(forKey: Key.isAutomaticAcceptOrder)
     }
 
-    // Automatically load attributes values if set previously.
-    // Otherwise, set attributes values to default values.
     init() {
         self.defaults = UserDefaults.standard
     }
