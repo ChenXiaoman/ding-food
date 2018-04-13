@@ -45,6 +45,11 @@ class StallFormViewController: FormViewController {
                 cell.textLabel?.textColor = .red
             }
         }
+        ActionSheetRow<Filter>.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.textLabel?.textColor = .red
+            }
+        }
     }
 
     /// Build a form for adding new food
@@ -82,7 +87,9 @@ class StallFormViewController: FormViewController {
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }
-        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: "Add category of your stall", footer: "", initializeStallFilterSection)
+        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete],
+                                    header: "Add category of your stall", footer: "",
+                                    initializeStallFilterSection)
     }
 
     private func initializeStallFilterSection(_ section: MultivaluedSection) {
@@ -102,6 +109,17 @@ class StallFormViewController: FormViewController {
                 row.add(rule: RuleRequired())
             }
         }
+    }
+
+    func getFilters() -> [String: Filter]? {
+        var filters = [String: Filter]()
+        form.allSections.last?.forEach { row in
+            guard let filter = (row as? ActionSheetRow<Filter>)?.value else {
+                return
+            }
+            filters[filter.id] = filter
+        }
+        return !filters.isEmpty ? filters : nil
     }
 
     /// Show an alert message that the food is successfully add into menu

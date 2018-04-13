@@ -53,7 +53,7 @@ class StallCreationViewController: StallFormViewController {
         StorageRef.upload(photoData, at: photoPath)
         let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath,
                                           location: location, openingHour: openingHour,
-                                          description: description)
+                                          description: description, filters: getFilters())
         stallOverview.save()
         Account.stallId = id
         loadTabBarView(true)

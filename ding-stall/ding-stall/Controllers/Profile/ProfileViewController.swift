@@ -107,6 +107,7 @@ class ProfileViewController: StallFormViewController {
             }
             StorageRef.upload(photoData, at: newPhotoPath)
         }
+        currentStallOverview?.filters = getFilters()
         currentStallOverview?.save()
         Account.stallOverview = currentStallOverview
         showSuccessAlert(message: "Update successfully")

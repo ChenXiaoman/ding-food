@@ -29,14 +29,15 @@ public struct StallOverview: FirebaseObject {
     public var isOpen: Bool
     public var filters: [String: Filter]?
 
-    public init(id: String, name: String, photoPath: String,
-                location: String, openingHour: String, description: String) {
+    public init(id: String, name: String, photoPath: String, location: String,
+                openingHour: String, description: String, filters: [String: Filter]?) {
         self.id = id
         self.name = name
         self.photoPath = photoPath
         self.location = location
         self.openingHour = openingHour
         self.description = description
+        self.filters = filters
         queueCount = 0
         averageRating = 0
         isOpen = true
