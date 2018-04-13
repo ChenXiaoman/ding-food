@@ -10,7 +10,7 @@
  Represents an atomic unit of a menu and everything that can be consumed.
  This includes drinks.
  */
-public struct Food: FirebaseObject {
+public struct Food: DatabaseObject {
     public static var path = "/menu"
 
     public let id: String

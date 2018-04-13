@@ -15,7 +15,7 @@ import FirebaseDatabase
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-public struct StallOverview: FirebaseObject {
+public struct StallOverview: DatabaseObject {
     public static let path = "/stall_overviews"
 
     public let id: String
@@ -48,7 +48,7 @@ public struct StallOverview: FirebaseObject {
         return StallOverview.path + "/\(StallOverview.getAutoId)"
     }
 
-    /// A custom deserialization method to handle the nested `FirebaseObject` structure.
+    /// A custom deserialization method to handle the nested `DatabaseObject` structure.
     /// - Parameter snapshot: The `DataSnapshot` containing information about the stall.
     /// - Returns: A `StallOverview` object; or nil if the conversion fails.
     static func deserialize(_ snapshot: DataSnapshot) -> StallOverview? {

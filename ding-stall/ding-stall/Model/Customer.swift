@@ -9,7 +9,7 @@
 /**
  Represents a registered user in the application.
  */
-public struct Customer: FirebaseObject {
+public struct Customer: DatabaseObject {
     public static let path = "/customer_profiles"
 
     /// The customer's UID.

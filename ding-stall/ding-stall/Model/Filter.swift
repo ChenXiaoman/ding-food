@@ -11,7 +11,7 @@
  stalls can belong to the same `Filter`, a stall can belong to many `Filter`s
  as well.
  */
-public struct Filter: FirebaseObject {
+public struct Filter: DatabaseObject {
     public static let path = "/filters"
 
     public let id: String

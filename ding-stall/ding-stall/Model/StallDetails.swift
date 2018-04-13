@@ -11,7 +11,7 @@ import FirebaseDatabase
 /**
  Represents a food stall registered in the application.
  */
-public struct StallDetails: FirebaseObject {
+public struct StallDetails: DatabaseObject {
 
     public static var path = "/stalls"
 
@@ -53,7 +53,7 @@ public struct StallDetails: FirebaseObject {
     }
 
     /// Overrided function to handle nested structure.
-    /// See `FirebaseObject.deserialize(_ snapshot: DataSnapshot)`
+    /// See `DatabaseObject.deserialize(_ snapshot: DataSnapshot)`
     public static func deserialize(_ snapshot: DataSnapshot) -> StallDetails? {
         guard var dict = snapshot.value as? [String: Any] else {
             return nil

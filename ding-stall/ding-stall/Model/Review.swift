@@ -11,7 +11,7 @@
  After each order is completed, user will be prompted to provide
  a review for the stall where he/she purchase the food from.
  */
-public struct Review: FirebaseObject {
+public struct Review: DatabaseObject {
     public static var path = "/review"
     
     public let id: String
