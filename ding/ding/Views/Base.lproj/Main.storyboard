@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SP-j8-EVB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SP-j8-EVB">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,6 +13,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GillSans.ttc">
+            <string>GillSans</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-LightItalic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--VerifyNUSController-->
         <scene sceneID="tne-QT-ifu">
@@ -87,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6lI-KP-6kf" userLabel="OngoingOrders">
-                                <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                                <rect key="frame" x="0.0" y="108" width="768" height="867"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pvq-HG-oZA" userLabel="FlowLayout">
                                     <size key="itemSize" width="375" height="157"/>
@@ -175,7 +183,7 @@ x5 Lemon Juice</string>
                                 </cells>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-Gw-Cfd" userLabel="LoadingIndicator">
-                                <rect key="frame" x="374" y="509.5" width="20" height="20"/>
+                                <rect key="frame" x="374" y="531.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -277,6 +285,9 @@ x5 Lemon Juice</string>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTj-q9-1DF" customClass="MenuButton" customModule="ding" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="138" width="691" height="30"/>
                                                 <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitReview:" destination="LWN-Rz-jIE" eventType="touchUpInside" id="PSU-24-rVU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

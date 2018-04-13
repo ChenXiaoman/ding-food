@@ -39,4 +39,13 @@ public enum Rating: Int, Codable {
     /// An array of string representation of ratings,
     /// from poor to excellent.
     static let allStringsValueOfRatings = ["Bad", "Not good", "OK", "Good", "Excellent"]
+    
+    static func stringToRating(s: String) -> Rating? {
+        if let rawValueOfRating = Rating.allStringsValueOfRatings.index(of: s) {
+            // Plus 1 because the lowest raw value starts from 1.
+            return Rating(rawValue: rawValueOfRating + 1)
+        } else {
+            return nil
+        }
+    }
 }

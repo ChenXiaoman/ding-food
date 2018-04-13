@@ -16,10 +16,12 @@ class OrderDetailViewController: FormViewController {
     @IBOutlet weak private var reviewView: ReivewUIView!
     /// Table view for displaying list of food.
     @IBOutlet weak private var foodTableView: UITableView!
+    /// The 'Order' object and 'OrderHistory' object won't co-exist.
     /// The 'Order' object which the view controller is displaying.
     var order: Order?
-    /// The 'Review' object which the view controller is displaying.
-    var review: Review?
+    /// The 'Order' object and 'OrderHistory' object won't co-exist.
+    /// The 'OrderHistory' object which the view controller is displaying.
+    var orderHistory: OrderHistory?
     
     /// These two conflicting constraints will be
     /// resolved during runtime with method hideOrShowReview().
@@ -57,6 +59,24 @@ class OrderDetailViewController: FormViewController {
         addChildViewController(controller)
     }
     
+    @IBAction func submitReview(_ sender: UIButton) {
+        // Gets the value of the review.
+        guard let ratingRow = form.allRows.first as? SegmentedRow<String>,
+            let textRow = form.allRows.last as? TextAreaRow,
+            let ratingText = ratingRow.value else {
+                return
+        }
+        guard let rating = Rating.stringToRating(s: ratingText) else {
+            return
+        }
+        guard var orderHistory = orderHistory else {
+            return
+        }
+        let review = Review(id: orderHistory.id, rating: rating, reviewText: textRow.value)
+        orderHistory.review = review
+        orderHistory.save()
+    }
+    
     /// Checks whether an order is ready for review. An order is ready
     /// for review only if the status is collected.
     /// If no, hides the review section because review is not available.
@@ -83,7 +103,7 @@ class OrderDetailViewController: FormViewController {
         
         // If the review object is nil, it means the user has not
         // written a review yet.
-        guard let review = review else {
+        guard let review = orderHistory?.review else {
             return
         }
         

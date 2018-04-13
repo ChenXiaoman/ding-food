@@ -25,10 +25,10 @@ extension OrderController: UICollectionViewDelegate {
         // Passes in the `Order` object displayed at this cell.
         controller.order = orders[indexPath.totalItem(in: collectionView)]
         
-        // Also passes in the 'Review' object if it is
-        // an 'OrderHistory'.
+        // Also passes in the 'OrderHistory' object if it is
+        // an showing the history.
         if isShowingHistory {
-            controller.review = reviews[indexPath.totalItem(in: collectionView)]
+            controller.orderHistory = orderHistorys[indexPath.totalItem(in: collectionView)]
         }
         
         navigationController?.pushViewController(controller, animated: true)
