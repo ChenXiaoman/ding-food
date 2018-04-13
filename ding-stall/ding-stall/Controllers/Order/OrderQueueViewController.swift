@@ -7,6 +7,7 @@
 //
 
 import FirebaseDatabaseUI
+import AVFoundation
 
 /**
  The controller for the order queue view
@@ -22,15 +23,42 @@ class OrderQueueViewController: OrderViewController {
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
     private var orderDict = [IndexPath: Order]()
-        
+  
+    /// The customer names of all orders
+    private var nameDict = [String: String]()
+
+    // To check isRinging property
+    private var settings = Settings()
+    /// Plays ringing sound every new order if successfully initialised
+    private var audioPlayer: AVAudioPlayer?
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        // Configure audioPlayer based on updated settings
+        setAudioPlayer()
+
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
         dataSource?.bind(to: orderQueueCollectionView)
         orderQueueCollectionView.delegate = self
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stop binding to avoid program crash
+        dataSource?.unbind()
+    }
+
+    private func setAudioPlayer() {
+        guard settings.isRinging else {
+            audioPlayer = nil
+            return
+        }
+
+        audioPlayer = Audio.setupPlayer(fileName: "bell", loop: 0)
     }
 
     /// Generate a `OrderQueueCollectionViewCell` with the given data from database.
@@ -52,6 +80,9 @@ class OrderQueueViewController: OrderViewController {
             orderDict[indexPath] = order
             populateOrderCell(cell: cell, model: order)
         }
+
+        audioPlayer?.play()
+
         return cell
     }
 

@@ -25,6 +25,9 @@ public struct StallOverview: FirebaseObject {
     public var openingHour: String
     public var description: String
 
+    // indicates whether this stall is able to receive order
+    public var isOpen: Bool
+
     public init(id: String, name: String, photoPath: String,
                 location: String, openingHour: String, description: String) {
         self.id = id
@@ -35,6 +38,7 @@ public struct StallOverview: FirebaseObject {
         self.description = description
         queueCount = 0
         averageRating = 0
+        isOpen = false
     }
 
     /// Provide a new path for the stall photo if it has changed
