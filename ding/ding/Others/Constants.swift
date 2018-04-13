@@ -49,7 +49,7 @@ struct Constants {
 
     /// The constant coefficient for menu corner radius.
     static let menuButtonCornerRadiusCoefficient = CGFloat(0.05)
-    /// The border width for menu buttons
+    /// The border width for menu buttons.
     static let menuButtonBorderWidth = CGFloat(1)
 
     /// The width of the current device's screen.
@@ -65,19 +65,23 @@ struct Constants {
     /// The time interval to define timeout.
     static let timeoutInterval = 10.0
     
-    /// The default amount of 'OrderImmediately' method
+    /// The default amount of 'OrderImmediately' method.
     static let orderDefaultAmount = 1
     
-    /// The text on the sold out button
+    /// The text on the sold out button.
     static let soldOutButtonText = "Sold out"
     
-    /// The text on the section of food option
+    /// The text on the section of food option.
     static let foodOptionSectionText = "Choose your favourite option(s)"
     
-    /// The text on the header of review section
+    /// The text on the header of review section.
     static let reviewSectionHeaderText = "How's the service?"
-    /// The text on review text field row
+    /// The text on review text field row.
     static let reviewSectionRowText = "Write a review! (optional)"
-    /// The text on the header of a written review
+    /// The text on the header of a written review.
     static let writtenReviewSectionHeaderText = "My review"
+    /// The text for submit review successfully.
+    static let reviewSubmitedAlertText = "Review submitted successfully!"
+    /// The text in edit review button
+    static let editReviewButtonText = "Edit my review"
 }

@@ -16,6 +16,8 @@ class OrderDetailViewController: FormViewController {
     @IBOutlet weak private var reviewView: ReivewUIView!
     /// Table view for displaying list of food.
     @IBOutlet weak private var foodTableView: UITableView!
+    /// The submit button for review.
+    @IBOutlet weak private var submitReviewButton: UIButton!
     /// The 'Order' object and 'OrderHistory' object won't co-exist.
     /// The 'Order' object which the view controller is displaying.
     var order: Order?
@@ -75,6 +77,9 @@ class OrderDetailViewController: FormViewController {
         let review = Review(id: orderHistory.id, rating: rating, reviewText: textRow.value)
         orderHistory.review = review
         orderHistory.save()
+        
+        DialogHelpers.showAlertMessage(in: self, title: Constants.reviewSubmitedAlertText, message: "")
+        submitReviewButton.setTitle(Constants.editReviewButtonText, for: .normal)
     }
     
     /// Checks whether an order is ready for review. An order is ready
@@ -117,7 +122,7 @@ class OrderDetailViewController: FormViewController {
         textRow.value = review.reviewText
         form.allSections.first?.header = HeaderFooterView(stringLiteral:
             Constants.writtenReviewSectionHeaderText)
-        
+        submitReviewButton.setTitle(Constants.editReviewButtonText, for: .normal)
     }
     
     /// Sets up the empty review section using default

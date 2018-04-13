@@ -396,6 +396,7 @@ x5 Lemon Juice</string>
                         <outlet property="reviewView" destination="avK-Al-UtA" id="elU-Nc-mTx"/>
                         <outlet property="reviewViewHiddenConstraint" destination="bCa-oM-nxy" id="WRy-mv-bel"/>
                         <outlet property="reviewViewNormalConstraint" destination="SYn-a9-LJc" id="4rx-UM-WUl"/>
+                        <outlet property="submitReviewButton" destination="WTj-q9-1DF" id="fdc-JK-6yf"/>
                         <outlet property="tableView" destination="5oz-ET-3Nr" id="4tA-m0-ogg"/>
                     </connections>
                 </viewController>
