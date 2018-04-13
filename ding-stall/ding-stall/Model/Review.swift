@@ -16,7 +16,7 @@ public struct Review: FirebaseObject {
     
     public let id: String
     public var rating: Rating
-    public var reviewText: String
+    public var reviewText: String?
 }
 
 /**
