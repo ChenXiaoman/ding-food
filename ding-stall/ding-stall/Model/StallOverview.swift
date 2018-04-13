@@ -40,7 +40,7 @@ public struct StallOverview: FirebaseObject {
         self.filters = filters
         queueCount = 0
         averageRating = 0
-        isOpen = true
+        isOpen = false
     }
 
     /// Provide a new path for the stall photo if it has changed
