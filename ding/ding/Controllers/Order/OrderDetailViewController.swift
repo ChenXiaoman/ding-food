@@ -78,6 +78,7 @@ class OrderDetailViewController: FormViewController {
     /// Shows the review the user has submitted before
     /// by adding the corresponding review infomation to the empty form.
     private func setUpReviewSection() {
+        // First sets up a empty form with default value
         setUpDefaultReviewSection()
         
         // If the review object is nil, it means the user has not
@@ -101,8 +102,11 @@ class OrderDetailViewController: FormViewController {
         form +++
             Section(Constants.reviewSectionHeaderText)
             <<< SegmentedRow<String> {
-                    $0.options = ["Bad", "Not good", "OK", "Good", "Excellent"]
-                    $0.value = "OK"
+                    let ratings = Rating.allStringsValueOfRatings
+                    $0.options = ratings
+                
+                    // Always picks the middle one from ratings.
+                    $0.value = ratings[ratings.count / 2]
                     $0.cell.tintColor = UIColor.darkGray
             }
             <<< TextAreaRow {

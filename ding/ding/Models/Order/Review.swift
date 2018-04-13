@@ -29,4 +29,13 @@ public enum Rating: Int, Codable {
     case average = 3
     case fair = 2
     case poor = 1
+    
+    func stringValue(of rating: Rating) -> String {
+        // Minus 1 because the lowest raw value starts from 1.
+        return Rating.allStringsValueOfRatings[rawValue - 1]
+    }
+    
+    /// An array of string representation of ratings,
+    /// from poor to excellent.
+    static let allStringsValueOfRatings = ["Bad", "Not good", "OK", "Good", "Excellent"]
 }
