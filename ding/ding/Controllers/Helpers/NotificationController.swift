@@ -50,11 +50,14 @@ class NotificationController {
         }
     }
 
-    /// Schedules a local notification.
-    static func notify(in controller: UNUserNotificationCenterDelegate, title: String, subtitle: String, body: String) {
-        // Sets the delegate of the notification.
-        center.delegate = controller
-
+    /// Schedules a local notification to the user after a certain time interval.
+    /// - Parameters:
+    ///    - time: The time after which the notification is pushed.
+    ///    - id: The identifier of the created notification request.
+    ///    - title: The title of the local notification.
+    ///    - subtitle: The subtitle of the local notification.
+    ///    - body: The body of the local notification.
+    static func notify(after time: TimeInterval, id: String, title: String, subtitle: String, body: String) {
         // Sets up the content of the notification.
         let content = UNMutableNotificationContent()
         content.title = title
@@ -62,8 +65,13 @@ class NotificationController {
         content.body = body
 
         // Creates the notification trigger and reqeust.
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3.0, repeats: false)
-        let request = UNNotificationRequest(identifier: "this_co", content: content, trigger: trigger)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
+    }
+
+    /// Unschedules all pending local notification requests.
+    static func clearPendingRequests() {
+        center.removeAllPendingNotificationRequests()
     }
 }
