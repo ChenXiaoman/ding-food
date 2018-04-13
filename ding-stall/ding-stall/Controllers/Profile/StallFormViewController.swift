@@ -82,6 +82,26 @@ class StallFormViewController: FormViewController {
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }
+        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: "Add category of your stall", footer: "", initializeStallFilterSection)
+    }
+
+    private func initializeStallFilterSection(_ section: MultivaluedSection) {
+        tableView.setEditing(true, animated: false)
+        section.addButtonProvider = { section in
+            return ButtonRow { row in
+                row.title = "Add new category"
+            }.cellUpdate { cell, _ in
+                cell.textLabel?.textAlignment = .left
+            }
+        }
+
+        section.multivaluedRowToInsertAt = { index in
+            return ActionSheetRow<Filter> { row in
+                row.title = "Category \(index + 1):"
+                row.options = Account.allFilters
+                row.add(rule: RuleRequired())
+            }
+        }
     }
 
     /// Show an alert message that the food is successfully add into menu

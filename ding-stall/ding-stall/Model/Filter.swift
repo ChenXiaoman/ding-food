@@ -17,3 +17,10 @@ public struct Filter: FirebaseObject {
     public let id: String
     public let name: String
 }
+
+// MARK: CustomStringConvertible
+extension Filter: CustomStringConvertible {
+    public var description: String {
+        return name
+    }
+}

@@ -219,11 +219,11 @@ class FoodFormViewController: FormViewController {
     /// Parameter: header: the header title of this sction
     func getNewOptionSection(header: String) -> MultivaluedSection {
         return MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: header, footer: "",
-                                  multivalueSectionInitializer(_:))
+                                  initializeFoodOptionSection(_:))
     }
 
     /// Initialize a section of food option
-    private func multivalueSectionInitializer(_ section: MultivaluedSection) {
+    private func initializeFoodOptionSection(_ section: MultivaluedSection) {
         tableView.setEditing(true, animated: false)
         section.addButtonProvider = { section in
             return ButtonRow { row in
