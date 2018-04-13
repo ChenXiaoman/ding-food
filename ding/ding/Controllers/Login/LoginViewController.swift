@@ -46,11 +46,33 @@ class LoginViewController: UIViewController {
 
     /// Loads the main tab bar view by pushing it into the stack of navigation controller.
     private func loadMainTabBarView() {
+        // Makes sure that user sign in using stall account and not customer account
+        guard isCustomerId(authorizer.userId) else {
+            handleWrongAccountType()
+            return
+        }
+
         let id = Constants.mainTabBarId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
             return
         }
         navigationController?.pushViewController(controller, animated: true)
+    }
+
+    /// Verifies that user signs in using customer account
+    private func isCustomerId(_ id: String) -> Bool {
+
+    }
+
+    /// Automatically signs user out when user signs in using customer account.
+    private func handleWrongAccountType() {
+        DialogHelpers.showAlertMessage(in: self, title: "Wrong Account Type",
+                                       message: "The account is not registered as a stall account." +
+        "Try to sign in using another account") {_ in
+            self.authorizer.signOut()
+        }
+
+        return
     }
 }
 

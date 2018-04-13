@@ -37,7 +37,12 @@ class Authorizer {
     /// Signs out the current user. This method will simply do nothing if any error
     /// is thrown when trying to connect to the database and sign out the user.
     func signOut() {
-        try? Authorizer.auth.signOut()
+        do {
+            try Authorizer.auth.signOut()
+            Account.clear()
+        } catch {
+            return
+        }
     }
 
     /// Returns the username of the current user if it has signed in, an empty

@@ -58,7 +58,8 @@ class LoginViewController: UIViewController {
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
         // Makes sure that user sign in using stall account and not customer account
-        guard Account.stall != nil else {
+        print("Tabbar" + Account.stallId)
+        guard Account.isCorrectAccount else {
             handleWrongAccountType()
             return
         }
@@ -84,9 +85,11 @@ class LoginViewController: UIViewController {
 
     /// Set the current user id.
     private func setUserAccount() {
+        print("authorizer\(authorizer.userId)")
         Account.stallId = authorizer.userId
     }
 
+    /// Automatically signs user out when user signs in using customer account.
     private func handleWrongAccountType() {
         DialogHelpers.showAlertMessage(in: self, title: "Wrong Account Type",
                                        message: "The account is not registered as a stall account." +
@@ -110,6 +113,7 @@ extension LoginViewController: FUIAuthDelegate {
             loadStallFormView(true)
         } else {
             setUserAccount()
+            print("Delegate" + Account.stallId)
             loadTabBarView(true)
         }
     }
