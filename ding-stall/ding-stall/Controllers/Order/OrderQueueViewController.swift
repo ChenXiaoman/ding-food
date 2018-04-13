@@ -76,12 +76,19 @@ class OrderQueueViewController: OrderViewController {
                                                                 fatalError("Unable to dequeue a cell.")
         }
 
-        if let order = Order.deserialize(snapshot) {
+        if var order = Order.deserialize(snapshot) {
+            if order.status == .pending {
+                audioPlayer?.play()
+            }
+
+            if settings.isAutomaticAcceptOrder && order.status == .pending {
+                order.status = .accepted
+                order.save()
+            }
+
             orderDict[indexPath] = order
             populateOrderCell(cell: cell, model: order)
         }
-
-        audioPlayer?.play()
 
         return cell
     }
