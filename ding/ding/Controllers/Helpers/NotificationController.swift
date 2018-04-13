@@ -52,17 +52,19 @@ class NotificationController {
 
     /// Schedules a local notification to the user after a certain time interval.
     /// - Parameters:
-    ///    - time: The time after which the notification is pushed.
+    ///    - time: The time after which the notification is pushed, whose value must
+    /// be strictly larger than 0. It has a default value of 0.1s
     ///    - id: The identifier of the created notification request.
     ///    - title: The title of the local notification.
     ///    - subtitle: The subtitle of the local notification.
     ///    - body: The body of the local notification.
-    static func notify(after time: TimeInterval, id: String, title: String, subtitle: String, body: String) {
+    static func notify(after time: TimeInterval = 0.1, id: String, title: String, subtitle: String, body: String) {
         // Sets up the content of the notification.
         let content = UNMutableNotificationContent()
         content.title = title
         content.subtitle = subtitle
         content.body = body
+        content.sound = UNNotificationSound.default()
 
         // Creates the notification trigger and reqeust.
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)

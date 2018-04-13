@@ -20,8 +20,6 @@ class OrderController: UIViewController {
     /// Uses an explicit outlet to fix conflicit when there are more than one navigation
     /// controller in the parent control hierarchy.
     @IBOutlet weak private var currentNavigationItem: UINavigationItem!
-    /// The controller for sound effects.
-    private let soundController = SoundEffectController()
     
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
@@ -144,10 +142,10 @@ class OrderController: UIViewController {
             
         // Stores this order for further retrieval.
         orders[indexPath.totalItem(in: collectionView)] = currentOrder
-        
-        // Plays the sound if the order is ready.
-        if currentOrder.status == .ready {
-            soundController.play(.ring)
+
+        // Notifies when the order is ready or rejected.
+        if currentOrder.status == .ready || currentOrder.status == .rejected {
+            notifyOrderStatus(currentOrder)
         }
 
         return cell
@@ -163,5 +161,12 @@ class OrderController: UIViewController {
     private func startLoading() {
         loaded = false
         loadingIndicator.startAnimating()
+    }
+
+    /// Pushes a notification when an order becomes ready.
+    /// - Parameter order: The order becoming ready.
+    private func notifyOrderStatus(_ order: Order) {
+        NotificationController.notify(id: order.id, title: "Your order is \(order.status.rawValue)",
+                                      subtitle: "", body: order.description)
     }
 }
