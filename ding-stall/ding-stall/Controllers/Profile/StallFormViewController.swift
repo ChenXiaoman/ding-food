@@ -92,6 +92,9 @@ class StallFormViewController: FormViewController {
                                     initializeStallFilterSection)
     }
 
+    /// Initializer of the stall filter section in this form, set the button provider
+    /// and row to created
+    /// Parameter: section: the section to be initialized
     private func initializeStallFilterSection(_ section: MultivaluedSection) {
         tableView.setEditing(true, animated: false)
         section.addButtonProvider = { section in

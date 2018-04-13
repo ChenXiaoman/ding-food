@@ -51,6 +51,9 @@ class ProfileViewController: StallFormViewController {
         (form.rowBy(tag: Tag.location) as? TextRow)?.value = stallOverviewModel.location
         (form.rowBy(tag: Tag.openingHour) as? TextRow)?.value = stallOverviewModel.openingHour
         (form.rowBy(tag: Tag.photo) as? ImageRow)?.value = stallPhoto
+        if let filters = stallOverviewModel.filters {
+            populateStallFilters(filters)
+        }
     }
 
     /// Add the behavior of each row when its value change
@@ -78,6 +81,23 @@ class ProfileViewController: StallFormViewController {
 
         openhourRow.onChange { row in
             self.currentStallOverview?.openingHour = row.value ?? ""
+        }
+    }
+
+    /// Populate the current filters of this stall into form
+    /// Parameter: filters: the filter to be populated
+    private func populateStallFilters(_ filters: [String: Filter]) {
+        guard var filterSection = form.allSections.last as? MultivaluedSection else {
+            return
+        }
+        filters.forEach { _, filter in
+            guard let filterRow = filterSection
+                .multivaluedRowToInsertAt?(filterSection.count - 1)
+                as? ActionSheetRow<Filter> else {
+                    return
+            }
+            filterRow.value = filter
+            filterSection.insert(filterRow, at: filterSection.count - 1)
         }
     }
 
