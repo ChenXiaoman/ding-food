@@ -18,6 +18,12 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// The height of this cell.
     static let height = Constants.screenHeight * OrderQueueCollectionViewCell.aspectRatio
 
+    /// The tag of this cell is the id of the order model
+    private var orderTag: String?
+    var cellTag: String? {
+        return orderTag
+    }
+
     @IBOutlet weak private var totalPrice: UILabel!
     @IBOutlet weak private var orderDescription: UILabel!
     @IBOutlet weak private var orderStatus: OrderStatusLabel!
@@ -26,6 +32,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter: order: The `Order` object as the data source.
     func load(_ order: Order) {
+        orderTag = order.id
         totalPrice.text = String(format: OrderCollectionViewCell.totalPriceFormat, order.totalPrice)
         orderDescription.text = order.description
         setStatus(to: order.status)

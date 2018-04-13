@@ -104,15 +104,9 @@ class LoginViewController: UIViewController {
  */
 extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        guard let user = authDataResult?.user else {
-            return
-        }
-
-        if !user.isEmailVerified {
-            authorizer.verifyEmail()
-        }
 
         if isNewUser {
+            authorizer.verifyEmail()
             loadStallFormView(true)
         } else {
             setUserAccount()

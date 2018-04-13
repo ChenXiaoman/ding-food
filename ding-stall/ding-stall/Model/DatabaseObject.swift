@@ -1,5 +1,5 @@
 //
-//  FirebaseObject.swift
+//  DatabaseObject.swift
 //  ding
 //
 //  Created by Yunpeng Niu on 27/03/18.
@@ -9,22 +9,22 @@
 import FirebaseDatabase
 
 /**
- Each object that would be stored in Firebase database is a `FirebaseObject`. This protocol
+ Each object that would be stored in Firebase database is a `DatabaseObject`. This protocol
  provides the basic capability, such as serialization.
 
- `FirebaseObject` conforms to `Codable` protocol. This is because we can think of Firebase
+ `DatabaseObject` conforms to `Codable` protocol. This is because we can think of Firebase
  database as a cloud-hosted JSON tree. Thus, it would be nice if we could use `Codable` types,
  which can be easily converted from/to JSON objects.
 
- `FirebaseObject` conforms to `Hashable` protocol. This is because each JSON node in Firebase
- database has a key, which should be unique. Thus, a certain `FirebaseObject` is identifiable
+ `DatabaseObject` conforms to `Hashable` protocol. This is because each JSON node in Firebase
+ database has a key, which should be unique. Thus, a certain `DatabaseObject` is identifiable
  by its key value, the `id` attribute.
 
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-public protocol FirebaseObject: Codable, Hashable {
-    /// The identifier of a `FirebaseObject`, which must be unique among all homogenous
+public protocol DatabaseObject: Codable, Hashable {
+    /// The identifier of a `DatabaseObject`, which must be unique among all homogenous
     /// objects. For instance, among all posts (which are stored at the path "/posts"
     /// in Firebase), their `id`s must all be unique.
     ///
@@ -32,7 +32,7 @@ public protocol FirebaseObject: Codable, Hashable {
     /// we can think of the Firebase database as a cloud-hosted JSON tree).
     var id: String { get }
 
-    /// The path of a `FirebaseObject` type, at which all homogenous objects of this type
+    /// The path of a `DatabaseObject` type, at which all homogenous objects of this type
     /// would be stored under in Firebase.
     ///
     /// For instance, if we want to create blog systems, the path for `Post` type should
@@ -46,15 +46,15 @@ public protocol FirebaseObject: Codable, Hashable {
 }
 
 /**
- Extension for `FirebaseObject`, which provides some utility methods ready for use.
+ Extension for `DatabaseObject`, which provides some utility methods ready for use.
  */
-extension FirebaseObject {
-    /// The hash value of a `FirebaseObject`.
+extension DatabaseObject {
+    /// The hash value of a `DatabaseObject`.
     public var hashValue: Int {
         return id.hashValue
     }
 
-    /// Two `FirebaseObject`s are equal as long as their identifiers are equal.
+    /// Two `DatabaseObject`s are equal as long as their identifiers are equal.
     /// - Parameters:
     ///    - lhs: The first object to compare.
     ///    - rhs: The second object to compare.
@@ -62,17 +62,17 @@ extension FirebaseObject {
         return lhs.id == rhs.id
     }
 
-    /// Gets a unique `id` for this `FirebaseObject`. This property could be useful
+    /// Gets a unique `id` for this `DatabaseObject`. This property could be useful
     /// when you create a new object locally.
     public static var getAutoId: String {
         return DatabaseRef.getAutoId(of: Self.path)
     }
 
-    /// Converts a given `FirebaseObject` into a dictionary format so that it can be
+    /// Converts a given `DatabaseObject` into a dictionary format so that it can be
     /// directly added to the database as a new child node. It will simply return an
     /// empty dictionary if the conversion fails.
     ///
-    /// Notice: The id of the `FirebaseObject` will not be serialized because it ought
+    /// Notice: The id of the `DatabaseObject` will not be serialized because it ought
     /// to be used as the key rather than the value of the child node.
     public var serialized: [String: Any] {
         guard
@@ -105,7 +105,7 @@ extension FirebaseObject {
     /// conversion fails.
     /// - Parameter dict: the dictionary to decode.
     /// - Returns: The object converted if conversion is successful; nil otherwise.
-    static func deserialize(_ dict: [String: Any]) -> Self? {
+    public static func deserialize(_ dict: [String: Any]) -> Self? {
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys),
             let obj = try? JSONDecoder().decode(Self.self, from: data) else {
                 return nil
@@ -113,11 +113,33 @@ extension FirebaseObject {
         return obj
     }
 
-    /// This method will convert the a dictionary in (id, value) format to a dictionary of
+    /// Converts a given `DataSnapshot` to an array of a certain `Codable` object
+    /// It will return nil if the conversion fails
+    /// - Parameter dict: the dictionary to decode.
+    /// - Returns: An array of object converted if conversion is successful; nil otherwise.
+    public static func deserializeArray(_ snapshot: DataSnapshot) -> [Self]? {
+        guard let dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        var objectArray = [Self]()
+        dict.forEach { key, value in
+            guard var objectDict = value as? [String: Any] else {
+                return
+            }
+            objectDict["id"] = key
+            guard let object = Self.deserialize(objectDict) else {
+                return
+            }
+            objectArray.append(object)
+        }
+        return objectArray
+    }
+
+    /// This function will convert the a dictionary in (id, value) format to a dictionary of
     /// dictionaries in (id, value + id) format to prepare for subsequent deserialization.
     /// - Parameter dict: the nested dictionary of (id, value) pair.
     /// - Returns: a dictionary (id, value) whose value contains the id.
-    static func deserializeNestedStructure(_ dict: [String: Any]) -> [String: [String: Any]]? {
+    public static func prepareNestedDeserialize(_ dict: [String: Any]) -> [String: [String: Any]]? {
         var menuDict = [String: [String: Any]]()
         dict.forEach { key, value in
             guard let valueDict = value as? [String: Any] else {
@@ -129,7 +151,7 @@ extension FirebaseObject {
         return menuDict
     }
 
-    /// Saves this `FirebaseObject` to the Firebase database.
+    /// Saves this `DatabaseObject` to the Firebase database.
     ///
     /// Notice: It is possible to override the `CodingKeys` attribute if you do not want
     /// to save all attributes to the database or want to customize the key name for
@@ -138,7 +160,7 @@ extension FirebaseObject {
         DatabaseRef.setChildNode(of: Self.path, to: self)
     }
 
-    /// Delete this `FirebaseObject` from the database
+    /// Delete this `DatabaseObject` from the database
     public func delete() {
         DatabaseRef.deleteChildNode(of: Self.path + "/\(id)")
     }

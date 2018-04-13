@@ -7,6 +7,7 @@
 //
 
 import Eureka
+
 /**
  The controller for the application's setting view.
  */
@@ -28,7 +29,7 @@ class SettingsViewController: FormViewController {
 
     private func loadForm() {
         form +++ Section("Still receiving order")
-            <<< SwitchRow() { row in
+            <<< SwitchRow { row in
                 row.value = stallOverview?.isOpen
                 row.title = (row.value ?? false) ? "Open (can receive order)" : "Close (not receiving order)"
             }.onChange { row in
@@ -42,7 +43,7 @@ class SettingsViewController: FormViewController {
             }
 
             +++ Section("Rings for every new order")
-            <<< SwitchRow() { row in
+            <<< SwitchRow { row in
                 row.value = settings.isRinging
                 row.title = (row.value ?? false) ? "Enabled" : "Disabled"
             }.onChange { row in
@@ -56,7 +57,7 @@ class SettingsViewController: FormViewController {
             }
 
             +++ Section("Accepts new order automatically")
-            <<< SwitchRow() { row in
+            <<< SwitchRow { row in
                 row.value = settings.isAutomaticAcceptOrder
                 row.title = (row.value ?? false) ? "Enabled" : "Disabled"
             }.onChange { row in
