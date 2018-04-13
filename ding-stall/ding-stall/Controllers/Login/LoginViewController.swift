@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
     private func handleWrongAccountType() {
         DialogHelpers.showAlertMessage(in: self, title: "Wrong Account Type",
                                        message: "The account is not registered as a stall account." +
-                                       "Try to sign in using another account") { _ in
+                                       "Try to sign in using another account") {
             self.authorizer.signOut()
             self.loadLoginView(true)
         }
