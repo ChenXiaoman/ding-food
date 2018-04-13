@@ -11,15 +11,14 @@ import FirebaseDatabase
 /**
  Represents a food stall registered in the application.
  */
-public struct StallDetails: FirebaseObject {
+public struct StallDetails: DatabaseObject {
 
     public static var path = "/stalls"
 
     public let id: String
 
+    /// A dictionary of (food id, food) pair
     public var menu: [String: Food]?
-
-    public var filters: Set<FilterIdentifier>?    
 
     private var menuPath: String {
         return StallDetails.path + "/\(Account.stallId)" + Food.path
@@ -54,14 +53,14 @@ public struct StallDetails: FirebaseObject {
     }
 
     /// Overrided function to handle nested structure.
-    /// See `FirebaseObject.deserialize(_ snapshot: DataSnapshot)`
+    /// See `DatabaseObject.deserialize(_ snapshot: DataSnapshot)`
     public static func deserialize(_ snapshot: DataSnapshot) -> StallDetails? {
         guard var dict = snapshot.value as? [String: Any] else {
             return nil
         }
         dict["id"] = snapshot.key
         if let menuDict = dict["menu"] as? [String: Any] {
-            dict["menu"] = deserializeNestedStructure(menuDict)
+            dict["menu"] = prepareNestedDeserialize(menuDict)
         }
         return deserialize(dict)
     }

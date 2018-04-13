@@ -51,7 +51,7 @@ class EditFoodViewController: FoodFormViewController {
             currentFood?.photoPath = newPhotoPath
             guard let photoData = currentPhoto.standardData else {
                 DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                               message: "Unable to upload the new photo") { _ in }
+                                               message: "Unable to upload the new photo")
                 return
             }
             StorageRef.upload(photoData, at: newPhotoPath)

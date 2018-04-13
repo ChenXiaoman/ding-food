@@ -15,7 +15,10 @@ class MenuCollectionViewCell: UICollectionViewCell {
     public static let identifier = "MenuCollectionViewCell"
 
     /// The id of this cell to retrieve back the food model
-    var cellId: String?
+    private var foodTag: String?
+    var cellTag: String? {
+        return foodTag
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +30,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     /// Load the food view with a food model
     public func load(_ food: Food?) {
         settleOutletFrame()
-        cellId = food?.id
+        foodTag = food?.id
         foodName.adjustsFontSizeToFitWidth = true
         foodName.text = food?.name
         if let imagePath = food?.photoPath {

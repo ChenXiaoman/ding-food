@@ -134,31 +134,31 @@ class FoodFormViewController: FormViewController {
     func hasValidInput() -> Bool {
         guard form.validate().isEmpty else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some required fields are empty") { _ in }
+                                           message: "Some required fields are empty")
             return false
         }
         
         guard !hasDuplicateFoodName() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "This food name has already existed in menu") { _ in }
+                                           message: "This food name has already existed in menu")
             return false
         }
 
         guard !hasDuplicateOptionName() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some food options have same name") { _ in }
+                                           message: "Some food options have same name")
             return false
         }
 
         guard !hasDuplicateChoicesInOption() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some food options have duplicated choices") { _ in }
+                                           message: "Some food options have duplicated choices")
             return false
         }
 
         guard hasEnoughChoicesForOption() else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Each option must have at least 2 choices") { _ in }
+                                           message: "Each option must have at least 2 choices")
             return false
         }
         return true
@@ -219,11 +219,11 @@ class FoodFormViewController: FormViewController {
     /// Parameter: header: the header title of this sction
     func getNewOptionSection(header: String) -> MultivaluedSection {
         return MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: header, footer: "",
-                                  multivalueSectionInitializer(_:))
+                                  initializeFoodOptionSection(_:))
     }
 
     /// Initialize a section of food option
-    private func multivalueSectionInitializer(_ section: MultivaluedSection) {
+    private func initializeFoodOptionSection(_ section: MultivaluedSection) {
         tableView.setEditing(true, animated: false)
         section.addButtonProvider = { section in
             return ButtonRow { row in
@@ -244,7 +244,7 @@ class FoodFormViewController: FormViewController {
             row.title = "Delete this option"
         }.onCellSelection { _, _ in
             DialogHelpers.promptConfirm(in: self, title: "Warning",
-                                        message: "Do you want to delete this option") {
+                                        message: "Do you want to delete this option", cancelButtonText: "Cancel") {
                 guard let sectionIndex = section.index else {
                     return
                 }
@@ -263,7 +263,7 @@ class FoodFormViewController: FormViewController {
 
     /// Show an alert message that the food is successfully add into menu
     func showSuccessAlert(message: String) {
-        DialogHelpers.showAlertMessage(in: self, title: "Success", message: message) { _ in
+        DialogHelpers.showAlertMessage(in: self, title: "Success", message: message) {
             self.navigationController?.popViewController(animated: true)
         }
     }
