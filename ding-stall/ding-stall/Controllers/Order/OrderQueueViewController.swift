@@ -22,10 +22,7 @@ class OrderQueueViewController: OrderViewController {
     /// Indicate which order model is associated with the current selected cell
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
-    private var orderDict = [IndexPath: Order]()
-  
-    /// The customer names of all orders
-    private var nameDict = [String: String]()
+    private var orderDict = [String: Order]()
 
     // To check isRinging property
     private var settings = Settings()
@@ -86,7 +83,7 @@ class OrderQueueViewController: OrderViewController {
                 order.save()
             }
 
-            orderDict[indexPath] = order
+            orderDict[order.id] = order
             populateOrderCell(cell: cell, model: order)
         }
 
@@ -127,7 +124,7 @@ class OrderQueueViewController: OrderViewController {
             return
         }
         currentSelectedCell = orderQueueCollectionView.cellForItem(at: indexPath) as? OrderQueueCollectionViewCell
-        currentSelectedOrder = orderDict[indexPath]
+        currentSelectedOrder = orderDict[currentSelectedCell?.cellTag ?? ""]
         guard
             let statusRawValue = sender.titleLabel?.text,
             let newStatus = OrderStatus(rawValue: statusRawValue) else {
@@ -144,7 +141,9 @@ class OrderQueueViewController: OrderViewController {
 // MARK: UICollectionViewDelegateFlowLayout
 extension OrderQueueViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let order = orderDict[indexPath] else {
+        guard
+            let cell = collectionView.cellForItem(at: indexPath) as? OrderCollectionViewCell,
+            let order = orderDict[cell.cellTag ?? ""] else {
             return
         }
         loadOrderDetailViewController(order: order, animated: true)

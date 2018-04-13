@@ -44,7 +44,7 @@ class MenuViewController: UIViewController {
             guard
                 let indexPath = menuView.indexPathForItem(at: selectedItem.center),
                 let cell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
-                let foodId = cell.cellId else {
+                let foodId = cell.cellTag else {
                     return
             }
             guard let editFoodVC = segue.destination as? EditFoodViewController else {
@@ -61,7 +61,7 @@ class MenuViewController: UIViewController {
         guard
             let indexPath = menuView.indexPathForItem(at: location),
             let menuCell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
-            let foodId = menuCell.cellId else {
+            let foodId = menuCell.cellTag else {
                 return
         }
 
