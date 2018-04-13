@@ -267,8 +267,7 @@
 		F26657F4206F8C5500BE83F5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F20434172077941700FF3083 /* FilterLabel.swift */,
-				F2043415207791C600FF3083 /* FilterView.swift */,
+				F2EAC9E82080B905008A692C /* Filter */,
 				5DC234462064CF08008B034A /* FoodTableViewCell.swift */,
 				F265B959207095410035A47B /* FoodOverviewView.swift */,
 				5DC2343C2063A02A008B034A /* StallListingCell.swift */,
@@ -381,6 +380,15 @@
 				F2F1E207207893BE00B94250 /* Filter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		F2EAC9E82080B905008A692C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F20434172077941700FF3083 /* FilterLabel.swift */,
+				F2043415207791C600FF3083 /* FilterView.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		F2F2CE4B207FABB600694D32 /* Resources */ = {

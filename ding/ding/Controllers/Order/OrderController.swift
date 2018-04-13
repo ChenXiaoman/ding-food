@@ -17,6 +17,11 @@ import FirebaseDatabaseUI
 class OrderController: UIViewController {
     @IBOutlet weak private var ongoingOrders: UICollectionView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
+    /// Uses an explicit outlet to fix conflicit when there are more than one navigation
+    /// controller in the parent control hierarchy.
+    @IBOutlet weak private var currentNavigationItem: UINavigationItem!
+    /// The controller for sound effects.
+    private let soundController = SoundEffectController()
     
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
@@ -53,7 +58,12 @@ class OrderController: UIViewController {
         startLoading()
         configureCollectionView()
 
-        /// Changes 
+        /// Changes the navigation title according to whether show history.
+        if isShowingHistory {
+            currentNavigationItem.title = "Order History"
+        } else {
+            currentNavigationItem.title = "On-going Orders"
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -137,10 +147,9 @@ class OrderController: UIViewController {
         
         // Plays the sound if the order is ready.
         if currentOrder.status == .ready {
-            let sound = SoundEffectController()
-            sound.play(.ring)
+            soundController.play(.ring)
         }
-            
+
         return cell
     }
     
