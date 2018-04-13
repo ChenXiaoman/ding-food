@@ -18,15 +18,15 @@ class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet private weak var settingMenu: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Hides the navigation bar
-        navigationController?.setNavigationBarHidden(true, animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         settingMenu.delegate = self
         settingMenu.dataSource = self
         settingMenu.tableFooterView = UIView()
+        
+        // Hides the navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
@@ -73,6 +73,14 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         case .logout:
             authorizer.signOut()
             navigationController?.popToRootViewController(animated: true)
+        case .history:
+            let id = Constants.ongoingOrderControllerId
+            guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
+                as? OrderController else {
+                    return
+            }
+            controller.isShowingHistory = true
+            navigationController?.pushViewController(controller, animated: true)
         default:
             let id = info.toControllerId
             guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
@@ -100,7 +108,8 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = ["", "", "", Constants.aboutViewControllerId, ""]
+    static let controllerIds = ["", Constants.profileViewControllerId, Constants.settingViewControllerId,
+                                Constants.aboutViewControllerId, ""]
 
     /// The name of a certain setting menu cell.
     var name: String {

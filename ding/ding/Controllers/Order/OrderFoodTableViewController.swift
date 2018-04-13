@@ -1,5 +1,5 @@
 //
-//  OrderDetailViewController+TableView.swift
+//  OrderFoodTableViewController.swift
 //  ding
 //
 //  Created by Chen Xiaoman on 7/4/18.
@@ -8,7 +8,13 @@
 
 import FirebaseDatabaseUI
 
-extension OrderDetailViewController: UITableViewDataSource {
+class OrderFoodTableViewController: UIViewController {
+    /// The 'Order' object which the view controller is displaying.
+    var order: Order?
+    var tableView: UITableView?
+}
+
+extension OrderFoodTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return order?.foodName.count ?? 0
     }
