@@ -75,9 +75,26 @@ class OrderDetailViewController: FormViewController {
         }
     }
     
-    /// Sets up the review section by adding rows in
-    /// Eureka form.
+    /// Shows the review the user has submitted before
+    /// by adding the corresponding review infomation to the empty form.
     private func setUpReviewSection() {
+        setUpDefaultReviewSection()
+        
+        // If the review object is nil, it means the user has not
+        // written a review yet.
+        guard let review = review else {
+            return
+        }
+        
+        // The review is not nil. Sets up the value of the review
+        guard let ratingRow = form.allRows.first as? SegmentedRow<String> else {
+            return
+        }
+    }
+    
+    /// Sets up the empty review section using default
+    /// value by adding rows in Eureka form
+    private func setUpDefaultReviewSection() {
         // Makes the background color the same as the app's background color.
         tableView.backgroundColor = UIColor.white
         
