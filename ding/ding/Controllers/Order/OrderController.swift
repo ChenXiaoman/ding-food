@@ -143,8 +143,8 @@ class OrderController: UIViewController {
         // Stores this order for further retrieval.
         orders[indexPath.totalItem(in: collectionView)] = currentOrder
 
-        // Notifies when the order is ready or rejected.
-        if currentOrder.status == .ready || currentOrder.status == .rejected {
+        // Notifies when the order is ready.
+        if currentOrder.status == .ready {
             notifyOrderStatus(currentOrder)
         }
 
