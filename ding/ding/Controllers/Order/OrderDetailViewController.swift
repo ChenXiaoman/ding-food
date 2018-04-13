@@ -18,6 +18,8 @@ class OrderDetailViewController: FormViewController {
     @IBOutlet weak private var foodTableView: UITableView!
     /// The 'Order' object which the view controller is displaying.
     var order: Order?
+    /// The 'Review' object which the view controller is displaying.
+    var review: Review?
     
     /// These two conflicting constraints will be
     /// resolved during runtime with method hideOrShowReview().
