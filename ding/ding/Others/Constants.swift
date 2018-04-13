@@ -78,4 +78,6 @@ struct Constants {
     static let reviewSectionHeaderText = "How's the service?"
     /// The text on review text field row
     static let reviewSectionRowText = "Write a review! (optional)"
+    /// The text on the header of a written review
+    static let writtenReviewSectionHeaderText = "My review"
 }

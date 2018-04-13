@@ -16,7 +16,7 @@ public struct Review: FirebaseObject {
 
     public let id: String
     public var rating: Rating
-    public var reviewText: String
+    public var reviewText: String?
 }
 
 /**
@@ -30,7 +30,8 @@ public enum Rating: Int, Codable {
     case fair = 2
     case poor = 1
     
-    func stringValue(of rating: Rating) -> String {
+    /// The string representation of the rating
+    var stringValue: String {
         // Minus 1 because the lowest raw value starts from 1.
         return Rating.allStringsValueOfRatings[rawValue - 1]
     }

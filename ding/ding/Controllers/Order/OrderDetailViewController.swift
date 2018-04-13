@@ -88,9 +88,16 @@ class OrderDetailViewController: FormViewController {
         }
         
         // The review is not nil. Sets up the value of the review
-        guard let ratingRow = form.allRows.first as? SegmentedRow<String> else {
+        guard let ratingRow = form.allRows.first as? SegmentedRow<String>,
+                let textRow = form.allRows.last as? TextAreaRow else {
             return
         }
+        
+        ratingRow.value = review.rating.stringValue
+        textRow.value = review.reviewText
+        form.allSections.first?.header = HeaderFooterView(stringLiteral:
+            Constants.writtenReviewSectionHeaderText)
+        
     }
     
     /// Sets up the empty review section using default
