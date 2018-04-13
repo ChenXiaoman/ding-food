@@ -63,13 +63,10 @@ class OrderDetailViewController: FormViewController {
     
     @IBAction func submitReview(_ sender: UIButton) {
         // Gets the value of the review.
-        guard let ratingRow = form.allRows.first as? SegmentedRow<String>,
+        guard let ratingRow = form.allRows.first as? SegmentedRow<Rating>,
             let textRow = form.allRows.last as? TextAreaRow,
-            let ratingText = ratingRow.value else {
+            let rating = ratingRow.value else {
                 return
-        }
-        guard let rating = Rating.stringToRating(s: ratingText) else {
-            return
         }
         guard var orderHistory = orderHistory else {
             return
@@ -113,12 +110,12 @@ class OrderDetailViewController: FormViewController {
         }
         
         // The review is not nil. Sets up the value of the review
-        guard let ratingRow = form.allRows.first as? SegmentedRow<String>,
+        guard let ratingRow = form.allRows.first as? SegmentedRow<Rating>,
                 let textRow = form.allRows.last as? TextAreaRow else {
             return
         }
         
-        ratingRow.value = review.rating.stringValue
+        ratingRow.value = review.rating
         textRow.value = review.reviewText
         form.allSections.first?.header = HeaderFooterView(stringLiteral:
             Constants.writtenReviewSectionHeaderText)
@@ -133,8 +130,8 @@ class OrderDetailViewController: FormViewController {
         
         form +++
             Section(Constants.reviewSectionHeaderText)
-            <<< SegmentedRow<String> {
-                    let ratings = Rating.allStringsValueOfRatings
+            <<< SegmentedRow<Rating> {
+                    let ratings = Rating.allRatings
                     $0.options = ratings
                 
                     // Always picks the middle one from ratings.
