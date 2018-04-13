@@ -34,7 +34,7 @@ class StallCreationViewController: StallFormViewController {
     private func createStall(cell: ButtonCellOf<String>, row: ButtonRow) {
         guard form.validate().isEmpty else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some fields are invalid") { _ in }
+                                           message: "Some fields are invalid")
             return
         }
         let valueDict = form.values()
@@ -53,7 +53,7 @@ class StallCreationViewController: StallFormViewController {
         StorageRef.upload(photoData, at: photoPath)
         let stallOverview = StallOverview(id: id, name: name, photoPath: photoPath,
                                           location: location, openingHour: openingHour,
-                                          description: description)
+                                          description: description, filters: getFilters())
         stallOverview.save()
         Account.stallId = id
         loadTabBarView(true)

@@ -13,8 +13,8 @@
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
 		325EE80B20665178004EC560 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* StallDetails.swift */; };
-		325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* FirebaseObject.swift */; };
-		325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* FilterIdentifier.swift */; };
+		325EE80C20665178004EC560 /* DatabaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* DatabaseObject.swift */; };
+		325EE80E20665178004EC560 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* Filter.swift */; };
 		325EE80F20665178004EC560 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80620665178004EC560 /* Customer.swift */; };
 		325EE81020665178004EC560 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80720665178004EC560 /* Order.swift */; };
 		325EE81120665178004EC560 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80820665178004EC560 /* Review.swift */; };
@@ -46,6 +46,11 @@
 		32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */; };
 		32FD6954207F072D00C898D0 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6953207F072D00C898D0 /* OrderDetailViewController.swift */; };
 		32FD6956207F20EC00C898D0 /* OrderHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6955207F20EC00C898D0 /* OrderHistoryDetailViewController.swift */; };
+		32FD6959207F383000C898D0 /* UIViewController+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */; };
+		32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */; };
+		B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B227B0EE207E8A26008278E3 /* bell.mp3 */; };
+		B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0F0207E8B1B008278E3 /* Audio.swift */; };
+		B2681939207DA87500968827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2681938207DA87500968827 /* Settings.swift */; };
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -67,8 +72,8 @@
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
 		325EE80220665177004EC560 /* StallDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StallDetails.swift; sourceTree = "<group>"; };
-		325EE80320665177004EC560 /* FirebaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObject.swift; sourceTree = "<group>"; };
-		325EE80520665178004EC560 /* FilterIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterIdentifier.swift; sourceTree = "<group>"; };
+		325EE80320665177004EC560 /* DatabaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseObject.swift; sourceTree = "<group>"; };
+		325EE80520665178004EC560 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		325EE80620665178004EC560 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		325EE80720665178004EC560 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		325EE80820665178004EC560 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -100,7 +105,12 @@
 		32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		32FD6953207F072D00C898D0 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		32FD6955207F20EC00C898D0 /* OrderHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailViewController.swift; sourceTree = "<group>"; };
+		32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dispatch.swift"; sourceTree = "<group>"; };
+		32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
+		B227B0EE207E8A26008278E3 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		B227B0F0207E8B1B008278E3 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		B2681938207DA87500968827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
@@ -135,14 +145,15 @@
 			children = (
 				325EE823206A0159004EC560 /* Account.swift */,
 				325EE80620665178004EC560 /* Customer.swift */,
-				325EE80520665178004EC560 /* FilterIdentifier.swift */,
-				325EE80320665177004EC560 /* FirebaseObject.swift */,
+				325EE80520665178004EC560 /* Filter.swift */,
+				325EE80320665177004EC560 /* DatabaseObject.swift */,
 				325EE81820673DD3004EC560 /* Food.swift */,
 				325EE80720665178004EC560 /* Order.swift */,
 				3280F90720779A110095E224 /* OrderHistory.swift */,
 				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* StallDetails.swift */,
 				32B75A6D2073D9D8000C4834 /* StallOverview.swift */,
+				B2681938207DA87500968827 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +237,24 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		32FD695C207F386500C898D0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */,
+				32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B227B0ED207E899C008278E3 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B227B0EE207E8A26008278E3 /* bell.mp3 */,
+				B227B0F0207E8B1B008278E3 /* Audio.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		DCFD028E2205939395984373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +294,7 @@
 				32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */,
 				F26514C720651FD20098783C /* MeViewController.swift */,
 				325EE7F820664532004EC560 /* SettingsViewController.swift */,
+				32FD695C207F386500C898D0 /* Helper */,
 				32B75A6B2073BEEC000C4834 /* Login */,
 				32B75A6C2073BF07000C4834 /* Menu */,
 				3280F906207796430095E224 /* Order */,
@@ -309,6 +339,7 @@
 		F2BBF824205B839400B9812D /* ding-stall */ = {
 			isa = PBXGroup;
 			children = (
+				B227B0ED207E899C008278E3 /* Audio */,
 				325EE81420665182004EC560 /* Model */,
 				F22A9528205D6EA600C6142E /* Controllers */,
 				F22A9527205D6E8900C6142E /* Views */,
@@ -384,6 +415,7 @@
 			files = (
 				F2BBF830205B839400B9812D /* LaunchScreen.storyboard in Resources */,
 				F2BBF838205B842600B9812D /* GoogleService-Info.plist in Resources */,
+				B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */,
 				F285DB36205CC58300E8621B /* README.md in Resources */,
 				F2BBF82D205B839400B9812D /* Assets.xcassets in Resources */,
 				F2BBF82B205B839400B9812D /* Main.storyboard in Resources */,
@@ -481,10 +513,12 @@
 				32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */,
 				F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */,
 				32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */,
+				32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */,
 				325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */,
 				32FD6954207F072D00C898D0 /* OrderDetailViewController.swift in Sources */,
 				32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */,
 				3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */,
+				B2681939207DA87500968827 /* Settings.swift in Sources */,
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
@@ -498,7 +532,8 @@
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
-				325EE80E20665178004EC560 /* FilterIdentifier.swift in Sources */,
+				325EE80E20665178004EC560 /* Filter.swift in Sources */,
+				B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */,
 				32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */,
 				32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */,
 				3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */,
@@ -516,10 +551,11 @@
 				F26514CC206540230098783C /* Authorizer.swift in Sources */,
 				32B75A732074B199000C4834 /* OrderStatusLabel.swift in Sources */,
 				325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */,
+				32FD6959207F383000C898D0 /* UIViewController+Dispatch.swift in Sources */,
 				F2D2C0432064CE75005230D6 /* Constants.swift in Sources */,
 				32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */,
 				3280F905207796120095E224 /* OrderViewController.swift in Sources */,
-				325EE80C20665178004EC560 /* FirebaseObject.swift in Sources */,
+				325EE80C20665178004EC560 /* DatabaseObject.swift in Sources */,
 				32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */,
 				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
 				325EE80F20665178004EC560 /* Customer.swift in Sources */,

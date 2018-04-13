@@ -51,6 +51,9 @@ class ProfileViewController: StallFormViewController {
         (form.rowBy(tag: Tag.location) as? TextRow)?.value = stallOverviewModel.location
         (form.rowBy(tag: Tag.openingHour) as? TextRow)?.value = stallOverviewModel.openingHour
         (form.rowBy(tag: Tag.photo) as? ImageRow)?.value = stallPhoto
+        if let filters = stallOverviewModel.filters {
+            populateStallFilters(filters)
+        }
     }
 
     /// Add the behavior of each row when its value change
@@ -81,13 +84,30 @@ class ProfileViewController: StallFormViewController {
         }
     }
 
+    /// Populate the current filters of this stall into form
+    /// Parameter: filters: the filter to be populated
+    private func populateStallFilters(_ filters: [String: Filter]) {
+        guard var filterSection = form.allSections.last as? MultivaluedSection else {
+            return
+        }
+        filters.forEach { _, filter in
+            guard let filterRow = filterSection
+                .multivaluedRowToInsertAt?(filterSection.count - 1)
+                as? ActionSheetRow<Filter> else {
+                    return
+            }
+            filterRow.value = filter
+            filterSection.insert(filterRow, at: filterSection.count - 1)
+        }
+    }
+
     /// If the user commit the update, all the new information
     /// of stall will be written to database
     @objc
     private func updateStallInformation() {
         guard form.validate().isEmpty else {
             DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                           message: "Some fields are empty") { _ in }
+                                           message: "Some fields are empty")
             return
         }
 
@@ -102,11 +122,12 @@ class ProfileViewController: StallFormViewController {
             currentStallOverview?.photoPath = newPhotoPath
             guard let photoData = currentPhoto.standardData else {
                 DialogHelpers.showAlertMessage(in: self, title: "Error",
-                                               message: "Unable to upload the new photo") { _ in }
+                                               message: "Unable to upload the new photo")
                 return
             }
             StorageRef.upload(photoData, at: newPhotoPath)
         }
+        currentStallOverview?.filters = getFilters()
         currentStallOverview?.save()
         Account.stallOverview = currentStallOverview
         showSuccessAlert(message: "Update successfully")
