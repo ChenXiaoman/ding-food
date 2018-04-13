@@ -6,7 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-public struct OrderHistory: FirebaseObject {
+public struct OrderHistory: DatabaseObject {
     public static let path = "order_history"
     public static let orderPath = "order"
     public var id: String

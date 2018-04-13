@@ -15,7 +15,7 @@ import Foundation
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-public struct Order: FirebaseObject {
+public struct Order: DatabaseObject {
     public static let path = "/orders"
     public static let custemerIdPath = "/customerId"
     /// Used to handle all logics related to Firebase Auth.
