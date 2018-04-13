@@ -6,8 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import FirebaseDatabaseUI
 import AVFoundation
+import FirebaseDatabaseUI
 
 /**
  The controller for the order queue view
