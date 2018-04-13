@@ -39,11 +39,31 @@ class NotificationController {
         }
     }
 
+    /// Checks whether the application has been authorized to push notifications
+    /// and request authorization if not. Shows an alert message if the user does
+    /// not grant the permission.
     static func checkPermission(in controller: UIViewController) {
         checkPermission { isGranted, _ in
             if !isGranted {
                 DialogHelpers.showAlertMessage(in: controller, title: alertTitle, message: alertMessage)
             }
         }
+    }
+
+    /// Schedules a local notification.
+    static func notify(in controller: UNUserNotificationCenterDelegate, title: String, subtitle: String, body: String) {
+        // Sets the delegate of the notification.
+        center.delegate = controller
+
+        // Sets up the content of the notification.
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.subtitle = subtitle
+        content.body = body
+
+        // Creates the notification trigger and reqeust.
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3.0, repeats: false)
+        let request = UNNotificationRequest(identifier: "this_co", content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
     }
 }
