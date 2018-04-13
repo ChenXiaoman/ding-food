@@ -105,7 +105,7 @@ extension FirebaseObject {
     /// conversion fails.
     /// - Parameter dict: the dictionary to decode.
     /// - Returns: The object converted if conversion is successful; nil otherwise.
-    static func deserialize(_ dict: [String: Any]) -> Self? {
+    public static func deserialize(_ dict: [String: Any]) -> Self? {
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys),
             let obj = try? JSONDecoder().decode(Self.self, from: data) else {
                 return nil
@@ -113,11 +113,33 @@ extension FirebaseObject {
         return obj
     }
 
-    /// This method will convert the a dictionary in (id, value) format to a dictionary of
+    /// Converts a given `DataSnapshot` to an array of a certain `Codable` object
+    /// It will return nil if the conversion fails
+    /// - Parameter dict: the dictionary to decode.
+    /// - Returns: An array of object converted if conversion is successful; nil otherwise.
+    public static func deserializeArray(_ snapshot: DataSnapshot) -> [Self]? {
+        guard let dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        var objectArray = [Self]()
+        dict.forEach { key, value in
+            guard var objectDict = value as? [String: Any] else {
+                return
+            }
+            objectDict["id"] = key
+            guard let object = Self.deserialize(objectDict) else {
+                return
+            }
+            objectArray.append(object)
+        }
+        return objectArray
+    }
+
+    /// This function will convert the a dictionary in (id, value) format to a dictionary of
     /// dictionaries in (id, value + id) format to prepare for subsequent deserialization.
     /// - Parameter dict: the nested dictionary of (id, value) pair.
     /// - Returns: a dictionary (id, value) whose value contains the id.
-    static func prepareNestedDeserialize(_ dict: [String: Any]) -> [String: [String: Any]]? {
+    public static func prepareNestedDeserialize(_ dict: [String: Any]) -> [String: [String: Any]]? {
         var menuDict = [String: [String: Any]]()
         dict.forEach { key, value in
             guard let valueDict = value as? [String: Any] else {

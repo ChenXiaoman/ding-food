@@ -21,6 +21,7 @@ struct Account {
     /// Stall model of current user.
     public static var stall: StallDetails?
     public static var stallOverview: StallOverview?
+    public static var allFilters: [Filter]?
 
     public static var stallId: String {
         get { return uid }
@@ -44,6 +45,11 @@ struct Account {
             stallOverview = StallOverview.deserialize(snapshot)
             // Stop observing to avoid memory leak
             DatabaseRef.stopObservers(of: StallOverview.path + "/\(uid)")
+        }
+
+        DatabaseRef.observeValueOnce(of: Filter.path) { snapshot in
+            allFilters = Filter.deserializeArray(snapshot)
+            DatabaseRef.stopObservers(of: Filter.path)
         }
     }
 }
