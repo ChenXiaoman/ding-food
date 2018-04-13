@@ -30,6 +30,10 @@ class OrderController: UIViewController {
     /// 'Order' object represented.
     var orders: [Int: Order] = [:]
     
+    /// A dictionary of mapping from cell's index path to the
+    /// 'OrderHistory' object represented.
+    var orderHistorys: [Int: OrderHistory] = [:]
+    
     /// A boolean value indicates whether the order showing is
     /// 'OrderHistory' or not. Default is showing 'Order'
     /// which is all on-going orders
@@ -126,6 +130,8 @@ class OrderController: UIViewController {
                 return cell
             }
             currentOrder = orderHistory.order
+            // Stores this OrderHistory for further retrieval.
+            orderHistorys[indexPath.totalItem(in: collectionView)] = orderHistory
         } else {
             guard let order = Order.deserialize(snapshot) else {
                 return cell

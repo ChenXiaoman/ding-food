@@ -16,7 +16,7 @@ public struct Review: DatabaseObject {
 
     public let id: String
     public var rating: Rating
-    public var reviewText: String
+    public var reviewText: String?
 }
 
 /**
@@ -29,4 +29,23 @@ public enum Rating: Int, Codable {
     case average = 3
     case fair = 2
     case poor = 1
+    
+    /// An array of ratings,
+    /// from poor to excellent.
+    static let allRatings = [Rating.poor, Rating.fair, Rating.average, Rating.good, Rating.excellent]
+    
+    /// An array of string representation of ratings,
+    /// from poor to excellent.
+    static let allStringsValueOfRatings = ["Bad", "Not good", "OK", "Good", "Excellent"]
+
+}
+
+/// The string representation of the rating
+extension Rating: CustomStringConvertible {
+    public var description: String {
+        // Minus 1 because the lowest raw value starts from 1.
+        return Rating.allStringsValueOfRatings[rawValue - 1]
+    }
+    
+    
 }

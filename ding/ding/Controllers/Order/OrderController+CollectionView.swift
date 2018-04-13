@@ -21,9 +21,14 @@ extension OrderController: UICollectionViewDelegate {
             as? OrderDetailViewController else {
                 return
         }
+        
         // Passes in the `Order` object displayed at this cell.
-        if let order = orders[indexPath.totalItem(in: collectionView)] {
-            controller.order = order
+        controller.order = orders[indexPath.totalItem(in: collectionView)]
+        
+        // Also passes in the 'OrderHistory' object if it is
+        // an showing the history.
+        if isShowingHistory {
+            controller.orderHistory = orderHistorys[indexPath.totalItem(in: collectionView)]
         }
         
         navigationController?.pushViewController(controller, animated: true)
