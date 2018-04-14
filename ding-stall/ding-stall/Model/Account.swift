@@ -28,6 +28,19 @@ struct Account {
         set { uid = newValue }
     }
 
+    public static var isCorrectAccount: Bool {
+        get {
+            return stallOverview != nil
+        }
+    }
+
+    /// Sets all the Account properties back to their original values
+    public static func clear() {
+        stall = nil
+        stallOverview = nil
+        stallId = ""
+    }
+
     /// Download the stall object from database
     private static func downloadStall() {
         guard uid != "" else {

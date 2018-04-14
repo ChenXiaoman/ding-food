@@ -28,11 +28,11 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
         guard authorizer.didLogin else {
             loadLoginView(animated)
             return
         }
+
         setUserAccount()
         loadTabBarView(animated)
     }
