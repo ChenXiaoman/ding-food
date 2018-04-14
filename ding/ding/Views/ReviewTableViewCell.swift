@@ -17,6 +17,13 @@ class ReviewTableViewCell: UITableViewCell {
     
     public static let tableViewIdentifier = "ReviewTableViewCell"
 
+    override func awakeFromNib() {
+        rating.text = nil
+        content.text = nil
+        date.text = nil
+        foodOrdered.text = nil
+    }
+    
     /// Loads data into and populate a `OngoiReviewTableViewCellngOrderCell`.
     /// - Parameter order: The `OrderHistory` object as the data source.
     func load(_ orderHistory: OrderHistory) {

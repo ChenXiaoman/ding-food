@@ -767,10 +767,10 @@ x5 Lemon Juice</string>
             </objects>
             <point key="canvasLocation" x="3189.5999999999999" y="-169.56521739130437"/>
         </scene>
-        <!--Review-->
+        <!--Reviews-->
         <scene sceneID="106-vU-wHq">
             <objects>
-                <viewController storyboardIdentifier="reviewTableViewControllerId" title="Review" id="hRY-fL-rj3" customClass="ReviewTableViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="reviewTableViewControllerId" title="Reviews" id="hRY-fL-rj3" customClass="ReviewTableViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n29-2q-Quz">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -779,8 +779,8 @@ x5 Lemon Juice</string>
                                 <rect key="frame" x="0.0" y="30" width="768" height="116.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vW-NJ-jk1">
-                                        <rect key="frame" x="322" y="0.0" width="124.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <rect key="frame" x="318.5" y="0.0" width="131.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -819,13 +819,13 @@ x5 Lemon Juice</string>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQF-g3-n8D" userLabel="score">
                                                             <rect key="frame" x="0.0" y="0.0" width="691" height="74.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                             <color key="textColor" red="0.97982990711473572" green="0.41055167931199743" blue="0.22637234615535279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="review content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhY-3k-R6M" userLabel="review content">
                                                             <rect key="frame" x="0.0" y="76.5" width="691" height="26.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
