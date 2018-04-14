@@ -19,6 +19,9 @@ class MeViewController: UIViewController {
     @IBOutlet weak private var settingMenu: UITableView!
     /// The `UIImageView` used to display avatar photo.
     @IBOutlet weak private var avatarPhoto: UIImageView!
+
+    /// The profile of the current customer.
+    var currentProfile: Customer?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,6 +37,7 @@ class MeViewController: UIViewController {
         let path = "\(Customer.path)/\(authorizer.userId)"
         DatabaseRef.observeValueOnce(of: path) { snapshot in
             if let profile = Customer.deserialize(snapshot) {
+                self.currentProfile = profile
                 self.avatarPhoto.setWebImage(at: profile.avatarPath, placeholder: #imageLiteral(resourceName: "avatar"))
             }
             DatabaseRef.stopObservers(of: path)
@@ -92,6 +96,14 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             controller.isShowingHistory = true
             navigationController?.pushViewController(controller, animated: true)
+        case .profile:
+            let id = Constants.profileViewControllerId
+            guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
+                as? ProfileViewController else {
+                    return
+            }
+            controller.currentProfile = currentProfile
+            navigationController?.pushViewController(controller, animated: true)
         default:
             let id = info.toControllerId
             guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
@@ -119,8 +131,7 @@ enum SettingMenuCellInfo: Int {
     /// The labels of all cells.
     static let labels = ["Order History", "My Profile", "Settings", "About", "Log Out"]
     /// The identifier for all related controllers.
-    static let controllerIds = ["", Constants.profileViewControllerId, Constants.settingViewControllerId,
-                                Constants.aboutViewControllerId, ""]
+    static let controllerIds = ["", "", Constants.settingViewControllerId, Constants.aboutViewControllerId, ""]
 
     /// The name of a certain setting menu cell.
     var name: String {

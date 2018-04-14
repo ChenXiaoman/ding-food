@@ -1128,6 +1128,13 @@ x5 Lemon Juice</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Ls-zM-BZR"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit My Profile" id="THs-zp-AZ8">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="bnY-Yr-4FV">
+                            <connections>
+                                <action selector="onSubmitPressed:" destination="mNY-ti-j2b" id="b1M-5b-B6D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rw4-SK-34g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

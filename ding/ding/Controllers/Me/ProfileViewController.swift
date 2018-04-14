@@ -15,10 +15,12 @@ import Eureka
  - Date: April 2018
  */
 class ProfileViewController: FormViewController {
+    /// The profile of the current customer.
+    var currentProfile: Customer?
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        navigationController?.title = "Edit My Profile"
     }
 
     override func viewDidLoad() {
@@ -39,5 +41,11 @@ class ProfileViewController: FormViewController {
             <<< ImageRow { row in
                 row.title = "Upload avatar"
             }
+    }
+
+    /// Updates the user profile when the submit button is pressed.
+    /// - Parameter sender: The button being pressed.
+    @IBAction func onSubmitPressed(_ sender: UIBarButtonItem) {
+
     }
 }
