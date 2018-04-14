@@ -13,7 +13,7 @@ class OrderDetailViewController: FormViewController {
     /// The UIView for displaying order information
     @IBOutlet weak private var orderView: OrderView!
     /// The UIView for review section.
-    @IBOutlet weak private var reviewView: ReivewUIView!
+    @IBOutlet weak private var reviewView: UIView!
     /// Table view for displaying list of food.
     @IBOutlet weak private var foodTableView: UITableView!
     /// The submit button for review.

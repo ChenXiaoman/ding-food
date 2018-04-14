@@ -272,7 +272,7 @@ x5 Lemon Juice</string>
                                     <outlet property="stallPhoto" destination="Z77-dv-oEX" id="2fh-Yv-Hmh"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View" customClass="ReivewUIView" customModule="ding" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avK-Al-UtA" userLabel="Review View">
                                 <rect key="frame" x="38.5" y="306" width="691" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-zR-ZkL">
