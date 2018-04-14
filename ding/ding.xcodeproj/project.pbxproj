@@ -25,7 +25,7 @@
 		5DC234492064D686008B034A /* FoodDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC234482064D686008B034A /* FoodDetailController.swift */; };
 		5DC2344D20653686008B034A /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2344C20653686008B034A /* MeViewController.swift */; };
 		5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */; };
-		5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */; };
+		5DE2B7D72082298B006D1C7D /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2B7D62082298B006D1C7D /* ReviewTableViewCell.swift */; };
 		5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C42077828100544A54 /* OrderDetailViewController.swift */; };
 		5DEC47C920785F8B00544A54 /* OrderFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC47C820785F8B00544A54 /* OrderFoodTableViewController.swift */; };
 		5DF03D68205D57D5003D320C /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF03D67205D57D5003D320C /* String+Helpers.swift */; };
@@ -99,7 +99,7 @@
 		5DC234482064D686008B034A /* FoodDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailController.swift; sourceTree = "<group>"; };
 		5DC2344C20653686008B034A /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		5DD15FAF2067612500DDF8D6 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
-		5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		5DE2B7D62082298B006D1C7D /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5DEC47C42077828100544A54 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		5DEC47C820785F8B00544A54 /* OrderFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodTableViewController.swift; sourceTree = "<group>"; };
 		5DF03D67205D57D5003D320C /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
@@ -262,10 +262,10 @@
 		F26657F2206F8B9400BE83F5 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				5DE2B7D62082298B006D1C7D /* ReviewTableViewCell.swift */,
 				F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */,
 				5DC234402063B913008B034A /* OngoingOrderCell.swift */,
 				5D8848092078E05800FCDC3B /* OrderView.swift */,
-				5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -320,7 +320,6 @@
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				F23E6A362066A25E001EB882 /* SettingMenuCell.swift */,
 				F2C65C6A2065FAD100E40425 /* MenuButton.swift */,
-				5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -597,7 +596,6 @@
 				F2F2CE4A207FAA4300694D32 /* SoundEffectController.swift in Sources */,
 				F2EAC9EA2080BD1D008A692C /* NotificationController.swift in Sources */,
 				F2D397D6206F649B0086C27E /* ShoppingCart.swift in Sources */,
-				5DD15FB22067613F00DDF8D6 /* ReviewTableViewCell.swift in Sources */,
 				F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */,
 				5DC234412063B913008B034A /* OngoingOrderCell.swift in Sources */,
 				F2F2CE40207F9FF600694D32 /* SettingViewController.swift in Sources */,
@@ -618,6 +616,7 @@
 				F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */,
 				F297DEA1206F72F900991DC7 /* OrderController+CollectionView.swift in Sources */,
 				5DEC47C920785F8B00544A54 /* OrderFoodTableViewController.swift in Sources */,
+				5DE2B7D72082298B006D1C7D /* ReviewTableViewCell.swift in Sources */,
 				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,
 				5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */,
 				F2043416207791C600FF3083 /* FilterView.swift in Sources */,
