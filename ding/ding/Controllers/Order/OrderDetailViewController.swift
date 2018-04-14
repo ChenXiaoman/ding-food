@@ -13,7 +13,7 @@ class OrderDetailViewController: FormViewController {
     /// The UIView for displaying order information
     @IBOutlet weak private var orderView: OrderView!
     /// The UIView for review section.
-    @IBOutlet weak private var reviewView: ReivewUIView!
+    @IBOutlet weak private var reviewView: UIView!
     /// Table view for displaying list of food.
     @IBOutlet weak private var foodTableView: UITableView!
     /// The submit button for review.
@@ -71,7 +71,8 @@ class OrderDetailViewController: FormViewController {
         guard var orderHistory = orderHistory else {
             return
         }
-        let review = Review(id: orderHistory.id, rating: rating, reviewText: textRow.value)
+        let review = Review(id: orderHistory.id, stallId: orderHistory.order.stallId,
+                            rating: rating, reviewText: textRow.value)
         orderHistory.review = review
         orderHistory.save()
         
@@ -88,12 +89,16 @@ class OrderDetailViewController: FormViewController {
             return
         }
         if order.status == OrderStatus.collected {
+            if reviewViewHiddenConstraint != nil {
+                NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
+            }
             NSLayoutConstraint.activate([reviewViewNormalConstraint])
-            NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
             setUpReviewSection()
         } else {
+            if reviewViewNormalConstraint != nil {
+                NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
+            }
             NSLayoutConstraint.activate([reviewViewHiddenConstraint])
-            NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
         }
     }
     

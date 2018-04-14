@@ -43,7 +43,7 @@ class FilterLabel: UILabel {
         layer.cornerRadius = FilterLabel.cornerRadius
         clipsToBounds = true
         invalidateIntrinsicContentSize()
-        backgroundColor = .fromRGB(0x6bbdef)
+        backgroundColor = .fromRGB(0xf47141)
         textColor = .white
 
         text = filter.name

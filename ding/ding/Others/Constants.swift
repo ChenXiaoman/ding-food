@@ -39,6 +39,8 @@ struct Constants {
     static let orderFoodTableViewControllerId = "OrderFoodTableViewController"
     /// The identifier for the segue from ongoing orders to shopping cart.
     static let ongoingOrderToShoppingCartId = "ongoingOrderToShoppingCart"
+    /// The identifier for review table view controller.
+    static let reviewTableViewControllerId = "reviewTableViewControllerId"
 
     /// The tab bar index for search view.
     static let searchViewTabBarIndex = 0
