@@ -89,12 +89,16 @@ class OrderDetailViewController: FormViewController {
             return
         }
         if order.status == OrderStatus.collected {
+            if reviewViewHiddenConstraint != nil {
+                NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
+            }
             NSLayoutConstraint.activate([reviewViewNormalConstraint])
-            NSLayoutConstraint.deactivate([reviewViewHiddenConstraint])
             setUpReviewSection()
         } else {
-            NSLayoutConstraint.activate([reviewViewHiddenConstraint])
-            NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
+            if reviewViewNormalConstraint != nil {
+                NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
+            }
+            NSLayoutConstraint.activate([reviewViewHiddenConstraint])            
         }
     }
     
