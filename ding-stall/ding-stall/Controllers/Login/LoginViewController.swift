@@ -58,7 +58,6 @@ class LoginViewController: UIViewController {
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
         // Makes sure that user sign in using stall account and not customer account
-        print("Tabbar" + Account.stallId)
         guard Account.isCorrectAccount else {
             handleWrongAccountType()
             return
@@ -85,7 +84,6 @@ class LoginViewController: UIViewController {
 
     /// Set the current user id.
     private func setUserAccount() {
-        print("authorizer\(authorizer.userId)")
         Account.stallId = authorizer.userId
     }
 
@@ -113,7 +111,6 @@ extension LoginViewController: FUIAuthDelegate {
             loadStallFormView(true)
         } else {
             setUserAccount()
-            print("Delegate" + Account.stallId)
             loadTabBarView(true)
         }
     }
