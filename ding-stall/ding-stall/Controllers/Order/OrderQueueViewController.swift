@@ -24,8 +24,6 @@ class OrderQueueViewController: OrderViewController {
     /// Store all order models in this stall
     private var orderDict = [String: Order]()
 
-    // To check isRinging property
-    private var settings = Settings()
     /// Plays ringing sound every new order if successfully initialised
     private var audioPlayer: AVAudioPlayer?
 
@@ -50,7 +48,7 @@ class OrderQueueViewController: OrderViewController {
     }
 
     private func setAudioPlayer() {
-        guard settings.isRinging else {
+        guard Settings.isRinging else {
             audioPlayer = nil
             return
         }
@@ -78,7 +76,7 @@ class OrderQueueViewController: OrderViewController {
                 audioPlayer?.play()
             }
 
-            if settings.isAutomaticAcceptOrder && order.status == .pending {
+            if Settings.isAutomaticAcceptOrder && order.status == .pending {
                 order.status = .accepted
                 order.save()
             }
