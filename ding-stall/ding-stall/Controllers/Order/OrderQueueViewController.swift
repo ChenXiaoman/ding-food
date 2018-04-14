@@ -24,10 +24,19 @@ class OrderQueueViewController: OrderViewController {
     /// Store all order models in this stall
     private var orderDict = [String: Order]()
 
+    private var noOrderLabel: UIView?
+
     // To check isRinging property
     private var settings = Settings()
     /// Plays ringing sound every new order if successfully initialised
     private var audioPlayer: AVAudioPlayer?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let noOrderLabel = NothingToDisplayView(frame: orderQueueCollectionView.frame, message: "No orders")
+        self.noOrderLabel = noOrderLabel
+        orderQueueCollectionView.addSubview(noOrderLabel)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,17 +45,21 @@ class OrderQueueViewController: OrderViewController {
         // Configure audioPlayer based on updated settings
         setAudioPlayer()
 
-        let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
-            .queryEqual(toValue: Account.stallId)
-        dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
-        dataSource?.bind(to: orderQueueCollectionView)
-        orderQueueCollectionView.delegate = self
+        configureCollectionView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Stop binding to avoid program crash
         dataSource?.unbind()
+    }
+
+    private func configureCollectionView() {
+        let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
+            .queryEqual(toValue: Account.stallId)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
+        dataSource?.bind(to: orderQueueCollectionView)
+        orderQueueCollectionView.delegate = self
     }
 
     private func setAudioPlayer() {
@@ -72,6 +85,8 @@ class OrderQueueViewController: OrderViewController {
                                                             for: indexPath) as? OrderQueueCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
+
+        noOrderLabel?.isHidden = true
 
         if var order = Order.deserialize(snapshot) {
             if order.status == .pending {
@@ -99,6 +114,9 @@ class OrderQueueViewController: OrderViewController {
         // If the order is collected or rejected, it will be removed
         // from this list
         guard newStatus.isOngoingOrderStatus else {
+            if orderQueueCollectionView.numberOfItems(inSection: 0) == 1 {
+                noOrderLabel?.isHidden = false
+            }
             currentSelectedCell = nil
             currentSelectedOrder = nil
             return

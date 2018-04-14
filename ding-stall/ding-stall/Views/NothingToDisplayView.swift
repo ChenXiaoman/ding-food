@@ -14,9 +14,9 @@ import UIKit
  */
 class NothingToDisplayView: UIView {
 
-    private var text: UILabel = {
+    private func createTextLabel(message: String) -> UILabel {
         let label = UILabel()
-        label.text = "Nothing to Display"
+        label.text = message
         label.font = UIFont.boldSystemFont(ofSize: 40.0)
 
         label.numberOfLines = 0
@@ -27,13 +27,14 @@ class NothingToDisplayView: UIView {
         label.backgroundColor = .clear
 
         return label
-    }()
+    }
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, message: String) {
         super.init(frame: frame)
 
         backgroundColor = .clear
-
+        
+        let text = createTextLabel(message: message)
         addSubview(text)
         text.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         text.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
