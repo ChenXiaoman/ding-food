@@ -10,6 +10,8 @@ import Eureka
 
 class StallCreationViewController: StallFormViewController {
 
+    weak var loginDelegate: LoginDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addCreateButton()
@@ -56,7 +58,10 @@ class StallCreationViewController: StallFormViewController {
                                           description: description, filters: getFilters())
         stallOverview.save()
         Account.stallId = id
-        loadTabBarView(true)
+        DialogHelpers.showAlertMessage(in: self, title: "Stall Created!",
+                                       message: "Please verify your email address and login again") {
+            self.loginDelegate?.signOut()
+        }
     }
 
     /// Loads the main tab bar view from storyboard.

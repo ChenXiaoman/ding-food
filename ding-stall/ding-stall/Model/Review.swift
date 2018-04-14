@@ -15,6 +15,7 @@ public struct Review: DatabaseObject {
     public static var path = "/review"
     
     public let id: String
+    public let stallId: String
     public var rating: Rating
     public var reviewText: String?
 }
