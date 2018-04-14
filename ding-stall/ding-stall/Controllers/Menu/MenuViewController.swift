@@ -23,6 +23,11 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+        configureCollectionView()
+    }
+
+    /// Binds Firebase data source to collection view.
+    private func configureCollectionView() {
         let query = DatabaseRef.getNodeRef(of: menuPath)
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: menuView)
