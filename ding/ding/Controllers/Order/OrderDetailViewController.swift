@@ -71,7 +71,8 @@ class OrderDetailViewController: FormViewController {
         guard var orderHistory = orderHistory else {
             return
         }
-        let review = Review(id: orderHistory.id, rating: rating, reviewText: textRow.value)
+        let review = Review(id: orderHistory.id, stallId: orderHistory.order.stallId,
+                            rating: rating, reviewText: textRow.value)
         orderHistory.review = review
         orderHistory.save()
         
