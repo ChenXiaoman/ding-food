@@ -20,5 +20,10 @@ struct Customer: DatabaseObject {
     /// The customer's real name.
     let name: String
     /// The path to the customer's avatar.
-    let avatarPath: String
+    var avatarPath: String
+
+    /// Provide a new path for the stall photo if it has changed
+    static var newPhotoPath: String {
+        return Customer.path + "/\(Customer.getAutoId)"
+    }
 }

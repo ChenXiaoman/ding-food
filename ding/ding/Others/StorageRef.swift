@@ -57,4 +57,10 @@ class StorageRef {
     static func getNodeRef(of path: String) -> StorageReference {
         return ref.child(path)
     }
+
+    /// Delete the file at the given path.
+    /// - Parameter path: the path of the file to be deleted.
+    static func delete(at path: String) {
+        ref.child(path).delete()
+    }
 }

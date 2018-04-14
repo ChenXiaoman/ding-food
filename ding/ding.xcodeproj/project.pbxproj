@@ -45,6 +45,7 @@
 		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
 		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F242A7972081C20900F88827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A7962081C20900F88827 /* Settings.swift */; };
+		F242A7992081EFAB00F88827 /* UIImage+StandardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F265B95A207095410035A47B /* FoodOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265B959207095410035A47B /* FoodOverviewView.swift */; };
 		F265B95C207099080035A47B /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265B95B207099080035A47B /* UIView+Utility.swift */; };
@@ -119,6 +120,7 @@
 		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F242A7962081C20900F88827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StandardSize.swift"; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F265B959207095410035A47B /* FoodOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOverviewView.swift; sourceTree = "<group>"; };
 		F265B95B207099080035A47B /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */,
+				F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */,
 				F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */,
 				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 				F265B95B207099080035A47B /* UIView+Utility.swift */,
@@ -619,6 +622,7 @@
 				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
 				F242A7972081C20900F88827 /* Settings.swift in Sources */,
 				F2F1E208207893BE00B94250 /* Filter.swift in Sources */,
+				F242A7992081EFAB00F88827 /* UIImage+StandardSize.swift in Sources */,
 				F20434182077941700FF3083 /* FilterLabel.swift in Sources */,
 				F2F2CE44207FA49C00694D32 /* ImageRow.swift in Sources */,
 				F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */,

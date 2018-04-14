@@ -103,6 +103,8 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
                     return
             }
             controller.currentProfile = currentProfile
+            controller.avatarPhoto = avatarPhoto.image
+            controller.parentController = self
             navigationController?.pushViewController(controller, animated: true)
         default:
             let id = info.toControllerId
