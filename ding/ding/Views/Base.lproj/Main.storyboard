@@ -741,7 +741,7 @@ x5 Lemon Juice</string>
                     <navigationItem key="navigationItem" title="Stall Details" id="6wZ-xd-U72" userLabel="Stall detail">
                         <barButtonItem key="rightBarButtonItem" title="Reviews" id="VEi-c3-AqP">
                             <connections>
-                                <segue destination="hRY-fL-rj3" kind="show" id="06r-XC-dK6"/>
+                                <action selector="toReviews:" destination="Gz0-cY-BPt" id="XUN-NB-gwA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -755,10 +755,10 @@ x5 Lemon Juice</string>
             </objects>
             <point key="canvasLocation" x="3189.5999999999999" y="-169.56521739130437"/>
         </scene>
-        <!--Review Table View Controller-->
+        <!--Review-->
         <scene sceneID="106-vU-wHq">
             <objects>
-                <viewController id="hRY-fL-rj3" customClass="ReviewTableViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="reviewTableViewControllerId" title="Review" id="hRY-fL-rj3" customClass="ReviewTableViewController" customModule="ding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n29-2q-Quz">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,7 +13,8 @@
  */
 public struct Review: DatabaseObject {
     public static let path = "/review"
-
+    public static let stallIdPath = "/stallId"
+    
     public let id: String
     public let stallId: String
     public var rating: Rating

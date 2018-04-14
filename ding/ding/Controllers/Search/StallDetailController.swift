@@ -107,4 +107,16 @@ class StallDetailController: UIViewController {
         
         return cell
     }
+    
+    /// The navigation bar click to review table view
+    @IBAction func toReviews(_ sender: UIBarButtonItem) {
+        let id = Constants.reviewTableViewControllerId
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: id)
+            as? ReviewTableViewController else {
+                return
+        }
+        // Passes `StallOverview` object of this view controller.
+        controller.stall = stall
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }

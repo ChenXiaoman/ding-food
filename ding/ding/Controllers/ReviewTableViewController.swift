@@ -12,6 +12,9 @@ class ReviewTableViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet private var reviewTableView: UITableView!
     
+    /// The 'StallOverView' object of the review table
+    var stall: StallOverview?
+    
     /// The Firebase data source for the listing of reviews.
     var dataSource: FUITableViewDataSource?
     
@@ -22,13 +25,16 @@ class ReviewTableViewController: UIViewController, UITableViewDelegate {
     
     /// Binds Firebase data source to table view.
     private func configureTableView() {
+        guard let stall = stall else {
+            return
+        }
         
         let orderPath = OrderHistory.path
-        let childPath = Review.path + "/id"
+        let childPath = Review.path + Review.stallIdPath
         
         // Configures the table view.
         let query = DatabaseRef.getNodeRef(of: orderPath)
-            .queryOrdered(byChild: childPath).queryEqual(toValue: "-L9mmrtVzyMwdayWXitW")
+            .queryOrdered(byChild: childPath).queryEqual(toValue: stall.id)
         dataSource = FUITableViewDataSource(query: query, populateCell: populateReviewCell)
         dataSource?.bind(to: reviewTableView)
         reviewTableView.delegate = self
