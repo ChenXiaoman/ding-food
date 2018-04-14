@@ -8,15 +8,12 @@
 
 /**
  Store the user id and stall model for the current login user
+ This information is shared through the whole app
  */
 struct Account {
 
     /// Current user id
-    private static var uid = "" {
-        didSet {
-            downloadStall()
-        }
-    }
+    private static var uid = "" 
     
     /// Stall model of current user.
     public static var stall: StallDetails?
@@ -28,28 +25,18 @@ struct Account {
         set { uid = newValue }
     }
 
-    /// Download the stall object from database
-    private static func downloadStall() {
-        guard uid != "" else {
-            return
-        }
-        DatabaseRef.observeValueOnce(of: StallDetails.path + "/\(uid)") { snapshot in
-            stall = StallDetails.deserialize(snapshot)
-            if stall == nil {
-                stall = StallDetails(id: uid, menu: nil)
-            }
-            // Stop observing to avoid memory leak
-            DatabaseRef.stopObservers(of: StallDetails.path + "/\(uid)")
-        }
-        DatabaseRef.observeValueOnce(of: StallOverview.path + "/\(uid)") { snapshot in
-            stallOverview = StallOverview.deserialize(snapshot)
-            // Stop observing to avoid memory leak
-            DatabaseRef.stopObservers(of: StallOverview.path + "/\(uid)")
-        }
-
-        DatabaseRef.observeValueOnce(of: Filter.path) { snapshot in
-            allFilters = Filter.deserializeArray(snapshot)
-            DatabaseRef.stopObservers(of: Filter.path)
-        }
+    /// Checks whether this account is registered for stall
+    /// If not, the database has no stallOverview information
+    /// and this variable is nil after downloading
+    public static var isCorrectAccount: Bool {
+        return stallOverview != nil
     }
+
+    /// Sets all the Account properties back to their original values
+    public static func clear() {
+        stall = nil
+        stallOverview = nil
+        stallId = ""
+    }
+
 }

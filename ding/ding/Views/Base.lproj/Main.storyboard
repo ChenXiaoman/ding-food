@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SP-j8-EVB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SP-j8-EVB">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,14 +13,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="GillSans.ttc">
-            <string>GillSans</string>
-        </array>
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-LightItalic</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--VerifyNUSController-->
         <scene sceneID="tne-QT-ifu">
@@ -95,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6lI-KP-6kf" userLabel="OngoingOrders">
-                                <rect key="frame" x="0.0" y="108" width="768" height="867"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pvq-HG-oZA" userLabel="FlowLayout">
                                     <size key="itemSize" width="375" height="157"/>
@@ -195,7 +187,7 @@ x5 Lemon Juice</string>
                                 </cells>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-Gw-Cfd" userLabel="LoadingIndicator">
-                                <rect key="frame" x="374" y="531.5" width="20" height="20"/>
+                                <rect key="frame" x="374" y="509.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1108,11 +1100,15 @@ x5 Lemon Juice</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="U6k-ji-F2R" userLabel="Avatar">
-                                <rect key="frame" x="339" y="99" width="90" height="90"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="U6k-ji-F2R" userLabel="Avatar" customClass="AvatarImageView" customModule="ding" customModuleProvider="target">
+                                <rect key="frame" x="334" y="99" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U6k-ji-F2R" secondAttribute="height" multiplier="1:1" id="GTI-AD-vXo"/>
+                                    <constraint firstAttribute="height" constant="100" id="gc7-3o-jXz"/>
+                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfh-YZ-Sj9" userLabel="MeSettingMenu">
-                                <rect key="frame" x="0.0" y="224" width="768" height="751"/>
+                                <rect key="frame" x="0.0" y="234" width="768" height="741"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meSettingMenuCell" id="JRh-lN-jMm" userLabel="MeSettingMenuCell" customClass="SettingMenuCell" customModule="ding" customModuleProvider="target">
@@ -1157,6 +1153,7 @@ x5 Lemon Juice</string>
                     <tabBarItem key="tabBarItem" title="Me" image="me" id="EZU-4Y-ifO"/>
                     <navigationItem key="navigationItem" id="hlV-kN-oZP"/>
                     <connections>
+                        <outlet property="avatarPhoto" destination="U6k-ji-F2R" id="PO8-Fe-szd"/>
                         <outlet property="settingMenu" destination="rfh-YZ-Sj9" id="nlt-SQ-gCk"/>
                     </connections>
                 </viewController>
@@ -1174,6 +1171,13 @@ x5 Lemon Juice</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Ls-zM-BZR"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit My Profile" id="THs-zp-AZ8">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="bnY-Yr-4FV">
+                            <connections>
+                                <action selector="onSubmitPressed:" destination="mNY-ti-j2b" id="b1M-5b-B6D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rw4-SK-34g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

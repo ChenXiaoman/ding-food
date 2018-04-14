@@ -48,6 +48,7 @@
 		32FD6956207F20EC00C898D0 /* OrderHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6955207F20EC00C898D0 /* OrderHistoryDetailViewController.swift */; };
 		32FD6959207F383000C898D0 /* UIViewController+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */; };
 		32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */; };
+		32FD695F2081A26C00C898D0 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD695E2081A26C00C898D0 /* AccountController.swift */; };
 		B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B227B0EE207E8A26008278E3 /* bell.mp3 */; };
 		B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0F0207E8B1B008278E3 /* Audio.swift */; };
 		B2681939207DA87500968827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2681938207DA87500968827 /* Settings.swift */; };
@@ -108,6 +109,7 @@
 		32FD6955207F20EC00C898D0 /* OrderHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dispatch.swift"; sourceTree = "<group>"; };
 		32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		32FD695E2081A26C00C898D0 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		B227B0EE207E8A26008278E3 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		B227B0F0207E8B1B008278E3 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		32B75A6B2073BEEC000C4834 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				32FD695E2081A26C00C898D0 /* AccountController.swift */,
 				F2209A652064BD9F0043C6F3 /* LoginViewController.swift */,
 				32B75A6720733E46000C4834 /* PasswordSignUpController.swift */,
 			);
@@ -524,6 +527,7 @@
 				B2681939207DA87500968827 /* Settings.swift in Sources */,
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
+				32FD695F2081A26C00C898D0 /* AccountController.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
 				3280F90C2077B9630095E224 /* OrderQueueCollectionViewCell.swift in Sources */,
 				325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */,

@@ -86,4 +86,7 @@ struct Constants {
     static let reviewSubmitedAlertText = "Review submitted successfully!"
     /// The text in edit review button
     static let editReviewButtonText = "Edit my review"
+
+    /// The standard image size in KB
+    static let standardImageSize = 1_024
 }

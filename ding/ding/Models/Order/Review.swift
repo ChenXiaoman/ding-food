@@ -48,6 +48,4 @@ extension Rating: CustomStringConvertible {
         // Minus 1 because the lowest raw value starts from 1.
         return Rating.allStringsValueOfRatings[rawValue - 1]
     }
-    
-    
 }

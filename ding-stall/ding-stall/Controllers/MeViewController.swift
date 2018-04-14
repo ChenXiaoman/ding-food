@@ -82,7 +82,6 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
             let id = info.toControllerId
             guard let profileController = storyboard?.instantiateViewController(withIdentifier: id)
                 as? ProfileViewController else {
-                    print("error")
                     return
             }
             guard let stallImage = stallPhoto.image, !stallImage.isEqual(#imageLiteral(resourceName: "avatar")) else {

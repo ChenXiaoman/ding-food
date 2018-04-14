@@ -64,7 +64,9 @@ class NotificationController {
         content.title = title
         content.subtitle = subtitle
         content.body = body
-        content.sound = UNNotificationSound.default()
+        if Settings.standard.isVolumeOn {
+            content.sound = UNNotificationSound.default()
+        }
 
         // Creates the notification trigger and reqeust.
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
