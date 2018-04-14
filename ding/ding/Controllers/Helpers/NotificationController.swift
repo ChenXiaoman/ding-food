@@ -64,7 +64,7 @@ class NotificationController {
         content.title = title
         content.subtitle = subtitle
         content.body = body
-        if isVolumeOn() {
+        if Settings.standard.isVolumeOn {
             content.sound = UNNotificationSound.default()
         }
 
@@ -77,15 +77,5 @@ class NotificationController {
     /// Unschedules all pending local notification requests.
     static func clearPendingRequests() {
         center.removeAllPendingNotificationRequests()
-    }
-
-    /// Checks whether the user has set the volume on/off.
-    /// - Returns: true if the user set the volume on; true as well if the
-    /// user neve sets the volume before.
-    private static func isVolumeOn() -> Bool {
-        guard UserDefaults.standard.object(forKey: "volume") != nil else {
-            return true
-        }
-        return UserDefaults.standard.bool(forKey: "volume")
     }
 }

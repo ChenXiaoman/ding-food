@@ -28,10 +28,10 @@ class SettingViewController: FormViewController {
         form +++ Section("Settings")
             <<< SwitchRow { row in
                 row.title = "Volume"
-                row.value = UserDefaults.standard.bool(forKey: "volume")
+                row.value = Settings.standard.isVolumeOn
             }.onChange { row in
                 if let option = row.value {
-                    UserDefaults.standard.set(option, forKey: "volume")
+                    Settings.standard.setVolume(option)
                 }
             }
     }
