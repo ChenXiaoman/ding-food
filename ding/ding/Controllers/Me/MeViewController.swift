@@ -16,8 +16,10 @@ import UIKit
  */
 class MeViewController: UIViewController {
     /// The table view to use as the setting menu
-    @IBOutlet private weak var settingMenu: UITableView!
-
+    @IBOutlet weak private var settingMenu: UITableView!
+    /// The `UIImageView` used to display avatar photo.
+    @IBOutlet weak private var avatarPhoto: UIImageView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -27,6 +29,15 @@ class MeViewController: UIViewController {
         
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: true)
+
+        // Gets the current user's information.
+        let path = "\(Customer.path)/\(authorizer.userId)"
+        DatabaseRef.observeValueOnce(of: path) { snapshot in
+            if let profile = Customer.deserialize(snapshot) {
+                self.avatarPhoto.setWebImage(at: profile.avatarPath, placeholder: #imageLiteral(resourceName: "avatar"))
+            }
+            DatabaseRef.stopObservers(of: path)
+        }
     }
 }
 

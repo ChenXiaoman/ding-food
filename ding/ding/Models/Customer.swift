@@ -19,4 +19,6 @@ struct Customer: DatabaseObject {
     let id: String
     /// The customer's real name.
     let name: String
+    /// The path to the customer's avatar.
+    let avatarPath: String
 }
