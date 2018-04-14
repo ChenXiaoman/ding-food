@@ -12,7 +12,7 @@
  a review for the stall where he/she purchase the food from.
  */
 public struct Review: DatabaseObject {
-    public static let path = "/reviews"
+    public static let path = "/review"
 
     public let id: String
     public var rating: Rating
