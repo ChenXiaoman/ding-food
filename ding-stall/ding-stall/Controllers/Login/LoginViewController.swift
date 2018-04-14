@@ -22,6 +22,8 @@ class LoginViewController: UIViewController {
 
     /// Used to handle all logics related to Firebase Auth.
     fileprivate let authorizer = Authorizer()
+    /// Used to handle the account of current login user
+    private let accountController = AccountController()
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -78,7 +80,8 @@ class LoginViewController: UIViewController {
 
     /// Set the current user id.
     private func setUserAccount() {
-        Account.stallId = authorizer.userId
+        accountController.loginDelegate = self
+        accountController.setStallId(authorizer.userId)
     }
 }
 
@@ -102,4 +105,21 @@ extension LoginViewController: FUIAuthDelegate {
         controller.parentController = self
         return controller
     }
+}
+
+extension LoginViewController: LoginDelegate {
+    /// Automatically signs user out when user signs in using customer account.
+    public func handleWrongAccountType() {
+        DialogHelpers.showAlertMessage(in: self, title: "Wrong Account Type",
+                                       message: "The account is not registered as a stall account." +
+                                                "Try to sign in using another account") {
+            self.authorizer.signOut()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+}
+
+public protocol LoginDelegate: class {
+    /// Handles when the login account is not registered for stall
+    func handleWrongAccountType()
 }

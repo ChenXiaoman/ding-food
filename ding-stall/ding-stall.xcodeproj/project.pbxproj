@@ -48,13 +48,11 @@
 		32FD6956207F20EC00C898D0 /* OrderHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6955207F20EC00C898D0 /* OrderHistoryDetailViewController.swift */; };
 		32FD6959207F383000C898D0 /* UIViewController+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */; };
 		32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */; };
+		32FD695F2081A26C00C898D0 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD695E2081A26C00C898D0 /* AccountController.swift */; };
 		B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B227B0EE207E8A26008278E3 /* bell.mp3 */; };
 		B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0F0207E8B1B008278E3 /* Audio.swift */; };
 		B2681939207DA87500968827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2681938207DA87500968827 /* Settings.swift */; };
-
-		B2DCBC1720819E0B009CEAE9 /* AccountVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBC1620819E0B009CEAE9 /* AccountVerification.swift */; };
 		B2DCBC1520819545009CEAE9 /* NothingToDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBC1420819545009CEAE9 /* NothingToDisplayView.swift */; };
-
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -111,15 +109,12 @@
 		32FD6955207F20EC00C898D0 /* OrderHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		32FD6958207F383000C898D0 /* UIViewController+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dispatch.swift"; sourceTree = "<group>"; };
 		32FD695A207F385C00C898D0 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		32FD695E2081A26C00C898D0 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		430174F0C5EDD6FD171C8143 /* Pods-ding-stall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.debug.xcconfig"; sourceTree = "<group>"; };
 		B227B0EE207E8A26008278E3 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		B227B0F0207E8B1B008278E3 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		B2681938207DA87500968827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-
-		B2DCBC1620819E0B009CEAE9 /* AccountVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerification.swift; sourceTree = "<group>"; };
-
 		B2DCBC1420819545009CEAE9 /* NothingToDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingToDisplayView.swift; sourceTree = "<group>"; };
-
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
@@ -208,6 +203,7 @@
 		32B75A6B2073BEEC000C4834 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				32FD695E2081A26C00C898D0 /* AccountController.swift */,
 				F2209A652064BD9F0043C6F3 /* LoginViewController.swift */,
 				32B75A6720733E46000C4834 /* PasswordSignUpController.swift */,
 			);
@@ -356,7 +352,6 @@
 				F22A952A205D6EF900C6142E /* Others */,
 				F2BBF837205B842600B9812D /* GoogleService-Info.plist */,
 				F2BBF831205B839400B9812D /* Info.plist */,
-				B2DCBC1620819E0B009CEAE9 /* AccountVerification.swift */,
 			);
 			path = "ding-stall";
 			sourceTree = "<group>";
@@ -532,10 +527,10 @@
 				B2681939207DA87500968827 /* Settings.swift in Sources */,
 				325EE81120665178004EC560 /* Review.swift in Sources */,
 				325EE81020665178004EC560 /* Order.swift in Sources */,
+				32FD695F2081A26C00C898D0 /* AccountController.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
 				3280F90C2077B9630095E224 /* OrderQueueCollectionViewCell.swift in Sources */,
 				325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */,
-				B2DCBC1720819E0B009CEAE9 /* AccountVerification.swift in Sources */,
 				3280F90E2077B9AE0095E224 /* OrderQueueViewController.swift in Sources */,
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
 				32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */,
