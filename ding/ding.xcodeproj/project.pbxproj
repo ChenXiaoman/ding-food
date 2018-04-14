@@ -46,6 +46,7 @@
 		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F242A7972081C20900F88827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A7962081C20900F88827 /* Settings.swift */; };
 		F242A7992081EFAB00F88827 /* UIImage+StandardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */; };
+		F242A79C2081F30B00F88827 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A79B2081F30B00F88827 /* AvatarImageView.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F265B95A207095410035A47B /* FoodOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265B959207095410035A47B /* FoodOverviewView.swift */; };
 		F265B95C207099080035A47B /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265B95B207099080035A47B /* UIView+Utility.swift */; };
@@ -121,6 +122,7 @@
 		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F242A7962081C20900F88827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StandardSize.swift"; sourceTree = "<group>"; };
+		F242A79B2081F30B00F88827 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F265B959207095410035A47B /* FoodOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOverviewView.swift; sourceTree = "<group>"; };
 		F265B95B207099080035A47B /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
@@ -251,12 +253,21 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
+		F242A79A2081F2C900F88827 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F242A79B2081F30B00F88827 /* AvatarImageView.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		F26657F2206F8B9400BE83F5 /* Order */ = {
 			isa = PBXGroup;
 			children = (
 				F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */,
 				5DC234402063B913008B034A /* OngoingOrderCell.swift */,
 				5D8848092078E05800FCDC3B /* OrderView.swift */,
+				5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -302,6 +313,7 @@
 		F27DDC78205E3978005C3A07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F242A79A2081F2C900F88827 /* Me */,
 				F26657F2206F8B9400BE83F5 /* Order */,
 				F26657F4206F8C5500BE83F5 /* Search */,
 				F26657F3206F8BB300BE83F5 /* Helpers */,
@@ -310,7 +322,6 @@
 				F2C6606A205B7FFF006C3C51 /* Main.storyboard */,
 				F23E6A362066A25E001EB882 /* SettingMenuCell.swift */,
 				F2C65C6A2065FAD100E40425 /* MenuButton.swift */,
-				5DD15FB12067613F00DDF8D6 /* ReviewTableViewCell.swift */,
 				5D8848072078DC2F00FCDC3B /* ReivewUIView.swift */,
 			);
 			path = Views;
@@ -581,6 +592,7 @@
 				5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */,
 				327A03C4205DFC85004B78EB /* Review.swift in Sources */,
 				F2D397D4206F35B90086C27E /* OrderStatusLabel.swift in Sources */,
+				F242A79C2081F30B00F88827 /* AvatarImageView.swift in Sources */,
 				F2F2CE48207FA65E00694D32 /* ProfileViewController.swift in Sources */,
 				5DC234432064026D008B034A /* StallDetailController.swift in Sources */,
 				F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */,

@@ -18,7 +18,7 @@ class MeViewController: UIViewController {
     /// The table view to use as the setting menu
     @IBOutlet weak private var settingMenu: UITableView!
     /// The `UIImageView` used to display avatar photo.
-    @IBOutlet weak private var avatarPhoto: UIImageView!
+    @IBOutlet weak private var avatarPhoto: AvatarImageView!
 
     /// The profile of the current customer.
     var currentProfile: Customer?
@@ -38,7 +38,7 @@ class MeViewController: UIViewController {
         DatabaseRef.observeValueOnce(of: path) { snapshot in
             if let profile = Customer.deserialize(snapshot) {
                 self.currentProfile = profile
-                self.avatarPhoto.setWebImage(at: profile.avatarPath, placeholder: #imageLiteral(resourceName: "avatar"))
+                self.avatarPhoto.load(from: profile.avatarPath)
             }
             DatabaseRef.stopObservers(of: path)
         }

@@ -1061,11 +1061,15 @@ x5 Lemon Juice</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="U6k-ji-F2R" userLabel="Avatar">
-                                <rect key="frame" x="339" y="99" width="90" height="90"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="U6k-ji-F2R" userLabel="Avatar" customClass="AvatarImageView" customModule="ding" customModuleProvider="target">
+                                <rect key="frame" x="334" y="99" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U6k-ji-F2R" secondAttribute="height" multiplier="1:1" id="GTI-AD-vXo"/>
+                                    <constraint firstAttribute="height" constant="100" id="gc7-3o-jXz"/>
+                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfh-YZ-Sj9" userLabel="MeSettingMenu">
-                                <rect key="frame" x="0.0" y="224" width="768" height="751"/>
+                                <rect key="frame" x="0.0" y="234" width="768" height="741"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meSettingMenuCell" id="JRh-lN-jMm" userLabel="MeSettingMenuCell" customClass="SettingMenuCell" customModule="ding" customModuleProvider="target">
