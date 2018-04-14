@@ -77,7 +77,7 @@ extension LoginViewController: FUIAuthDelegate {
             authorizer.verifyEmail()
 
             // Saves the data to the profile table.
-            let customer = Customer(id: authorizer.userId, name: authorizer.userName)
+            let customer = Customer(id: authorizer.userId, name: authorizer.userName, avatarPath: "")
             customer.save()
         }
     }
