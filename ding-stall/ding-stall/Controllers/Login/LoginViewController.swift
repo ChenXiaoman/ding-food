@@ -29,9 +29,17 @@ class LoginViewController: UIViewController {
         return true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        guard authorizer.didLogin else {
-            loadLoginView(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        accountController.downloadGlobalInfo()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard authorizer.didLogin && !isNewUser else {
+            if !isNewUser {
+                loadLoginView(animated)
+            }
             return
         }
 
@@ -70,18 +78,32 @@ class LoginViewController: UIViewController {
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadStallFormView(_ animated: Bool) {
         let id = Constants.stallFormControllerId
-        guard let stallFormController = storyboard?.instantiateViewController(withIdentifier: id)
-            as? StallFormViewController else {
+        guard let stallCreationController = storyboard?.instantiateViewController(withIdentifier: id)
+            as? StallCreationViewController else {
                 fatalError("Could not find the controller for stall detail form")
         }
-        stallFormController.stallId = authorizer.userId
-        navigationController?.pushViewController(stallFormController, animated: animated)
+        stallCreationController.stallId = authorizer.userId
+        stallCreationController.loginDelegate = self
+        navigationController?.pushViewController(stallCreationController, animated: animated)
     }
 
     /// Set the current user id.
     private func setUserAccount() {
+        guard authorizer.isEmailVerified else {
+            handleEmailNotVerifiedError()
+            return
+        }
         accountController.loginDelegate = self
         accountController.setStallId(authorizer.userId)
+    }
+
+    private func handleEmailNotVerifiedError() {
+        DialogHelpers.showAlertMessage(in: self, title: "Oops", message: "Email address is not verified."
+            + "Please verify it and login again") {
+                self.signOut()
+                self.authorizer.verifyEmail()
+                self.loadLoginView(true)
+        }
     }
 }
 
@@ -92,11 +114,9 @@ extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
 
         if isNewUser {
+            isNewUser = false
             authorizer.verifyEmail()
             loadStallFormView(true)
-        } else {
-            setUserAccount()
-            loadTabBarView(true)
         }
     }
 
@@ -113,13 +133,21 @@ extension LoginViewController: LoginDelegate {
         DialogHelpers.showAlertMessage(in: self, title: "Wrong Account Type",
                                        message: "The account is not registered as a stall account." +
                                                 "Try to sign in using another account") {
-            self.authorizer.signOut()
-            self.navigationController?.popToRootViewController(animated: true)
+                                                    self.signOut()
         }
+    }
+
+    /// Sign out this account and navigate back to login view
+    public func signOut() {
+        authorizer.signOut()
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
 public protocol LoginDelegate: class {
     /// Handles when the login account is not registered for stall
     func handleWrongAccountType()
+
+    /// Sign out the current account
+    func signOut()
 }

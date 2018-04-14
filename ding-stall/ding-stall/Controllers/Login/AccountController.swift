@@ -25,6 +25,14 @@ class AccountController {
         downloadStall(withId: uid)
     }
 
+    /// Download the data needed for this app but do not required stall id
+    func downloadGlobalInfo() {
+        DatabaseRef.observeValueOnce(of: Filter.path) { snapshot in
+            Account.allFilters = Filter.deserializeArray(snapshot)
+            DatabaseRef.stopObservers(of: Filter.path)
+        }
+    }
+
     /// Download the stall object from database
     private func downloadStall(withId uid: String) {
 
@@ -44,11 +52,6 @@ class AccountController {
                 return
             }
             DatabaseRef.stopObservers(of: StallOverview.path + "/\(uid)")
-        }
-
-        DatabaseRef.observeValueOnce(of: Filter.path) { snapshot in
-            Account.allFilters = Filter.deserializeArray(snapshot)
-            DatabaseRef.stopObservers(of: Filter.path)
         }
     }
     
