@@ -9,6 +9,9 @@
 /**
  Represents an atomic unit of a menu and everything that can be consumed.
  This includes drinks.
+
+ - Author: Group 3 @ CS3217
+ - Date: March 2018
  */
 public struct Food: DatabaseObject {
     public static let path = "/menu"
