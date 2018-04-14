@@ -24,6 +24,6 @@ class ReviewTableViewCell: UITableViewCell {
         rating.text = orderHistory.review?.rating.description
         content.text = orderHistory.review?.reviewText
         date.text = orderHistory.order.createdAt.description
-        foodOrdered.text = orderHistory.order.foodName.description
+        foodOrdered.text = orderHistory.order.description
     }
 }
