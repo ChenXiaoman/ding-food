@@ -98,7 +98,7 @@ class OrderDetailViewController: FormViewController {
             if reviewViewNormalConstraint != nil {
                 NSLayoutConstraint.deactivate([reviewViewNormalConstraint])
             }
-            NSLayoutConstraint.activate([reviewViewHiddenConstraint])            
+            NSLayoutConstraint.activate([reviewViewHiddenConstraint])
         }
     }
     

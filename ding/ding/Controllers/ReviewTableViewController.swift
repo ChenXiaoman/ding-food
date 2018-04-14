@@ -9,8 +9,10 @@
 import FirebaseDatabaseUI
 
 class ReviewTableViewController: UIViewController, UITableViewDelegate {
-
-    @IBOutlet private var reviewTableView: UITableView!
+    /// The lable displaying the overall review rating.
+    @IBOutlet weak private var averageRating: UILabel!
+    /// The table displaying list of reviews.
+    @IBOutlet weak private var reviewTableView: UITableView!
     
     /// The 'StallOverView' object of the review table
     var stall: StallOverview?
@@ -18,9 +20,20 @@ class ReviewTableViewController: UIViewController, UITableViewDelegate {
     /// The Firebase data source for the listing of reviews.
     var dataSource: FUITableViewDataSource?
     
+    // The text format to display average rating.
+    private static let averageRatingFormat = "%.1f"
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         configureTableView()
+        
+        displayAverageRating()
+    }
+    
+    private func displayAverageRating() {
+        averageRating.text = String(format: ReviewTableViewController.averageRatingFormat,
+                                    stall?.averageRating ?? 0)
     }
     
     /// Binds Firebase data source to table view.
@@ -47,9 +60,9 @@ class ReviewTableViewController: UIViewController, UITableViewDelegate {
     ///    - snapshot: The snapshot of the corresponding model object from database.
     /// - Returns: a `ReviewTableViewCell` to use.
     private func populateReviewCell(tableView: UITableView,
-                                          indexPath: IndexPath,
-                                          snapshot: DataSnapshot) -> ReviewTableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.tableViewIdentifier ,
+                                    indexPath: IndexPath,
+                                    snapshot: DataSnapshot) -> ReviewTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.tableViewIdentifier,
                                                             for: indexPath) as? ReviewTableViewCell else {
                                                                 fatalError("Unable to dequeue cell.")
         }
