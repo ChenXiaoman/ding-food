@@ -51,7 +51,10 @@
 		B227B0EF207E8A26008278E3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B227B0EE207E8A26008278E3 /* bell.mp3 */; };
 		B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0F0207E8B1B008278E3 /* Audio.swift */; };
 		B2681939207DA87500968827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2681938207DA87500968827 /* Settings.swift */; };
+
 		B2DCBC1720819E0B009CEAE9 /* AccountVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBC1620819E0B009CEAE9 /* AccountVerification.swift */; };
+		B2DCBC1520819545009CEAE9 /* NothingToDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBC1420819545009CEAE9 /* NothingToDisplayView.swift */; };
+
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
@@ -112,7 +115,11 @@
 		B227B0EE207E8A26008278E3 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		B227B0F0207E8B1B008278E3 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		B2681938207DA87500968827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+
 		B2DCBC1620819E0B009CEAE9 /* AccountVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerification.swift; sourceTree = "<group>"; };
+
+		B2DCBC1420819545009CEAE9 /* NothingToDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingToDisplayView.swift; sourceTree = "<group>"; };
+
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
@@ -281,6 +288,7 @@
 				32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */,
 				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
 				F26514C9206525B90098783C /* MeSettingMenuCell.swift */,
+				B2DCBC1420819545009CEAE9 /* NothingToDisplayView.swift */,
 				F2BBF82C205B839400B9812D /* Assets.xcassets */,
 				3280F9112077C0000095E224 /* Base */,
 				3280F90320750B5D0095E224 /* Helpers */,
@@ -541,6 +549,7 @@
 				32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */,
 				32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */,
 				3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */,
+				B2DCBC1520819545009CEAE9 /* NothingToDisplayView.swift in Sources */,
 				325EE80B20665178004EC560 /* StallDetails.swift in Sources */,
 				32FD6956207F20EC00C898D0 /* OrderHistoryDetailViewController.swift in Sources */,
 				F26514C820651FD20098783C /* MeViewController.swift in Sources */,

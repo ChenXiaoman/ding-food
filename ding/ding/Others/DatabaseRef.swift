@@ -45,25 +45,25 @@ class DatabaseRef {
         ref.child(path).removeAllObservers()
     }
 
-    /// Stores a certain `FirebaseObject` at a specified path. The node (and its child nodes)
+    /// Stores a certain `DatabaseObject` at a specified path. The node (and its child nodes)
     /// originally at that path will be cleared. For instance, to store a certain blog post, you
     /// may want to write `setChildNode(of: "/posts", to: myBlogObj)`.
     /// - Parameters:
     ///    - path: The path to the observed data. The path should be a string with a "/" prefix
     ///            but without a "/" suffix, such as "/posts".
-    ///    - object: The `FirebaseObject` being stored.
-    static func setChildNode<T: FirebaseObject>(of path: String, to object: T) {
+    ///    - object: The `DatabaseObject` being stored.
+    static func setChildNode<T: DatabaseObject>(of path: String, to object: T) {
         let newPath = path + "/\(object.id)"
         ref.child(newPath).setValue(object.serialized)
     }
 
-    /// Stores a certain `FirebaseObject` at an array of specified paths. You should call this
+    /// Stores a certain `DatabaseObject` at an array of specified paths. You should call this
     /// function once instead of calling `setChildNode` iteratively to achieve **atomicity**.
     /// - Parameters:
     ///    - paths: An array of paths to store at. They will not be prepended with the `path`
-    /// attribute of the `FirebaseObject`.
-    ///    - object: The `FirebaseObject` being stored.
-    static func setChildNodes<T: FirebaseObject>(of paths: [String], to object: T) {
+    /// attribute of the `DatabaseObject`.
+    ///    - object: The `DatabaseObject` being stored.
+    static func setChildNodes<T: DatabaseObject>(of paths: [String], to object: T) {
         let data = object.serialized
         var updated: [String: [String: Any]] = [:]
         paths.forEach { updated[$0] = data }

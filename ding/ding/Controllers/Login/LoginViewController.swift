@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
 
     /// Loads the main tab bar view by pushing it into the stack of navigation controller.
     private func loadMainTabBarView() {
+        NotificationController.checkPermission(in: self)
         let id = Constants.mainTabBarId
         guard let controller = storyboard?.instantiateViewController(withIdentifier: id) else {
             return
