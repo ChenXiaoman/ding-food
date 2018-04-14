@@ -57,12 +57,6 @@ class LoginViewController: UIViewController {
     /// Loads the main tab bar view from storyboard.
     /// - Parameter animated: If true, the view was added to the window using an animation.
     private func loadTabBarView(_ animated: Bool) {
-        // Makes sure that user sign in using stall account and not customer account
-        guard Account.isCorrectAccount else {
-            handleWrongAccountType()
-            return
-        }
-
         let id = Constants.tabBarControllerId
         guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: id) else {
             fatalError("Could not find the controller for main tab bar")
@@ -85,18 +79,6 @@ class LoginViewController: UIViewController {
     /// Set the current user id.
     private func setUserAccount() {
         Account.stallId = authorizer.userId
-    }
-
-    /// Automatically signs user out when user signs in using customer account.
-    private func handleWrongAccountType() {
-        DialogHelpers.showAlertMessage(in: self, title: "Wrong Account Type",
-                                       message: "The account is not registered as a stall account." +
-                                       "Try to sign in using another account") {
-            self.authorizer.signOut()
-            self.loadLoginView(true)
-        }
-
-        return
     }
 }
 
