@@ -105,9 +105,9 @@ class StallFormViewController: FormViewController {
             }
         }
 
-        section.multivaluedRowToInsertAt = { index in
+        section.multivaluedRowToInsertAt = { _ in
             return ActionSheetRow<Filter> { row in
-                row.title = "Category \(index + 1):"
+                row.title = "Stall Category:"
                 row.options = Account.allFilters
                 row.add(rule: RuleRequired())
             }
