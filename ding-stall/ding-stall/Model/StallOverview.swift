@@ -21,8 +21,8 @@ public struct StallOverview: DatabaseObject {
     public let id: String
     public var name: String
     public let queueCount: Int
-    public let averageRating: Double
     public let reviewCount: Int
+    public let averageRating: Double
     public var photoPath: String
     public var location: String
     public var openingHour: String
@@ -40,8 +40,8 @@ public struct StallOverview: DatabaseObject {
         self.description = description
         self.filters = filters
         queueCount = 0
-        averageRating = 0
         reviewCount = 0
+        averageRating = 0
         isOpen = false
     }
 
