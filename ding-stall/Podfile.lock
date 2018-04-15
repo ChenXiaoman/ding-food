@@ -60,6 +60,7 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - SwiftyButton (0.8.0)
 
 DEPENDENCIES:
   - Eureka
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Database
   - FirebaseUI/Storage
+  - SwiftyButton
 
 SPEC CHECKSUMS:
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
@@ -83,7 +85,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SwiftyButton: 093e3fe2becf3ae31c0f6c1c6987b79a93fb3ecb
 
-PODFILE CHECKSUM: 5eede3ff315ad8323ac559dfee7e2fd50165dbfa
+PODFILE CHECKSUM: ad8447acc757a1bce86fa540b40762a2ae57caf6
 
 COCOAPODS: 1.4.0

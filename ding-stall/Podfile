@@ -15,4 +15,7 @@ target 'ding-stall' do
 
   # Pods for form input.
   pod 'Eureka'
+
+  # Pods for custom UI button.
+  pod 'SwiftyButton'
 end
