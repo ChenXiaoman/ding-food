@@ -34,7 +34,7 @@ class OrderQueueViewController: OrderViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareLabel()
+        prepareNoOrderLabel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +45,7 @@ class OrderQueueViewController: OrderViewController {
         setAudioPlayer()
 
         loadingIndicator.startAnimating()
-        checkLoadingTimeout(indicator: loadingIndicator, interval: 5) {
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
             self.loadingIndicator.stopAnimating()
             self.noOrderLabel?.isHidden = false
         }
@@ -58,7 +58,9 @@ class OrderQueueViewController: OrderViewController {
         dataSource?.unbind()
     }
 
-    private func prepareLabel() {
+    /// Prepare the label that indicates no order in queue and add
+    /// it as subview of `orderQueueCollectionView`
+    private func prepareNoOrderLabel() {
         let noOrderLabel = NothingToDisplayView(frame: orderQueueCollectionView.frame, message: "No orders")
         noOrderLabel.isHidden = true
         self.noOrderLabel = noOrderLabel

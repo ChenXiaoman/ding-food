@@ -111,18 +111,24 @@
                                 </subviews>
                                 <gestureRecognizers/>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-Lq-5Kz">
+                                <rect key="frame" x="374" y="487.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l7l-Lq-5Kz" firstAttribute="centerY" secondItem="rVU-Te-CvR" secondAttribute="centerY" id="Oe7-AD-AIX"/>
                             <constraint firstItem="zQZ-Hy-LUv" firstAttribute="leading" secondItem="rVU-Te-CvR" secondAttribute="leading" priority="999" id="Rdj-iS-e48"/>
                             <constraint firstItem="rVU-Te-CvR" firstAttribute="bottom" secondItem="zQZ-Hy-LUv" secondAttribute="bottom" id="Wqc-wX-LBi"/>
                             <constraint firstItem="zQZ-Hy-LUv" firstAttribute="top" secondItem="N24-gB-QSy" secondAttribute="top" priority="998" id="Zz3-N1-TmR"/>
                             <constraint firstItem="zQZ-Hy-LUv" firstAttribute="trailing" secondItem="rVU-Te-CvR" secondAttribute="trailing" priority="997" id="kX5-eF-Chc"/>
+                            <constraint firstItem="l7l-Lq-5Kz" firstAttribute="centerX" secondItem="rVU-Te-CvR" secondAttribute="centerX" id="mgC-eM-Ida"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rVU-Te-CvR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="menu" id="bz8-vh-vae"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="l7l-Lq-5Kz" id="weN-PH-6hz"/>
                         <outlet property="menuView" destination="VmP-P4-bNZ" id="qQ0-KL-hnm"/>
                     </connections>
                 </viewController>
