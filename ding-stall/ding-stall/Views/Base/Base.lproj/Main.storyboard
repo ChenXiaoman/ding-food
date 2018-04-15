@@ -111,18 +111,24 @@
                                 </subviews>
                                 <gestureRecognizers/>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-Lq-5Kz">
+                                <rect key="frame" x="374" y="487.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l7l-Lq-5Kz" firstAttribute="centerY" secondItem="rVU-Te-CvR" secondAttribute="centerY" id="Oe7-AD-AIX"/>
                             <constraint firstItem="zQZ-Hy-LUv" firstAttribute="leading" secondItem="rVU-Te-CvR" secondAttribute="leading" priority="999" id="Rdj-iS-e48"/>
                             <constraint firstItem="rVU-Te-CvR" firstAttribute="bottom" secondItem="zQZ-Hy-LUv" secondAttribute="bottom" id="Wqc-wX-LBi"/>
                             <constraint firstItem="zQZ-Hy-LUv" firstAttribute="top" secondItem="N24-gB-QSy" secondAttribute="top" priority="998" id="Zz3-N1-TmR"/>
                             <constraint firstItem="zQZ-Hy-LUv" firstAttribute="trailing" secondItem="rVU-Te-CvR" secondAttribute="trailing" priority="997" id="kX5-eF-Chc"/>
+                            <constraint firstItem="l7l-Lq-5Kz" firstAttribute="centerX" secondItem="rVU-Te-CvR" secondAttribute="centerX" id="mgC-eM-Ida"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rVU-Te-CvR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="menu" id="bz8-vh-vae"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="l7l-Lq-5Kz" id="weN-PH-6hz"/>
                         <outlet property="menuView" destination="VmP-P4-bNZ" id="qQ0-KL-hnm"/>
                     </connections>
                 </viewController>
@@ -245,10 +251,15 @@ x5 Lemon Juice</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZwE-IY-zeU">
+                                <rect key="frame" x="374" y="512" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZwE-IY-zeU" firstAttribute="centerX" secondItem="ers-i3-cet" secondAttribute="centerX" id="9qe-hL-qEu"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="bottom" secondItem="ers-i3-cet" secondAttribute="bottom" id="DOR-RT-5Qv"/>
+                            <constraint firstItem="ZwE-IY-zeU" firstAttribute="centerY" secondItem="ers-i3-cet" secondAttribute="centerY" id="Tr2-V3-LCz"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="leading" secondItem="ers-i3-cet" secondAttribute="leading" id="hZT-7P-4bg"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="trailing" secondItem="ers-i3-cet" secondAttribute="trailing" id="iX5-95-WlX"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="top" secondItem="ers-i3-cet" secondAttribute="top" id="yQU-yw-6Zk"/>
@@ -256,6 +267,7 @@ x5 Lemon Juice</string>
                         <viewLayoutGuide key="safeArea" id="ers-i3-cet"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="ZwE-IY-zeU" id="NTs-4h-6od"/>
                         <outlet property="orderHistoryCollectionView" destination="m4D-Mc-1dU" id="JTV-aW-CCb"/>
                     </connections>
                 </viewController>
@@ -464,7 +476,7 @@ x5 Lemon Juice</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-h2-1om">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-h2-1om">
                                                     <rect key="frame" x="375" y="150" width="95" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <state key="normal" title="Rejected"/>
@@ -538,18 +550,24 @@ x5 Lemon Juice</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5bA-0I-fuw">
+                                <rect key="frame" x="374" y="487.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5bA-0I-fuw" firstAttribute="centerY" secondItem="3oy-wv-Rsa" secondAttribute="centerY" id="0qE-53-yrh"/>
                             <constraint firstItem="b8i-0h-2Px" firstAttribute="top" secondItem="3oy-wv-Rsa" secondAttribute="top" id="8B2-Op-dbv"/>
                             <constraint firstItem="3oy-wv-Rsa" firstAttribute="trailing" secondItem="b8i-0h-2Px" secondAttribute="trailing" id="Cit-R2-NMS"/>
                             <constraint firstItem="b8i-0h-2Px" firstAttribute="leading" secondItem="3oy-wv-Rsa" secondAttribute="leading" id="PYo-ZO-fus"/>
+                            <constraint firstItem="5bA-0I-fuw" firstAttribute="centerX" secondItem="3oy-wv-Rsa" secondAttribute="centerX" id="Vzt-MB-qtH"/>
                             <constraint firstItem="3oy-wv-Rsa" firstAttribute="bottom" secondItem="b8i-0h-2Px" secondAttribute="bottom" id="YxR-5u-u9C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3oy-wv-Rsa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Orders" image="order" id="4V1-Dv-XEF"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="5bA-0I-fuw" id="vmJ-ol-haN"/>
                         <outlet property="orderQueueCollectionView" destination="b8i-0h-2Px" id="8H1-KO-iGI"/>
                     </connections>
                 </viewController>

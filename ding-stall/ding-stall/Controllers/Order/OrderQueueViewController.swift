@@ -16,6 +16,7 @@ import FirebaseDatabaseUI
 class OrderQueueViewController: OrderViewController {
     
     @IBOutlet private weak var orderQueueCollectionView: UICollectionView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
 
     /// Indicate which order cell is selected, used for change the view
     private var currentSelectedCell: OrderQueueCollectionViewCell?
@@ -23,11 +24,18 @@ class OrderQueueViewController: OrderViewController {
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
     private var orderDict = [String: Order]()
+    /// A view that indicates no order in the queue currently
+    private var noOrderLabel: UIView?
 
     // To check isRinging property
     private var settings = Settings()
     /// Plays ringing sound every new order if successfully initialised
     private var audioPlayer: AVAudioPlayer?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareNoOrderLabel()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,17 +44,36 @@ class OrderQueueViewController: OrderViewController {
         // Configure audioPlayer based on updated settings
         setAudioPlayer()
 
-        let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
-            .queryEqual(toValue: Account.stallId)
-        dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
-        dataSource?.bind(to: orderQueueCollectionView)
-        orderQueueCollectionView.delegate = self
+        loadingIndicator.startAnimating()
+        noOrderLabel?.isHidden = true
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+            self.noOrderLabel?.isHidden = false
+        }
+        configureCollectionView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Stop binding to avoid program crash
         dataSource?.unbind()
+    }
+
+    /// Prepare the label that indicates no order in queue and add
+    /// it as subview of `orderQueueCollectionView`
+    private func prepareNoOrderLabel() {
+        let noOrderLabel = NothingToDisplayView(frame: orderQueueCollectionView.frame, message: "No orders here")
+        self.noOrderLabel = noOrderLabel
+        orderQueueCollectionView.addSubview(noOrderLabel)
+    }
+
+    /// Bind collection view to the database
+    private func configureCollectionView() {
+        let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
+            .queryEqual(toValue: Account.stallId)
+        dataSource = FUICollectionViewDataSource(query: query, populateCell: generateOrderCell)
+        dataSource?.bind(to: orderQueueCollectionView)
+        orderQueueCollectionView.delegate = self
     }
 
     private func setAudioPlayer() {
@@ -72,6 +99,11 @@ class OrderQueueViewController: OrderViewController {
                                                             for: indexPath) as? OrderQueueCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
+
+        if loadingIndicator.isAnimating {
+            loadingIndicator.stopAnimating()
+        }
+        noOrderLabel?.isHidden = true
 
         if var order = Order.deserialize(snapshot) {
             if order.status == .pending {
@@ -99,6 +131,10 @@ class OrderQueueViewController: OrderViewController {
         // If the order is collected or rejected, it will be removed
         // from this list
         guard newStatus.isOngoingOrderStatus else {
+            orderDict[currentSelectedOrder?.id ?? ""] = nil
+            if orderDict.isEmpty {
+                noOrderLabel?.isHidden = false
+            }
             currentSelectedCell = nil
             currentSelectedOrder = nil
             return

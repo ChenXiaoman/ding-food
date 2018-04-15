@@ -49,6 +49,9 @@ struct Constants {
     /// The minimum number of rows in food option section
     /// in adding/ updating food infomation form
     static let minimumLinesInFoodOptionSection = 5
+
+    /// The maximum time limit for loading items from database
+    static let timeoutInterval = 5.0
 }
 
 /**

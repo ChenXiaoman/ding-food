@@ -13,17 +13,40 @@ import FirebaseDatabaseUI
  */
 class MenuViewController: UIViewController {
 
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var menuView: UICollectionView!
+
+    /// A view that shows no food in menu
+    private var noFoodLabel: UIView?
 
     /// The Firebase data source for the listing of food.
     var dataSource: FUICollectionViewDataSource?
     /// The path in database to retrieve the menu
     private let menuPath = StallDetails.path + "/\(Account.stallId)" + Food.path
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareNoFoodLabel()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
         configureCollectionView()
+
+        loadingIndicator.startAnimating()
+        noFoodLabel?.isHidden = true
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+            self.noFoodLabel?.isHidden = false
+        }
+    }
+
+    /// Prepare the label that indicates no food in menu and add it as subview of `menuView`
+    private func prepareNoFoodLabel() {
+        let noFoodLabel = NothingToDisplayView(frame: menuView.frame, message: "No food here")
+        self.noFoodLabel = noFoodLabel
+        menuView.addSubview(noFoodLabel)
     }
 
     /// Binds Firebase data source to collection view.
@@ -72,7 +95,10 @@ class MenuViewController: UIViewController {
 
         DialogHelpers.promptConfirm(in: self, title: "Warning", message: "Do you want to delete this food?",
                                     cancelButtonText: "Cancel") {
-            Account.stall?.deleteFood(by: foodId)
+                                        Account.stall?.deleteFood(by: foodId)
+                                        if Account.stall?.menu?.isEmpty == true {
+                                            self.noFoodLabel?.isHidden = false
+                                        }
         }
     }
 
@@ -89,6 +115,10 @@ class MenuViewController: UIViewController {
                                                             for: indexPath) as? MenuCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
+        if loadingIndicator.isAnimating {
+            loadingIndicator.stopAnimating()
+        }
+        noFoodLabel?.isHidden = true
         if let food = Food.deserialize(snapshot) {
             cell.load(food)
         }
