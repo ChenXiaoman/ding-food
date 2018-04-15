@@ -23,7 +23,7 @@ class OrderQueueViewController: OrderViewController {
     private var currentSelectedOrder: Order?
     /// Store all order models in this stall
     private var orderDict = [String: Order]()
-
+    /// A view that indicates no order in the queue currently
     private var noOrderLabel: UIView?
 
     // To check isRinging property
@@ -114,7 +114,8 @@ class OrderQueueViewController: OrderViewController {
         // If the order is collected or rejected, it will be removed
         // from this list
         guard newStatus.isOngoingOrderStatus else {
-            if orderQueueCollectionView.numberOfItems(inSection: 0) == 1 {
+            orderDict[currentSelectedOrder?.id ?? ""] = nil
+            if orderDict.isEmpty {
                 noOrderLabel?.isHidden = false
             }
             currentSelectedCell = nil
