@@ -12,7 +12,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /// The format to display total price.
     private static let totalPriceFormat = "$%.2f"
     /// The aspect ratio of this cell.
-    private static let aspectRatio = CGFloat(1.0 / 7)
+    private static let aspectRatio = CGFloat(1.0 / 6)
     /// The width of this cell.
     static let width = Constants.screenWidth
     /// The height of this cell.
