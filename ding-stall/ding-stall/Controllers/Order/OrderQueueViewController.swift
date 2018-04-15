@@ -16,6 +16,7 @@ import FirebaseDatabaseUI
 class OrderQueueViewController: OrderViewController {
     
     @IBOutlet private weak var orderQueueCollectionView: UICollectionView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
 
     /// Indicate which order cell is selected, used for change the view
     private var currentSelectedCell: OrderQueueCollectionViewCell?
@@ -33,9 +34,7 @@ class OrderQueueViewController: OrderViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let noOrderLabel = NothingToDisplayView(frame: orderQueueCollectionView.frame, message: "No orders")
-        self.noOrderLabel = noOrderLabel
-        orderQueueCollectionView.addSubview(noOrderLabel)
+        prepareLabel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +44,11 @@ class OrderQueueViewController: OrderViewController {
         // Configure audioPlayer based on updated settings
         setAudioPlayer()
 
+        loadingIndicator.startAnimating()
+        checkLoadingTimeout(indicator: loadingIndicator, interval: 5) {
+            self.loadingIndicator.stopAnimating()
+            self.noOrderLabel?.isHidden = false
+        }
         configureCollectionView()
     }
 
@@ -54,6 +58,14 @@ class OrderQueueViewController: OrderViewController {
         dataSource?.unbind()
     }
 
+    private func prepareLabel() {
+        let noOrderLabel = NothingToDisplayView(frame: orderQueueCollectionView.frame, message: "No orders")
+        noOrderLabel.isHidden = true
+        self.noOrderLabel = noOrderLabel
+        orderQueueCollectionView.addSubview(noOrderLabel)
+    }
+
+    /// Bind collection view to the database
     private func configureCollectionView() {
         let query = DatabaseRef.getNodeRef(of: Order.path).queryOrdered(byChild: "stallId")
             .queryEqual(toValue: Account.stallId)
@@ -86,6 +98,9 @@ class OrderQueueViewController: OrderViewController {
                                                                 fatalError("Unable to dequeue a cell.")
         }
 
+        if loadingIndicator.isAnimating {
+            loadingIndicator.stopAnimating()
+        }
         noOrderLabel?.isHidden = true
 
         if var order = Order.deserialize(snapshot) {
