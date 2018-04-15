@@ -105,15 +105,16 @@ class StallFormViewController: FormViewController {
             }
         }
 
-        section.multivaluedRowToInsertAt = { index in
+        section.multivaluedRowToInsertAt = { _ in
             return ActionSheetRow<Filter> { row in
-                row.title = "Category \(index + 1):"
+                row.title = "Stall Category:"
                 row.options = Account.allFilters
                 row.add(rule: RuleRequired())
             }
         }
     }
 
+    /// Retrieve the filter values from form and create a dictionary to store it
     func getFilters() -> [String: Filter]? {
         var filters = [String: Filter]()
         form.allSections.last?.forEach { row in

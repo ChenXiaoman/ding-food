@@ -30,9 +30,9 @@ class OrderHistoryDetailViewController: OrderDetailViewController {
         }
         form
             +++ Section("Review")
-            <<< IntRow { row in
+            <<< TextRow { row in
                 row.title = "Rating"
-                row.value = reviewDetail.rating.rawValue
+                row.value = reviewDetail.rating.description
                 row.disabled = true
             }
             <<< TextAreaRow { row in

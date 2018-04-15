@@ -30,4 +30,20 @@ public enum Rating: Int, Codable {
     case average = 3
     case fair = 2
     case poor = 1
+
+    /// An array of ratings,
+    /// from poor to excellent.
+    static let allRatings = [Rating.poor, Rating.fair, Rating.average, Rating.good, Rating.excellent]
+
+    /// An array of string representation of ratings,
+    /// from poor to excellent.
+    static let allStringsValueOfRatings = ["Bad", "Not good", "OK", "Good", "Excellent"]
+
+}
+
+/// The string representation of the rating
+extension Rating: CustomStringConvertible {
+    public var description: String {
+        return Rating.allStringsValueOfRatings[rawValue - 1]
+    }
 }

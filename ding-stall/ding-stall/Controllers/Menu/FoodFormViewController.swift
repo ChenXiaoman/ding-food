@@ -232,10 +232,10 @@ class FoodFormViewController: FormViewController {
                 cell.textLabel?.textAlignment = .left
             }
         }
-        section.multivaluedRowToInsertAt = { index in
+        section.multivaluedRowToInsertAt = { _ in
             return TextRow { row in
-                row.title = "Choice \(index - 1):"
-                row.placeholder = "Option Choice"
+                row.title = "Option Choice:"
+                row.placeholder = "Type the Option Choice"
                 row.add(rule: RuleRequired())
             }
         }
