@@ -114,6 +114,7 @@ class StallFormViewController: FormViewController {
         }
     }
 
+    /// Retrieve the filter values from form and create a dictionary to store it
     func getFilters() -> [String: Filter]? {
         var filters = [String: Filter]()
         form.allSections.last?.forEach { row in
