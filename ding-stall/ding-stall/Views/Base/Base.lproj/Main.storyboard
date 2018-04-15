@@ -492,8 +492,9 @@ x5 Lemon Juice</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Gqb-ts-eV9" customClass="PressableButton" customModule="SwiftyButton">
-                                                    <rect key="frame" x="493" y="164" width="120" height="28"/>
+                                                    <rect key="frame" x="493" y="152" width="120" height="40"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" secondItem="Gqb-ts-eV9" secondAttribute="width" multiplier="1:3" id="Nmw-v0-uX1"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="zIG-eE-V2M"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -514,7 +515,7 @@ x5 Lemon Juice</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="M9D-bL-5Cc" customClass="PressableButton" customModule="SwiftyButton">
-                                                    <rect key="frame" x="493" y="116" width="120" height="28"/>
+                                                    <rect key="frame" x="493" y="92" width="120" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="Vice Button"/>
                                                     <userDefinedRuntimeAttributes>
@@ -552,6 +553,7 @@ x5 Lemon Juice</string>
                                             <constraint firstItem="YcB-Q0-eJc" firstAttribute="bottom" secondItem="VMm-OD-cEH" secondAttribute="top" constant="-8" id="n4A-KD-dwW"/>
                                             <constraint firstItem="h5y-gv-em0" firstAttribute="trailing" secondItem="ZOC-iU-ICw" secondAttribute="trailingMargin" id="p0C-9r-3o9"/>
                                             <constraint firstItem="YcB-Q0-eJc" firstAttribute="trailing" secondItem="ZOC-iU-ICw" secondAttribute="trailingMargin" id="r8R-8F-Ni1"/>
+                                            <constraint firstItem="M9D-bL-5Cc" firstAttribute="height" secondItem="Gqb-ts-eV9" secondAttribute="height" id="rSo-oP-Hcy"/>
                                             <constraint firstItem="VMm-OD-cEH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leading" symbolic="YES" id="riv-wO-5hu"/>
                                             <constraint firstItem="Gqb-ts-eV9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leading" id="wl2-AK-LXB"/>
                                             <constraint firstItem="mRN-aA-Ku2" firstAttribute="top" secondItem="ZOC-iU-ICw" secondAttribute="top" id="xCZ-3Z-RbI"/>
