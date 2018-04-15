@@ -15,12 +15,39 @@ import FirebaseDatabaseUI
 class OrderHistoryViewController: OrderViewController {
     
     @IBOutlet private weak var orderHistoryCollectionView: UICollectionView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
 
     private var orderHistoryDict = [IndexPath: OrderHistory]()
+    private var noOrderLabel: UIView?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareNoOrderLabel()
+    }
+
+    /// Prepare the label that indicates no order in queue and add
+    /// it as subview of `orderQueueCollectionView`
+    private func prepareNoOrderLabel() {
+        let noOrderLabel = NothingToDisplayView(frame: orderHistoryCollectionView.frame, message: "No orders here")
+        noOrderLabel.isHidden = true
+        self.noOrderLabel = noOrderLabel
+        orderHistoryCollectionView.addSubview(noOrderLabel)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        configureCollectionView()
+
+        loadingIndicator.startAnimating()
+        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
+            self.loadingIndicator.stopAnimating()
+            self.noOrderLabel?.isHidden = false
+        }
+    }
+
+    /// Bind collection view to the database
+    private func configureCollectionView() {
         let query = DatabaseRef.getNodeRef(of: OrderHistory.path)
             .queryOrdered(byChild: "order/stallId")
             .queryEqual(toValue: Account.stallId)
@@ -43,6 +70,11 @@ class OrderHistoryViewController: OrderViewController {
                                                             for: indexPath) as? OrderHistoryCollectionViewCell else {
                                                                 fatalError("Unable to dequeue a cell.")
         }
+
+        if loadingIndicator.isAnimating {
+            loadingIndicator.stopAnimating()
+        }
+        noOrderLabel?.removeFromSuperview()
 
         if let orderHistory = OrderHistory.deserialize(snapshot) {
             orderHistoryDict[indexPath] = orderHistory

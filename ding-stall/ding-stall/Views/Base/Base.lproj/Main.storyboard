@@ -251,10 +251,15 @@ x5 Lemon Juice</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZwE-IY-zeU">
+                                <rect key="frame" x="374" y="512" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZwE-IY-zeU" firstAttribute="centerX" secondItem="ers-i3-cet" secondAttribute="centerX" id="9qe-hL-qEu"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="bottom" secondItem="ers-i3-cet" secondAttribute="bottom" id="DOR-RT-5Qv"/>
+                            <constraint firstItem="ZwE-IY-zeU" firstAttribute="centerY" secondItem="ers-i3-cet" secondAttribute="centerY" id="Tr2-V3-LCz"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="leading" secondItem="ers-i3-cet" secondAttribute="leading" id="hZT-7P-4bg"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="trailing" secondItem="ers-i3-cet" secondAttribute="trailing" id="iX5-95-WlX"/>
                             <constraint firstItem="m4D-Mc-1dU" firstAttribute="top" secondItem="ers-i3-cet" secondAttribute="top" id="yQU-yw-6Zk"/>
@@ -262,6 +267,7 @@ x5 Lemon Juice</string>
                         <viewLayoutGuide key="safeArea" id="ers-i3-cet"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="ZwE-IY-zeU" id="NTs-4h-6od"/>
                         <outlet property="orderHistoryCollectionView" destination="m4D-Mc-1dU" id="JTV-aW-CCb"/>
                     </connections>
                 </viewController>

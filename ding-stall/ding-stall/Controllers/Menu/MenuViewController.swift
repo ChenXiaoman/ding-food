@@ -35,6 +35,7 @@ class MenuViewController: UIViewController {
         configureCollectionView()
 
         loadingIndicator.startAnimating()
+        noFoodLabel?.isHidden = true
         checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
             self.loadingIndicator.stopAnimating()
             self.noFoodLabel?.isHidden = false
@@ -44,7 +45,6 @@ class MenuViewController: UIViewController {
     /// Prepare the label that indicates no food in menu and add it as subview of `menuView`
     private func prepareNoFoodLabel() {
         let noFoodLabel = NothingToDisplayView(frame: menuView.frame, message: "No food here")
-        noFoodLabel.isHidden = true
         self.noFoodLabel = noFoodLabel
         menuView.addSubview(noFoodLabel)
     }
