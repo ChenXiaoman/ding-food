@@ -6,17 +6,15 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import UIKit
+import SwiftyButton
 
 class OrderQueueCollectionViewCell: OrderCollectionViewCell {
 
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "OrderQueueCollectionViewCell"
 
-    @IBOutlet weak private var rejectButton: UIButton!
-    @IBOutlet weak private var collectButton: UIButton!
-    @IBOutlet weak private var readyButton: UIButton!
-    @IBOutlet weak private var acceptButton: UIButton!
+    @IBOutlet weak private var mainButton: PressableButton!
+    @IBOutlet weak private var viceButton: PressableButton!
 
     /// Change the status label to a newStatus
     /// Parameter: newStatus: The new status to change
@@ -25,11 +23,26 @@ class OrderQueueCollectionViewCell: OrderCollectionViewCell {
         toggleButton(byStatus: newStatus)
     }
 
-    /// Toggle the button (enable or disable) after the order status has changed
+    /// Toggle the button (text and color) after the order status has changed
     private func toggleButton(byStatus status: OrderStatus) {
-        rejectButton.isEnabled = status == .pending
-        acceptButton.isEnabled = status == .pending
-        readyButton.isEnabled = status == .accepted
-        collectButton.isEnabled = status == .ready
+        let shadowColor = UIColor.fromRGB(0x2980b9)
+        switch status {
+        case .pending:
+            mainButton.setTitle(OrderStatus.accepted.rawValue, for: .normal)
+            mainButton.colors = .init(button: UIColor.fromRGB(0xefa647), shadow: shadowColor)
+            viceButton.setTitle(OrderStatus.rejected.rawValue, for: .normal)
+            viceButton.colors = .init(button: UIColor.fromRGB(0x706a6a), shadow: shadowColor)
+            viceButton.isHidden = false
+        case .accepted:
+            mainButton.setTitle(OrderStatus.ready.rawValue, for: .normal)
+            mainButton.colors = .init(button: UIColor.fromRGB(0x93e83a), shadow: shadowColor)
+            viceButton.isHidden = true
+        case .ready:
+            mainButton.setTitle(OrderStatus.collected.rawValue, for: .normal)
+            mainButton.colors = .init(button: UIColor.fromRGB(0xf47141), shadow: shadowColor)
+            viceButton.isHidden = true
+        default:
+            break
+        }
     }
 }

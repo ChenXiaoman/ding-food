@@ -491,34 +491,40 @@ x5 Lemon Juice</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-h2-1om">
-                                                    <rect key="frame" x="375" y="150" width="95" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="Rejected"/>
-                                                    <connections>
-                                                        <action selector="pressStatusButton:" destination="1tp-NB-er2" eventType="touchUpInside" id="Hgb-7F-lYW"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Gqb-ts-eV9">
-                                                    <rect key="frame" x="510" y="88" width="69" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="Ready"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Gqb-ts-eV9" customClass="PressableButton" customModule="SwiftyButton">
+                                                    <rect key="frame" x="498" y="116" width="120" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <state key="normal" title="Main Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="pressStatusButton:" destination="1tp-NB-er2" eventType="touchUpInside" id="6JS-PL-Y4N"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="WMS-yI-mpX">
-                                                    <rect key="frame" x="375" y="88" width="104" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="Accepted"/>
-                                                    <connections>
-                                                        <action selector="pressStatusButton:" destination="1tp-NB-er2" eventType="touchUpInside" id="2au-FL-kKW"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="M9D-bL-5Cc">
-                                                    <rect key="frame" x="510" y="150" width="103" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="Collected"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="M9D-bL-5Cc" customClass="PressableButton" customModule="SwiftyButton">
+                                                    <rect key="frame" x="498" y="164" width="115" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <state key="normal" title="Vice Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="pressStatusButton:" destination="1tp-NB-er2" eventType="touchUpInside" id="b74-2a-cmq"/>
                                                     </connections>
@@ -526,41 +532,33 @@ x5 Lemon Juice</string>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Iwf-h2-1om" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leading" symbolic="YES" id="0cL-Z0-1iE"/>
-                                            <constraint firstAttribute="trailing" secondItem="WMS-yI-mpX" secondAttribute="trailing" constant="284" id="49i-f7-WAy"/>
-                                            <constraint firstItem="mRN-aA-Ku2" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Iwf-h2-1om" secondAttribute="leading" constant="-10" id="5g6-QU-9jj"/>
+                                            <constraint firstItem="mRN-aA-Ku2" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="M9D-bL-5Cc" secondAttribute="leading" constant="-10" id="5g6-QU-9jj"/>
                                             <constraint firstItem="h5y-gv-em0" firstAttribute="top" secondItem="ZOC-iU-ICw" secondAttribute="topMargin" constant="8" id="7Sy-7j-me8"/>
                                             <constraint firstItem="M9D-bL-5Cc" firstAttribute="trailing" secondItem="ZOC-iU-ICw" secondAttribute="trailing" constant="-150" id="ClI-ne-8yy"/>
-                                            <constraint firstItem="Gqb-ts-eV9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M9D-bL-5Cc" secondAttribute="leading" id="GU9-7v-8ri"/>
-                                            <constraint firstItem="Iwf-h2-1om" firstAttribute="trailing" secondItem="M9D-bL-5Cc" secondAttribute="leading" constant="-40" id="HdN-Y5-I7i"/>
+                                            <constraint firstItem="Gqb-ts-eV9" firstAttribute="leading" secondItem="M9D-bL-5Cc" secondAttribute="leading" id="GU9-7v-8ri"/>
                                             <constraint firstItem="h5y-gv-em0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leadingMargin" id="HtR-Kv-vYr"/>
-                                            <constraint firstItem="WMS-yI-mpX" firstAttribute="bottom" secondItem="Gqb-ts-eV9" secondAttribute="bottom" id="NnN-AC-3xs"/>
                                             <constraint firstItem="mRN-aA-Ku2" firstAttribute="bottom" secondItem="ZOC-iU-ICw" secondAttribute="bottom" id="Nzh-38-w5C"/>
                                             <constraint firstItem="M9D-bL-5Cc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leading" symbolic="YES" id="Su5-EY-1IR"/>
                                             <constraint firstItem="YcB-Q0-eJc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leadingMargin" id="Zvu-8n-Loy"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gqb-ts-eV9" secondAttribute="trailing" symbolic="YES" id="a4u-xC-giY"/>
                                             <constraint firstItem="VMm-OD-cEH" firstAttribute="bottom" secondItem="ZOC-iU-ICw" secondAttribute="bottomMargin" constant="8" id="c19-2u-GRl"/>
                                             <constraint firstItem="VMm-OD-cEH" firstAttribute="trailing" secondItem="ZOC-iU-ICw" secondAttribute="trailing" constant="-8" id="eFs-ql-0VU"/>
                                             <constraint firstItem="mRN-aA-Ku2" firstAttribute="leading" secondItem="ZOC-iU-ICw" secondAttribute="leading" id="lHF-0D-QcK"/>
                                             <constraint firstItem="YcB-Q0-eJc" firstAttribute="bottom" secondItem="VMm-OD-cEH" secondAttribute="top" constant="-8" id="n4A-KD-dwW"/>
                                             <constraint firstItem="h5y-gv-em0" firstAttribute="trailing" secondItem="ZOC-iU-ICw" secondAttribute="trailingMargin" id="p0C-9r-3o9"/>
-                                            <constraint firstItem="WMS-yI-mpX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Iwf-h2-1om" secondAttribute="leading" id="pcQ-9s-edO"/>
                                             <constraint firstItem="Gqb-ts-eV9" firstAttribute="bottom" secondItem="M9D-bL-5Cc" secondAttribute="top" constant="-20" id="qs3-wU-Kw0"/>
                                             <constraint firstItem="YcB-Q0-eJc" firstAttribute="trailing" secondItem="ZOC-iU-ICw" secondAttribute="trailingMargin" id="r8R-8F-Ni1"/>
                                             <constraint firstItem="VMm-OD-cEH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOC-iU-ICw" secondAttribute="leading" symbolic="YES" id="riv-wO-5hu"/>
                                             <constraint firstItem="M9D-bL-5Cc" firstAttribute="bottom" secondItem="VMm-OD-cEH" secondAttribute="bottom" id="sJS-FR-gRp"/>
-                                            <constraint firstItem="Iwf-h2-1om" firstAttribute="bottom" secondItem="M9D-bL-5Cc" secondAttribute="bottom" id="v3c-IH-HtL"/>
-                                            <constraint firstAttribute="trailing" secondItem="Gqb-ts-eV9" secondAttribute="trailing" constant="184" id="w2Z-1j-rsW"/>
                                             <constraint firstItem="mRN-aA-Ku2" firstAttribute="top" secondItem="ZOC-iU-ICw" secondAttribute="top" id="xCZ-3Z-RbI"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="acceptButton" destination="WMS-yI-mpX" id="mKJ-CX-eJt"/>
-                                            <outlet property="collectButton" destination="M9D-bL-5Cc" id="hTD-JG-duq"/>
                                             <outlet property="customerName" destination="h5y-gv-em0" id="CyN-FN-HPj"/>
+                                            <outlet property="mainButton" destination="Gqb-ts-eV9" id="DaW-7i-IIr"/>
                                             <outlet property="orderDescription" destination="mRN-aA-Ku2" id="suA-gB-q6z"/>
                                             <outlet property="orderStatus" destination="VMm-OD-cEH" id="ch2-Gh-5vc"/>
-                                            <outlet property="readyButton" destination="Gqb-ts-eV9" id="g6W-bN-M5e"/>
-                                            <outlet property="rejectButton" destination="Iwf-h2-1om" id="3KO-pM-dIf"/>
                                             <outlet property="totalPrice" destination="YcB-Q0-eJc" id="vBG-iZ-RPz"/>
+                                            <outlet property="viceButton" destination="M9D-bL-5Cc" id="bbn-nw-Mfa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
