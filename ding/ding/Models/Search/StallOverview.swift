@@ -22,6 +22,7 @@ struct StallOverview: DatabaseObject {
     let name: String
     let queueCount: Int
     let averageRating: Double
+    let reviewCount: Int
     let photoPath: String
     let location: String
     let openingHour: String
