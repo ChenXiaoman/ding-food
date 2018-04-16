@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 	s.source             = { :git => "git@github.com:cs3217/2018-final-project-group03.git", :branch => 'master' }
 	s.swift_version      = '4.1'
 	s.social_media_url = 'https://www.facebook.com/groups/cs3217/'
-	s.platform           = :ios, '11.2'
+	s.platform           = :ios, '11.3'
 
 	s.static_framework   = true
 	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift'
