@@ -20,6 +20,7 @@ struct StallOverview: DatabaseObject {
     
     let id: String
     let name: String
+    let isOpen: Bool
     let queueCount: Int
     let averageRating: Double
     let reviewCount: Int
