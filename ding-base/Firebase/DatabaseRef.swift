@@ -19,6 +19,10 @@ import FirebaseDatabase
 public class DatabaseRef {
     /// A reference to the Firebase realtime database, as access point to the server.
     private static let ref = Database.database().reference()
+    /// The Firebase path to check internet connection.
+    public static let checkConnectionPath = ".info/connected"
+    /// A reference to check whether internet is connected.
+    public static let connectedRef = Database.database().reference(withPath: DatabaseRef.checkConnectionPath)
 
     /// Observes the value at a certain path. The handler will be notified each time the data
     /// at the specified path (and its child nodes) change.
@@ -68,6 +72,12 @@ public class DatabaseRef {
         var updated: [String: [String: Any]] = [:]
         paths.forEach { updated[$0] = data }
         ref.updateChildValues(updated)
+    }
+
+    /// Delete the node and all its child nodes in database by given path.
+    /// - Parameter: path: the path of the deleted node
+    public static func deleteChildNode(of path: String) {
+        ref.child(path).setValue(nil)
     }
 
     /// Creates a reference to the child node at the given path.

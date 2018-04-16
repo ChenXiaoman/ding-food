@@ -15,7 +15,7 @@
  */
 public struct Food: DatabaseObject {
     public static let path = "/menu"
-    static let menuPath = "/stalls/%@\(Food.path)"
+    public static let menuPath = "/stalls/%@\(Food.path)"
     
     public let id: String
     public var name: String
@@ -25,12 +25,24 @@ public struct Food: DatabaseObject {
     public var isSoldOut: Bool
     public var photoPath: String?
     public var options: [String: [String]]?
-    
-    public mutating func soldOut() {
-        isSoldOut = true
+
+    public init(id: String, name: String, price: Double, description: String?, type: FoodType, 
+        isSoldOut: Bool, photoPath: String?, options: [String: [String]]? = nil) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.description = description
+        self.type = type
+        self.isSoldOut = isSoldOut
+        self.photoPath = photoPath
+        self.options = options
     }
 }
 
+/**
+ The type of a `Food`, whose raw value is the text that is displayed on
+ the picker view.
+ */
 public enum FoodType: String, Codable {
     case main = "Main"
     case side = "Side"

@@ -31,31 +31,28 @@ class SearchViewController: UIViewController {
     /// A dictionary of mapping from cell's index path to the id of the stall
     /// overview represented.
     var stallIds: [Int: String] = [:]
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
-
+        
         // Indicates that loading starts.
         loaded = false
         loadingIndicator.startAnimating()
-
+        
+        checkInternetConnection()
+        
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
 
-        /// Performs timeout checking.
-        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
-            self.loadingIndicator.stopAnimating()
-            self.alertTimeout()
-        }
-
         // Configures the search bar.
         searchBar.delegate = self
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,6 +61,7 @@ class SearchViewController: UIViewController {
         dataSource?.unbind()
         // Stops the loading indicator (such that the timeout thread will not be triggered later).
         loadingIndicator.stopAnimating()
+        stopCheckingInternetConnection()
     }
 
     /// Populates a `StallListingCell` with the given data from database.

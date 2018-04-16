@@ -112,6 +112,28 @@ public extension DatabaseObject {
         return obj
     }
 
+    /// Converts a given `DataSnapshot` to an array of a certain `Codable` object
+    /// It will return nil if the conversion fails
+    /// - Parameter dict: the dictionary to decode.
+    /// - Returns: An array of object converted if conversion is successful; nil otherwise.
+    public static func deserializeArray(_ snapshot: DataSnapshot) -> [Self]? {
+        guard let dict = snapshot.value as? [String: Any] else {
+            return nil
+        }
+        var objectArray = [Self]()
+        dict.forEach { key, value in
+            guard var objectDict = value as? [String: Any] else {
+                return
+            }
+            objectDict["id"] = key
+            guard let object = Self.deserialize(objectDict) else {
+                return
+            }
+            objectArray.append(object)
+        }
+        return objectArray
+    }
+
     /// This method will convert the a dictionary in (id, value) format to a dictionary of
     /// dictionaries in (id, value + id) format to prepare for subsequent deserialization.
     /// - Parameter dict: the nested dictionary of (id, value) pair.
@@ -135,5 +157,10 @@ public extension DatabaseObject {
     /// certain attributes.
     public func save() {
         DatabaseRef.setChildNode(of: Self.path, to: self)
+    }
+
+    /// Delete this `DatabaseObject` from the database.
+    public func delete() {
+        DatabaseRef.deleteChildNode(of: Self.path + "/\(id)")
     }
 }

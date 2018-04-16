@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
+
 /**
  Store the user id and stall model for the current login user
  This information is shared through the whole app
