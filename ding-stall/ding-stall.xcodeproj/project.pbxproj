@@ -11,9 +11,7 @@
 		325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F220663C46004EC560 /* ProfileViewController.swift */; };
 		325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F820664532004EC560 /* SettingsViewController.swift */; };
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
-		325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FE20665019004EC560 /* DatabaseRef.swift */; };
 		325EE80B20665178004EC560 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* StallDetails.swift */; };
-		325EE80C20665178004EC560 /* DatabaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80320665177004EC560 /* DatabaseObject.swift */; };
 		325EE80E20665178004EC560 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* Filter.swift */; };
 		325EE80F20665178004EC560 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80620665178004EC560 /* Customer.swift */; };
 		325EE81020665178004EC560 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80720665178004EC560 /* Order.swift */; };
@@ -33,7 +31,6 @@
 		32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6D2073D9D8000C4834 /* StallOverview.swift */; };
 		32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */; };
 		32B75A732074B199000C4834 /* OrderStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A722074B199000C4834 /* OrderStatusLabel.swift */; };
-		32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */; };
 		32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */; };
 		32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */; };
 		32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */; };
@@ -56,7 +53,6 @@
 		F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2209A652064BD9F0043C6F3 /* LoginViewController.swift */; };
 		F26514C820651FD20098783C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C720651FD20098783C /* MeViewController.swift */; };
 		F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514C9206525B90098783C /* MeSettingMenuCell.swift */; };
-		F26514CC206540230098783C /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514CB206540230098783C /* Authorizer.swift */; };
 		F26514CE20654D480098783C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26514CD20654D480098783C /* AboutViewController.swift */; };
 		F285DB36205CC58300E8621B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F285DB35205CC58300E8621B /* README.md */; };
 		F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF825205B839400B9812D /* AppDelegate.swift */; };
@@ -72,9 +68,7 @@
 		325EE7F220663C46004EC560 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		325EE7F820664532004EC560 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		325EE7FE20665019004EC560 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
 		325EE80220665177004EC560 /* StallDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StallDetails.swift; sourceTree = "<group>"; };
-		325EE80320665177004EC560 /* DatabaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseObject.swift; sourceTree = "<group>"; };
 		325EE80520665178004EC560 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		325EE80620665178004EC560 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		325EE80720665178004EC560 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -94,7 +88,6 @@
 		32B75A6D2073D9D8000C4834 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StandardSize.swift"; sourceTree = "<group>"; };
 		32B75A722074B199000C4834 /* OrderStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLabel.swift; sourceTree = "<group>"; };
-		32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRef.swift; sourceTree = "<group>"; };
 		32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
 		32B7CD80206E1A2B00CE2FCA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +111,6 @@
 		F2209A652064BD9F0043C6F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F26514C720651FD20098783C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F26514C9206525B90098783C /* MeSettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingMenuCell.swift; sourceTree = "<group>"; };
-		F26514CB206540230098783C /* Authorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorizer.swift; sourceTree = "<group>"; };
 		F26514CD20654D480098783C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F285DB35205CC58300E8621B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2BBF822205B839400B9812D /* ding-stall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ding-stall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +142,6 @@
 				325EE823206A0159004EC560 /* Account.swift */,
 				325EE80620665178004EC560 /* Customer.swift */,
 				325EE80520665178004EC560 /* Filter.swift */,
-				325EE80320665177004EC560 /* DatabaseObject.swift */,
 				325EE81820673DD3004EC560 /* Food.swift */,
 				325EE80720665178004EC560 /* Order.swift */,
 				3280F90720779A110095E224 /* OrderHistory.swift */,
@@ -313,11 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				F2BBF825205B839400B9812D /* AppDelegate.swift */,
-				F26514CB206540230098783C /* Authorizer.swift */,
 				F2D2C0422064CE75005230D6 /* Constants.swift */,
-				325EE7FE20665019004EC560 /* DatabaseRef.swift */,
 				32B7CD7D206CAD9200CE2FCA /* DialogHelpers.swift */,
-				32B7CD79206C9C9E00CE2FCA /* StorageRef.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -522,7 +510,6 @@
 				F2209A662064BD9F0043C6F3 /* LoginViewController.swift in Sources */,
 				32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */,
 				32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */,
-				325EE7FF2066501A004EC560 /* DatabaseRef.swift in Sources */,
 				32FD6954207F072D00C898D0 /* OrderDetailViewController.swift in Sources */,
 				32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */,
 				3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */,
@@ -558,16 +545,13 @@
 				3280F90820779A110095E224 /* OrderHistory.swift in Sources */,
 				325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */,
 				F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */,
-				F26514CC206540230098783C /* Authorizer.swift in Sources */,
 				32B75A732074B199000C4834 /* OrderStatusLabel.swift in Sources */,
 				325EE7F320663C46004EC560 /* ProfileViewController.swift in Sources */,
 				32FD6959207F383000C898D0 /* UIViewController+Dispatch.swift in Sources */,
 				F2D2C0432064CE75005230D6 /* Constants.swift in Sources */,
 				32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */,
 				3280F905207796120095E224 /* OrderViewController.swift in Sources */,
-				325EE80C20665178004EC560 /* DatabaseObject.swift in Sources */,
 				32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */,
-				32B7CD7A206C9C9E00CE2FCA /* StorageRef.swift in Sources */,
 				325EE80F20665178004EC560 /* Customer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

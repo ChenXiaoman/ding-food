@@ -1,4 +1,8 @@
 PODS:
+  - DingBase (0.0.1):
+    - Firebase/Auth
+    - Firebase/Database
+    - Firebase/Storage
   - Eureka (4.1.1)
   - Firebase/Auth (4.12.0):
     - Firebase/Core
@@ -63,6 +67,7 @@ PODS:
   - SwiftyButton (0.8.0)
 
 DEPENDENCIES:
+  - DingBase (from `git@github.com:cs3217/2018-final-project-group03.git`, branch `master`)
   - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
@@ -70,7 +75,18 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - SwiftyButton
 
+EXTERNAL SOURCES:
+  DingBase:
+    :branch: master
+    :git: git@github.com:cs3217/2018-final-project-group03.git
+
+CHECKOUT OPTIONS:
+  DingBase:
+    :commit: 2c1dbf76b52074b627ff116a78171c95a7b1b41c
+    :git: git@github.com:cs3217/2018-final-project-group03.git
+
 SPEC CHECKSUMS:
+  DingBase: 277938cd96700fa499e5cbdad69aeddb61a88347
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   Firebase: d7fdf40e4d6c841849c52919f437fd3a0009ded0
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
@@ -87,6 +103,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftyButton: 093e3fe2becf3ae31c0f6c1c6987b79a93fb3ecb
 
-PODFILE CHECKSUM: ad8447acc757a1bce86fa540b40762a2ae57caf6
+PODFILE CHECKSUM: 3157e126110d52950bcace2792fde9b9f829eaf2
 
 COCOAPODS: 1.4.0
