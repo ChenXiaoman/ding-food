@@ -31,9 +31,9 @@ extension UIViewController {
     ///    - interval: The time given before timeout checking is done.
     ///    - onTimeout: The function to be called when the loading has not completed even
     /// after the given time interval.
-    func checkLoadingTimeout(indicator: UIActivityIndicatorView, interval: Double, onTimeout: (() -> Void)?) {
+    func checkLoadingTimeout(indicator: UIActivityIndicatorView?, interval: Double, onTimeout: (() -> Void)?) {
         dispatch(for: interval) {
-            if indicator.isAnimating, let handler = onTimeout {
+            if let handler = onTimeout {
                 handler()
             }
         }

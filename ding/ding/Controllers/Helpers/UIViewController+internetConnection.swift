@@ -9,21 +9,33 @@
 import UIKit
 
 extension UIViewController {
+    /// A blank UIView indicating the device is offline
     static private var offlineView: UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenHeight))
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.white
         return view
     }
     
+    /// Checks whether the device is connected to the internet.
+    /// If not connected, the page is changed to blank.
     func checkInternetConnection() {
         let connectedRef = DatabaseRef.connectedRef
         let offlineView = UIViewController.offlineView
-        connectedRef.observe(.value, with: { snapshot in
-            guard let connected = snapshot.value as? Bool, connected else {
-                self.view.addSubview(offlineView)
-                return
-            }
-            offlineView.removeFromSuperview()
-        })
+        
+        // Checks internet connection only after certain timeout interval.
+        checkLoadingTimeout(indicator: nil, interval: Constants.timeoutInterval) {
+            
+            // Observes whether the internet is connected using FireBase.
+            connectedRef.observe(.value, with: { snapshot in
+                guard let connected = snapshot.value as? Bool, connected else {
+                    // The internet is not connected.
+                    self.view.addSubview(offlineView)
+                    self.alertTimeout()
+                    return
+                }
+                // The internet is connected.
+                offlineView.removeFromSuperview()
+            })
+        }
     }
 }
