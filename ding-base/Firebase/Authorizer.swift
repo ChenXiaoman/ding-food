@@ -16,41 +16,61 @@ import FirebaseAuth
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class Authorizer {
+public class Authorizer {
     /// A reference to the Firebase authentication, as access point to the server.
     private static let auth = Auth.auth()
 
     /// Sends a verification email to the current user's email address. This method will
     /// simple do nothing if there is no user signed in.
-    func verifyEmail(onComplete: @escaping SendEmailVerificationCallback) {
+    /// - Parameter onComplete: The handler to be called after the verification email has
+    /// been sent.
+    public func verifyEmail(onComplete: @escaping SendEmailVerificationCallback) {
         Authorizer.auth.currentUser?.sendEmailVerification(completion: onComplete)
+    }
+
+    /// Sends a verification email to the current user's email address. This method will
+    /// simple do nothing if there is no user signed in.
+    public func verifyEmail() {
+        Authorizer.auth.currentUser?.sendEmailVerification(completion: nil)
     }
 
     /// Signs out the current user. This method will simply do nothing if any error
     /// is thrown when trying to connect to the database and sign out the user.
-    func signOut() {
+    public func signOut() {
         try? Authorizer.auth.signOut()
     }
 
     /// Returns the username of the current user if it has signed in, an empty
     /// string otherwise.
-    var userName: String {
+    public var userName: String {
         return Authorizer.auth.currentUser?.displayName ?? ""
     }
 
+    /// Returns the user id of the current user if it has signed in, an empty
+    /// string otherwise.
+    public var userId: String {
+        return Authorizer.auth.currentUser?.uid ?? ""
+    }
+
+    /// Returns the email address of the current user if it has signed in, an empty
+    /// string otherwise.
+    public var email: String {
+        return Authorizer.auth.currentUser?.email ?? ""
+    }
+
     /// Returns whether there is a user that has signed in currently.
-    var didLogin: Bool {
+    public var didLogin: Bool {
         return Authorizer.auth.currentUser != nil
     }
 
     /// Returns whether the current user's email address has been verified; always
     /// false if no user has signed in.
-    var isEmailVerified: Bool {
+    public var isEmailVerified: Bool {
         return Authorizer.auth.currentUser?.isEmailVerified ?? false
     }
 
     /// Returns whether the user has signed in and the email has been verified.
-    var didLoginAndVerified: Bool {
+    public var didLoginAndVerified: Bool {
         return didLogin && isEmailVerified
     }
 }
