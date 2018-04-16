@@ -13,6 +13,11 @@ extension UIViewController {
     static private var offlineView: UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenHeight))
         view.backgroundColor = UIColor.white
+        let image = UIImageView(image: #imageLiteral(resourceName: "offlineImage"))
+        image.frame = CGRect(x: 0, y: 0, width: Constants.offlineImageSize, height: Constants.offlineImageSize)
+        // Make image in the screen center
+        image.center = CGPoint(x: Constants.screenWidth / 2, y: Constants.screenHeight / 2)
+        view.addSubview(image)
         return view
     }
     
@@ -37,5 +42,11 @@ extension UIViewController {
                 offlineView.removeFromSuperview()
             })
         }
+    }
+    
+    /// Stops checking whether the internet is connected
+    /// by stopping observer.
+    func stopCheckingInternetConnection() {
+        DatabaseRef.stopObservers(of: DatabaseRef.checkConnectionPath)
     }
 }

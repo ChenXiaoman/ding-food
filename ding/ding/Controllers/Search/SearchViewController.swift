@@ -33,14 +33,16 @@ class SearchViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkInternetConnection()
+        
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
-
+        
         // Indicates that loading starts.
         loaded = false
         loadingIndicator.startAnimating()
-
+        
+        checkInternetConnection()
+        
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateStallListingCell)
@@ -58,6 +60,7 @@ class SearchViewController: UIViewController {
         dataSource?.unbind()
         // Stops the loading indicator (such that the timeout thread will not be triggered later).
         loadingIndicator.stopAnimating()
+        stopCheckingInternetConnection()
     }
 
     /// Populates a `StallListingCell` with the given data from database.

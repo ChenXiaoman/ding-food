@@ -19,9 +19,11 @@ import FirebaseDatabase
 class DatabaseRef {
     /// A reference to the Firebase realtime database, as access point to the server.
     private static let ref = Database.database().reference()
-
+    /// The Firebase path to check internet connection
+    static let checkConnectionPath = ".info/connected"
     /// A reference to check whether internet is connected
-    static let connectedRef = Database.database().reference(withPath: ".info/connected")
+    static let connectedRef = Database.database().reference(withPath:
+        DatabaseRef.checkConnectionPath)
     
     /// Observes the value at a certain path. The handler will be notified each time the data
     /// at the specified path (and its child nodes) change.
