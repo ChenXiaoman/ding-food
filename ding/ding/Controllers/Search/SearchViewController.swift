@@ -30,8 +30,12 @@ class SearchViewController: UIViewController {
     /// A dictionary of mapping from cell's index path to the id of the stall
     /// overview represented.
     var stallIds: [Int: String] = [:]
-
-    override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewDidLoad() {
+        checkInternetConnection()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Hides the navigation bar
@@ -40,8 +44,6 @@ class SearchViewController: UIViewController {
         // Indicates that loading starts.
         loaded = false
         loadingIndicator.startAnimating()
-        
-        checkInternetConnection()
         
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")
