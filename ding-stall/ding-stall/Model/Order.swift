@@ -46,7 +46,7 @@ public struct Order: DatabaseObject {
     let foodName: [String: String]
     /// A mapping from food id to the
     /// mapping of option to user's choice for the option
-    let options: [String: [String: String]]
+    let options: [String: [String: String]]?
     /// A pre-computed total price to improve efficiency. Another consideration is that the
     /// total price should not be affected by changes to prices after the order is created.
     let totalPrice: Double
@@ -86,7 +86,7 @@ public struct Order: DatabaseObject {
     var description: String {
         return foodQuantity.reduce("") { accum, current in
             let name = foodName[current.key] ?? ""
-            let option = options[current.key] ?? [:]
+            let option = options?[current.key] ?? [:]
             let foodOption = option.reduce("") { acc, cur in
                 String(format: Order.foodOptionFormat, acc, cur.key, cur.value)
             }

@@ -44,7 +44,7 @@ class OrderDetailViewController: FormViewController {
                     row.disabled = true
                 }
 
-            order?.options[foodId]?.forEach { key, value in
+            order?.options?[foodId]?.forEach { key, value in
                 section <<< TextRow { row in
                     row.title = key
                     row.value = value
