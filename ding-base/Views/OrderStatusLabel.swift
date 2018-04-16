@@ -14,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class OrderStatusLabel: UILabel {
+public class OrderStatusLabel: UILabel {
     /// The corner radius for this label.
     private static let cornerRadius = CGFloat(10)
     /// The insets around the text of this label.
