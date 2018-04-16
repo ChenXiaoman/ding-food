@@ -77,6 +77,7 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         switch info {
         case .logout:
             authorizer.signOut()
+            Account.clear()
             navigationController?.popToRootViewController(animated: true)
         case .profile:
             let id = info.toControllerId
