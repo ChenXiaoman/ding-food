@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
+
 /**
  Represents a `Filter` that a stall can belong to. Notice that while many
  stalls can belong to the same `Filter`, a stall can belong to many `Filter`s
