@@ -19,14 +19,14 @@ PODS:
   - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
   - FirebaseAuth (4.6.1):
     - FirebaseAnalytics (~> 4.2)
-    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.20):
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (4.1.5):
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
@@ -47,13 +47,13 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
-  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3)":
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
     - GoogleToolboxForMac/DebugUtils (= 2.1.3)
     - GoogleToolboxForMac/Defines (= 2.1.3)
-    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)"
-  - "GoogleToolboxForMac/NSString+URLArguments (2.1.3)"
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.15)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -67,7 +67,7 @@ PODS:
   - SwiftyButton (0.8.0)
 
 DEPENDENCIES:
-  - "DingBase (from `git@github.com:cs3217/2018-final-project-group03.git`, branch `master`)"
+  - DingBase (from `git@github.com:cs3217/2018-final-project-group03.git`, branch `master`)
   - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
@@ -75,33 +75,15 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - SwiftyButton
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Eureka
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseAuth
-    - FirebaseCore
-    - FirebaseDatabase
-    - FirebaseInstanceID
-    - FirebaseStorage
-    - FirebaseUI
-    - GoogleToolboxForMac
-    - GTMSessionFetcher
-    - leveldb-library
-    - nanopb
-    - SDWebImage
-    - SwiftyButton
-
 EXTERNAL SOURCES:
   DingBase:
     :branch: master
-    :git: "git@github.com:cs3217/2018-final-project-group03.git"
+    :git: git@github.com:cs3217/2018-final-project-group03.git
 
 CHECKOUT OPTIONS:
   DingBase:
     :commit: ed38131520fe429c8d41beace44f4d31c0da4dcc
-    :git: "git@github.com:cs3217/2018-final-project-group03.git"
+    :git: git@github.com:cs3217/2018-final-project-group03.git
 
 SPEC CHECKSUMS:
   DingBase: 277938cd96700fa499e5cbdad69aeddb61a88347
@@ -121,6 +103,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftyButton: 093e3fe2becf3ae31c0f6c1c6987b79a93fb3ecb
 
-PODFILE CHECKSUM: 3157e126110d52950bcace2792fde9b9f829eaf2
+PODFILE CHECKSUM: 9d77193a28d3b0edfc53b86d35316188acdb73b5
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0
