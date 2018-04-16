@@ -9,7 +9,7 @@
 import FirebaseDatabase
 
 /**
- Each object that would be stored in Firebase database is a `DatabaseObject`. This protocol
+ Each object that would be stored in the database is a `DatabaseObject`. This protocol
  provides the basic capability, such as serialization.
 
  `DatabaseObject` conforms to `Codable` protocol. This is because we can think of Firebase
@@ -42,13 +42,12 @@ public protocol DatabaseObject: Codable, Hashable {
     /// We suggest the value of `path` should be a descriptive English word, usually in its
     /// plural form.
     static var path: String { get }
-
 }
 
 /**
  Extension for `DatabaseObject`, which provides some utility methods ready for use.
  */
-extension DatabaseObject {
+public extension DatabaseObject {
     /// The hash value of a `DatabaseObject`.
     public var hashValue: Int {
         return id.hashValue
@@ -135,20 +134,20 @@ extension DatabaseObject {
         return objectArray
     }
 
-    /// This function will convert the a dictionary in (id, value) format to a dictionary of
+    /// This method will convert the a dictionary in (id, value) format to a dictionary of
     /// dictionaries in (id, value + id) format to prepare for subsequent deserialization.
     /// - Parameter dict: the nested dictionary of (id, value) pair.
     /// - Returns: a dictionary (id, value) whose value contains the id.
     public static func prepareNestedDeserialize(_ dict: [String: Any]) -> [String: [String: Any]]? {
-        var menuDict = [String: [String: Any]]()
+        var nestedDict = [String: [String: Any]]()
         dict.forEach { key, value in
             guard let valueDict = value as? [String: Any] else {
                 return
             }
-            menuDict[key] = valueDict
-            menuDict[key]?["id"] = key
+            nestedDict[key] = valueDict
+            nestedDict[key]?["id"] = key
         }
-        return menuDict
+        return nestedDict
     }
 
     /// Saves this `DatabaseObject` to the Firebase database.
@@ -160,7 +159,7 @@ extension DatabaseObject {
         DatabaseRef.setChildNode(of: Self.path, to: self)
     }
 
-    /// Delete this `DatabaseObject` from the database
+    /// Delete this `DatabaseObject` from the database.
     public func delete() {
         DatabaseRef.deleteChildNode(of: Self.path + "/\(id)")
     }

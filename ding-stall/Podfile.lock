@@ -1,28 +1,32 @@
 PODS:
+  - DingBase (0.0.1):
+    - Firebase/Auth
+    - Firebase/Database
+    - Firebase/Storage
   - Eureka (4.1.1)
-  - Firebase/Auth (4.12.0):
+  - Firebase/Auth (4.13.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.6.0)
-  - Firebase/Core (4.12.0):
-    - FirebaseAnalytics (= 4.1.0)
-    - FirebaseCore (= 4.0.19)
-  - Firebase/Database (4.12.0):
+    - FirebaseAuth (= 4.6.1)
+  - Firebase/Core (4.13.0):
+    - FirebaseAnalytics (= 4.2.0)
+    - FirebaseCore (= 4.0.20)
+  - Firebase/Database (4.13.0):
     - Firebase/Core
     - FirebaseDatabase (= 4.1.5)
-  - Firebase/Storage (4.12.0):
+  - Firebase/Storage (4.13.0):
     - Firebase/Core
     - FirebaseStorage (= 2.2.0)
-  - FirebaseAnalytics (4.1.0):
+  - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.6.0):
-    - FirebaseAnalytics (~> 4.1)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+  - FirebaseAuth (4.6.1):
+    - FirebaseAnalytics (~> 4.2)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.19):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (4.0.20):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseDatabase (4.1.5):
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
@@ -43,13 +47,13 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.3)
     - GoogleToolboxForMac/Defines (= 2.1.3)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.3)"
   - GTMSessionFetcher/Core (1.1.15)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -63,6 +67,7 @@ PODS:
   - SwiftyButton (0.8.0)
 
 DEPENDENCIES:
+  - "DingBase (from `git@github.com:cs3217/2018-final-project-group03.git`, branch `master`)"
   - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
@@ -70,12 +75,41 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - SwiftyButton
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Eureka
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - FirebaseStorage
+    - FirebaseUI
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - leveldb-library
+    - nanopb
+    - SDWebImage
+    - SwiftyButton
+
+EXTERNAL SOURCES:
+  DingBase:
+    :branch: master
+    :git: "git@github.com:cs3217/2018-final-project-group03.git"
+
+CHECKOUT OPTIONS:
+  DingBase:
+    :commit: ed38131520fe429c8d41beace44f4d31c0da4dcc
+    :git: "git@github.com:cs3217/2018-final-project-group03.git"
+
 SPEC CHECKSUMS:
+  DingBase: 277938cd96700fa499e5cbdad69aeddb61a88347
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
-  Firebase: d7fdf40e4d6c841849c52919f437fd3a0009ded0
-  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
-  FirebaseAuth: 85a1b118a89838efc6f6ab3f2b1f94747d72a915
-  FirebaseCore: ff49ebb37e0f63a570d78c4f1c1c0befe8659d5c
+  Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
+  FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
+  FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
+  FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
   FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
@@ -87,6 +121,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftyButton: 093e3fe2becf3ae31c0f6c1c6987b79a93fb3ecb
 
-PODFILE CHECKSUM: ad8447acc757a1bce86fa540b40762a2ae57caf6
+PODFILE CHECKSUM: 3157e126110d52950bcace2792fde9b9f829eaf2
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

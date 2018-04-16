@@ -6,6 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
 import Eureka
 
 /**
@@ -44,7 +45,7 @@ class OrderDetailViewController: FormViewController {
                     row.disabled = true
                 }
 
-            order?.options[foodId]?.forEach { key, value in
+            order?.options?[foodId]?.forEach { key, value in
                 section <<< TextRow { row in
                     row.title = key
                     row.value = value

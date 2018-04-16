@@ -6,6 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
 import UIKit
 
 /**
@@ -77,6 +78,7 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         switch info {
         case .logout:
             authorizer.signOut()
+            Account.clear()
             navigationController?.popToRootViewController(animated: true)
         case .profile:
             let id = info.toControllerId

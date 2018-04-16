@@ -26,28 +26,35 @@ public struct Order: DatabaseObject {
     private static let foodOptionFormat = "%@ %@: %@"
 
     public let id: String
-    var status: OrderStatus
-    var review: Review?
-    let customerId: String
-    let stallId: String
-    let createdAt: Date
+    public var status: OrderStatus {
+        didSet {
+            guard status.isOngoingOrderStatus else {
+                delete()
+                let orderHistory = OrderHistory(order: self)
+                orderHistory.save()
+                return
+            }
+        }
+    }
+    public let customerId: String
+    public let stallId: String
+    public let createdAt: Date
     /// A mapping from food id to its quantity.
-    let foodQuantity: [String: Int]
+    public let foodQuantity: [String: Int]
     /// A mapping from food id to its human-readable name (to apply fan-out & denormalization
     /// pattern here).
-    let foodName: [String: String]
+    public let foodName: [String: String]
     /// A mapping from food id to the
     /// mapping of option to user's choice for the option
-    let options: [String: [String: String]]?
+    public let options: [String: [String: String]]?
     /// A pre-computed total price to improve efficiency. Another consideration is that the
     /// total price should not be affected by changes to prices after the order is created.
-    let totalPrice: Double
+    public let totalPrice: Double
 
-    init(review: Review? = nil, stall: StallOverview, food: [Food: Int], options: [Food: [String: String]]) {
+    public init(stall: StallOverview, food: [Food: Int], options: [Food: [String: String]]) {
         id = Order.getAutoId
         // Default status is pending
         self.status = .pending
-        self.review = review
         customerId = Order.authorizer.userId
         stallId = stall.id
         createdAt = Date()
@@ -73,9 +80,12 @@ public struct Order: DatabaseObject {
             sum + now.key.price * Double(now.value)
         }
     }
+}
 
+// MARK: CustomStringConvertible
+extension Order: CustomStringConvertible {
     /// A full-text description of the order (including food name, amount and options).
-    var description: String {
+    public var description: String {
         return foodQuantity.reduce("") { accum, current in
             let name = foodName[current.key] ?? ""
             let option = options?[current.key] ?? [:]
@@ -93,4 +103,10 @@ public enum OrderStatus: String, Codable {
     case accepted = "Accepted"
     case ready = "Ready"
     case collected = "Collected"
+
+    /// Indicate whether this order is an on-going (unpaid) order, i.e.
+    /// should be displayed on the order list.
+    public var isOngoingOrderStatus: Bool {
+        return self == .pending || self == .accepted || self == .ready
+    }
 }

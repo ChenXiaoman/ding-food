@@ -12,18 +12,24 @@
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-struct Customer: DatabaseObject {
+public struct Customer: DatabaseObject {
     public static let path = "/customer_profiles"
 
     /// The customer's UID.
-    let id: String
+    public let id: String
     /// The customer's real name.
-    let name: String
+    public let name: String
     /// The path to the customer's avatar.
-    var avatarPath: String
+    public var avatarPath: String
+
+    public init(id: String, name: String, avatarPath: String) {
+        self.id = id
+        self.name = name
+        self.avatarPath = avatarPath
+    }
 
     /// Provide a new path for the stall photo if it has changed
-    static var newPhotoPath: String {
+    public static var newPhotoPath: String {
         return Customer.path + "/\(Customer.getAutoId)"
     }
 }

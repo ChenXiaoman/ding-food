@@ -6,6 +6,7 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
 import FirebaseAuthUI
 
 /**
@@ -140,6 +141,7 @@ extension LoginViewController: LoginDelegate {
     /// Sign out this account and navigate back to login view
     public func signOut() {
         authorizer.signOut()
+        Account.clear()
         navigationController?.popToRootViewController(animated: true)
     }
 }

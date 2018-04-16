@@ -16,7 +16,7 @@ import FirebaseStorage
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class StorageRef {
+public class StorageRef {
     /// A reference to the Firebase cloud storage, as access point to the server.
     private static let ref = Storage.storage().reference()
 
@@ -25,7 +25,7 @@ class StorageRef {
     ///    - data: The data to be uploaded.
     ///    - path: The path at which the data will be stored. The path should usually
     /// end with the full name of the file corresonding to the data.
-    static func upload(_ data: Data, at path: String) {
+    public static func upload(_ data: Data, at path: String) {
         ref.child(path).putData(data)
     }
 
@@ -34,7 +34,7 @@ class StorageRef {
     ///    - url: The URL to the desired file.
     ///    - path: The path at which the file will be stored. The path should usually
     /// end with the full name of the file.
-    static func upload(_ url: URL, at path: String) {
+    public static func upload(_ url: URL, at path: String) {
         ref.child(path).putFile(from: url)
     }
 
@@ -47,20 +47,20 @@ class StorageRef {
     ///    - path: The path at which the file was stored.
     ///    - maxSize: The maximum size in bytes to download.
     ///    - handler:
-    static func download(from path: String, maxSize: Int64, onComplete handler: @escaping (Data?, Error?) -> Void) {
+    public static func download(from path: String, maxSize: Int64, onComplete handler: @escaping (Data?, Error?) -> Void) {
         ref.child(path).getData(maxSize: maxSize, completion: handler)
     }
 
     /// Creates a reference to the child node at the given path.
     /// - Parameter path: The path to the child node.
     /// - Returns: The reference to the child node.
-    static func getNodeRef(of path: String) -> StorageReference {
+    public static func getNodeRef(of path: String) -> StorageReference {
         return ref.child(path)
     }
 
     /// Delete the file at the given path.
     /// - Parameter path: the path of the file to be deleted.
-    static func delete(at path: String) {
+    public static func delete(at path: String) {
         ref.child(path).delete()
     }
 }
