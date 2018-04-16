@@ -23,7 +23,7 @@ public struct Review: DatabaseObject {
     public var rating: Rating
     public var reviewText: String?
 
-    public init(id: String, stallId: String, rating: String, reviewText: String? = nil) {
+    public init(id: String, stallId: String, rating: Rating, reviewText: String? = nil) {
         self.id = id
         self.stallId = stallId
         self.rating = rating
