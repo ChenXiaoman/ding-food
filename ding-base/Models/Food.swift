@@ -25,6 +25,18 @@ public struct Food: DatabaseObject {
     public var isSoldOut: Bool
     public var photoPath: String?
     public var options: [String: [String]]?
+
+    public init(id: String, name: String, price: Double, description: String?, type: FoodType, 
+        isSoldOut: Bool, photoPath: String?, options: [String: [String]]? = nil) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.description = description
+        self.type = type
+        self.isSoldOut = isSoldOut
+        self.photoPath = photoPath
+        self.options = options
+    }
 }
 
 /**

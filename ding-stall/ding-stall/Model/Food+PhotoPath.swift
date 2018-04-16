@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
+
 extension Food {
     /// Provide a new path for the stall photo if it has changed
     static var newPhotoPath: String {
