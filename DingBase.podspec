@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
 	s.social_media_url = 'https://www.facebook.com/groups/cs3217/'
 	s.platform           = :ios, '11.3'
 	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift'
-	s.dependency           'FirebaseDatabase'
-	s.dependency           'FirebaseStorage'
+	s.dependency           'Firebase/Database'
+	s.dependency           'Firebase/Storage'
 end
