@@ -6,8 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import DingBase
-
 /**
  `OrderHistory` represents a `Order` that has been collected or rejeted. In such
  case, the `OrderHistory` may optionally contain a `Review`.

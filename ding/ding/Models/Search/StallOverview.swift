@@ -16,10 +16,10 @@ import FirebaseDatabase
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-struct StallOverview: DatabaseObject {
-    static let path = "/stall_overviews"
+public struct StallOverview: DatabaseObject {
+    public static let path = "/stall_overviews"
     
-    let id: String
+    public let id: String
     let name: String
     let isOpen: Bool
     let queueCount: Int

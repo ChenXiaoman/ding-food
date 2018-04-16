@@ -6,8 +6,6 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
-import DingBase
-
 /**
  `Review` represents a user's review for a stall. After each order is completed (an
  `Order` becomes a `OrderHistory`), the user will be prompted to provide a `Review`
