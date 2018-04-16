@@ -40,7 +40,6 @@
 		32B7CD83206E1A5B00CE2FCA /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */; };
 		32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */; };
 		32B7CD87206FAF2F00CE2FCA /* EditFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */; };
-		32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */; };
 		32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */; };
 		32FD6950207DDFAD00C898D0 /* OrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */; };
 		32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */; };
@@ -101,7 +100,6 @@
 		32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		32B7CD84206FA8C800CE2FCA /* FoodFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFormViewController.swift; sourceTree = "<group>"; };
 		32B7CD86206FAF2F00CE2FCA /* EditFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewController.swift; sourceTree = "<group>"; };
-		32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageRow+PopulateImage.swift"; sourceTree = "<group>"; };
 		32FD694B207A3C9500C898D0 /* StallCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallCreationViewController.swift; sourceTree = "<group>"; };
 		32FD694F207DDFAD00C898D0 /* OrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewCell.swift; sourceTree = "<group>"; };
 		32FD6951207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				32B7CD82206E1A5B00CE2FCA /* ImageRow.swift */,
-				32FD6949207A396C00C898D0 /* ImageRow+PopulateImage.swift */,
 				325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */,
 				F26514C9206525B90098783C /* MeSettingMenuCell.swift */,
 				B2DCBC1420819545009CEAE9 /* NothingToDisplayView.swift */,
@@ -539,7 +536,6 @@
 				32FD6950207DDFAD00C898D0 /* OrderCollectionViewCell.swift in Sources */,
 				325EE81920673DD3004EC560 /* Food.swift in Sources */,
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
-				32FD694A207A396C00C898D0 /* ImageRow+PopulateImage.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
 				325EE80E20665178004EC560 /* Filter.swift in Sources */,
 				B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */,
