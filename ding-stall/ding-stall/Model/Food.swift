@@ -23,11 +23,6 @@ public struct Food: DatabaseObject {
     public var isSoldOut: Bool
     public var photoPath: String?
     public var options: [String: [String]]?
-
-    /// Provide a new path for the stall photo if it has changed
-    public static var newPhotoPath: String {
-        return Food.path + "/\(Account.stallId)" + "/\(Food.getAutoId)"
-    }
 }
 
 /**

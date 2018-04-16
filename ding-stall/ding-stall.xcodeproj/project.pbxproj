@@ -60,6 +60,7 @@
 		F2BBF830205B839400B9812D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF82E205B839400B9812D /* LaunchScreen.storyboard */; };
 		F2BBF838205B842600B9812D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF837205B842600B9812D /* GoogleService-Info.plist */; };
 		F2D2C0432064CE75005230D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2C0422064CE75005230D6 /* Constants.swift */; };
+		F2FCB00B2084BD63008EF310 /* Food+PhotoPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCB00A2084BD63008EF310 /* Food+PhotoPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		F2BBF831205B839400B9812D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BBF837205B842600B9812D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2D2C0422064CE75005230D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F2FCB00A2084BD63008EF310 /* Food+PhotoPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+PhotoPath.swift"; sourceTree = "<group>"; };
 		F74B02665C1623746C3819E3 /* Pods-ding-stall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ding-stall.release.xcconfig"; path = "Pods/Target Support Files/Pods-ding-stall/Pods-ding-stall.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				325EE80620665178004EC560 /* Customer.swift */,
 				325EE80520665178004EC560 /* Filter.swift */,
 				325EE81820673DD3004EC560 /* Food.swift */,
+				F2FCB00A2084BD63008EF310 /* Food+PhotoPath.swift */,
 				325EE80720665178004EC560 /* Order.swift */,
 				3280F90720779A110095E224 /* OrderHistory.swift */,
 				325EE80820665178004EC560 /* Review.swift */,
@@ -508,6 +511,7 @@
 				32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */,
 				32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */,
 				32FD6954207F072D00C898D0 /* OrderDetailViewController.swift in Sources */,
+				F2FCB00B2084BD63008EF310 /* Food+PhotoPath.swift in Sources */,
 				32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */,
 				3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */,
 				B2681939207DA87500968827 /* Settings.swift in Sources */,

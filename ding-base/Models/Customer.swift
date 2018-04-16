@@ -6,8 +6,6 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
-import DingBase
-
 /**
  Represents a registered customer in the application.
 
