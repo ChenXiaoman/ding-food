@@ -15,12 +15,14 @@ import UIKit
  - Date: March 2018
  */
 extension UIImage {
+    /// The standard image size in KB.
+    private static let standardImageSize = 1_024
 
     /// Compress an image to avoid large-size image
     /// - Return: the data of compressed image, nil if it cannot be compressed
-    var standardData: Data? {
+    public var standardData: Data? {
         let originalImageSize = self.size.width * self.size.height
-        var quality = CGFloat(Constants.standardImageSize) / originalImageSize
+        var quality = CGFloat(UIImage.standardImageSize) / originalImageSize
         if quality > 1 {
             quality = 1
         }

@@ -14,14 +14,14 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class DialogHelpers {
+public class DialogHelpers {
     /// Shows a message in an alert dialog box to the user. The user can click "OK"
     /// to dismiss this alert dialog box.
     /// - Parameters:
     ///    - viewController: The view controller used to present this alert dialog.
     ///    - title: The text shown as the title of the alert dialog.
     ///    - message: The text shown as the main body of the alert dialog.
-    static func showAlertMessage(in viewController: UIViewController, title: String, message: String) {
+    public static func showAlertMessage(in viewController: UIViewController, title: String, message: String) {
         let newAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         newAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(newAlert, animated: true, completion: nil)
@@ -34,7 +34,7 @@ class DialogHelpers {
     ///    - title: The text shown as the title of the alert dialog.
     ///    - message: The text shown as the main body of the alert dialog.
     ///    - confirmHandler: The handler to be called when the user clicks "OK".
-    static func showAlertMessage(in viewController: UIViewController, title: String, message: String,
+    public static func showAlertMessage(in viewController: UIViewController, title: String, message: String,
                                  onConfirm confirmHandler: @escaping () -> Void) {
         let newAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         newAlert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
@@ -54,7 +54,7 @@ class DialogHelpers {
     ///    - message: The text shown as the main body of the prompt dialog.
     ///    - placeholder: The placeholder shown in the text field.
     ///    - confirmHandler: The handler to be called when the input is entered.
-    static func promptInput(in viewController: UIViewController,
+    public static func promptInput(in viewController: UIViewController,
                             title: String, message: String, placeholder: String,
                             onConfirm confirmHandler: @escaping (String) -> Void) {
         let prompt = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -82,7 +82,7 @@ class DialogHelpers {
     ///    - message: The text shown as the main body of the confirm dialog.
     ///    - cancelButtonText: The text shown in the cancel button.
     ///    - confirmHandler: The event to happen when confirmed.
-    static func promptConfirm(in viewController: UIViewController,
+    public static func promptConfirm(in viewController: UIViewController,
                               title: String, message: String, cancelButtonText: String,
                               onConfirm confirmHandler: @escaping () -> Void) {
         let prompt = UIAlertController(title: title, message: message, preferredStyle: .alert)

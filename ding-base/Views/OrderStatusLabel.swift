@@ -6,7 +6,6 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
-import DingBase
 import UIKit
 
 /**
@@ -15,7 +14,7 @@ import UIKit
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-class OrderStatusLabel: UILabel {
+public class OrderStatusLabel: UILabel {
     /// The corner radius for this label.
     private static let cornerRadius = CGFloat(10)
     /// The insets around the text of this label.
@@ -23,7 +22,7 @@ class OrderStatusLabel: UILabel {
     /// The inverted insets around the text of this label.
     private static let invertedInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: -5)
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = OrderStatusLabel.cornerRadius
         clipsToBounds = true
@@ -32,11 +31,11 @@ class OrderStatusLabel: UILabel {
         backgroundColor = nil
     }
 
-    override func drawText(in rect: CGRect) {
+    public override func drawText(in rect: CGRect) {
         super.drawText(in: UIEdgeInsetsInsetRect(rect, OrderStatusLabel.insets))
     }
 
-    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+    public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let insetRect = UIEdgeInsetsInsetRect(bounds, OrderStatusLabel.insets)
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
         return UIEdgeInsetsInsetRect(textRect, OrderStatusLabel.invertedInsets)
@@ -44,7 +43,7 @@ class OrderStatusLabel: UILabel {
 
     /// Loads data into and populate a `OrderStatusLabel`.
     /// - Parameter status: The `OrderStatus` enum as the data source.
-    func load(_ status: OrderStatus) {
+    public func load(_ status: OrderStatus) {
         text = status.rawValue
         switch status {
         case .pending:
