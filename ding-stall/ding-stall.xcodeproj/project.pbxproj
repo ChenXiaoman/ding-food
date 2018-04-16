@@ -12,23 +12,16 @@
 		325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7F820664532004EC560 /* SettingsViewController.swift */; };
 		325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE7FC2066476B004EC560 /* MenuViewController.swift */; };
 		325EE80B20665178004EC560 /* StallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80220665177004EC560 /* StallDetails.swift */; };
-		325EE80E20665178004EC560 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80520665178004EC560 /* Filter.swift */; };
-		325EE80F20665178004EC560 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80620665178004EC560 /* Customer.swift */; };
-		325EE81020665178004EC560 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80720665178004EC560 /* Order.swift */; };
-		325EE81120665178004EC560 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE80820665178004EC560 /* Review.swift */; };
-		325EE81920673DD3004EC560 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81820673DD3004EC560 /* Food.swift */; };
 		325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */; };
 		325EE824206A0159004EC560 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE823206A0159004EC560 /* Account.swift */; };
 		325EE826206A7754004EC560 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EE825206A7754004EC560 /* AddFoodViewController.swift */; };
 		3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F90120750A340095E224 /* UIColor+RGB.swift */; };
 		3280F905207796120095E224 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F904207796120095E224 /* OrderViewController.swift */; };
-		3280F90820779A110095E224 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F90720779A110095E224 /* OrderHistory.swift */; };
 		3280F90C2077B9630095E224 /* OrderQueueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F90B2077B9620095E224 /* OrderQueueCollectionViewCell.swift */; };
 		3280F90E2077B9AE0095E224 /* OrderQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F90D2077B9AE0095E224 /* OrderQueueViewController.swift */; };
 		3280F9102077B9B80095E224 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280F90F2077B9B70095E224 /* OrderHistoryViewController.swift */; };
 		32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6720733E46000C4834 /* PasswordSignUpController.swift */; };
 		32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A69207340B0000C4834 /* StallFormViewController.swift */; };
-		32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6D2073D9D8000C4834 /* StallOverview.swift */; };
 		32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */; };
 		32B75A732074B199000C4834 /* OrderStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B75A722074B199000C4834 /* OrderStatusLabel.swift */; };
 		32B7CD7C206C9D2400CE2FCA /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */; };
@@ -69,23 +62,16 @@
 		325EE7F820664532004EC560 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		325EE7FC2066476B004EC560 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		325EE80220665177004EC560 /* StallDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StallDetails.swift; sourceTree = "<group>"; };
-		325EE80520665178004EC560 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
-		325EE80620665178004EC560 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		325EE80720665178004EC560 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		325EE80820665178004EC560 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		325EE81820673DD3004EC560 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		325EE81A20692F30004EC560 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		325EE823206A0159004EC560 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		325EE825206A7754004EC560 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		3280F90120750A340095E224 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		3280F904207796120095E224 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
-		3280F90720779A110095E224 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
 		3280F90B2077B9620095E224 /* OrderQueueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderQueueCollectionViewCell.swift; sourceTree = "<group>"; };
 		3280F90D2077B9AE0095E224 /* OrderQueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderQueueViewController.swift; sourceTree = "<group>"; };
 		3280F90F2077B9B70095E224 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		32B75A6720733E46000C4834 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		32B75A69207340B0000C4834 /* StallFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallFormViewController.swift; sourceTree = "<group>"; };
-		32B75A6D2073D9D8000C4834 /* StallOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StallOverview.swift; sourceTree = "<group>"; };
 		32B75A6F207484DA000C4834 /* UIImage+StandardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StandardSize.swift"; sourceTree = "<group>"; };
 		32B75A722074B199000C4834 /* OrderStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLabel.swift; sourceTree = "<group>"; };
 		32B7CD7B206C9D2400CE2FCA /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
@@ -140,15 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				325EE823206A0159004EC560 /* Account.swift */,
-				325EE80620665178004EC560 /* Customer.swift */,
-				325EE80520665178004EC560 /* Filter.swift */,
-				325EE81820673DD3004EC560 /* Food.swift */,
 				F2FCB00A2084BD63008EF310 /* Food+PhotoPath.swift */,
-				325EE80720665178004EC560 /* Order.swift */,
-				3280F90720779A110095E224 /* OrderHistory.swift */,
-				325EE80820665178004EC560 /* Review.swift */,
 				325EE80220665177004EC560 /* StallDetails.swift */,
-				32B75A6D2073D9D8000C4834 /* StallOverview.swift */,
 				B2681938207DA87500968827 /* Settings.swift */,
 			);
 			path = Model;
@@ -174,13 +153,6 @@
 				3280F904207796120095E224 /* OrderViewController.swift */,
 			);
 			path = Order;
-			sourceTree = "<group>";
-		};
-		3280F90A2077B8A70095E224 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		3280F9112077C0000095E224 /* Base */ = {
@@ -318,7 +290,6 @@
 				F2BBF823205B839400B9812D /* Products */,
 				DCFD028E2205939395984373 /* Pods */,
 				E6EE1A77C1B25ABBE46812D2 /* Frameworks */,
-				3280F90A2077B8A70095E224 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -512,11 +483,8 @@
 				32FD695B207F385C00C898D0 /* UIViewController+Keyboard.swift in Sources */,
 				32FD6954207F072D00C898D0 /* OrderDetailViewController.swift in Sources */,
 				F2FCB00B2084BD63008EF310 /* Food+PhotoPath.swift in Sources */,
-				32B75A6E2073D9D8000C4834 /* StallOverview.swift in Sources */,
 				3280F90220750A340095E224 /* UIColor+RGB.swift in Sources */,
 				B2681939207DA87500968827 /* Settings.swift in Sources */,
-				325EE81120665178004EC560 /* Review.swift in Sources */,
-				325EE81020665178004EC560 /* Order.swift in Sources */,
 				32FD695F2081A26C00C898D0 /* AccountController.swift in Sources */,
 				325EE824206A0159004EC560 /* Account.swift in Sources */,
 				3280F90C2077B9630095E224 /* OrderQueueCollectionViewCell.swift in Sources */,
@@ -525,10 +493,8 @@
 				F2BBF826205B839400B9812D /* AppDelegate.swift in Sources */,
 				32B75A6A207340B0000C4834 /* StallFormViewController.swift in Sources */,
 				32FD6950207DDFAD00C898D0 /* OrderCollectionViewCell.swift in Sources */,
-				325EE81920673DD3004EC560 /* Food.swift in Sources */,
 				32B7CD7E206CAD9200CE2FCA /* DialogHelpers.swift in Sources */,
 				325EE7F920664532004EC560 /* SettingsViewController.swift in Sources */,
-				325EE80E20665178004EC560 /* Filter.swift in Sources */,
 				B227B0F1207E8B1B008278E3 /* Audio.swift in Sources */,
 				32FD6952207DE59200C898D0 /* OrderHistoryCollectionViewCell.swift in Sources */,
 				32FD694C207A3C9500C898D0 /* StallCreationViewController.swift in Sources */,
@@ -542,7 +508,6 @@
 				32B75A6820733E46000C4834 /* PasswordSignUpController.swift in Sources */,
 				325EE7FD2066476B004EC560 /* MenuViewController.swift in Sources */,
 				32B7CD85206FA8C800CE2FCA /* FoodFormViewController.swift in Sources */,
-				3280F90820779A110095E224 /* OrderHistory.swift in Sources */,
 				325EE81B20692F30004EC560 /* MenuCollectionViewCell.swift in Sources */,
 				F26514CA206525B90098783C /* MeSettingMenuCell.swift in Sources */,
 				32B75A732074B199000C4834 /* OrderStatusLabel.swift in Sources */,
@@ -552,7 +517,6 @@
 				32B7CD81206E1A2B00CE2FCA /* ImagePickerViewController.swift in Sources */,
 				3280F905207796120095E224 /* OrderViewController.swift in Sources */,
 				32B75A70207484DA000C4834 /* UIImage+StandardSize.swift in Sources */,
-				325EE80F20665178004EC560 /* Customer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

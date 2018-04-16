@@ -22,6 +22,12 @@ public struct Customer: DatabaseObject {
     /// The path to the customer's avatar.
     public var avatarPath: String
 
+    public init(id: String, name: String, avatarPath: String) {
+        self.id = id
+        self.name = name
+        self.avatarPath = avatarPath
+    }
+
     /// Provide a new path for the stall photo if it has changed
     public static var newPhotoPath: String {
         return Customer.path + "/\(Customer.getAutoId)"
