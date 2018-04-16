@@ -31,5 +31,4 @@ Pod::Spec.new do |s|
 	s.dependency           'Firebase/Auth'
 
 	s.static_framework   = true
-	s.framework          = 'UIKit'
 end
