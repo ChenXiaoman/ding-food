@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 	2018 @ NUS SoC
 	Final Project Group 3 - Ding! (base library)
 	DESC
-	s.homepage           = "https://github.com/cs3217/2018-final-project-group03"
+	s.homepage           = "http://isteps.comp.nus.edu.sg/event/12th-steps/module/CS3217/project/3"
 	s.license            = { :type => 'MIT' }
 	s.author             = { "Group 3 @ CS3217 2018" => "cs3217team@gmail.com" }
 	s.source             = { :git => "git@github.com:cs3217/2018-final-project-group03.git", :branch => 'refactor-multiple' }
@@ -25,6 +25,8 @@ Pod::Spec.new do |s|
 	s.social_media_url = 'https://www.facebook.com/groups/cs3217/'
 	s.platform           = :ios, '11.3'
 	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift'
+	
 	s.dependency           'Firebase/Database'
 	s.dependency           'Firebase/Storage'
+	s.dependency           'Firebase/Auth'
 end
