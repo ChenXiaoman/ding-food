@@ -40,9 +40,7 @@ public struct ImageRowSourceTypes: OptionSet {
 }
 
 extension ImageRowSourceTypes {
-
     // MARK: Helpers
-
     var localizedString: String {
         switch self {
         case ImageRowSourceTypes.Camera:
@@ -63,7 +61,6 @@ public enum ImageClearAction {
 }
 
 // MARK: Row
-
 open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType where Cell: BaseCell, Cell.Value == UIImage {
 
     public typealias PresenterRow = ImagePickerController
@@ -229,9 +226,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType where C
 }
 
 extension _ImageRow {
-
     // MARK: Helpers
-
     func createOptionForAlertController(_ alertController: UIAlertController, sourceType: ImageRowSourceTypes) {
         guard
             let pickerSourceType = UIImagePickerControllerSourceType(rawValue:

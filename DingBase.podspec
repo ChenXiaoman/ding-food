@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 	s.homepage           = "http://isteps.comp.nus.edu.sg/event/12th-steps/module/CS3217/project/3"
 	s.license            = { :type => 'MIT' }
 	s.author             = { "Group 3 @ CS3217 2018" => "cs3217team@gmail.com" }
-	s.source             = { :git => "git@github.com:cs3217/2018-final-project-group03.git", :branch => 'master' }
+	s.source             = { :git => "git@github.com:cs3217/2018-final-project-group03.git", :branch => 'view-pod' }
 	s.swift_version      = '4.1'
 	s.social_media_url = 'https://www.facebook.com/groups/cs3217/'
 	s.platform           = :ios, '11.3'
@@ -28,7 +28,8 @@ Pod::Spec.new do |s|
 	s.static_framework   = true
 	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift'
 	
+	s.dependency           'Eureka'
+	s.dependency           'Firebase/Auth'
 	s.dependency           'Firebase/Database'
 	s.dependency           'Firebase/Storage'
-	s.dependency           'Firebase/Auth'
 end
