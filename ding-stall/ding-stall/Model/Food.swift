@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
+
 /**
  Represents an atomic unit of a menu and everything that can be consumed.
  This includes drinks.

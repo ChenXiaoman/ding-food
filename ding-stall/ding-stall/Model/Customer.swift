@@ -6,6 +6,8 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
+import DingBase
+
 /**
  Represents a registered user in the application.
  */

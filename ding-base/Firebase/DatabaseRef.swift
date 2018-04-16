@@ -70,6 +70,12 @@ public class DatabaseRef {
         ref.updateChildValues(updated)
     }
 
+    /// Delete the node and all its child nodes in database by given path.
+    /// - Parameter: path: the path of the deleted node
+    public static func deleteChildNode(of path: String) {
+        ref.child(path).setValue(nil)
+    }
+
     /// Creates a reference to the child node at the given path.
     /// - Parameter path: The path to the child node.
     /// - Returns: The reference to the child node.

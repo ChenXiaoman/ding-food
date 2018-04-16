@@ -6,6 +6,7 @@
 //  Copyright © 2018 JCH. All rights reserved.
 //
 
+import DingBase
 import Foundation
 
 /**
