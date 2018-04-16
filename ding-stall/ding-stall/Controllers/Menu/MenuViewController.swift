@@ -52,7 +52,7 @@ class MenuViewController: UIViewController {
 
     /// Binds Firebase data source to collection view.
     private func configureCollectionView() {
-        let query = DatabaseRef.getNodeRef(of: menuPath)
+        let query = DatabaseRef.getNodeRef(of: menuPath).queryOrdered(byChild: "name")
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateMenuCell)
         dataSource?.bind(to: menuView)
         menuView.delegate = self
