@@ -35,7 +35,7 @@ public struct ImageRowSourceTypes: OptionSet {
     public static let PhotoLibrary = ImageRowSourceTypes(.photoLibrary)
     public static let Camera = ImageRowSourceTypes(.camera)
     public static let SavedPhotosAlbum = ImageRowSourceTypes(.savedPhotosAlbum)
-    public static let All: ImageRowSourceTypes = [Camera, PhotoLibrary, SavedPhotosAlbum]
+    public static let All: ImageRowSourceTypes = [PhotoLibrary, SavedPhotosAlbum]
 
 }
 
