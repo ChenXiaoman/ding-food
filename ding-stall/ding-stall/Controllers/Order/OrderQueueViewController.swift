@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import DingBase
 import FirebaseDatabaseUI
 
 /**

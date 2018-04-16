@@ -6,6 +6,8 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
+
 /**
  The controller that handles the current login user account
  */
