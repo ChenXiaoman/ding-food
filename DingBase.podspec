@@ -26,7 +26,8 @@ Pod::Spec.new do |s|
 	s.platform           = :ios, '11.3'
 
 	s.static_framework   = true
-	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift'
+	s.source_files       = 'ding-base/Firebase/*.swift', 'ding-base/Models/*.swift', 
+						   'ding-base/Others/*.swift', 'ding-base/Views/*.swift'
 	
 	s.dependency           'Eureka'
 	s.dependency           'Firebase/Auth'
