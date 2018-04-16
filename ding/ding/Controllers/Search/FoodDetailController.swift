@@ -6,7 +6,9 @@
 //  Copyright © 2018 CS3217 Ding. All rights reserved.
 //
 
+import DingBase
 import Eureka
+
 /**
  The controller for food details view.
 

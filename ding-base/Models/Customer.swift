@@ -12,7 +12,7 @@
  - Author: Group 3 @ CS3217
  - Date: March 2018
  */
-struct Customer: DatabaseObject {
+public struct Customer: DatabaseObject {
     public static let path = "/customer_profiles"
 
     /// The customer's UID.
