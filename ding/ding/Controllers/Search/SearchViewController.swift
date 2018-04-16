@@ -31,9 +31,9 @@ class SearchViewController: UIViewController {
     /// overview represented.
     var stallIds: [Int: String] = [:]
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        checkInternetConnection()
         // Hides the navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
 
@@ -47,14 +47,9 @@ class SearchViewController: UIViewController {
         dataSource?.bind(to: stallListing)
         stallListing.delegate = self
 
-        /// Performs timeout checking.
-        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
-            self.loadingIndicator.stopAnimating()
-            self.alertTimeout()
-        }
-
         // Configures the search bar.
         searchBar.delegate = self
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {

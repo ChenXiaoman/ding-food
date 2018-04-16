@@ -20,6 +20,9 @@ class DatabaseRef {
     /// A reference to the Firebase realtime database, as access point to the server.
     private static let ref = Database.database().reference()
 
+    /// A reference to check whether internet is connected
+    static let connectedRef = Database.database().reference(withPath: ".info/connected")
+    
     /// Observes the value at a certain path. The handler will be notified each time the data
     /// at the specified path (and its child nodes) change.
     /// - Parameters:
