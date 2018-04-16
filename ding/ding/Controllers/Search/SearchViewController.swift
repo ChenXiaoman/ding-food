@@ -31,10 +31,6 @@ class SearchViewController: UIViewController {
     /// overview represented.
     var stallIds: [Int: String] = [:]
     
-    override func viewDidLoad() {
-        checkInternetConnection()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -44,6 +40,8 @@ class SearchViewController: UIViewController {
         // Indicates that loading starts.
         loaded = false
         loadingIndicator.startAnimating()
+        
+        checkInternetConnection()
         
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")

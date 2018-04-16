@@ -41,10 +41,6 @@ class OrderController: UIViewController {
     /// which is all on-going orders
     var isShowingHistory = false
     
-    override func viewDidLoad() {
-        checkInternetConnection()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -52,6 +48,8 @@ class OrderController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
         startLoading()
+        
+        checkInternetConnection()
         
         /// Performs permission checking.
         guard checkPermission() else {
