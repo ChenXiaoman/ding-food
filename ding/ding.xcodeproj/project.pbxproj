@@ -62,9 +62,6 @@
 		F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C66066205B7FFF006C3C51 /* AppDelegate.swift */; };
 		F2C6606C205B7FFF006C3C51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606A205B7FFF006C3C51 /* Main.storyboard */; };
 		F2C66071205B7FFF006C3C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */; };
-		F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B3C1205E554000A1A193 /* DatabaseRef.swift */; };
-		F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B3C2205E554100A1A193 /* Authorizer.swift */; };
-		F2C9543E206B399300DE426B /* StorageRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9543D206B399300DE426B /* StorageRef.swift */; };
 		F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */; };
 		F2D397D4206F35B90086C27E /* OrderStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */; };
 		F2D397D6206F649B0086C27E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D397D5206F649B0086C27E /* ShoppingCart.swift */; };
@@ -139,9 +136,6 @@
 		F2C6606B205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2C66070205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2C66072205B7FFF006C3C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2C8B3C1205E554000A1A193 /* DatabaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
-		F2C8B3C2205E554100A1A193 /* Authorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorizer.swift; sourceTree = "<group>"; };
-		F2C9543D206B399300DE426B /* StorageRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRef.swift; sourceTree = "<group>"; };
 		F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLabel.swift; sourceTree = "<group>"; };
 		F2D397D5206F649B0086C27E /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
@@ -215,14 +209,11 @@
 			isa = PBXGroup;
 			children = (
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
-				F2C8B3C2205E554100A1A193 /* Authorizer.swift */,
 				F2C65C6E2065FB1800E40425 /* Constants.swift */,
-				F2C8B3C1205E554000A1A193 /* DatabaseRef.swift */,
 				F2DEC657206CAD6A0021D3A0 /* DialogHelpers.swift */,
 				F2F2CE45207FA52000694D32 /* ImagePickerController.swift */,
 				F2F2CE43207FA49C00694D32 /* ImageRow.swift */,
 				5D804DFC206B4444004BE32B /* IndexPath+TotalRow.swift */,
-				F2C9543D206B399300DE426B /* StorageRef.swift */,
 				5DF03D67205D57D5003D320C /* String+Helpers.swift */,
 			);
 			path = Others;
@@ -583,7 +574,6 @@
 				F203E9A5207482A100115558 /* AboutViewController.swift in Sources */,
 				F2AEA0CF207266B5001D5704 /* UIColor+RGB.swift in Sources */,
 				5DC2343B20639DF3008B034A /* SearchViewController.swift in Sources */,
-				F2C9543E206B399300DE426B /* StorageRef.swift in Sources */,
 				F265B95A207095410035A47B /* FoodOverviewView.swift in Sources */,
 				F220FC10206CC7E90093CF04 /* ShoppingCartController.swift in Sources */,
 				5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */,
@@ -617,7 +607,6 @@
 				F297DEA1206F72F900991DC7 /* OrderController+CollectionView.swift in Sources */,
 				5DEC47C920785F8B00544A54 /* OrderFoodTableViewController.swift in Sources */,
 				5DE2B7D72082298B006D1C7D /* ReviewTableViewCell.swift in Sources */,
-				F2C8B3C4205E554100A1A193 /* Authorizer.swift in Sources */,
 				5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */,
 				F2043416207791C600FF3083 /* FilterView.swift in Sources */,
 				F2DEC658206CAD6A0021D3A0 /* DialogHelpers.swift in Sources */,
@@ -633,7 +622,6 @@
 				F242A7992081EFAB00F88827 /* UIImage+StandardSize.swift in Sources */,
 				F20434182077941700FF3083 /* FilterLabel.swift in Sources */,
 				F2F2CE44207FA49C00694D32 /* ImageRow.swift in Sources */,
-				F2C8B3C3205E554100A1A193 /* DatabaseRef.swift in Sources */,
 				5D884811207B616000FCDC3B /* OrderHistory.swift in Sources */,
 				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
 				F265B95C207099080035A47B /* UIView+Utility.swift in Sources */,
@@ -783,6 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W76H98A34A;
 				INFOPLIST_FILE = ding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nus.cs3217.ding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -799,6 +788,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W76H98A34A;
 				INFOPLIST_FILE = ding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nus.cs3217.ding;
 				PRODUCT_NAME = "$(TARGET_NAME)";

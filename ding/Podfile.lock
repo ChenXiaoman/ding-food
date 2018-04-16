@@ -1,4 +1,8 @@
 PODS:
+  - DingBase (0.0.1):
+    - Firebase/Auth
+    - Firebase/Database
+    - Firebase/Storage
   - Eureka (4.1.1)
   - Firebase/Auth (4.11.0):
     - Firebase/Core
@@ -62,13 +66,25 @@ PODS:
   - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
+  - DingBase (from `git@github.com:cs3217/2018-final-project-group03.git`, branch `master`)
   - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
   - FirebaseUI/Database
   - FirebaseUI/Storage
 
+EXTERNAL SOURCES:
+  DingBase:
+    :branch: master
+    :git: git@github.com:cs3217/2018-final-project-group03.git
+
+CHECKOUT OPTIONS:
+  DingBase:
+    :commit: 19ef22eeb8c47e7a6f119d7b5d727498bbd08e7f
+    :git: git@github.com:cs3217/2018-final-project-group03.git
+
 SPEC CHECKSUMS:
+  DingBase: 42674f9a9c527a2a494550f840e1481f80f1ccf5
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
@@ -84,6 +100,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 6459855aafae694a7abf951e122dca2dc1054b54
+PODFILE CHECKSUM: d941af7a7614b29168e7da64b13dbb53511527ff
 
 COCOAPODS: 1.4.0

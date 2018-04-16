@@ -20,6 +20,11 @@ public class Authorizer {
     /// A reference to the Firebase authentication, as access point to the server.
     private static let auth = Auth.auth()
 
+    /// A placeholder `init`.
+    public init() {
+
+    }
+
     /// Sends a verification email to the current user's email address. This method will
     /// simple do nothing if there is no user signed in.
     /// - Parameter onComplete: The handler to be called after the verification email has
