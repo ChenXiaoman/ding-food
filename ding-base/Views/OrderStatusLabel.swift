@@ -22,7 +22,7 @@ public class OrderStatusLabel: UILabel {
     /// The inverted insets around the text of this label.
     private static let invertedInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: -5)
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = OrderStatusLabel.cornerRadius
         clipsToBounds = true
@@ -31,11 +31,11 @@ public class OrderStatusLabel: UILabel {
         backgroundColor = nil
     }
 
-    override func drawText(in rect: CGRect) {
+    public override func drawText(in rect: CGRect) {
         super.drawText(in: UIEdgeInsetsInsetRect(rect, OrderStatusLabel.insets))
     }
 
-    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+    public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let insetRect = UIEdgeInsetsInsetRect(bounds, OrderStatusLabel.insets)
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
         return UIEdgeInsetsInsetRect(textRect, OrderStatusLabel.invertedInsets)

@@ -39,7 +39,6 @@
 		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
 		F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A362066A25E001EB882 /* SettingMenuCell.swift */; };
 		F242A7972081C20900F88827 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A7962081C20900F88827 /* Settings.swift */; };
-		F242A7992081EFAB00F88827 /* UIImage+StandardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */; };
 		F242A79C2081F30B00F88827 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242A79B2081F30B00F88827 /* AvatarImageView.swift */; };
 		F25F3A99205B85670042D8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25F3A98205B85670042D8FA /* GoogleService-Info.plist */; };
 		F265B95A207095410035A47B /* FoodOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265B959207095410035A47B /* FoodOverviewView.swift */; };
@@ -49,21 +48,15 @@
 		F290A039206A993600D0A0AF /* SearchViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */; };
 		F297DEA1206F72F900991DC7 /* OrderController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297DEA0206F72F900991DC7 /* OrderController+CollectionView.swift */; };
 		F29C0A3D2075F3F200D2FD92 /* UIViewController+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */; };
-		F2AEA0CF207266B5001D5704 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */; };
 		F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6A2065FAD100E40425 /* MenuButton.swift */; };
 		F2C65C6F2065FB1800E40425 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C6E2065FB1800E40425 /* Constants.swift */; };
 		F2C65C71206601CF00E40425 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C65C70206601CF00E40425 /* LoginViewController.swift */; };
 		F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C66066205B7FFF006C3C51 /* AppDelegate.swift */; };
 		F2C6606C205B7FFF006C3C51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606A205B7FFF006C3C51 /* Main.storyboard */; };
 		F2C66071205B7FFF006C3C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6606F205B7FFF006C3C51 /* LaunchScreen.storyboard */; };
-		F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */; };
-		F2D397D4206F35B90086C27E /* OrderStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */; };
 		F2D397D6206F649B0086C27E /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D397D5206F649B0086C27E /* ShoppingCart.swift */; };
-		F2DEC658206CAD6A0021D3A0 /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DEC657206CAD6A0021D3A0 /* DialogHelpers.swift */; };
 		F2EAC9EA2080BD1D008A692C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EAC9E92080BD1D008A692C /* NotificationController.swift */; };
 		F2F2CE40207F9FF600694D32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE3F207F9FF600694D32 /* SettingViewController.swift */; };
-		F2F2CE44207FA49C00694D32 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE43207FA49C00694D32 /* ImageRow.swift */; };
-		F2F2CE46207FA52000694D32 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE45207FA52000694D32 /* ImagePickerController.swift */; };
 		F2F2CE48207FA65E00694D32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE47207FA65E00694D32 /* ProfileViewController.swift */; };
 		F2F2CE4A207FAA4300694D32 /* SoundEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */; };
 		F2F2CE51207FB52400694D32 /* front_desk_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2F2CE50207FB52400694D32 /* front_desk_bell.mp3 */; };
@@ -104,7 +97,6 @@
 		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
 		F23E6A362066A25E001EB882 /* SettingMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuCell.swift; sourceTree = "<group>"; };
 		F242A7962081C20900F88827 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StandardSize.swift"; sourceTree = "<group>"; };
 		F242A79B2081F30B00F88827 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		F25F3A98205B85670042D8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F265B959207095410035A47B /* FoodOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOverviewView.swift; sourceTree = "<group>"; };
@@ -114,7 +106,6 @@
 		F290A038206A993600D0A0AF /* SearchViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		F297DEA0206F72F900991DC7 /* OrderController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderController+CollectionView.swift"; sourceTree = "<group>"; };
 		F29C0A3C2075F3F200D2FD92 /* UIViewController+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Permission.swift"; sourceTree = "<group>"; };
-		F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		F2C65C6A2065FAD100E40425 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F2C65C6E2065FB1800E40425 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F2C65C70206601CF00E40425 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -123,14 +114,9 @@
 		F2C6606B205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2C66070205B7FFF006C3C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2C66072205B7FFF006C3C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
-		F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLabel.swift; sourceTree = "<group>"; };
 		F2D397D5206F649B0086C27E /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
-		F2DEC657206CAD6A0021D3A0 /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
 		F2EAC9E92080BD1D008A692C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		F2F2CE3F207F9FF600694D32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		F2F2CE43207FA49C00694D32 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
-		F2F2CE45207FA52000694D32 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		F2F2CE47207FA65E00694D32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F2F2CE49207FAA4300694D32 /* SoundEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectController.swift; sourceTree = "<group>"; };
 		F2F2CE50207FB52400694D32 /* front_desk_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = front_desk_bell.mp3; sourceTree = "<group>"; };
@@ -193,9 +179,6 @@
 			children = (
 				F2C66066205B7FFF006C3C51 /* AppDelegate.swift */,
 				F2C65C6E2065FB1800E40425 /* Constants.swift */,
-				F2DEC657206CAD6A0021D3A0 /* DialogHelpers.swift */,
-				F2F2CE45207FA52000694D32 /* ImagePickerController.swift */,
-				F2F2CE43207FA49C00694D32 /* ImageRow.swift */,
 				5D804DFC206B4444004BE32B /* IndexPath+TotalRow.swift */,
 				5DF03D67205D57D5003D320C /* String+Helpers.swift */,
 			);
@@ -237,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				5DE2B7D62082298B006D1C7D /* ReviewTableViewCell.swift */,
-				F2D397D3206F35B90086C27E /* OrderStatusLabel.swift */,
 				5DC234402063B913008B034A /* OngoingOrderCell.swift */,
 				5D8848092078E05800FCDC3B /* OrderView.swift */,
 			);
@@ -247,9 +229,6 @@
 		F26657F3206F8BB300BE83F5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F2AEA0CE207266B5001D5704 /* UIColor+RGB.swift */,
-				F242A7982081EFAB00F88827 /* UIImage+StandardSize.swift */,
-				F2C9543F206B473E00DE426B /* UIImageView+WebImage.swift */,
 				F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */,
 				F265B95B207099080035A47B /* UIView+Utility.swift */,
 			);
@@ -535,12 +514,10 @@
 				5DF03D68205D57D5003D320C /* String+Helpers.swift in Sources */,
 				F203E9A5207482A100115558 /* AboutViewController.swift in Sources */,
 				5D0B73D720849E6100C8DB07 /* UIViewController+internetConnection.swift in Sources */,
-				F2AEA0CF207266B5001D5704 /* UIColor+RGB.swift in Sources */,
 				5DC2343B20639DF3008B034A /* SearchViewController.swift in Sources */,
 				F265B95A207095410035A47B /* FoodOverviewView.swift in Sources */,
 				F220FC10206CC7E90093CF04 /* ShoppingCartController.swift in Sources */,
 				5DEC47C52077828100544A54 /* OrderDetailViewController.swift in Sources */,
-				F2D397D4206F35B90086C27E /* OrderStatusLabel.swift in Sources */,
 				F242A79C2081F30B00F88827 /* AvatarImageView.swift in Sources */,
 				F2F2CE48207FA65E00694D32 /* ProfileViewController.swift in Sources */,
 				5DC234432064026D008B034A /* StallDetailController.swift in Sources */,
@@ -558,17 +535,14 @@
 				5DC234472064CF08008B034A /* FoodTableViewCell.swift in Sources */,
 				F29C0A3D2075F3F200D2FD92 /* UIViewController+Permission.swift in Sources */,
 				F2C66067205B7FFF006C3C51 /* AppDelegate.swift in Sources */,
-				F2F2CE46207FA52000694D32 /* ImagePickerController.swift in Sources */,
 				5DC2343D2063A02A008B034A /* StallListingCell.swift in Sources */,
 				5DC234492064D686008B034A /* FoodDetailController.swift in Sources */,
 				5DD15FB02067612500DDF8D6 /* ReviewTableViewController.swift in Sources */,
-				F2C95440206B473E00DE426B /* UIImageView+WebImage.swift in Sources */,
 				F297DEA1206F72F900991DC7 /* OrderController+CollectionView.swift in Sources */,
 				5DEC47C920785F8B00544A54 /* OrderFoodTableViewController.swift in Sources */,
 				5DE2B7D72082298B006D1C7D /* ReviewTableViewCell.swift in Sources */,
 				5D88480F207A3F8300FCDC3B /* FoodTypeLabel.swift in Sources */,
 				F2043416207791C600FF3083 /* FilterView.swift in Sources */,
-				F2DEC658206CAD6A0021D3A0 /* DialogHelpers.swift in Sources */,
 				5D88480C207A183000FCDC3B /* UIViewController+OrderSuccess.swift in Sources */,
 				5DC2344D20653686008B034A /* MeViewController.swift in Sources */,
 				F23E6A372066A25E001EB882 /* SettingMenuCell.swift in Sources */,
@@ -576,9 +550,7 @@
 				F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */,
 				F2C65C6B2065FAD100E40425 /* MenuButton.swift in Sources */,
 				F242A7972081C20900F88827 /* Settings.swift in Sources */,
-				F242A7992081EFAB00F88827 /* UIImage+StandardSize.swift in Sources */,
 				F20434182077941700FF3083 /* FilterLabel.swift in Sources */,
-				F2F2CE44207FA49C00694D32 /* ImageRow.swift in Sources */,
 				F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */,
 				F265B95C207099080035A47B /* UIView+Utility.swift in Sources */,
 				F290A039206A993600D0A0AF /* SearchViewController+CollectionView.swift in Sources */,
