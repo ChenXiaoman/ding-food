@@ -31,5 +31,5 @@ Pod::Spec.new do |s|
 	s.dependency           'Eureka'
 	s.dependency           'Firebase/Auth'
 	s.dependency           'Firebase/Database'
-	s.dependency           'Firebase/Storage'
+	s.dependency           'FirebaseUI/Storage'
 end
