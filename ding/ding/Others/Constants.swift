@@ -65,7 +65,7 @@ struct Constants {
     static let meSettingCellHeight = CGFloat(60)
 
     /// The time interval to define timeout.
-    static let timeoutInterval = 10.0
+    static let timeoutInterval = 3.0
     
     /// The default amount of 'OrderImmediately' method.
     static let orderDefaultAmount = 1
@@ -89,4 +89,6 @@ struct Constants {
 
     /// The standard image size in KB
     static let standardImageSize = 1_024
+    
+    static let offlineImageSize = Constants.screenWidth / 10
 }

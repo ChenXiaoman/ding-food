@@ -21,6 +21,8 @@ class OrderController: UIViewController {
     /// Uses an explicit outlet to fix conflicit when there are more than one navigation
     /// controller in the parent control hierarchy.
     @IBOutlet weak private var currentNavigationItem: UINavigationItem!
+    /// The view showing that the user has no order.
+    @IBOutlet weak private var noFoodView: UIView!
     
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
@@ -46,18 +48,16 @@ class OrderController: UIViewController {
         // Shows navigation bar with shopping cart icon, but without back.
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
+        startLoading()
+        
+        checkInternetConnection()
+        
         /// Performs permission checking.
         guard checkPermission() else {
             return
         }
 
-        /// Performs timeout checking.
-        checkLoadingTimeout(indicator: loadingIndicator, interval: Constants.timeoutInterval) {
-            self.loadingIndicator.stopAnimating()
-        }
-
         /// Starts to load data of ongoing orders.
-        startLoading()
         configureCollectionView()
 
         /// Changes the navigation title according to whether show history.
@@ -74,6 +74,7 @@ class OrderController: UIViewController {
         dataSource?.unbind()
         // Stops the loading indicator (such that the timeout thread will not be triggered later).
         loadingIndicator.stopAnimating()
+        stopCheckingInternetConnection()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,9 +96,30 @@ class OrderController: UIViewController {
             childPath = OrderHistory.orderPath + Order.custemerIdPath
         }
         
-        // Configures the collection view.
+        // Configures the order list's query.
         let query = DatabaseRef.getNodeRef(of: orderPath)
             .queryOrdered(byChild: childPath).queryEqual(toValue: authorizer.userId)
+        // Checks whether the order list is empty first.
+        query.observe(.value, with: checkEmptyOrder)
+        // Configures the collection view
+        loadCollectionViewData(with: query)
+    }
+    
+    /// Checks if the user has any order.
+    /// If not, stops the loading indicator and shows empty order image.
+    private func checkEmptyOrder(snapshot: DataSnapshot) {
+        if snapshot.exists() {
+            // The order list is not empty
+            noFoodView.isHidden = true
+        } else {
+            // The order list is empty
+            stopLoading()
+            noFoodView.isHidden = false
+        }
+    }
+    
+    /// Populate data in Firebase to collection view.
+    private func loadCollectionViewData(with query: DatabaseQuery) {
         dataSource = FUICollectionViewDataSource(query: query, populateCell: populateOngoingOrderCell)
         dataSource?.bind(to: ongoingOrders)
         ongoingOrders.delegate = self

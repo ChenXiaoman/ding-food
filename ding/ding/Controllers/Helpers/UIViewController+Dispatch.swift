@@ -31,9 +31,17 @@ extension UIViewController {
     ///    - interval: The time given before timeout checking is done.
     ///    - onTimeout: The function to be called when the loading has not completed even
     /// after the given time interval.
-    func checkLoadingTimeout(indicator: UIActivityIndicatorView, interval: Double, onTimeout: (() -> Void)?) {
+    func checkLoadingTimeout(indicator: UIActivityIndicatorView?, interval: Double, onTimeout: (() -> Void)?) {
         dispatch(for: interval) {
-            if indicator.isAnimating, let handler = onTimeout {
+            guard let handler = onTimeout else {
+                return
+            }
+            
+            if let indicator = indicator {
+                if indicator.isAnimating {
+                    handler()
+                }
+            } else {
                 handler()
             }
         }
@@ -54,8 +62,8 @@ extension UIViewController {
     /// user clicks "OK", he/she will be prompted to the settings to check Internet
     /// connection.
     func alertTimeout() {
-        DialogHelpers.showAlertMessage(in: self, title: UIViewController.alertTitle,
-                                       message: UIViewController.alertMessage) {
+        DialogHelpers.promptConfirm(in: self, title: UIViewController.alertTitle,
+                                    message: UIViewController.alertMessage, cancelButtonText: "Cancel") {
             guard let settings = URL(string: UIApplicationOpenSettingsURLString) else {
                 return
             }
