@@ -20,6 +20,8 @@ class OrderController: UIViewController {
     /// Uses an explicit outlet to fix conflicit when there are more than one navigation
     /// controller in the parent control hierarchy.
     @IBOutlet weak private var currentNavigationItem: UINavigationItem!
+    /// The view showing that the user has no order.
+    @IBOutlet weak private var noFoodView: UIView!
     
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
@@ -104,13 +106,13 @@ class OrderController: UIViewController {
     /// Checks if the user has any order.
     /// If not, stops the loading indicator and shows empty order image.
     private func checkEmptyOrder(snapshot: DataSnapshot) {
-        
         if snapshot.exists() {
             // The order list is not empty
-            
+            noFoodView.isHidden = true
         } else {
             // The order list is empty
             stopLoading()
+            noFoodView.isHidden = false
         }
     }
     
