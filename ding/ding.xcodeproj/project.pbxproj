@@ -38,7 +38,6 @@
 		F2043416207791C600FF3083 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2043415207791C600FF3083 /* FilterView.swift */; };
 		F20434182077941700FF3083 /* FilterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20434172077941700FF3083 /* FilterLabel.swift */; };
 		F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20434192077958100FF3083 /* UIViewController+Dispatch.swift */; };
-		F21A46AA206A7D280066BFA0 /* DatabaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21A46A9206A7D280066BFA0 /* DatabaseObject.swift */; };
 		F220FC10206CC7E90093CF04 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */; };
 		F23E6A31206643E5001EB882 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */; };
 		F23E6A3520667B7E001EB882 /* PasswordSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */; };
@@ -110,7 +109,6 @@
 		F2043415207791C600FF3083 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		F20434172077941700FF3083 /* FilterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLabel.swift; sourceTree = "<group>"; };
 		F20434192077958100FF3083 /* UIViewController+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dispatch.swift"; sourceTree = "<group>"; };
-		F21A46A9206A7D280066BFA0 /* DatabaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseObject.swift; sourceTree = "<group>"; };
 		F220FC0F206CC7E90093CF04 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		F23E6A30206643E5001EB882 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
 		F23E6A3420667B7E001EB882 /* PasswordSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpController.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			children = (
 				F2D397D7206F64A30086C27E /* Order */,
 				F2D397D8206F64B70086C27E /* Search */,
-				F21A46A9206A7D280066BFA0 /* DatabaseObject.swift */,
 				327A03BF205DFC85004B78EB /* Customer.swift */,
 				B2464E8A205C51A30095A925 /* Food.swift */,
 				F242A7962081C20900F88827 /* Settings.swift */,
@@ -589,7 +586,6 @@
 				F204341A2077958100FF3083 /* UIViewController+Dispatch.swift in Sources */,
 				5DC234412063B913008B034A /* OngoingOrderCell.swift in Sources */,
 				F2F2CE40207F9FF600694D32 /* SettingViewController.swift in Sources */,
-				F21A46AA206A7D280066BFA0 /* DatabaseObject.swift in Sources */,
 				5DC2343F2063B8EB008B034A /* OrderController.swift in Sources */,
 				F204341320778D2E00FF3083 /* UIViewController+Keyboard.swift in Sources */,
 				F26657F7206FCA5D00BE83F5 /* StallOverviewView.swift in Sources */,
