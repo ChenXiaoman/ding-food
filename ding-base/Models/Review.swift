@@ -22,6 +22,13 @@ public struct Review: DatabaseObject {
     public let stallId: String
     public var rating: Rating
     public var reviewText: String?
+
+    public init(id: String, stallId: String, rating: String, reviewText: String? = nil) {
+        self.id = id
+        self.stallId = stallId
+        self.rating = rating
+        self.reviewText = reviewText
+    }
 }
 
 /**
@@ -37,11 +44,11 @@ public enum Rating: Int, Codable {
     
     /// An array of ratings,
     /// from poor to excellent.
-    static let allRatings = [Rating.poor, Rating.fair, Rating.average, Rating.good, Rating.excellent]
+    public static let allRatings = [Rating.poor, Rating.fair, Rating.average, Rating.good, Rating.excellent]
     
     /// An array of string representation of ratings,
     /// from poor to excellent.
-    static let allStringsValueOfRatings = ["Bad", "Not good", "OK", "Good", "Excellent"]
+    public static let allStringsValueOfRatings = ["Bad", "Not good", "OK", "Good", "Excellent"]
 
 }
 
