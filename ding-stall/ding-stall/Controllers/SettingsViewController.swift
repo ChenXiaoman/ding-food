@@ -13,7 +13,6 @@ import Eureka
  */
 class SettingsViewController: FormViewController {
 
-    private var settings = Settings()
     private var stallOverview: StallOverview?
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +43,7 @@ class SettingsViewController: FormViewController {
 
             +++ Section("Rings for every new order")
             <<< SwitchRow { row in
-                row.value = settings.isRinging
+                row.value = Settings.isRinging
                 row.title = (row.value ?? false) ? "Enabled" : "Disabled"
             }.onChange { row in
                 let isRinging = row.value ?? false
@@ -52,13 +51,12 @@ class SettingsViewController: FormViewController {
                 row.updateCell()
 
                 // update stall settings locally
-                
-                self.settings.isRinging = isRinging
+                Settings.isRinging = isRinging
             }
 
             +++ Section("Accepts new order automatically")
             <<< SwitchRow { row in
-                row.value = settings.isAutomaticAcceptOrder
+                row.value = Settings.isAutomaticAcceptOrder
                 row.title = (row.value ?? false) ? "Enabled" : "Disabled"
             }.onChange { row in
                     let isAutomaticAcceptOrder = row.value ?? false
@@ -66,7 +64,7 @@ class SettingsViewController: FormViewController {
                     row.updateCell()
 
                     // update stall settings locally
-                    self.settings.isAutomaticAcceptOrder = isAutomaticAcceptOrder
+                    Settings.isAutomaticAcceptOrder = isAutomaticAcceptOrder
             }
     }
 }
