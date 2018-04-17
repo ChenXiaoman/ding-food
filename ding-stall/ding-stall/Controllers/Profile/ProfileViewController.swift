@@ -33,6 +33,10 @@ class ProfileViewController: StallFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         populateRow()
+        accountController.updateStallOverview {
+            self.currentStallOverview = Account.stallOverview
+            self.addRatingRow()
+        }
         addBehaviorWhenRowValueChanged()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done,
                                                             target: self,
@@ -42,10 +46,6 @@ class ProfileViewController: StallFormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        accountController.updateStallOverview {
-            self.currentStallOverview = Account.stallOverview
-            self.addRatingRow()
-        }
     }
 
     /// Add an extra "stall rating" row and populate it
