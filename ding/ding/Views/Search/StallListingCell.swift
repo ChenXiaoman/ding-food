@@ -35,9 +35,9 @@ class StallListingCell: UICollectionViewCell {
     static let height = StallListingCell.width * StallListingCell.aspectRatio
 
     /// The text format to display queue count.
-    private static let queueCountFormat = "%d people waiting"
+    private static let queueCountFormat = "👥 %d"
     /// The text format to display average rating.
-    private static let averageRatingFormat = "Average rating: %.1f"
+    private static let averageRatingFormat = "🌟 %.1f"
 
     override func awakeFromNib() {
         photo.image = nil
