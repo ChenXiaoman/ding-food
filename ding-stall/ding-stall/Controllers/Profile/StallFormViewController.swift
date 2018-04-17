@@ -66,6 +66,7 @@ class StallFormViewController: FormViewController {
             <<< TextRow { row in
                 row.tag = Tag.description
                 row.title = "Stall Description"
+                row.placeholder = "Stall description should not be empty"
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }
@@ -79,6 +80,7 @@ class StallFormViewController: FormViewController {
             <<< TextRow { row in
                 row.tag = Tag.openingHour
                 row.title = "Opening hours"
+                row.placeholder = "Opening hours should not be empty"
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnDemand
             }

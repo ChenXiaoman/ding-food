@@ -27,6 +27,8 @@ class OrderQueueViewController: OrderViewController {
     private var orderDict = [String: Order]()
     /// A view that indicates no order in the queue currently
     private var noOrderLabel: UIView?
+    /// A collection that records all the ids of `Order`s that the users have been notified.
+    private static var notifiedOrder = Set<String>()
 
     /// Plays ringing sound every new order if successfully initialised
     private var audioPlayer: AVAudioPlayer?
@@ -105,8 +107,9 @@ class OrderQueueViewController: OrderViewController {
         noOrderLabel?.isHidden = true
 
         if var order = Order.deserialize(snapshot) {
-            if order.status == .pending {
+            if order.status == .pending && !OrderQueueViewController.notifiedOrder.contains(order.id) {
                 audioPlayer?.play()
+                OrderQueueViewController.notifiedOrder.insert(order.id)
             }
 
             if Settings.isAutomaticAcceptOrder && order.status == .pending {

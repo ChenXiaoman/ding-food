@@ -24,7 +24,21 @@ class OrderDetailViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        setTextColor()
         populateOrderDetails()
+    }
+
+    /// Set the disabled rows color to be black
+    private func setTextColor() {
+        TextRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.textColor = .black
+            cell.titleLabel?.textColor = .black
+        }
+
+        IntRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.textColor = .black
+            cell.titleLabel?.textColor = .black
+        }
     }
 
     /// Populate the order details (food name, quantity, option choice)

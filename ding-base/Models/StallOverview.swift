@@ -42,7 +42,7 @@ public struct StallOverview: DatabaseObject {
         queueCount = 0
         reviewCount = 0
         averageRating = 0
-        isOpen = false
+        isOpen = true
     }
 
     /// Provide a new path for the stall photo if it has changed
