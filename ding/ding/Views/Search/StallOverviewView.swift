@@ -37,6 +37,7 @@ class StallOverviewView: UIView {
     @IBOutlet weak private var stallName: UILabel!
     @IBOutlet weak private var queueCount: UILabel!
     @IBOutlet weak private var averageRating: UILabel!
+    @IBOutlet weak private var closedImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,5 +61,12 @@ class StallOverviewView: UIView {
         descriptionLabel.text = String(format: StallOverviewView.descriptionFormat, stall.description)
         openingHourLabel.text = String(format: StallOverviewView.openingHourFormat, stall.openingHour)
         locationLabel.text = String(format: StallOverviewView.locationFormat, stall.location)
+        if stall.isOpen {
+            // The stall is open.
+            closedImageView.isHidden = true
+        } else {
+            // The stall is closed. Show the 'closed' image.
+            closedImageView.isHidden = false
+        }
     }
 }
