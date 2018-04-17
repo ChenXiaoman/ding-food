@@ -21,6 +21,7 @@ class StallListingCell: UICollectionViewCell {
     @IBOutlet weak private var queueCount: UILabel!
     @IBOutlet weak private var averageRating: UILabel!
     @IBOutlet weak private var filters: FilterView!
+    @IBOutlet weak private var closedImageView: UIImageView!
     
     /// The identifer for this cell (in order to dequeue reusable cells).
     static let identifier = "stallListingCell"
@@ -34,15 +35,17 @@ class StallListingCell: UICollectionViewCell {
     static let height = StallListingCell.width * StallListingCell.aspectRatio
 
     /// The text format to display queue count.
-    private static let queueCountFormat = "%d people waiting"
+    private static let queueCountFormat = "👥 %d"
     /// The text format to display average rating.
-    private static let averageRatingFormat = "Average rating: %.1f"
+    private static let averageRatingFormat = "🌟 %.1f"
 
     override func awakeFromNib() {
         photo.image = nil
         name.text = nil
         queueCount.text = nil
         averageRating.text = nil
+        closedImageView.isHidden = true
+        closedImageView.clipsToBounds = true
         photo.clipsToBounds = true // Use for enable corner radius
     }
     
@@ -56,6 +59,13 @@ class StallListingCell: UICollectionViewCell {
         filters.clear()
         if let stallFilters = stall.filters {
             filters.load(filters: Array(stallFilters.values))
+        }
+        if stall.isOpen {
+            // The stall is open.
+            closedImageView.isHidden = true
+        } else {
+            // The stall is closed. Show the 'closed' image.
+            closedImageView.isHidden = false
         }
     }
 }

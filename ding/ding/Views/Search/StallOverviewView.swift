@@ -18,9 +18,9 @@ import UIKit
  */
 class StallOverviewView: UIView {
     /// The text format to display queue count.
-    private static let queueCountFormat = "Number of people waiting: %d"
+    private static let queueCountFormat = "👥Number of people waiting: %d"
     /// The text format to display average rating.
-    private static let averageRatingFormat = "Average rating: %.1f"
+    private static let averageRatingFormat = "🌟Average rating: %.1f"
     /// The corner radius for the stall photo.
     private static let photoCornerRadius = CGFloat(20)
     /// The text format to display opening hour.

@@ -73,11 +73,19 @@ class StallDetailController: UIViewController {
     
     /// Populates the `StallOverviewView` whenever receiving data update from database.
     /// - Parameter snapshot: The database snapshot representing a `StallOverview` object.
-    func populateStallOverview(snapshot: DataSnapshot) {
+    private func populateStallOverview(snapshot: DataSnapshot) {
         guard let stall = StallOverview.deserialize(snapshot) else {
             return
         }
         self.stall = stall
+        
+        // If the stall is closed,
+        // User is not allowed to order any food.
+        if stall.isOpen {
+            foodTableView.allowsSelection = true
+        } else {
+            foodTableView.allowsSelection = false
+        }
         stallOverviewView.load(stall: stall)
     }
     
