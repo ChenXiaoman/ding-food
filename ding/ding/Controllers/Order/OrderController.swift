@@ -23,6 +23,9 @@ class OrderController: UIViewController {
     @IBOutlet weak private var currentNavigationItem: UINavigationItem!
     /// The view showing that the user has no order.
     @IBOutlet weak private var noFoodView: UIView!
+
+    /// A collection that records all the ids of `Order`s that the users have been notified.
+    private static var notified = Set<String>()
     
     /// The Firebase data source for the listing of stalls.
     var dataSource: FUICollectionViewDataSource?
@@ -171,9 +174,10 @@ class OrderController: UIViewController {
         // Stores this order for further retrieval.
         orders[indexPath.totalItem(in: collectionView)] = currentOrder
 
-        // Notifies when the order is ready.
-        if currentOrder.status == .ready {
+        // Notifies when the order is ready and it has not been notified before.
+        if currentOrder.status == .ready && !OrderController.notified.contains(currentOrder.id) {
             notifyOrderStatus(currentOrder)
+            OrderController.notified.insert(currentOrder.id)
         }
 
         return cell
