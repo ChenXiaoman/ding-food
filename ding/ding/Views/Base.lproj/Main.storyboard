@@ -279,7 +279,7 @@ x5 Lemon Juice</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Collected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-lG-wyX" customClass="OrderStatusLabel" customModule="ding" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Collected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-lG-wyX" customClass="OrderStatusLabel" customModule="DingBase">
                                                 <rect key="frame" x="347.5" y="226" width="73" height="25.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -534,16 +534,26 @@ x5 Lemon Juice</string>
                                                     <rect key="frame" x="174" y="95" width="201" height="26"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closed" translatesAutoresizingMaskIntoConstraints="NO" id="AUp-Vd-1g5">
+                                                    <rect key="frame" x="7" y="10" width="159" height="106"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="hDs-zO-JcX" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="8" symbolic="YES" id="01f-NZ-JXF"/>
                                             <constraint firstItem="87C-wK-bfv" firstAttribute="bottom" secondItem="iCb-M2-oCP" secondAttribute="bottom" constant="-10" id="1la-Gd-gY9"/>
                                             <constraint firstItem="87C-wK-bfv" firstAttribute="leading" secondItem="iCb-M2-oCP" secondAttribute="leading" constant="7" id="3OX-Ty-RVr"/>
+                                            <constraint firstItem="AUp-Vd-1g5" firstAttribute="trailing" secondItem="87C-wK-bfv" secondAttribute="trailing" id="3h3-fW-2ck"/>
                                             <constraint firstItem="hDs-zO-JcX" firstAttribute="top" secondItem="YjG-3Q-aKS" secondAttribute="bottom" constant="8" symbolic="YES" id="4RG-SW-EOD"/>
                                             <constraint firstItem="mTu-82-xwL" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="8" symbolic="YES" id="5RT-gb-OOs"/>
                                             <constraint firstItem="YjG-3Q-aKS" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iCb-M2-oCP" secondAttribute="trailing" constant="-10" id="94M-Vz-Pam"/>
                                             <constraint firstItem="BCc-EI-sCb" firstAttribute="top" secondItem="mTu-82-xwL" secondAttribute="bottom" constant="8" symbolic="YES" id="AS5-Po-ANP"/>
+                                            <constraint firstItem="AUp-Vd-1g5" firstAttribute="bottom" secondItem="87C-wK-bfv" secondAttribute="bottom" id="BIL-Jv-973"/>
                                             <constraint firstItem="BCc-EI-sCb" firstAttribute="trailing" secondItem="iCb-M2-oCP" secondAttribute="trailing" id="CQS-R7-Sae"/>
                                             <constraint firstItem="87C-wK-bfv" firstAttribute="top" secondItem="iCb-M2-oCP" secondAttribute="top" constant="10" id="Koy-kc-oHZ"/>
                                             <constraint firstItem="mTu-82-xwL" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iCb-M2-oCP" secondAttribute="trailing" symbolic="YES" id="Mjj-kh-xWK"/>
@@ -552,10 +562,13 @@ x5 Lemon Juice</string>
                                             <constraint firstItem="YjG-3Q-aKS" firstAttribute="leading" secondItem="87C-wK-bfv" secondAttribute="trailing" constant="8" symbolic="YES" id="YpO-bg-Ibh"/>
                                             <constraint firstItem="YjG-3Q-aKS" firstAttribute="top" secondItem="iCb-M2-oCP" secondAttribute="top" constant="5" id="Z6l-QB-QHp"/>
                                             <constraint firstItem="mTu-82-xwL" firstAttribute="top" secondItem="hDs-zO-JcX" secondAttribute="bottom" constant="8" symbolic="YES" id="ZGV-zU-ajf"/>
+                                            <constraint firstItem="AUp-Vd-1g5" firstAttribute="width" secondItem="87C-wK-bfv" secondAttribute="width" multiplier="1:1" id="cjq-Nx-9PD"/>
+                                            <constraint firstItem="AUp-Vd-1g5" firstAttribute="height" secondItem="87C-wK-bfv" secondAttribute="height" id="con-pI-xCm"/>
                                             <constraint firstItem="hDs-zO-JcX" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iCb-M2-oCP" secondAttribute="trailing" symbolic="YES" id="uaG-Ca-wik"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="averageRating" destination="mTu-82-xwL" id="Ox7-OJ-YH9"/>
+                                            <outlet property="closedImageView" destination="AUp-Vd-1g5" id="ngs-KB-uqa"/>
                                             <outlet property="filters" destination="BCc-EI-sCb" id="lXO-yk-Fhy"/>
                                             <outlet property="name" destination="YjG-3Q-aKS" id="9pl-2f-xzi"/>
                                             <outlet property="photo" destination="87C-wK-bfv" id="Dsj-bu-Y1I"/>
@@ -587,7 +600,7 @@ x5 Lemon Juice</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ch-Xq-bnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2400.8000000000002" y="-168.6656671664168"/>
+            <point key="canvasLocation" x="2400.78125" y="-168.75"/>
         </scene>
         <!--StallDetailController-->
         <scene sceneID="ylR-8i-6hP">
@@ -1318,6 +1331,7 @@ x5 Lemon Juice</string>
     <resources>
         <image name="avatar" width="90" height="90"/>
         <image name="brand-logo" width="100" height="100"/>
+        <image name="closed" width="200" height="141"/>
         <image name="food-icon" width="208" height="208"/>
         <image name="launch-background" width="512" height="512"/>
         <image name="me" width="20" height="20"/>
