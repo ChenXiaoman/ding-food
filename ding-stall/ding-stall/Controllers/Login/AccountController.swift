@@ -56,5 +56,14 @@ class AccountController {
             DatabaseRef.stopObservers(of: StallOverview.path + "/\(uid)")
         }
     }
-    
+
+    /// Update the stall overview and then perform some operations
+    /// Parameter: handler: the operations to perform after the stall overview is donloaded
+    func updateStallOverview(handler: @escaping () -> Void) {
+        DatabaseRef.observeValueOnce(of: StallOverview.path + "/\(Account.stallId)") { snapshot in
+            Account.stallOverview = StallOverview.deserialize(snapshot)
+            handler()
+            DatabaseRef.stopObservers(of: StallOverview.path + "/\(Account.stallId)")
+        }
+    }
 }

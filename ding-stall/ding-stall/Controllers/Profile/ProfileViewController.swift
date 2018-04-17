@@ -22,6 +22,8 @@ class ProfileViewController: StallFormViewController {
     /// accelerate the loading speed
     private var stallPhoto: UIImage?
 
+    private let accountController = AccountController()
+
     /// Initilize from segue by parent view controller
     func initialize(photo: UIImage) {
         stallPhoto = photo
@@ -40,6 +42,31 @@ class ProfileViewController: StallFormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        accountController.updateStallOverview {
+            self.currentStallOverview = Account.stallOverview
+            self.addRatingRow()
+        }
+    }
+
+    /// Add an extra "stall rating" row and populate it
+    private func addRatingRow() {
+        guard let profileSection = form.allSections.first else {
+            return
+        }
+
+        profileSection
+            <<< DecimalRow { row in
+                row.title = "Stall Rating"
+                row.tag = ratingTag
+                row.value = currentStallOverview?.averageRating
+                row.disabled = true
+            }
+
+        // Set the text color for cell
+        DecimalRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.textColor = .black
+            cell.titleLabel?.textColor = .black
+        }
     }
 
     /// Populate the row value by information in stall overview
