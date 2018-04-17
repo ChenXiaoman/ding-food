@@ -57,7 +57,6 @@ class ProfileViewController: StallFormViewController {
         profileSection
             <<< DecimalRow { row in
                 row.title = "Stall Rating"
-                row.tag = ratingTag
                 row.value = currentStallOverview?.averageRating
                 row.disabled = true
             }
