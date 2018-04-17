@@ -98,7 +98,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DingBase:
-    :commit: 2b4b3e27f5848809ec4fe1f56965cabf1a6f976a
+    :commit: 3006f561b22a1efef411ee70a31ed02415db050b
     :git: "git@github.com:cs3217/2018-final-project-group03.git"
 
 SPEC CHECKSUMS:
