@@ -43,6 +43,9 @@ class SearchViewController: UIViewController {
         loadingIndicator.startAnimating()
         
         checkInternetConnection()
+
+        // Hides the keyboard when the user stops editing.
+        hideKeyboardWhenTappedAround()
         
         // Configures the collection view.
         let query = DatabaseRef.getNodeRef(of: StallOverview.path).queryOrdered(byChild: "name")
