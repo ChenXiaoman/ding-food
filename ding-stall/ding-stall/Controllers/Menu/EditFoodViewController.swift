@@ -32,6 +32,19 @@ class EditFoodViewController: FoodFormViewController {
         addBehaviorWhenRowValueChanged()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done,
                                                             target: self, action: #selector(updateFood))
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self,
+                                                           action: #selector(abortUpdate))
+
+    }
+
+    @objc
+    private func abortUpdate() {
+        DialogHelpers.promptConfirm(in: self, title: "Warning",
+                                    message: "Your update will be aborted, do you want to continue?",
+                                    cancelButtonText: "No") {
+                                        self.navigationController?.popViewController(animated: true)
+        }
     }
 
     /// Update the information of the selected food

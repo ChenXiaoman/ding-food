@@ -41,7 +41,21 @@ class ProfileViewController: StallFormViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done,
                                                             target: self,
                                                             action: #selector(updateStallInformation))
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self,
+                                                           action: #selector(abortUpdate))
+
     }
+
+    @objc
+    private func abortUpdate() {
+        DialogHelpers.promptConfirm(in: self, title: "Warning",
+                                    message: "Your update will be aborted, do you want to continue?",
+                                    cancelButtonText: "No") {
+                                        self.navigationController?.popViewController(animated: true)
+        }
+    }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
