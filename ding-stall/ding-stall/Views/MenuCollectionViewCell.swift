@@ -12,8 +12,7 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var foodName: UILabel!
     @IBOutlet private weak var foodImage: UIImageView!
-    @IBOutlet private weak var soldoutLabel: UIImageView!
-
+    @IBOutlet private weak var soldOutLabel: UIImageView!
     public static let identifier = "MenuCollectionViewCell"
 
     /// The id of this cell to retrieve back the food model
@@ -31,11 +30,10 @@ class MenuCollectionViewCell: UICollectionViewCell {
 
     /// Load the food view with a food model
     public func load(_ food: Food) {
-        settleOutletFrame()
         foodTag = food.id
         foodName.adjustsFontSizeToFitWidth = true
         foodName.text = food.name
-        soldoutLabel.isHidden = !food.isSoldOut
+        soldOutLabel.isHidden = !food.isSoldOut
         if let imagePath = food.photoPath {
             foodImage.setWebImage(at: imagePath, placeholder: #imageLiteral(resourceName: "food-icon"))
         } else {
@@ -45,12 +43,5 @@ class MenuCollectionViewCell: UICollectionViewCell {
 
     public var foodPhoto: UIImage? {
         return foodImage.image
-    }
-
-    private func settleOutletFrame() {
-        foodImage.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
-        soldoutLabel.frame = foodImage.frame
-        foodName.frame = CGRect(x: 0, y: foodImage.frame.height,
-                                width: frame.width, height: frame.height - foodImage.frame.height)
     }
 }

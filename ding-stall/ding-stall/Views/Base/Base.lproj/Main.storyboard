@@ -94,25 +94,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-i4-o7y">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-i4-o7y">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-pi-ziz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-pi-ziz">
                                                     <rect key="frame" x="0.0" y="200" width="200" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="nf3-pi-ziz" secondAttribute="height" multiplier="4:1" id="T8e-Rj-oMy"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soldout" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-iq-Z8m">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soldout" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-iq-Z8m">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzn-u0-dFB" customClass="PressableButton" customModule="SwiftyButton">
-                                                    <rect key="frame" x="127" y="169" width="73" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Sold out"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="gzn-u0-dFB" customClass="PressableButton" customModule="SwiftyButton">
+                                                    <rect key="frame" x="70" y="178" width="130" height="22"/>
+                                                    <state key="normal" title="Toggle Sold Out"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
                                                             <real key="value" value="3"/>
@@ -130,10 +129,26 @@
                                                 </button>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="YvN-iq-Z8m" firstAttribute="height" secondItem="MKL-i4-o7y" secondAttribute="height" id="0m9-tW-asT"/>
+                                            <constraint firstItem="YvN-iq-Z8m" firstAttribute="centerY" secondItem="MKL-i4-o7y" secondAttribute="centerY" id="2VU-1R-BW8"/>
+                                            <constraint firstItem="YvN-iq-Z8m" firstAttribute="centerX" secondItem="MKL-i4-o7y" secondAttribute="centerX" id="Ans-K9-HAj"/>
+                                            <constraint firstItem="MKL-i4-o7y" firstAttribute="top" secondItem="deF-CP-IhU" secondAttribute="top" id="B4u-71-QNU"/>
+                                            <constraint firstItem="MKL-i4-o7y" firstAttribute="leading" secondItem="deF-CP-IhU" secondAttribute="leading" id="EHi-Dc-WvE"/>
+                                            <constraint firstItem="gzn-u0-dFB" firstAttribute="bottom" secondItem="MKL-i4-o7y" secondAttribute="bottom" id="G0t-Cf-XjH"/>
+                                            <constraint firstItem="gzn-u0-dFB" firstAttribute="trailing" secondItem="deF-CP-IhU" secondAttribute="trailing" id="K4l-AA-681"/>
+                                            <constraint firstItem="nf3-pi-ziz" firstAttribute="trailing" secondItem="deF-CP-IhU" secondAttribute="trailing" id="fbn-Z6-apO"/>
+                                            <constraint firstItem="MKL-i4-o7y" firstAttribute="bottom" secondItem="nf3-pi-ziz" secondAttribute="top" id="gq9-hf-TPV"/>
+                                            <constraint firstItem="MKL-i4-o7y" firstAttribute="trailing" secondItem="deF-CP-IhU" secondAttribute="trailing" id="hRW-Uz-OKX"/>
+                                            <constraint firstItem="nf3-pi-ziz" firstAttribute="leading" secondItem="deF-CP-IhU" secondAttribute="leading" id="lmw-Yb-dm2"/>
+                                            <constraint firstItem="gzn-u0-dFB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="deF-CP-IhU" secondAttribute="leading" symbolic="YES" id="oB0-dl-cVb"/>
+                                            <constraint firstItem="YvN-iq-Z8m" firstAttribute="width" secondItem="MKL-i4-o7y" secondAttribute="width" id="orM-tr-89L"/>
+                                            <constraint firstItem="nf3-pi-ziz" firstAttribute="bottom" secondItem="deF-CP-IhU" secondAttribute="bottom" id="qqG-A8-fn0"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="foodImage" destination="MKL-i4-o7y" id="75e-Dg-Nsh"/>
                                             <outlet property="foodName" destination="nf3-pi-ziz" id="V5L-u1-8Fs"/>
-                                            <outlet property="soldoutLabel" destination="YvN-iq-Z8m" id="63S-v5-InD"/>
+                                            <outlet property="soldOutLabel" destination="YvN-iq-Z8m" id="63S-v5-InD"/>
                                             <segue destination="Dqi-zH-hHf" kind="show" identifier="EditFoodSegue" id="7EF-Or-Kkc"/>
                                         </connections>
                                     </collectionViewCell>
