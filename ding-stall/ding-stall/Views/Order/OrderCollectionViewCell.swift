@@ -30,6 +30,12 @@ class OrderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var orderStatus: OrderStatusLabel!
     @IBOutlet weak private var customerName: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        self.layer.borderWidth = 5
+    }
+
     /// Loads data into and populate a `OngoingOrderCell`.
     /// - Parameter: order: The `Order` object as the data source.
     func load(_ order: Order) {

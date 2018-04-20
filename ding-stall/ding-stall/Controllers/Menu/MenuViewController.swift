@@ -85,6 +85,26 @@ class MenuViewController: UIViewController {
         }
     }
     
+    @IBAction func toggleSoldOut(_ sender: UIButton) {
+        // Convert the button center from local cell frame to the whole collection view frame
+        guard let center = sender.superview?
+            .convert(sender.center, to: sender.superview?.superview?.superview) else {
+                return
+        }
+        guard
+            let indexPath = menuView.indexPathForItem(at: center),
+            let menuCell = menuView.cellForItem(at: indexPath) as? MenuCollectionViewCell,
+            let foodId = menuCell.cellTag else {
+                return
+        }
+
+        guard var targetFood = Account.stall?.menu?[foodId] else {
+            return
+        }
+        targetFood.isSoldOut = !targetFood.isSoldOut
+        Account.stall?.addFood(targetFood)
+    }
+
     @IBAction func longPressToDeleteFood(_ sender: UILongPressGestureRecognizer) {
         let location = sender.location(in: sender.view)
         guard
