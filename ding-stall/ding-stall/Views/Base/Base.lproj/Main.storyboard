@@ -105,11 +105,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soldout" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-iq-Z8m">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
                                             <outlet property="foodImage" destination="MKL-i4-o7y" id="75e-Dg-Nsh"/>
                                             <outlet property="foodName" destination="nf3-pi-ziz" id="V5L-u1-8Fs"/>
+                                            <outlet property="soldoutLabel" destination="YvN-iq-Z8m" id="63S-v5-InD"/>
                                             <segue destination="Dqi-zH-hHf" kind="show" identifier="EditFoodSegue" id="7EF-Or-Kkc"/>
                                         </connections>
                                     </collectionViewCell>
@@ -640,5 +645,6 @@
         <image name="me" width="20" height="20"/>
         <image name="menu" width="20" height="20"/>
         <image name="order" width="20" height="20"/>
+        <image name="soldout" width="500" height="249"/>
     </resources>
 </document>
