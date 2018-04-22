@@ -10,7 +10,9 @@ import DingBase
 import FirebaseDatabase
 
 /**
- Represents a food stall registered in the application.
+ `StallDetail` contains stall information that are not shown in `StallOverview`.
+ Currently it contains only a collection of  food that this stall has.
+ Any two `Food` objects inside `StallDetail` should not have same `id`
  */
 public struct StallDetails: DatabaseObject {
 
@@ -34,7 +36,6 @@ public struct StallDetails: DatabaseObject {
             menu = [String: Food]()
         }
         menu?[addedFood.id] = addedFood
-        //self.save()
         DatabaseRef.setChildNode(of: menuPath, to: addedFood)
     }
 

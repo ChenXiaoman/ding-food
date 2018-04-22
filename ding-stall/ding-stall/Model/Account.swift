@@ -13,19 +13,14 @@ import DingBase
  This information is shared through the whole app
  */
 struct Account {
-
-    /// Current user id
-    private static var uid = "" 
     
     /// Stall model of current user.
     public static var stall: StallDetails?
     public static var stallOverview: StallOverview?
     public static var allFilters: [Filter]?
 
-    public static var stallId: String {
-        get { return uid }
-        set { uid = newValue }
-    }
+    /// Current user id
+    public static var stallId = ""
 
     /// Checks whether this account is registered for stall
     /// If not, the database has no stallOverview information
