@@ -11,7 +11,7 @@
 
 1. Clone the repository into your computer locally (assuming SSH key has been setup).
 ```bash
-git clone git@github.com:cs3217/2018-final-project-group03.git
+git clone git@github.com:yunpengn/ding-food.git
 ```
 2. Notice that there are two Xcode workspaces within this repository, located in the folder `ding` and `ding-stall` respectively. In addition, there is a folder `ding-base`, which is used to act as the base library (i.e., a CocoaPod) for this project.
 3. Make sure you have installed [CocoaPods](https://cocoapods.org) on your computer.

@@ -6,7 +6,7 @@ target 'ding-stall' do
   use_frameworks!
 
   # Pods for Ding! and Ding! Stall App core functionalities.
-  pod 'DingBase', :git => 'git@github.com:cs3217/2018-final-project-group03.git', :branch => 'master'
+  pod 'DingBase', :git => 'git@github.com:yunpengn/ding-food.git', :branch => 'master'
 
   # Pods for Firebase-related operations.
   pod 'Firebase/Core'

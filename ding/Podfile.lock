@@ -67,7 +67,7 @@ PODS:
   - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
-  - "DingBase (from `git@github.com:cs3217/2018-final-project-group03.git`, branch `master`)"
+  - "DingBase (from `git@github.com:yunpengn/ding-food.git`, branch `master`)"
   - Eureka
   - Firebase/Core
   - FirebaseUI/Auth
@@ -75,7 +75,7 @@ DEPENDENCIES:
   - FirebaseUI/Storage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Eureka
     - Firebase
     - FirebaseAnalytics
@@ -94,12 +94,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   DingBase:
     :branch: master
-    :git: "git@github.com:cs3217/2018-final-project-group03.git"
+    :git: "git@github.com:yunpengn/ding-food.git"
 
 CHECKOUT OPTIONS:
   DingBase:
-    :commit: 181e8747dfdc5897aea9287f673de6c55faf7e00
-    :git: "git@github.com:cs3217/2018-final-project-group03.git"
+    :commit: 72574f892fafec9a030a7672a9afd83dcb096f30
+    :git: "git@github.com:yunpengn/ding-food.git"
 
 SPEC CHECKSUMS:
   DingBase: 5b059aee2d3f8bd213d9499dc55bcab087617a27
@@ -118,6 +118,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: d941af7a7614b29168e7da64b13dbb53511527ff
+PODFILE CHECKSUM: 5beff8be168990a074fad0c0b972797ae64041c8
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
